@@ -51,7 +51,7 @@
     <eOperations name="ArchiveProperty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="DescriptionIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="#//MainBase.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="#//mainBase"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
         transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
@@ -68,9 +68,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="generatedDir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorDBOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateAlt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//MainBase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//mainBase"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Table"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//MainBase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//mainBase"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//ControlPoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference4" eType="#//MonitorPoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference5" eType="#//Util"/>
@@ -92,7 +92,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Util"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//Table"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MonitorPoint" abstract="true" eSuperTypes="#//MandCBase">
+  <eClassifiers xsi:type="ecore:EClass" name="MonitorPoint" abstract="true">
     <eOperations name="Default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="ErrorCondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="ErrorSeverity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -115,7 +115,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference4" eType="#//ArchiveProperty"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference5" eType="#//Table"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlPoint" abstract="true" eSuperTypes="#//MandCBase">
+  <eClassifiers xsi:type="ecore:EClass" name="ControlPoint" abstract="true">
     <eOperations name="CPName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="AltCPName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="ArchiveOnUse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -274,9 +274,9 @@
       <eParameters name="xmlFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="xsdFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//SimpleErrorHandler"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//simpleErrorHandler"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorList" eType="#//ArrayList"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seh" eType="#//SimpleErrorHandler.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seh" eType="#//simpleErrorHandler"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpreadsheetParser">
     <eOperations name="getSpreadsheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -319,20 +319,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="System.getProperty(&quot;line.separator&quot;)"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Pair"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleErrorHandler">
-    <eOperations name="error">
-      <eParameters name="exception" eType="#//SAXParseException"/>
-    </eOperations>
-    <eOperations name="fatalError">
-      <eParameters name="exception" eType="#//SAXParseException"/>
-    </eOperations>
-    <eOperations name="warning">
-      <eParameters name="exception" eType="#//SAXParseException"/>
-    </eOperations>
-    <eOperations name="areErrors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="errors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Util">
     <eOperations name="error">
@@ -591,7 +577,7 @@
     <eOperations name="WorldDataTypeUpper1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//MandCBase.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//mandCBase"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="&quot;0x01&quot;, &quot;0x02&quot;, &quot;0x04&quot;, &quot;0x08&quot;, &quot;0x10&quot;,&quot;0x20&quot;, &quot;0x40&quot;, &quot;0x80&quot;"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//MandCBase"/>
@@ -714,13 +700,28 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference7" eType="#//Util"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Hashtable" instanceClassName="java.util.Hashtable"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="MainBase" instanceTypeName="MainBase"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="mainBase" instanceTypeName="MainBase"
+      serializable="false"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ArrayList" instanceClassName="java.util.ArrayList"/>
   <eClassifiers xsi:type="ecore:EClass" name="Pair">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="MandCBase" instanceTypeName="MandCBase"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="mandCBase" instanceTypeName="MandCBase"
+      serializable="false"/>
   <eClassifiers xsi:type="ecore:EDataType" name="SAXParseException" instanceClassName="org.xml.sax.SAXParseException"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandler" instanceTypeName="SimpleErrorHandler"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="simpleErrorHandler" instanceTypeName="SimpleErrorHandler"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleErrorHandler">
+    <eOperations name="error" eType="#//SAXParseException">
+      <eParameters name="exception" eType="#//SAXParseException"/>
+    </eOperations>
+    <eOperations name="fatalError" eType="#//SAXParseException">
+      <eParameters name="exception" eType="#//SAXParseException"/>
+    </eOperations>
+    <eOperations name="warning" eType="#//SAXParseException">
+      <eParameters name="exception" eType="#//SAXParseException"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="errors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eSubpackages/>
 </ecore:EPackage>
