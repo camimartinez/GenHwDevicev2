@@ -264,24 +264,52 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="org.openarchitectureware.core.meta.core.Model"/>
   <eClassifiers xsi:type="ecore:EClass" name="Note" eSuperTypes="#//org.openarchitectureware.meta.uml.classifier.Class">
-    <eOperations name="Note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="setNote">
       <eParameters name="note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpreadsheetValidator">
-    <eOperations name="validate">
+    <eOperations name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="xmlFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="xsdFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//SimpleErrorHandler"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorList" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorList" eType="#//java.util.ArrayList"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seh" eType="#//SimpleErrorHandler.1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpreadsheetParser">
     <eOperations name="getSpreadsheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="dirName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getBoundedContent" eType="#//Pair">
+      <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="beginPart1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="beginPart2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getDataCells" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getWorksheets" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="isReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="getReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="setXSD">
+      <eParameters name="xsd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="doc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="deleteRow">
+      <eParameters name="worksheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="modifyRow">
+      <eParameters name="worksheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="lineNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="rowName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//SpreadsheetValidator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="refPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -293,9 +321,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Pair"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleErrorHandler">
-    <eOperations name="error"/>
-    <eOperations name="fatalError"/>
-    <eOperations name="warning"/>
+    <eOperations name="error">
+      <eParameters name="exception" eType="#//org.xml.sax.SAXParseException"/>
+    </eOperations>
+    <eOperations name="fatalError">
+      <eParameters name="exception" eType="#//org.xml.sax.SAXParseException"/>
+    </eOperations>
+    <eOperations name="warning">
+      <eParameters name="exception" eType="#//org.xml.sax.SAXParseException"/>
+    </eOperations>
     <eOperations name="areErrors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="errors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
@@ -370,6 +404,9 @@
       <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="getInstallDir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="toDatabaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="System.getProperty(&quot;line.separator&quot;)"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -546,7 +583,7 @@
     <eOperations name="WorldDataTypeUpper1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//MandCBase.1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="&quot;0x01&quot;, &quot;0x02&quot;, &quot;0x04&quot;, &quot;0x08&quot;, &quot;0x10&quot;,&quot;0x20&quot;, &quot;0x40&quot;, &quot;0x80&quot;"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//MandCBase"/>
@@ -675,4 +712,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="MandCBase" instanceTypeName="MandCBase"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="org.xml.sax.SAXParseException" instanceClassName="org.xml.sax.SAXParseException"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandler" instanceTypeName="SimpleErrorHandler"/>
 </ecore:EPackage>
