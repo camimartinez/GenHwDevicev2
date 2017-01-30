@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modelAMB"
     nsURI="http://modelAMB/1.0" nsPrefix="modelAMB">
-  <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" abstract="true" eSuperTypes="#//org.openarchitectureware.core.meta.core.Model">
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" abstract="true">
     <eOperations name="CheckConstraints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="initializeModelDependencies"/>
     <eOperations name="setGenerateAlt">
@@ -49,16 +49,20 @@
     <eOperations name="ICDDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="ICDDateAsDatabaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="ICDDateAsArrayTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="getArchive">
+    <eOperations name="getArchive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="Notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eOperations name="MonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eOperations name="ControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eOperations name="ArchiveProperty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="DescriptionIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="#//MainBase.1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPoints"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="busType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceDir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -74,8 +78,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference4" eType="#//MonitorPoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference5" eType="#//Util"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference6" eType="#//ArchiveProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NOTES" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="&quot;Notes&quot;"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MainBase" eSuperTypes="#//org.openarchitectureware.meta.uml.classifier.Class">
+  <eClassifiers xsi:type="ecore:EClass" name="MainBase">
     <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="DescriptionAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -190,13 +196,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToDatabase" eType="#//java.util.Hashtable"
         defaultValueLiteral="null"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MandCBase" abstract="true" eSuperTypes="#//org.openarchitectureware.meta.uml.classifier.Class">
-    <eOperations name="addDependent"/>
-    <eOperations name="setArchive"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MandCBase" abstract="true">
+    <eOperations name="addDependent">
+      <eParameters name="son" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+    </eOperations>
+    <eOperations name="setArchive">
+      <eParameters name="archive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+    </eOperations>
     <eOperations name="isDependent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="getParent"/>
+    <eOperations name="getParent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
     <eOperations name="hasDependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="getDependents"/>
+    <eOperations name="getDependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
     <eOperations name="FullName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getDependentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -229,21 +239,20 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archive"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependents"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Util"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//ArchiveProperty"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//MonitorPoint"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="org.openarchitectureware.meta.uml.classifier.Class"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ArchiveProperty" eSuperTypes="#//org.openarchitectureware.meta.uml.classifier.Class">
+  <eClassifiers xsi:type="ecore:EClass" name="ArchiveProperty">
     <eOperations name="isRefersTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="isMonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="isControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="getMonitorPoint"/>
-    <eOperations name="getControlPoint"/>
+    <eOperations name="getMonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+    <eOperations name="getControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
     <eOperations name="APName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="RefersTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -258,12 +267,13 @@
     <eOperations name="Tittle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cp"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+        defaultValueLiteral="null"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+        defaultValueLiteral="null"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Table"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="org.openarchitectureware.core.meta.core.Model"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Note" eSuperTypes="#//org.openarchitectureware.meta.uml.classifier.Class">
+  <eClassifiers xsi:type="ecore:EClass" name="Note">
     <eOperations name="setNote">
       <eParameters name="note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
@@ -417,19 +427,29 @@
         defaultValueLiteral="&quot;01&quot;, &quot;02&quot;, &quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;, &quot;07&quot;, &quot;08&quot;, &quot;09&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot;"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Table"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SWModule" eSuperTypes="#//org.openarchitectureware.meta.uml.classifier.Class">
-    <eOperations name="addMP"/>
-    <eOperations name="addCP"/>
-    <eOperations name="addAP"/>
-    <eOperations name="setAssemblyName"/>
-    <eOperations name="setDirPath"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SWModule">
+    <eOperations name="addMP">
+      <eParameters name="mp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+    </eOperations>
+    <eOperations name="addCP">
+      <eParameters name="cp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+    </eOperations>
+    <eOperations name="addAP">
+      <eParameters name="ap" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+    </eOperations>
+    <eOperations name="setAssemblyName">
+      <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="setDirPath">
+      <eParameters name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eOperations name="Initialize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="DirPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="MonitorPoint"/>
-    <eOperations name="ControlPoint"/>
-    <eOperations name="ArchiveProperty"/>
-    <eOperations name="SimMonitorPoint"/>
-    <eOperations name="SimControlPoint"/>
+    <eOperations name="MonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eOperations name="ControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eOperations name="ArchiveProperty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eOperations name="SimMonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eOperations name="SimControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
     <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="DescriptionL1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -455,11 +475,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPoints"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simMonitorPoints"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simControlPoints"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simMonitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simControlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//MonitorImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//ControlImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//Util"/>
