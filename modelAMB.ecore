@@ -6,13 +6,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" abstract="true">
     <eOperations name="CheckConstraints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="initializeModelDependencies"/>
-    <eOperations name="setGenerateAlt">
-      <eParameters name="generateAlt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    </eOperations>
-    <eOperations name="setMonitorDBOnly">
-      <eParameters name="monitorDBOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    </eOperations>
-    <eOperations name="getSpreadsheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="DirPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="TheEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="checkIfFileExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -57,12 +50,16 @@
     <eOperations name="ControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
     <eOperations name="ArchiveProperty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="DescriptionIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="#//MainBase.1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="busType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceDir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -78,8 +75,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference4" eType="#//MonitorPoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference5" eType="#//Util"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference6" eType="#//ArchiveProperty"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NOTES" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="&quot;Notes&quot;"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MainBase">
     <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -149,64 +144,59 @@
         defaultValueLiteral="&quot;^&quot;"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CelsiusToKelvin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="&quot;CelsiusToKelvin&quot;"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheetNames" eType="#//java.util.ArrayList"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheetNames" eType="#//ArrayList"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colNames" eType="#//java.util.ArrayList"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colNames" eType="#//ArrayList"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagNames" eType="#//java.util.ArrayList"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagNames" eType="#//ArrayList"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCPP" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCPP" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toIDL" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toIDL" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toIDLSeq" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toIDLSeq" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBA" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBA" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBASeq" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBASeq" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBADevIO" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBADevIO" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBACI" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBACI" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toDatabase" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toDatabase" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawToCPP" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawToCPP" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawToByteSwapped" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawToByteSwapped" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawBytes" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawBytes" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCPP" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCPP" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToIDL" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToIDL" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToIDLSeq" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToIDLSeq" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBA" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBA" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBASeq" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBASeq" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBADevIO" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBADevIO" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToBACI" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToBACI" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToJava" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToJava" eType="#//Hashtable"
         defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToDatabase" eType="#//java.util.Hashtable"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToDatabase" eType="#//Hashtable"
         defaultValueLiteral="null"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MandCBase" abstract="true">
     <eOperations name="addDependent">
       <eParameters name="son" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
     </eOperations>
-    <eOperations name="setArchive">
-      <eParameters name="archive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
-    </eOperations>
     <eOperations name="isDependent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="getParent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
     <eOperations name="hasDependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="getDependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
     <eOperations name="FullName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getDependentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -239,9 +229,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Util"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//ArchiveProperty"/>
@@ -267,16 +260,13 @@
     <eOperations name="Tittle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
-        defaultValueLiteral="null"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
-        defaultValueLiteral="null"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Note">
-    <eOperations name="setNote">
-      <eParameters name="note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpreadsheetValidator">
@@ -285,7 +275,7 @@
       <eParameters name="xsdFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//SimpleErrorHandler"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorList" eType="#//java.util.ArrayList"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorList" eType="#//ArrayList"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="seh" eType="#//SimpleErrorHandler.1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpreadsheetParser">
@@ -332,13 +322,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleErrorHandler">
     <eOperations name="error">
-      <eParameters name="exception" eType="#//org.xml.sax.SAXParseException"/>
+      <eParameters name="exception" eType="#//SAXParseException"/>
     </eOperations>
     <eOperations name="fatalError">
-      <eParameters name="exception" eType="#//org.xml.sax.SAXParseException"/>
+      <eParameters name="exception" eType="#//SAXParseException"/>
     </eOperations>
     <eOperations name="warning">
-      <eParameters name="exception" eType="#//org.xml.sax.SAXParseException"/>
+      <eParameters name="exception" eType="#//SAXParseException"/>
     </eOperations>
     <eOperations name="areErrors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="errors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -437,12 +427,6 @@
     <eOperations name="addAP">
       <eParameters name="ap" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
     </eOperations>
-    <eOperations name="setAssemblyName">
-      <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="setDirPath">
-      <eParameters name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
     <eOperations name="Initialize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="DirPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="MonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
@@ -475,11 +459,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simMonitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simControlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simMonitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simControlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+        transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//MonitorImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//ControlImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//Util"/>
@@ -586,7 +575,6 @@
     <eOperations name="GetDimension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="isSingleBit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="getBit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="getMask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getFirstBit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getLastBit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getGroupStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -725,14 +713,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference6" eType="#//MandCImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference7" eType="#//Util"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="java.util.Hashtable" instanceClassName="java.util.Hashtable"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Hashtable" instanceClassName="java.util.Hashtable"/>
   <eClassifiers xsi:type="ecore:EDataType" name="MainBase" instanceTypeName="MainBase"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="java.util.ArrayList" instanceClassName="java.util.ArrayList"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ArrayList" instanceClassName="java.util.ArrayList"/>
   <eClassifiers xsi:type="ecore:EClass" name="Pair">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="MandCBase" instanceTypeName="MandCBase"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="org.xml.sax.SAXParseException" instanceClassName="org.xml.sax.SAXParseException"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="SAXParseException" instanceClassName="org.xml.sax.SAXParseException"/>
   <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandler" instanceTypeName="SimpleErrorHandler"/>
 </ecore:EPackage>
