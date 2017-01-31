@@ -331,7 +331,7 @@
       <genDataTypes ecoreDataType="modelAMB.ecore#//base/MainBaseDT"/>
       <genDataTypes ecoreDataType="modelAMB.ecore#//base/ArrayList"/>
       <genDataTypes ecoreDataType="modelAMB.ecore#//base/MandCBaseDT"/>
-      <genDataTypes ecoreDataType="modelAMB.ecore#//base/SAXParseException"/>
+      <genDataTypes ecoreDataType="modelAMB.ecore#//base/SAXParseExceptionDT"/>
       <genDataTypes ecoreDataType="modelAMB.ecore#//base/SimpleErrorHandlerDT"/>
       <genClasses image="false" ecoreClass="modelAMB.ecore#//base/DeviceModel">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/DeviceModel/DescriptionIndex"/>

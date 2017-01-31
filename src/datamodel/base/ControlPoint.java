@@ -6,7 +6,6 @@
  */
 package datamodel.base;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface ControlPoint extends EObject {
+public interface ControlPoint extends MandCBase {
 	/**
 	 * Returns the value of the '<em><b>EReference4</b></em>' reference.
 	 * <!-- begin-user-doc -->

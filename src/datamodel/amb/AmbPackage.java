@@ -145,6 +145,114 @@ public interface AmbPackage extends EPackage {
 	int CONTROL_IMPL = 1;
 
 	/**
+	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__SPREADSHEET_NAME = BasePackage.CONTROL_POINT__SPREADSHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__SHEET_NAME = BasePackage.CONTROL_POINT__SHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__ROW = BasePackage.CONTROL_POINT__ROW;
+
+	/**
+	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__PARENT_ROW = BasePackage.CONTROL_POINT__PARENT_ROW;
+
+	/**
+	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__SHEET = BasePackage.CONTROL_POINT__SHEET;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__PARENT = BasePackage.CONTROL_POINT__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
+
+	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__EREFERENCE0 = BasePackage.CONTROL_POINT__EREFERENCE0;
+
+	/**
+	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__EREFERENCE1 = BasePackage.CONTROL_POINT__EREFERENCE1;
+
+	/**
+	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__EREFERENCE2 = BasePackage.CONTROL_POINT__EREFERENCE2;
+
+	/**
+	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_IMPL__EREFERENCE3 = BasePackage.CONTROL_POINT__EREFERENCE3;
+
+	/**
 	 * The feature id for the '<em><b>EReference4</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -687,6 +795,114 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 */
 	int MONITOR_IMPL = 5;
+
+	/**
+	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__SPREADSHEET_NAME = BasePackage.MONITOR_POINT__SPREADSHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__SHEET_NAME = BasePackage.MONITOR_POINT__SHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__ROW = BasePackage.MONITOR_POINT__ROW;
+
+	/**
+	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__PARENT_ROW = BasePackage.MONITOR_POINT__PARENT_ROW;
+
+	/**
+	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__SHEET = BasePackage.MONITOR_POINT__SHEET;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__PARENT = BasePackage.MONITOR_POINT__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
+
+	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__EREFERENCE0 = BasePackage.MONITOR_POINT__EREFERENCE0;
+
+	/**
+	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__EREFERENCE1 = BasePackage.MONITOR_POINT__EREFERENCE1;
+
+	/**
+	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__EREFERENCE2 = BasePackage.MONITOR_POINT__EREFERENCE2;
+
+	/**
+	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_IMPL__EREFERENCE3 = BasePackage.MONITOR_POINT__EREFERENCE3;
 
 	/**
 	 * The feature id for the '<em><b>EReference4</b></em>' reference.

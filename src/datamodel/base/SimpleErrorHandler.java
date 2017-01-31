@@ -56,7 +56,7 @@ public interface SimpleErrorHandler extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="datamodel.base.SAXParseException" exceptionDataType="datamodel.base.SAXParseException"
+	 * @model dataType="datamodel.base.SAXParseExceptionDT" exceptionDataType="datamodel.base.SAXParseExceptionDT"
 	 * @generated
 	 */
 	SAXParseException error(SAXParseException exception);
@@ -64,7 +64,7 @@ public interface SimpleErrorHandler extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="datamodel.base.SAXParseException" exceptionDataType="datamodel.base.SAXParseException"
+	 * @model dataType="datamodel.base.SAXParseExceptionDT" exceptionDataType="datamodel.base.SAXParseExceptionDT"
 	 * @generated
 	 */
 	SAXParseException fatalError(SAXParseException exception);
@@ -72,7 +72,7 @@ public interface SimpleErrorHandler extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="datamodel.base.SAXParseException" exceptionDataType="datamodel.base.SAXParseException"
+	 * @model dataType="datamodel.base.SAXParseExceptionDT" exceptionDataType="datamodel.base.SAXParseExceptionDT"
 	 * @generated
 	 */
 	SAXParseException warning(SAXParseException exception);

@@ -12,6 +12,7 @@ import datamodel.base.ArchiveProperty;
 import datamodel.base.ControlPoint;
 import datamodel.base.DeviceModel;
 import datamodel.base.MainBase;
+import datamodel.base.MandCBase;
 import datamodel.base.MonitorPoint;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -108,6 +109,10 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseArchiveProperty(ArchiveProperty object) {
 				return createArchivePropertyAdapter();
+			}
+			@Override
+			public Adapter caseMandCBase(MandCBase object) {
+				return createMandCBaseAdapter();
 			}
 			@Override
 			public Adapter caseControlPoint(ControlPoint object) {
@@ -254,6 +259,20 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createArchivePropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link datamodel.base.MandCBase <em>Mand CBase</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see datamodel.base.MandCBase
+	 * @generated
+	 */
+	public Adapter createMandCBaseAdapter() {
 		return null;
 	}
 

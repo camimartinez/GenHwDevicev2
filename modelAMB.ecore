@@ -376,7 +376,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="EReference6" eType="#//base/ArchiveProperty"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//base/MainBase"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MonitorPoint" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="MonitorPoint" abstract="true" eSuperTypes="#//base/MandCBase">
       <eOperations name="Default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="ErrorCondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="ErrorSeverity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -399,7 +399,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="EReference4" eType="#//base/ArchiveProperty"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="EReference5" eType="#//base/Table"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ControlPoint" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="ControlPoint" abstract="true" eSuperTypes="#//base/MandCBase">
       <eOperations name="CPName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="AltCPName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="ArchiveOnUse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -697,17 +697,17 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MandCBaseDT" instanceTypeName="MandCBase"
         serializable="false"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="SAXParseException" instanceClassName="org.xml.sax.SAXParseException"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="SAXParseExceptionDT" instanceClassName="org.xml.sax.SAXParseException"/>
     <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandlerDT" instanceTypeName="SimpleErrorHandler"/>
     <eClassifiers xsi:type="ecore:EClass" name="SimpleErrorHandler">
-      <eOperations name="error" eType="#//base/SAXParseException">
-        <eParameters name="exception" eType="#//base/SAXParseException"/>
+      <eOperations name="error" eType="#//base/SAXParseExceptionDT">
+        <eParameters name="exception" eType="#//base/SAXParseExceptionDT"/>
       </eOperations>
-      <eOperations name="fatalError" eType="#//base/SAXParseException">
-        <eParameters name="exception" eType="#//base/SAXParseException"/>
+      <eOperations name="fatalError" eType="#//base/SAXParseExceptionDT">
+        <eParameters name="exception" eType="#//base/SAXParseExceptionDT"/>
       </eOperations>
-      <eOperations name="warning" eType="#//base/SAXParseException">
-        <eParameters name="exception" eType="#//base/SAXParseException"/>
+      <eOperations name="warning" eType="#//base/SAXParseExceptionDT">
+        <eParameters name="exception" eType="#//base/SAXParseExceptionDT"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="errors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>

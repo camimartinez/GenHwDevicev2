@@ -92,8 +92,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createHashtableFromString(eDataType, initialValue);
 			case BasePackage.ARRAY_LIST:
 				return createArrayListFromString(eDataType, initialValue);
-			case BasePackage.SAX_PARSE_EXCEPTION:
-				return createSAXParseExceptionFromString(eDataType, initialValue);
+			case BasePackage.SAX_PARSE_EXCEPTION_DT:
+				return createSAXParseExceptionDTFromString(eDataType, initialValue);
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return createSimpleErrorHandlerDTFromString(eDataType, initialValue);
 			default:
@@ -113,8 +113,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertHashtableToString(eDataType, instanceValue);
 			case BasePackage.ARRAY_LIST:
 				return convertArrayListToString(eDataType, instanceValue);
-			case BasePackage.SAX_PARSE_EXCEPTION:
-				return convertSAXParseExceptionToString(eDataType, instanceValue);
+			case BasePackage.SAX_PARSE_EXCEPTION_DT:
+				return convertSAXParseExceptionDTToString(eDataType, instanceValue);
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return convertSimpleErrorHandlerDTToString(eDataType, instanceValue);
 			default:
@@ -253,7 +253,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SAXParseException createSAXParseExceptionFromString(EDataType eDataType, String initialValue) {
+	public SAXParseException createSAXParseExceptionDTFromString(EDataType eDataType, String initialValue) {
 		return (SAXParseException)super.createFromString(eDataType, initialValue);
 	}
 
@@ -262,7 +262,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertSAXParseExceptionToString(EDataType eDataType, Object instanceValue) {
+	public String convertSAXParseExceptionDTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

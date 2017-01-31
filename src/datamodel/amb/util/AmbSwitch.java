@@ -12,6 +12,7 @@ import datamodel.base.ArchiveProperty;
 import datamodel.base.ControlPoint;
 import datamodel.base.DeviceModel;
 import datamodel.base.MainBase;
+import datamodel.base.MandCBase;
 import datamodel.base.MonitorPoint;
 
 import java.util.List;
@@ -104,6 +105,7 @@ public class AmbSwitch<T> {
 				ControlImpl controlImpl = (ControlImpl)theEObject;
 				T result = caseControlImpl(controlImpl);
 				if (result == null) result = caseControlPoint(controlImpl);
+				if (result == null) result = caseMandCBase(controlImpl);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,6 +133,7 @@ public class AmbSwitch<T> {
 				MonitorImpl monitorImpl = (MonitorImpl)theEObject;
 				T result = caseMonitorImpl(monitorImpl);
 				if (result == null) result = caseMonitorPoint(monitorImpl);
+				if (result == null) result = caseMandCBase(monitorImpl);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -261,6 +264,21 @@ public class AmbSwitch<T> {
 	 * @generated
 	 */
 	public T caseArchiveProperty(ArchiveProperty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mand CBase</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mand CBase</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMandCBase(MandCBase object) {
 		return null;
 	}
 

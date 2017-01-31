@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +30,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public abstract class ControlPointImpl extends EObjectImpl implements ControlPoint {
+public abstract class ControlPointImpl extends MandCBaseImpl implements ControlPoint {
 	/**
 	 * The cached value of the '{@link #getEReference4() <em>EReference4</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -127,17 +126,6 @@ public abstract class ControlPointImpl extends EObjectImpl implements ControlPoi
 	 * @generated
 	 */
 	public boolean ArchiveOnUse() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isMonitored() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

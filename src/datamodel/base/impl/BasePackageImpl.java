@@ -171,7 +171,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType saxParseExceptionEDataType = null;
+	private EDataType saxParseExceptionDTEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1214,8 +1214,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getSAXParseException() {
-		return saxParseExceptionEDataType;
+	public EDataType getSAXParseExceptionDT() {
+		return saxParseExceptionDTEDataType;
 	}
 
 	/**
@@ -1376,7 +1376,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		mainBaseDTEDataType = createEDataType(MAIN_BASE_DT);
 		arrayListEDataType = createEDataType(ARRAY_LIST);
 		mandCBaseDTEDataType = createEDataType(MAND_CBASE_DT);
-		saxParseExceptionEDataType = createEDataType(SAX_PARSE_EXCEPTION);
+		saxParseExceptionDTEDataType = createEDataType(SAX_PARSE_EXCEPTION_DT);
 		simpleErrorHandlerDTEDataType = createEDataType(SIMPLE_ERROR_HANDLER_DT);
 	}
 
@@ -1408,6 +1408,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		monitorPointEClass.getESuperTypes().add(this.getMandCBase());
+		controlPointEClass.getESuperTypes().add(this.getMandCBase());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1847,14 +1849,14 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEClass(simpleErrorHandlerEClass, SimpleErrorHandler.class, "SimpleErrorHandler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSimpleErrorHandler_Errors(), ecorePackage.getEBoolean(), "errors", null, 0, 1, SimpleErrorHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseException(), "error", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSAXParseException(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "error", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseException(), "fatalError", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSAXParseException(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "fatalError", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseException(), "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSAXParseException(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mainBaseEClass, MainBase.class, "MainBase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMainBase_Row(), ecorePackage.getEString(), "row", null, 0, 1, MainBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1886,7 +1888,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEDataType(mainBaseDTEDataType, Object.class, "MainBaseDT", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(arrayListEDataType, ArrayList.class, "ArrayList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mandCBaseDTEDataType, Object.class, "MandCBaseDT", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(saxParseExceptionEDataType, SAXParseException.class, "SAXParseException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(saxParseExceptionDTEDataType, SAXParseException.class, "SAXParseExceptionDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(simpleErrorHandlerDTEDataType, Object.class, "SimpleErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource

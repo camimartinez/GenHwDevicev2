@@ -269,6 +269,133 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL_FEATURE_COUNT = 21;
 
 	/**
+	 * The meta object id for the '{@link datamodel.base.impl.MandCBaseImpl <em>Mand CBase</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see datamodel.base.impl.MandCBaseImpl
+	 * @see datamodel.base.impl.BasePackageImpl#getMandCBase()
+	 * @generated
+	 */
+	int MAND_CBASE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__SPREADSHEET_NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__SHEET_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__ROW = 2;
+
+	/**
+	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__PARENT_ROW = 3;
+
+	/**
+	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__SHEET = 4;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__PARENT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__ARCHIVE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__DEPENDENTS = 7;
+
+	/**
+	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__EREFERENCE0 = 8;
+
+	/**
+	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__EREFERENCE1 = 9;
+
+	/**
+	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__EREFERENCE2 = 10;
+
+	/**
+	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__EREFERENCE3 = 11;
+
+	/**
+	 * The number of structural features of the '<em>Mand CBase</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE_FEATURE_COUNT = 12;
+
+	/**
 	 * The meta object id for the '{@link datamodel.base.impl.MonitorPointImpl <em>Monitor Point</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -279,13 +406,121 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__SPREADSHEET_NAME = MAND_CBASE__SPREADSHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__SHEET_NAME = MAND_CBASE__SHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__ROW = MAND_CBASE__ROW;
+
+	/**
+	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__PARENT_ROW = MAND_CBASE__PARENT_ROW;
+
+	/**
+	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__SHEET = MAND_CBASE__SHEET;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__PARENT = MAND_CBASE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
+
+	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__EREFERENCE0 = MAND_CBASE__EREFERENCE0;
+
+	/**
+	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__EREFERENCE1 = MAND_CBASE__EREFERENCE1;
+
+	/**
+	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__EREFERENCE2 = MAND_CBASE__EREFERENCE2;
+
+	/**
+	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__EREFERENCE3 = MAND_CBASE__EREFERENCE3;
+
+	/**
 	 * The feature id for the '<em><b>EReference4</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__EREFERENCE4 = 0;
+	int MONITOR_POINT__EREFERENCE4 = MAND_CBASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EReference5</b></em>' reference.
@@ -294,7 +529,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__EREFERENCE5 = 1;
+	int MONITOR_POINT__EREFERENCE5 = MAND_CBASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Monitor Point</em>' class.
@@ -303,7 +538,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT_FEATURE_COUNT = 2;
+	int MONITOR_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link datamodel.base.impl.ControlPointImpl <em>Control Point</em>}' class.
@@ -316,13 +551,121 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__SPREADSHEET_NAME = MAND_CBASE__SPREADSHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__SHEET_NAME = MAND_CBASE__SHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__ROW = MAND_CBASE__ROW;
+
+	/**
+	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__PARENT_ROW = MAND_CBASE__PARENT_ROW;
+
+	/**
+	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__SHEET = MAND_CBASE__SHEET;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__PARENT = MAND_CBASE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
+
+	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__EREFERENCE0 = MAND_CBASE__EREFERENCE0;
+
+	/**
+	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__EREFERENCE1 = MAND_CBASE__EREFERENCE1;
+
+	/**
+	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__EREFERENCE2 = MAND_CBASE__EREFERENCE2;
+
+	/**
+	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__EREFERENCE3 = MAND_CBASE__EREFERENCE3;
+
+	/**
 	 * The feature id for the '<em><b>EReference4</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__EREFERENCE4 = 0;
+	int CONTROL_POINT__EREFERENCE4 = MAND_CBASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Control Point</em>' class.
@@ -331,7 +674,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT_FEATURE_COUNT = 1;
+	int CONTROL_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link datamodel.base.impl.TableImpl <em>Table</em>}' class.
@@ -576,133 +919,6 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int TABLE_FEATURE_COUNT = 25;
-
-	/**
-	 * The meta object id for the '{@link datamodel.base.impl.MandCBaseImpl <em>Mand CBase</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see datamodel.base.impl.MandCBaseImpl
-	 * @see datamodel.base.impl.BasePackageImpl#getMandCBase()
-	 * @generated
-	 */
-	int MAND_CBASE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__SPREADSHEET_NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__SHEET_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__ROW = 2;
-
-	/**
-	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__PARENT_ROW = 3;
-
-	/**
-	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__SHEET = 4;
-
-	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__PARENT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__ARCHIVE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__DEPENDENTS = 7;
-
-	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__EREFERENCE0 = 8;
-
-	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__EREFERENCE1 = 9;
-
-	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__EREFERENCE2 = 10;
-
-	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__EREFERENCE3 = 11;
-
-	/**
-	 * The number of structural features of the '<em>Mand CBase</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE_FEATURE_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link datamodel.base.impl.ArchivePropertyImpl <em>Archive Property</em>}' class.
@@ -1158,14 +1374,14 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE_DT = 16;
 
 	/**
-	 * The meta object id for the '<em>SAX Parse Exception</em>' data type.
+	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.xml.sax.SAXParseException
-	 * @see datamodel.base.impl.BasePackageImpl#getSAXParseException()
+	 * @see datamodel.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION = 17;
+	int SAX_PARSE_EXCEPTION_DT = 17;
 
 	/**
 	 * The meta object id for the '<em>Simple Error Handler DT</em>' data type.
@@ -2343,15 +2559,15 @@ public interface BasePackage extends EPackage {
 	EDataType getMandCBaseDT();
 
 	/**
-	 * Returns the meta object for data type '{@link org.xml.sax.SAXParseException <em>SAX Parse Exception</em>}'.
+	 * Returns the meta object for data type '{@link org.xml.sax.SAXParseException <em>SAX Parse Exception DT</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>SAX Parse Exception</em>'.
+	 * @return the meta object for data type '<em>SAX Parse Exception DT</em>'.
 	 * @see org.xml.sax.SAXParseException
 	 * @model instanceClass="org.xml.sax.SAXParseException"
 	 * @generated
 	 */
-	EDataType getSAXParseException();
+	EDataType getSAXParseExceptionDT();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Simple Error Handler DT</em>}'.
@@ -3277,14 +3493,14 @@ public interface BasePackage extends EPackage {
 		EDataType MAND_CBASE_DT = eINSTANCE.getMandCBaseDT();
 
 		/**
-		 * The meta object literal for the '<em>SAX Parse Exception</em>' data type.
+		 * The meta object literal for the '<em>SAX Parse Exception DT</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.xml.sax.SAXParseException
-		 * @see datamodel.base.impl.BasePackageImpl#getSAXParseException()
+		 * @see datamodel.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 		 * @generated
 		 */
-		EDataType SAX_PARSE_EXCEPTION = eINSTANCE.getSAXParseException();
+		EDataType SAX_PARSE_EXCEPTION_DT = eINSTANCE.getSAXParseExceptionDT();
 
 		/**
 		 * The meta object literal for the '<em>Simple Error Handler DT</em>' data type.

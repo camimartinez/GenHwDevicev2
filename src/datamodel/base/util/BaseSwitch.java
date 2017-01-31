@@ -96,12 +96,14 @@ public class BaseSwitch<T> {
 			case BasePackage.MONITOR_POINT: {
 				MonitorPoint monitorPoint = (MonitorPoint)theEObject;
 				T result = caseMonitorPoint(monitorPoint);
+				if (result == null) result = caseMandCBase(monitorPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.CONTROL_POINT: {
 				ControlPoint controlPoint = (ControlPoint)theEObject;
 				T result = caseControlPoint(controlPoint);
+				if (result == null) result = caseMandCBase(controlPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

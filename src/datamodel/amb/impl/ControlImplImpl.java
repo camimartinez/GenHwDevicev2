@@ -459,28 +459,6 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String MinRange() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String MaxRange() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String idlReturns() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
