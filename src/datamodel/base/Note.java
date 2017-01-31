@@ -50,5 +50,5 @@ public interface Note extends EObject {
 	 * @generated
 	 */
 	void setNote(String value);
-
+	
 } // Note
