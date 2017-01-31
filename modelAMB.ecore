@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="meta"
-    nsURI="http://meta/1.0" nsPrefix="meta">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datamodel"
+    nsURI="http://alma.Control.datamodel.meta/1.0" nsPrefix="datamodel">
   <eSubpackages name="amb" nsURI="http://alma.Control.datamodel.meta.amb/1.0" nsPrefix="amb">
     <eClassifiers xsi:type="ecore:EClass" name="ArchiveImpl" eSuperTypes="#//base/ArchiveProperty">
       <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -425,9 +425,9 @@
         <eParameters name="sh" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="DepChar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          defaultValueLiteral="&quot;^&quot;"/>
+          defaultValueLiteral="^"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="CelsiusToKelvin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          defaultValueLiteral="&quot;CelsiusToKelvin&quot;"/>
+          defaultValueLiteral="CelsiusToKelvin"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheetNames" eType="#//base/ArrayList"
           defaultValueLiteral="null"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="colNames" eType="#//base/ArrayList"
