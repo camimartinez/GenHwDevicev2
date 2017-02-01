@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Sat Jan 28 00:42:56 CLST 2017
+=======
+#Wed Feb 01 00:26:23 CLST 2017
+>>>>>>> 30413d3... add jar and reorder the project
 eclipse.preferences.version=1
-encoding/modelAMB.ecore=UTF-8
-encoding/modelAMB.ecorediag=UTF-8
+encoding//config/model/modelAMB.ecore=UTF-8
+encoding//config/model/modelAMB.ecorediag=UTF-8
