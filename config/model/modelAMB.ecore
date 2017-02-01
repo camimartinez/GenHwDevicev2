@@ -8,7 +8,7 @@
       <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="isIntervalTE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="Interval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//base/Table"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getAssemblyColumn" eType="#//base/Table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ControlImpl" eSuperTypes="#//base/ControlPoint">
       <eOperations name="Data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -76,9 +76,10 @@
       <eOperations name="isRawSubArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="WorlDataToDatabaseTypeUpper1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="WorldDataTypeUpper1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference5" eType="#//base/Table"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference6" eType="#//amb/MandCImpl"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference7" eType="#//base/Util"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="worldToDataColumns" eType="#//base/Table"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoControlSheet"
+          eType="#//amb/MandCImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toNormalizeNumber" eType="#//base/Util"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DeviceModelAMB" eSuperTypes="#//base/DeviceModel">
       <eOperations name="isMonitorDBOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -95,19 +96,22 @@
       <eOperations name="HexToDec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference7" eType="#//base/ControlPoint"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference8" eType="#//base/Note"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference9" eType="#//base/MonitorPoint"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference10" eType="#//base/MainBase"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference11" eType="#//amb/ControlImpl"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference12" eType="#//amb/MainImpl"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference13" eType="#//amb/MonitorImpl"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference14" eType="#//base/Table"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference15" eType="#//amb/ArchiveImpl"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference16" eType="#//base/Util"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference17" eType="#//base/SpreadsheetParser"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference18" eType="#//base/SpreadsheetValidator"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference20" eType="#//amb/GenericMonitorPoints"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toAddCP" eType="#//base/ControlPoint"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getNoteFromMain" eType="#//base/Note"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toAddMP" eType="#//base/MonitorPoint"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoMain" eType="#//base/MainBase"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getCPfromControl" eType="#//amb/ControlImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromMainSheet"
+          eType="#//amb/MainImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getMPfromMonitor" eType="#//amb/MonitorImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getDataFromSpread" eType="#//base/Table"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getAPfromArchive" eType="#//amb/ArchiveImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ToinstallEndGeneration"
+          eType="#//base/Util"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getFromSpreadsheet" eType="#//base/SpreadsheetParser"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toValidateSpreadsheet"
+          eType="#//base/SpreadsheetValidator"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getGenericMP" eType="#//amb/GenericMonitorPoints"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MainImpl" eSuperTypes="#//base/MainBase">
       <eOperations name="Parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -116,7 +120,7 @@
       <eOperations name="Channel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="GenericMonitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="BaseAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//base/Table"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromMain" eType="#//base/Table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MandCImpl">
       <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -178,11 +182,11 @@
           transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="&quot;0x01&quot;, &quot;0x02&quot;, &quot;0x04&quot;, &quot;0x08&quot;, &quot;0x10&quot;,&quot;0x20&quot;, &quot;0x40&quot;, &quot;0x80&quot;"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//base/MandCBase"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//base/Table"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//amb/MonitorImpl"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//amb/ControlImpl"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference4" eType="#//base/Util"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoSheet" eType="#//base/MandCBase"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getDataFromMain" eType="#//base/Table"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="isMPDataType" eType="#//amb/MonitorImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="isCPDataType" eType="#//amb/ControlImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="utilsToData" eType="#//base/Util"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MonitorImpl" eSuperTypes="#//base/MonitorPoint">
       <eOperations name="CanBeInvalid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -241,9 +245,9 @@
       <eOperations name="isPartOfPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="isHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="isPartOfHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference6" eType="#//base/Util"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference7" eType="#//base/Table"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference8" eType="#//amb/MandCImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toNormalizeData" eType="#//base/Util"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getColumnsCanBeInv" eType="#//base/Table"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoMPSheet" eType="#//amb/MandCImpl"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SWModule">
       <eOperations name="addMP">
@@ -297,10 +301,11 @@
           transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="simControlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
           transient="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//amb/MonitorImpl"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//amb/ControlImpl"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//base/Util"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//base/Table"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="addAllMP" eType="#//amb/MonitorImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="addAllCP" eType="#//amb/ControlImpl"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="setFormatDescriptions"
+          eType="#//base/Util"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getSheetColumns" eType="#//base/Table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="GenericMonitorPoints">
       <eOperations name="getParsedGenericSpreadsheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -310,9 +315,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="newSpreadsheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirLocation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference45" eType="#//base/SpreadsheetParser"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference65" eType="#//base/SpreadsheetValidator"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference274" eType="#//base/Util"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getTheSpreadsheet" eType="#//base/SpreadsheetParser"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toValidateTheSpreadsheet"
+          eType="#//base/SpreadsheetValidator"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toInstallDir" eType="#//base/Util"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="base" nsURI="http://alma.Control.datamodel.base/1.0" nsPrefix="base">
