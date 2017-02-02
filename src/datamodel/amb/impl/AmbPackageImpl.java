@@ -8,18 +8,22 @@ package datamodel.amb.impl;
 
 import datamodel.amb.AmbFactory;
 import datamodel.amb.AmbPackage;
-import datamodel.amb.ArchiveImpl;
-import datamodel.amb.ControlImpl;
+import datamodel.amb.ArchiveAMB;
+import datamodel.amb.ControlAMB;
 import datamodel.amb.DeviceModel;
 import datamodel.amb.GenericMonitorPoints;
-import datamodel.amb.MainImpl;
-import datamodel.amb.MandCImpl;
-import datamodel.amb.MonitorImpl;
+import datamodel.amb.MainAMB;
+import datamodel.amb.MandCAMB;
+import datamodel.amb.MonitorAMB;
 import datamodel.amb.SWModule;
 
 import datamodel.base.BasePackage;
 
 import datamodel.base.impl.BasePackageImpl;
+
+import datamodel.eth.EthPackage;
+
+import datamodel.eth.impl.EthPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -41,14 +45,14 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass archiveImplEClass = null;
+	private EClass archiveAMBEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass controlImplEClass = null;
+	private EClass controlAMBEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,21 +66,21 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass mainImplEClass = null;
+	private EClass mainAMBEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass mandCImplEClass = null;
+	private EClass mandCAMBEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass monitorImplEClass = null;
+	private EClass monitorAMBEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,14 +144,17 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		// Obtain or create and register interdependencies
 		BasePackageImpl theBasePackage = (BasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI) instanceof BasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI) : BasePackage.eINSTANCE);
+		EthPackageImpl theEthPackage = (EthPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EthPackage.eNS_URI) instanceof EthPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EthPackage.eNS_URI) : EthPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAmbPackage.createPackageContents();
 		theBasePackage.createPackageContents();
+		theEthPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAmbPackage.initializePackageContents();
 		theBasePackage.initializePackageContents();
+		theEthPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAmbPackage.freeze();
@@ -163,8 +170,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getArchiveImpl() {
-		return archiveImplEClass;
+	public EClass getArchiveAMB() {
+		return archiveAMBEClass;
 	}
 
 	/**
@@ -172,8 +179,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArchiveImpl_GetAssemblyColumn() {
-		return (EReference)archiveImplEClass.getEStructuralFeatures().get(0);
+	public EReference getArchiveAMB_GetAssemblyColumn() {
+		return (EReference)archiveAMBEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -181,8 +188,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getControlImpl() {
-		return controlImplEClass;
+	public EClass getControlAMB() {
+		return controlAMBEClass;
 	}
 
 	/**
@@ -190,8 +197,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControlImpl_WorldToDataColumns() {
-		return (EReference)controlImplEClass.getEStructuralFeatures().get(0);
+	public EReference getControlAMB_WorldToDataColumns() {
+		return (EReference)controlAMBEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -199,8 +206,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControlImpl_GetInfoControlSheet() {
-		return (EReference)controlImplEClass.getEStructuralFeatures().get(1);
+	public EReference getControlAMB_GetInfoControlSheet() {
+		return (EReference)controlAMBEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -208,8 +215,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControlImpl_ToNormalizeNumber() {
-		return (EReference)controlImplEClass.getEStructuralFeatures().get(2);
+	public EReference getControlAMB_ToNormalizeNumber() {
+		return (EReference)controlAMBEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -343,8 +350,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMainImpl() {
-		return mainImplEClass;
+	public EClass getMainAMB() {
+		return mainAMBEClass;
 	}
 
 	/**
@@ -352,8 +359,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMainImpl_GetInfoFromMain() {
-		return (EReference)mainImplEClass.getEStructuralFeatures().get(0);
+	public EReference getMainAMB_GetInfoFromMain() {
+		return (EReference)mainAMBEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -361,8 +368,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMandCImpl() {
-		return mandCImplEClass;
+	public EClass getMandCAMB() {
+		return mandCAMBEClass;
 	}
 
 	/**
@@ -370,8 +377,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMandCImpl_Row() {
-		return (EAttribute)mandCImplEClass.getEStructuralFeatures().get(0);
+	public EAttribute getMandCAMB_Row() {
+		return (EAttribute)mandCAMBEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -379,8 +386,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMandCImpl_Sheet() {
-		return (EAttribute)mandCImplEClass.getEStructuralFeatures().get(1);
+	public EAttribute getMandCAMB_Sheet() {
+		return (EAttribute)mandCAMBEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -388,8 +395,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMandCImpl_Mcp() {
-		return (EAttribute)mandCImplEClass.getEStructuralFeatures().get(2);
+	public EAttribute getMandCAMB_Mcp() {
+		return (EAttribute)mandCAMBEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -397,8 +404,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMandCImpl_Mask() {
-		return (EAttribute)mandCImplEClass.getEStructuralFeatures().get(3);
+	public EAttribute getMandCAMB_Mask() {
+		return (EAttribute)mandCAMBEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -406,8 +413,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMandCImpl_GetInfoSheet() {
-		return (EReference)mandCImplEClass.getEStructuralFeatures().get(4);
+	public EReference getMandCAMB_GetInfoSheet() {
+		return (EReference)mandCAMBEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -415,8 +422,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMandCImpl_GetDataFromMain() {
-		return (EReference)mandCImplEClass.getEStructuralFeatures().get(5);
+	public EReference getMandCAMB_GetDataFromMain() {
+		return (EReference)mandCAMBEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -424,8 +431,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMandCImpl_IsMPDataType() {
-		return (EReference)mandCImplEClass.getEStructuralFeatures().get(6);
+	public EReference getMandCAMB_IsMPDataType() {
+		return (EReference)mandCAMBEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -433,8 +440,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMandCImpl_IsCPDataType() {
-		return (EReference)mandCImplEClass.getEStructuralFeatures().get(7);
+	public EReference getMandCAMB_IsCPDataType() {
+		return (EReference)mandCAMBEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -442,8 +449,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMandCImpl_UtilsToData() {
-		return (EReference)mandCImplEClass.getEStructuralFeatures().get(8);
+	public EReference getMandCAMB_UtilsToData() {
+		return (EReference)mandCAMBEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -451,8 +458,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMonitorImpl() {
-		return monitorImplEClass;
+	public EClass getMonitorAMB() {
+		return monitorAMBEClass;
 	}
 
 	/**
@@ -460,8 +467,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMonitorImpl_ToNormalizeData() {
-		return (EReference)monitorImplEClass.getEStructuralFeatures().get(0);
+	public EReference getMonitorAMB_ToNormalizeData() {
+		return (EReference)monitorAMBEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -469,8 +476,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMonitorImpl_GetColumnsCanBeInv() {
-		return (EReference)monitorImplEClass.getEStructuralFeatures().get(1);
+	public EReference getMonitorAMB_GetColumnsCanBeInv() {
+		return (EReference)monitorAMBEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -478,8 +485,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMonitorImpl_GetInfoMPSheet() {
-		return (EReference)monitorImplEClass.getEStructuralFeatures().get(2);
+	public EReference getMonitorAMB_GetInfoMPSheet() {
+		return (EReference)monitorAMBEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -726,13 +733,13 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		archiveImplEClass = createEClass(ARCHIVE_IMPL);
-		createEReference(archiveImplEClass, ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN);
+		archiveAMBEClass = createEClass(ARCHIVE_AMB);
+		createEReference(archiveAMBEClass, ARCHIVE_AMB__GET_ASSEMBLY_COLUMN);
 
-		controlImplEClass = createEClass(CONTROL_IMPL);
-		createEReference(controlImplEClass, CONTROL_IMPL__WORLD_TO_DATA_COLUMNS);
-		createEReference(controlImplEClass, CONTROL_IMPL__GET_INFO_CONTROL_SHEET);
-		createEReference(controlImplEClass, CONTROL_IMPL__TO_NORMALIZE_NUMBER);
+		controlAMBEClass = createEClass(CONTROL_AMB);
+		createEReference(controlAMBEClass, CONTROL_AMB__WORLD_TO_DATA_COLUMNS);
+		createEReference(controlAMBEClass, CONTROL_AMB__GET_INFO_CONTROL_SHEET);
+		createEReference(controlAMBEClass, CONTROL_AMB__TO_NORMALIZE_NUMBER);
 
 		deviceModelEClass = createEClass(DEVICE_MODEL);
 		createEReference(deviceModelEClass, DEVICE_MODEL__TO_ADD_CP);
@@ -749,24 +756,24 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		createEReference(deviceModelEClass, DEVICE_MODEL__TO_VALIDATE_SPREADSHEET);
 		createEReference(deviceModelEClass, DEVICE_MODEL__GET_GENERIC_MP);
 
-		mainImplEClass = createEClass(MAIN_IMPL);
-		createEReference(mainImplEClass, MAIN_IMPL__GET_INFO_FROM_MAIN);
+		mainAMBEClass = createEClass(MAIN_AMB);
+		createEReference(mainAMBEClass, MAIN_AMB__GET_INFO_FROM_MAIN);
 
-		mandCImplEClass = createEClass(MAND_CIMPL);
-		createEAttribute(mandCImplEClass, MAND_CIMPL__ROW);
-		createEAttribute(mandCImplEClass, MAND_CIMPL__SHEET);
-		createEAttribute(mandCImplEClass, MAND_CIMPL__MCP);
-		createEAttribute(mandCImplEClass, MAND_CIMPL__MASK);
-		createEReference(mandCImplEClass, MAND_CIMPL__GET_INFO_SHEET);
-		createEReference(mandCImplEClass, MAND_CIMPL__GET_DATA_FROM_MAIN);
-		createEReference(mandCImplEClass, MAND_CIMPL__IS_MP_DATA_TYPE);
-		createEReference(mandCImplEClass, MAND_CIMPL__IS_CP_DATA_TYPE);
-		createEReference(mandCImplEClass, MAND_CIMPL__UTILS_TO_DATA);
+		mandCAMBEClass = createEClass(MAND_CAMB);
+		createEAttribute(mandCAMBEClass, MAND_CAMB__ROW);
+		createEAttribute(mandCAMBEClass, MAND_CAMB__SHEET);
+		createEAttribute(mandCAMBEClass, MAND_CAMB__MCP);
+		createEAttribute(mandCAMBEClass, MAND_CAMB__MASK);
+		createEReference(mandCAMBEClass, MAND_CAMB__GET_INFO_SHEET);
+		createEReference(mandCAMBEClass, MAND_CAMB__GET_DATA_FROM_MAIN);
+		createEReference(mandCAMBEClass, MAND_CAMB__IS_MP_DATA_TYPE);
+		createEReference(mandCAMBEClass, MAND_CAMB__IS_CP_DATA_TYPE);
+		createEReference(mandCAMBEClass, MAND_CAMB__UTILS_TO_DATA);
 
-		monitorImplEClass = createEClass(MONITOR_IMPL);
-		createEReference(monitorImplEClass, MONITOR_IMPL__TO_NORMALIZE_DATA);
-		createEReference(monitorImplEClass, MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV);
-		createEReference(monitorImplEClass, MONITOR_IMPL__GET_INFO_MP_SHEET);
+		monitorAMBEClass = createEClass(MONITOR_AMB);
+		createEReference(monitorAMBEClass, MONITOR_AMB__TO_NORMALIZE_DATA);
+		createEReference(monitorAMBEClass, MONITOR_AMB__GET_COLUMNS_CAN_BE_INV);
+		createEReference(monitorAMBEClass, MONITOR_AMB__GET_INFO_MP_SHEET);
 
 		swModuleEClass = createEClass(SW_MODULE);
 		createEAttribute(swModuleEClass, SW_MODULE__ASSEMBLY_NAME);
@@ -826,167 +833,167 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		archiveImplEClass.getESuperTypes().add(theBasePackage.getArchiveProperty());
-		controlImplEClass.getESuperTypes().add(theBasePackage.getControlPoint());
+		archiveAMBEClass.getESuperTypes().add(theBasePackage.getArchiveProperty());
+		controlAMBEClass.getESuperTypes().add(theBasePackage.getControlPoint());
 		deviceModelEClass.getESuperTypes().add(theBasePackage.getDeviceModel());
-		mainImplEClass.getESuperTypes().add(theBasePackage.getMainBase());
-		monitorImplEClass.getESuperTypes().add(theBasePackage.getMonitorPoint());
+		mainAMBEClass.getESuperTypes().add(theBasePackage.getMainBase());
+		monitorAMBEClass.getESuperTypes().add(theBasePackage.getMonitorPoint());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(archiveImplEClass, ArchiveImpl.class, "ArchiveImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArchiveImpl_GetAssemblyColumn(), theBasePackage.getTable(), null, "getAssemblyColumn", null, 0, 1, ArchiveImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(archiveAMBEClass, ArchiveAMB.class, "ArchiveAMB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArchiveAMB_GetAssemblyColumn(), theBasePackage.getTable(), null, "getAssemblyColumn", null, 0, 1, ArchiveAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(archiveImplEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archiveAMBEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(archiveImplEClass, ecorePackage.getEBoolean(), "isIntervalTE", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archiveAMBEClass, ecorePackage.getEBoolean(), "isIntervalTE", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(archiveImplEClass, ecorePackage.getEString(), "Interval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archiveAMBEClass, ecorePackage.getEString(), "Interval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(controlImplEClass, ControlImpl.class, "ControlImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControlImpl_WorldToDataColumns(), theBasePackage.getTable(), null, "worldToDataColumns", null, 0, 1, ControlImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlImpl_GetInfoControlSheet(), this.getMandCImpl(), null, "getInfoControlSheet", null, 0, 1, ControlImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlImpl_ToNormalizeNumber(), theBasePackage.getUtil(), null, "toNormalizeNumber", null, 0, 1, ControlImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(controlAMBEClass, ControlAMB.class, "ControlAMB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getControlAMB_WorldToDataColumns(), theBasePackage.getTable(), null, "worldToDataColumns", null, 0, 1, ControlAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlAMB_GetInfoControlSheet(), this.getMandCAMB(), null, "getInfoControlSheet", null, 0, 1, ControlAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlAMB_ToNormalizeNumber(), theBasePackage.getUtil(), null, "toNormalizeNumber", null, 0, 1, ControlAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "Data", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "Data", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "Value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "Value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "Returns", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "Returns", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "Parameter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "Parameter", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "RCA", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "RCA", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "RawDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "RawDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "TeRelated", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "TeRelated", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "Scale", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "Scale", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "Offset", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "Offset", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "RawDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "RawDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataToCORBAType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataToCORBAType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataToIDLSeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataToIDLSeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataToIDLType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataToIDLType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataToCORBASeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataToCORBASeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataToCORBADevIOType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataToCORBADevIOType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataToJavaType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataToJavaType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataToDatabaseType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataToDatabaseType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataToBACIType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataToBACIType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isRawDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isRawDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isWorldDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isWorldDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "MinRange", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "MinRange", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "MaxRange", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "MaxRange", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "idlReturns", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "idlReturns", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "corbaReturns", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "corbaReturns", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "idlDeclaration", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "idlDeclaration", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "idlSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "idlSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "idlParameters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "idlParameters", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "corbaDeclaration", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "corbaDeclaration", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "corbaParameters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "corbaParameters", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "cppReturns", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "cppReturns", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "cppDeclaration", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "cppDeclaration", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "cppParameters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "cppParameters", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "argList", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "argList", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "argWords", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "argWords", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isSpecialConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isSpecialConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "NumberItemsRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "NumberItemsRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "TotalBytesRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "TotalBytesRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "NumberRawDataTypeBytes", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "NumberRawDataTypeBytes", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "NumberItemsWorldData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "NumberItemsWorldData", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "RCACell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "RCACell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "TeRelatedCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "TeRelatedCell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isDependentGroupBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isDependentGroupBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isDependentBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isDependentBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isDependentElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isDependentElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isByteSwapped", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isByteSwapped", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isDependentBitElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isDependentBitElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isDependentArrayElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isDependentArrayElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "GetDimension", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "GetDimension", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isSingleBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isSingleBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "getBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "getBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "getMask", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "getMask", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "getFirstBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "getFirstBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "getLastBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "getLastBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "getGroupMask", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "getGroupMask", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "getGroupEnd", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "getGroupEnd", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "getGroupStart", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "getGroupStart", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "RawSubArrayEndIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "RawSubArrayEndIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "RawSubArrayStartIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "RawSubArrayStartIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEBoolean(), "isRawSubArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEBoolean(), "isRawSubArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorlDataToDatabaseTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorlDataToDatabaseTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlImplEClass, ecorePackage.getEString(), "WorldDataTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeviceModel_ToAddCP(), theBasePackage.getControlPoint(), null, "toAddCP", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_GetNoteFromMain(), theBasePackage.getNote(), null, "getNoteFromMain", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_ToAddMP(), theBasePackage.getMonitorPoint(), null, "toAddMP", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_GetInfoMain(), theBasePackage.getMainBase(), null, "getInfoMain", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_GetCPfromControl(), this.getControlImpl(), null, "getCPfromControl", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_GetInfoFromMainSheet(), this.getMainImpl(), null, "getInfoFromMainSheet", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_GetMPfromMonitor(), this.getMonitorImpl(), null, "getMPfromMonitor", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_GetCPfromControl(), this.getControlAMB(), null, "getCPfromControl", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_GetInfoFromMainSheet(), this.getMainAMB(), null, "getInfoFromMainSheet", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_GetMPfromMonitor(), this.getMonitorAMB(), null, "getMPfromMonitor", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_GetDataFromSpread(), theBasePackage.getTable(), null, "getDataFromSpread", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_GetAPfromArchive(), this.getArchiveImpl(), null, "getAPfromArchive", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_GetAPfromArchive(), this.getArchiveAMB(), null, "getAPfromArchive", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_ToinstallEndGeneration(), theBasePackage.getUtil(), null, "ToinstallEndGeneration", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_GetFromSpreadsheet(), theBasePackage.getSpreadsheetParser(), null, "getFromSpreadsheet", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_ToValidateSpreadsheet(), theBasePackage.getSpreadsheetValidator(), null, "toValidateSpreadsheet", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1017,250 +1024,250 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		EOperation op = addEOperation(deviceModelEClass, ecorePackage.getEString(), "HexToDec", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(mainImplEClass, MainImpl.class, "MainImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMainImpl_GetInfoFromMain(), theBasePackage.getTable(), null, "getInfoFromMain", null, 0, 1, MainImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(mainAMBEClass, MainAMB.class, "MainAMB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMainAMB_GetInfoFromMain(), theBasePackage.getTable(), null, "getInfoFromMain", null, 0, 1, MainAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(mainImplEClass, ecorePackage.getEString(), "Parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainAMBEClass, ecorePackage.getEString(), "Parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mainImplEClass, ecorePackage.getEString(), "NodeAddress", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainAMBEClass, ecorePackage.getEString(), "NodeAddress", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mainImplEClass, ecorePackage.getEString(), "Cardinality", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainAMBEClass, ecorePackage.getEString(), "Cardinality", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mainImplEClass, ecorePackage.getEString(), "Channel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainAMBEClass, ecorePackage.getEString(), "Channel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mainImplEClass, ecorePackage.getEBoolean(), "GenericMonitorPoints", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainAMBEClass, ecorePackage.getEBoolean(), "GenericMonitorPoints", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mainImplEClass, ecorePackage.getEString(), "BaseAddress", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainAMBEClass, ecorePackage.getEString(), "BaseAddress", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(mandCImplEClass, MandCImpl.class, "MandCImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMandCImpl_Row(), theBasePackage.getString1DT(), "row", null, 0, 1, MandCImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMandCImpl_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MandCImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMandCImpl_Mcp(), theBasePackage.getMandCBaseDT(), "mcp", null, 0, 1, MandCImpl.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMandCImpl_Mask(), theBasePackage.getString1DT(), "mask", "\"0x01\", \"0x02\", \"0x04\", \"0x08\", \"0x10\",\"0x20\", \"0x40\", \"0x80\"", 0, 1, MandCImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMandCImpl_GetInfoSheet(), theBasePackage.getMandCBase(), null, "getInfoSheet", null, 0, 1, MandCImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMandCImpl_GetDataFromMain(), theBasePackage.getTable(), null, "getDataFromMain", null, 0, 1, MandCImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMandCImpl_IsMPDataType(), this.getMonitorImpl(), null, "isMPDataType", null, 0, 1, MandCImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMandCImpl_IsCPDataType(), this.getControlImpl(), null, "isCPDataType", null, 0, 1, MandCImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMandCImpl_UtilsToData(), theBasePackage.getUtil(), null, "utilsToData", null, 0, 1, MandCImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(mandCAMBEClass, MandCAMB.class, "MandCAMB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMandCAMB_Row(), theBasePackage.getString1DT(), "row", null, 0, 1, MandCAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMandCAMB_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MandCAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMandCAMB_Mcp(), theBasePackage.getMandCBaseDT(), "mcp", null, 0, 1, MandCAMB.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMandCAMB_Mask(), theBasePackage.getString1DT(), "mask", "\"0x01\", \"0x02\", \"0x04\", \"0x08\", \"0x10\",\"0x20\", \"0x40\", \"0x80\"", 0, 1, MandCAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandCAMB_GetInfoSheet(), theBasePackage.getMandCBase(), null, "getInfoSheet", null, 0, 1, MandCAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandCAMB_GetDataFromMain(), theBasePackage.getTable(), null, "getDataFromMain", null, 0, 1, MandCAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandCAMB_IsMPDataType(), this.getMonitorAMB(), null, "isMPDataType", null, 0, 1, MandCAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandCAMB_IsCPDataType(), this.getControlAMB(), null, "isCPDataType", null, 0, 1, MandCAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandCAMB_UtilsToData(), theBasePackage.getUtil(), null, "utilsToData", null, 0, 1, MandCAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "RCA", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "RCA", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "RCACell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "RCACell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "RawDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "RawDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "RawDataTypeCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "RawDataTypeCell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "TeRelated", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "TeRelated", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataTypeCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataTypeCell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "Scale", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "Scale", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "ScaleCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "ScaleCell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "Offset", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "Offset", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "OffsetCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "OffsetCell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "RawDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "RawDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToCORBAType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToCORBAType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToIDLSeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToIDLSeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToIDLType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToIDLType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToCORBASeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToCORBASeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToCORBADevIOType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToCORBADevIOType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToJavaType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToJavaType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToDatabaseType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToDatabaseType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToBACIType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToBACIType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isSpecialConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isSpecialConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isWorldDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isWorldDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isRawDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isRawDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "NumberItemsRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "NumberItemsRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "TotalBytesRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "TotalBytesRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "NumberRawDataTypeBytes", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "NumberRawDataTypeBytes", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "NumberItemsWorldData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "NumberItemsWorldData", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isDependentGroupBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isDependentGroupBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isDependentBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isDependentBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isDependentElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isDependentElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isByteSwapped", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isByteSwapped", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isDependentBitElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isDependentBitElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isDependentArrayElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isDependentArrayElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "GetDimension", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "GetDimension", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isSingleBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isSingleBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "getBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "getBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "getFirstBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "getFirstBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "getLastBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "getLastBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "getGroupStart", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "getGroupStart", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "getGroupEnd", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "getGroupEnd", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "getGroupMask", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "getGroupMask", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEBoolean(), "isRawSubArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "isRawSubArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "RawSubArrayStartIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "RawSubArrayStartIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "RawSubArrayEndIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "RawSubArrayEndIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(mandCImplEClass, ecorePackage.getEInt(), "findRawSubArrayIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(mandCAMBEClass, ecorePackage.getEInt(), "findRawSubArrayIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "startOrEnd", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataToDatabaseTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataToDatabaseTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCImplEClass, ecorePackage.getEString(), "WorldDataTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(monitorImplEClass, MonitorImpl.class, "MonitorImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMonitorImpl_ToNormalizeData(), theBasePackage.getUtil(), null, "toNormalizeData", null, 0, 1, MonitorImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMonitorImpl_GetColumnsCanBeInv(), theBasePackage.getTable(), null, "getColumnsCanBeInv", null, 0, 1, MonitorImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMonitorImpl_GetInfoMPSheet(), this.getMandCImpl(), null, "getInfoMPSheet", null, 0, 1, MonitorImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(monitorAMBEClass, MonitorAMB.class, "MonitorAMB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMonitorAMB_ToNormalizeData(), theBasePackage.getUtil(), null, "toNormalizeData", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMonitorAMB_GetColumnsCanBeInv(), theBasePackage.getTable(), null, "getColumnsCanBeInv", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMonitorAMB_GetInfoMPSheet(), this.getMandCAMB(), null, "getInfoMPSheet", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "CanBeInvalid", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "CanBeInvalid", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isFEStatus", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isFEStatus", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "RCA", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "RCA", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "RawDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "RawDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "TeRelated", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "TeRelated", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "Scale", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "Scale", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "Offset", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "Offset", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "RawDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "RawDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToCPPType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToCORBAType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToCORBAType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToIDLSeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToIDLSeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToIDLType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToIDLType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToCORBASeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToCORBASeqType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToCORBADevIOType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToCORBADevIOType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToJavaType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToJavaType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToDatabaseType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToDatabaseType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToBACIType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToBACIType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isRawDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isRawDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isWorldDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isWorldDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isSpecialConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isSpecialConversion", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "NumberItemsRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "NumberItemsRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "TotalBytesRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "TotalBytesRawData", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "NumberRawDataTypeBytes", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "NumberRawDataTypeBytes", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "RCACell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "RCACell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "NumberItemsWorldData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "NumberItemsWorldData", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "TeRelatedCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "TeRelatedCell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isDependentGroupBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isDependentGroupBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isDependentBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isDependentBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isDependentElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isDependentElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isByteSwapped", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isByteSwapped", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isDependentBitElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isDependentBitElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isDependentArrayElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isDependentArrayElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "getDimension", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "getDimension", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isSingleBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isSingleBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "getBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "getBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "getMask", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "getMask", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "getFirstBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "getFirstBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "getLastBit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "getLastBit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "getGroupMask", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "getGroupMask", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "getGroupEnd", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "getGroupEnd", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "getGroupStart", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "getGroupStart", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "RawSubArrayEndIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "RawSubArrayEndIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "RawSubArrayStartIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "RawSubArrayStartIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isRawSubArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isRawSubArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataToDatabaseTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataToDatabaseTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "WorldDataTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "WorldDataTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "minRange", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "minRange", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "maxRange", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "maxRange", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEString(), "Default", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEString(), "Default", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isPartOfPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isPartOfPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorImplEClass, ecorePackage.getEBoolean(), "isPartOfHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorAMBEClass, ecorePackage.getEBoolean(), "isPartOfHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(swModuleEClass, SWModule.class, "SWModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSWModule_AssemblyName(), ecorePackage.getEString(), "AssemblyName", "null", 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1275,8 +1282,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		initEAttribute(getSWModule_ArchiveProperties(), ecorePackage.getEResourceSet(), "archiveProperties", null, 0, 1, SWModule.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSWModule_SimMonitorPoints(), ecorePackage.getEResourceSet(), "simMonitorPoints", null, 0, 1, SWModule.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSWModule_SimControlPoints(), ecorePackage.getEResourceSet(), "simControlPoints", null, 0, 1, SWModule.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSWModule_AddAllMP(), this.getMonitorImpl(), null, "addAllMP", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSWModule_AddAllCP(), this.getControlImpl(), null, "addAllCP", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSWModule_AddAllMP(), this.getMonitorAMB(), null, "addAllMP", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSWModule_AddAllCP(), this.getControlAMB(), null, "addAllCP", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSWModule_SetFormatDescriptions(), theBasePackage.getUtil(), null, "setFormatDescriptions", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSWModule_GetSheetColumns(), theBasePackage.getTable(), null, "getSheetColumns", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

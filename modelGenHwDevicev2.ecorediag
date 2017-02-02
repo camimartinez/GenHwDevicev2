@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Ua4dAOlmEeaq0KtVAe16Pg" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_UbgIEOlmEeaq0KtVAe16Pg" type="1002">
+    <children xmi:type="notation:Node" xmi:id="_UbgvIOlmEeaq0KtVAe16Pg" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_UbgvIelmEeaq0KtVAe16Pg" type="5003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UbgvIulmEeaq0KtVAe16Pg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UbgvI-lmEeaq0KtVAe16Pg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UbgvJOlmEeaq0KtVAe16Pg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_UbgIEelmEeaq0KtVAe16Pg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_UbgIEulmEeaq0KtVAe16Pg"/>
+    <element xmi:type="ecore:EPackage" href="modelGenHwDevicev2.ecore#//amb"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UbgIE-lmEeaq0KtVAe16Pg"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_UbgvJelmEeaq0KtVAe16Pg" type="1002">
+    <children xmi:type="notation:Node" xmi:id="_UbgvKelmEeaq0KtVAe16Pg" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_UbgvKulmEeaq0KtVAe16Pg" type="5003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UbgvK-lmEeaq0KtVAe16Pg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UbgvLOlmEeaq0KtVAe16Pg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UbgvLelmEeaq0KtVAe16Pg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_UbgvJulmEeaq0KtVAe16Pg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_UbgvJ-lmEeaq0KtVAe16Pg"/>
+    <element xmi:type="ecore:EPackage" href="modelGenHwDevicev2.ecore#//base"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UbgvKOlmEeaq0KtVAe16Pg" x="172"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_UbhWMOlmEeaq0KtVAe16Pg" type="1002">
+    <children xmi:type="notation:Node" xmi:id="_Ubh9QOlmEeaq0KtVAe16Pg" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_Ubh9QelmEeaq0KtVAe16Pg" type="5003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Ubh9QulmEeaq0KtVAe16Pg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Ubh9Q-lmEeaq0KtVAe16Pg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Ubh9ROlmEeaq0KtVAe16Pg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_UbhWMelmEeaq0KtVAe16Pg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_UbhWMulmEeaq0KtVAe16Pg"/>
+    <element xmi:type="ecore:EPackage" href="modelGenHwDevicev2.ecore#//eth"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UbhWM-lmEeaq0KtVAe16Pg" x="344"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Ua4dAelmEeaq0KtVAe16Pg"/>
+  <element xmi:type="ecore:EPackage" href="modelGenHwDevicev2.ecore#/"/>
+</notation:Diagram>

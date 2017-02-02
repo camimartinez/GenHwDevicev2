@@ -60,12 +60,12 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case AmbPackage.ARCHIVE_IMPL: return createArchiveImpl();
-			case AmbPackage.CONTROL_IMPL: return createControlImpl();
+			case AmbPackage.ARCHIVE_AMB: return createArchiveAMB();
+			case AmbPackage.CONTROL_AMB: return createControlAMB();
 			case AmbPackage.DEVICE_MODEL: return createDeviceModel();
-			case AmbPackage.MAIN_IMPL: return createMainImpl();
-			case AmbPackage.MAND_CIMPL: return createMandCImpl();
-			case AmbPackage.MONITOR_IMPL: return createMonitorImpl();
+			case AmbPackage.MAIN_AMB: return createMainAMB();
+			case AmbPackage.MAND_CAMB: return createMandCAMB();
+			case AmbPackage.MONITOR_AMB: return createMonitorAMB();
 			case AmbPackage.SW_MODULE: return createSWModule();
 			case AmbPackage.GENERIC_MONITOR_POINTS: return createGenericMonitorPoints();
 			default:
@@ -78,9 +78,9 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveImpl createArchiveImpl() {
-		ArchiveImplImpl archiveImpl = new ArchiveImplImpl();
-		return archiveImpl;
+	public ArchiveAMB createArchiveAMB() {
+		ArchiveAMBImpl archiveAMB = new ArchiveAMBImpl();
+		return archiveAMB;
 	}
 
 	/**
@@ -88,9 +88,9 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlImpl createControlImpl() {
-		ControlImplImpl controlImpl = new ControlImplImpl();
-		return controlImpl;
+	public ControlAMB createControlAMB() {
+		ControlAMBImpl controlAMB = new ControlAMBImpl();
+		return controlAMB;
 	}
 
 	/**
@@ -108,9 +108,9 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainImpl createMainImpl() {
-		MainImplImpl mainImpl = new MainImplImpl();
-		return mainImpl;
+	public MainAMB createMainAMB() {
+		MainAMBImpl mainAMB = new MainAMBImpl();
+		return mainAMB;
 	}
 
 	/**
@@ -118,9 +118,9 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCImpl createMandCImpl() {
-		MandCImplImpl mandCImpl = new MandCImplImpl();
-		return mandCImpl;
+	public MandCAMB createMandCAMB() {
+		MandCAMBImpl mandCAMB = new MandCAMBImpl();
+		return mandCAMB;
 	}
 
 	/**
@@ -128,9 +128,9 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl createMonitorImpl() {
-		MonitorImplImpl monitorImpl = new MonitorImplImpl();
-		return monitorImpl;
+	public MonitorAMB createMonitorAMB() {
+		MonitorAMBImpl monitorAMB = new MonitorAMBImpl();
+		return monitorAMB;
 	}
 
 	/**

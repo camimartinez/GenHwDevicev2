@@ -7,12 +7,12 @@
 package datamodel.amb.impl;
 
 import datamodel.amb.AmbPackage;
-import datamodel.amb.ArchiveImpl;
-import datamodel.amb.ControlImpl;
+import datamodel.amb.ArchiveAMB;
+import datamodel.amb.ControlAMB;
 import datamodel.amb.DeviceModel;
 import datamodel.amb.GenericMonitorPoints;
-import datamodel.amb.MainImpl;
-import datamodel.amb.MonitorImpl;
+import datamodel.amb.MainAMB;
+import datamodel.amb.MonitorAMB;
 
 import datamodel.base.ControlPoint;
 import datamodel.base.MainBase;
@@ -104,7 +104,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected ControlImpl getCPfromControl;
+	protected ControlAMB getCPfromControl;
 
 	/**
 	 * The cached value of the '{@link #getGetInfoFromMainSheet() <em>Get Info From Main Sheet</em>}' reference.
@@ -114,7 +114,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected MainImpl getInfoFromMainSheet;
+	protected MainAMB getInfoFromMainSheet;
 
 	/**
 	 * The cached value of the '{@link #getGetMPfromMonitor() <em>Get MPfrom Monitor</em>}' reference.
@@ -124,7 +124,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected MonitorImpl getMPfromMonitor;
+	protected MonitorAMB getMPfromMonitor;
 
 	/**
 	 * The cached value of the '{@link #getGetDataFromSpread() <em>Get Data From Spread</em>}' reference.
@@ -144,7 +144,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected ArchiveImpl getAPfromArchive;
+	protected ArchiveAMB getAPfromArchive;
 
 	/**
 	 * The cached value of the '{@link #getToinstallEndGeneration() <em>Toinstall End Generation</em>}' reference.
@@ -362,10 +362,10 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlImpl getGetCPfromControl() {
+	public ControlAMB getGetCPfromControl() {
 		if (getCPfromControl != null && getCPfromControl.eIsProxy()) {
 			InternalEObject oldGetCPfromControl = (InternalEObject)getCPfromControl;
-			getCPfromControl = (ControlImpl)eResolveProxy(oldGetCPfromControl);
+			getCPfromControl = (ControlAMB)eResolveProxy(oldGetCPfromControl);
 			if (getCPfromControl != oldGetCPfromControl) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL, oldGetCPfromControl, getCPfromControl));
@@ -379,7 +379,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlImpl basicGetGetCPfromControl() {
+	public ControlAMB basicGetGetCPfromControl() {
 		return getCPfromControl;
 	}
 
@@ -388,8 +388,8 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetCPfromControl(ControlImpl newGetCPfromControl) {
-		ControlImpl oldGetCPfromControl = getCPfromControl;
+	public void setGetCPfromControl(ControlAMB newGetCPfromControl) {
+		ControlAMB oldGetCPfromControl = getCPfromControl;
 		getCPfromControl = newGetCPfromControl;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL, oldGetCPfromControl, getCPfromControl));
@@ -400,10 +400,10 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainImpl getGetInfoFromMainSheet() {
+	public MainAMB getGetInfoFromMainSheet() {
 		if (getInfoFromMainSheet != null && getInfoFromMainSheet.eIsProxy()) {
 			InternalEObject oldGetInfoFromMainSheet = (InternalEObject)getInfoFromMainSheet;
-			getInfoFromMainSheet = (MainImpl)eResolveProxy(oldGetInfoFromMainSheet);
+			getInfoFromMainSheet = (MainAMB)eResolveProxy(oldGetInfoFromMainSheet);
 			if (getInfoFromMainSheet != oldGetInfoFromMainSheet) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET, oldGetInfoFromMainSheet, getInfoFromMainSheet));
@@ -417,7 +417,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainImpl basicGetGetInfoFromMainSheet() {
+	public MainAMB basicGetGetInfoFromMainSheet() {
 		return getInfoFromMainSheet;
 	}
 
@@ -426,8 +426,8 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetInfoFromMainSheet(MainImpl newGetInfoFromMainSheet) {
-		MainImpl oldGetInfoFromMainSheet = getInfoFromMainSheet;
+	public void setGetInfoFromMainSheet(MainAMB newGetInfoFromMainSheet) {
+		MainAMB oldGetInfoFromMainSheet = getInfoFromMainSheet;
 		getInfoFromMainSheet = newGetInfoFromMainSheet;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET, oldGetInfoFromMainSheet, getInfoFromMainSheet));
@@ -438,10 +438,10 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl getGetMPfromMonitor() {
+	public MonitorAMB getGetMPfromMonitor() {
 		if (getMPfromMonitor != null && getMPfromMonitor.eIsProxy()) {
 			InternalEObject oldGetMPfromMonitor = (InternalEObject)getMPfromMonitor;
-			getMPfromMonitor = (MonitorImpl)eResolveProxy(oldGetMPfromMonitor);
+			getMPfromMonitor = (MonitorAMB)eResolveProxy(oldGetMPfromMonitor);
 			if (getMPfromMonitor != oldGetMPfromMonitor) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR, oldGetMPfromMonitor, getMPfromMonitor));
@@ -455,7 +455,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl basicGetGetMPfromMonitor() {
+	public MonitorAMB basicGetGetMPfromMonitor() {
 		return getMPfromMonitor;
 	}
 
@@ -464,8 +464,8 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetMPfromMonitor(MonitorImpl newGetMPfromMonitor) {
-		MonitorImpl oldGetMPfromMonitor = getMPfromMonitor;
+	public void setGetMPfromMonitor(MonitorAMB newGetMPfromMonitor) {
+		MonitorAMB oldGetMPfromMonitor = getMPfromMonitor;
 		getMPfromMonitor = newGetMPfromMonitor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR, oldGetMPfromMonitor, getMPfromMonitor));
@@ -514,10 +514,10 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveImpl getGetAPfromArchive() {
+	public ArchiveAMB getGetAPfromArchive() {
 		if (getAPfromArchive != null && getAPfromArchive.eIsProxy()) {
 			InternalEObject oldGetAPfromArchive = (InternalEObject)getAPfromArchive;
-			getAPfromArchive = (ArchiveImpl)eResolveProxy(oldGetAPfromArchive);
+			getAPfromArchive = (ArchiveAMB)eResolveProxy(oldGetAPfromArchive);
 			if (getAPfromArchive != oldGetAPfromArchive) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE, oldGetAPfromArchive, getAPfromArchive));
@@ -531,7 +531,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveImpl basicGetGetAPfromArchive() {
+	public ArchiveAMB basicGetGetAPfromArchive() {
 		return getAPfromArchive;
 	}
 
@@ -540,8 +540,8 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetAPfromArchive(ArchiveImpl newGetAPfromArchive) {
-		ArchiveImpl oldGetAPfromArchive = getAPfromArchive;
+	public void setGetAPfromArchive(ArchiveAMB newGetAPfromArchive) {
+		ArchiveAMB oldGetAPfromArchive = getAPfromArchive;
 		getAPfromArchive = newGetAPfromArchive;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE, oldGetAPfromArchive, getAPfromArchive));
@@ -870,19 +870,19 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 				setGetInfoMain((MainBase)newValue);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL:
-				setGetCPfromControl((ControlImpl)newValue);
+				setGetCPfromControl((ControlAMB)newValue);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET:
-				setGetInfoFromMainSheet((MainImpl)newValue);
+				setGetInfoFromMainSheet((MainAMB)newValue);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR:
-				setGetMPfromMonitor((MonitorImpl)newValue);
+				setGetMPfromMonitor((MonitorAMB)newValue);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_DATA_FROM_SPREAD:
 				setGetDataFromSpread((Table)newValue);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE:
-				setGetAPfromArchive((ArchiveImpl)newValue);
+				setGetAPfromArchive((ArchiveAMB)newValue);
 				return;
 			case AmbPackage.DEVICE_MODEL__TOINSTALL_END_GENERATION:
 				setToinstallEndGeneration((Util)newValue);
@@ -921,19 +921,19 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 				setGetInfoMain((MainBase)null);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL:
-				setGetCPfromControl((ControlImpl)null);
+				setGetCPfromControl((ControlAMB)null);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET:
-				setGetInfoFromMainSheet((MainImpl)null);
+				setGetInfoFromMainSheet((MainAMB)null);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR:
-				setGetMPfromMonitor((MonitorImpl)null);
+				setGetMPfromMonitor((MonitorAMB)null);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_DATA_FROM_SPREAD:
 				setGetDataFromSpread((Table)null);
 				return;
 			case AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE:
-				setGetAPfromArchive((ArchiveImpl)null);
+				setGetAPfromArchive((ArchiveAMB)null);
 				return;
 			case AmbPackage.DEVICE_MODEL__TOINSTALL_END_GENERATION:
 				setToinstallEndGeneration((Util)null);

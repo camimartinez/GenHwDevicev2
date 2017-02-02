@@ -368,12 +368,12 @@ public interface SWModule extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Add All MP</em>' reference.
-	 * @see #setAddAllMP(MonitorImpl)
+	 * @see #setAddAllMP(MonitorAMB)
 	 * @see datamodel.amb.AmbPackage#getSWModule_AddAllMP()
 	 * @model
 	 * @generated
 	 */
-	MonitorImpl getAddAllMP();
+	MonitorAMB getAddAllMP();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.SWModule#getAddAllMP <em>Add All MP</em>}' reference.
@@ -383,7 +383,7 @@ public interface SWModule extends EObject {
 	 * @see #getAddAllMP()
 	 * @generated
 	 */
-	void setAddAllMP(MonitorImpl value);
+	void setAddAllMP(MonitorAMB value);
 
 	/**
 	 * Returns the value of the '<em><b>Add All CP</b></em>' reference.
@@ -394,12 +394,12 @@ public interface SWModule extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Add All CP</em>' reference.
-	 * @see #setAddAllCP(ControlImpl)
+	 * @see #setAddAllCP(ControlAMB)
 	 * @see datamodel.amb.AmbPackage#getSWModule_AddAllCP()
 	 * @model
 	 * @generated
 	 */
-	ControlImpl getAddAllCP();
+	ControlAMB getAddAllCP();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.SWModule#getAddAllCP <em>Add All CP</em>}' reference.
@@ -409,7 +409,7 @@ public interface SWModule extends EObject {
 	 * @see #getAddAllCP()
 	 * @generated
 	 */
-	void setAddAllCP(ControlImpl value);
+	void setAddAllCP(ControlAMB value);
 
 	/**
 	 * Returns the value of the '<em><b>Set Format Descriptions</b></em>' reference.

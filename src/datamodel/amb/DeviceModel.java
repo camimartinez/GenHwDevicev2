@@ -157,12 +157,12 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Get CPfrom Control</em>' reference.
-	 * @see #setGetCPfromControl(ControlImpl)
+	 * @see #setGetCPfromControl(ControlAMB)
 	 * @see datamodel.amb.AmbPackage#getDeviceModel_GetCPfromControl()
 	 * @model
 	 * @generated
 	 */
-	ControlImpl getGetCPfromControl();
+	ControlAMB getGetCPfromControl();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.DeviceModel#getGetCPfromControl <em>Get CPfrom Control</em>}' reference.
@@ -172,7 +172,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	 * @see #getGetCPfromControl()
 	 * @generated
 	 */
-	void setGetCPfromControl(ControlImpl value);
+	void setGetCPfromControl(ControlAMB value);
 
 	/**
 	 * Returns the value of the '<em><b>Get Info From Main Sheet</b></em>' reference.
@@ -183,12 +183,12 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Get Info From Main Sheet</em>' reference.
-	 * @see #setGetInfoFromMainSheet(MainImpl)
+	 * @see #setGetInfoFromMainSheet(MainAMB)
 	 * @see datamodel.amb.AmbPackage#getDeviceModel_GetInfoFromMainSheet()
 	 * @model
 	 * @generated
 	 */
-	MainImpl getGetInfoFromMainSheet();
+	MainAMB getGetInfoFromMainSheet();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.DeviceModel#getGetInfoFromMainSheet <em>Get Info From Main Sheet</em>}' reference.
@@ -198,7 +198,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	 * @see #getGetInfoFromMainSheet()
 	 * @generated
 	 */
-	void setGetInfoFromMainSheet(MainImpl value);
+	void setGetInfoFromMainSheet(MainAMB value);
 
 	/**
 	 * Returns the value of the '<em><b>Get MPfrom Monitor</b></em>' reference.
@@ -209,12 +209,12 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Get MPfrom Monitor</em>' reference.
-	 * @see #setGetMPfromMonitor(MonitorImpl)
+	 * @see #setGetMPfromMonitor(MonitorAMB)
 	 * @see datamodel.amb.AmbPackage#getDeviceModel_GetMPfromMonitor()
 	 * @model
 	 * @generated
 	 */
-	MonitorImpl getGetMPfromMonitor();
+	MonitorAMB getGetMPfromMonitor();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.DeviceModel#getGetMPfromMonitor <em>Get MPfrom Monitor</em>}' reference.
@@ -224,7 +224,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	 * @see #getGetMPfromMonitor()
 	 * @generated
 	 */
-	void setGetMPfromMonitor(MonitorImpl value);
+	void setGetMPfromMonitor(MonitorAMB value);
 
 	/**
 	 * Returns the value of the '<em><b>Get Data From Spread</b></em>' reference.
@@ -261,12 +261,12 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Get APfrom Archive</em>' reference.
-	 * @see #setGetAPfromArchive(ArchiveImpl)
+	 * @see #setGetAPfromArchive(ArchiveAMB)
 	 * @see datamodel.amb.AmbPackage#getDeviceModel_GetAPfromArchive()
 	 * @model
 	 * @generated
 	 */
-	ArchiveImpl getGetAPfromArchive();
+	ArchiveAMB getGetAPfromArchive();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.DeviceModel#getGetAPfromArchive <em>Get APfrom Archive</em>}' reference.
@@ -276,7 +276,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	 * @see #getGetAPfromArchive()
 	 * @generated
 	 */
-	void setGetAPfromArchive(ArchiveImpl value);
+	void setGetAPfromArchive(ArchiveAMB value);
 
 	/**
 	 * Returns the value of the '<em><b>Toinstall End Generation</b></em>' reference.

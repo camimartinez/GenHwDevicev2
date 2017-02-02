@@ -102,6 +102,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createString2DTFromString(eDataType, initialValue);
 			case BasePackage.STRING1_DT:
 				return createString1DTFromString(eDataType, initialValue);
+			case BasePackage.SYSTEM_DT:
+				return createSystemDTFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -129,6 +131,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertString2DTToString(eDataType, instanceValue);
 			case BasePackage.STRING1_DT:
 				return convertString1DTToString(eDataType, instanceValue);
+			case BasePackage.SYSTEM_DT:
+				return convertSystemDTToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -348,6 +352,24 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 */
 	public String convertString1DTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public System createSystemDTFromString(EDataType eDataType, String initialValue) {
+		return (System)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSystemDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

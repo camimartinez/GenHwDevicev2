@@ -62,14 +62,14 @@ public interface AmbPackage extends EPackage {
 	AmbPackage eINSTANCE = datamodel.amb.impl.AmbPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link datamodel.amb.impl.ArchiveImplImpl <em>Archive Impl</em>}' class.
+	 * The meta object id for the '{@link datamodel.amb.impl.ArchiveAMBImpl <em>Archive AMB</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see datamodel.amb.impl.ArchiveImplImpl
-	 * @see datamodel.amb.impl.AmbPackageImpl#getArchiveImpl()
+	 * @see datamodel.amb.impl.ArchiveAMBImpl
+	 * @see datamodel.amb.impl.AmbPackageImpl#getArchiveAMB()
 	 * @generated
 	 */
-	int ARCHIVE_IMPL = 0;
+	int ARCHIVE_AMB = 0;
 
 	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
@@ -78,7 +78,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_IMPL__ROW = BasePackage.ARCHIVE_PROPERTY__ROW;
+	int ARCHIVE_AMB__ROW = BasePackage.ARCHIVE_PROPERTY__ROW;
 
 	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
@@ -87,7 +87,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_IMPL__SHEET = BasePackage.ARCHIVE_PROPERTY__SHEET;
+	int ARCHIVE_AMB__SHEET = BasePackage.ARCHIVE_PROPERTY__SHEET;
 
 	/**
 	 * The feature id for the '<em><b>Get Columns Info Of Archi</b></em>' reference.
@@ -96,7 +96,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_IMPL__GET_COLUMNS_INFO_OF_ARCHI = BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI;
+	int ARCHIVE_AMB__GET_COLUMNS_INFO_OF_ARCHI = BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI;
 
 	/**
 	 * The feature id for the '<em><b>Mp</b></em>' attribute.
@@ -105,7 +105,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_IMPL__MP = BasePackage.ARCHIVE_PROPERTY__MP;
+	int ARCHIVE_AMB__MP = BasePackage.ARCHIVE_PROPERTY__MP;
 
 	/**
 	 * The feature id for the '<em><b>Cp</b></em>' attribute.
@@ -114,7 +114,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_IMPL__CP = BasePackage.ARCHIVE_PROPERTY__CP;
+	int ARCHIVE_AMB__CP = BasePackage.ARCHIVE_PROPERTY__CP;
 
 	/**
 	 * The feature id for the '<em><b>Get Assembly Column</b></em>' reference.
@@ -123,26 +123,26 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 0;
+	int ARCHIVE_AMB__GET_ASSEMBLY_COLUMN = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Archive Impl</em>' class.
+	 * The number of structural features of the '<em>Archive AMB</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_IMPL_FEATURE_COUNT = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 1;
+	int ARCHIVE_AMB_FEATURE_COUNT = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link datamodel.amb.impl.ControlImplImpl <em>Control Impl</em>}' class.
+	 * The meta object id for the '{@link datamodel.amb.impl.ControlAMBImpl <em>Control AMB</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see datamodel.amb.impl.ControlImplImpl
-	 * @see datamodel.amb.impl.AmbPackageImpl#getControlImpl()
+	 * @see datamodel.amb.impl.ControlAMBImpl
+	 * @see datamodel.amb.impl.AmbPackageImpl#getControlAMB()
 	 * @generated
 	 */
-	int CONTROL_IMPL = 1;
+	int CONTROL_AMB = 1;
 
 	/**
 	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
@@ -151,7 +151,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__SPREADSHEET_NAME = BasePackage.CONTROL_POINT__SPREADSHEET_NAME;
+	int CONTROL_AMB__SPREADSHEET_NAME = BasePackage.CONTROL_POINT__SPREADSHEET_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
@@ -160,7 +160,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__SHEET_NAME = BasePackage.CONTROL_POINT__SHEET_NAME;
+	int CONTROL_AMB__SHEET_NAME = BasePackage.CONTROL_POINT__SHEET_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
@@ -169,7 +169,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__ROW = BasePackage.CONTROL_POINT__ROW;
+	int CONTROL_AMB__ROW = BasePackage.CONTROL_POINT__ROW;
 
 	/**
 	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
@@ -178,7 +178,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__PARENT_ROW = BasePackage.CONTROL_POINT__PARENT_ROW;
+	int CONTROL_AMB__PARENT_ROW = BasePackage.CONTROL_POINT__PARENT_ROW;
 
 	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
@@ -187,7 +187,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__SHEET = BasePackage.CONTROL_POINT__SHEET;
+	int CONTROL_AMB__SHEET = BasePackage.CONTROL_POINT__SHEET;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
@@ -196,7 +196,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__PARENT = BasePackage.CONTROL_POINT__PARENT;
+	int CONTROL_AMB__PARENT = BasePackage.CONTROL_POINT__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Archive</b></em>' attribute.
@@ -205,7 +205,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
+	int CONTROL_AMB__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
 
 	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
@@ -214,7 +214,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
+	int CONTROL_AMB__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Set Inf From Spread</b></em>' reference.
@@ -223,7 +223,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__SET_INF_FROM_SPREAD = BasePackage.CONTROL_POINT__SET_INF_FROM_SPREAD;
+	int CONTROL_AMB__SET_INF_FROM_SPREAD = BasePackage.CONTROL_POINT__SET_INF_FROM_SPREAD;
 
 	/**
 	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
@@ -232,7 +232,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__GET_COMMON_INF = BasePackage.CONTROL_POINT__GET_COMMON_INF;
+	int CONTROL_AMB__GET_COMMON_INF = BasePackage.CONTROL_POINT__GET_COMMON_INF;
 
 	/**
 	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
@@ -241,7 +241,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__SET_MPOR_CP = BasePackage.CONTROL_POINT__SET_MPOR_CP;
+	int CONTROL_AMB__SET_MPOR_CP = BasePackage.CONTROL_POINT__SET_MPOR_CP;
 
 	/**
 	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
@@ -250,7 +250,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__GET_SHEET_MP = BasePackage.CONTROL_POINT__GET_SHEET_MP;
+	int CONTROL_AMB__GET_SHEET_MP = BasePackage.CONTROL_POINT__GET_SHEET_MP;
 
 	/**
 	 * The feature id for the '<em><b>Get Arch On Use Control</b></em>' reference.
@@ -259,7 +259,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__GET_ARCH_ON_USE_CONTROL = BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL;
+	int CONTROL_AMB__GET_ARCH_ON_USE_CONTROL = BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>World To Data Columns</b></em>' reference.
@@ -268,7 +268,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__WORLD_TO_DATA_COLUMNS = BasePackage.CONTROL_POINT_FEATURE_COUNT + 0;
+	int CONTROL_AMB__WORLD_TO_DATA_COLUMNS = BasePackage.CONTROL_POINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Get Info Control Sheet</b></em>' reference.
@@ -277,7 +277,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__GET_INFO_CONTROL_SHEET = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
+	int CONTROL_AMB__GET_INFO_CONTROL_SHEET = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>To Normalize Number</b></em>' reference.
@@ -286,16 +286,16 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__TO_NORMALIZE_NUMBER = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
+	int CONTROL_AMB__TO_NORMALIZE_NUMBER = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Control Impl</em>' class.
+	 * The number of structural features of the '<em>Control AMB</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL_FEATURE_COUNT = BasePackage.CONTROL_POINT_FEATURE_COUNT + 3;
+	int CONTROL_AMB_FEATURE_COUNT = BasePackage.CONTROL_POINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link datamodel.amb.impl.DeviceModelImpl <em>Device Model</em>}' class.
@@ -623,14 +623,14 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 13;
 
 	/**
-	 * The meta object id for the '{@link datamodel.amb.impl.MainImplImpl <em>Main Impl</em>}' class.
+	 * The meta object id for the '{@link datamodel.amb.impl.MainAMBImpl <em>Main AMB</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see datamodel.amb.impl.MainImplImpl
-	 * @see datamodel.amb.impl.AmbPackageImpl#getMainImpl()
+	 * @see datamodel.amb.impl.MainAMBImpl
+	 * @see datamodel.amb.impl.AmbPackageImpl#getMainAMB()
 	 * @generated
 	 */
-	int MAIN_IMPL = 3;
+	int MAIN_AMB = 3;
 
 	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
@@ -639,7 +639,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL__ROW = BasePackage.MAIN_BASE__ROW;
+	int MAIN_AMB__ROW = BasePackage.MAIN_BASE__ROW;
 
 	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
@@ -648,7 +648,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL__SHEET = BasePackage.MAIN_BASE__SHEET;
+	int MAIN_AMB__SHEET = BasePackage.MAIN_BASE__SHEET;
 
 	/**
 	 * The feature id for the '<em><b>EReference0</b></em>' reference.
@@ -657,7 +657,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL__EREFERENCE0 = BasePackage.MAIN_BASE__EREFERENCE0;
+	int MAIN_AMB__EREFERENCE0 = BasePackage.MAIN_BASE__EREFERENCE0;
 
 	/**
 	 * The feature id for the '<em><b>Convert Info To</b></em>' reference.
@@ -666,7 +666,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL__CONVERT_INFO_TO = BasePackage.MAIN_BASE__CONVERT_INFO_TO;
+	int MAIN_AMB__CONVERT_INFO_TO = BasePackage.MAIN_BASE__CONVERT_INFO_TO;
 
 	/**
 	 * The feature id for the '<em><b>Get Info From Spread</b></em>' reference.
@@ -675,7 +675,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL__GET_INFO_FROM_SPREAD = BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD;
+	int MAIN_AMB__GET_INFO_FROM_SPREAD = BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD;
 
 	/**
 	 * The feature id for the '<em><b>Get Info From Main</b></em>' reference.
@@ -684,26 +684,26 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL__GET_INFO_FROM_MAIN = BasePackage.MAIN_BASE_FEATURE_COUNT + 0;
+	int MAIN_AMB__GET_INFO_FROM_MAIN = BasePackage.MAIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Main Impl</em>' class.
+	 * The number of structural features of the '<em>Main AMB</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL_FEATURE_COUNT = BasePackage.MAIN_BASE_FEATURE_COUNT + 1;
+	int MAIN_AMB_FEATURE_COUNT = BasePackage.MAIN_BASE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link datamodel.amb.impl.MandCImplImpl <em>Mand CImpl</em>}' class.
+	 * The meta object id for the '{@link datamodel.amb.impl.MandCAMBImpl <em>Mand CAMB</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see datamodel.amb.impl.MandCImplImpl
-	 * @see datamodel.amb.impl.AmbPackageImpl#getMandCImpl()
+	 * @see datamodel.amb.impl.MandCAMBImpl
+	 * @see datamodel.amb.impl.AmbPackageImpl#getMandCAMB()
 	 * @generated
 	 */
-	int MAND_CIMPL = 4;
+	int MAND_CAMB = 4;
 
 	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
@@ -712,7 +712,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__ROW = 0;
+	int MAND_CAMB__ROW = 0;
 
 	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
@@ -721,7 +721,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__SHEET = 1;
+	int MAND_CAMB__SHEET = 1;
 
 	/**
 	 * The feature id for the '<em><b>Mcp</b></em>' attribute.
@@ -730,7 +730,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__MCP = 2;
+	int MAND_CAMB__MCP = 2;
 
 	/**
 	 * The feature id for the '<em><b>Mask</b></em>' attribute.
@@ -739,7 +739,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__MASK = 3;
+	int MAND_CAMB__MASK = 3;
 
 	/**
 	 * The feature id for the '<em><b>Get Info Sheet</b></em>' reference.
@@ -748,7 +748,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__GET_INFO_SHEET = 4;
+	int MAND_CAMB__GET_INFO_SHEET = 4;
 
 	/**
 	 * The feature id for the '<em><b>Get Data From Main</b></em>' reference.
@@ -757,7 +757,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__GET_DATA_FROM_MAIN = 5;
+	int MAND_CAMB__GET_DATA_FROM_MAIN = 5;
 
 	/**
 	 * The feature id for the '<em><b>Is MP Data Type</b></em>' reference.
@@ -766,7 +766,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__IS_MP_DATA_TYPE = 6;
+	int MAND_CAMB__IS_MP_DATA_TYPE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Is CP Data Type</b></em>' reference.
@@ -775,7 +775,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__IS_CP_DATA_TYPE = 7;
+	int MAND_CAMB__IS_CP_DATA_TYPE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Utils To Data</b></em>' reference.
@@ -784,26 +784,26 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__UTILS_TO_DATA = 8;
+	int MAND_CAMB__UTILS_TO_DATA = 8;
 
 	/**
-	 * The number of structural features of the '<em>Mand CImpl</em>' class.
+	 * The number of structural features of the '<em>Mand CAMB</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL_FEATURE_COUNT = 9;
+	int MAND_CAMB_FEATURE_COUNT = 9;
 
 	/**
-	 * The meta object id for the '{@link datamodel.amb.impl.MonitorImplImpl <em>Monitor Impl</em>}' class.
+	 * The meta object id for the '{@link datamodel.amb.impl.MonitorAMBImpl <em>Monitor AMB</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see datamodel.amb.impl.MonitorImplImpl
-	 * @see datamodel.amb.impl.AmbPackageImpl#getMonitorImpl()
+	 * @see datamodel.amb.impl.MonitorAMBImpl
+	 * @see datamodel.amb.impl.AmbPackageImpl#getMonitorAMB()
 	 * @generated
 	 */
-	int MONITOR_IMPL = 5;
+	int MONITOR_AMB = 5;
 
 	/**
 	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
@@ -812,7 +812,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__SPREADSHEET_NAME = BasePackage.MONITOR_POINT__SPREADSHEET_NAME;
+	int MONITOR_AMB__SPREADSHEET_NAME = BasePackage.MONITOR_POINT__SPREADSHEET_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
@@ -821,7 +821,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__SHEET_NAME = BasePackage.MONITOR_POINT__SHEET_NAME;
+	int MONITOR_AMB__SHEET_NAME = BasePackage.MONITOR_POINT__SHEET_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
@@ -830,7 +830,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__ROW = BasePackage.MONITOR_POINT__ROW;
+	int MONITOR_AMB__ROW = BasePackage.MONITOR_POINT__ROW;
 
 	/**
 	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
@@ -839,7 +839,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__PARENT_ROW = BasePackage.MONITOR_POINT__PARENT_ROW;
+	int MONITOR_AMB__PARENT_ROW = BasePackage.MONITOR_POINT__PARENT_ROW;
 
 	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
@@ -848,7 +848,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__SHEET = BasePackage.MONITOR_POINT__SHEET;
+	int MONITOR_AMB__SHEET = BasePackage.MONITOR_POINT__SHEET;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
@@ -857,7 +857,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__PARENT = BasePackage.MONITOR_POINT__PARENT;
+	int MONITOR_AMB__PARENT = BasePackage.MONITOR_POINT__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Archive</b></em>' attribute.
@@ -866,7 +866,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
+	int MONITOR_AMB__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
 
 	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
@@ -875,7 +875,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
+	int MONITOR_AMB__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Set Inf From Spread</b></em>' reference.
@@ -884,7 +884,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__SET_INF_FROM_SPREAD = BasePackage.MONITOR_POINT__SET_INF_FROM_SPREAD;
+	int MONITOR_AMB__SET_INF_FROM_SPREAD = BasePackage.MONITOR_POINT__SET_INF_FROM_SPREAD;
 
 	/**
 	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
@@ -893,7 +893,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__GET_COMMON_INF = BasePackage.MONITOR_POINT__GET_COMMON_INF;
+	int MONITOR_AMB__GET_COMMON_INF = BasePackage.MONITOR_POINT__GET_COMMON_INF;
 
 	/**
 	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
@@ -902,7 +902,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__SET_MPOR_CP = BasePackage.MONITOR_POINT__SET_MPOR_CP;
+	int MONITOR_AMB__SET_MPOR_CP = BasePackage.MONITOR_POINT__SET_MPOR_CP;
 
 	/**
 	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
@@ -911,7 +911,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__GET_SHEET_MP = BasePackage.MONITOR_POINT__GET_SHEET_MP;
+	int MONITOR_AMB__GET_SHEET_MP = BasePackage.MONITOR_POINT__GET_SHEET_MP;
 
 	/**
 	 * The feature id for the '<em><b>Get Info From AP Spread</b></em>' reference.
@@ -920,7 +920,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__GET_INFO_FROM_AP_SPREAD = BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD;
+	int MONITOR_AMB__GET_INFO_FROM_AP_SPREAD = BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD;
 
 	/**
 	 * The feature id for the '<em><b>Get Info From MP Spread</b></em>' reference.
@@ -929,7 +929,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__GET_INFO_FROM_MP_SPREAD = BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD;
+	int MONITOR_AMB__GET_INFO_FROM_MP_SPREAD = BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD;
 
 	/**
 	 * The feature id for the '<em><b>To Normalize Data</b></em>' reference.
@@ -938,7 +938,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__TO_NORMALIZE_DATA = BasePackage.MONITOR_POINT_FEATURE_COUNT + 0;
+	int MONITOR_AMB__TO_NORMALIZE_DATA = BasePackage.MONITOR_POINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Get Columns Can Be Inv</b></em>' reference.
@@ -947,7 +947,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV = BasePackage.MONITOR_POINT_FEATURE_COUNT + 1;
+	int MONITOR_AMB__GET_COLUMNS_CAN_BE_INV = BasePackage.MONITOR_POINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Get Info MP Sheet</b></em>' reference.
@@ -956,16 +956,16 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__GET_INFO_MP_SHEET = BasePackage.MONITOR_POINT_FEATURE_COUNT + 2;
+	int MONITOR_AMB__GET_INFO_MP_SHEET = BasePackage.MONITOR_POINT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Monitor Impl</em>' class.
+	 * The number of structural features of the '<em>Monitor AMB</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL_FEATURE_COUNT = BasePackage.MONITOR_POINT_FEATURE_COUNT + 3;
+	int MONITOR_AMB_FEATURE_COUNT = BasePackage.MONITOR_POINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link datamodel.amb.impl.SWModuleImpl <em>SW Module</em>}' class.
@@ -1205,68 +1205,68 @@ public interface AmbPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link datamodel.amb.ArchiveImpl <em>Archive Impl</em>}'.
+	 * Returns the meta object for class '{@link datamodel.amb.ArchiveAMB <em>Archive AMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Archive Impl</em>'.
-	 * @see datamodel.amb.ArchiveImpl
+	 * @return the meta object for class '<em>Archive AMB</em>'.
+	 * @see datamodel.amb.ArchiveAMB
 	 * @generated
 	 */
-	EClass getArchiveImpl();
+	EClass getArchiveAMB();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.ArchiveImpl#getGetAssemblyColumn <em>Get Assembly Column</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.ArchiveAMB#getGetAssemblyColumn <em>Get Assembly Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Get Assembly Column</em>'.
-	 * @see datamodel.amb.ArchiveImpl#getGetAssemblyColumn()
-	 * @see #getArchiveImpl()
+	 * @see datamodel.amb.ArchiveAMB#getGetAssemblyColumn()
+	 * @see #getArchiveAMB()
 	 * @generated
 	 */
-	EReference getArchiveImpl_GetAssemblyColumn();
+	EReference getArchiveAMB_GetAssemblyColumn();
 
 	/**
-	 * Returns the meta object for class '{@link datamodel.amb.ControlImpl <em>Control Impl</em>}'.
+	 * Returns the meta object for class '{@link datamodel.amb.ControlAMB <em>Control AMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Control Impl</em>'.
-	 * @see datamodel.amb.ControlImpl
+	 * @return the meta object for class '<em>Control AMB</em>'.
+	 * @see datamodel.amb.ControlAMB
 	 * @generated
 	 */
-	EClass getControlImpl();
+	EClass getControlAMB();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.ControlImpl#getWorldToDataColumns <em>World To Data Columns</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.ControlAMB#getWorldToDataColumns <em>World To Data Columns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>World To Data Columns</em>'.
-	 * @see datamodel.amb.ControlImpl#getWorldToDataColumns()
-	 * @see #getControlImpl()
+	 * @see datamodel.amb.ControlAMB#getWorldToDataColumns()
+	 * @see #getControlAMB()
 	 * @generated
 	 */
-	EReference getControlImpl_WorldToDataColumns();
+	EReference getControlAMB_WorldToDataColumns();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.ControlImpl#getGetInfoControlSheet <em>Get Info Control Sheet</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.ControlAMB#getGetInfoControlSheet <em>Get Info Control Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Get Info Control Sheet</em>'.
-	 * @see datamodel.amb.ControlImpl#getGetInfoControlSheet()
-	 * @see #getControlImpl()
+	 * @see datamodel.amb.ControlAMB#getGetInfoControlSheet()
+	 * @see #getControlAMB()
 	 * @generated
 	 */
-	EReference getControlImpl_GetInfoControlSheet();
+	EReference getControlAMB_GetInfoControlSheet();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.ControlImpl#getToNormalizeNumber <em>To Normalize Number</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.ControlAMB#getToNormalizeNumber <em>To Normalize Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>To Normalize Number</em>'.
-	 * @see datamodel.amb.ControlImpl#getToNormalizeNumber()
-	 * @see #getControlImpl()
+	 * @see datamodel.amb.ControlAMB#getToNormalizeNumber()
+	 * @see #getControlAMB()
 	 * @generated
 	 */
-	EReference getControlImpl_ToNormalizeNumber();
+	EReference getControlAMB_ToNormalizeNumber();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.amb.DeviceModel <em>Device Model</em>}'.
@@ -1422,177 +1422,177 @@ public interface AmbPackage extends EPackage {
 	EReference getDeviceModel_GetGenericMP();
 
 	/**
-	 * Returns the meta object for class '{@link datamodel.amb.MainImpl <em>Main Impl</em>}'.
+	 * Returns the meta object for class '{@link datamodel.amb.MainAMB <em>Main AMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Main Impl</em>'.
-	 * @see datamodel.amb.MainImpl
+	 * @return the meta object for class '<em>Main AMB</em>'.
+	 * @see datamodel.amb.MainAMB
 	 * @generated
 	 */
-	EClass getMainImpl();
+	EClass getMainAMB();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MainImpl#getGetInfoFromMain <em>Get Info From Main</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MainAMB#getGetInfoFromMain <em>Get Info From Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Get Info From Main</em>'.
-	 * @see datamodel.amb.MainImpl#getGetInfoFromMain()
-	 * @see #getMainImpl()
+	 * @see datamodel.amb.MainAMB#getGetInfoFromMain()
+	 * @see #getMainAMB()
 	 * @generated
 	 */
-	EReference getMainImpl_GetInfoFromMain();
+	EReference getMainAMB_GetInfoFromMain();
 
 	/**
-	 * Returns the meta object for class '{@link datamodel.amb.MandCImpl <em>Mand CImpl</em>}'.
+	 * Returns the meta object for class '{@link datamodel.amb.MandCAMB <em>Mand CAMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Mand CImpl</em>'.
-	 * @see datamodel.amb.MandCImpl
+	 * @return the meta object for class '<em>Mand CAMB</em>'.
+	 * @see datamodel.amb.MandCAMB
 	 * @generated
 	 */
-	EClass getMandCImpl();
+	EClass getMandCAMB();
 
 	/**
-	 * Returns the meta object for the attribute '{@link datamodel.amb.MandCImpl#getRow <em>Row</em>}'.
+	 * Returns the meta object for the attribute '{@link datamodel.amb.MandCAMB#getRow <em>Row</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Row</em>'.
-	 * @see datamodel.amb.MandCImpl#getRow()
-	 * @see #getMandCImpl()
+	 * @see datamodel.amb.MandCAMB#getRow()
+	 * @see #getMandCAMB()
 	 * @generated
 	 */
-	EAttribute getMandCImpl_Row();
+	EAttribute getMandCAMB_Row();
 
 	/**
-	 * Returns the meta object for the attribute '{@link datamodel.amb.MandCImpl#getSheet <em>Sheet</em>}'.
+	 * Returns the meta object for the attribute '{@link datamodel.amb.MandCAMB#getSheet <em>Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Sheet</em>'.
-	 * @see datamodel.amb.MandCImpl#getSheet()
-	 * @see #getMandCImpl()
+	 * @see datamodel.amb.MandCAMB#getSheet()
+	 * @see #getMandCAMB()
 	 * @generated
 	 */
-	EAttribute getMandCImpl_Sheet();
+	EAttribute getMandCAMB_Sheet();
 
 	/**
-	 * Returns the meta object for the attribute '{@link datamodel.amb.MandCImpl#getMcp <em>Mcp</em>}'.
+	 * Returns the meta object for the attribute '{@link datamodel.amb.MandCAMB#getMcp <em>Mcp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Mcp</em>'.
-	 * @see datamodel.amb.MandCImpl#getMcp()
-	 * @see #getMandCImpl()
+	 * @see datamodel.amb.MandCAMB#getMcp()
+	 * @see #getMandCAMB()
 	 * @generated
 	 */
-	EAttribute getMandCImpl_Mcp();
+	EAttribute getMandCAMB_Mcp();
 
 	/**
-	 * Returns the meta object for the attribute '{@link datamodel.amb.MandCImpl#getMask <em>Mask</em>}'.
+	 * Returns the meta object for the attribute '{@link datamodel.amb.MandCAMB#getMask <em>Mask</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Mask</em>'.
-	 * @see datamodel.amb.MandCImpl#getMask()
-	 * @see #getMandCImpl()
+	 * @see datamodel.amb.MandCAMB#getMask()
+	 * @see #getMandCAMB()
 	 * @generated
 	 */
-	EAttribute getMandCImpl_Mask();
+	EAttribute getMandCAMB_Mask();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getGetInfoSheet <em>Get Info Sheet</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCAMB#getGetInfoSheet <em>Get Info Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Get Info Sheet</em>'.
-	 * @see datamodel.amb.MandCImpl#getGetInfoSheet()
-	 * @see #getMandCImpl()
+	 * @see datamodel.amb.MandCAMB#getGetInfoSheet()
+	 * @see #getMandCAMB()
 	 * @generated
 	 */
-	EReference getMandCImpl_GetInfoSheet();
+	EReference getMandCAMB_GetInfoSheet();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getGetDataFromMain <em>Get Data From Main</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCAMB#getGetDataFromMain <em>Get Data From Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Get Data From Main</em>'.
-	 * @see datamodel.amb.MandCImpl#getGetDataFromMain()
-	 * @see #getMandCImpl()
+	 * @see datamodel.amb.MandCAMB#getGetDataFromMain()
+	 * @see #getMandCAMB()
 	 * @generated
 	 */
-	EReference getMandCImpl_GetDataFromMain();
+	EReference getMandCAMB_GetDataFromMain();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getIsMPDataType <em>Is MP Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCAMB#getIsMPDataType <em>Is MP Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Is MP Data Type</em>'.
-	 * @see datamodel.amb.MandCImpl#getIsMPDataType()
-	 * @see #getMandCImpl()
+	 * @see datamodel.amb.MandCAMB#getIsMPDataType()
+	 * @see #getMandCAMB()
 	 * @generated
 	 */
-	EReference getMandCImpl_IsMPDataType();
+	EReference getMandCAMB_IsMPDataType();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getIsCPDataType <em>Is CP Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCAMB#getIsCPDataType <em>Is CP Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Is CP Data Type</em>'.
-	 * @see datamodel.amb.MandCImpl#getIsCPDataType()
-	 * @see #getMandCImpl()
+	 * @see datamodel.amb.MandCAMB#getIsCPDataType()
+	 * @see #getMandCAMB()
 	 * @generated
 	 */
-	EReference getMandCImpl_IsCPDataType();
+	EReference getMandCAMB_IsCPDataType();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getUtilsToData <em>Utils To Data</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCAMB#getUtilsToData <em>Utils To Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Utils To Data</em>'.
-	 * @see datamodel.amb.MandCImpl#getUtilsToData()
-	 * @see #getMandCImpl()
+	 * @see datamodel.amb.MandCAMB#getUtilsToData()
+	 * @see #getMandCAMB()
 	 * @generated
 	 */
-	EReference getMandCImpl_UtilsToData();
+	EReference getMandCAMB_UtilsToData();
 
 	/**
-	 * Returns the meta object for class '{@link datamodel.amb.MonitorImpl <em>Monitor Impl</em>}'.
+	 * Returns the meta object for class '{@link datamodel.amb.MonitorAMB <em>Monitor AMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Monitor Impl</em>'.
-	 * @see datamodel.amb.MonitorImpl
+	 * @return the meta object for class '<em>Monitor AMB</em>'.
+	 * @see datamodel.amb.MonitorAMB
 	 * @generated
 	 */
-	EClass getMonitorImpl();
+	EClass getMonitorAMB();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorImpl#getToNormalizeData <em>To Normalize Data</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorAMB#getToNormalizeData <em>To Normalize Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>To Normalize Data</em>'.
-	 * @see datamodel.amb.MonitorImpl#getToNormalizeData()
-	 * @see #getMonitorImpl()
+	 * @see datamodel.amb.MonitorAMB#getToNormalizeData()
+	 * @see #getMonitorAMB()
 	 * @generated
 	 */
-	EReference getMonitorImpl_ToNormalizeData();
+	EReference getMonitorAMB_ToNormalizeData();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorImpl#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorAMB#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Get Columns Can Be Inv</em>'.
-	 * @see datamodel.amb.MonitorImpl#getGetColumnsCanBeInv()
-	 * @see #getMonitorImpl()
+	 * @see datamodel.amb.MonitorAMB#getGetColumnsCanBeInv()
+	 * @see #getMonitorAMB()
 	 * @generated
 	 */
-	EReference getMonitorImpl_GetColumnsCanBeInv();
+	EReference getMonitorAMB_GetColumnsCanBeInv();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorImpl#getGetInfoMPSheet <em>Get Info MP Sheet</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorAMB#getGetInfoMPSheet <em>Get Info MP Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Get Info MP Sheet</em>'.
-	 * @see datamodel.amb.MonitorImpl#getGetInfoMPSheet()
-	 * @see #getMonitorImpl()
+	 * @see datamodel.amb.MonitorAMB#getGetInfoMPSheet()
+	 * @see #getMonitorAMB()
 	 * @generated
 	 */
-	EReference getMonitorImpl_GetInfoMPSheet();
+	EReference getMonitorAMB_GetInfoMPSheet();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.amb.SWModule <em>SW Module</em>}'.
@@ -1879,14 +1879,14 @@ public interface AmbPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link datamodel.amb.impl.ArchiveImplImpl <em>Archive Impl</em>}' class.
+		 * The meta object literal for the '{@link datamodel.amb.impl.ArchiveAMBImpl <em>Archive AMB</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see datamodel.amb.impl.ArchiveImplImpl
-		 * @see datamodel.amb.impl.AmbPackageImpl#getArchiveImpl()
+		 * @see datamodel.amb.impl.ArchiveAMBImpl
+		 * @see datamodel.amb.impl.AmbPackageImpl#getArchiveAMB()
 		 * @generated
 		 */
-		EClass ARCHIVE_IMPL = eINSTANCE.getArchiveImpl();
+		EClass ARCHIVE_AMB = eINSTANCE.getArchiveAMB();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Assembly Column</b></em>' reference feature.
@@ -1894,17 +1894,17 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN = eINSTANCE.getArchiveImpl_GetAssemblyColumn();
+		EReference ARCHIVE_AMB__GET_ASSEMBLY_COLUMN = eINSTANCE.getArchiveAMB_GetAssemblyColumn();
 
 		/**
-		 * The meta object literal for the '{@link datamodel.amb.impl.ControlImplImpl <em>Control Impl</em>}' class.
+		 * The meta object literal for the '{@link datamodel.amb.impl.ControlAMBImpl <em>Control AMB</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see datamodel.amb.impl.ControlImplImpl
-		 * @see datamodel.amb.impl.AmbPackageImpl#getControlImpl()
+		 * @see datamodel.amb.impl.ControlAMBImpl
+		 * @see datamodel.amb.impl.AmbPackageImpl#getControlAMB()
 		 * @generated
 		 */
-		EClass CONTROL_IMPL = eINSTANCE.getControlImpl();
+		EClass CONTROL_AMB = eINSTANCE.getControlAMB();
 
 		/**
 		 * The meta object literal for the '<em><b>World To Data Columns</b></em>' reference feature.
@@ -1912,7 +1912,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_IMPL__WORLD_TO_DATA_COLUMNS = eINSTANCE.getControlImpl_WorldToDataColumns();
+		EReference CONTROL_AMB__WORLD_TO_DATA_COLUMNS = eINSTANCE.getControlAMB_WorldToDataColumns();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Info Control Sheet</b></em>' reference feature.
@@ -1920,7 +1920,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_IMPL__GET_INFO_CONTROL_SHEET = eINSTANCE.getControlImpl_GetInfoControlSheet();
+		EReference CONTROL_AMB__GET_INFO_CONTROL_SHEET = eINSTANCE.getControlAMB_GetInfoControlSheet();
 
 		/**
 		 * The meta object literal for the '<em><b>To Normalize Number</b></em>' reference feature.
@@ -1928,7 +1928,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_IMPL__TO_NORMALIZE_NUMBER = eINSTANCE.getControlImpl_ToNormalizeNumber();
+		EReference CONTROL_AMB__TO_NORMALIZE_NUMBER = eINSTANCE.getControlAMB_ToNormalizeNumber();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.amb.impl.DeviceModelImpl <em>Device Model</em>}' class.
@@ -2045,14 +2045,14 @@ public interface AmbPackage extends EPackage {
 		EReference DEVICE_MODEL__GET_GENERIC_MP = eINSTANCE.getDeviceModel_GetGenericMP();
 
 		/**
-		 * The meta object literal for the '{@link datamodel.amb.impl.MainImplImpl <em>Main Impl</em>}' class.
+		 * The meta object literal for the '{@link datamodel.amb.impl.MainAMBImpl <em>Main AMB</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see datamodel.amb.impl.MainImplImpl
-		 * @see datamodel.amb.impl.AmbPackageImpl#getMainImpl()
+		 * @see datamodel.amb.impl.MainAMBImpl
+		 * @see datamodel.amb.impl.AmbPackageImpl#getMainAMB()
 		 * @generated
 		 */
-		EClass MAIN_IMPL = eINSTANCE.getMainImpl();
+		EClass MAIN_AMB = eINSTANCE.getMainAMB();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Info From Main</b></em>' reference feature.
@@ -2060,17 +2060,17 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAIN_IMPL__GET_INFO_FROM_MAIN = eINSTANCE.getMainImpl_GetInfoFromMain();
+		EReference MAIN_AMB__GET_INFO_FROM_MAIN = eINSTANCE.getMainAMB_GetInfoFromMain();
 
 		/**
-		 * The meta object literal for the '{@link datamodel.amb.impl.MandCImplImpl <em>Mand CImpl</em>}' class.
+		 * The meta object literal for the '{@link datamodel.amb.impl.MandCAMBImpl <em>Mand CAMB</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see datamodel.amb.impl.MandCImplImpl
-		 * @see datamodel.amb.impl.AmbPackageImpl#getMandCImpl()
+		 * @see datamodel.amb.impl.MandCAMBImpl
+		 * @see datamodel.amb.impl.AmbPackageImpl#getMandCAMB()
 		 * @generated
 		 */
-		EClass MAND_CIMPL = eINSTANCE.getMandCImpl();
+		EClass MAND_CAMB = eINSTANCE.getMandCAMB();
 
 		/**
 		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
@@ -2078,7 +2078,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAND_CIMPL__ROW = eINSTANCE.getMandCImpl_Row();
+		EAttribute MAND_CAMB__ROW = eINSTANCE.getMandCAMB_Row();
 
 		/**
 		 * The meta object literal for the '<em><b>Sheet</b></em>' attribute feature.
@@ -2086,7 +2086,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAND_CIMPL__SHEET = eINSTANCE.getMandCImpl_Sheet();
+		EAttribute MAND_CAMB__SHEET = eINSTANCE.getMandCAMB_Sheet();
 
 		/**
 		 * The meta object literal for the '<em><b>Mcp</b></em>' attribute feature.
@@ -2094,7 +2094,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAND_CIMPL__MCP = eINSTANCE.getMandCImpl_Mcp();
+		EAttribute MAND_CAMB__MCP = eINSTANCE.getMandCAMB_Mcp();
 
 		/**
 		 * The meta object literal for the '<em><b>Mask</b></em>' attribute feature.
@@ -2102,7 +2102,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAND_CIMPL__MASK = eINSTANCE.getMandCImpl_Mask();
+		EAttribute MAND_CAMB__MASK = eINSTANCE.getMandCAMB_Mask();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Info Sheet</b></em>' reference feature.
@@ -2110,7 +2110,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__GET_INFO_SHEET = eINSTANCE.getMandCImpl_GetInfoSheet();
+		EReference MAND_CAMB__GET_INFO_SHEET = eINSTANCE.getMandCAMB_GetInfoSheet();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Data From Main</b></em>' reference feature.
@@ -2118,7 +2118,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__GET_DATA_FROM_MAIN = eINSTANCE.getMandCImpl_GetDataFromMain();
+		EReference MAND_CAMB__GET_DATA_FROM_MAIN = eINSTANCE.getMandCAMB_GetDataFromMain();
 
 		/**
 		 * The meta object literal for the '<em><b>Is MP Data Type</b></em>' reference feature.
@@ -2126,7 +2126,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__IS_MP_DATA_TYPE = eINSTANCE.getMandCImpl_IsMPDataType();
+		EReference MAND_CAMB__IS_MP_DATA_TYPE = eINSTANCE.getMandCAMB_IsMPDataType();
 
 		/**
 		 * The meta object literal for the '<em><b>Is CP Data Type</b></em>' reference feature.
@@ -2134,7 +2134,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__IS_CP_DATA_TYPE = eINSTANCE.getMandCImpl_IsCPDataType();
+		EReference MAND_CAMB__IS_CP_DATA_TYPE = eINSTANCE.getMandCAMB_IsCPDataType();
 
 		/**
 		 * The meta object literal for the '<em><b>Utils To Data</b></em>' reference feature.
@@ -2142,17 +2142,17 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__UTILS_TO_DATA = eINSTANCE.getMandCImpl_UtilsToData();
+		EReference MAND_CAMB__UTILS_TO_DATA = eINSTANCE.getMandCAMB_UtilsToData();
 
 		/**
-		 * The meta object literal for the '{@link datamodel.amb.impl.MonitorImplImpl <em>Monitor Impl</em>}' class.
+		 * The meta object literal for the '{@link datamodel.amb.impl.MonitorAMBImpl <em>Monitor AMB</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see datamodel.amb.impl.MonitorImplImpl
-		 * @see datamodel.amb.impl.AmbPackageImpl#getMonitorImpl()
+		 * @see datamodel.amb.impl.MonitorAMBImpl
+		 * @see datamodel.amb.impl.AmbPackageImpl#getMonitorAMB()
 		 * @generated
 		 */
-		EClass MONITOR_IMPL = eINSTANCE.getMonitorImpl();
+		EClass MONITOR_AMB = eINSTANCE.getMonitorAMB();
 
 		/**
 		 * The meta object literal for the '<em><b>To Normalize Data</b></em>' reference feature.
@@ -2160,7 +2160,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_IMPL__TO_NORMALIZE_DATA = eINSTANCE.getMonitorImpl_ToNormalizeData();
+		EReference MONITOR_AMB__TO_NORMALIZE_DATA = eINSTANCE.getMonitorAMB_ToNormalizeData();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Columns Can Be Inv</b></em>' reference feature.
@@ -2168,7 +2168,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV = eINSTANCE.getMonitorImpl_GetColumnsCanBeInv();
+		EReference MONITOR_AMB__GET_COLUMNS_CAN_BE_INV = eINSTANCE.getMonitorAMB_GetColumnsCanBeInv();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Info MP Sheet</b></em>' reference feature.
@@ -2176,7 +2176,7 @@ public interface AmbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_IMPL__GET_INFO_MP_SHEET = eINSTANCE.getMonitorImpl_GetInfoMPSheet();
+		EReference MONITOR_AMB__GET_INFO_MP_SHEET = eINSTANCE.getMonitorAMB_GetInfoMPSheet();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.amb.impl.SWModuleImpl <em>SW Module</em>}' class.

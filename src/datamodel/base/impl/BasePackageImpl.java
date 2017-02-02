@@ -26,6 +26,10 @@ import datamodel.base.SpreadsheetValidator;
 import datamodel.base.Table;
 import datamodel.base.Util;
 
+import datamodel.eth.EthPackage;
+
+import datamodel.eth.impl.EthPackageImpl;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -202,6 +206,13 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	private EDataType string1DTEDataType = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType systemDTEDataType = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -249,14 +260,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		// Obtain or create and register interdependencies
 		AmbPackageImpl theAmbPackage = (AmbPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AmbPackage.eNS_URI) instanceof AmbPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AmbPackage.eNS_URI) : AmbPackage.eINSTANCE);
+		EthPackageImpl theEthPackage = (EthPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EthPackage.eNS_URI) instanceof EthPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EthPackage.eNS_URI) : EthPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theBasePackage.createPackageContents();
 		theAmbPackage.createPackageContents();
+		theEthPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theBasePackage.initializePackageContents();
 		theAmbPackage.initializePackageContents();
+		theEthPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBasePackage.freeze();
@@ -1046,6 +1060,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSpreadsheetParser_Newlinetmp() {
+		return (EAttribute)spreadsheetParserEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUtil() {
 		return utilEClass;
 	}
@@ -1280,6 +1303,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getSystemDT() {
+		return systemDTEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BaseFactory getBaseFactory() {
 		return (BaseFactory)getEFactoryInstance();
 	}
@@ -1397,6 +1429,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEAttribute(spreadsheetParserEClass, SPREADSHEET_PARSER__XSD_FILE);
 		createEAttribute(spreadsheetParserEClass, SPREADSHEET_PARSER__NEWLINE);
 		createEReference(spreadsheetParserEClass, SPREADSHEET_PARSER__SET_NEW_CONTENT);
+		createEAttribute(spreadsheetParserEClass, SPREADSHEET_PARSER__NEWLINETMP);
 
 		utilEClass = createEClass(UTIL);
 		createEAttribute(utilEClass, UTIL__NEWLINE);
@@ -1429,6 +1462,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		string3DTEDataType = createEDataType(STRING3_DT);
 		string2DTEDataType = createEDataType(STRING2_DT);
 		string1DTEDataType = createEDataType(STRING1_DT);
+		systemDTEDataType = createEDataType(SYSTEM_DT);
 	}
 
 	/**
@@ -1775,8 +1809,9 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEAttribute(getSpreadsheetParser_RefStatus(), ecorePackage.getEBoolean(), "refStatus", null, 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpreadsheetParser_Xml(), ecorePackage.getEString(), "xml", null, 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpreadsheetParser_XsdFile(), ecorePackage.getEString(), "xsdFile", null, 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSpreadsheetParser_Newline(), ecorePackage.getEString(), "newline", "System.getProperty(\"line.separator\")", 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpreadsheetParser_Newline(), ecorePackage.getEString(), "newline", "", 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpreadsheetParser_SetNewContent(), this.getPair(), null, "setNewContent", null, 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpreadsheetParser_Newlinetmp(), this.getSystemDT(), "newlinetmp", "line.separator", 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(spreadsheetParserEClass, ecorePackage.getEString(), "getSpreadsheet", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "dirName", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1944,6 +1979,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEDataType(string3DTEDataType, String[][][].class, "String3DT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(string2DTEDataType, String[][].class, "String2DT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(string1DTEDataType, String[].class, "String1DT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(systemDTEDataType, System.class, "SystemDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

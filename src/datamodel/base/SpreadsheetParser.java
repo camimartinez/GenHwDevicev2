@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link datamodel.base.SpreadsheetParser#getXsdFile <em>Xsd File</em>}</li>
  *   <li>{@link datamodel.base.SpreadsheetParser#getNewline <em>Newline</em>}</li>
  *   <li>{@link datamodel.base.SpreadsheetParser#getSetNewContent <em>Set New Content</em>}</li>
+ *   <li>{@link datamodel.base.SpreadsheetParser#getNewlinetmp <em>Newlinetmp</em>}</li>
  * </ul>
  * </p>
  *
@@ -163,7 +164,7 @@ public interface SpreadsheetParser extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Newline</b></em>' attribute.
-	 * The default value is <code>"System.getProperty(\"line.separator\")"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Newline</em>' attribute isn't clear,
@@ -173,7 +174,7 @@ public interface SpreadsheetParser extends EObject {
 	 * @return the value of the '<em>Newline</em>' attribute.
 	 * @see #setNewline(String)
 	 * @see datamodel.base.BasePackage#getSpreadsheetParser_Newline()
-	 * @model default="System.getProperty(\"line.separator\")"
+	 * @model default=""
 	 * @generated
 	 */
 	String getNewline();
@@ -213,6 +214,33 @@ public interface SpreadsheetParser extends EObject {
 	 * @generated
 	 */
 	void setSetNewContent(Pair value);
+
+	/**
+	 * Returns the value of the '<em><b>Newlinetmp</b></em>' attribute.
+	 * The default value is <code>"line.separator"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Newlinetmp</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Newlinetmp</em>' attribute.
+	 * @see #setNewlinetmp(System)
+	 * @see datamodel.base.BasePackage#getSpreadsheetParser_Newlinetmp()
+	 * @model default="line.separator" dataType="datamodel.base.SystemDT"
+	 * @generated
+	 */
+	System getNewlinetmp();
+
+	/**
+	 * Sets the value of the '{@link datamodel.base.SpreadsheetParser#getNewlinetmp <em>Newlinetmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Newlinetmp</em>' attribute.
+	 * @see #getNewlinetmp()
+	 * @generated
+	 */
+	void setNewlinetmp(System value);
 
 	/**
 	 * <!-- begin-user-doc -->

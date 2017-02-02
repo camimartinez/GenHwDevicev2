@@ -93,18 +93,18 @@ public class AmbSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case AmbPackage.ARCHIVE_IMPL: {
-				ArchiveImpl archiveImpl = (ArchiveImpl)theEObject;
-				T result = caseArchiveImpl(archiveImpl);
-				if (result == null) result = caseArchiveProperty(archiveImpl);
+			case AmbPackage.ARCHIVE_AMB: {
+				ArchiveAMB archiveAMB = (ArchiveAMB)theEObject;
+				T result = caseArchiveAMB(archiveAMB);
+				if (result == null) result = caseArchiveProperty(archiveAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AmbPackage.CONTROL_IMPL: {
-				ControlImpl controlImpl = (ControlImpl)theEObject;
-				T result = caseControlImpl(controlImpl);
-				if (result == null) result = caseControlPoint(controlImpl);
-				if (result == null) result = caseMandCBase(controlImpl);
+			case AmbPackage.CONTROL_AMB: {
+				ControlAMB controlAMB = (ControlAMB)theEObject;
+				T result = caseControlAMB(controlAMB);
+				if (result == null) result = caseControlPoint(controlAMB);
+				if (result == null) result = caseMandCBase(controlAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,24 +115,24 @@ public class AmbSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AmbPackage.MAIN_IMPL: {
-				MainImpl mainImpl = (MainImpl)theEObject;
-				T result = caseMainImpl(mainImpl);
-				if (result == null) result = caseMainBase(mainImpl);
+			case AmbPackage.MAIN_AMB: {
+				MainAMB mainAMB = (MainAMB)theEObject;
+				T result = caseMainAMB(mainAMB);
+				if (result == null) result = caseMainBase(mainAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AmbPackage.MAND_CIMPL: {
-				MandCImpl mandCImpl = (MandCImpl)theEObject;
-				T result = caseMandCImpl(mandCImpl);
+			case AmbPackage.MAND_CAMB: {
+				MandCAMB mandCAMB = (MandCAMB)theEObject;
+				T result = caseMandCAMB(mandCAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AmbPackage.MONITOR_IMPL: {
-				MonitorImpl monitorImpl = (MonitorImpl)theEObject;
-				T result = caseMonitorImpl(monitorImpl);
-				if (result == null) result = caseMonitorPoint(monitorImpl);
-				if (result == null) result = caseMandCBase(monitorImpl);
+			case AmbPackage.MONITOR_AMB: {
+				MonitorAMB monitorAMB = (MonitorAMB)theEObject;
+				T result = caseMonitorAMB(monitorAMB);
+				if (result == null) result = caseMonitorPoint(monitorAMB);
+				if (result == null) result = caseMandCBase(monitorAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -153,32 +153,32 @@ public class AmbSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Archive Impl</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Archive AMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Archive Impl</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Archive AMB</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseArchiveImpl(ArchiveImpl object) {
+	public T caseArchiveAMB(ArchiveAMB object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Control Impl</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Control AMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Control Impl</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Control AMB</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseControlImpl(ControlImpl object) {
+	public T caseControlAMB(ControlAMB object) {
 		return null;
 	}
 
@@ -198,47 +198,47 @@ public class AmbSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Main Impl</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Main AMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Main Impl</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Main AMB</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMainImpl(MainImpl object) {
+	public T caseMainAMB(MainAMB object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mand CImpl</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Mand CAMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mand CImpl</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Mand CAMB</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMandCImpl(MandCImpl object) {
+	public T caseMandCAMB(MandCAMB object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Monitor Impl</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Monitor AMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Monitor Impl</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Monitor AMB</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMonitorImpl(MonitorImpl object) {
+	public T caseMonitorAMB(MonitorAMB object) {
 		return null;
 	}
 

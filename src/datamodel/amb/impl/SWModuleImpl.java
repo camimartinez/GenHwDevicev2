@@ -7,8 +7,8 @@
 package datamodel.amb.impl;
 
 import datamodel.amb.AmbPackage;
-import datamodel.amb.ControlImpl;
-import datamodel.amb.MonitorImpl;
+import datamodel.amb.ControlAMB;
+import datamodel.amb.MonitorAMB;
 import datamodel.amb.SWModule;
 
 import datamodel.base.Table;
@@ -302,7 +302,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 * @ordered
 	 */
-	protected MonitorImpl addAllMP;
+	protected MonitorAMB addAllMP;
 
 	/**
 	 * The cached value of the '{@link #getAddAllCP() <em>Add All CP</em>}' reference.
@@ -312,7 +312,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 * @ordered
 	 */
-	protected ControlImpl addAllCP;
+	protected ControlAMB addAllCP;
 
 	/**
 	 * The cached value of the '{@link #getSetFormatDescriptions() <em>Set Format Descriptions</em>}' reference.
@@ -610,10 +610,10 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl getAddAllMP() {
+	public MonitorAMB getAddAllMP() {
 		if (addAllMP != null && addAllMP.eIsProxy()) {
 			InternalEObject oldAddAllMP = (InternalEObject)addAllMP;
-			addAllMP = (MonitorImpl)eResolveProxy(oldAddAllMP);
+			addAllMP = (MonitorAMB)eResolveProxy(oldAddAllMP);
 			if (addAllMP != oldAddAllMP) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__ADD_ALL_MP, oldAddAllMP, addAllMP));
@@ -627,7 +627,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl basicGetAddAllMP() {
+	public MonitorAMB basicGetAddAllMP() {
 		return addAllMP;
 	}
 
@@ -636,8 +636,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAddAllMP(MonitorImpl newAddAllMP) {
-		MonitorImpl oldAddAllMP = addAllMP;
+	public void setAddAllMP(MonitorAMB newAddAllMP) {
+		MonitorAMB oldAddAllMP = addAllMP;
 		addAllMP = newAddAllMP;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__ADD_ALL_MP, oldAddAllMP, addAllMP));
@@ -648,10 +648,10 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlImpl getAddAllCP() {
+	public ControlAMB getAddAllCP() {
 		if (addAllCP != null && addAllCP.eIsProxy()) {
 			InternalEObject oldAddAllCP = (InternalEObject)addAllCP;
-			addAllCP = (ControlImpl)eResolveProxy(oldAddAllCP);
+			addAllCP = (ControlAMB)eResolveProxy(oldAddAllCP);
 			if (addAllCP != oldAddAllCP) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__ADD_ALL_CP, oldAddAllCP, addAllCP));
@@ -665,7 +665,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlImpl basicGetAddAllCP() {
+	public ControlAMB basicGetAddAllCP() {
 		return addAllCP;
 	}
 
@@ -674,8 +674,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAddAllCP(ControlImpl newAddAllCP) {
-		ControlImpl oldAddAllCP = addAllCP;
+	public void setAddAllCP(ControlAMB newAddAllCP) {
+		ControlAMB oldAddAllCP = addAllCP;
 		addAllCP = newAddAllCP;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__ADD_ALL_CP, oldAddAllCP, addAllCP));
@@ -1125,10 +1125,10 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				setSimControlPoints((ResourceSet)newValue);
 				return;
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
-				setAddAllMP((MonitorImpl)newValue);
+				setAddAllMP((MonitorAMB)newValue);
 				return;
 			case AmbPackage.SW_MODULE__ADD_ALL_CP:
-				setAddAllCP((ControlImpl)newValue);
+				setAddAllCP((ControlAMB)newValue);
 				return;
 			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
 				setSetFormatDescriptions((Util)newValue);
@@ -1185,10 +1185,10 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				setSimControlPoints(SIM_CONTROL_POINTS_EDEFAULT);
 				return;
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
-				setAddAllMP((MonitorImpl)null);
+				setAddAllMP((MonitorAMB)null);
 				return;
 			case AmbPackage.SW_MODULE__ADD_ALL_CP:
-				setAddAllCP((ControlImpl)null);
+				setAddAllCP((ControlAMB)null);
 				return;
 			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
 				setSetFormatDescriptions((Util)null);

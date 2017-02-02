@@ -78,28 +78,28 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	protected AmbSwitch<Adapter> modelSwitch =
 		new AmbSwitch<Adapter>() {
 			@Override
-			public Adapter caseArchiveImpl(ArchiveImpl object) {
-				return createArchiveImplAdapter();
+			public Adapter caseArchiveAMB(ArchiveAMB object) {
+				return createArchiveAMBAdapter();
 			}
 			@Override
-			public Adapter caseControlImpl(ControlImpl object) {
-				return createControlImplAdapter();
+			public Adapter caseControlAMB(ControlAMB object) {
+				return createControlAMBAdapter();
 			}
 			@Override
 			public Adapter caseDeviceModel(DeviceModel object) {
 				return createDeviceModelAdapter();
 			}
 			@Override
-			public Adapter caseMainImpl(MainImpl object) {
-				return createMainImplAdapter();
+			public Adapter caseMainAMB(MainAMB object) {
+				return createMainAMBAdapter();
 			}
 			@Override
-			public Adapter caseMandCImpl(MandCImpl object) {
-				return createMandCImplAdapter();
+			public Adapter caseMandCAMB(MandCAMB object) {
+				return createMandCAMBAdapter();
 			}
 			@Override
-			public Adapter caseMonitorImpl(MonitorImpl object) {
-				return createMonitorImplAdapter();
+			public Adapter caseMonitorAMB(MonitorAMB object) {
+				return createMonitorAMBAdapter();
 			}
 			@Override
 			public Adapter caseSWModule(SWModule object) {
@@ -154,30 +154,30 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link datamodel.amb.ArchiveImpl <em>Archive Impl</em>}'.
+	 * Creates a new adapter for an object of class '{@link datamodel.amb.ArchiveAMB <em>Archive AMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see datamodel.amb.ArchiveImpl
+	 * @see datamodel.amb.ArchiveAMB
 	 * @generated
 	 */
-	public Adapter createArchiveImplAdapter() {
+	public Adapter createArchiveAMBAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link datamodel.amb.ControlImpl <em>Control Impl</em>}'.
+	 * Creates a new adapter for an object of class '{@link datamodel.amb.ControlAMB <em>Control AMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see datamodel.amb.ControlImpl
+	 * @see datamodel.amb.ControlAMB
 	 * @generated
 	 */
-	public Adapter createControlImplAdapter() {
+	public Adapter createControlAMBAdapter() {
 		return null;
 	}
 
@@ -196,44 +196,44 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link datamodel.amb.MainImpl <em>Main Impl</em>}'.
+	 * Creates a new adapter for an object of class '{@link datamodel.amb.MainAMB <em>Main AMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see datamodel.amb.MainImpl
+	 * @see datamodel.amb.MainAMB
 	 * @generated
 	 */
-	public Adapter createMainImplAdapter() {
+	public Adapter createMainAMBAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link datamodel.amb.MandCImpl <em>Mand CImpl</em>}'.
+	 * Creates a new adapter for an object of class '{@link datamodel.amb.MandCAMB <em>Mand CAMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see datamodel.amb.MandCImpl
+	 * @see datamodel.amb.MandCAMB
 	 * @generated
 	 */
-	public Adapter createMandCImplAdapter() {
+	public Adapter createMandCAMBAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link datamodel.amb.MonitorImpl <em>Monitor Impl</em>}'.
+	 * Creates a new adapter for an object of class '{@link datamodel.amb.MonitorAMB <em>Monitor AMB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see datamodel.amb.MonitorImpl
+	 * @see datamodel.amb.MonitorAMB
 	 * @generated
 	 */
-	public Adapter createMonitorImplAdapter() {
+	public Adapter createMonitorAMBAdapter() {
 		return null;
 	}
 

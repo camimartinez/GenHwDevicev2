@@ -1132,13 +1132,22 @@ public interface BasePackage extends EPackage {
 	int SPREADSHEET_PARSER__SET_NEW_CONTENT = 6;
 
 	/**
+	 * The feature id for the '<em><b>Newlinetmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPREADSHEET_PARSER__NEWLINETMP = 7;
+
+	/**
 	 * The number of structural features of the '<em>Spreadsheet Parser</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPREADSHEET_PARSER_FEATURE_COUNT = 7;
+	int SPREADSHEET_PARSER_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link datamodel.base.impl.UtilImpl <em>Util</em>}' class.
@@ -1419,6 +1428,16 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	int STRING1_DT = 21;
+
+	/**
+	 * The meta object id for the '<em>System DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.System
+	 * @see datamodel.base.impl.BasePackageImpl#getSystemDT()
+	 * @generated
+	 */
+	int SYSTEM_DT = 22;
 
 
 	/**
@@ -2359,6 +2378,17 @@ public interface BasePackage extends EPackage {
 	EReference getSpreadsheetParser_SetNewContent();
 
 	/**
+	 * Returns the meta object for the attribute '{@link datamodel.base.SpreadsheetParser#getNewlinetmp <em>Newlinetmp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Newlinetmp</em>'.
+	 * @see datamodel.base.SpreadsheetParser#getNewlinetmp()
+	 * @see #getSpreadsheetParser()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetParser_Newlinetmp();
+
+	/**
 	 * Returns the meta object for class '{@link datamodel.base.Util <em>Util</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2636,6 +2666,17 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getString1DT();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.System <em>System DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>System DT</em>'.
+	 * @see java.lang.System
+	 * @model instanceClass="java.lang.System"
+	 * @generated
+	 */
+	EDataType getSystemDT();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3366,6 +3407,14 @@ public interface BasePackage extends EPackage {
 		EReference SPREADSHEET_PARSER__SET_NEW_CONTENT = eINSTANCE.getSpreadsheetParser_SetNewContent();
 
 		/**
+		 * The meta object literal for the '<em><b>Newlinetmp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_PARSER__NEWLINETMP = eINSTANCE.getSpreadsheetParser_Newlinetmp();
+
+		/**
 		 * The meta object literal for the '{@link datamodel.base.impl.UtilImpl <em>Util</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3595,6 +3644,16 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType STRING1_DT = eINSTANCE.getString1DT();
+
+		/**
+		 * The meta object literal for the '<em>System DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.System
+		 * @see datamodel.base.impl.BasePackageImpl#getSystemDT()
+		 * @generated
+		 */
+		EDataType SYSTEM_DT = eINSTANCE.getSystemDT();
 
 	}
 

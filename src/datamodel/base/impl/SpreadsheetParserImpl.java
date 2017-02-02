@@ -6,6 +6,7 @@
  */
 package datamodel.base.impl;
 
+import datamodel.base.BaseFactory;
 import datamodel.base.BasePackage;
 import datamodel.base.Pair;
 import datamodel.base.SpreadsheetParser;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link datamodel.base.impl.SpreadsheetParserImpl#getXsdFile <em>Xsd File</em>}</li>
  *   <li>{@link datamodel.base.impl.SpreadsheetParserImpl#getNewline <em>Newline</em>}</li>
  *   <li>{@link datamodel.base.impl.SpreadsheetParserImpl#getSetNewContent <em>Set New Content</em>}</li>
+ *   <li>{@link datamodel.base.impl.SpreadsheetParserImpl#getNewlinetmp <em>Newlinetmp</em>}</li>
  * </ul>
  * </p>
  *
@@ -138,7 +140,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NEWLINE_EDEFAULT = "System.getProperty(\"line.separator\")";
+	protected static final String NEWLINE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getNewline() <em>Newline</em>}' attribute.
@@ -159,6 +161,26 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * @ordered
 	 */
 	protected Pair setNewContent;
+
+	/**
+	 * The default value of the '{@link #getNewlinetmp() <em>Newlinetmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNewlinetmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final System NEWLINETMP_EDEFAULT = (System)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getSystemDT(), "line.separator");
+
+	/**
+	 * The cached value of the '{@link #getNewlinetmp() <em>Newlinetmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNewlinetmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected System newlinetmp = NEWLINETMP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -370,6 +392,27 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public System getNewlinetmp() {
+		return newlinetmp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNewlinetmp(System newNewlinetmp) {
+		System oldNewlinetmp = newlinetmp;
+		newlinetmp = newNewlinetmp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__NEWLINETMP, oldNewlinetmp, newlinetmp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getSpreadsheet(String dirName, String fileName) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -512,6 +555,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return getNewline();
 			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
 				return getSetNewContent();
+			case BasePackage.SPREADSHEET_PARSER__NEWLINETMP:
+				return getNewlinetmp();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -544,6 +589,9 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return;
 			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
 				setSetNewContent((Pair)newValue);
+				return;
+			case BasePackage.SPREADSHEET_PARSER__NEWLINETMP:
+				setNewlinetmp((System)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -578,6 +626,9 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
 				setSetNewContent((Pair)null);
 				return;
+			case BasePackage.SPREADSHEET_PARSER__NEWLINETMP:
+				setNewlinetmp(NEWLINETMP_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -604,6 +655,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return NEWLINE_EDEFAULT == null ? newline != null : !NEWLINE_EDEFAULT.equals(newline);
 			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
 				return setNewContent != null;
+			case BasePackage.SPREADSHEET_PARSER__NEWLINETMP:
+				return NEWLINETMP_EDEFAULT == null ? newlinetmp != null : !NEWLINETMP_EDEFAULT.equals(newlinetmp);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -628,6 +681,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 		result.append(xsdFile);
 		result.append(", newline: ");
 		result.append(newline);
+		result.append(", newlinetmp: ");
+		result.append(newlinetmp);
 		result.append(')');
 		return result.toString();
 	}

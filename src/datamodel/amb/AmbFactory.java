@@ -26,22 +26,22 @@ public interface AmbFactory extends EFactory {
 	AmbFactory eINSTANCE = datamodel.amb.impl.AmbFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Archive Impl</em>'.
+	 * Returns a new object of class '<em>Archive AMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Archive Impl</em>'.
+	 * @return a new object of class '<em>Archive AMB</em>'.
 	 * @generated
 	 */
-	ArchiveImpl createArchiveImpl();
+	ArchiveAMB createArchiveAMB();
 
 	/**
-	 * Returns a new object of class '<em>Control Impl</em>'.
+	 * Returns a new object of class '<em>Control AMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Control Impl</em>'.
+	 * @return a new object of class '<em>Control AMB</em>'.
 	 * @generated
 	 */
-	ControlImpl createControlImpl();
+	ControlAMB createControlAMB();
 
 	/**
 	 * Returns a new object of class '<em>Device Model</em>'.
@@ -53,31 +53,31 @@ public interface AmbFactory extends EFactory {
 	DeviceModel createDeviceModel();
 
 	/**
-	 * Returns a new object of class '<em>Main Impl</em>'.
+	 * Returns a new object of class '<em>Main AMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Main Impl</em>'.
+	 * @return a new object of class '<em>Main AMB</em>'.
 	 * @generated
 	 */
-	MainImpl createMainImpl();
+	MainAMB createMainAMB();
 
 	/**
-	 * Returns a new object of class '<em>Mand CImpl</em>'.
+	 * Returns a new object of class '<em>Mand CAMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mand CImpl</em>'.
+	 * @return a new object of class '<em>Mand CAMB</em>'.
 	 * @generated
 	 */
-	MandCImpl createMandCImpl();
+	MandCAMB createMandCAMB();
 
 	/**
-	 * Returns a new object of class '<em>Monitor Impl</em>'.
+	 * Returns a new object of class '<em>Monitor AMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Monitor Impl</em>'.
+	 * @return a new object of class '<em>Monitor AMB</em>'.
 	 * @generated
 	 */
-	MonitorImpl createMonitorImpl();
+	MonitorAMB createMonitorAMB();
 
 	/**
 	 * Returns a new object of class '<em>SW Module</em>'.
