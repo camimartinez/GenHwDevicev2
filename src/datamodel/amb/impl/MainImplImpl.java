@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link datamodel.amb.impl.MainImplImpl#getEReference3 <em>EReference3</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MainImplImpl#getGetInfoFromMain <em>Get Info From Main</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MainImplImpl extends MainBaseImpl implements MainImpl {
 	/**
-	 * The cached value of the '{@link #getEReference3() <em>EReference3</em>}' reference.
+	 * The cached value of the '{@link #getGetInfoFromMain() <em>Get Info From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference3()
+	 * @see #getGetInfoFromMain()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference3;
+	protected Table getInfoFromMain;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,16 +68,16 @@ public class MainImplImpl extends MainBaseImpl implements MainImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference3() {
-		if (eReference3 != null && eReference3.eIsProxy()) {
-			InternalEObject oldEReference3 = (InternalEObject)eReference3;
-			eReference3 = (Table)eResolveProxy(oldEReference3);
-			if (eReference3 != oldEReference3) {
+	public Table getGetInfoFromMain() {
+		if (getInfoFromMain != null && getInfoFromMain.eIsProxy()) {
+			InternalEObject oldGetInfoFromMain = (InternalEObject)getInfoFromMain;
+			getInfoFromMain = (Table)eResolveProxy(oldGetInfoFromMain);
+			if (getInfoFromMain != oldGetInfoFromMain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAIN_IMPL__EREFERENCE3, oldEReference3, eReference3));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAIN_IMPL__GET_INFO_FROM_MAIN, oldGetInfoFromMain, getInfoFromMain));
 			}
 		}
-		return eReference3;
+		return getInfoFromMain;
 	}
 
 	/**
@@ -85,8 +85,8 @@ public class MainImplImpl extends MainBaseImpl implements MainImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference3() {
-		return eReference3;
+	public Table basicGetGetInfoFromMain() {
+		return getInfoFromMain;
 	}
 
 	/**
@@ -94,11 +94,11 @@ public class MainImplImpl extends MainBaseImpl implements MainImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference3(Table newEReference3) {
-		Table oldEReference3 = eReference3;
-		eReference3 = newEReference3;
+	public void setGetInfoFromMain(Table newGetInfoFromMain) {
+		Table oldGetInfoFromMain = getInfoFromMain;
+		getInfoFromMain = newGetInfoFromMain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAIN_IMPL__EREFERENCE3, oldEReference3, eReference3));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAIN_IMPL__GET_INFO_FROM_MAIN, oldGetInfoFromMain, getInfoFromMain));
 	}
 
 	/**
@@ -175,9 +175,9 @@ public class MainImplImpl extends MainBaseImpl implements MainImpl {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AmbPackage.MAIN_IMPL__EREFERENCE3:
-				if (resolve) return getEReference3();
-				return basicGetEReference3();
+			case AmbPackage.MAIN_IMPL__GET_INFO_FROM_MAIN:
+				if (resolve) return getGetInfoFromMain();
+				return basicGetGetInfoFromMain();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,8 +190,8 @@ public class MainImplImpl extends MainBaseImpl implements MainImpl {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AmbPackage.MAIN_IMPL__EREFERENCE3:
-				setEReference3((Table)newValue);
+			case AmbPackage.MAIN_IMPL__GET_INFO_FROM_MAIN:
+				setGetInfoFromMain((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,8 +205,8 @@ public class MainImplImpl extends MainBaseImpl implements MainImpl {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AmbPackage.MAIN_IMPL__EREFERENCE3:
-				setEReference3((Table)null);
+			case AmbPackage.MAIN_IMPL__GET_INFO_FROM_MAIN:
+				setGetInfoFromMain((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -220,8 +220,8 @@ public class MainImplImpl extends MainBaseImpl implements MainImpl {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AmbPackage.MAIN_IMPL__EREFERENCE3:
-				return eReference3 != null;
+			case AmbPackage.MAIN_IMPL__GET_INFO_FROM_MAIN:
+				return getInfoFromMain != null;
 		}
 		return super.eIsSet(featureID);
 	}

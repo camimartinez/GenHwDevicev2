@@ -11,6 +11,8 @@ import datamodel.amb.ControlImpl;
 import datamodel.amb.MandCImpl;
 import datamodel.amb.MonitorImpl;
 
+import datamodel.base.BaseFactory;
+import datamodel.base.BasePackage;
 import datamodel.base.MandCBase;
 import datamodel.base.Table;
 import datamodel.base.Util;
@@ -34,11 +36,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link datamodel.amb.impl.MandCImplImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link datamodel.amb.impl.MandCImplImpl#getMcp <em>Mcp</em>}</li>
  *   <li>{@link datamodel.amb.impl.MandCImplImpl#getMask <em>Mask</em>}</li>
- *   <li>{@link datamodel.amb.impl.MandCImplImpl#getEReference0 <em>EReference0</em>}</li>
- *   <li>{@link datamodel.amb.impl.MandCImplImpl#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.amb.impl.MandCImplImpl#getEReference2 <em>EReference2</em>}</li>
- *   <li>{@link datamodel.amb.impl.MandCImplImpl#getEReference3 <em>EReference3</em>}</li>
- *   <li>{@link datamodel.amb.impl.MandCImplImpl#getEReference4 <em>EReference4</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MandCImplImpl#getGetInfoSheet <em>Get Info Sheet</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MandCImplImpl#getGetDataFromMain <em>Get Data From Main</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MandCImplImpl#getIsMPDataType <em>Is MP Data Type</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MandCImplImpl#getIsCPDataType <em>Is CP Data Type</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MandCImplImpl#getUtilsToData <em>Utils To Data</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,7 +55,7 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROW_EDEFAULT = null;
+	protected static final String[] ROW_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
@@ -63,7 +65,7 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * @generated
 	 * @ordered
 	 */
-	protected String row = ROW_EDEFAULT;
+	protected String[] row = ROW_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSheet() <em>Sheet</em>}' attribute.
@@ -103,7 +105,7 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MASK_EDEFAULT = "\"0x01\", \"0x02\", \"0x04\", \"0x08\", \"0x10\",\"0x20\", \"0x40\", \"0x80\"";
+	protected static final String[] MASK_EDEFAULT = (String[])BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getString1DT(), "\"0x01\", \"0x02\", \"0x04\", \"0x08\", \"0x10\",\"0x20\", \"0x40\", \"0x80\"");
 
 	/**
 	 * The cached value of the '{@link #getMask() <em>Mask</em>}' attribute.
@@ -113,57 +115,57 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * @generated
 	 * @ordered
 	 */
-	protected String mask = MASK_EDEFAULT;
+	protected String[] mask = MASK_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * The cached value of the '{@link #getGetInfoSheet() <em>Get Info Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
+	 * @see #getGetInfoSheet()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandCBase eReference0;
+	protected MandCBase getInfoSheet;
 
 	/**
-	 * The cached value of the '{@link #getEReference1() <em>EReference1</em>}' reference.
+	 * The cached value of the '{@link #getGetDataFromMain() <em>Get Data From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference1()
+	 * @see #getGetDataFromMain()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference1;
+	protected Table getDataFromMain;
 
 	/**
-	 * The cached value of the '{@link #getEReference2() <em>EReference2</em>}' reference.
+	 * The cached value of the '{@link #getIsMPDataType() <em>Is MP Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference2()
+	 * @see #getIsMPDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected MonitorImpl eReference2;
+	protected MonitorImpl isMPDataType;
 
 	/**
-	 * The cached value of the '{@link #getEReference3() <em>EReference3</em>}' reference.
+	 * The cached value of the '{@link #getIsCPDataType() <em>Is CP Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference3()
+	 * @see #getIsCPDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected ControlImpl eReference3;
+	protected ControlImpl isCPDataType;
 
 	/**
-	 * The cached value of the '{@link #getEReference4() <em>EReference4</em>}' reference.
+	 * The cached value of the '{@link #getUtilsToData() <em>Utils To Data</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference4()
+	 * @see #getUtilsToData()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util eReference4;
+	protected Util utilsToData;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,7 +191,7 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRow() {
+	public String[] getRow() {
 		return row;
 	}
 
@@ -198,8 +200,8 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRow(String newRow) {
-		String oldRow = row;
+	public void setRow(String[] newRow) {
+		String[] oldRow = row;
 		row = newRow;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__ROW, oldRow, row));
@@ -252,7 +254,7 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMask() {
+	public String[] getMask() {
 		return mask;
 	}
 
@@ -261,8 +263,8 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMask(String newMask) {
-		String oldMask = mask;
+	public void setMask(String[] newMask) {
+		String[] oldMask = mask;
 		mask = newMask;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__MASK, oldMask, mask));
@@ -273,16 +275,16 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCBase getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (MandCBase)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+	public MandCBase getGetInfoSheet() {
+		if (getInfoSheet != null && getInfoSheet.eIsProxy()) {
+			InternalEObject oldGetInfoSheet = (InternalEObject)getInfoSheet;
+			getInfoSheet = (MandCBase)eResolveProxy(oldGetInfoSheet);
+			if (getInfoSheet != oldGetInfoSheet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__EREFERENCE0, oldEReference0, eReference0));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__GET_INFO_SHEET, oldGetInfoSheet, getInfoSheet));
 			}
 		}
-		return eReference0;
+		return getInfoSheet;
 	}
 
 	/**
@@ -290,8 +292,8 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCBase basicGetEReference0() {
-		return eReference0;
+	public MandCBase basicGetGetInfoSheet() {
+		return getInfoSheet;
 	}
 
 	/**
@@ -299,11 +301,11 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference0(MandCBase newEReference0) {
-		MandCBase oldEReference0 = eReference0;
-		eReference0 = newEReference0;
+	public void setGetInfoSheet(MandCBase newGetInfoSheet) {
+		MandCBase oldGetInfoSheet = getInfoSheet;
+		getInfoSheet = newGetInfoSheet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__EREFERENCE0, oldEReference0, eReference0));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__GET_INFO_SHEET, oldGetInfoSheet, getInfoSheet));
 	}
 
 	/**
@@ -311,16 +313,16 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference1() {
-		if (eReference1 != null && eReference1.eIsProxy()) {
-			InternalEObject oldEReference1 = (InternalEObject)eReference1;
-			eReference1 = (Table)eResolveProxy(oldEReference1);
-			if (eReference1 != oldEReference1) {
+	public Table getGetDataFromMain() {
+		if (getDataFromMain != null && getDataFromMain.eIsProxy()) {
+			InternalEObject oldGetDataFromMain = (InternalEObject)getDataFromMain;
+			getDataFromMain = (Table)eResolveProxy(oldGetDataFromMain);
+			if (getDataFromMain != oldGetDataFromMain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__EREFERENCE1, oldEReference1, eReference1));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__GET_DATA_FROM_MAIN, oldGetDataFromMain, getDataFromMain));
 			}
 		}
-		return eReference1;
+		return getDataFromMain;
 	}
 
 	/**
@@ -328,8 +330,8 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference1() {
-		return eReference1;
+	public Table basicGetGetDataFromMain() {
+		return getDataFromMain;
 	}
 
 	/**
@@ -337,11 +339,11 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference1(Table newEReference1) {
-		Table oldEReference1 = eReference1;
-		eReference1 = newEReference1;
+	public void setGetDataFromMain(Table newGetDataFromMain) {
+		Table oldGetDataFromMain = getDataFromMain;
+		getDataFromMain = newGetDataFromMain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__EREFERENCE1, oldEReference1, eReference1));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__GET_DATA_FROM_MAIN, oldGetDataFromMain, getDataFromMain));
 	}
 
 	/**
@@ -349,16 +351,16 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl getEReference2() {
-		if (eReference2 != null && eReference2.eIsProxy()) {
-			InternalEObject oldEReference2 = (InternalEObject)eReference2;
-			eReference2 = (MonitorImpl)eResolveProxy(oldEReference2);
-			if (eReference2 != oldEReference2) {
+	public MonitorImpl getIsMPDataType() {
+		if (isMPDataType != null && isMPDataType.eIsProxy()) {
+			InternalEObject oldIsMPDataType = (InternalEObject)isMPDataType;
+			isMPDataType = (MonitorImpl)eResolveProxy(oldIsMPDataType);
+			if (isMPDataType != oldIsMPDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__EREFERENCE2, oldEReference2, eReference2));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__IS_MP_DATA_TYPE, oldIsMPDataType, isMPDataType));
 			}
 		}
-		return eReference2;
+		return isMPDataType;
 	}
 
 	/**
@@ -366,8 +368,8 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl basicGetEReference2() {
-		return eReference2;
+	public MonitorImpl basicGetIsMPDataType() {
+		return isMPDataType;
 	}
 
 	/**
@@ -375,11 +377,11 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference2(MonitorImpl newEReference2) {
-		MonitorImpl oldEReference2 = eReference2;
-		eReference2 = newEReference2;
+	public void setIsMPDataType(MonitorImpl newIsMPDataType) {
+		MonitorImpl oldIsMPDataType = isMPDataType;
+		isMPDataType = newIsMPDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__EREFERENCE2, oldEReference2, eReference2));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__IS_MP_DATA_TYPE, oldIsMPDataType, isMPDataType));
 	}
 
 	/**
@@ -387,16 +389,16 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlImpl getEReference3() {
-		if (eReference3 != null && eReference3.eIsProxy()) {
-			InternalEObject oldEReference3 = (InternalEObject)eReference3;
-			eReference3 = (ControlImpl)eResolveProxy(oldEReference3);
-			if (eReference3 != oldEReference3) {
+	public ControlImpl getIsCPDataType() {
+		if (isCPDataType != null && isCPDataType.eIsProxy()) {
+			InternalEObject oldIsCPDataType = (InternalEObject)isCPDataType;
+			isCPDataType = (ControlImpl)eResolveProxy(oldIsCPDataType);
+			if (isCPDataType != oldIsCPDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__EREFERENCE3, oldEReference3, eReference3));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__IS_CP_DATA_TYPE, oldIsCPDataType, isCPDataType));
 			}
 		}
-		return eReference3;
+		return isCPDataType;
 	}
 
 	/**
@@ -404,8 +406,8 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlImpl basicGetEReference3() {
-		return eReference3;
+	public ControlImpl basicGetIsCPDataType() {
+		return isCPDataType;
 	}
 
 	/**
@@ -413,11 +415,11 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference3(ControlImpl newEReference3) {
-		ControlImpl oldEReference3 = eReference3;
-		eReference3 = newEReference3;
+	public void setIsCPDataType(ControlImpl newIsCPDataType) {
+		ControlImpl oldIsCPDataType = isCPDataType;
+		isCPDataType = newIsCPDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__EREFERENCE3, oldEReference3, eReference3));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__IS_CP_DATA_TYPE, oldIsCPDataType, isCPDataType));
 	}
 
 	/**
@@ -425,16 +427,16 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getEReference4() {
-		if (eReference4 != null && eReference4.eIsProxy()) {
-			InternalEObject oldEReference4 = (InternalEObject)eReference4;
-			eReference4 = (Util)eResolveProxy(oldEReference4);
-			if (eReference4 != oldEReference4) {
+	public Util getUtilsToData() {
+		if (utilsToData != null && utilsToData.eIsProxy()) {
+			InternalEObject oldUtilsToData = (InternalEObject)utilsToData;
+			utilsToData = (Util)eResolveProxy(oldUtilsToData);
+			if (utilsToData != oldUtilsToData) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__EREFERENCE4, oldEReference4, eReference4));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_CIMPL__UTILS_TO_DATA, oldUtilsToData, utilsToData));
 			}
 		}
-		return eReference4;
+		return utilsToData;
 	}
 
 	/**
@@ -442,8 +444,8 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetEReference4() {
-		return eReference4;
+	public Util basicGetUtilsToData() {
+		return utilsToData;
 	}
 
 	/**
@@ -451,11 +453,11 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference4(Util newEReference4) {
-		Util oldEReference4 = eReference4;
-		eReference4 = newEReference4;
+	public void setUtilsToData(Util newUtilsToData) {
+		Util oldUtilsToData = utilsToData;
+		utilsToData = newUtilsToData;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__EREFERENCE4, oldEReference4, eReference4));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CIMPL__UTILS_TO_DATA, oldUtilsToData, utilsToData));
 	}
 
 	/**
@@ -1024,21 +1026,21 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 				return getMcp();
 			case AmbPackage.MAND_CIMPL__MASK:
 				return getMask();
-			case AmbPackage.MAND_CIMPL__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
-			case AmbPackage.MAND_CIMPL__EREFERENCE1:
-				if (resolve) return getEReference1();
-				return basicGetEReference1();
-			case AmbPackage.MAND_CIMPL__EREFERENCE2:
-				if (resolve) return getEReference2();
-				return basicGetEReference2();
-			case AmbPackage.MAND_CIMPL__EREFERENCE3:
-				if (resolve) return getEReference3();
-				return basicGetEReference3();
-			case AmbPackage.MAND_CIMPL__EREFERENCE4:
-				if (resolve) return getEReference4();
-				return basicGetEReference4();
+			case AmbPackage.MAND_CIMPL__GET_INFO_SHEET:
+				if (resolve) return getGetInfoSheet();
+				return basicGetGetInfoSheet();
+			case AmbPackage.MAND_CIMPL__GET_DATA_FROM_MAIN:
+				if (resolve) return getGetDataFromMain();
+				return basicGetGetDataFromMain();
+			case AmbPackage.MAND_CIMPL__IS_MP_DATA_TYPE:
+				if (resolve) return getIsMPDataType();
+				return basicGetIsMPDataType();
+			case AmbPackage.MAND_CIMPL__IS_CP_DATA_TYPE:
+				if (resolve) return getIsCPDataType();
+				return basicGetIsCPDataType();
+			case AmbPackage.MAND_CIMPL__UTILS_TO_DATA:
+				if (resolve) return getUtilsToData();
+				return basicGetUtilsToData();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1052,7 +1054,7 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AmbPackage.MAND_CIMPL__ROW:
-				setRow((String)newValue);
+				setRow((String[])newValue);
 				return;
 			case AmbPackage.MAND_CIMPL__SHEET:
 				setSheet((Integer)newValue);
@@ -1061,22 +1063,22 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 				setMcp(newValue);
 				return;
 			case AmbPackage.MAND_CIMPL__MASK:
-				setMask((String)newValue);
+				setMask((String[])newValue);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE0:
-				setEReference0((MandCBase)newValue);
+			case AmbPackage.MAND_CIMPL__GET_INFO_SHEET:
+				setGetInfoSheet((MandCBase)newValue);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE1:
-				setEReference1((Table)newValue);
+			case AmbPackage.MAND_CIMPL__GET_DATA_FROM_MAIN:
+				setGetDataFromMain((Table)newValue);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE2:
-				setEReference2((MonitorImpl)newValue);
+			case AmbPackage.MAND_CIMPL__IS_MP_DATA_TYPE:
+				setIsMPDataType((MonitorImpl)newValue);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE3:
-				setEReference3((ControlImpl)newValue);
+			case AmbPackage.MAND_CIMPL__IS_CP_DATA_TYPE:
+				setIsCPDataType((ControlImpl)newValue);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE4:
-				setEReference4((Util)newValue);
+			case AmbPackage.MAND_CIMPL__UTILS_TO_DATA:
+				setUtilsToData((Util)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1102,20 +1104,20 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 			case AmbPackage.MAND_CIMPL__MASK:
 				setMask(MASK_EDEFAULT);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE0:
-				setEReference0((MandCBase)null);
+			case AmbPackage.MAND_CIMPL__GET_INFO_SHEET:
+				setGetInfoSheet((MandCBase)null);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE1:
-				setEReference1((Table)null);
+			case AmbPackage.MAND_CIMPL__GET_DATA_FROM_MAIN:
+				setGetDataFromMain((Table)null);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE2:
-				setEReference2((MonitorImpl)null);
+			case AmbPackage.MAND_CIMPL__IS_MP_DATA_TYPE:
+				setIsMPDataType((MonitorImpl)null);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE3:
-				setEReference3((ControlImpl)null);
+			case AmbPackage.MAND_CIMPL__IS_CP_DATA_TYPE:
+				setIsCPDataType((ControlImpl)null);
 				return;
-			case AmbPackage.MAND_CIMPL__EREFERENCE4:
-				setEReference4((Util)null);
+			case AmbPackage.MAND_CIMPL__UTILS_TO_DATA:
+				setUtilsToData((Util)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1137,16 +1139,16 @@ public class MandCImplImpl extends EObjectImpl implements MandCImpl {
 				return mcp != null;
 			case AmbPackage.MAND_CIMPL__MASK:
 				return MASK_EDEFAULT == null ? mask != null : !MASK_EDEFAULT.equals(mask);
-			case AmbPackage.MAND_CIMPL__EREFERENCE0:
-				return eReference0 != null;
-			case AmbPackage.MAND_CIMPL__EREFERENCE1:
-				return eReference1 != null;
-			case AmbPackage.MAND_CIMPL__EREFERENCE2:
-				return eReference2 != null;
-			case AmbPackage.MAND_CIMPL__EREFERENCE3:
-				return eReference3 != null;
-			case AmbPackage.MAND_CIMPL__EREFERENCE4:
-				return eReference4 != null;
+			case AmbPackage.MAND_CIMPL__GET_INFO_SHEET:
+				return getInfoSheet != null;
+			case AmbPackage.MAND_CIMPL__GET_DATA_FROM_MAIN:
+				return getDataFromMain != null;
+			case AmbPackage.MAND_CIMPL__IS_MP_DATA_TYPE:
+				return isMPDataType != null;
+			case AmbPackage.MAND_CIMPL__IS_CP_DATA_TYPE:
+				return isCPDataType != null;
+			case AmbPackage.MAND_CIMPL__UTILS_TO_DATA:
+				return utilsToData != null;
 		}
 		return super.eIsSet(featureID);
 	}

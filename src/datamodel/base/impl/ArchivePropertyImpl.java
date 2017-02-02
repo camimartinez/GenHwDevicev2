@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  * <ul>
  *   <li>{@link datamodel.base.impl.ArchivePropertyImpl#getRow <em>Row</em>}</li>
  *   <li>{@link datamodel.base.impl.ArchivePropertyImpl#getSheet <em>Sheet</em>}</li>
- *   <li>{@link datamodel.base.impl.ArchivePropertyImpl#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link datamodel.base.impl.ArchivePropertyImpl#getGetColumnsInfoOfArchi <em>Get Columns Info Of Archi</em>}</li>
  *   <li>{@link datamodel.base.impl.ArchivePropertyImpl#getMp <em>Mp</em>}</li>
  *   <li>{@link datamodel.base.impl.ArchivePropertyImpl#getCp <em>Cp</em>}</li>
  * </ul>
@@ -46,7 +46,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROW_EDEFAULT = null;
+	protected static final String[] ROW_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
@@ -56,7 +56,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 * @ordered
 	 */
-	protected String row = ROW_EDEFAULT;
+	protected String[] row = ROW_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSheet() <em>Sheet</em>}' attribute.
@@ -79,14 +79,14 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	protected int sheet = SHEET_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * The cached value of the '{@link #getGetColumnsInfoOfArchi() <em>Get Columns Info Of Archi</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
+	 * @see #getGetColumnsInfoOfArchi()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference0;
+	protected Table getColumnsInfoOfArchi;
 
 	/**
 	 * The default value of the '{@link #getMp() <em>Mp</em>}' attribute.
@@ -152,7 +152,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRow() {
+	public String[] getRow() {
 		return row;
 	}
 
@@ -161,8 +161,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRow(String newRow) {
-		String oldRow = row;
+	public void setRow(String[] newRow) {
+		String[] oldRow = row;
 		row = newRow;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__ROW, oldRow, row));
@@ -194,16 +194,16 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (Table)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+	public Table getGetColumnsInfoOfArchi() {
+		if (getColumnsInfoOfArchi != null && getColumnsInfoOfArchi.eIsProxy()) {
+			InternalEObject oldGetColumnsInfoOfArchi = (InternalEObject)getColumnsInfoOfArchi;
+			getColumnsInfoOfArchi = (Table)eResolveProxy(oldGetColumnsInfoOfArchi);
+			if (getColumnsInfoOfArchi != oldGetColumnsInfoOfArchi) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__EREFERENCE0, oldEReference0, eReference0));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI, oldGetColumnsInfoOfArchi, getColumnsInfoOfArchi));
 			}
 		}
-		return eReference0;
+		return getColumnsInfoOfArchi;
 	}
 
 	/**
@@ -211,8 +211,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference0() {
-		return eReference0;
+	public Table basicGetGetColumnsInfoOfArchi() {
+		return getColumnsInfoOfArchi;
 	}
 
 	/**
@@ -220,11 +220,11 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference0(Table newEReference0) {
-		Table oldEReference0 = eReference0;
-		eReference0 = newEReference0;
+	public void setGetColumnsInfoOfArchi(Table newGetColumnsInfoOfArchi) {
+		Table oldGetColumnsInfoOfArchi = getColumnsInfoOfArchi;
+		getColumnsInfoOfArchi = newGetColumnsInfoOfArchi;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__EREFERENCE0, oldEReference0, eReference0));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI, oldGetColumnsInfoOfArchi, getColumnsInfoOfArchi));
 	}
 
 	/**
@@ -468,9 +468,9 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return getRow();
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				return getSheet();
-			case BasePackage.ARCHIVE_PROPERTY__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
+			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
+				if (resolve) return getGetColumnsInfoOfArchi();
+				return basicGetGetColumnsInfoOfArchi();
 			case BasePackage.ARCHIVE_PROPERTY__MP:
 				return getMp();
 			case BasePackage.ARCHIVE_PROPERTY__CP:
@@ -488,13 +488,13 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.ARCHIVE_PROPERTY__ROW:
-				setRow((String)newValue);
+				setRow((String[])newValue);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				setSheet((Integer)newValue);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__EREFERENCE0:
-				setEReference0((Table)newValue);
+			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
+				setGetColumnsInfoOfArchi((Table)newValue);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__MP:
 				setMp((Resource)newValue);
@@ -520,8 +520,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				setSheet(SHEET_EDEFAULT);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__EREFERENCE0:
-				setEReference0((Table)null);
+			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
+				setGetColumnsInfoOfArchi((Table)null);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__MP:
 				setMp(MP_EDEFAULT);
@@ -545,8 +545,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return ROW_EDEFAULT == null ? row != null : !ROW_EDEFAULT.equals(row);
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				return sheet != SHEET_EDEFAULT;
-			case BasePackage.ARCHIVE_PROPERTY__EREFERENCE0:
-				return eReference0 != null;
+			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
+				return getColumnsInfoOfArchi != null;
 			case BasePackage.ARCHIVE_PROPERTY__MP:
 				return MP_EDEFAULT == null ? mp != null : !MP_EDEFAULT.equals(mp);
 			case BasePackage.ARCHIVE_PROPERTY__CP:

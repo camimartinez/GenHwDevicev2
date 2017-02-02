@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link datamodel.base.SpreadsheetValidator#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link datamodel.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}</li>
  *   <li>{@link datamodel.base.SpreadsheetValidator#getErrorList <em>Error List</em>}</li>
  *   <li>{@link datamodel.base.SpreadsheetValidator#getSeh <em>Seh</em>}</li>
  * </ul>
@@ -30,30 +30,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SpreadsheetValidator extends EObject {
 	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
+	 * Returns the value of the '<em><b>Error Handler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
+	 * If the meaning of the '<em>Error Handler</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(SimpleErrorHandler)
-	 * @see datamodel.base.BasePackage#getSpreadsheetValidator_EReference0()
+	 * @return the value of the '<em>Error Handler</em>' reference.
+	 * @see #setErrorHandler(SimpleErrorHandler)
+	 * @see datamodel.base.BasePackage#getSpreadsheetValidator_ErrorHandler()
 	 * @model
 	 * @generated
 	 */
-	SimpleErrorHandler getEReference0();
+	SimpleErrorHandler getErrorHandler();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.SpreadsheetValidator#getEReference0 <em>EReference0</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
+	 * @param value the new value of the '<em>Error Handler</em>' reference.
+	 * @see #getErrorHandler()
 	 * @generated
 	 */
-	void setEReference0(SimpleErrorHandler value);
+	void setErrorHandler(SimpleErrorHandler value);
 
 	/**
 	 * Returns the value of the '<em><b>Error List</b></em>' attribute.

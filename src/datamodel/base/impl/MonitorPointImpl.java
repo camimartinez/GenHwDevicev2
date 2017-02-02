@@ -25,8 +25,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link datamodel.base.impl.MonitorPointImpl#getEReference4 <em>EReference4</em>}</li>
- *   <li>{@link datamodel.base.impl.MonitorPointImpl#getEReference5 <em>EReference5</em>}</li>
+ *   <li>{@link datamodel.base.impl.MonitorPointImpl#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}</li>
+ *   <li>{@link datamodel.base.impl.MonitorPointImpl#getGetInfoFromMPSpread <em>Get Info From MP Spread</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +34,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorPoint {
 	/**
-	 * The cached value of the '{@link #getEReference4() <em>EReference4</em>}' reference.
+	 * The cached value of the '{@link #getGetInfoFromAPSpread() <em>Get Info From AP Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference4()
+	 * @see #getGetInfoFromAPSpread()
 	 * @generated
 	 * @ordered
 	 */
-	protected ArchiveProperty eReference4;
+	protected ArchiveProperty getInfoFromAPSpread;
 
 	/**
-	 * The cached value of the '{@link #getEReference5() <em>EReference5</em>}' reference.
+	 * The cached value of the '{@link #getGetInfoFromMPSpread() <em>Get Info From MP Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference5()
+	 * @see #getGetInfoFromMPSpread()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference5;
+	protected Table getInfoFromMPSpread;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,16 +77,16 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveProperty getEReference4() {
-		if (eReference4 != null && eReference4.eIsProxy()) {
-			InternalEObject oldEReference4 = (InternalEObject)eReference4;
-			eReference4 = (ArchiveProperty)eResolveProxy(oldEReference4);
-			if (eReference4 != oldEReference4) {
+	public ArchiveProperty getGetInfoFromAPSpread() {
+		if (getInfoFromAPSpread != null && getInfoFromAPSpread.eIsProxy()) {
+			InternalEObject oldGetInfoFromAPSpread = (InternalEObject)getInfoFromAPSpread;
+			getInfoFromAPSpread = (ArchiveProperty)eResolveProxy(oldGetInfoFromAPSpread);
+			if (getInfoFromAPSpread != oldGetInfoFromAPSpread) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MONITOR_POINT__EREFERENCE4, oldEReference4, eReference4));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD, oldGetInfoFromAPSpread, getInfoFromAPSpread));
 			}
 		}
-		return eReference4;
+		return getInfoFromAPSpread;
 	}
 
 	/**
@@ -94,8 +94,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveProperty basicGetEReference4() {
-		return eReference4;
+	public ArchiveProperty basicGetGetInfoFromAPSpread() {
+		return getInfoFromAPSpread;
 	}
 
 	/**
@@ -103,11 +103,11 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference4(ArchiveProperty newEReference4) {
-		ArchiveProperty oldEReference4 = eReference4;
-		eReference4 = newEReference4;
+	public void setGetInfoFromAPSpread(ArchiveProperty newGetInfoFromAPSpread) {
+		ArchiveProperty oldGetInfoFromAPSpread = getInfoFromAPSpread;
+		getInfoFromAPSpread = newGetInfoFromAPSpread;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MONITOR_POINT__EREFERENCE4, oldEReference4, eReference4));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD, oldGetInfoFromAPSpread, getInfoFromAPSpread));
 	}
 
 	/**
@@ -115,16 +115,16 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference5() {
-		if (eReference5 != null && eReference5.eIsProxy()) {
-			InternalEObject oldEReference5 = (InternalEObject)eReference5;
-			eReference5 = (Table)eResolveProxy(oldEReference5);
-			if (eReference5 != oldEReference5) {
+	public Table getGetInfoFromMPSpread() {
+		if (getInfoFromMPSpread != null && getInfoFromMPSpread.eIsProxy()) {
+			InternalEObject oldGetInfoFromMPSpread = (InternalEObject)getInfoFromMPSpread;
+			getInfoFromMPSpread = (Table)eResolveProxy(oldGetInfoFromMPSpread);
+			if (getInfoFromMPSpread != oldGetInfoFromMPSpread) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MONITOR_POINT__EREFERENCE5, oldEReference5, eReference5));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD, oldGetInfoFromMPSpread, getInfoFromMPSpread));
 			}
 		}
-		return eReference5;
+		return getInfoFromMPSpread;
 	}
 
 	/**
@@ -132,8 +132,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference5() {
-		return eReference5;
+	public Table basicGetGetInfoFromMPSpread() {
+		return getInfoFromMPSpread;
 	}
 
 	/**
@@ -141,11 +141,11 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference5(Table newEReference5) {
-		Table oldEReference5 = eReference5;
-		eReference5 = newEReference5;
+	public void setGetInfoFromMPSpread(Table newGetInfoFromMPSpread) {
+		Table oldGetInfoFromMPSpread = getInfoFromMPSpread;
+		getInfoFromMPSpread = newGetInfoFromMPSpread;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MONITOR_POINT__EREFERENCE5, oldEReference5, eReference5));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD, oldGetInfoFromMPSpread, getInfoFromMPSpread));
 	}
 
 	/**
@@ -354,12 +354,12 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.MONITOR_POINT__EREFERENCE4:
-				if (resolve) return getEReference4();
-				return basicGetEReference4();
-			case BasePackage.MONITOR_POINT__EREFERENCE5:
-				if (resolve) return getEReference5();
-				return basicGetEReference5();
+			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
+				if (resolve) return getGetInfoFromAPSpread();
+				return basicGetGetInfoFromAPSpread();
+			case BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD:
+				if (resolve) return getGetInfoFromMPSpread();
+				return basicGetGetInfoFromMPSpread();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -372,11 +372,11 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.MONITOR_POINT__EREFERENCE4:
-				setEReference4((ArchiveProperty)newValue);
+			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
+				setGetInfoFromAPSpread((ArchiveProperty)newValue);
 				return;
-			case BasePackage.MONITOR_POINT__EREFERENCE5:
-				setEReference5((Table)newValue);
+			case BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD:
+				setGetInfoFromMPSpread((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -390,11 +390,11 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.MONITOR_POINT__EREFERENCE4:
-				setEReference4((ArchiveProperty)null);
+			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
+				setGetInfoFromAPSpread((ArchiveProperty)null);
 				return;
-			case BasePackage.MONITOR_POINT__EREFERENCE5:
-				setEReference5((Table)null);
+			case BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD:
+				setGetInfoFromMPSpread((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -408,10 +408,10 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.MONITOR_POINT__EREFERENCE4:
-				return eReference4 != null;
-			case BasePackage.MONITOR_POINT__EREFERENCE5:
-				return eReference5 != null;
+			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
+				return getInfoFromAPSpread != null;
+			case BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD:
+				return getInfoFromMPSpread != null;
 		}
 		return super.eIsSet(featureID);
 	}

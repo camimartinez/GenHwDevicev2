@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link datamodel.amb.impl.ArchiveImplImpl#getEReference1 <em>EReference1</em>}</li>
+ *   <li>{@link datamodel.amb.impl.ArchiveImplImpl#getGetAssemblyColumn <em>Get Assembly Column</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ArchiveImplImpl extends ArchivePropertyImpl implements ArchiveImpl {
 	/**
-	 * The cached value of the '{@link #getEReference1() <em>EReference1</em>}' reference.
+	 * The cached value of the '{@link #getGetAssemblyColumn() <em>Get Assembly Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference1()
+	 * @see #getGetAssemblyColumn()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference1;
+	protected Table getAssemblyColumn;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,16 +68,16 @@ public class ArchiveImplImpl extends ArchivePropertyImpl implements ArchiveImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference1() {
-		if (eReference1 != null && eReference1.eIsProxy()) {
-			InternalEObject oldEReference1 = (InternalEObject)eReference1;
-			eReference1 = (Table)eResolveProxy(oldEReference1);
-			if (eReference1 != oldEReference1) {
+	public Table getGetAssemblyColumn() {
+		if (getAssemblyColumn != null && getAssemblyColumn.eIsProxy()) {
+			InternalEObject oldGetAssemblyColumn = (InternalEObject)getAssemblyColumn;
+			getAssemblyColumn = (Table)eResolveProxy(oldGetAssemblyColumn);
+			if (getAssemblyColumn != oldGetAssemblyColumn) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.ARCHIVE_IMPL__EREFERENCE1, oldEReference1, eReference1));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN, oldGetAssemblyColumn, getAssemblyColumn));
 			}
 		}
-		return eReference1;
+		return getAssemblyColumn;
 	}
 
 	/**
@@ -85,8 +85,8 @@ public class ArchiveImplImpl extends ArchivePropertyImpl implements ArchiveImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference1() {
-		return eReference1;
+	public Table basicGetGetAssemblyColumn() {
+		return getAssemblyColumn;
 	}
 
 	/**
@@ -94,11 +94,11 @@ public class ArchiveImplImpl extends ArchivePropertyImpl implements ArchiveImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference1(Table newEReference1) {
-		Table oldEReference1 = eReference1;
-		eReference1 = newEReference1;
+	public void setGetAssemblyColumn(Table newGetAssemblyColumn) {
+		Table oldGetAssemblyColumn = getAssemblyColumn;
+		getAssemblyColumn = newGetAssemblyColumn;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.ARCHIVE_IMPL__EREFERENCE1, oldEReference1, eReference1));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN, oldGetAssemblyColumn, getAssemblyColumn));
 	}
 
 	/**
@@ -131,9 +131,9 @@ public class ArchiveImplImpl extends ArchivePropertyImpl implements ArchiveImpl 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AmbPackage.ARCHIVE_IMPL__EREFERENCE1:
-				if (resolve) return getEReference1();
-				return basicGetEReference1();
+			case AmbPackage.ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN:
+				if (resolve) return getGetAssemblyColumn();
+				return basicGetGetAssemblyColumn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,8 +146,8 @@ public class ArchiveImplImpl extends ArchivePropertyImpl implements ArchiveImpl 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AmbPackage.ARCHIVE_IMPL__EREFERENCE1:
-				setEReference1((Table)newValue);
+			case AmbPackage.ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN:
+				setGetAssemblyColumn((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -161,8 +161,8 @@ public class ArchiveImplImpl extends ArchivePropertyImpl implements ArchiveImpl 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AmbPackage.ARCHIVE_IMPL__EREFERENCE1:
-				setEReference1((Table)null);
+			case AmbPackage.ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN:
+				setGetAssemblyColumn((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,8 +176,8 @@ public class ArchiveImplImpl extends ArchivePropertyImpl implements ArchiveImpl 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AmbPackage.ARCHIVE_IMPL__EREFERENCE1:
-				return eReference1 != null;
+			case AmbPackage.ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN:
+				return getAssemblyColumn != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -12,6 +12,7 @@ import datamodel.base.SpreadsheetParser;
 import datamodel.base.SpreadsheetValidator;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link datamodel.base.impl.SpreadsheetParserImpl#getXml <em>Xml</em>}</li>
  *   <li>{@link datamodel.base.impl.SpreadsheetParserImpl#getXsdFile <em>Xsd File</em>}</li>
  *   <li>{@link datamodel.base.impl.SpreadsheetParserImpl#getNewline <em>Newline</em>}</li>
- *   <li>{@link datamodel.base.impl.SpreadsheetParserImpl#getEReference1 <em>EReference1</em>}</li>
+ *   <li>{@link datamodel.base.impl.SpreadsheetParserImpl#getSetNewContent <em>Set New Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -150,14 +151,14 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	protected String newline = NEWLINE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference1() <em>EReference1</em>}' reference.
+	 * The cached value of the '{@link #getSetNewContent() <em>Set New Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference1()
+	 * @see #getSetNewContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected Pair eReference1;
+	protected Pair setNewContent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -326,16 +327,23 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pair getEReference1() {
-		if (eReference1 != null && eReference1.eIsProxy()) {
-			InternalEObject oldEReference1 = (InternalEObject)eReference1;
-			eReference1 = (Pair)eResolveProxy(oldEReference1);
-			if (eReference1 != oldEReference1) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.SPREADSHEET_PARSER__EREFERENCE1, oldEReference1, eReference1));
-			}
+	public Pair getSetNewContent() {
+		return setNewContent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSetNewContent(Pair newSetNewContent, NotificationChain msgs) {
+		Pair oldSetNewContent = setNewContent;
+		setNewContent = newSetNewContent;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT, oldSetNewContent, newSetNewContent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return eReference1;
+		return msgs;
 	}
 
 	/**
@@ -343,20 +351,18 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pair basicGetEReference1() {
-		return eReference1;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEReference1(Pair newEReference1) {
-		Pair oldEReference1 = eReference1;
-		eReference1 = newEReference1;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__EREFERENCE1, oldEReference1, eReference1));
+	public void setSetNewContent(Pair newSetNewContent) {
+		if (newSetNewContent != setNewContent) {
+			NotificationChain msgs = null;
+			if (setNewContent != null)
+				msgs = ((InternalEObject)setNewContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT, null, msgs);
+			if (newSetNewContent != null)
+				msgs = ((InternalEObject)newSetNewContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT, null, msgs);
+			msgs = basicSetSetNewContent(newSetNewContent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT, newSetNewContent, newSetNewContent));
 	}
 
 	/**
@@ -386,7 +392,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDataCells(String row) {
+	public String[] getDataCells(String row) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -397,7 +403,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getWorksheets() {
+	public String[][] getWorksheets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -441,7 +447,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String filter(String doc) {
+	public String[][] filter(String doc) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -452,7 +458,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void deleteRow(String worksheet, String name) {
+	public void deleteRow(String[][] worksheet, String name) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -463,10 +469,24 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void modifyRow(String worksheet, int lineNumber, String rowName, String s) {
+	public void modifyRow(String[][] worksheet, int lineNumber, String rowName, String s) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
+				return basicSetSetNewContent(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -490,9 +510,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return getXsdFile();
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				return getNewline();
-			case BasePackage.SPREADSHEET_PARSER__EREFERENCE1:
-				if (resolve) return getEReference1();
-				return basicGetEReference1();
+			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
+				return getSetNewContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -523,8 +542,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				setNewline((String)newValue);
 				return;
-			case BasePackage.SPREADSHEET_PARSER__EREFERENCE1:
-				setEReference1((Pair)newValue);
+			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
+				setSetNewContent((Pair)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -556,8 +575,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				setNewline(NEWLINE_EDEFAULT);
 				return;
-			case BasePackage.SPREADSHEET_PARSER__EREFERENCE1:
-				setEReference1((Pair)null);
+			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
+				setSetNewContent((Pair)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -583,8 +602,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return XSD_FILE_EDEFAULT == null ? xsdFile != null : !XSD_FILE_EDEFAULT.equals(xsdFile);
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				return NEWLINE_EDEFAULT == null ? newline != null : !NEWLINE_EDEFAULT.equals(newline);
-			case BasePackage.SPREADSHEET_PARSER__EREFERENCE1:
-				return eReference1 != null;
+			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
+				return setNewContent != null;
 		}
 		return super.eIsSet(featureID);
 	}

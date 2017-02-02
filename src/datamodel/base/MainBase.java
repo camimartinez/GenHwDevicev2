@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link datamodel.base.MainBase#getRow <em>Row</em>}</li>
  *   <li>{@link datamodel.base.MainBase#getSheet <em>Sheet</em>}</li>
  *   <li>{@link datamodel.base.MainBase#getEReference0 <em>EReference0</em>}</li>
- *   <li>{@link datamodel.base.MainBase#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.base.MainBase#getEReference2 <em>EReference2</em>}</li>
+ *   <li>{@link datamodel.base.MainBase#getConvertInfoTo <em>Convert Info To</em>}</li>
+ *   <li>{@link datamodel.base.MainBase#getGetInfoFromSpread <em>Get Info From Spread</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,12 +38,12 @@ public interface MainBase extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Row</em>' attribute.
-	 * @see #setRow(String)
+	 * @see #setRow(String[])
 	 * @see datamodel.base.BasePackage#getMainBase_Row()
-	 * @model
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String getRow();
+	String[] getRow();
 
 	/**
 	 * Sets the value of the '{@link datamodel.base.MainBase#getRow <em>Row</em>}' attribute.
@@ -53,7 +53,7 @@ public interface MainBase extends EObject {
 	 * @see #getRow()
 	 * @generated
 	 */
-	void setRow(String value);
+	void setRow(String[] value);
 
 	/**
 	 * Returns the value of the '<em><b>Sheet</b></em>' attribute.
@@ -108,56 +108,56 @@ public interface MainBase extends EObject {
 	void setEReference0(DeviceModel value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference1</b></em>' reference.
+	 * Returns the value of the '<em><b>Convert Info To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference1</em>' reference isn't clear,
+	 * If the meaning of the '<em>Convert Info To</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference1</em>' reference.
-	 * @see #setEReference1(Util)
-	 * @see datamodel.base.BasePackage#getMainBase_EReference1()
+	 * @return the value of the '<em>Convert Info To</em>' reference.
+	 * @see #setConvertInfoTo(Util)
+	 * @see datamodel.base.BasePackage#getMainBase_ConvertInfoTo()
 	 * @model
 	 * @generated
 	 */
-	Util getEReference1();
+	Util getConvertInfoTo();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.MainBase#getEReference1 <em>EReference1</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.MainBase#getConvertInfoTo <em>Convert Info To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference1</em>' reference.
-	 * @see #getEReference1()
+	 * @param value the new value of the '<em>Convert Info To</em>' reference.
+	 * @see #getConvertInfoTo()
 	 * @generated
 	 */
-	void setEReference1(Util value);
+	void setConvertInfoTo(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference2</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Info From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference2</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Info From Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference2</em>' reference.
-	 * @see #setEReference2(Table)
-	 * @see datamodel.base.BasePackage#getMainBase_EReference2()
+	 * @return the value of the '<em>Get Info From Spread</em>' reference.
+	 * @see #setGetInfoFromSpread(Table)
+	 * @see datamodel.base.BasePackage#getMainBase_GetInfoFromSpread()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference2();
+	Table getGetInfoFromSpread();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.MainBase#getEReference2 <em>EReference2</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.MainBase#getGetInfoFromSpread <em>Get Info From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference2</em>' reference.
-	 * @see #getEReference2()
+	 * @param value the new value of the '<em>Get Info From Spread</em>' reference.
+	 * @see #getGetInfoFromSpread()
 	 * @generated
 	 */
-	void setEReference2(Table value);
+	void setGetInfoFromSpread(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

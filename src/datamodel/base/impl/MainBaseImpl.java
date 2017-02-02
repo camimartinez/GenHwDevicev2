@@ -30,8 +30,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link datamodel.base.impl.MainBaseImpl#getRow <em>Row</em>}</li>
  *   <li>{@link datamodel.base.impl.MainBaseImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link datamodel.base.impl.MainBaseImpl#getEReference0 <em>EReference0</em>}</li>
- *   <li>{@link datamodel.base.impl.MainBaseImpl#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.base.impl.MainBaseImpl#getEReference2 <em>EReference2</em>}</li>
+ *   <li>{@link datamodel.base.impl.MainBaseImpl#getConvertInfoTo <em>Convert Info To</em>}</li>
+ *   <li>{@link datamodel.base.impl.MainBaseImpl#getGetInfoFromSpread <em>Get Info From Spread</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,7 +46,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROW_EDEFAULT = null;
+	protected static final String[] ROW_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
@@ -56,7 +56,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected String row = ROW_EDEFAULT;
+	protected String[] row = ROW_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSheet() <em>Sheet</em>}' attribute.
@@ -89,24 +89,24 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	protected DeviceModel eReference0;
 
 	/**
-	 * The cached value of the '{@link #getEReference1() <em>EReference1</em>}' reference.
+	 * The cached value of the '{@link #getConvertInfoTo() <em>Convert Info To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference1()
+	 * @see #getConvertInfoTo()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util eReference1;
+	protected Util convertInfoTo;
 
 	/**
-	 * The cached value of the '{@link #getEReference2() <em>EReference2</em>}' reference.
+	 * The cached value of the '{@link #getGetInfoFromSpread() <em>Get Info From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference2()
+	 * @see #getGetInfoFromSpread()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference2;
+	protected Table getInfoFromSpread;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRow() {
+	public String[] getRow() {
 		return row;
 	}
 
@@ -141,8 +141,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRow(String newRow) {
-		String oldRow = row;
+	public void setRow(String[] newRow) {
+		String[] oldRow = row;
 		row = newRow;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__ROW, oldRow, row));
@@ -212,16 +212,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getEReference1() {
-		if (eReference1 != null && eReference1.eIsProxy()) {
-			InternalEObject oldEReference1 = (InternalEObject)eReference1;
-			eReference1 = (Util)eResolveProxy(oldEReference1);
-			if (eReference1 != oldEReference1) {
+	public Util getConvertInfoTo() {
+		if (convertInfoTo != null && convertInfoTo.eIsProxy()) {
+			InternalEObject oldConvertInfoTo = (InternalEObject)convertInfoTo;
+			convertInfoTo = (Util)eResolveProxy(oldConvertInfoTo);
+			if (convertInfoTo != oldConvertInfoTo) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__EREFERENCE1, oldEReference1, eReference1));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__CONVERT_INFO_TO, oldConvertInfoTo, convertInfoTo));
 			}
 		}
-		return eReference1;
+		return convertInfoTo;
 	}
 
 	/**
@@ -229,8 +229,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetEReference1() {
-		return eReference1;
+	public Util basicGetConvertInfoTo() {
+		return convertInfoTo;
 	}
 
 	/**
@@ -238,11 +238,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference1(Util newEReference1) {
-		Util oldEReference1 = eReference1;
-		eReference1 = newEReference1;
+	public void setConvertInfoTo(Util newConvertInfoTo) {
+		Util oldConvertInfoTo = convertInfoTo;
+		convertInfoTo = newConvertInfoTo;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__EREFERENCE1, oldEReference1, eReference1));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__CONVERT_INFO_TO, oldConvertInfoTo, convertInfoTo));
 	}
 
 	/**
@@ -250,16 +250,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference2() {
-		if (eReference2 != null && eReference2.eIsProxy()) {
-			InternalEObject oldEReference2 = (InternalEObject)eReference2;
-			eReference2 = (Table)eResolveProxy(oldEReference2);
-			if (eReference2 != oldEReference2) {
+	public Table getGetInfoFromSpread() {
+		if (getInfoFromSpread != null && getInfoFromSpread.eIsProxy()) {
+			InternalEObject oldGetInfoFromSpread = (InternalEObject)getInfoFromSpread;
+			getInfoFromSpread = (Table)eResolveProxy(oldGetInfoFromSpread);
+			if (getInfoFromSpread != oldGetInfoFromSpread) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__EREFERENCE2, oldEReference2, eReference2));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD, oldGetInfoFromSpread, getInfoFromSpread));
 			}
 		}
-		return eReference2;
+		return getInfoFromSpread;
 	}
 
 	/**
@@ -267,8 +267,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference2() {
-		return eReference2;
+	public Table basicGetGetInfoFromSpread() {
+		return getInfoFromSpread;
 	}
 
 	/**
@@ -276,11 +276,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference2(Table newEReference2) {
-		Table oldEReference2 = eReference2;
-		eReference2 = newEReference2;
+	public void setGetInfoFromSpread(Table newGetInfoFromSpread) {
+		Table oldGetInfoFromSpread = getInfoFromSpread;
+		getInfoFromSpread = newGetInfoFromSpread;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__EREFERENCE2, oldEReference2, eReference2));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD, oldGetInfoFromSpread, getInfoFromSpread));
 	}
 
 	/**
@@ -397,12 +397,12 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__EREFERENCE0:
 				if (resolve) return getEReference0();
 				return basicGetEReference0();
-			case BasePackage.MAIN_BASE__EREFERENCE1:
-				if (resolve) return getEReference1();
-				return basicGetEReference1();
-			case BasePackage.MAIN_BASE__EREFERENCE2:
-				if (resolve) return getEReference2();
-				return basicGetEReference2();
+			case BasePackage.MAIN_BASE__CONVERT_INFO_TO:
+				if (resolve) return getConvertInfoTo();
+				return basicGetConvertInfoTo();
+			case BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD:
+				if (resolve) return getGetInfoFromSpread();
+				return basicGetGetInfoFromSpread();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -416,7 +416,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.MAIN_BASE__ROW:
-				setRow((String)newValue);
+				setRow((String[])newValue);
 				return;
 			case BasePackage.MAIN_BASE__SHEET:
 				setSheet((Integer)newValue);
@@ -424,11 +424,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__EREFERENCE0:
 				setEReference0((DeviceModel)newValue);
 				return;
-			case BasePackage.MAIN_BASE__EREFERENCE1:
-				setEReference1((Util)newValue);
+			case BasePackage.MAIN_BASE__CONVERT_INFO_TO:
+				setConvertInfoTo((Util)newValue);
 				return;
-			case BasePackage.MAIN_BASE__EREFERENCE2:
-				setEReference2((Table)newValue);
+			case BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD:
+				setGetInfoFromSpread((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -451,11 +451,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__EREFERENCE0:
 				setEReference0((DeviceModel)null);
 				return;
-			case BasePackage.MAIN_BASE__EREFERENCE1:
-				setEReference1((Util)null);
+			case BasePackage.MAIN_BASE__CONVERT_INFO_TO:
+				setConvertInfoTo((Util)null);
 				return;
-			case BasePackage.MAIN_BASE__EREFERENCE2:
-				setEReference2((Table)null);
+			case BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD:
+				setGetInfoFromSpread((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -475,10 +475,10 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return sheet != SHEET_EDEFAULT;
 			case BasePackage.MAIN_BASE__EREFERENCE0:
 				return eReference0 != null;
-			case BasePackage.MAIN_BASE__EREFERENCE1:
-				return eReference1 != null;
-			case BasePackage.MAIN_BASE__EREFERENCE2:
-				return eReference2 != null;
+			case BasePackage.MAIN_BASE__CONVERT_INFO_TO:
+				return convertInfoTo != null;
+			case BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD:
+				return getInfoFromSpread != null;
 		}
 		return super.eIsSet(featureID);
 	}

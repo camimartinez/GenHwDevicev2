@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  * <ul>
  *   <li>{@link datamodel.base.ArchiveProperty#getRow <em>Row</em>}</li>
  *   <li>{@link datamodel.base.ArchiveProperty#getSheet <em>Sheet</em>}</li>
- *   <li>{@link datamodel.base.ArchiveProperty#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link datamodel.base.ArchiveProperty#getGetColumnsInfoOfArchi <em>Get Columns Info Of Archi</em>}</li>
  *   <li>{@link datamodel.base.ArchiveProperty#getMp <em>Mp</em>}</li>
  *   <li>{@link datamodel.base.ArchiveProperty#getCp <em>Cp</em>}</li>
  * </ul>
@@ -40,12 +40,12 @@ public interface ArchiveProperty extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Row</em>' attribute.
-	 * @see #setRow(String)
+	 * @see #setRow(String[])
 	 * @see datamodel.base.BasePackage#getArchiveProperty_Row()
-	 * @model
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String getRow();
+	String[] getRow();
 
 	/**
 	 * Sets the value of the '{@link datamodel.base.ArchiveProperty#getRow <em>Row</em>}' attribute.
@@ -55,7 +55,7 @@ public interface ArchiveProperty extends EObject {
 	 * @see #getRow()
 	 * @generated
 	 */
-	void setRow(String value);
+	void setRow(String[] value);
 
 	/**
 	 * Returns the value of the '<em><b>Sheet</b></em>' attribute.
@@ -84,30 +84,30 @@ public interface ArchiveProperty extends EObject {
 	void setSheet(int value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Columns Info Of Archi</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Columns Info Of Archi</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(Table)
-	 * @see datamodel.base.BasePackage#getArchiveProperty_EReference0()
+	 * @return the value of the '<em>Get Columns Info Of Archi</em>' reference.
+	 * @see #setGetColumnsInfoOfArchi(Table)
+	 * @see datamodel.base.BasePackage#getArchiveProperty_GetColumnsInfoOfArchi()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference0();
+	Table getGetColumnsInfoOfArchi();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.ArchiveProperty#getEReference0 <em>EReference0</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.ArchiveProperty#getGetColumnsInfoOfArchi <em>Get Columns Info Of Archi</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
+	 * @param value the new value of the '<em>Get Columns Info Of Archi</em>' reference.
+	 * @see #getGetColumnsInfoOfArchi()
 	 * @generated
 	 */
-	void setEReference0(Table value);
+	void setGetColumnsInfoOfArchi(Table value);
 
 	/**
 	 * Returns the value of the '<em><b>Mp</b></em>' attribute.

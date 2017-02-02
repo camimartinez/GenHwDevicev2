@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link datamodel.base.Util#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link datamodel.base.Util#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link datamodel.base.Util#getMONTHalt <em>MONT Halt</em>}</li>
- *   <li>{@link datamodel.base.Util#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link datamodel.base.Util#getGetRawBytes <em>Get Raw Bytes</em>}</li>
  * </ul>
  * </p>
  *
@@ -138,30 +138,30 @@ public interface Util extends EObject {
 	void setMONTHalt(String value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Raw Bytes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Raw Bytes</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(Table)
-	 * @see datamodel.base.BasePackage#getUtil_EReference0()
+	 * @return the value of the '<em>Get Raw Bytes</em>' reference.
+	 * @see #setGetRawBytes(Table)
+	 * @see datamodel.base.BasePackage#getUtil_GetRawBytes()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference0();
+	Table getGetRawBytes();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.Util#getEReference0 <em>EReference0</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.Util#getGetRawBytes <em>Get Raw Bytes</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
+	 * @param value the new value of the '<em>Get Raw Bytes</em>' reference.
+	 * @see #getGetRawBytes()
 	 * @generated
 	 */
-	void setEReference0(Table value);
+	void setGetRawBytes(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

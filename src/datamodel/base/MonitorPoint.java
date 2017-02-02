@@ -15,8 +15,8 @@ package datamodel.base;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link datamodel.base.MonitorPoint#getEReference4 <em>EReference4</em>}</li>
- *   <li>{@link datamodel.base.MonitorPoint#getEReference5 <em>EReference5</em>}</li>
+ *   <li>{@link datamodel.base.MonitorPoint#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}</li>
+ *   <li>{@link datamodel.base.MonitorPoint#getGetInfoFromMPSpread <em>Get Info From MP Spread</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,56 +26,56 @@ package datamodel.base;
  */
 public interface MonitorPoint extends MandCBase {
 	/**
-	 * Returns the value of the '<em><b>EReference4</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Info From AP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference4</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Info From AP Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference4</em>' reference.
-	 * @see #setEReference4(ArchiveProperty)
-	 * @see datamodel.base.BasePackage#getMonitorPoint_EReference4()
+	 * @return the value of the '<em>Get Info From AP Spread</em>' reference.
+	 * @see #setGetInfoFromAPSpread(ArchiveProperty)
+	 * @see datamodel.base.BasePackage#getMonitorPoint_GetInfoFromAPSpread()
 	 * @model
 	 * @generated
 	 */
-	ArchiveProperty getEReference4();
+	ArchiveProperty getGetInfoFromAPSpread();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.MonitorPoint#getEReference4 <em>EReference4</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.MonitorPoint#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference4</em>' reference.
-	 * @see #getEReference4()
+	 * @param value the new value of the '<em>Get Info From AP Spread</em>' reference.
+	 * @see #getGetInfoFromAPSpread()
 	 * @generated
 	 */
-	void setEReference4(ArchiveProperty value);
+	void setGetInfoFromAPSpread(ArchiveProperty value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference5</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Info From MP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference5</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Info From MP Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference5</em>' reference.
-	 * @see #setEReference5(Table)
-	 * @see datamodel.base.BasePackage#getMonitorPoint_EReference5()
+	 * @return the value of the '<em>Get Info From MP Spread</em>' reference.
+	 * @see #setGetInfoFromMPSpread(Table)
+	 * @see datamodel.base.BasePackage#getMonitorPoint_GetInfoFromMPSpread()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference5();
+	Table getGetInfoFromMPSpread();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.MonitorPoint#getEReference5 <em>EReference5</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.MonitorPoint#getGetInfoFromMPSpread <em>Get Info From MP Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference5</em>' reference.
-	 * @see #getEReference5()
+	 * @param value the new value of the '<em>Get Info From MP Spread</em>' reference.
+	 * @see #getGetInfoFromMPSpread()
 	 * @generated
 	 */
-	void setEReference5(Table value);
+	void setGetInfoFromMPSpread(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

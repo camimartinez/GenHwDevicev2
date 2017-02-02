@@ -44,10 +44,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getArchiveProperties <em>Archive Properties</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getSimMonitorPoints <em>Sim Monitor Points</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getSimControlPoints <em>Sim Control Points</em>}</li>
- *   <li>{@link datamodel.amb.impl.SWModuleImpl#getEReference0 <em>EReference0</em>}</li>
- *   <li>{@link datamodel.amb.impl.SWModuleImpl#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.amb.impl.SWModuleImpl#getEReference2 <em>EReference2</em>}</li>
- *   <li>{@link datamodel.amb.impl.SWModuleImpl#getEReference3 <em>EReference3</em>}</li>
+ *   <li>{@link datamodel.amb.impl.SWModuleImpl#getAddAllMP <em>Add All MP</em>}</li>
+ *   <li>{@link datamodel.amb.impl.SWModuleImpl#getAddAllCP <em>Add All CP</em>}</li>
+ *   <li>{@link datamodel.amb.impl.SWModuleImpl#getSetFormatDescriptions <em>Set Format Descriptions</em>}</li>
+ *   <li>{@link datamodel.amb.impl.SWModuleImpl#getGetSheetColumns <em>Get Sheet Columns</em>}</li>
  * </ul>
  * </p>
  *
@@ -142,7 +142,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROW_EDEFAULT = null;
+	protected static final String[] ROW_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
@@ -152,7 +152,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 * @ordered
 	 */
-	protected String row = ROW_EDEFAULT;
+	protected String[] row = ROW_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getParentRow() <em>Parent Row</em>}' attribute.
@@ -162,7 +162,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_ROW_EDEFAULT = null;
+	protected static final String[] PARENT_ROW_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getParentRow() <em>Parent Row</em>}' attribute.
@@ -172,7 +172,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 * @ordered
 	 */
-	protected String parentRow = PARENT_ROW_EDEFAULT;
+	protected String[] parentRow = PARENT_ROW_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSheet() <em>Sheet</em>}' attribute.
@@ -295,44 +295,44 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	protected ResourceSet simControlPoints = SIM_CONTROL_POINTS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * The cached value of the '{@link #getAddAllMP() <em>Add All MP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
+	 * @see #getAddAllMP()
 	 * @generated
 	 * @ordered
 	 */
-	protected MonitorImpl eReference0;
+	protected MonitorImpl addAllMP;
 
 	/**
-	 * The cached value of the '{@link #getEReference1() <em>EReference1</em>}' reference.
+	 * The cached value of the '{@link #getAddAllCP() <em>Add All CP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference1()
+	 * @see #getAddAllCP()
 	 * @generated
 	 * @ordered
 	 */
-	protected ControlImpl eReference1;
+	protected ControlImpl addAllCP;
 
 	/**
-	 * The cached value of the '{@link #getEReference2() <em>EReference2</em>}' reference.
+	 * The cached value of the '{@link #getSetFormatDescriptions() <em>Set Format Descriptions</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference2()
+	 * @see #getSetFormatDescriptions()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util eReference2;
+	protected Util setFormatDescriptions;
 
 	/**
-	 * The cached value of the '{@link #getEReference3() <em>EReference3</em>}' reference.
+	 * The cached value of the '{@link #getGetSheetColumns() <em>Get Sheet Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference3()
+	 * @see #getGetSheetColumns()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference3;
+	protected Table getSheetColumns;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -442,7 +442,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRow() {
+	public String[] getRow() {
 		return row;
 	}
 
@@ -451,8 +451,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRow(String newRow) {
-		String oldRow = row;
+	public void setRow(String[] newRow) {
+		String[] oldRow = row;
 		row = newRow;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__ROW, oldRow, row));
@@ -463,7 +463,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getParentRow() {
+	public String[] getParentRow() {
 		return parentRow;
 	}
 
@@ -472,8 +472,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentRow(String newParentRow) {
-		String oldParentRow = parentRow;
+	public void setParentRow(String[] newParentRow) {
+		String[] oldParentRow = parentRow;
 		parentRow = newParentRow;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__PARENT_ROW, oldParentRow, parentRow));
@@ -610,16 +610,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (MonitorImpl)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+	public MonitorImpl getAddAllMP() {
+		if (addAllMP != null && addAllMP.eIsProxy()) {
+			InternalEObject oldAddAllMP = (InternalEObject)addAllMP;
+			addAllMP = (MonitorImpl)eResolveProxy(oldAddAllMP);
+			if (addAllMP != oldAddAllMP) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__EREFERENCE0, oldEReference0, eReference0));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__ADD_ALL_MP, oldAddAllMP, addAllMP));
 			}
 		}
-		return eReference0;
+		return addAllMP;
 	}
 
 	/**
@@ -627,8 +627,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl basicGetEReference0() {
-		return eReference0;
+	public MonitorImpl basicGetAddAllMP() {
+		return addAllMP;
 	}
 
 	/**
@@ -636,11 +636,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference0(MonitorImpl newEReference0) {
-		MonitorImpl oldEReference0 = eReference0;
-		eReference0 = newEReference0;
+	public void setAddAllMP(MonitorImpl newAddAllMP) {
+		MonitorImpl oldAddAllMP = addAllMP;
+		addAllMP = newAddAllMP;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__EREFERENCE0, oldEReference0, eReference0));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__ADD_ALL_MP, oldAddAllMP, addAllMP));
 	}
 
 	/**
@@ -648,16 +648,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlImpl getEReference1() {
-		if (eReference1 != null && eReference1.eIsProxy()) {
-			InternalEObject oldEReference1 = (InternalEObject)eReference1;
-			eReference1 = (ControlImpl)eResolveProxy(oldEReference1);
-			if (eReference1 != oldEReference1) {
+	public ControlImpl getAddAllCP() {
+		if (addAllCP != null && addAllCP.eIsProxy()) {
+			InternalEObject oldAddAllCP = (InternalEObject)addAllCP;
+			addAllCP = (ControlImpl)eResolveProxy(oldAddAllCP);
+			if (addAllCP != oldAddAllCP) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__EREFERENCE1, oldEReference1, eReference1));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__ADD_ALL_CP, oldAddAllCP, addAllCP));
 			}
 		}
-		return eReference1;
+		return addAllCP;
 	}
 
 	/**
@@ -665,8 +665,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlImpl basicGetEReference1() {
-		return eReference1;
+	public ControlImpl basicGetAddAllCP() {
+		return addAllCP;
 	}
 
 	/**
@@ -674,11 +674,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference1(ControlImpl newEReference1) {
-		ControlImpl oldEReference1 = eReference1;
-		eReference1 = newEReference1;
+	public void setAddAllCP(ControlImpl newAddAllCP) {
+		ControlImpl oldAddAllCP = addAllCP;
+		addAllCP = newAddAllCP;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__EREFERENCE1, oldEReference1, eReference1));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__ADD_ALL_CP, oldAddAllCP, addAllCP));
 	}
 
 	/**
@@ -686,16 +686,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getEReference2() {
-		if (eReference2 != null && eReference2.eIsProxy()) {
-			InternalEObject oldEReference2 = (InternalEObject)eReference2;
-			eReference2 = (Util)eResolveProxy(oldEReference2);
-			if (eReference2 != oldEReference2) {
+	public Util getSetFormatDescriptions() {
+		if (setFormatDescriptions != null && setFormatDescriptions.eIsProxy()) {
+			InternalEObject oldSetFormatDescriptions = (InternalEObject)setFormatDescriptions;
+			setFormatDescriptions = (Util)eResolveProxy(oldSetFormatDescriptions);
+			if (setFormatDescriptions != oldSetFormatDescriptions) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__EREFERENCE2, oldEReference2, eReference2));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS, oldSetFormatDescriptions, setFormatDescriptions));
 			}
 		}
-		return eReference2;
+		return setFormatDescriptions;
 	}
 
 	/**
@@ -703,8 +703,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetEReference2() {
-		return eReference2;
+	public Util basicGetSetFormatDescriptions() {
+		return setFormatDescriptions;
 	}
 
 	/**
@@ -712,11 +712,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference2(Util newEReference2) {
-		Util oldEReference2 = eReference2;
-		eReference2 = newEReference2;
+	public void setSetFormatDescriptions(Util newSetFormatDescriptions) {
+		Util oldSetFormatDescriptions = setFormatDescriptions;
+		setFormatDescriptions = newSetFormatDescriptions;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__EREFERENCE2, oldEReference2, eReference2));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS, oldSetFormatDescriptions, setFormatDescriptions));
 	}
 
 	/**
@@ -724,16 +724,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference3() {
-		if (eReference3 != null && eReference3.eIsProxy()) {
-			InternalEObject oldEReference3 = (InternalEObject)eReference3;
-			eReference3 = (Table)eResolveProxy(oldEReference3);
-			if (eReference3 != oldEReference3) {
+	public Table getGetSheetColumns() {
+		if (getSheetColumns != null && getSheetColumns.eIsProxy()) {
+			InternalEObject oldGetSheetColumns = (InternalEObject)getSheetColumns;
+			getSheetColumns = (Table)eResolveProxy(oldGetSheetColumns);
+			if (getSheetColumns != oldGetSheetColumns) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__EREFERENCE3, oldEReference3, eReference3));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__GET_SHEET_COLUMNS, oldGetSheetColumns, getSheetColumns));
 			}
 		}
-		return eReference3;
+		return getSheetColumns;
 	}
 
 	/**
@@ -741,8 +741,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference3() {
-		return eReference3;
+	public Table basicGetGetSheetColumns() {
+		return getSheetColumns;
 	}
 
 	/**
@@ -750,11 +750,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference3(Table newEReference3) {
-		Table oldEReference3 = eReference3;
-		eReference3 = newEReference3;
+	public void setGetSheetColumns(Table newGetSheetColumns) {
+		Table oldGetSheetColumns = getSheetColumns;
+		getSheetColumns = newGetSheetColumns;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__EREFERENCE3, oldEReference3, eReference3));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__GET_SHEET_COLUMNS, oldGetSheetColumns, getSheetColumns));
 	}
 
 	/**
@@ -1064,18 +1064,18 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				return getSimMonitorPoints();
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				return getSimControlPoints();
-			case AmbPackage.SW_MODULE__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
-			case AmbPackage.SW_MODULE__EREFERENCE1:
-				if (resolve) return getEReference1();
-				return basicGetEReference1();
-			case AmbPackage.SW_MODULE__EREFERENCE2:
-				if (resolve) return getEReference2();
-				return basicGetEReference2();
-			case AmbPackage.SW_MODULE__EREFERENCE3:
-				if (resolve) return getEReference3();
-				return basicGetEReference3();
+			case AmbPackage.SW_MODULE__ADD_ALL_MP:
+				if (resolve) return getAddAllMP();
+				return basicGetAddAllMP();
+			case AmbPackage.SW_MODULE__ADD_ALL_CP:
+				if (resolve) return getAddAllCP();
+				return basicGetAddAllCP();
+			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
+				if (resolve) return getSetFormatDescriptions();
+				return basicGetSetFormatDescriptions();
+			case AmbPackage.SW_MODULE__GET_SHEET_COLUMNS:
+				if (resolve) return getGetSheetColumns();
+				return basicGetGetSheetColumns();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1101,10 +1101,10 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				setOneSwModule((Boolean)newValue);
 				return;
 			case AmbPackage.SW_MODULE__ROW:
-				setRow((String)newValue);
+				setRow((String[])newValue);
 				return;
 			case AmbPackage.SW_MODULE__PARENT_ROW:
-				setParentRow((String)newValue);
+				setParentRow((String[])newValue);
 				return;
 			case AmbPackage.SW_MODULE__SHEET:
 				setSheet((Integer)newValue);
@@ -1124,17 +1124,17 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				setSimControlPoints((ResourceSet)newValue);
 				return;
-			case AmbPackage.SW_MODULE__EREFERENCE0:
-				setEReference0((MonitorImpl)newValue);
+			case AmbPackage.SW_MODULE__ADD_ALL_MP:
+				setAddAllMP((MonitorImpl)newValue);
 				return;
-			case AmbPackage.SW_MODULE__EREFERENCE1:
-				setEReference1((ControlImpl)newValue);
+			case AmbPackage.SW_MODULE__ADD_ALL_CP:
+				setAddAllCP((ControlImpl)newValue);
 				return;
-			case AmbPackage.SW_MODULE__EREFERENCE2:
-				setEReference2((Util)newValue);
+			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
+				setSetFormatDescriptions((Util)newValue);
 				return;
-			case AmbPackage.SW_MODULE__EREFERENCE3:
-				setEReference3((Table)newValue);
+			case AmbPackage.SW_MODULE__GET_SHEET_COLUMNS:
+				setGetSheetColumns((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1184,17 +1184,17 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				setSimControlPoints(SIM_CONTROL_POINTS_EDEFAULT);
 				return;
-			case AmbPackage.SW_MODULE__EREFERENCE0:
-				setEReference0((MonitorImpl)null);
+			case AmbPackage.SW_MODULE__ADD_ALL_MP:
+				setAddAllMP((MonitorImpl)null);
 				return;
-			case AmbPackage.SW_MODULE__EREFERENCE1:
-				setEReference1((ControlImpl)null);
+			case AmbPackage.SW_MODULE__ADD_ALL_CP:
+				setAddAllCP((ControlImpl)null);
 				return;
-			case AmbPackage.SW_MODULE__EREFERENCE2:
-				setEReference2((Util)null);
+			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
+				setSetFormatDescriptions((Util)null);
 				return;
-			case AmbPackage.SW_MODULE__EREFERENCE3:
-				setEReference3((Table)null);
+			case AmbPackage.SW_MODULE__GET_SHEET_COLUMNS:
+				setGetSheetColumns((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1232,14 +1232,14 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				return SIM_MONITOR_POINTS_EDEFAULT == null ? simMonitorPoints != null : !SIM_MONITOR_POINTS_EDEFAULT.equals(simMonitorPoints);
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				return SIM_CONTROL_POINTS_EDEFAULT == null ? simControlPoints != null : !SIM_CONTROL_POINTS_EDEFAULT.equals(simControlPoints);
-			case AmbPackage.SW_MODULE__EREFERENCE0:
-				return eReference0 != null;
-			case AmbPackage.SW_MODULE__EREFERENCE1:
-				return eReference1 != null;
-			case AmbPackage.SW_MODULE__EREFERENCE2:
-				return eReference2 != null;
-			case AmbPackage.SW_MODULE__EREFERENCE3:
-				return eReference3 != null;
+			case AmbPackage.SW_MODULE__ADD_ALL_MP:
+				return addAllMP != null;
+			case AmbPackage.SW_MODULE__ADD_ALL_CP:
+				return addAllCP != null;
+			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
+				return setFormatDescriptions != null;
+			case AmbPackage.SW_MODULE__GET_SHEET_COLUMNS:
+				return getSheetColumns != null;
 		}
 		return super.eIsSet(featureID);
 	}

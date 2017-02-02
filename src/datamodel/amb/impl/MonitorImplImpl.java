@@ -29,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link datamodel.amb.impl.MonitorImplImpl#getEReference6 <em>EReference6</em>}</li>
- *   <li>{@link datamodel.amb.impl.MonitorImplImpl#getEReference7 <em>EReference7</em>}</li>
- *   <li>{@link datamodel.amb.impl.MonitorImplImpl#getEReference8 <em>EReference8</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MonitorImplImpl#getToNormalizeData <em>To Normalize Data</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MonitorImplImpl#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MonitorImplImpl#getGetInfoMPSheet <em>Get Info MP Sheet</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,34 +39,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	/**
-	 * The cached value of the '{@link #getEReference6() <em>EReference6</em>}' reference.
+	 * The cached value of the '{@link #getToNormalizeData() <em>To Normalize Data</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference6()
+	 * @see #getToNormalizeData()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util eReference6;
+	protected Util toNormalizeData;
 
 	/**
-	 * The cached value of the '{@link #getEReference7() <em>EReference7</em>}' reference.
+	 * The cached value of the '{@link #getGetColumnsCanBeInv() <em>Get Columns Can Be Inv</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference7()
+	 * @see #getGetColumnsCanBeInv()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference7;
+	protected Table getColumnsCanBeInv;
 
 	/**
-	 * The cached value of the '{@link #getEReference8() <em>EReference8</em>}' reference.
+	 * The cached value of the '{@link #getGetInfoMPSheet() <em>Get Info MP Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference8()
+	 * @see #getGetInfoMPSheet()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandCImpl eReference8;
+	protected MandCImpl getInfoMPSheet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,16 +92,16 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getEReference6() {
-		if (eReference6 != null && eReference6.eIsProxy()) {
-			InternalEObject oldEReference6 = (InternalEObject)eReference6;
-			eReference6 = (Util)eResolveProxy(oldEReference6);
-			if (eReference6 != oldEReference6) {
+	public Util getToNormalizeData() {
+		if (toNormalizeData != null && toNormalizeData.eIsProxy()) {
+			InternalEObject oldToNormalizeData = (InternalEObject)toNormalizeData;
+			toNormalizeData = (Util)eResolveProxy(oldToNormalizeData);
+			if (toNormalizeData != oldToNormalizeData) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR_IMPL__EREFERENCE6, oldEReference6, eReference6));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR_IMPL__TO_NORMALIZE_DATA, oldToNormalizeData, toNormalizeData));
 			}
 		}
-		return eReference6;
+		return toNormalizeData;
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetEReference6() {
-		return eReference6;
+	public Util basicGetToNormalizeData() {
+		return toNormalizeData;
 	}
 
 	/**
@@ -118,11 +118,11 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference6(Util newEReference6) {
-		Util oldEReference6 = eReference6;
-		eReference6 = newEReference6;
+	public void setToNormalizeData(Util newToNormalizeData) {
+		Util oldToNormalizeData = toNormalizeData;
+		toNormalizeData = newToNormalizeData;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_IMPL__EREFERENCE6, oldEReference6, eReference6));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_IMPL__TO_NORMALIZE_DATA, oldToNormalizeData, toNormalizeData));
 	}
 
 	/**
@@ -130,16 +130,16 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference7() {
-		if (eReference7 != null && eReference7.eIsProxy()) {
-			InternalEObject oldEReference7 = (InternalEObject)eReference7;
-			eReference7 = (Table)eResolveProxy(oldEReference7);
-			if (eReference7 != oldEReference7) {
+	public Table getGetColumnsCanBeInv() {
+		if (getColumnsCanBeInv != null && getColumnsCanBeInv.eIsProxy()) {
+			InternalEObject oldGetColumnsCanBeInv = (InternalEObject)getColumnsCanBeInv;
+			getColumnsCanBeInv = (Table)eResolveProxy(oldGetColumnsCanBeInv);
+			if (getColumnsCanBeInv != oldGetColumnsCanBeInv) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR_IMPL__EREFERENCE7, oldEReference7, eReference7));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV, oldGetColumnsCanBeInv, getColumnsCanBeInv));
 			}
 		}
-		return eReference7;
+		return getColumnsCanBeInv;
 	}
 
 	/**
@@ -147,8 +147,8 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference7() {
-		return eReference7;
+	public Table basicGetGetColumnsCanBeInv() {
+		return getColumnsCanBeInv;
 	}
 
 	/**
@@ -156,11 +156,11 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference7(Table newEReference7) {
-		Table oldEReference7 = eReference7;
-		eReference7 = newEReference7;
+	public void setGetColumnsCanBeInv(Table newGetColumnsCanBeInv) {
+		Table oldGetColumnsCanBeInv = getColumnsCanBeInv;
+		getColumnsCanBeInv = newGetColumnsCanBeInv;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_IMPL__EREFERENCE7, oldEReference7, eReference7));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV, oldGetColumnsCanBeInv, getColumnsCanBeInv));
 	}
 
 	/**
@@ -168,16 +168,16 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCImpl getEReference8() {
-		if (eReference8 != null && eReference8.eIsProxy()) {
-			InternalEObject oldEReference8 = (InternalEObject)eReference8;
-			eReference8 = (MandCImpl)eResolveProxy(oldEReference8);
-			if (eReference8 != oldEReference8) {
+	public MandCImpl getGetInfoMPSheet() {
+		if (getInfoMPSheet != null && getInfoMPSheet.eIsProxy()) {
+			InternalEObject oldGetInfoMPSheet = (InternalEObject)getInfoMPSheet;
+			getInfoMPSheet = (MandCImpl)eResolveProxy(oldGetInfoMPSheet);
+			if (getInfoMPSheet != oldGetInfoMPSheet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR_IMPL__EREFERENCE8, oldEReference8, eReference8));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR_IMPL__GET_INFO_MP_SHEET, oldGetInfoMPSheet, getInfoMPSheet));
 			}
 		}
-		return eReference8;
+		return getInfoMPSheet;
 	}
 
 	/**
@@ -185,8 +185,8 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCImpl basicGetEReference8() {
-		return eReference8;
+	public MandCImpl basicGetGetInfoMPSheet() {
+		return getInfoMPSheet;
 	}
 
 	/**
@@ -194,11 +194,11 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference8(MandCImpl newEReference8) {
-		MandCImpl oldEReference8 = eReference8;
-		eReference8 = newEReference8;
+	public void setGetInfoMPSheet(MandCImpl newGetInfoMPSheet) {
+		MandCImpl oldGetInfoMPSheet = getInfoMPSheet;
+		getInfoMPSheet = newGetInfoMPSheet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_IMPL__EREFERENCE8, oldEReference8, eReference8));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_IMPL__GET_INFO_MP_SHEET, oldGetInfoMPSheet, getInfoMPSheet));
 	}
 
 	/**
@@ -781,15 +781,15 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AmbPackage.MONITOR_IMPL__EREFERENCE6:
-				if (resolve) return getEReference6();
-				return basicGetEReference6();
-			case AmbPackage.MONITOR_IMPL__EREFERENCE7:
-				if (resolve) return getEReference7();
-				return basicGetEReference7();
-			case AmbPackage.MONITOR_IMPL__EREFERENCE8:
-				if (resolve) return getEReference8();
-				return basicGetEReference8();
+			case AmbPackage.MONITOR_IMPL__TO_NORMALIZE_DATA:
+				if (resolve) return getToNormalizeData();
+				return basicGetToNormalizeData();
+			case AmbPackage.MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV:
+				if (resolve) return getGetColumnsCanBeInv();
+				return basicGetGetColumnsCanBeInv();
+			case AmbPackage.MONITOR_IMPL__GET_INFO_MP_SHEET:
+				if (resolve) return getGetInfoMPSheet();
+				return basicGetGetInfoMPSheet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -802,14 +802,14 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AmbPackage.MONITOR_IMPL__EREFERENCE6:
-				setEReference6((Util)newValue);
+			case AmbPackage.MONITOR_IMPL__TO_NORMALIZE_DATA:
+				setToNormalizeData((Util)newValue);
 				return;
-			case AmbPackage.MONITOR_IMPL__EREFERENCE7:
-				setEReference7((Table)newValue);
+			case AmbPackage.MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV:
+				setGetColumnsCanBeInv((Table)newValue);
 				return;
-			case AmbPackage.MONITOR_IMPL__EREFERENCE8:
-				setEReference8((MandCImpl)newValue);
+			case AmbPackage.MONITOR_IMPL__GET_INFO_MP_SHEET:
+				setGetInfoMPSheet((MandCImpl)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -823,14 +823,14 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AmbPackage.MONITOR_IMPL__EREFERENCE6:
-				setEReference6((Util)null);
+			case AmbPackage.MONITOR_IMPL__TO_NORMALIZE_DATA:
+				setToNormalizeData((Util)null);
 				return;
-			case AmbPackage.MONITOR_IMPL__EREFERENCE7:
-				setEReference7((Table)null);
+			case AmbPackage.MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV:
+				setGetColumnsCanBeInv((Table)null);
 				return;
-			case AmbPackage.MONITOR_IMPL__EREFERENCE8:
-				setEReference8((MandCImpl)null);
+			case AmbPackage.MONITOR_IMPL__GET_INFO_MP_SHEET:
+				setGetInfoMPSheet((MandCImpl)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -844,12 +844,12 @@ public class MonitorImplImpl extends MonitorPointImpl implements MonitorImpl {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AmbPackage.MONITOR_IMPL__EREFERENCE6:
-				return eReference6 != null;
-			case AmbPackage.MONITOR_IMPL__EREFERENCE7:
-				return eReference7 != null;
-			case AmbPackage.MONITOR_IMPL__EREFERENCE8:
-				return eReference8 != null;
+			case AmbPackage.MONITOR_IMPL__TO_NORMALIZE_DATA:
+				return toNormalizeData != null;
+			case AmbPackage.MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV:
+				return getColumnsCanBeInv != null;
+			case AmbPackage.MONITOR_IMPL__GET_INFO_MP_SHEET:
+				return getInfoMPSheet != null;
 		}
 		return super.eIsSet(featureID);
 	}

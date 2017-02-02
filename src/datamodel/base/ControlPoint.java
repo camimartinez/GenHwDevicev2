@@ -15,7 +15,7 @@ package datamodel.base;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link datamodel.base.ControlPoint#getEReference4 <em>EReference4</em>}</li>
+ *   <li>{@link datamodel.base.ControlPoint#getGetArchOnUseControl <em>Get Arch On Use Control</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,30 +25,30 @@ package datamodel.base;
  */
 public interface ControlPoint extends MandCBase {
 	/**
-	 * Returns the value of the '<em><b>EReference4</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Arch On Use Control</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference4</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Arch On Use Control</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference4</em>' reference.
-	 * @see #setEReference4(Table)
-	 * @see datamodel.base.BasePackage#getControlPoint_EReference4()
+	 * @return the value of the '<em>Get Arch On Use Control</em>' reference.
+	 * @see #setGetArchOnUseControl(Table)
+	 * @see datamodel.base.BasePackage#getControlPoint_GetArchOnUseControl()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference4();
+	Table getGetArchOnUseControl();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.ControlPoint#getEReference4 <em>EReference4</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.ControlPoint#getGetArchOnUseControl <em>Get Arch On Use Control</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference4</em>' reference.
-	 * @see #getEReference4()
+	 * @param value the new value of the '<em>Get Arch On Use Control</em>' reference.
+	 * @see #getGetArchOnUseControl()
 	 * @generated
 	 */
-	void setEReference4(Table value);
+	void setGetArchOnUseControl(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

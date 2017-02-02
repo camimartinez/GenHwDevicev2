@@ -44,13 +44,13 @@ public interface AmbFactory extends EFactory {
 	ControlImpl createControlImpl();
 
 	/**
-	 * Returns a new object of class '<em>Device Model AMB</em>'.
+	 * Returns a new object of class '<em>Device Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Device Model AMB</em>'.
+	 * @return a new object of class '<em>Device Model</em>'.
 	 * @generated
 	 */
-	DeviceModelAMB createDeviceModelAMB();
+	DeviceModel createDeviceModel();
 
 	/**
 	 * Returns a new object of class '<em>Main Impl</em>'.
@@ -87,6 +87,15 @@ public interface AmbFactory extends EFactory {
 	 * @generated
 	 */
 	SWModule createSWModule();
+
+	/**
+	 * Returns a new object of class '<em>Generic Monitor Points</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Generic Monitor Points</em>'.
+	 * @generated
+	 */
+	GenericMonitorPoints createGenericMonitorPoints();
 
 	/**
 	 * Returns the package supported by this factory.

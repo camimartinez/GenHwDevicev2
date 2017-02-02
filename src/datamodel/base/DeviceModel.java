@@ -34,12 +34,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link datamodel.base.DeviceModel#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link datamodel.base.DeviceModel#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link datamodel.base.DeviceModel#isGenerateAlt <em>Generate Alt</em>}</li>
- *   <li>{@link datamodel.base.DeviceModel#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.base.DeviceModel#getEReference3 <em>EReference3</em>}</li>
- *   <li>{@link datamodel.base.DeviceModel#getEReference4 <em>EReference4</em>}</li>
- *   <li>{@link datamodel.base.DeviceModel#getEReference5 <em>EReference5</em>}</li>
- *   <li>{@link datamodel.base.DeviceModel#getEReference6 <em>EReference6</em>}</li>
- *   <li>{@link datamodel.base.DeviceModel#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link datamodel.base.DeviceModel#getGetArchiveIndex <em>Get Archive Index</em>}</li>
+ *   <li>{@link datamodel.base.DeviceModel#getGetContPoints <em>Get Cont Points</em>}</li>
+ *   <li>{@link datamodel.base.DeviceModel#getGetMoniPoints <em>Get Moni Points</em>}</li>
+ *   <li>{@link datamodel.base.DeviceModel#getGetEndOfGeneration <em>Get End Of Generation</em>}</li>
+ *   <li>{@link datamodel.base.DeviceModel#getGetArchivProp <em>Get Archiv Prop</em>}</li>
+ *   <li>{@link datamodel.base.DeviceModel#getGetInfFromSpread <em>Get Inf From Spread</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,12 +83,12 @@ public interface DeviceModel extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Spreadsheet</em>' attribute.
-	 * @see #setSpreadsheet(String)
+	 * @see #setSpreadsheet(String[][][])
 	 * @see datamodel.base.BasePackage#getDeviceModel_Spreadsheet()
-	 * @model
+	 * @model dataType="datamodel.base.String3DT"
 	 * @generated
 	 */
-	String getSpreadsheet();
+	String[][][] getSpreadsheet();
 
 	/**
 	 * Sets the value of the '{@link datamodel.base.DeviceModel#getSpreadsheet <em>Spreadsheet</em>}' attribute.
@@ -98,7 +98,7 @@ public interface DeviceModel extends EObject {
 	 * @see #getSpreadsheet()
 	 * @generated
 	 */
-	void setSpreadsheet(String value);
+	void setSpreadsheet(String[][][] value);
 
 	/**
 	 * Returns the value of the '<em><b>Main</b></em>' attribute.
@@ -439,160 +439,160 @@ public interface DeviceModel extends EObject {
 	void setGenerateAlt(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference1</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Archive Index</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference1</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Archive Index</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference1</em>' reference.
-	 * @see #setEReference1(Table)
-	 * @see datamodel.base.BasePackage#getDeviceModel_EReference1()
+	 * @return the value of the '<em>Get Archive Index</em>' reference.
+	 * @see #setGetArchiveIndex(Table)
+	 * @see datamodel.base.BasePackage#getDeviceModel_GetArchiveIndex()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference1();
+	Table getGetArchiveIndex();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.DeviceModel#getEReference1 <em>EReference1</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.DeviceModel#getGetArchiveIndex <em>Get Archive Index</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference1</em>' reference.
-	 * @see #getEReference1()
+	 * @param value the new value of the '<em>Get Archive Index</em>' reference.
+	 * @see #getGetArchiveIndex()
 	 * @generated
 	 */
-	void setEReference1(Table value);
+	void setGetArchiveIndex(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference3</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Cont Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference3</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Cont Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference3</em>' reference.
-	 * @see #setEReference3(ControlPoint)
-	 * @see datamodel.base.BasePackage#getDeviceModel_EReference3()
+	 * @return the value of the '<em>Get Cont Points</em>' reference.
+	 * @see #setGetContPoints(ControlPoint)
+	 * @see datamodel.base.BasePackage#getDeviceModel_GetContPoints()
 	 * @model
 	 * @generated
 	 */
-	ControlPoint getEReference3();
+	ControlPoint getGetContPoints();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.DeviceModel#getEReference3 <em>EReference3</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.DeviceModel#getGetContPoints <em>Get Cont Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference3</em>' reference.
-	 * @see #getEReference3()
+	 * @param value the new value of the '<em>Get Cont Points</em>' reference.
+	 * @see #getGetContPoints()
 	 * @generated
 	 */
-	void setEReference3(ControlPoint value);
+	void setGetContPoints(ControlPoint value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference4</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Moni Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference4</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Moni Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference4</em>' reference.
-	 * @see #setEReference4(MonitorPoint)
-	 * @see datamodel.base.BasePackage#getDeviceModel_EReference4()
+	 * @return the value of the '<em>Get Moni Points</em>' reference.
+	 * @see #setGetMoniPoints(MonitorPoint)
+	 * @see datamodel.base.BasePackage#getDeviceModel_GetMoniPoints()
 	 * @model
 	 * @generated
 	 */
-	MonitorPoint getEReference4();
+	MonitorPoint getGetMoniPoints();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.DeviceModel#getEReference4 <em>EReference4</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.DeviceModel#getGetMoniPoints <em>Get Moni Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference4</em>' reference.
-	 * @see #getEReference4()
+	 * @param value the new value of the '<em>Get Moni Points</em>' reference.
+	 * @see #getGetMoniPoints()
 	 * @generated
 	 */
-	void setEReference4(MonitorPoint value);
+	void setGetMoniPoints(MonitorPoint value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference5</b></em>' reference.
+	 * Returns the value of the '<em><b>Get End Of Generation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference5</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get End Of Generation</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference5</em>' reference.
-	 * @see #setEReference5(Util)
-	 * @see datamodel.base.BasePackage#getDeviceModel_EReference5()
+	 * @return the value of the '<em>Get End Of Generation</em>' reference.
+	 * @see #setGetEndOfGeneration(Util)
+	 * @see datamodel.base.BasePackage#getDeviceModel_GetEndOfGeneration()
 	 * @model
 	 * @generated
 	 */
-	Util getEReference5();
+	Util getGetEndOfGeneration();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.DeviceModel#getEReference5 <em>EReference5</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.DeviceModel#getGetEndOfGeneration <em>Get End Of Generation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference5</em>' reference.
-	 * @see #getEReference5()
+	 * @param value the new value of the '<em>Get End Of Generation</em>' reference.
+	 * @see #getGetEndOfGeneration()
 	 * @generated
 	 */
-	void setEReference5(Util value);
+	void setGetEndOfGeneration(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference6</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Archiv Prop</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference6</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Archiv Prop</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference6</em>' reference.
-	 * @see #setEReference6(ArchiveProperty)
-	 * @see datamodel.base.BasePackage#getDeviceModel_EReference6()
+	 * @return the value of the '<em>Get Archiv Prop</em>' reference.
+	 * @see #setGetArchivProp(ArchiveProperty)
+	 * @see datamodel.base.BasePackage#getDeviceModel_GetArchivProp()
 	 * @model
 	 * @generated
 	 */
-	ArchiveProperty getEReference6();
+	ArchiveProperty getGetArchivProp();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.DeviceModel#getEReference6 <em>EReference6</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.DeviceModel#getGetArchivProp <em>Get Archiv Prop</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference6</em>' reference.
-	 * @see #getEReference6()
+	 * @param value the new value of the '<em>Get Archiv Prop</em>' reference.
+	 * @see #getGetArchivProp()
 	 * @generated
 	 */
-	void setEReference6(ArchiveProperty value);
+	void setGetArchivProp(ArchiveProperty value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Inf From Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(MainBase)
-	 * @see datamodel.base.BasePackage#getDeviceModel_EReference0()
+	 * @return the value of the '<em>Get Inf From Spread</em>' reference.
+	 * @see #setGetInfFromSpread(MainBase)
+	 * @see datamodel.base.BasePackage#getDeviceModel_GetInfFromSpread()
 	 * @model
 	 * @generated
 	 */
-	MainBase getEReference0();
+	MainBase getGetInfFromSpread();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.DeviceModel#getEReference0 <em>EReference0</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.DeviceModel#getGetInfFromSpread <em>Get Inf From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
+	 * @param value the new value of the '<em>Get Inf From Spread</em>' reference.
+	 * @see #getGetInfFromSpread()
 	 * @generated
 	 */
-	void setEReference0(MainBase value);
+	void setGetInfFromSpread(MainBase value);
 
 	/**
 	 * <!-- begin-user-doc -->

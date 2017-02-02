@@ -62,11 +62,12 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 		switch (eClass.getClassifierID()) {
 			case AmbPackage.ARCHIVE_IMPL: return createArchiveImpl();
 			case AmbPackage.CONTROL_IMPL: return createControlImpl();
-			case AmbPackage.DEVICE_MODEL_AMB: return createDeviceModelAMB();
+			case AmbPackage.DEVICE_MODEL: return createDeviceModel();
 			case AmbPackage.MAIN_IMPL: return createMainImpl();
 			case AmbPackage.MAND_CIMPL: return createMandCImpl();
 			case AmbPackage.MONITOR_IMPL: return createMonitorImpl();
 			case AmbPackage.SW_MODULE: return createSWModule();
+			case AmbPackage.GENERIC_MONITOR_POINTS: return createGenericMonitorPoints();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -97,9 +98,9 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeviceModelAMB createDeviceModelAMB() {
-		DeviceModelAMBImpl deviceModelAMB = new DeviceModelAMBImpl();
-		return deviceModelAMB;
+	public DeviceModel createDeviceModel() {
+		DeviceModelImpl deviceModel = new DeviceModelImpl();
+		return deviceModel;
 	}
 
 	/**
@@ -140,6 +141,16 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	public SWModule createSWModule() {
 		SWModuleImpl swModule = new SWModuleImpl();
 		return swModule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GenericMonitorPoints createGenericMonitorPoints() {
+		GenericMonitorPointsImpl genericMonitorPoints = new GenericMonitorPointsImpl();
+		return genericMonitorPoints;
 	}
 
 	/**

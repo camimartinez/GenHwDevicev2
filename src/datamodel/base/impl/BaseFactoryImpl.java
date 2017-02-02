@@ -88,14 +88,20 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case BasePackage.HASHTABLE:
-				return createHashtableFromString(eDataType, initialValue);
-			case BasePackage.ARRAY_LIST:
-				return createArrayListFromString(eDataType, initialValue);
-			case BasePackage.SAX_PARSE_EXCEPTION_DT:
-				return createSAXParseExceptionDTFromString(eDataType, initialValue);
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return createSimpleErrorHandlerDTFromString(eDataType, initialValue);
+			case BasePackage.ARRAY_LIST:
+				return createArrayListFromString(eDataType, initialValue);
+			case BasePackage.HASHTABLE:
+				return createHashtableFromString(eDataType, initialValue);
+			case BasePackage.SAX_PARSE_EXCEPTION_DT:
+				return createSAXParseExceptionDTFromString(eDataType, initialValue);
+			case BasePackage.STRING3_DT:
+				return createString3DTFromString(eDataType, initialValue);
+			case BasePackage.STRING2_DT:
+				return createString2DTFromString(eDataType, initialValue);
+			case BasePackage.STRING1_DT:
+				return createString1DTFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -109,14 +115,20 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case BasePackage.HASHTABLE:
-				return convertHashtableToString(eDataType, instanceValue);
-			case BasePackage.ARRAY_LIST:
-				return convertArrayListToString(eDataType, instanceValue);
-			case BasePackage.SAX_PARSE_EXCEPTION_DT:
-				return convertSAXParseExceptionDTToString(eDataType, instanceValue);
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return convertSimpleErrorHandlerDTToString(eDataType, instanceValue);
+			case BasePackage.ARRAY_LIST:
+				return convertArrayListToString(eDataType, instanceValue);
+			case BasePackage.HASHTABLE:
+				return convertHashtableToString(eDataType, instanceValue);
+			case BasePackage.SAX_PARSE_EXCEPTION_DT:
+				return convertSAXParseExceptionDTToString(eDataType, instanceValue);
+			case BasePackage.STRING3_DT:
+				return convertString3DTToString(eDataType, instanceValue);
+			case BasePackage.STRING2_DT:
+				return convertString2DTToString(eDataType, instanceValue);
+			case BasePackage.STRING1_DT:
+				return convertString1DTToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -217,8 +229,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hashtable createHashtableFromString(EDataType eDataType, String initialValue) {
-		return (Hashtable)super.createFromString(eDataType, initialValue);
+	public Object createSimpleErrorHandlerDTFromString(EDataType eDataType, String initialValue) {
+		return super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -226,7 +238,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertHashtableToString(EDataType eDataType, Object instanceValue) {
+	public String convertSimpleErrorHandlerDTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
@@ -253,6 +265,24 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Hashtable createHashtableFromString(EDataType eDataType, String initialValue) {
+		return (Hashtable)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertHashtableToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SAXParseException createSAXParseExceptionDTFromString(EDataType eDataType, String initialValue) {
 		return (SAXParseException)super.createFromString(eDataType, initialValue);
 	}
@@ -271,8 +301,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object createSimpleErrorHandlerDTFromString(EDataType eDataType, String initialValue) {
-		return super.createFromString(eDataType, initialValue);
+	public String[][][] createString3DTFromString(EDataType eDataType, String initialValue) {
+		return (String[][][])super.createFromString(initialValue);
 	}
 
 	/**
@@ -280,8 +310,44 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertSimpleErrorHandlerDTToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+	public String convertString3DTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String[][] createString2DTFromString(EDataType eDataType, String initialValue) {
+		return (String[][])super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertString2DTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String[] createString1DTFromString(EDataType eDataType, String initialValue) {
+		return (String[])super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertString1DTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
 	}
 
 	/**

@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link datamodel.base.SpreadsheetParser#getXml <em>Xml</em>}</li>
  *   <li>{@link datamodel.base.SpreadsheetParser#getXsdFile <em>Xsd File</em>}</li>
  *   <li>{@link datamodel.base.SpreadsheetParser#getNewline <em>Newline</em>}</li>
- *   <li>{@link datamodel.base.SpreadsheetParser#getEReference1 <em>EReference1</em>}</li>
+ *   <li>{@link datamodel.base.SpreadsheetParser#getSetNewContent <em>Set New Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -189,30 +189,30 @@ public interface SpreadsheetParser extends EObject {
 	void setNewline(String value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference1</b></em>' reference.
+	 * Returns the value of the '<em><b>Set New Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference1</em>' reference isn't clear,
+	 * If the meaning of the '<em>Set New Content</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference1</em>' reference.
-	 * @see #setEReference1(Pair)
-	 * @see datamodel.base.BasePackage#getSpreadsheetParser_EReference1()
-	 * @model
+	 * @return the value of the '<em>Set New Content</em>' containment reference.
+	 * @see #setSetNewContent(Pair)
+	 * @see datamodel.base.BasePackage#getSpreadsheetParser_SetNewContent()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Pair getEReference1();
+	Pair getSetNewContent();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.SpreadsheetParser#getEReference1 <em>EReference1</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.SpreadsheetParser#getSetNewContent <em>Set New Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference1</em>' reference.
-	 * @see #getEReference1()
+	 * @param value the new value of the '<em>Set New Content</em>' containment reference.
+	 * @see #getSetNewContent()
 	 * @generated
 	 */
-	void setEReference1(Pair value);
+	void setSetNewContent(Pair value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,18 +233,18 @@ public interface SpreadsheetParser extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String getDataCells(String row);
+	String[] getDataCells(String row);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model kind="operation" dataType="datamodel.base.String2DT"
 	 * @generated
 	 */
-	String getWorksheets();
+	String[][] getWorksheets();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,25 +273,25 @@ public interface SpreadsheetParser extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model dataType="datamodel.base.String2DT"
 	 * @generated
 	 */
-	String filter(String doc);
+	String[][] filter(String doc);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model worksheetDataType="datamodel.base.String2DT"
 	 * @generated
 	 */
-	void deleteRow(String worksheet, String name);
+	void deleteRow(String[][] worksheet, String name);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model worksheetDataType="datamodel.base.String2DT"
 	 * @generated
 	 */
-	void modifyRow(String worksheet, int lineNumber, String rowName, String s);
+	void modifyRow(String[][] worksheet, int lineNumber, String rowName, String s);
 
 } // SpreadsheetParser

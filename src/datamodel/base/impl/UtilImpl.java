@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link datamodel.base.impl.UtilImpl#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link datamodel.base.impl.UtilImpl#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link datamodel.base.impl.UtilImpl#getMONTHalt <em>MONT Halt</em>}</li>
- *   <li>{@link datamodel.base.impl.UtilImpl#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link datamodel.base.impl.UtilImpl#getGetRawBytes <em>Get Raw Bytes</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,14 +117,14 @@ public class UtilImpl extends EObjectImpl implements Util {
 	protected String montHalt = MONT_HALT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * The cached value of the '{@link #getGetRawBytes() <em>Get Raw Bytes</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
+	 * @see #getGetRawBytes()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference0;
+	protected Table getRawBytes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,16 +234,16 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (Table)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+	public Table getGetRawBytes() {
+		if (getRawBytes != null && getRawBytes.eIsProxy()) {
+			InternalEObject oldGetRawBytes = (InternalEObject)getRawBytes;
+			getRawBytes = (Table)eResolveProxy(oldGetRawBytes);
+			if (getRawBytes != oldGetRawBytes) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__EREFERENCE0, oldEReference0, eReference0));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__GET_RAW_BYTES, oldGetRawBytes, getRawBytes));
 			}
 		}
-		return eReference0;
+		return getRawBytes;
 	}
 
 	/**
@@ -251,8 +251,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference0() {
-		return eReference0;
+	public Table basicGetGetRawBytes() {
+		return getRawBytes;
 	}
 
 	/**
@@ -260,11 +260,11 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference0(Table newEReference0) {
-		Table oldEReference0 = eReference0;
-		eReference0 = newEReference0;
+	public void setGetRawBytes(Table newGetRawBytes) {
+		Table oldGetRawBytes = getRawBytes;
+		getRawBytes = newGetRawBytes;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__EREFERENCE0, oldEReference0, eReference0));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__GET_RAW_BYTES, oldGetRawBytes, getRawBytes));
 	}
 
 	/**
@@ -536,9 +536,9 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return getMONTH();
 			case BasePackage.UTIL__MONT_HALT:
 				return getMONTHalt();
-			case BasePackage.UTIL__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
+			case BasePackage.UTIL__GET_RAW_BYTES:
+				if (resolve) return getGetRawBytes();
+				return basicGetGetRawBytes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -563,8 +563,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt((String)newValue);
 				return;
-			case BasePackage.UTIL__EREFERENCE0:
-				setEReference0((Table)newValue);
+			case BasePackage.UTIL__GET_RAW_BYTES:
+				setGetRawBytes((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -590,8 +590,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt(MONT_HALT_EDEFAULT);
 				return;
-			case BasePackage.UTIL__EREFERENCE0:
-				setEReference0((Table)null);
+			case BasePackage.UTIL__GET_RAW_BYTES:
+				setGetRawBytes((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -613,8 +613,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return MONTH_EDEFAULT == null ? month != null : !MONTH_EDEFAULT.equals(month);
 			case BasePackage.UTIL__MONT_HALT:
 				return MONT_HALT_EDEFAULT == null ? montHalt != null : !MONT_HALT_EDEFAULT.equals(montHalt);
-			case BasePackage.UTIL__EREFERENCE0:
-				return eReference0 != null;
+			case BasePackage.UTIL__GET_RAW_BYTES:
+				return getRawBytes != null;
 		}
 		return super.eIsSet(featureID);
 	}

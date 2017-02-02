@@ -17,7 +17,7 @@ import datamodel.base.Table;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link datamodel.amb.ArchiveImpl#getEReference1 <em>EReference1</em>}</li>
+ *   <li>{@link datamodel.amb.ArchiveImpl#getGetAssemblyColumn <em>Get Assembly Column</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,30 +27,30 @@ import datamodel.base.Table;
  */
 public interface ArchiveImpl extends ArchiveProperty {
 	/**
-	 * Returns the value of the '<em><b>EReference1</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Assembly Column</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference1</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Assembly Column</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference1</em>' reference.
-	 * @see #setEReference1(Table)
-	 * @see datamodel.amb.AmbPackage#getArchiveImpl_EReference1()
+	 * @return the value of the '<em>Get Assembly Column</em>' reference.
+	 * @see #setGetAssemblyColumn(Table)
+	 * @see datamodel.amb.AmbPackage#getArchiveImpl_GetAssemblyColumn()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference1();
+	Table getGetAssemblyColumn();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.ArchiveImpl#getEReference1 <em>EReference1</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.ArchiveImpl#getGetAssemblyColumn <em>Get Assembly Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference1</em>' reference.
-	 * @see #getEReference1()
+	 * @param value the new value of the '<em>Get Assembly Column</em>' reference.
+	 * @see #getGetAssemblyColumn()
 	 * @generated
 	 */
-	void setEReference1(Table value);
+	void setGetAssemblyColumn(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

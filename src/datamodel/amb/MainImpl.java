@@ -17,7 +17,7 @@ import datamodel.base.Table;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link datamodel.amb.MainImpl#getEReference3 <em>EReference3</em>}</li>
+ *   <li>{@link datamodel.amb.MainImpl#getGetInfoFromMain <em>Get Info From Main</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,30 +27,30 @@ import datamodel.base.Table;
  */
 public interface MainImpl extends MainBase {
 	/**
-	 * Returns the value of the '<em><b>EReference3</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Info From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference3</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Info From Main</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference3</em>' reference.
-	 * @see #setEReference3(Table)
-	 * @see datamodel.amb.AmbPackage#getMainImpl_EReference3()
+	 * @return the value of the '<em>Get Info From Main</em>' reference.
+	 * @see #setGetInfoFromMain(Table)
+	 * @see datamodel.amb.AmbPackage#getMainImpl_GetInfoFromMain()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference3();
+	Table getGetInfoFromMain();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MainImpl#getEReference3 <em>EReference3</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.MainImpl#getGetInfoFromMain <em>Get Info From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference3</em>' reference.
-	 * @see #getEReference3()
+	 * @param value the new value of the '<em>Get Info From Main</em>' reference.
+	 * @see #getGetInfoFromMain()
 	 * @generated
 	 */
-	void setEReference3(Table value);
+	void setGetInfoFromMain(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

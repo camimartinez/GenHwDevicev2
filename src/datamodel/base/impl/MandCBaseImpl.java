@@ -39,10 +39,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link datamodel.base.impl.MandCBaseImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link datamodel.base.impl.MandCBaseImpl#getArchive <em>Archive</em>}</li>
  *   <li>{@link datamodel.base.impl.MandCBaseImpl#getDependents <em>Dependents</em>}</li>
- *   <li>{@link datamodel.base.impl.MandCBaseImpl#getEReference0 <em>EReference0</em>}</li>
- *   <li>{@link datamodel.base.impl.MandCBaseImpl#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.base.impl.MandCBaseImpl#getEReference2 <em>EReference2</em>}</li>
- *   <li>{@link datamodel.base.impl.MandCBaseImpl#getEReference3 <em>EReference3</em>}</li>
+ *   <li>{@link datamodel.base.impl.MandCBaseImpl#getSetInfFromSpread <em>Set Inf From Spread</em>}</li>
+ *   <li>{@link datamodel.base.impl.MandCBaseImpl#getGetCommonInf <em>Get Common Inf</em>}</li>
+ *   <li>{@link datamodel.base.impl.MandCBaseImpl#getSetMPorCP <em>Set MPor CP</em>}</li>
+ *   <li>{@link datamodel.base.impl.MandCBaseImpl#getGetSheetMP <em>Get Sheet MP</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,7 +97,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROW_EDEFAULT = null;
+	protected static final String[] ROW_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
@@ -107,7 +107,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected String row = ROW_EDEFAULT;
+	protected String[] row = ROW_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getParentRow() <em>Parent Row</em>}' attribute.
@@ -117,7 +117,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_ROW_EDEFAULT = null;
+	protected static final String[] PARENT_ROW_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getParentRow() <em>Parent Row</em>}' attribute.
@@ -127,7 +127,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected String parentRow = PARENT_ROW_EDEFAULT;
+	protected String[] parentRow = PARENT_ROW_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSheet() <em>Sheet</em>}' attribute.
@@ -210,44 +210,44 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	protected ResourceSet dependents = DEPENDENTS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * The cached value of the '{@link #getSetInfFromSpread() <em>Set Inf From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
+	 * @see #getSetInfFromSpread()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util eReference0;
+	protected Util setInfFromSpread;
 
 	/**
-	 * The cached value of the '{@link #getEReference1() <em>EReference1</em>}' reference.
+	 * The cached value of the '{@link #getGetCommonInf() <em>Get Common Inf</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference1()
+	 * @see #getGetCommonInf()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference1;
+	protected Table getCommonInf;
 
 	/**
-	 * The cached value of the '{@link #getEReference2() <em>EReference2</em>}' reference.
+	 * The cached value of the '{@link #getSetMPorCP() <em>Set MPor CP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference2()
+	 * @see #getSetMPorCP()
 	 * @generated
 	 * @ordered
 	 */
-	protected ArchiveProperty eReference2;
+	protected ArchiveProperty setMPorCP;
 
 	/**
-	 * The cached value of the '{@link #getEReference3() <em>EReference3</em>}' reference.
+	 * The cached value of the '{@link #getGetSheetMP() <em>Get Sheet MP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference3()
+	 * @see #getGetSheetMP()
 	 * @generated
 	 * @ordered
 	 */
-	protected MonitorPoint eReference3;
+	protected MonitorPoint getSheetMP;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,7 +315,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRow() {
+	public String[] getRow() {
 		return row;
 	}
 
@@ -324,8 +324,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRow(String newRow) {
-		String oldRow = row;
+	public void setRow(String[] newRow) {
+		String[] oldRow = row;
 		row = newRow;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__ROW, oldRow, row));
@@ -336,7 +336,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getParentRow() {
+	public String[] getParentRow() {
 		return parentRow;
 	}
 
@@ -345,8 +345,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentRow(String newParentRow) {
-		String oldParentRow = parentRow;
+	public void setParentRow(String[] newParentRow) {
+		String[] oldParentRow = parentRow;
 		parentRow = newParentRow;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__PARENT_ROW, oldParentRow, parentRow));
@@ -441,16 +441,16 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (Util)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+	public Util getSetInfFromSpread() {
+		if (setInfFromSpread != null && setInfFromSpread.eIsProxy()) {
+			InternalEObject oldSetInfFromSpread = (InternalEObject)setInfFromSpread;
+			setInfFromSpread = (Util)eResolveProxy(oldSetInfFromSpread);
+			if (setInfFromSpread != oldSetInfFromSpread) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__EREFERENCE0, oldEReference0, eReference0));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__SET_INF_FROM_SPREAD, oldSetInfFromSpread, setInfFromSpread));
 			}
 		}
-		return eReference0;
+		return setInfFromSpread;
 	}
 
 	/**
@@ -458,8 +458,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetEReference0() {
-		return eReference0;
+	public Util basicGetSetInfFromSpread() {
+		return setInfFromSpread;
 	}
 
 	/**
@@ -467,11 +467,11 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference0(Util newEReference0) {
-		Util oldEReference0 = eReference0;
-		eReference0 = newEReference0;
+	public void setSetInfFromSpread(Util newSetInfFromSpread) {
+		Util oldSetInfFromSpread = setInfFromSpread;
+		setInfFromSpread = newSetInfFromSpread;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__EREFERENCE0, oldEReference0, eReference0));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__SET_INF_FROM_SPREAD, oldSetInfFromSpread, setInfFromSpread));
 	}
 
 	/**
@@ -479,16 +479,16 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference1() {
-		if (eReference1 != null && eReference1.eIsProxy()) {
-			InternalEObject oldEReference1 = (InternalEObject)eReference1;
-			eReference1 = (Table)eResolveProxy(oldEReference1);
-			if (eReference1 != oldEReference1) {
+	public Table getGetCommonInf() {
+		if (getCommonInf != null && getCommonInf.eIsProxy()) {
+			InternalEObject oldGetCommonInf = (InternalEObject)getCommonInf;
+			getCommonInf = (Table)eResolveProxy(oldGetCommonInf);
+			if (getCommonInf != oldGetCommonInf) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__EREFERENCE1, oldEReference1, eReference1));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__GET_COMMON_INF, oldGetCommonInf, getCommonInf));
 			}
 		}
-		return eReference1;
+		return getCommonInf;
 	}
 
 	/**
@@ -496,8 +496,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference1() {
-		return eReference1;
+	public Table basicGetGetCommonInf() {
+		return getCommonInf;
 	}
 
 	/**
@@ -505,11 +505,11 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference1(Table newEReference1) {
-		Table oldEReference1 = eReference1;
-		eReference1 = newEReference1;
+	public void setGetCommonInf(Table newGetCommonInf) {
+		Table oldGetCommonInf = getCommonInf;
+		getCommonInf = newGetCommonInf;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__EREFERENCE1, oldEReference1, eReference1));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__GET_COMMON_INF, oldGetCommonInf, getCommonInf));
 	}
 
 	/**
@@ -517,16 +517,16 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveProperty getEReference2() {
-		if (eReference2 != null && eReference2.eIsProxy()) {
-			InternalEObject oldEReference2 = (InternalEObject)eReference2;
-			eReference2 = (ArchiveProperty)eResolveProxy(oldEReference2);
-			if (eReference2 != oldEReference2) {
+	public ArchiveProperty getSetMPorCP() {
+		if (setMPorCP != null && setMPorCP.eIsProxy()) {
+			InternalEObject oldSetMPorCP = (InternalEObject)setMPorCP;
+			setMPorCP = (ArchiveProperty)eResolveProxy(oldSetMPorCP);
+			if (setMPorCP != oldSetMPorCP) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__EREFERENCE2, oldEReference2, eReference2));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__SET_MPOR_CP, oldSetMPorCP, setMPorCP));
 			}
 		}
-		return eReference2;
+		return setMPorCP;
 	}
 
 	/**
@@ -534,8 +534,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveProperty basicGetEReference2() {
-		return eReference2;
+	public ArchiveProperty basicGetSetMPorCP() {
+		return setMPorCP;
 	}
 
 	/**
@@ -543,11 +543,11 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference2(ArchiveProperty newEReference2) {
-		ArchiveProperty oldEReference2 = eReference2;
-		eReference2 = newEReference2;
+	public void setSetMPorCP(ArchiveProperty newSetMPorCP) {
+		ArchiveProperty oldSetMPorCP = setMPorCP;
+		setMPorCP = newSetMPorCP;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__EREFERENCE2, oldEReference2, eReference2));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__SET_MPOR_CP, oldSetMPorCP, setMPorCP));
 	}
 
 	/**
@@ -555,16 +555,16 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorPoint getEReference3() {
-		if (eReference3 != null && eReference3.eIsProxy()) {
-			InternalEObject oldEReference3 = (InternalEObject)eReference3;
-			eReference3 = (MonitorPoint)eResolveProxy(oldEReference3);
-			if (eReference3 != oldEReference3) {
+	public MonitorPoint getGetSheetMP() {
+		if (getSheetMP != null && getSheetMP.eIsProxy()) {
+			InternalEObject oldGetSheetMP = (InternalEObject)getSheetMP;
+			getSheetMP = (MonitorPoint)eResolveProxy(oldGetSheetMP);
+			if (getSheetMP != oldGetSheetMP) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__EREFERENCE3, oldEReference3, eReference3));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__GET_SHEET_MP, oldGetSheetMP, getSheetMP));
 			}
 		}
-		return eReference3;
+		return getSheetMP;
 	}
 
 	/**
@@ -572,8 +572,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorPoint basicGetEReference3() {
-		return eReference3;
+	public MonitorPoint basicGetGetSheetMP() {
+		return getSheetMP;
 	}
 
 	/**
@@ -581,11 +581,11 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference3(MonitorPoint newEReference3) {
-		MonitorPoint oldEReference3 = eReference3;
-		eReference3 = newEReference3;
+	public void setGetSheetMP(MonitorPoint newGetSheetMP) {
+		MonitorPoint oldGetSheetMP = getSheetMP;
+		getSheetMP = newGetSheetMP;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__EREFERENCE3, oldEReference3, eReference3));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__GET_SHEET_MP, oldGetSheetMP, getSheetMP));
 	}
 
 	/**
@@ -909,18 +909,18 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				return getArchive();
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				return getDependents();
-			case BasePackage.MAND_CBASE__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
-			case BasePackage.MAND_CBASE__EREFERENCE1:
-				if (resolve) return getEReference1();
-				return basicGetEReference1();
-			case BasePackage.MAND_CBASE__EREFERENCE2:
-				if (resolve) return getEReference2();
-				return basicGetEReference2();
-			case BasePackage.MAND_CBASE__EREFERENCE3:
-				if (resolve) return getEReference3();
-				return basicGetEReference3();
+			case BasePackage.MAND_CBASE__SET_INF_FROM_SPREAD:
+				if (resolve) return getSetInfFromSpread();
+				return basicGetSetInfFromSpread();
+			case BasePackage.MAND_CBASE__GET_COMMON_INF:
+				if (resolve) return getGetCommonInf();
+				return basicGetGetCommonInf();
+			case BasePackage.MAND_CBASE__SET_MPOR_CP:
+				if (resolve) return getSetMPorCP();
+				return basicGetSetMPorCP();
+			case BasePackage.MAND_CBASE__GET_SHEET_MP:
+				if (resolve) return getGetSheetMP();
+				return basicGetGetSheetMP();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -940,10 +940,10 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				setSheetName((String)newValue);
 				return;
 			case BasePackage.MAND_CBASE__ROW:
-				setRow((String)newValue);
+				setRow((String[])newValue);
 				return;
 			case BasePackage.MAND_CBASE__PARENT_ROW:
-				setParentRow((String)newValue);
+				setParentRow((String[])newValue);
 				return;
 			case BasePackage.MAND_CBASE__SHEET:
 				setSheet((Integer)newValue);
@@ -957,17 +957,17 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				setDependents((ResourceSet)newValue);
 				return;
-			case BasePackage.MAND_CBASE__EREFERENCE0:
-				setEReference0((Util)newValue);
+			case BasePackage.MAND_CBASE__SET_INF_FROM_SPREAD:
+				setSetInfFromSpread((Util)newValue);
 				return;
-			case BasePackage.MAND_CBASE__EREFERENCE1:
-				setEReference1((Table)newValue);
+			case BasePackage.MAND_CBASE__GET_COMMON_INF:
+				setGetCommonInf((Table)newValue);
 				return;
-			case BasePackage.MAND_CBASE__EREFERENCE2:
-				setEReference2((ArchiveProperty)newValue);
+			case BasePackage.MAND_CBASE__SET_MPOR_CP:
+				setSetMPorCP((ArchiveProperty)newValue);
 				return;
-			case BasePackage.MAND_CBASE__EREFERENCE3:
-				setEReference3((MonitorPoint)newValue);
+			case BasePackage.MAND_CBASE__GET_SHEET_MP:
+				setGetSheetMP((MonitorPoint)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1005,17 +1005,17 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				setDependents(DEPENDENTS_EDEFAULT);
 				return;
-			case BasePackage.MAND_CBASE__EREFERENCE0:
-				setEReference0((Util)null);
+			case BasePackage.MAND_CBASE__SET_INF_FROM_SPREAD:
+				setSetInfFromSpread((Util)null);
 				return;
-			case BasePackage.MAND_CBASE__EREFERENCE1:
-				setEReference1((Table)null);
+			case BasePackage.MAND_CBASE__GET_COMMON_INF:
+				setGetCommonInf((Table)null);
 				return;
-			case BasePackage.MAND_CBASE__EREFERENCE2:
-				setEReference2((ArchiveProperty)null);
+			case BasePackage.MAND_CBASE__SET_MPOR_CP:
+				setSetMPorCP((ArchiveProperty)null);
 				return;
-			case BasePackage.MAND_CBASE__EREFERENCE3:
-				setEReference3((MonitorPoint)null);
+			case BasePackage.MAND_CBASE__GET_SHEET_MP:
+				setGetSheetMP((MonitorPoint)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1045,14 +1045,14 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				return ARCHIVE_EDEFAULT == null ? archive != null : !ARCHIVE_EDEFAULT.equals(archive);
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				return DEPENDENTS_EDEFAULT == null ? dependents != null : !DEPENDENTS_EDEFAULT.equals(dependents);
-			case BasePackage.MAND_CBASE__EREFERENCE0:
-				return eReference0 != null;
-			case BasePackage.MAND_CBASE__EREFERENCE1:
-				return eReference1 != null;
-			case BasePackage.MAND_CBASE__EREFERENCE2:
-				return eReference2 != null;
-			case BasePackage.MAND_CBASE__EREFERENCE3:
-				return eReference3 != null;
+			case BasePackage.MAND_CBASE__SET_INF_FROM_SPREAD:
+				return setInfFromSpread != null;
+			case BasePackage.MAND_CBASE__GET_COMMON_INF:
+				return getCommonInf != null;
+			case BasePackage.MAND_CBASE__SET_MPOR_CP:
+				return setMPorCP != null;
+			case BasePackage.MAND_CBASE__GET_SHEET_MP:
+				return getSheetMP != null;
 		}
 		return super.eIsSet(featureID);
 	}

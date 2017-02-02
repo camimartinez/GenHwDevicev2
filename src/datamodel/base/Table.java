@@ -762,9 +762,9 @@ public interface Table extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model shDataType="datamodel.base.String3DT"
 	 * @generated
 	 */
-	void initialize(String sh);
+	void initialize(String[][][] sh);
 
 } // Table

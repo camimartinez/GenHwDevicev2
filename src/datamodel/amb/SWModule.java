@@ -34,10 +34,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link datamodel.amb.SWModule#getArchiveProperties <em>Archive Properties</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getSimMonitorPoints <em>Sim Monitor Points</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getSimControlPoints <em>Sim Control Points</em>}</li>
- *   <li>{@link datamodel.amb.SWModule#getEReference0 <em>EReference0</em>}</li>
- *   <li>{@link datamodel.amb.SWModule#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.amb.SWModule#getEReference2 <em>EReference2</em>}</li>
- *   <li>{@link datamodel.amb.SWModule#getEReference3 <em>EReference3</em>}</li>
+ *   <li>{@link datamodel.amb.SWModule#getAddAllMP <em>Add All MP</em>}</li>
+ *   <li>{@link datamodel.amb.SWModule#getAddAllCP <em>Add All CP</em>}</li>
+ *   <li>{@link datamodel.amb.SWModule#getSetFormatDescriptions <em>Set Format Descriptions</em>}</li>
+ *   <li>{@link datamodel.amb.SWModule#getGetSheetColumns <em>Get Sheet Columns</em>}</li>
  * </ul>
  * </p>
  *
@@ -160,12 +160,12 @@ public interface SWModule extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Row</em>' attribute.
-	 * @see #setRow(String)
+	 * @see #setRow(String[])
 	 * @see datamodel.amb.AmbPackage#getSWModule_Row()
-	 * @model
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String getRow();
+	String[] getRow();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.SWModule#getRow <em>Row</em>}' attribute.
@@ -175,7 +175,7 @@ public interface SWModule extends EObject {
 	 * @see #getRow()
 	 * @generated
 	 */
-	void setRow(String value);
+	void setRow(String[] value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent Row</b></em>' attribute.
@@ -186,12 +186,12 @@ public interface SWModule extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent Row</em>' attribute.
-	 * @see #setParentRow(String)
+	 * @see #setParentRow(String[])
 	 * @see datamodel.amb.AmbPackage#getSWModule_ParentRow()
-	 * @model
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String getParentRow();
+	String[] getParentRow();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.SWModule#getParentRow <em>Parent Row</em>}' attribute.
@@ -201,7 +201,7 @@ public interface SWModule extends EObject {
 	 * @see #getParentRow()
 	 * @generated
 	 */
-	void setParentRow(String value);
+	void setParentRow(String[] value);
 
 	/**
 	 * Returns the value of the '<em><b>Sheet</b></em>' attribute.
@@ -360,108 +360,108 @@ public interface SWModule extends EObject {
 	void setSimControlPoints(ResourceSet value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
+	 * Returns the value of the '<em><b>Add All MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
+	 * If the meaning of the '<em>Add All MP</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(MonitorImpl)
-	 * @see datamodel.amb.AmbPackage#getSWModule_EReference0()
+	 * @return the value of the '<em>Add All MP</em>' reference.
+	 * @see #setAddAllMP(MonitorImpl)
+	 * @see datamodel.amb.AmbPackage#getSWModule_AddAllMP()
 	 * @model
 	 * @generated
 	 */
-	MonitorImpl getEReference0();
+	MonitorImpl getAddAllMP();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.SWModule#getEReference0 <em>EReference0</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.SWModule#getAddAllMP <em>Add All MP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
+	 * @param value the new value of the '<em>Add All MP</em>' reference.
+	 * @see #getAddAllMP()
 	 * @generated
 	 */
-	void setEReference0(MonitorImpl value);
+	void setAddAllMP(MonitorImpl value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference1</b></em>' reference.
+	 * Returns the value of the '<em><b>Add All CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference1</em>' reference isn't clear,
+	 * If the meaning of the '<em>Add All CP</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference1</em>' reference.
-	 * @see #setEReference1(ControlImpl)
-	 * @see datamodel.amb.AmbPackage#getSWModule_EReference1()
+	 * @return the value of the '<em>Add All CP</em>' reference.
+	 * @see #setAddAllCP(ControlImpl)
+	 * @see datamodel.amb.AmbPackage#getSWModule_AddAllCP()
 	 * @model
 	 * @generated
 	 */
-	ControlImpl getEReference1();
+	ControlImpl getAddAllCP();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.SWModule#getEReference1 <em>EReference1</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.SWModule#getAddAllCP <em>Add All CP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference1</em>' reference.
-	 * @see #getEReference1()
+	 * @param value the new value of the '<em>Add All CP</em>' reference.
+	 * @see #getAddAllCP()
 	 * @generated
 	 */
-	void setEReference1(ControlImpl value);
+	void setAddAllCP(ControlImpl value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference2</b></em>' reference.
+	 * Returns the value of the '<em><b>Set Format Descriptions</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference2</em>' reference isn't clear,
+	 * If the meaning of the '<em>Set Format Descriptions</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference2</em>' reference.
-	 * @see #setEReference2(Util)
-	 * @see datamodel.amb.AmbPackage#getSWModule_EReference2()
+	 * @return the value of the '<em>Set Format Descriptions</em>' reference.
+	 * @see #setSetFormatDescriptions(Util)
+	 * @see datamodel.amb.AmbPackage#getSWModule_SetFormatDescriptions()
 	 * @model
 	 * @generated
 	 */
-	Util getEReference2();
+	Util getSetFormatDescriptions();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.SWModule#getEReference2 <em>EReference2</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.SWModule#getSetFormatDescriptions <em>Set Format Descriptions</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference2</em>' reference.
-	 * @see #getEReference2()
+	 * @param value the new value of the '<em>Set Format Descriptions</em>' reference.
+	 * @see #getSetFormatDescriptions()
 	 * @generated
 	 */
-	void setEReference2(Util value);
+	void setSetFormatDescriptions(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference3</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Sheet Columns</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference3</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Sheet Columns</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference3</em>' reference.
-	 * @see #setEReference3(Table)
-	 * @see datamodel.amb.AmbPackage#getSWModule_EReference3()
+	 * @return the value of the '<em>Get Sheet Columns</em>' reference.
+	 * @see #setGetSheetColumns(Table)
+	 * @see datamodel.amb.AmbPackage#getSWModule_GetSheetColumns()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference3();
+	Table getGetSheetColumns();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.SWModule#getEReference3 <em>EReference3</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.SWModule#getGetSheetColumns <em>Get Sheet Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference3</em>' reference.
-	 * @see #getEReference3()
+	 * @param value the new value of the '<em>Get Sheet Columns</em>' reference.
+	 * @see #getGetSheetColumns()
 	 * @generated
 	 */
-	void setEReference3(Table value);
+	void setGetSheetColumns(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

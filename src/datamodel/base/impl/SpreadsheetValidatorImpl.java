@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link datamodel.base.impl.SpreadsheetValidatorImpl#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link datamodel.base.impl.SpreadsheetValidatorImpl#getErrorHandler <em>Error Handler</em>}</li>
  *   <li>{@link datamodel.base.impl.SpreadsheetValidatorImpl#getErrorList <em>Error List</em>}</li>
  *   <li>{@link datamodel.base.impl.SpreadsheetValidatorImpl#getSeh <em>Seh</em>}</li>
  * </ul>
@@ -37,14 +37,14 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public class SpreadsheetValidatorImpl extends EObjectImpl implements SpreadsheetValidator {
 	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * The cached value of the '{@link #getErrorHandler() <em>Error Handler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
+	 * @see #getErrorHandler()
 	 * @generated
 	 * @ordered
 	 */
-	protected SimpleErrorHandler eReference0;
+	protected SimpleErrorHandler errorHandler;
 
 	/**
 	 * The default value of the '{@link #getErrorList() <em>Error List</em>}' attribute.
@@ -100,16 +100,16 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SimpleErrorHandler getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (SimpleErrorHandler)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+	public SimpleErrorHandler getErrorHandler() {
+		if (errorHandler != null && errorHandler.eIsProxy()) {
+			InternalEObject oldErrorHandler = (InternalEObject)errorHandler;
+			errorHandler = (SimpleErrorHandler)eResolveProxy(oldErrorHandler);
+			if (errorHandler != oldErrorHandler) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.SPREADSHEET_VALIDATOR__EREFERENCE0, oldEReference0, eReference0));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, oldErrorHandler, errorHandler));
 			}
 		}
-		return eReference0;
+		return errorHandler;
 	}
 
 	/**
@@ -117,8 +117,8 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SimpleErrorHandler basicGetEReference0() {
-		return eReference0;
+	public SimpleErrorHandler basicGetErrorHandler() {
+		return errorHandler;
 	}
 
 	/**
@@ -126,11 +126,11 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference0(SimpleErrorHandler newEReference0) {
-		SimpleErrorHandler oldEReference0 = eReference0;
-		eReference0 = newEReference0;
+	public void setErrorHandler(SimpleErrorHandler newErrorHandler) {
+		SimpleErrorHandler oldErrorHandler = errorHandler;
+		errorHandler = newErrorHandler;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_VALIDATOR__EREFERENCE0, oldEReference0, eReference0));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, oldErrorHandler, errorHandler));
 	}
 
 	/**
@@ -194,9 +194,9 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.SPREADSHEET_VALIDATOR__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
+			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
+				if (resolve) return getErrorHandler();
+				return basicGetErrorHandler();
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_LIST:
 				return getErrorList();
 			case BasePackage.SPREADSHEET_VALIDATOR__SEH:
@@ -213,8 +213,8 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.SPREADSHEET_VALIDATOR__EREFERENCE0:
-				setEReference0((SimpleErrorHandler)newValue);
+			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
+				setErrorHandler((SimpleErrorHandler)newValue);
 				return;
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_LIST:
 				setErrorList((ArrayList)newValue);
@@ -234,8 +234,8 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.SPREADSHEET_VALIDATOR__EREFERENCE0:
-				setEReference0((SimpleErrorHandler)null);
+			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
+				setErrorHandler((SimpleErrorHandler)null);
 				return;
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_LIST:
 				setErrorList(ERROR_LIST_EDEFAULT);
@@ -255,8 +255,8 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.SPREADSHEET_VALIDATOR__EREFERENCE0:
-				return eReference0 != null;
+			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
+				return errorHandler != null;
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_LIST:
 				return ERROR_LIST_EDEFAULT == null ? errorList != null : !ERROR_LIST_EDEFAULT.equals(errorList);
 			case BasePackage.SPREADSHEET_VALIDATOR__SEH:

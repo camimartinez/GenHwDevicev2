@@ -27,10 +27,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link datamodel.base.MandCBase#getParent <em>Parent</em>}</li>
  *   <li>{@link datamodel.base.MandCBase#getArchive <em>Archive</em>}</li>
  *   <li>{@link datamodel.base.MandCBase#getDependents <em>Dependents</em>}</li>
- *   <li>{@link datamodel.base.MandCBase#getEReference0 <em>EReference0</em>}</li>
- *   <li>{@link datamodel.base.MandCBase#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.base.MandCBase#getEReference2 <em>EReference2</em>}</li>
- *   <li>{@link datamodel.base.MandCBase#getEReference3 <em>EReference3</em>}</li>
+ *   <li>{@link datamodel.base.MandCBase#getSetInfFromSpread <em>Set Inf From Spread</em>}</li>
+ *   <li>{@link datamodel.base.MandCBase#getGetCommonInf <em>Get Common Inf</em>}</li>
+ *   <li>{@link datamodel.base.MandCBase#getSetMPorCP <em>Set MPor CP</em>}</li>
+ *   <li>{@link datamodel.base.MandCBase#getGetSheetMP <em>Get Sheet MP</em>}</li>
  * </ul>
  * </p>
  *
@@ -101,12 +101,12 @@ public interface MandCBase extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Row</em>' attribute.
-	 * @see #setRow(String)
+	 * @see #setRow(String[])
 	 * @see datamodel.base.BasePackage#getMandCBase_Row()
-	 * @model
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String getRow();
+	String[] getRow();
 
 	/**
 	 * Sets the value of the '{@link datamodel.base.MandCBase#getRow <em>Row</em>}' attribute.
@@ -116,7 +116,7 @@ public interface MandCBase extends EObject {
 	 * @see #getRow()
 	 * @generated
 	 */
-	void setRow(String value);
+	void setRow(String[] value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent Row</b></em>' attribute.
@@ -127,12 +127,12 @@ public interface MandCBase extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent Row</em>' attribute.
-	 * @see #setParentRow(String)
+	 * @see #setParentRow(String[])
 	 * @see datamodel.base.BasePackage#getMandCBase_ParentRow()
-	 * @model
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String getParentRow();
+	String[] getParentRow();
 
 	/**
 	 * Sets the value of the '{@link datamodel.base.MandCBase#getParentRow <em>Parent Row</em>}' attribute.
@@ -142,7 +142,7 @@ public interface MandCBase extends EObject {
 	 * @see #getParentRow()
 	 * @generated
 	 */
-	void setParentRow(String value);
+	void setParentRow(String[] value);
 
 	/**
 	 * Returns the value of the '<em><b>Sheet</b></em>' attribute.
@@ -249,108 +249,108 @@ public interface MandCBase extends EObject {
 	void setDependents(ResourceSet value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
+	 * Returns the value of the '<em><b>Set Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
+	 * If the meaning of the '<em>Set Inf From Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(Util)
-	 * @see datamodel.base.BasePackage#getMandCBase_EReference0()
+	 * @return the value of the '<em>Set Inf From Spread</em>' reference.
+	 * @see #setSetInfFromSpread(Util)
+	 * @see datamodel.base.BasePackage#getMandCBase_SetInfFromSpread()
 	 * @model
 	 * @generated
 	 */
-	Util getEReference0();
+	Util getSetInfFromSpread();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.MandCBase#getEReference0 <em>EReference0</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.MandCBase#getSetInfFromSpread <em>Set Inf From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
+	 * @param value the new value of the '<em>Set Inf From Spread</em>' reference.
+	 * @see #getSetInfFromSpread()
 	 * @generated
 	 */
-	void setEReference0(Util value);
+	void setSetInfFromSpread(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference1</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference1</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Common Inf</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference1</em>' reference.
-	 * @see #setEReference1(Table)
-	 * @see datamodel.base.BasePackage#getMandCBase_EReference1()
+	 * @return the value of the '<em>Get Common Inf</em>' reference.
+	 * @see #setGetCommonInf(Table)
+	 * @see datamodel.base.BasePackage#getMandCBase_GetCommonInf()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference1();
+	Table getGetCommonInf();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.MandCBase#getEReference1 <em>EReference1</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.MandCBase#getGetCommonInf <em>Get Common Inf</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference1</em>' reference.
-	 * @see #getEReference1()
+	 * @param value the new value of the '<em>Get Common Inf</em>' reference.
+	 * @see #getGetCommonInf()
 	 * @generated
 	 */
-	void setEReference1(Table value);
+	void setGetCommonInf(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference2</b></em>' reference.
+	 * Returns the value of the '<em><b>Set MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference2</em>' reference isn't clear,
+	 * If the meaning of the '<em>Set MPor CP</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference2</em>' reference.
-	 * @see #setEReference2(ArchiveProperty)
-	 * @see datamodel.base.BasePackage#getMandCBase_EReference2()
+	 * @return the value of the '<em>Set MPor CP</em>' reference.
+	 * @see #setSetMPorCP(ArchiveProperty)
+	 * @see datamodel.base.BasePackage#getMandCBase_SetMPorCP()
 	 * @model
 	 * @generated
 	 */
-	ArchiveProperty getEReference2();
+	ArchiveProperty getSetMPorCP();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.MandCBase#getEReference2 <em>EReference2</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.MandCBase#getSetMPorCP <em>Set MPor CP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference2</em>' reference.
-	 * @see #getEReference2()
+	 * @param value the new value of the '<em>Set MPor CP</em>' reference.
+	 * @see #getSetMPorCP()
 	 * @generated
 	 */
-	void setEReference2(ArchiveProperty value);
+	void setSetMPorCP(ArchiveProperty value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference3</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference3</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Sheet MP</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference3</em>' reference.
-	 * @see #setEReference3(MonitorPoint)
-	 * @see datamodel.base.BasePackage#getMandCBase_EReference3()
+	 * @return the value of the '<em>Get Sheet MP</em>' reference.
+	 * @see #setGetSheetMP(MonitorPoint)
+	 * @see datamodel.base.BasePackage#getMandCBase_GetSheetMP()
 	 * @model
 	 * @generated
 	 */
-	MonitorPoint getEReference3();
+	MonitorPoint getGetSheetMP();
 
 	/**
-	 * Sets the value of the '{@link datamodel.base.MandCBase#getEReference3 <em>EReference3</em>}' reference.
+	 * Sets the value of the '{@link datamodel.base.MandCBase#getGetSheetMP <em>Get Sheet MP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference3</em>' reference.
-	 * @see #getEReference3()
+	 * @param value the new value of the '<em>Get Sheet MP</em>' reference.
+	 * @see #getGetSheetMP()
 	 * @generated
 	 */
-	void setEReference3(MonitorPoint value);
+	void setGetSheetMP(MonitorPoint value);
 
 	/**
 	 * <!-- begin-user-doc -->

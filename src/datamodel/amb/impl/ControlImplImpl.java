@@ -29,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link datamodel.amb.impl.ControlImplImpl#getEReference5 <em>EReference5</em>}</li>
- *   <li>{@link datamodel.amb.impl.ControlImplImpl#getEReference6 <em>EReference6</em>}</li>
- *   <li>{@link datamodel.amb.impl.ControlImplImpl#getEReference7 <em>EReference7</em>}</li>
+ *   <li>{@link datamodel.amb.impl.ControlImplImpl#getWorldToDataColumns <em>World To Data Columns</em>}</li>
+ *   <li>{@link datamodel.amb.impl.ControlImplImpl#getGetInfoControlSheet <em>Get Info Control Sheet</em>}</li>
+ *   <li>{@link datamodel.amb.impl.ControlImplImpl#getToNormalizeNumber <em>To Normalize Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,34 +39,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	/**
-	 * The cached value of the '{@link #getEReference5() <em>EReference5</em>}' reference.
+	 * The cached value of the '{@link #getWorldToDataColumns() <em>World To Data Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference5()
+	 * @see #getWorldToDataColumns()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference5;
+	protected Table worldToDataColumns;
 
 	/**
-	 * The cached value of the '{@link #getEReference6() <em>EReference6</em>}' reference.
+	 * The cached value of the '{@link #getGetInfoControlSheet() <em>Get Info Control Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference6()
+	 * @see #getGetInfoControlSheet()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandCImpl eReference6;
+	protected MandCImpl getInfoControlSheet;
 
 	/**
-	 * The cached value of the '{@link #getEReference7() <em>EReference7</em>}' reference.
+	 * The cached value of the '{@link #getToNormalizeNumber() <em>To Normalize Number</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference7()
+	 * @see #getToNormalizeNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util eReference7;
+	protected Util toNormalizeNumber;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,16 +92,16 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference5() {
-		if (eReference5 != null && eReference5.eIsProxy()) {
-			InternalEObject oldEReference5 = (InternalEObject)eReference5;
-			eReference5 = (Table)eResolveProxy(oldEReference5);
-			if (eReference5 != oldEReference5) {
+	public Table getWorldToDataColumns() {
+		if (worldToDataColumns != null && worldToDataColumns.eIsProxy()) {
+			InternalEObject oldWorldToDataColumns = (InternalEObject)worldToDataColumns;
+			worldToDataColumns = (Table)eResolveProxy(oldWorldToDataColumns);
+			if (worldToDataColumns != oldWorldToDataColumns) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL_IMPL__EREFERENCE5, oldEReference5, eReference5));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL_IMPL__WORLD_TO_DATA_COLUMNS, oldWorldToDataColumns, worldToDataColumns));
 			}
 		}
-		return eReference5;
+		return worldToDataColumns;
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference5() {
-		return eReference5;
+	public Table basicGetWorldToDataColumns() {
+		return worldToDataColumns;
 	}
 
 	/**
@@ -118,11 +118,11 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference5(Table newEReference5) {
-		Table oldEReference5 = eReference5;
-		eReference5 = newEReference5;
+	public void setWorldToDataColumns(Table newWorldToDataColumns) {
+		Table oldWorldToDataColumns = worldToDataColumns;
+		worldToDataColumns = newWorldToDataColumns;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_IMPL__EREFERENCE5, oldEReference5, eReference5));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_IMPL__WORLD_TO_DATA_COLUMNS, oldWorldToDataColumns, worldToDataColumns));
 	}
 
 	/**
@@ -130,16 +130,16 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCImpl getEReference6() {
-		if (eReference6 != null && eReference6.eIsProxy()) {
-			InternalEObject oldEReference6 = (InternalEObject)eReference6;
-			eReference6 = (MandCImpl)eResolveProxy(oldEReference6);
-			if (eReference6 != oldEReference6) {
+	public MandCImpl getGetInfoControlSheet() {
+		if (getInfoControlSheet != null && getInfoControlSheet.eIsProxy()) {
+			InternalEObject oldGetInfoControlSheet = (InternalEObject)getInfoControlSheet;
+			getInfoControlSheet = (MandCImpl)eResolveProxy(oldGetInfoControlSheet);
+			if (getInfoControlSheet != oldGetInfoControlSheet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL_IMPL__EREFERENCE6, oldEReference6, eReference6));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL_IMPL__GET_INFO_CONTROL_SHEET, oldGetInfoControlSheet, getInfoControlSheet));
 			}
 		}
-		return eReference6;
+		return getInfoControlSheet;
 	}
 
 	/**
@@ -147,8 +147,8 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCImpl basicGetEReference6() {
-		return eReference6;
+	public MandCImpl basicGetGetInfoControlSheet() {
+		return getInfoControlSheet;
 	}
 
 	/**
@@ -156,11 +156,11 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference6(MandCImpl newEReference6) {
-		MandCImpl oldEReference6 = eReference6;
-		eReference6 = newEReference6;
+	public void setGetInfoControlSheet(MandCImpl newGetInfoControlSheet) {
+		MandCImpl oldGetInfoControlSheet = getInfoControlSheet;
+		getInfoControlSheet = newGetInfoControlSheet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_IMPL__EREFERENCE6, oldEReference6, eReference6));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_IMPL__GET_INFO_CONTROL_SHEET, oldGetInfoControlSheet, getInfoControlSheet));
 	}
 
 	/**
@@ -168,16 +168,16 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getEReference7() {
-		if (eReference7 != null && eReference7.eIsProxy()) {
-			InternalEObject oldEReference7 = (InternalEObject)eReference7;
-			eReference7 = (Util)eResolveProxy(oldEReference7);
-			if (eReference7 != oldEReference7) {
+	public Util getToNormalizeNumber() {
+		if (toNormalizeNumber != null && toNormalizeNumber.eIsProxy()) {
+			InternalEObject oldToNormalizeNumber = (InternalEObject)toNormalizeNumber;
+			toNormalizeNumber = (Util)eResolveProxy(oldToNormalizeNumber);
+			if (toNormalizeNumber != oldToNormalizeNumber) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL_IMPL__EREFERENCE7, oldEReference7, eReference7));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL_IMPL__TO_NORMALIZE_NUMBER, oldToNormalizeNumber, toNormalizeNumber));
 			}
 		}
-		return eReference7;
+		return toNormalizeNumber;
 	}
 
 	/**
@@ -185,8 +185,8 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetEReference7() {
-		return eReference7;
+	public Util basicGetToNormalizeNumber() {
+		return toNormalizeNumber;
 	}
 
 	/**
@@ -194,11 +194,11 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference7(Util newEReference7) {
-		Util oldEReference7 = eReference7;
-		eReference7 = newEReference7;
+	public void setToNormalizeNumber(Util newToNormalizeNumber) {
+		Util oldToNormalizeNumber = toNormalizeNumber;
+		toNormalizeNumber = newToNormalizeNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_IMPL__EREFERENCE7, oldEReference7, eReference7));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_IMPL__TO_NORMALIZE_NUMBER, oldToNormalizeNumber, toNormalizeNumber));
 	}
 
 	/**
@@ -902,15 +902,15 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AmbPackage.CONTROL_IMPL__EREFERENCE5:
-				if (resolve) return getEReference5();
-				return basicGetEReference5();
-			case AmbPackage.CONTROL_IMPL__EREFERENCE6:
-				if (resolve) return getEReference6();
-				return basicGetEReference6();
-			case AmbPackage.CONTROL_IMPL__EREFERENCE7:
-				if (resolve) return getEReference7();
-				return basicGetEReference7();
+			case AmbPackage.CONTROL_IMPL__WORLD_TO_DATA_COLUMNS:
+				if (resolve) return getWorldToDataColumns();
+				return basicGetWorldToDataColumns();
+			case AmbPackage.CONTROL_IMPL__GET_INFO_CONTROL_SHEET:
+				if (resolve) return getGetInfoControlSheet();
+				return basicGetGetInfoControlSheet();
+			case AmbPackage.CONTROL_IMPL__TO_NORMALIZE_NUMBER:
+				if (resolve) return getToNormalizeNumber();
+				return basicGetToNormalizeNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -923,14 +923,14 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AmbPackage.CONTROL_IMPL__EREFERENCE5:
-				setEReference5((Table)newValue);
+			case AmbPackage.CONTROL_IMPL__WORLD_TO_DATA_COLUMNS:
+				setWorldToDataColumns((Table)newValue);
 				return;
-			case AmbPackage.CONTROL_IMPL__EREFERENCE6:
-				setEReference6((MandCImpl)newValue);
+			case AmbPackage.CONTROL_IMPL__GET_INFO_CONTROL_SHEET:
+				setGetInfoControlSheet((MandCImpl)newValue);
 				return;
-			case AmbPackage.CONTROL_IMPL__EREFERENCE7:
-				setEReference7((Util)newValue);
+			case AmbPackage.CONTROL_IMPL__TO_NORMALIZE_NUMBER:
+				setToNormalizeNumber((Util)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -944,14 +944,14 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AmbPackage.CONTROL_IMPL__EREFERENCE5:
-				setEReference5((Table)null);
+			case AmbPackage.CONTROL_IMPL__WORLD_TO_DATA_COLUMNS:
+				setWorldToDataColumns((Table)null);
 				return;
-			case AmbPackage.CONTROL_IMPL__EREFERENCE6:
-				setEReference6((MandCImpl)null);
+			case AmbPackage.CONTROL_IMPL__GET_INFO_CONTROL_SHEET:
+				setGetInfoControlSheet((MandCImpl)null);
 				return;
-			case AmbPackage.CONTROL_IMPL__EREFERENCE7:
-				setEReference7((Util)null);
+			case AmbPackage.CONTROL_IMPL__TO_NORMALIZE_NUMBER:
+				setToNormalizeNumber((Util)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -965,12 +965,12 @@ public class ControlImplImpl extends ControlPointImpl implements ControlImpl {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AmbPackage.CONTROL_IMPL__EREFERENCE5:
-				return eReference5 != null;
-			case AmbPackage.CONTROL_IMPL__EREFERENCE6:
-				return eReference6 != null;
-			case AmbPackage.CONTROL_IMPL__EREFERENCE7:
-				return eReference7 != null;
+			case AmbPackage.CONTROL_IMPL__WORLD_TO_DATA_COLUMNS:
+				return worldToDataColumns != null;
+			case AmbPackage.CONTROL_IMPL__GET_INFO_CONTROL_SHEET:
+				return getInfoControlSheet != null;
+			case AmbPackage.CONTROL_IMPL__TO_NORMALIZE_NUMBER:
+				return toNormalizeNumber != null;
 		}
 		return super.eIsSet(featureID);
 	}

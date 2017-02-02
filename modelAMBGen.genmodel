@@ -9,18 +9,18 @@
     <nestedGenPackages prefix="Amb" disposableProviderFactory="true" ecorePackage="modelAMB.ecore#//amb">
       <genClasses ecoreClass="modelAMB.ecore#//amb/ArchiveImpl">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/ArchiveImpl/EReference1"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/ArchiveImpl/getAssemblyColumn"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/ArchiveImpl/Assembly"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/ArchiveImpl/isIntervalTE"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/ArchiveImpl/Interval"/>
       </genClasses>
       <genClasses ecoreClass="modelAMB.ecore#//amb/ControlImpl">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/ControlImpl/EReference5"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/ControlImpl/worldToDataColumns"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/ControlImpl/EReference6"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/ControlImpl/getInfoControlSheet"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/ControlImpl/EReference7"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/ControlImpl/toNormalizeNumber"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/ControlImpl/Data"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/ControlImpl/Value"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/ControlImpl/Returns"/>
@@ -87,49 +87,51 @@
         <genOperations ecoreOperation="modelAMB.ecore#//amb/ControlImpl/WorlDataToDatabaseTypeUpper1"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/ControlImpl/WorldDataTypeUpper1"/>
       </genClasses>
-      <genClasses ecoreClass="modelAMB.ecore#//amb/DeviceModelAMB">
+      <genClasses ecoreClass="modelAMB.ecore#//amb/DeviceModel">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference7"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/toAddCP"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference8"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/getNoteFromMain"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference9"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/toAddMP"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference10"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/getInfoMain"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference11"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/getCPfromControl"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference12"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/getInfoFromMainSheet"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference13"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/getMPfromMonitor"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference14"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/getDataFromSpread"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference15"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/getAPfromArchive"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference16"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/ToinstallEndGeneration"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference17"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/getFromSpreadsheet"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModelAMB/EReference18"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/isMonitorDBOnly"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/IsGeneratedAlt"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/Parent"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/Cardinality"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/NodeAddress"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/Channel"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/BaseAddress"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/GenericMonitorPoints"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/CreateModel"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/TheEnd"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/NodeAddressInDecimal"/>
-        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModelAMB/HexToDec">
-          <genParameters ecoreParameter="modelAMB.ecore#//amb/DeviceModelAMB/HexToDec/s"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/toValidateSpreadsheet"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/DeviceModel/getGenericMP"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/isMonitorDBOnly"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/IsGeneratedAlt"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/Parent"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/Cardinality"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/NodeAddress"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/Channel"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/BaseAddress"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/GenericMonitorPoints"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/CreateModel"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/TheEnd"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/NodeAddressInDecimal"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/DeviceModel/HexToDec">
+          <genParameters ecoreParameter="modelAMB.ecore#//amb/DeviceModel/HexToDec/s"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="modelAMB.ecore#//amb/MainImpl">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MainImpl/EReference3"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MainImpl/getInfoFromMain"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/MainImpl/Parent"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/MainImpl/NodeAddress"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/MainImpl/Cardinality"/>
@@ -143,15 +145,15 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//amb/MandCImpl/mcp"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//amb/MandCImpl/mask"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/EReference0"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/getInfoSheet"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/EReference1"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/getDataFromMain"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/EReference2"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/isMPDataType"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/EReference3"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/isCPDataType"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/EReference4"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MandCImpl/utilsToData"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/MandCImpl/Assembly"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/MandCImpl/RCA"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/MandCImpl/RCACell"/>
@@ -208,11 +210,11 @@
       </genClasses>
       <genClasses ecoreClass="modelAMB.ecore#//amb/MonitorImpl">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MonitorImpl/EReference6"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MonitorImpl/toNormalizeData"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MonitorImpl/EReference7"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MonitorImpl/getColumnsCanBeInv"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MonitorImpl/EReference8"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/MonitorImpl/getInfoMPSheet"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/MonitorImpl/CanBeInvalid"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/MonitorImpl/isFEStatus"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/MonitorImpl/Assembly"/>
@@ -284,13 +286,13 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//amb/SWModule/simMonitorPoints"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//amb/SWModule/simControlPoints"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/SWModule/EReference0"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/SWModule/addAllMP"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/SWModule/EReference1"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/SWModule/addAllCP"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/SWModule/EReference2"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/SWModule/setFormatDescriptions"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/SWModule/EReference3"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/SWModule/getSheetColumns"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/SWModule/addMP">
           <genParameters ecoreParameter="modelAMB.ecore#//amb/SWModule/addMP/mp"/>
         </genOperations>
@@ -325,14 +327,32 @@
         <genOperations ecoreOperation="modelAMB.ecore#//amb/SWModule/BaseAddress"/>
         <genOperations ecoreOperation="modelAMB.ecore#//amb/SWModule/SimSerialNumber"/>
       </genClasses>
+      <genClasses ecoreClass="modelAMB.ecore#//amb/GenericMonitorPoints">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//amb/GenericMonitorPoints/newSpreadsheet"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//amb/GenericMonitorPoints/deviceName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//amb/GenericMonitorPoints/dirLocation"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/GenericMonitorPoints/getTheSpreadsheet"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/GenericMonitorPoints/toValidateTheSpreadsheet"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelAMB.ecore#//amb/GenericMonitorPoints/toInstallDir"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/GenericMonitorPoints/getParsedGenericSpreadsheet"/>
+        <genOperations ecoreOperation="modelAMB.ecore#//amb/GenericMonitorPoints/getDeviceWorksheetWithGenericPointsAdded">
+          <genParameters ecoreParameter="modelAMB.ecore#//amb/GenericMonitorPoints/getDeviceWorksheetWithGenericPointsAdded/spreadsheet"/>
+        </genOperations>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Base" disposableProviderFactory="true" ecorePackage="modelAMB.ecore#//base">
-      <genDataTypes ecoreDataType="modelAMB.ecore#//base/Hashtable"/>
+      <genDataTypes ecoreDataType="modelAMB.ecore#//base/SimpleErrorHandlerDT"/>
+      <genDataTypes ecoreDataType="modelAMB.ecore#//base/MandCBaseDT"/>
       <genDataTypes ecoreDataType="modelAMB.ecore#//base/MainBaseDT"/>
       <genDataTypes ecoreDataType="modelAMB.ecore#//base/ArrayList"/>
-      <genDataTypes ecoreDataType="modelAMB.ecore#//base/MandCBaseDT"/>
+      <genDataTypes ecoreDataType="modelAMB.ecore#//base/Hashtable"/>
       <genDataTypes ecoreDataType="modelAMB.ecore#//base/SAXParseExceptionDT"/>
-      <genDataTypes ecoreDataType="modelAMB.ecore#//base/SimpleErrorHandlerDT"/>
+      <genDataTypes ecoreDataType="modelAMB.ecore#//base/String3DT"/>
+      <genDataTypes ecoreDataType="modelAMB.ecore#//base/String2DT"/>
+      <genDataTypes ecoreDataType="modelAMB.ecore#//base/String1DT"/>
       <genClasses image="false" ecoreClass="modelAMB.ecore#//base/DeviceModel">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/DeviceModel/DescriptionIndex"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/DeviceModel/spreadsheet"/>
@@ -350,17 +370,17 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/DeviceModel/monitorDBOnly"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/DeviceModel/generateAlt"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/EReference1"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/getArchiveIndex"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/EReference3"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/getContPoints"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/EReference4"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/getMoniPoints"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/EReference5"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/getEndOfGeneration"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/EReference6"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/getArchivProp"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/EReference0"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/DeviceModel/getInfFromSpread"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/DeviceModel/CheckConstraints"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/DeviceModel/initializeModelDependencies"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/DeviceModel/DirPath"/>
@@ -409,9 +429,9 @@
       </genClasses>
       <genClasses image="false" ecoreClass="modelAMB.ecore#//base/MonitorPoint">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MonitorPoint/EReference4"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MonitorPoint/getInfoFromAPSpread"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MonitorPoint/EReference5"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MonitorPoint/getInfoFromMPSpread"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/MonitorPoint/Default"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/MonitorPoint/ErrorCondition"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/MonitorPoint/ErrorSeverity"/>
@@ -434,7 +454,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="modelAMB.ecore#//base/ControlPoint">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/ControlPoint/EReference4"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/ControlPoint/getArchOnUseControl"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/ControlPoint/CPName"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/ControlPoint/AltCPName"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/ControlPoint/ArchiveOnUse"/>
@@ -494,13 +514,13 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/MandCBase/archive"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/MandCBase/dependents"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MandCBase/EReference0"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MandCBase/setInfFromSpread"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MandCBase/EReference1"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MandCBase/getCommonInf"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MandCBase/EReference2"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MandCBase/setMPorCP"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MandCBase/EReference3"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MandCBase/getSheetMP"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/MandCBase/addDependent">
           <genParameters ecoreParameter="modelAMB.ecore#//base/MandCBase/addDependent/son"/>
         </genOperations>
@@ -537,7 +557,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/ArchiveProperty/row"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/ArchiveProperty/sheet"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/ArchiveProperty/EReference0"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/ArchiveProperty/getColumnsInfoOfArchi"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/ArchiveProperty/mp"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/ArchiveProperty/cp"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/ArchiveProperty/isRefersTo"/>
@@ -563,7 +583,7 @@
       </genClasses>
       <genClasses ecoreClass="modelAMB.ecore#//base/SpreadsheetValidator">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/SpreadsheetValidator/EReference0"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/SpreadsheetValidator/errorHandler"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/SpreadsheetValidator/errorList"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/SpreadsheetValidator/seh"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/SpreadsheetValidator/validate">
@@ -579,8 +599,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/SpreadsheetParser/xml"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/SpreadsheetParser/xsdFile"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/SpreadsheetParser/newline"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/SpreadsheetParser/EReference1"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelAMB.ecore#//base/SpreadsheetParser/setNewContent"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/SpreadsheetParser/getSpreadsheet">
           <genParameters ecoreParameter="modelAMB.ecore#//base/SpreadsheetParser/getSpreadsheet/dirName"/>
           <genParameters ecoreParameter="modelAMB.ecore#//base/SpreadsheetParser/getSpreadsheet/fileName"/>
@@ -620,7 +639,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/Util/MONTH"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelAMB.ecore#//base/Util/MONTHalt"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/Util/EReference0"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/Util/getRawBytes"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/Util/error">
           <genParameters ecoreParameter="modelAMB.ecore#//base/Util/error/msg"/>
         </genOperations>
@@ -716,9 +735,9 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference modelAMB.ecore#//base/MainBase/EReference0"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MainBase/EReference1"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MainBase/convertInfoTo"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MainBase/EReference2"/>
+            ecoreFeature="ecore:EReference modelAMB.ecore#//base/MainBase/getInfoFromSpread"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/MainBase/Assembly"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/MainBase/Description"/>
         <genOperations ecoreOperation="modelAMB.ecore#//base/MainBase/DescriptionAsString"/>

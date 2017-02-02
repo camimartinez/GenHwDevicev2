@@ -90,13 +90,13 @@ public interface AmbPackage extends EPackage {
 	int ARCHIVE_IMPL__SHEET = BasePackage.ARCHIVE_PROPERTY__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Get Columns Info Of Archi</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_IMPL__EREFERENCE0 = BasePackage.ARCHIVE_PROPERTY__EREFERENCE0;
+	int ARCHIVE_IMPL__GET_COLUMNS_INFO_OF_ARCHI = BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI;
 
 	/**
 	 * The feature id for the '<em><b>Mp</b></em>' attribute.
@@ -117,13 +117,13 @@ public interface AmbPackage extends EPackage {
 	int ARCHIVE_IMPL__CP = BasePackage.ARCHIVE_PROPERTY__CP;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Get Assembly Column</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_IMPL__EREFERENCE1 = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 0;
+	int ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Archive Impl</em>' class.
@@ -217,76 +217,76 @@ public interface AmbPackage extends EPackage {
 	int CONTROL_IMPL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Set Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__EREFERENCE0 = BasePackage.CONTROL_POINT__EREFERENCE0;
+	int CONTROL_IMPL__SET_INF_FROM_SPREAD = BasePackage.CONTROL_POINT__SET_INF_FROM_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__EREFERENCE1 = BasePackage.CONTROL_POINT__EREFERENCE1;
+	int CONTROL_IMPL__GET_COMMON_INF = BasePackage.CONTROL_POINT__GET_COMMON_INF;
 
 	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__EREFERENCE2 = BasePackage.CONTROL_POINT__EREFERENCE2;
+	int CONTROL_IMPL__SET_MPOR_CP = BasePackage.CONTROL_POINT__SET_MPOR_CP;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__EREFERENCE3 = BasePackage.CONTROL_POINT__EREFERENCE3;
+	int CONTROL_IMPL__GET_SHEET_MP = BasePackage.CONTROL_POINT__GET_SHEET_MP;
 
 	/**
-	 * The feature id for the '<em><b>EReference4</b></em>' reference.
+	 * The feature id for the '<em><b>Get Arch On Use Control</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__EREFERENCE4 = BasePackage.CONTROL_POINT__EREFERENCE4;
+	int CONTROL_IMPL__GET_ARCH_ON_USE_CONTROL = BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL;
 
 	/**
-	 * The feature id for the '<em><b>EReference5</b></em>' reference.
+	 * The feature id for the '<em><b>World To Data Columns</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__EREFERENCE5 = BasePackage.CONTROL_POINT_FEATURE_COUNT + 0;
+	int CONTROL_IMPL__WORLD_TO_DATA_COLUMNS = BasePackage.CONTROL_POINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>EReference6</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info Control Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__EREFERENCE6 = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
+	int CONTROL_IMPL__GET_INFO_CONTROL_SHEET = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>EReference7</b></em>' reference.
+	 * The feature id for the '<em><b>To Normalize Number</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_IMPL__EREFERENCE7 = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
+	int CONTROL_IMPL__TO_NORMALIZE_NUMBER = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Control Impl</em>' class.
@@ -298,14 +298,14 @@ public interface AmbPackage extends EPackage {
 	int CONTROL_IMPL_FEATURE_COUNT = BasePackage.CONTROL_POINT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link datamodel.amb.impl.DeviceModelAMBImpl <em>Device Model AMB</em>}' class.
+	 * The meta object id for the '{@link datamodel.amb.impl.DeviceModelImpl <em>Device Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see datamodel.amb.impl.DeviceModelAMBImpl
-	 * @see datamodel.amb.impl.AmbPackageImpl#getDeviceModelAMB()
+	 * @see datamodel.amb.impl.DeviceModelImpl
+	 * @see datamodel.amb.impl.AmbPackageImpl#getDeviceModel()
 	 * @generated
 	 */
-	int DEVICE_MODEL_AMB = 2;
+	int DEVICE_MODEL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Description Index</b></em>' attribute.
@@ -314,7 +314,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__DESCRIPTION_INDEX = BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX;
+	int DEVICE_MODEL__DESCRIPTION_INDEX = BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX;
 
 	/**
 	 * The feature id for the '<em><b>Spreadsheet</b></em>' attribute.
@@ -323,7 +323,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__SPREADSHEET = BasePackage.DEVICE_MODEL__SPREADSHEET;
+	int DEVICE_MODEL__SPREADSHEET = BasePackage.DEVICE_MODEL__SPREADSHEET;
 
 	/**
 	 * The feature id for the '<em><b>Main</b></em>' attribute.
@@ -332,7 +332,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__MAIN = BasePackage.DEVICE_MODEL__MAIN;
+	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' attribute.
@@ -341,7 +341,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__NOTES = BasePackage.DEVICE_MODEL__NOTES;
+	int DEVICE_MODEL__NOTES = BasePackage.DEVICE_MODEL__NOTES;
 
 	/**
 	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
@@ -350,7 +350,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
+	int DEVICE_MODEL__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
 
 	/**
 	 * The feature id for the '<em><b>Control Points</b></em>' attribute.
@@ -359,7 +359,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__CONTROL_POINTS = BasePackage.DEVICE_MODEL__CONTROL_POINTS;
+	int DEVICE_MODEL__CONTROL_POINTS = BasePackage.DEVICE_MODEL__CONTROL_POINTS;
 
 	/**
 	 * The feature id for the '<em><b>Archive Properties</b></em>' attribute.
@@ -368,7 +368,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__ARCHIVE_PROPERTIES = BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES;
+	int DEVICE_MODEL__ARCHIVE_PROPERTIES = BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES;
 
 	/**
 	 * The feature id for the '<em><b>Device Name</b></em>' attribute.
@@ -377,7 +377,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__DEVICE_NAME = BasePackage.DEVICE_MODEL__DEVICE_NAME;
+	int DEVICE_MODEL__DEVICE_NAME = BasePackage.DEVICE_MODEL__DEVICE_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Bus Type</b></em>' attribute.
@@ -386,7 +386,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__BUS_TYPE = BasePackage.DEVICE_MODEL__BUS_TYPE;
+	int DEVICE_MODEL__BUS_TYPE = BasePackage.DEVICE_MODEL__BUS_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Device Dir</b></em>' attribute.
@@ -395,7 +395,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__DEVICE_DIR = BasePackage.DEVICE_MODEL__DEVICE_DIR;
+	int DEVICE_MODEL__DEVICE_DIR = BasePackage.DEVICE_MODEL__DEVICE_DIR;
 
 	/**
 	 * The feature id for the '<em><b>Codegen Dir</b></em>' attribute.
@@ -404,7 +404,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__CODEGEN_DIR = BasePackage.DEVICE_MODEL__CODEGEN_DIR;
+	int DEVICE_MODEL__CODEGEN_DIR = BasePackage.DEVICE_MODEL__CODEGEN_DIR;
 
 	/**
 	 * The feature id for the '<em><b>Spreadsheet Dir</b></em>' attribute.
@@ -413,7 +413,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__SPREADSHEET_DIR = BasePackage.DEVICE_MODEL__SPREADSHEET_DIR;
+	int DEVICE_MODEL__SPREADSHEET_DIR = BasePackage.DEVICE_MODEL__SPREADSHEET_DIR;
 
 	/**
 	 * The feature id for the '<em><b>Generated Dir</b></em>' attribute.
@@ -422,7 +422,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__GENERATED_DIR = BasePackage.DEVICE_MODEL__GENERATED_DIR;
+	int DEVICE_MODEL__GENERATED_DIR = BasePackage.DEVICE_MODEL__GENERATED_DIR;
 
 	/**
 	 * The feature id for the '<em><b>Monitor DB Only</b></em>' attribute.
@@ -431,7 +431,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__MONITOR_DB_ONLY = BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY;
+	int DEVICE_MODEL__MONITOR_DB_ONLY = BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY;
 
 	/**
 	 * The feature id for the '<em><b>Generate Alt</b></em>' attribute.
@@ -440,178 +440,187 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__GENERATE_ALT = BasePackage.DEVICE_MODEL__GENERATE_ALT;
+	int DEVICE_MODEL__GENERATE_ALT = BasePackage.DEVICE_MODEL__GENERATE_ALT;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Get Archive Index</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE1 = BasePackage.DEVICE_MODEL__EREFERENCE1;
+	int DEVICE_MODEL__GET_ARCHIVE_INDEX = BasePackage.DEVICE_MODEL__GET_ARCHIVE_INDEX;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Get Cont Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE3 = BasePackage.DEVICE_MODEL__EREFERENCE3;
+	int DEVICE_MODEL__GET_CONT_POINTS = BasePackage.DEVICE_MODEL__GET_CONT_POINTS;
 
 	/**
-	 * The feature id for the '<em><b>EReference4</b></em>' reference.
+	 * The feature id for the '<em><b>Get Moni Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE4 = BasePackage.DEVICE_MODEL__EREFERENCE4;
+	int DEVICE_MODEL__GET_MONI_POINTS = BasePackage.DEVICE_MODEL__GET_MONI_POINTS;
 
 	/**
-	 * The feature id for the '<em><b>EReference5</b></em>' reference.
+	 * The feature id for the '<em><b>Get End Of Generation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE5 = BasePackage.DEVICE_MODEL__EREFERENCE5;
+	int DEVICE_MODEL__GET_END_OF_GENERATION = BasePackage.DEVICE_MODEL__GET_END_OF_GENERATION;
 
 	/**
-	 * The feature id for the '<em><b>EReference6</b></em>' reference.
+	 * The feature id for the '<em><b>Get Archiv Prop</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE6 = BasePackage.DEVICE_MODEL__EREFERENCE6;
+	int DEVICE_MODEL__GET_ARCHIV_PROP = BasePackage.DEVICE_MODEL__GET_ARCHIV_PROP;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Get Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE0 = BasePackage.DEVICE_MODEL__EREFERENCE0;
+	int DEVICE_MODEL__GET_INF_FROM_SPREAD = BasePackage.DEVICE_MODEL__GET_INF_FROM_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>EReference7</b></em>' reference.
+	 * The feature id for the '<em><b>To Add CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE7 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 0;
+	int DEVICE_MODEL__TO_ADD_CP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>EReference8</b></em>' reference.
+	 * The feature id for the '<em><b>Get Note From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE8 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 1;
+	int DEVICE_MODEL__GET_NOTE_FROM_MAIN = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>EReference9</b></em>' reference.
+	 * The feature id for the '<em><b>To Add MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE9 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 2;
+	int DEVICE_MODEL__TO_ADD_MP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>EReference10</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE10 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 3;
+	int DEVICE_MODEL__GET_INFO_MAIN = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>EReference11</b></em>' reference.
+	 * The feature id for the '<em><b>Get CPfrom Control</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE11 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 4;
+	int DEVICE_MODEL__GET_CPFROM_CONTROL = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>EReference12</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info From Main Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE12 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 5;
+	int DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>EReference13</b></em>' reference.
+	 * The feature id for the '<em><b>Get MPfrom Monitor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE13 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 6;
+	int DEVICE_MODEL__GET_MPFROM_MONITOR = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>EReference14</b></em>' reference.
+	 * The feature id for the '<em><b>Get Data From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE14 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 7;
+	int DEVICE_MODEL__GET_DATA_FROM_SPREAD = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>EReference15</b></em>' reference.
+	 * The feature id for the '<em><b>Get APfrom Archive</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE15 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 8;
+	int DEVICE_MODEL__GET_APFROM_ARCHIVE = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>EReference16</b></em>' reference.
+	 * The feature id for the '<em><b>Toinstall End Generation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE16 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 9;
+	int DEVICE_MODEL__TOINSTALL_END_GENERATION = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>EReference17</b></em>' reference.
+	 * The feature id for the '<em><b>Get From Spreadsheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE17 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 10;
+	int DEVICE_MODEL__GET_FROM_SPREADSHEET = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>EReference18</b></em>' reference.
+	 * The feature id for the '<em><b>To Validate Spreadsheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB__EREFERENCE18 = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 11;
+	int DEVICE_MODEL__TO_VALIDATE_SPREADSHEET = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 11;
 
 	/**
-	 * The number of structural features of the '<em>Device Model AMB</em>' class.
+	 * The feature id for the '<em><b>Get Generic MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_AMB_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 12;
+	int DEVICE_MODEL__GET_GENERIC_MP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 12;
+
+	/**
+	 * The number of structural features of the '<em>Device Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link datamodel.amb.impl.MainImplImpl <em>Main Impl</em>}' class.
@@ -651,31 +660,31 @@ public interface AmbPackage extends EPackage {
 	int MAIN_IMPL__EREFERENCE0 = BasePackage.MAIN_BASE__EREFERENCE0;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Convert Info To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL__EREFERENCE1 = BasePackage.MAIN_BASE__EREFERENCE1;
+	int MAIN_IMPL__CONVERT_INFO_TO = BasePackage.MAIN_BASE__CONVERT_INFO_TO;
 
 	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL__EREFERENCE2 = BasePackage.MAIN_BASE__EREFERENCE2;
+	int MAIN_IMPL__GET_INFO_FROM_SPREAD = BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_IMPL__EREFERENCE3 = BasePackage.MAIN_BASE_FEATURE_COUNT + 0;
+	int MAIN_IMPL__GET_INFO_FROM_MAIN = BasePackage.MAIN_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Main Impl</em>' class.
@@ -733,49 +742,49 @@ public interface AmbPackage extends EPackage {
 	int MAND_CIMPL__MASK = 3;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__EREFERENCE0 = 4;
+	int MAND_CIMPL__GET_INFO_SHEET = 4;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Get Data From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__EREFERENCE1 = 5;
+	int MAND_CIMPL__GET_DATA_FROM_MAIN = 5;
 
 	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * The feature id for the '<em><b>Is MP Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__EREFERENCE2 = 6;
+	int MAND_CIMPL__IS_MP_DATA_TYPE = 6;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Is CP Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__EREFERENCE3 = 7;
+	int MAND_CIMPL__IS_CP_DATA_TYPE = 7;
 
 	/**
-	 * The feature id for the '<em><b>EReference4</b></em>' reference.
+	 * The feature id for the '<em><b>Utils To Data</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CIMPL__EREFERENCE4 = 8;
+	int MAND_CIMPL__UTILS_TO_DATA = 8;
 
 	/**
 	 * The number of structural features of the '<em>Mand CImpl</em>' class.
@@ -869,85 +878,85 @@ public interface AmbPackage extends EPackage {
 	int MONITOR_IMPL__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Set Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__EREFERENCE0 = BasePackage.MONITOR_POINT__EREFERENCE0;
+	int MONITOR_IMPL__SET_INF_FROM_SPREAD = BasePackage.MONITOR_POINT__SET_INF_FROM_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__EREFERENCE1 = BasePackage.MONITOR_POINT__EREFERENCE1;
+	int MONITOR_IMPL__GET_COMMON_INF = BasePackage.MONITOR_POINT__GET_COMMON_INF;
 
 	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__EREFERENCE2 = BasePackage.MONITOR_POINT__EREFERENCE2;
+	int MONITOR_IMPL__SET_MPOR_CP = BasePackage.MONITOR_POINT__SET_MPOR_CP;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__EREFERENCE3 = BasePackage.MONITOR_POINT__EREFERENCE3;
+	int MONITOR_IMPL__GET_SHEET_MP = BasePackage.MONITOR_POINT__GET_SHEET_MP;
 
 	/**
-	 * The feature id for the '<em><b>EReference4</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info From AP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__EREFERENCE4 = BasePackage.MONITOR_POINT__EREFERENCE4;
+	int MONITOR_IMPL__GET_INFO_FROM_AP_SPREAD = BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>EReference5</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info From MP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__EREFERENCE5 = BasePackage.MONITOR_POINT__EREFERENCE5;
+	int MONITOR_IMPL__GET_INFO_FROM_MP_SPREAD = BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>EReference6</b></em>' reference.
+	 * The feature id for the '<em><b>To Normalize Data</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__EREFERENCE6 = BasePackage.MONITOR_POINT_FEATURE_COUNT + 0;
+	int MONITOR_IMPL__TO_NORMALIZE_DATA = BasePackage.MONITOR_POINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>EReference7</b></em>' reference.
+	 * The feature id for the '<em><b>Get Columns Can Be Inv</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__EREFERENCE7 = BasePackage.MONITOR_POINT_FEATURE_COUNT + 1;
+	int MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV = BasePackage.MONITOR_POINT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>EReference8</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info MP Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_IMPL__EREFERENCE8 = BasePackage.MONITOR_POINT_FEATURE_COUNT + 2;
+	int MONITOR_IMPL__GET_INFO_MP_SHEET = BasePackage.MONITOR_POINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Monitor Impl</em>' class.
@@ -1077,40 +1086,40 @@ public interface AmbPackage extends EPackage {
 	int SW_MODULE__SIM_CONTROL_POINTS = 11;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Add All MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SW_MODULE__EREFERENCE0 = 12;
+	int SW_MODULE__ADD_ALL_MP = 12;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Add All CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SW_MODULE__EREFERENCE1 = 13;
+	int SW_MODULE__ADD_ALL_CP = 13;
 
 	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * The feature id for the '<em><b>Set Format Descriptions</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SW_MODULE__EREFERENCE2 = 14;
+	int SW_MODULE__SET_FORMAT_DESCRIPTIONS = 14;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Get Sheet Columns</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SW_MODULE__EREFERENCE3 = 15;
+	int SW_MODULE__GET_SHEET_COLUMNS = 15;
 
 	/**
 	 * The number of structural features of the '<em>SW Module</em>' class.
@@ -1120,6 +1129,79 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int SW_MODULE_FEATURE_COUNT = 16;
+
+	/**
+	 * The meta object id for the '{@link datamodel.amb.impl.GenericMonitorPointsImpl <em>Generic Monitor Points</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see datamodel.amb.impl.GenericMonitorPointsImpl
+	 * @see datamodel.amb.impl.AmbPackageImpl#getGenericMonitorPoints()
+	 * @generated
+	 */
+	int GENERIC_MONITOR_POINTS = 7;
+
+	/**
+	 * The feature id for the '<em><b>New Spreadsheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_MONITOR_POINTS__NEW_SPREADSHEET = 0;
+
+	/**
+	 * The feature id for the '<em><b>Device Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_MONITOR_POINTS__DEVICE_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Dir Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_MONITOR_POINTS__DIR_LOCATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Get The Spreadsheet</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_MONITOR_POINTS__GET_THE_SPREADSHEET = 3;
+
+	/**
+	 * The feature id for the '<em><b>To Validate The Spreadsheet</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET = 4;
+
+	/**
+	 * The feature id for the '<em><b>To Install Dir</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_MONITOR_POINTS__TO_INSTALL_DIR = 5;
+
+	/**
+	 * The number of structural features of the '<em>Generic Monitor Points</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_MONITOR_POINTS_FEATURE_COUNT = 6;
 
 
 	/**
@@ -1133,15 +1215,15 @@ public interface AmbPackage extends EPackage {
 	EClass getArchiveImpl();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.ArchiveImpl#getEReference1 <em>EReference1</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.ArchiveImpl#getGetAssemblyColumn <em>Get Assembly Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference1</em>'.
-	 * @see datamodel.amb.ArchiveImpl#getEReference1()
+	 * @return the meta object for the reference '<em>Get Assembly Column</em>'.
+	 * @see datamodel.amb.ArchiveImpl#getGetAssemblyColumn()
 	 * @see #getArchiveImpl()
 	 * @generated
 	 */
-	EReference getArchiveImpl_EReference1();
+	EReference getArchiveImpl_GetAssemblyColumn();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.amb.ControlImpl <em>Control Impl</em>}'.
@@ -1154,179 +1236,190 @@ public interface AmbPackage extends EPackage {
 	EClass getControlImpl();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.ControlImpl#getEReference5 <em>EReference5</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.ControlImpl#getWorldToDataColumns <em>World To Data Columns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference5</em>'.
-	 * @see datamodel.amb.ControlImpl#getEReference5()
+	 * @return the meta object for the reference '<em>World To Data Columns</em>'.
+	 * @see datamodel.amb.ControlImpl#getWorldToDataColumns()
 	 * @see #getControlImpl()
 	 * @generated
 	 */
-	EReference getControlImpl_EReference5();
+	EReference getControlImpl_WorldToDataColumns();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.ControlImpl#getEReference6 <em>EReference6</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.ControlImpl#getGetInfoControlSheet <em>Get Info Control Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference6</em>'.
-	 * @see datamodel.amb.ControlImpl#getEReference6()
+	 * @return the meta object for the reference '<em>Get Info Control Sheet</em>'.
+	 * @see datamodel.amb.ControlImpl#getGetInfoControlSheet()
 	 * @see #getControlImpl()
 	 * @generated
 	 */
-	EReference getControlImpl_EReference6();
+	EReference getControlImpl_GetInfoControlSheet();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.ControlImpl#getEReference7 <em>EReference7</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.ControlImpl#getToNormalizeNumber <em>To Normalize Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference7</em>'.
-	 * @see datamodel.amb.ControlImpl#getEReference7()
+	 * @return the meta object for the reference '<em>To Normalize Number</em>'.
+	 * @see datamodel.amb.ControlImpl#getToNormalizeNumber()
 	 * @see #getControlImpl()
 	 * @generated
 	 */
-	EReference getControlImpl_EReference7();
+	EReference getControlImpl_ToNormalizeNumber();
 
 	/**
-	 * Returns the meta object for class '{@link datamodel.amb.DeviceModelAMB <em>Device Model AMB</em>}'.
+	 * Returns the meta object for class '{@link datamodel.amb.DeviceModel <em>Device Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Device Model AMB</em>'.
-	 * @see datamodel.amb.DeviceModelAMB
+	 * @return the meta object for class '<em>Device Model</em>'.
+	 * @see datamodel.amb.DeviceModel
 	 * @generated
 	 */
-	EClass getDeviceModelAMB();
+	EClass getDeviceModel();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference7 <em>EReference7</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getToAddCP <em>To Add CP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference7</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference7()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>To Add CP</em>'.
+	 * @see datamodel.amb.DeviceModel#getToAddCP()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference7();
+	EReference getDeviceModel_ToAddCP();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference8 <em>EReference8</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getGetNoteFromMain <em>Get Note From Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference8</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference8()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>Get Note From Main</em>'.
+	 * @see datamodel.amb.DeviceModel#getGetNoteFromMain()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference8();
+	EReference getDeviceModel_GetNoteFromMain();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference9 <em>EReference9</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getToAddMP <em>To Add MP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference9</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference9()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>To Add MP</em>'.
+	 * @see datamodel.amb.DeviceModel#getToAddMP()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference9();
+	EReference getDeviceModel_ToAddMP();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference10 <em>EReference10</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getGetInfoMain <em>Get Info Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference10</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference10()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>Get Info Main</em>'.
+	 * @see datamodel.amb.DeviceModel#getGetInfoMain()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference10();
+	EReference getDeviceModel_GetInfoMain();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference11 <em>EReference11</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getGetCPfromControl <em>Get CPfrom Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference11</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference11()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>Get CPfrom Control</em>'.
+	 * @see datamodel.amb.DeviceModel#getGetCPfromControl()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference11();
+	EReference getDeviceModel_GetCPfromControl();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference12 <em>EReference12</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getGetInfoFromMainSheet <em>Get Info From Main Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference12</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference12()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>Get Info From Main Sheet</em>'.
+	 * @see datamodel.amb.DeviceModel#getGetInfoFromMainSheet()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference12();
+	EReference getDeviceModel_GetInfoFromMainSheet();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference13 <em>EReference13</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getGetMPfromMonitor <em>Get MPfrom Monitor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference13</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference13()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>Get MPfrom Monitor</em>'.
+	 * @see datamodel.amb.DeviceModel#getGetMPfromMonitor()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference13();
+	EReference getDeviceModel_GetMPfromMonitor();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference14 <em>EReference14</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getGetDataFromSpread <em>Get Data From Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference14</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference14()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>Get Data From Spread</em>'.
+	 * @see datamodel.amb.DeviceModel#getGetDataFromSpread()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference14();
+	EReference getDeviceModel_GetDataFromSpread();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference15 <em>EReference15</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getGetAPfromArchive <em>Get APfrom Archive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference15</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference15()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>Get APfrom Archive</em>'.
+	 * @see datamodel.amb.DeviceModel#getGetAPfromArchive()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference15();
+	EReference getDeviceModel_GetAPfromArchive();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference16 <em>EReference16</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getToinstallEndGeneration <em>Toinstall End Generation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference16</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference16()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>Toinstall End Generation</em>'.
+	 * @see datamodel.amb.DeviceModel#getToinstallEndGeneration()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference16();
+	EReference getDeviceModel_ToinstallEndGeneration();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference17 <em>EReference17</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getGetFromSpreadsheet <em>Get From Spreadsheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference17</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference17()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>Get From Spreadsheet</em>'.
+	 * @see datamodel.amb.DeviceModel#getGetFromSpreadsheet()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference17();
+	EReference getDeviceModel_GetFromSpreadsheet();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModelAMB#getEReference18 <em>EReference18</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getToValidateSpreadsheet <em>To Validate Spreadsheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference18</em>'.
-	 * @see datamodel.amb.DeviceModelAMB#getEReference18()
-	 * @see #getDeviceModelAMB()
+	 * @return the meta object for the reference '<em>To Validate Spreadsheet</em>'.
+	 * @see datamodel.amb.DeviceModel#getToValidateSpreadsheet()
+	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModelAMB_EReference18();
+	EReference getDeviceModel_ToValidateSpreadsheet();
+
+	/**
+	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getGetGenericMP <em>Get Generic MP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Get Generic MP</em>'.
+	 * @see datamodel.amb.DeviceModel#getGetGenericMP()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_GetGenericMP();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.amb.MainImpl <em>Main Impl</em>}'.
@@ -1339,15 +1432,15 @@ public interface AmbPackage extends EPackage {
 	EClass getMainImpl();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MainImpl#getEReference3 <em>EReference3</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MainImpl#getGetInfoFromMain <em>Get Info From Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference3</em>'.
-	 * @see datamodel.amb.MainImpl#getEReference3()
+	 * @return the meta object for the reference '<em>Get Info From Main</em>'.
+	 * @see datamodel.amb.MainImpl#getGetInfoFromMain()
 	 * @see #getMainImpl()
 	 * @generated
 	 */
-	EReference getMainImpl_EReference3();
+	EReference getMainImpl_GetInfoFromMain();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.amb.MandCImpl <em>Mand CImpl</em>}'.
@@ -1404,59 +1497,59 @@ public interface AmbPackage extends EPackage {
 	EAttribute getMandCImpl_Mask();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getEReference0 <em>EReference0</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getGetInfoSheet <em>Get Info Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see datamodel.amb.MandCImpl#getEReference0()
+	 * @return the meta object for the reference '<em>Get Info Sheet</em>'.
+	 * @see datamodel.amb.MandCImpl#getGetInfoSheet()
 	 * @see #getMandCImpl()
 	 * @generated
 	 */
-	EReference getMandCImpl_EReference0();
+	EReference getMandCImpl_GetInfoSheet();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getEReference1 <em>EReference1</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getGetDataFromMain <em>Get Data From Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference1</em>'.
-	 * @see datamodel.amb.MandCImpl#getEReference1()
+	 * @return the meta object for the reference '<em>Get Data From Main</em>'.
+	 * @see datamodel.amb.MandCImpl#getGetDataFromMain()
 	 * @see #getMandCImpl()
 	 * @generated
 	 */
-	EReference getMandCImpl_EReference1();
+	EReference getMandCImpl_GetDataFromMain();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getEReference2 <em>EReference2</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getIsMPDataType <em>Is MP Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference2</em>'.
-	 * @see datamodel.amb.MandCImpl#getEReference2()
+	 * @return the meta object for the reference '<em>Is MP Data Type</em>'.
+	 * @see datamodel.amb.MandCImpl#getIsMPDataType()
 	 * @see #getMandCImpl()
 	 * @generated
 	 */
-	EReference getMandCImpl_EReference2();
+	EReference getMandCImpl_IsMPDataType();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getEReference3 <em>EReference3</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getIsCPDataType <em>Is CP Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference3</em>'.
-	 * @see datamodel.amb.MandCImpl#getEReference3()
+	 * @return the meta object for the reference '<em>Is CP Data Type</em>'.
+	 * @see datamodel.amb.MandCImpl#getIsCPDataType()
 	 * @see #getMandCImpl()
 	 * @generated
 	 */
-	EReference getMandCImpl_EReference3();
+	EReference getMandCImpl_IsCPDataType();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getEReference4 <em>EReference4</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MandCImpl#getUtilsToData <em>Utils To Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference4</em>'.
-	 * @see datamodel.amb.MandCImpl#getEReference4()
+	 * @return the meta object for the reference '<em>Utils To Data</em>'.
+	 * @see datamodel.amb.MandCImpl#getUtilsToData()
 	 * @see #getMandCImpl()
 	 * @generated
 	 */
-	EReference getMandCImpl_EReference4();
+	EReference getMandCImpl_UtilsToData();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.amb.MonitorImpl <em>Monitor Impl</em>}'.
@@ -1469,37 +1562,37 @@ public interface AmbPackage extends EPackage {
 	EClass getMonitorImpl();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorImpl#getEReference6 <em>EReference6</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorImpl#getToNormalizeData <em>To Normalize Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference6</em>'.
-	 * @see datamodel.amb.MonitorImpl#getEReference6()
+	 * @return the meta object for the reference '<em>To Normalize Data</em>'.
+	 * @see datamodel.amb.MonitorImpl#getToNormalizeData()
 	 * @see #getMonitorImpl()
 	 * @generated
 	 */
-	EReference getMonitorImpl_EReference6();
+	EReference getMonitorImpl_ToNormalizeData();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorImpl#getEReference7 <em>EReference7</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorImpl#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference7</em>'.
-	 * @see datamodel.amb.MonitorImpl#getEReference7()
+	 * @return the meta object for the reference '<em>Get Columns Can Be Inv</em>'.
+	 * @see datamodel.amb.MonitorImpl#getGetColumnsCanBeInv()
 	 * @see #getMonitorImpl()
 	 * @generated
 	 */
-	EReference getMonitorImpl_EReference7();
+	EReference getMonitorImpl_GetColumnsCanBeInv();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorImpl#getEReference8 <em>EReference8</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorImpl#getGetInfoMPSheet <em>Get Info MP Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference8</em>'.
-	 * @see datamodel.amb.MonitorImpl#getEReference8()
+	 * @return the meta object for the reference '<em>Get Info MP Sheet</em>'.
+	 * @see datamodel.amb.MonitorImpl#getGetInfoMPSheet()
 	 * @see #getMonitorImpl()
 	 * @generated
 	 */
-	EReference getMonitorImpl_EReference8();
+	EReference getMonitorImpl_GetInfoMPSheet();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.amb.SWModule <em>SW Module</em>}'.
@@ -1644,48 +1737,124 @@ public interface AmbPackage extends EPackage {
 	EAttribute getSWModule_SimControlPoints();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.SWModule#getEReference0 <em>EReference0</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.SWModule#getAddAllMP <em>Add All MP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see datamodel.amb.SWModule#getEReference0()
+	 * @return the meta object for the reference '<em>Add All MP</em>'.
+	 * @see datamodel.amb.SWModule#getAddAllMP()
 	 * @see #getSWModule()
 	 * @generated
 	 */
-	EReference getSWModule_EReference0();
+	EReference getSWModule_AddAllMP();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.SWModule#getEReference1 <em>EReference1</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.SWModule#getAddAllCP <em>Add All CP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference1</em>'.
-	 * @see datamodel.amb.SWModule#getEReference1()
+	 * @return the meta object for the reference '<em>Add All CP</em>'.
+	 * @see datamodel.amb.SWModule#getAddAllCP()
 	 * @see #getSWModule()
 	 * @generated
 	 */
-	EReference getSWModule_EReference1();
+	EReference getSWModule_AddAllCP();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.SWModule#getEReference2 <em>EReference2</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.SWModule#getSetFormatDescriptions <em>Set Format Descriptions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference2</em>'.
-	 * @see datamodel.amb.SWModule#getEReference2()
+	 * @return the meta object for the reference '<em>Set Format Descriptions</em>'.
+	 * @see datamodel.amb.SWModule#getSetFormatDescriptions()
 	 * @see #getSWModule()
 	 * @generated
 	 */
-	EReference getSWModule_EReference2();
+	EReference getSWModule_SetFormatDescriptions();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.amb.SWModule#getEReference3 <em>EReference3</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.amb.SWModule#getGetSheetColumns <em>Get Sheet Columns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference3</em>'.
-	 * @see datamodel.amb.SWModule#getEReference3()
+	 * @return the meta object for the reference '<em>Get Sheet Columns</em>'.
+	 * @see datamodel.amb.SWModule#getGetSheetColumns()
 	 * @see #getSWModule()
 	 * @generated
 	 */
-	EReference getSWModule_EReference3();
+	EReference getSWModule_GetSheetColumns();
+
+	/**
+	 * Returns the meta object for class '{@link datamodel.amb.GenericMonitorPoints <em>Generic Monitor Points</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Generic Monitor Points</em>'.
+	 * @see datamodel.amb.GenericMonitorPoints
+	 * @generated
+	 */
+	EClass getGenericMonitorPoints();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.GenericMonitorPoints#getNewSpreadsheet <em>New Spreadsheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Spreadsheet</em>'.
+	 * @see datamodel.amb.GenericMonitorPoints#getNewSpreadsheet()
+	 * @see #getGenericMonitorPoints()
+	 * @generated
+	 */
+	EAttribute getGenericMonitorPoints_NewSpreadsheet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.GenericMonitorPoints#getDeviceName <em>Device Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Device Name</em>'.
+	 * @see datamodel.amb.GenericMonitorPoints#getDeviceName()
+	 * @see #getGenericMonitorPoints()
+	 * @generated
+	 */
+	EAttribute getGenericMonitorPoints_DeviceName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.GenericMonitorPoints#getDirLocation <em>Dir Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Dir Location</em>'.
+	 * @see datamodel.amb.GenericMonitorPoints#getDirLocation()
+	 * @see #getGenericMonitorPoints()
+	 * @generated
+	 */
+	EAttribute getGenericMonitorPoints_DirLocation();
+
+	/**
+	 * Returns the meta object for the reference '{@link datamodel.amb.GenericMonitorPoints#getGetTheSpreadsheet <em>Get The Spreadsheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Get The Spreadsheet</em>'.
+	 * @see datamodel.amb.GenericMonitorPoints#getGetTheSpreadsheet()
+	 * @see #getGenericMonitorPoints()
+	 * @generated
+	 */
+	EReference getGenericMonitorPoints_GetTheSpreadsheet();
+
+	/**
+	 * Returns the meta object for the reference '{@link datamodel.amb.GenericMonitorPoints#getToValidateTheSpreadsheet <em>To Validate The Spreadsheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To Validate The Spreadsheet</em>'.
+	 * @see datamodel.amb.GenericMonitorPoints#getToValidateTheSpreadsheet()
+	 * @see #getGenericMonitorPoints()
+	 * @generated
+	 */
+	EReference getGenericMonitorPoints_ToValidateTheSpreadsheet();
+
+	/**
+	 * Returns the meta object for the reference '{@link datamodel.amb.GenericMonitorPoints#getToInstallDir <em>To Install Dir</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To Install Dir</em>'.
+	 * @see datamodel.amb.GenericMonitorPoints#getToInstallDir()
+	 * @see #getGenericMonitorPoints()
+	 * @generated
+	 */
+	EReference getGenericMonitorPoints_ToInstallDir();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1720,12 +1889,12 @@ public interface AmbPackage extends EPackage {
 		EClass ARCHIVE_IMPL = eINSTANCE.getArchiveImpl();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference1</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Assembly Column</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARCHIVE_IMPL__EREFERENCE1 = eINSTANCE.getArchiveImpl_EReference1();
+		EReference ARCHIVE_IMPL__GET_ASSEMBLY_COLUMN = eINSTANCE.getArchiveImpl_GetAssemblyColumn();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.amb.impl.ControlImplImpl <em>Control Impl</em>}' class.
@@ -1738,134 +1907,142 @@ public interface AmbPackage extends EPackage {
 		EClass CONTROL_IMPL = eINSTANCE.getControlImpl();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference5</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>World To Data Columns</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_IMPL__EREFERENCE5 = eINSTANCE.getControlImpl_EReference5();
+		EReference CONTROL_IMPL__WORLD_TO_DATA_COLUMNS = eINSTANCE.getControlImpl_WorldToDataColumns();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference6</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Info Control Sheet</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_IMPL__EREFERENCE6 = eINSTANCE.getControlImpl_EReference6();
+		EReference CONTROL_IMPL__GET_INFO_CONTROL_SHEET = eINSTANCE.getControlImpl_GetInfoControlSheet();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference7</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Normalize Number</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_IMPL__EREFERENCE7 = eINSTANCE.getControlImpl_EReference7();
+		EReference CONTROL_IMPL__TO_NORMALIZE_NUMBER = eINSTANCE.getControlImpl_ToNormalizeNumber();
 
 		/**
-		 * The meta object literal for the '{@link datamodel.amb.impl.DeviceModelAMBImpl <em>Device Model AMB</em>}' class.
+		 * The meta object literal for the '{@link datamodel.amb.impl.DeviceModelImpl <em>Device Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see datamodel.amb.impl.DeviceModelAMBImpl
-		 * @see datamodel.amb.impl.AmbPackageImpl#getDeviceModelAMB()
+		 * @see datamodel.amb.impl.DeviceModelImpl
+		 * @see datamodel.amb.impl.AmbPackageImpl#getDeviceModel()
 		 * @generated
 		 */
-		EClass DEVICE_MODEL_AMB = eINSTANCE.getDeviceModelAMB();
+		EClass DEVICE_MODEL = eINSTANCE.getDeviceModel();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference7</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Add CP</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE7 = eINSTANCE.getDeviceModelAMB_EReference7();
+		EReference DEVICE_MODEL__TO_ADD_CP = eINSTANCE.getDeviceModel_ToAddCP();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference8</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Note From Main</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE8 = eINSTANCE.getDeviceModelAMB_EReference8();
+		EReference DEVICE_MODEL__GET_NOTE_FROM_MAIN = eINSTANCE.getDeviceModel_GetNoteFromMain();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference9</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Add MP</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE9 = eINSTANCE.getDeviceModelAMB_EReference9();
+		EReference DEVICE_MODEL__TO_ADD_MP = eINSTANCE.getDeviceModel_ToAddMP();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference10</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Info Main</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE10 = eINSTANCE.getDeviceModelAMB_EReference10();
+		EReference DEVICE_MODEL__GET_INFO_MAIN = eINSTANCE.getDeviceModel_GetInfoMain();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference11</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get CPfrom Control</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE11 = eINSTANCE.getDeviceModelAMB_EReference11();
+		EReference DEVICE_MODEL__GET_CPFROM_CONTROL = eINSTANCE.getDeviceModel_GetCPfromControl();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference12</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Info From Main Sheet</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE12 = eINSTANCE.getDeviceModelAMB_EReference12();
+		EReference DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET = eINSTANCE.getDeviceModel_GetInfoFromMainSheet();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference13</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get MPfrom Monitor</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE13 = eINSTANCE.getDeviceModelAMB_EReference13();
+		EReference DEVICE_MODEL__GET_MPFROM_MONITOR = eINSTANCE.getDeviceModel_GetMPfromMonitor();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference14</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Data From Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE14 = eINSTANCE.getDeviceModelAMB_EReference14();
+		EReference DEVICE_MODEL__GET_DATA_FROM_SPREAD = eINSTANCE.getDeviceModel_GetDataFromSpread();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference15</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get APfrom Archive</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE15 = eINSTANCE.getDeviceModelAMB_EReference15();
+		EReference DEVICE_MODEL__GET_APFROM_ARCHIVE = eINSTANCE.getDeviceModel_GetAPfromArchive();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference16</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Toinstall End Generation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE16 = eINSTANCE.getDeviceModelAMB_EReference16();
+		EReference DEVICE_MODEL__TOINSTALL_END_GENERATION = eINSTANCE.getDeviceModel_ToinstallEndGeneration();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference17</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get From Spreadsheet</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE17 = eINSTANCE.getDeviceModelAMB_EReference17();
+		EReference DEVICE_MODEL__GET_FROM_SPREADSHEET = eINSTANCE.getDeviceModel_GetFromSpreadsheet();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference18</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Validate Spreadsheet</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL_AMB__EREFERENCE18 = eINSTANCE.getDeviceModelAMB_EReference18();
+		EReference DEVICE_MODEL__TO_VALIDATE_SPREADSHEET = eINSTANCE.getDeviceModel_ToValidateSpreadsheet();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Generic MP</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__GET_GENERIC_MP = eINSTANCE.getDeviceModel_GetGenericMP();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.amb.impl.MainImplImpl <em>Main Impl</em>}' class.
@@ -1878,12 +2055,12 @@ public interface AmbPackage extends EPackage {
 		EClass MAIN_IMPL = eINSTANCE.getMainImpl();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference3</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Info From Main</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAIN_IMPL__EREFERENCE3 = eINSTANCE.getMainImpl_EReference3();
+		EReference MAIN_IMPL__GET_INFO_FROM_MAIN = eINSTANCE.getMainImpl_GetInfoFromMain();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.amb.impl.MandCImplImpl <em>Mand CImpl</em>}' class.
@@ -1928,44 +2105,44 @@ public interface AmbPackage extends EPackage {
 		EAttribute MAND_CIMPL__MASK = eINSTANCE.getMandCImpl_Mask();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Info Sheet</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__EREFERENCE0 = eINSTANCE.getMandCImpl_EReference0();
+		EReference MAND_CIMPL__GET_INFO_SHEET = eINSTANCE.getMandCImpl_GetInfoSheet();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference1</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Data From Main</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__EREFERENCE1 = eINSTANCE.getMandCImpl_EReference1();
+		EReference MAND_CIMPL__GET_DATA_FROM_MAIN = eINSTANCE.getMandCImpl_GetDataFromMain();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference2</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Is MP Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__EREFERENCE2 = eINSTANCE.getMandCImpl_EReference2();
+		EReference MAND_CIMPL__IS_MP_DATA_TYPE = eINSTANCE.getMandCImpl_IsMPDataType();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference3</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Is CP Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__EREFERENCE3 = eINSTANCE.getMandCImpl_EReference3();
+		EReference MAND_CIMPL__IS_CP_DATA_TYPE = eINSTANCE.getMandCImpl_IsCPDataType();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference4</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Utils To Data</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CIMPL__EREFERENCE4 = eINSTANCE.getMandCImpl_EReference4();
+		EReference MAND_CIMPL__UTILS_TO_DATA = eINSTANCE.getMandCImpl_UtilsToData();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.amb.impl.MonitorImplImpl <em>Monitor Impl</em>}' class.
@@ -1978,28 +2155,28 @@ public interface AmbPackage extends EPackage {
 		EClass MONITOR_IMPL = eINSTANCE.getMonitorImpl();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference6</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Normalize Data</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_IMPL__EREFERENCE6 = eINSTANCE.getMonitorImpl_EReference6();
+		EReference MONITOR_IMPL__TO_NORMALIZE_DATA = eINSTANCE.getMonitorImpl_ToNormalizeData();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference7</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Columns Can Be Inv</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_IMPL__EREFERENCE7 = eINSTANCE.getMonitorImpl_EReference7();
+		EReference MONITOR_IMPL__GET_COLUMNS_CAN_BE_INV = eINSTANCE.getMonitorImpl_GetColumnsCanBeInv();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference8</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Info MP Sheet</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_IMPL__EREFERENCE8 = eINSTANCE.getMonitorImpl_EReference8();
+		EReference MONITOR_IMPL__GET_INFO_MP_SHEET = eINSTANCE.getMonitorImpl_GetInfoMPSheet();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.amb.impl.SWModuleImpl <em>SW Module</em>}' class.
@@ -2108,36 +2285,94 @@ public interface AmbPackage extends EPackage {
 		EAttribute SW_MODULE__SIM_CONTROL_POINTS = eINSTANCE.getSWModule_SimControlPoints();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Add All MP</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SW_MODULE__EREFERENCE0 = eINSTANCE.getSWModule_EReference0();
+		EReference SW_MODULE__ADD_ALL_MP = eINSTANCE.getSWModule_AddAllMP();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference1</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Add All CP</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SW_MODULE__EREFERENCE1 = eINSTANCE.getSWModule_EReference1();
+		EReference SW_MODULE__ADD_ALL_CP = eINSTANCE.getSWModule_AddAllCP();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference2</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Set Format Descriptions</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SW_MODULE__EREFERENCE2 = eINSTANCE.getSWModule_EReference2();
+		EReference SW_MODULE__SET_FORMAT_DESCRIPTIONS = eINSTANCE.getSWModule_SetFormatDescriptions();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference3</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Sheet Columns</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SW_MODULE__EREFERENCE3 = eINSTANCE.getSWModule_EReference3();
+		EReference SW_MODULE__GET_SHEET_COLUMNS = eINSTANCE.getSWModule_GetSheetColumns();
+
+		/**
+		 * The meta object literal for the '{@link datamodel.amb.impl.GenericMonitorPointsImpl <em>Generic Monitor Points</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see datamodel.amb.impl.GenericMonitorPointsImpl
+		 * @see datamodel.amb.impl.AmbPackageImpl#getGenericMonitorPoints()
+		 * @generated
+		 */
+		EClass GENERIC_MONITOR_POINTS = eINSTANCE.getGenericMonitorPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>New Spreadsheet</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GENERIC_MONITOR_POINTS__NEW_SPREADSHEET = eINSTANCE.getGenericMonitorPoints_NewSpreadsheet();
+
+		/**
+		 * The meta object literal for the '<em><b>Device Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GENERIC_MONITOR_POINTS__DEVICE_NAME = eINSTANCE.getGenericMonitorPoints_DeviceName();
+
+		/**
+		 * The meta object literal for the '<em><b>Dir Location</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GENERIC_MONITOR_POINTS__DIR_LOCATION = eINSTANCE.getGenericMonitorPoints_DirLocation();
+
+		/**
+		 * The meta object literal for the '<em><b>Get The Spreadsheet</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GENERIC_MONITOR_POINTS__GET_THE_SPREADSHEET = eINSTANCE.getGenericMonitorPoints_GetTheSpreadsheet();
+
+		/**
+		 * The meta object literal for the '<em><b>To Validate The Spreadsheet</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET = eINSTANCE.getGenericMonitorPoints_ToValidateTheSpreadsheet();
+
+		/**
+		 * The meta object literal for the '<em><b>To Install Dir</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GENERIC_MONITOR_POINTS__TO_INSTALL_DIR = eINSTANCE.getGenericMonitorPoints_ToInstallDir();
 
 	}
 

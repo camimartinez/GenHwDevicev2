@@ -10,7 +10,6 @@ import datamodel.amb.*;
 
 import datamodel.base.ArchiveProperty;
 import datamodel.base.ControlPoint;
-import datamodel.base.DeviceModel;
 import datamodel.base.MainBase;
 import datamodel.base.MandCBase;
 import datamodel.base.MonitorPoint;
@@ -109,10 +108,10 @@ public class AmbSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AmbPackage.DEVICE_MODEL_AMB: {
-				DeviceModelAMB deviceModelAMB = (DeviceModelAMB)theEObject;
-				T result = caseDeviceModelAMB(deviceModelAMB);
-				if (result == null) result = caseDeviceModel(deviceModelAMB);
+			case AmbPackage.DEVICE_MODEL: {
+				DeviceModel deviceModel = (DeviceModel)theEObject;
+				T result = caseDeviceModel(deviceModel);
+				if (result == null) result = caseBase_DeviceModel(deviceModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -140,6 +139,12 @@ public class AmbSwitch<T> {
 			case AmbPackage.SW_MODULE: {
 				SWModule swModule = (SWModule)theEObject;
 				T result = caseSWModule(swModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AmbPackage.GENERIC_MONITOR_POINTS: {
+				GenericMonitorPoints genericMonitorPoints = (GenericMonitorPoints)theEObject;
+				T result = caseGenericMonitorPoints(genericMonitorPoints);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -178,17 +183,17 @@ public class AmbSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Device Model AMB</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Device Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Device Model AMB</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Device Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDeviceModelAMB(DeviceModelAMB object) {
+	public T caseDeviceModel(DeviceModel object) {
 		return null;
 	}
 
@@ -253,6 +258,21 @@ public class AmbSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Generic Monitor Points</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Generic Monitor Points</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGenericMonitorPoints(GenericMonitorPoints object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Archive Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -308,7 +328,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDeviceModel(DeviceModel object) {
+	public T caseBase_DeviceModel(datamodel.base.DeviceModel object) {
 		return null;
 	}
 

@@ -206,58 +206,58 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__GENERATE_ALT = 14;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Get Archive Index</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__EREFERENCE1 = 15;
+	int DEVICE_MODEL__GET_ARCHIVE_INDEX = 15;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Get Cont Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__EREFERENCE3 = 16;
+	int DEVICE_MODEL__GET_CONT_POINTS = 16;
 
 	/**
-	 * The feature id for the '<em><b>EReference4</b></em>' reference.
+	 * The feature id for the '<em><b>Get Moni Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__EREFERENCE4 = 17;
+	int DEVICE_MODEL__GET_MONI_POINTS = 17;
 
 	/**
-	 * The feature id for the '<em><b>EReference5</b></em>' reference.
+	 * The feature id for the '<em><b>Get End Of Generation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__EREFERENCE5 = 18;
+	int DEVICE_MODEL__GET_END_OF_GENERATION = 18;
 
 	/**
-	 * The feature id for the '<em><b>EReference6</b></em>' reference.
+	 * The feature id for the '<em><b>Get Archiv Prop</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__EREFERENCE6 = 19;
+	int DEVICE_MODEL__GET_ARCHIV_PROP = 19;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Get Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__EREFERENCE0 = 20;
+	int DEVICE_MODEL__GET_INF_FROM_SPREAD = 20;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
@@ -351,40 +351,40 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE__DEPENDENTS = 7;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Set Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__EREFERENCE0 = 8;
+	int MAND_CBASE__SET_INF_FROM_SPREAD = 8;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__EREFERENCE1 = 9;
+	int MAND_CBASE__GET_COMMON_INF = 9;
 
 	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__EREFERENCE2 = 10;
+	int MAND_CBASE__SET_MPOR_CP = 10;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__EREFERENCE3 = 11;
+	int MAND_CBASE__GET_SHEET_MP = 11;
 
 	/**
 	 * The number of structural features of the '<em>Mand CBase</em>' class.
@@ -478,58 +478,58 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Set Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__EREFERENCE0 = MAND_CBASE__EREFERENCE0;
+	int MONITOR_POINT__SET_INF_FROM_SPREAD = MAND_CBASE__SET_INF_FROM_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__EREFERENCE1 = MAND_CBASE__EREFERENCE1;
+	int MONITOR_POINT__GET_COMMON_INF = MAND_CBASE__GET_COMMON_INF;
 
 	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__EREFERENCE2 = MAND_CBASE__EREFERENCE2;
+	int MONITOR_POINT__SET_MPOR_CP = MAND_CBASE__SET_MPOR_CP;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__EREFERENCE3 = MAND_CBASE__EREFERENCE3;
+	int MONITOR_POINT__GET_SHEET_MP = MAND_CBASE__GET_SHEET_MP;
 
 	/**
-	 * The feature id for the '<em><b>EReference4</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info From AP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__EREFERENCE4 = MAND_CBASE_FEATURE_COUNT + 0;
+	int MONITOR_POINT__GET_INFO_FROM_AP_SPREAD = MAND_CBASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>EReference5</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info From MP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__EREFERENCE5 = MAND_CBASE_FEATURE_COUNT + 1;
+	int MONITOR_POINT__GET_INFO_FROM_MP_SPREAD = MAND_CBASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Monitor Point</em>' class.
@@ -623,49 +623,49 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Set Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__EREFERENCE0 = MAND_CBASE__EREFERENCE0;
+	int CONTROL_POINT__SET_INF_FROM_SPREAD = MAND_CBASE__SET_INF_FROM_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__EREFERENCE1 = MAND_CBASE__EREFERENCE1;
+	int CONTROL_POINT__GET_COMMON_INF = MAND_CBASE__GET_COMMON_INF;
 
 	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__EREFERENCE2 = MAND_CBASE__EREFERENCE2;
+	int CONTROL_POINT__SET_MPOR_CP = MAND_CBASE__SET_MPOR_CP;
 
 	/**
-	 * The feature id for the '<em><b>EReference3</b></em>' reference.
+	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__EREFERENCE3 = MAND_CBASE__EREFERENCE3;
+	int CONTROL_POINT__GET_SHEET_MP = MAND_CBASE__GET_SHEET_MP;
 
 	/**
-	 * The feature id for the '<em><b>EReference4</b></em>' reference.
+	 * The feature id for the '<em><b>Get Arch On Use Control</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__EREFERENCE4 = MAND_CBASE_FEATURE_COUNT + 0;
+	int CONTROL_POINT__GET_ARCH_ON_USE_CONTROL = MAND_CBASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Control Point</em>' class.
@@ -949,13 +949,13 @@ public interface BasePackage extends EPackage {
 	int ARCHIVE_PROPERTY__SHEET = 1;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Get Columns Info Of Archi</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_PROPERTY__EREFERENCE0 = 2;
+	int ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI = 2;
 
 	/**
 	 * The feature id for the '<em><b>Mp</b></em>' attribute.
@@ -1023,13 +1023,13 @@ public interface BasePackage extends EPackage {
 	int SPREADSHEET_VALIDATOR = 7;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Error Handler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPREADSHEET_VALIDATOR__EREFERENCE0 = 0;
+	int SPREADSHEET_VALIDATOR__ERROR_HANDLER = 0;
 
 	/**
 	 * The feature id for the '<em><b>Error List</b></em>' attribute.
@@ -1123,13 +1123,13 @@ public interface BasePackage extends EPackage {
 	int SPREADSHEET_PARSER__NEWLINE = 5;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Set New Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPREADSHEET_PARSER__EREFERENCE1 = 6;
+	int SPREADSHEET_PARSER__SET_NEW_CONTENT = 6;
 
 	/**
 	 * The number of structural features of the '<em>Spreadsheet Parser</em>' class.
@@ -1187,13 +1187,13 @@ public interface BasePackage extends EPackage {
 	int UTIL__MONT_HALT = 3;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Get Raw Bytes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__EREFERENCE0 = 4;
+	int UTIL__GET_RAW_BYTES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Util</em>' class.
@@ -1307,22 +1307,22 @@ public interface BasePackage extends EPackage {
 	int MAIN_BASE__EREFERENCE0 = 2;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' reference.
+	 * The feature id for the '<em><b>Convert Info To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_BASE__EREFERENCE1 = 3;
+	int MAIN_BASE__CONVERT_INFO_TO = 3;
 
 	/**
-	 * The feature id for the '<em><b>EReference2</b></em>' reference.
+	 * The feature id for the '<em><b>Get Info From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_BASE__EREFERENCE2 = 4;
+	int MAIN_BASE__GET_INFO_FROM_SPREAD = 4;
 
 	/**
 	 * The number of structural features of the '<em>Main Base</em>' class.
@@ -1334,34 +1334,14 @@ public interface BasePackage extends EPackage {
 	int MAIN_BASE_FEATURE_COUNT = 5;
 
 	/**
-	 * The meta object id for the '<em>Hashtable</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.Hashtable
-	 * @see datamodel.base.impl.BasePackageImpl#getHashtable()
-	 * @generated
-	 */
-	int HASHTABLE = 13;
-
-	/**
-	 * The meta object id for the '<em>Main Base DT</em>' data type.
+	 * The meta object id for the '<em>Simple Error Handler DT</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.lang.Object
-	 * @see datamodel.base.impl.BasePackageImpl#getMainBaseDT()
+	 * @see datamodel.base.impl.BasePackageImpl#getSimpleErrorHandlerDT()
 	 * @generated
 	 */
-	int MAIN_BASE_DT = 14;
-
-	/**
-	 * The meta object id for the '<em>Array List</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.ArrayList
-	 * @see datamodel.base.impl.BasePackageImpl#getArrayList()
-	 * @generated
-	 */
-	int ARRAY_LIST = 15;
+	int SIMPLE_ERROR_HANDLER_DT = 13;
 
 	/**
 	 * The meta object id for the '<em>Mand CBase DT</em>' data type.
@@ -1371,7 +1351,37 @@ public interface BasePackage extends EPackage {
 	 * @see datamodel.base.impl.BasePackageImpl#getMandCBaseDT()
 	 * @generated
 	 */
-	int MAND_CBASE_DT = 16;
+	int MAND_CBASE_DT = 14;
+
+	/**
+	 * The meta object id for the '<em>Main Base DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.Object
+	 * @see datamodel.base.impl.BasePackageImpl#getMainBaseDT()
+	 * @generated
+	 */
+	int MAIN_BASE_DT = 15;
+
+	/**
+	 * The meta object id for the '<em>Array List</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.ArrayList
+	 * @see datamodel.base.impl.BasePackageImpl#getArrayList()
+	 * @generated
+	 */
+	int ARRAY_LIST = 16;
+
+	/**
+	 * The meta object id for the '<em>Hashtable</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.Hashtable
+	 * @see datamodel.base.impl.BasePackageImpl#getHashtable()
+	 * @generated
+	 */
+	int HASHTABLE = 17;
 
 	/**
 	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
@@ -1381,17 +1391,34 @@ public interface BasePackage extends EPackage {
 	 * @see datamodel.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION_DT = 17;
+	int SAX_PARSE_EXCEPTION_DT = 18;
 
 	/**
-	 * The meta object id for the '<em>Simple Error Handler DT</em>' data type.
+	 * The meta object id for the '<em>String3 DT</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.lang.Object
-	 * @see datamodel.base.impl.BasePackageImpl#getSimpleErrorHandlerDT()
+	 * @see datamodel.base.impl.BasePackageImpl#getString3DT()
 	 * @generated
 	 */
-	int SIMPLE_ERROR_HANDLER_DT = 18;
+	int STRING3_DT = 19;
+
+	/**
+	 * The meta object id for the '<em>String2 DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see datamodel.base.impl.BasePackageImpl#getString2DT()
+	 * @generated
+	 */
+	int STRING2_DT = 20;
+
+	/**
+	 * The meta object id for the '<em>String1 DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see datamodel.base.impl.BasePackageImpl#getString1DT()
+	 * @generated
+	 */
+	int STRING1_DT = 21;
 
 
 	/**
@@ -1570,70 +1597,70 @@ public interface BasePackage extends EPackage {
 	EAttribute getDeviceModel_GenerateAlt();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getEReference1 <em>EReference1</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getGetArchiveIndex <em>Get Archive Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference1</em>'.
-	 * @see datamodel.base.DeviceModel#getEReference1()
+	 * @return the meta object for the reference '<em>Get Archive Index</em>'.
+	 * @see datamodel.base.DeviceModel#getGetArchiveIndex()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_EReference1();
+	EReference getDeviceModel_GetArchiveIndex();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getEReference3 <em>EReference3</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getGetContPoints <em>Get Cont Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference3</em>'.
-	 * @see datamodel.base.DeviceModel#getEReference3()
+	 * @return the meta object for the reference '<em>Get Cont Points</em>'.
+	 * @see datamodel.base.DeviceModel#getGetContPoints()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_EReference3();
+	EReference getDeviceModel_GetContPoints();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getEReference4 <em>EReference4</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getGetMoniPoints <em>Get Moni Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference4</em>'.
-	 * @see datamodel.base.DeviceModel#getEReference4()
+	 * @return the meta object for the reference '<em>Get Moni Points</em>'.
+	 * @see datamodel.base.DeviceModel#getGetMoniPoints()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_EReference4();
+	EReference getDeviceModel_GetMoniPoints();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getEReference5 <em>EReference5</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getGetEndOfGeneration <em>Get End Of Generation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference5</em>'.
-	 * @see datamodel.base.DeviceModel#getEReference5()
+	 * @return the meta object for the reference '<em>Get End Of Generation</em>'.
+	 * @see datamodel.base.DeviceModel#getGetEndOfGeneration()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_EReference5();
+	EReference getDeviceModel_GetEndOfGeneration();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getEReference6 <em>EReference6</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getGetArchivProp <em>Get Archiv Prop</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference6</em>'.
-	 * @see datamodel.base.DeviceModel#getEReference6()
+	 * @return the meta object for the reference '<em>Get Archiv Prop</em>'.
+	 * @see datamodel.base.DeviceModel#getGetArchivProp()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_EReference6();
+	EReference getDeviceModel_GetArchivProp();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getEReference0 <em>EReference0</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.DeviceModel#getGetInfFromSpread <em>Get Inf From Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see datamodel.base.DeviceModel#getEReference0()
+	 * @return the meta object for the reference '<em>Get Inf From Spread</em>'.
+	 * @see datamodel.base.DeviceModel#getGetInfFromSpread()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_EReference0();
+	EReference getDeviceModel_GetInfFromSpread();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.base.MonitorPoint <em>Monitor Point</em>}'.
@@ -1646,26 +1673,26 @@ public interface BasePackage extends EPackage {
 	EClass getMonitorPoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.MonitorPoint#getEReference4 <em>EReference4</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.MonitorPoint#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference4</em>'.
-	 * @see datamodel.base.MonitorPoint#getEReference4()
+	 * @return the meta object for the reference '<em>Get Info From AP Spread</em>'.
+	 * @see datamodel.base.MonitorPoint#getGetInfoFromAPSpread()
 	 * @see #getMonitorPoint()
 	 * @generated
 	 */
-	EReference getMonitorPoint_EReference4();
+	EReference getMonitorPoint_GetInfoFromAPSpread();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.MonitorPoint#getEReference5 <em>EReference5</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.MonitorPoint#getGetInfoFromMPSpread <em>Get Info From MP Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference5</em>'.
-	 * @see datamodel.base.MonitorPoint#getEReference5()
+	 * @return the meta object for the reference '<em>Get Info From MP Spread</em>'.
+	 * @see datamodel.base.MonitorPoint#getGetInfoFromMPSpread()
 	 * @see #getMonitorPoint()
 	 * @generated
 	 */
-	EReference getMonitorPoint_EReference5();
+	EReference getMonitorPoint_GetInfoFromMPSpread();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.base.ControlPoint <em>Control Point</em>}'.
@@ -1678,15 +1705,15 @@ public interface BasePackage extends EPackage {
 	EClass getControlPoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.ControlPoint#getEReference4 <em>EReference4</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.ControlPoint#getGetArchOnUseControl <em>Get Arch On Use Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference4</em>'.
-	 * @see datamodel.base.ControlPoint#getEReference4()
+	 * @return the meta object for the reference '<em>Get Arch On Use Control</em>'.
+	 * @see datamodel.base.ControlPoint#getGetArchOnUseControl()
 	 * @see #getControlPoint()
 	 * @generated
 	 */
-	EReference getControlPoint_EReference4();
+	EReference getControlPoint_GetArchOnUseControl();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.base.Table <em>Table</em>}'.
@@ -2072,48 +2099,48 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_Dependents();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.MandCBase#getEReference0 <em>EReference0</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.MandCBase#getSetInfFromSpread <em>Set Inf From Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see datamodel.base.MandCBase#getEReference0()
+	 * @return the meta object for the reference '<em>Set Inf From Spread</em>'.
+	 * @see datamodel.base.MandCBase#getSetInfFromSpread()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_EReference0();
+	EReference getMandCBase_SetInfFromSpread();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.MandCBase#getEReference1 <em>EReference1</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.MandCBase#getGetCommonInf <em>Get Common Inf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference1</em>'.
-	 * @see datamodel.base.MandCBase#getEReference1()
+	 * @return the meta object for the reference '<em>Get Common Inf</em>'.
+	 * @see datamodel.base.MandCBase#getGetCommonInf()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_EReference1();
+	EReference getMandCBase_GetCommonInf();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.MandCBase#getEReference2 <em>EReference2</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.MandCBase#getSetMPorCP <em>Set MPor CP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference2</em>'.
-	 * @see datamodel.base.MandCBase#getEReference2()
+	 * @return the meta object for the reference '<em>Set MPor CP</em>'.
+	 * @see datamodel.base.MandCBase#getSetMPorCP()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_EReference2();
+	EReference getMandCBase_SetMPorCP();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.MandCBase#getEReference3 <em>EReference3</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.MandCBase#getGetSheetMP <em>Get Sheet MP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference3</em>'.
-	 * @see datamodel.base.MandCBase#getEReference3()
+	 * @return the meta object for the reference '<em>Get Sheet MP</em>'.
+	 * @see datamodel.base.MandCBase#getGetSheetMP()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_EReference3();
+	EReference getMandCBase_GetSheetMP();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.base.ArchiveProperty <em>Archive Property</em>}'.
@@ -2148,15 +2175,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getArchiveProperty_Sheet();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.ArchiveProperty#getEReference0 <em>EReference0</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.ArchiveProperty#getGetColumnsInfoOfArchi <em>Get Columns Info Of Archi</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see datamodel.base.ArchiveProperty#getEReference0()
+	 * @return the meta object for the reference '<em>Get Columns Info Of Archi</em>'.
+	 * @see datamodel.base.ArchiveProperty#getGetColumnsInfoOfArchi()
 	 * @see #getArchiveProperty()
 	 * @generated
 	 */
-	EReference getArchiveProperty_EReference0();
+	EReference getArchiveProperty_GetColumnsInfoOfArchi();
 
 	/**
 	 * Returns the meta object for the attribute '{@link datamodel.base.ArchiveProperty#getMp <em>Mp</em>}'.
@@ -2212,15 +2239,15 @@ public interface BasePackage extends EPackage {
 	EClass getSpreadsheetValidator();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.SpreadsheetValidator#getEReference0 <em>EReference0</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see datamodel.base.SpreadsheetValidator#getEReference0()
+	 * @return the meta object for the reference '<em>Error Handler</em>'.
+	 * @see datamodel.base.SpreadsheetValidator#getErrorHandler()
 	 * @see #getSpreadsheetValidator()
 	 * @generated
 	 */
-	EReference getSpreadsheetValidator_EReference0();
+	EReference getSpreadsheetValidator_ErrorHandler();
 
 	/**
 	 * Returns the meta object for the attribute '{@link datamodel.base.SpreadsheetValidator#getErrorList <em>Error List</em>}'.
@@ -2321,15 +2348,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getSpreadsheetParser_Newline();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.SpreadsheetParser#getEReference1 <em>EReference1</em>}'.
+	 * Returns the meta object for the containment reference '{@link datamodel.base.SpreadsheetParser#getSetNewContent <em>Set New Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference1</em>'.
-	 * @see datamodel.base.SpreadsheetParser#getEReference1()
+	 * @return the meta object for the containment reference '<em>Set New Content</em>'.
+	 * @see datamodel.base.SpreadsheetParser#getSetNewContent()
 	 * @see #getSpreadsheetParser()
 	 * @generated
 	 */
-	EReference getSpreadsheetParser_EReference1();
+	EReference getSpreadsheetParser_SetNewContent();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.base.Util <em>Util</em>}'.
@@ -2386,15 +2413,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getUtil_MONTHalt();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.Util#getEReference0 <em>EReference0</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.Util#getGetRawBytes <em>Get Raw Bytes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see datamodel.base.Util#getEReference0()
+	 * @return the meta object for the reference '<em>Get Raw Bytes</em>'.
+	 * @see datamodel.base.Util#getGetRawBytes()
 	 * @see #getUtil()
 	 * @generated
 	 */
-	EReference getUtil_EReference0();
+	EReference getUtil_GetRawBytes();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.base.Pair <em>Pair</em>}'.
@@ -2493,37 +2520,48 @@ public interface BasePackage extends EPackage {
 	EReference getMainBase_EReference0();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.MainBase#getEReference1 <em>EReference1</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.MainBase#getConvertInfoTo <em>Convert Info To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference1</em>'.
-	 * @see datamodel.base.MainBase#getEReference1()
+	 * @return the meta object for the reference '<em>Convert Info To</em>'.
+	 * @see datamodel.base.MainBase#getConvertInfoTo()
 	 * @see #getMainBase()
 	 * @generated
 	 */
-	EReference getMainBase_EReference1();
+	EReference getMainBase_ConvertInfoTo();
 
 	/**
-	 * Returns the meta object for the reference '{@link datamodel.base.MainBase#getEReference2 <em>EReference2</em>}'.
+	 * Returns the meta object for the reference '{@link datamodel.base.MainBase#getGetInfoFromSpread <em>Get Info From Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference2</em>'.
-	 * @see datamodel.base.MainBase#getEReference2()
+	 * @return the meta object for the reference '<em>Get Info From Spread</em>'.
+	 * @see datamodel.base.MainBase#getGetInfoFromSpread()
 	 * @see #getMainBase()
 	 * @generated
 	 */
-	EReference getMainBase_EReference2();
+	EReference getMainBase_GetInfoFromSpread();
 
 	/**
-	 * Returns the meta object for data type '{@link java.util.Hashtable <em>Hashtable</em>}'.
+	 * Returns the meta object for data type '{@link java.lang.Object <em>Simple Error Handler DT</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Hashtable</em>'.
-	 * @see java.util.Hashtable
-	 * @model instanceClass="java.util.Hashtable"
+	 * @return the meta object for data type '<em>Simple Error Handler DT</em>'.
+	 * @see java.lang.Object
+	 * @model instanceClass="java.lang.Object"
 	 * @generated
 	 */
-	EDataType getHashtable();
+	EDataType getSimpleErrorHandlerDT();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.Object <em>Mand CBase DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Mand CBase DT</em>'.
+	 * @see java.lang.Object
+	 * @model instanceClass="java.lang.Object" serializeable="false"
+	 * @generated
+	 */
+	EDataType getMandCBaseDT();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Main Base DT</em>}'.
@@ -2548,15 +2586,15 @@ public interface BasePackage extends EPackage {
 	EDataType getArrayList();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>Mand CBase DT</em>}'.
+	 * Returns the meta object for data type '{@link java.util.Hashtable <em>Hashtable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Mand CBase DT</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object" serializeable="false"
+	 * @return the meta object for data type '<em>Hashtable</em>'.
+	 * @see java.util.Hashtable
+	 * @model instanceClass="java.util.Hashtable"
 	 * @generated
 	 */
-	EDataType getMandCBaseDT();
+	EDataType getHashtable();
 
 	/**
 	 * Returns the meta object for data type '{@link org.xml.sax.SAXParseException <em>SAX Parse Exception DT</em>}'.
@@ -2570,15 +2608,34 @@ public interface BasePackage extends EPackage {
 	EDataType getSAXParseExceptionDT();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>Simple Error Handler DT</em>}'.
+	 * Returns the meta object for data type '<em>String3 DT</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Simple Error Handler DT</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object"
+	 * @return the meta object for data type '<em>String3 DT</em>'.
+	 * @model instanceClass="java.lang.String[][][]"
 	 * @generated
 	 */
-	EDataType getSimpleErrorHandlerDT();
+	EDataType getString3DT();
+
+	/**
+	 * Returns the meta object for data type '<em>String2 DT</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>String2 DT</em>'.
+	 * @model instanceClass="java.lang.String[][]"
+	 * @generated
+	 */
+	EDataType getString2DT();
+
+	/**
+	 * Returns the meta object for data type '<em>String1 DT</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>String1 DT</em>'.
+	 * @model instanceClass="java.lang.String[]"
+	 * @generated
+	 */
+	EDataType getString1DT();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2733,52 +2790,52 @@ public interface BasePackage extends EPackage {
 		EAttribute DEVICE_MODEL__GENERATE_ALT = eINSTANCE.getDeviceModel_GenerateAlt();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference1</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Archive Index</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__EREFERENCE1 = eINSTANCE.getDeviceModel_EReference1();
+		EReference DEVICE_MODEL__GET_ARCHIVE_INDEX = eINSTANCE.getDeviceModel_GetArchiveIndex();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference3</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Cont Points</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__EREFERENCE3 = eINSTANCE.getDeviceModel_EReference3();
+		EReference DEVICE_MODEL__GET_CONT_POINTS = eINSTANCE.getDeviceModel_GetContPoints();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference4</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Moni Points</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__EREFERENCE4 = eINSTANCE.getDeviceModel_EReference4();
+		EReference DEVICE_MODEL__GET_MONI_POINTS = eINSTANCE.getDeviceModel_GetMoniPoints();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference5</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get End Of Generation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__EREFERENCE5 = eINSTANCE.getDeviceModel_EReference5();
+		EReference DEVICE_MODEL__GET_END_OF_GENERATION = eINSTANCE.getDeviceModel_GetEndOfGeneration();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference6</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Archiv Prop</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__EREFERENCE6 = eINSTANCE.getDeviceModel_EReference6();
+		EReference DEVICE_MODEL__GET_ARCHIV_PROP = eINSTANCE.getDeviceModel_GetArchivProp();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Inf From Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__EREFERENCE0 = eINSTANCE.getDeviceModel_EReference0();
+		EReference DEVICE_MODEL__GET_INF_FROM_SPREAD = eINSTANCE.getDeviceModel_GetInfFromSpread();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.base.impl.MonitorPointImpl <em>Monitor Point</em>}' class.
@@ -2791,20 +2848,20 @@ public interface BasePackage extends EPackage {
 		EClass MONITOR_POINT = eINSTANCE.getMonitorPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference4</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Info From AP Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_POINT__EREFERENCE4 = eINSTANCE.getMonitorPoint_EReference4();
+		EReference MONITOR_POINT__GET_INFO_FROM_AP_SPREAD = eINSTANCE.getMonitorPoint_GetInfoFromAPSpread();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference5</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Info From MP Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_POINT__EREFERENCE5 = eINSTANCE.getMonitorPoint_EReference5();
+		EReference MONITOR_POINT__GET_INFO_FROM_MP_SPREAD = eINSTANCE.getMonitorPoint_GetInfoFromMPSpread();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.base.impl.ControlPointImpl <em>Control Point</em>}' class.
@@ -2817,12 +2874,12 @@ public interface BasePackage extends EPackage {
 		EClass CONTROL_POINT = eINSTANCE.getControlPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference4</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Arch On Use Control</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_POINT__EREFERENCE4 = eINSTANCE.getControlPoint_EReference4();
+		EReference CONTROL_POINT__GET_ARCH_ON_USE_CONTROL = eINSTANCE.getControlPoint_GetArchOnUseControl();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.base.impl.TableImpl <em>Table</em>}' class.
@@ -3109,36 +3166,36 @@ public interface BasePackage extends EPackage {
 		EAttribute MAND_CBASE__DEPENDENTS = eINSTANCE.getMandCBase_Dependents();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Set Inf From Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__EREFERENCE0 = eINSTANCE.getMandCBase_EReference0();
+		EReference MAND_CBASE__SET_INF_FROM_SPREAD = eINSTANCE.getMandCBase_SetInfFromSpread();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference1</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Common Inf</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__EREFERENCE1 = eINSTANCE.getMandCBase_EReference1();
+		EReference MAND_CBASE__GET_COMMON_INF = eINSTANCE.getMandCBase_GetCommonInf();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference2</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Set MPor CP</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__EREFERENCE2 = eINSTANCE.getMandCBase_EReference2();
+		EReference MAND_CBASE__SET_MPOR_CP = eINSTANCE.getMandCBase_SetMPorCP();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference3</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Sheet MP</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__EREFERENCE3 = eINSTANCE.getMandCBase_EReference3();
+		EReference MAND_CBASE__GET_SHEET_MP = eINSTANCE.getMandCBase_GetSheetMP();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.base.impl.ArchivePropertyImpl <em>Archive Property</em>}' class.
@@ -3167,12 +3224,12 @@ public interface BasePackage extends EPackage {
 		EAttribute ARCHIVE_PROPERTY__SHEET = eINSTANCE.getArchiveProperty_Sheet();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Columns Info Of Archi</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARCHIVE_PROPERTY__EREFERENCE0 = eINSTANCE.getArchiveProperty_EReference0();
+		EReference ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI = eINSTANCE.getArchiveProperty_GetColumnsInfoOfArchi();
 
 		/**
 		 * The meta object literal for the '<em><b>Mp</b></em>' attribute feature.
@@ -3219,12 +3276,12 @@ public interface BasePackage extends EPackage {
 		EClass SPREADSHEET_VALIDATOR = eINSTANCE.getSpreadsheetValidator();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Error Handler</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SPREADSHEET_VALIDATOR__EREFERENCE0 = eINSTANCE.getSpreadsheetValidator_EReference0();
+		EReference SPREADSHEET_VALIDATOR__ERROR_HANDLER = eINSTANCE.getSpreadsheetValidator_ErrorHandler();
 
 		/**
 		 * The meta object literal for the '<em><b>Error List</b></em>' attribute feature.
@@ -3301,12 +3358,12 @@ public interface BasePackage extends EPackage {
 		EAttribute SPREADSHEET_PARSER__NEWLINE = eINSTANCE.getSpreadsheetParser_Newline();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference1</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Set New Content</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SPREADSHEET_PARSER__EREFERENCE1 = eINSTANCE.getSpreadsheetParser_EReference1();
+		EReference SPREADSHEET_PARSER__SET_NEW_CONTENT = eINSTANCE.getSpreadsheetParser_SetNewContent();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.base.impl.UtilImpl <em>Util</em>}' class.
@@ -3351,12 +3408,12 @@ public interface BasePackage extends EPackage {
 		EAttribute UTIL__MONT_HALT = eINSTANCE.getUtil_MONTHalt();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Raw Bytes</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UTIL__EREFERENCE0 = eINSTANCE.getUtil_EReference0();
+		EReference UTIL__GET_RAW_BYTES = eINSTANCE.getUtil_GetRawBytes();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.base.impl.PairImpl <em>Pair</em>}' class.
@@ -3437,30 +3494,40 @@ public interface BasePackage extends EPackage {
 		EReference MAIN_BASE__EREFERENCE0 = eINSTANCE.getMainBase_EReference0();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference1</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Convert Info To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAIN_BASE__EREFERENCE1 = eINSTANCE.getMainBase_EReference1();
+		EReference MAIN_BASE__CONVERT_INFO_TO = eINSTANCE.getMainBase_ConvertInfoTo();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference2</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Info From Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAIN_BASE__EREFERENCE2 = eINSTANCE.getMainBase_EReference2();
+		EReference MAIN_BASE__GET_INFO_FROM_SPREAD = eINSTANCE.getMainBase_GetInfoFromSpread();
 
 		/**
-		 * The meta object literal for the '<em>Hashtable</em>' data type.
+		 * The meta object literal for the '<em>Simple Error Handler DT</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.util.Hashtable
-		 * @see datamodel.base.impl.BasePackageImpl#getHashtable()
+		 * @see java.lang.Object
+		 * @see datamodel.base.impl.BasePackageImpl#getSimpleErrorHandlerDT()
 		 * @generated
 		 */
-		EDataType HASHTABLE = eINSTANCE.getHashtable();
+		EDataType SIMPLE_ERROR_HANDLER_DT = eINSTANCE.getSimpleErrorHandlerDT();
+
+		/**
+		 * The meta object literal for the '<em>Mand CBase DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.Object
+		 * @see datamodel.base.impl.BasePackageImpl#getMandCBaseDT()
+		 * @generated
+		 */
+		EDataType MAND_CBASE_DT = eINSTANCE.getMandCBaseDT();
 
 		/**
 		 * The meta object literal for the '<em>Main Base DT</em>' data type.
@@ -3483,14 +3550,14 @@ public interface BasePackage extends EPackage {
 		EDataType ARRAY_LIST = eINSTANCE.getArrayList();
 
 		/**
-		 * The meta object literal for the '<em>Mand CBase DT</em>' data type.
+		 * The meta object literal for the '<em>Hashtable</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
-		 * @see datamodel.base.impl.BasePackageImpl#getMandCBaseDT()
+		 * @see java.util.Hashtable
+		 * @see datamodel.base.impl.BasePackageImpl#getHashtable()
 		 * @generated
 		 */
-		EDataType MAND_CBASE_DT = eINSTANCE.getMandCBaseDT();
+		EDataType HASHTABLE = eINSTANCE.getHashtable();
 
 		/**
 		 * The meta object literal for the '<em>SAX Parse Exception DT</em>' data type.
@@ -3503,14 +3570,31 @@ public interface BasePackage extends EPackage {
 		EDataType SAX_PARSE_EXCEPTION_DT = eINSTANCE.getSAXParseExceptionDT();
 
 		/**
-		 * The meta object literal for the '<em>Simple Error Handler DT</em>' data type.
+		 * The meta object literal for the '<em>String3 DT</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
-		 * @see datamodel.base.impl.BasePackageImpl#getSimpleErrorHandlerDT()
+		 * @see datamodel.base.impl.BasePackageImpl#getString3DT()
 		 * @generated
 		 */
-		EDataType SIMPLE_ERROR_HANDLER_DT = eINSTANCE.getSimpleErrorHandlerDT();
+		EDataType STRING3_DT = eINSTANCE.getString3DT();
+
+		/**
+		 * The meta object literal for the '<em>String2 DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see datamodel.base.impl.BasePackageImpl#getString2DT()
+		 * @generated
+		 */
+		EDataType STRING2_DT = eINSTANCE.getString2DT();
+
+		/**
+		 * The meta object literal for the '<em>String1 DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see datamodel.base.impl.BasePackageImpl#getString1DT()
+		 * @generated
+		 */
+		EDataType STRING1_DT = eINSTANCE.getString1DT();
 
 	}
 

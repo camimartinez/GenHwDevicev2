@@ -18,9 +18,9 @@ import datamodel.base.Util;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link datamodel.amb.ControlImpl#getEReference5 <em>EReference5</em>}</li>
- *   <li>{@link datamodel.amb.ControlImpl#getEReference6 <em>EReference6</em>}</li>
- *   <li>{@link datamodel.amb.ControlImpl#getEReference7 <em>EReference7</em>}</li>
+ *   <li>{@link datamodel.amb.ControlImpl#getWorldToDataColumns <em>World To Data Columns</em>}</li>
+ *   <li>{@link datamodel.amb.ControlImpl#getGetInfoControlSheet <em>Get Info Control Sheet</em>}</li>
+ *   <li>{@link datamodel.amb.ControlImpl#getToNormalizeNumber <em>To Normalize Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,82 +30,82 @@ import datamodel.base.Util;
  */
 public interface ControlImpl extends ControlPoint {
 	/**
-	 * Returns the value of the '<em><b>EReference5</b></em>' reference.
+	 * Returns the value of the '<em><b>World To Data Columns</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference5</em>' reference isn't clear,
+	 * If the meaning of the '<em>World To Data Columns</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference5</em>' reference.
-	 * @see #setEReference5(Table)
-	 * @see datamodel.amb.AmbPackage#getControlImpl_EReference5()
+	 * @return the value of the '<em>World To Data Columns</em>' reference.
+	 * @see #setWorldToDataColumns(Table)
+	 * @see datamodel.amb.AmbPackage#getControlImpl_WorldToDataColumns()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference5();
+	Table getWorldToDataColumns();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.ControlImpl#getEReference5 <em>EReference5</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.ControlImpl#getWorldToDataColumns <em>World To Data Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference5</em>' reference.
-	 * @see #getEReference5()
+	 * @param value the new value of the '<em>World To Data Columns</em>' reference.
+	 * @see #getWorldToDataColumns()
 	 * @generated
 	 */
-	void setEReference5(Table value);
+	void setWorldToDataColumns(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference6</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Info Control Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference6</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Info Control Sheet</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference6</em>' reference.
-	 * @see #setEReference6(MandCImpl)
-	 * @see datamodel.amb.AmbPackage#getControlImpl_EReference6()
+	 * @return the value of the '<em>Get Info Control Sheet</em>' reference.
+	 * @see #setGetInfoControlSheet(MandCImpl)
+	 * @see datamodel.amb.AmbPackage#getControlImpl_GetInfoControlSheet()
 	 * @model
 	 * @generated
 	 */
-	MandCImpl getEReference6();
+	MandCImpl getGetInfoControlSheet();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.ControlImpl#getEReference6 <em>EReference6</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.ControlImpl#getGetInfoControlSheet <em>Get Info Control Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference6</em>' reference.
-	 * @see #getEReference6()
+	 * @param value the new value of the '<em>Get Info Control Sheet</em>' reference.
+	 * @see #getGetInfoControlSheet()
 	 * @generated
 	 */
-	void setEReference6(MandCImpl value);
+	void setGetInfoControlSheet(MandCImpl value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference7</b></em>' reference.
+	 * Returns the value of the '<em><b>To Normalize Number</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference7</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Normalize Number</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference7</em>' reference.
-	 * @see #setEReference7(Util)
-	 * @see datamodel.amb.AmbPackage#getControlImpl_EReference7()
+	 * @return the value of the '<em>To Normalize Number</em>' reference.
+	 * @see #setToNormalizeNumber(Util)
+	 * @see datamodel.amb.AmbPackage#getControlImpl_ToNormalizeNumber()
 	 * @model
 	 * @generated
 	 */
-	Util getEReference7();
+	Util getToNormalizeNumber();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.ControlImpl#getEReference7 <em>EReference7</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.ControlImpl#getToNormalizeNumber <em>To Normalize Number</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference7</em>' reference.
-	 * @see #getEReference7()
+	 * @param value the new value of the '<em>To Normalize Number</em>' reference.
+	 * @see #getToNormalizeNumber()
 	 * @generated
 	 */
-	void setEReference7(Util value);
+	void setToNormalizeNumber(Util value);
 
 	/**
 	 * <!-- begin-user-doc -->

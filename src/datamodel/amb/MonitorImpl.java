@@ -18,9 +18,9 @@ import datamodel.base.Util;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link datamodel.amb.MonitorImpl#getEReference6 <em>EReference6</em>}</li>
- *   <li>{@link datamodel.amb.MonitorImpl#getEReference7 <em>EReference7</em>}</li>
- *   <li>{@link datamodel.amb.MonitorImpl#getEReference8 <em>EReference8</em>}</li>
+ *   <li>{@link datamodel.amb.MonitorImpl#getToNormalizeData <em>To Normalize Data</em>}</li>
+ *   <li>{@link datamodel.amb.MonitorImpl#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}</li>
+ *   <li>{@link datamodel.amb.MonitorImpl#getGetInfoMPSheet <em>Get Info MP Sheet</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,82 +30,82 @@ import datamodel.base.Util;
  */
 public interface MonitorImpl extends MonitorPoint {
 	/**
-	 * Returns the value of the '<em><b>EReference6</b></em>' reference.
+	 * Returns the value of the '<em><b>To Normalize Data</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference6</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Normalize Data</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference6</em>' reference.
-	 * @see #setEReference6(Util)
-	 * @see datamodel.amb.AmbPackage#getMonitorImpl_EReference6()
+	 * @return the value of the '<em>To Normalize Data</em>' reference.
+	 * @see #setToNormalizeData(Util)
+	 * @see datamodel.amb.AmbPackage#getMonitorImpl_ToNormalizeData()
 	 * @model
 	 * @generated
 	 */
-	Util getEReference6();
+	Util getToNormalizeData();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MonitorImpl#getEReference6 <em>EReference6</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.MonitorImpl#getToNormalizeData <em>To Normalize Data</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference6</em>' reference.
-	 * @see #getEReference6()
+	 * @param value the new value of the '<em>To Normalize Data</em>' reference.
+	 * @see #getToNormalizeData()
 	 * @generated
 	 */
-	void setEReference6(Util value);
+	void setToNormalizeData(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference7</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Columns Can Be Inv</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference7</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Columns Can Be Inv</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference7</em>' reference.
-	 * @see #setEReference7(Table)
-	 * @see datamodel.amb.AmbPackage#getMonitorImpl_EReference7()
+	 * @return the value of the '<em>Get Columns Can Be Inv</em>' reference.
+	 * @see #setGetColumnsCanBeInv(Table)
+	 * @see datamodel.amb.AmbPackage#getMonitorImpl_GetColumnsCanBeInv()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference7();
+	Table getGetColumnsCanBeInv();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MonitorImpl#getEReference7 <em>EReference7</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.MonitorImpl#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference7</em>' reference.
-	 * @see #getEReference7()
+	 * @param value the new value of the '<em>Get Columns Can Be Inv</em>' reference.
+	 * @see #getGetColumnsCanBeInv()
 	 * @generated
 	 */
-	void setEReference7(Table value);
+	void setGetColumnsCanBeInv(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference8</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Info MP Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference8</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Info MP Sheet</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference8</em>' reference.
-	 * @see #setEReference8(MandCImpl)
-	 * @see datamodel.amb.AmbPackage#getMonitorImpl_EReference8()
+	 * @return the value of the '<em>Get Info MP Sheet</em>' reference.
+	 * @see #setGetInfoMPSheet(MandCImpl)
+	 * @see datamodel.amb.AmbPackage#getMonitorImpl_GetInfoMPSheet()
 	 * @model
 	 * @generated
 	 */
-	MandCImpl getEReference8();
+	MandCImpl getGetInfoMPSheet();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MonitorImpl#getEReference8 <em>EReference8</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.MonitorImpl#getGetInfoMPSheet <em>Get Info MP Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference8</em>' reference.
-	 * @see #getEReference8()
+	 * @param value the new value of the '<em>Get Info MP Sheet</em>' reference.
+	 * @see #getGetInfoMPSheet()
 	 * @generated
 	 */
-	void setEReference8(MandCImpl value);
+	void setGetInfoMPSheet(MandCImpl value);
 
 	/**
 	 * <!-- begin-user-doc -->

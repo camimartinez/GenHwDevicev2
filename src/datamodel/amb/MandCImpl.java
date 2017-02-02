@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link datamodel.amb.MandCImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link datamodel.amb.MandCImpl#getMcp <em>Mcp</em>}</li>
  *   <li>{@link datamodel.amb.MandCImpl#getMask <em>Mask</em>}</li>
- *   <li>{@link datamodel.amb.MandCImpl#getEReference0 <em>EReference0</em>}</li>
- *   <li>{@link datamodel.amb.MandCImpl#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.amb.MandCImpl#getEReference2 <em>EReference2</em>}</li>
- *   <li>{@link datamodel.amb.MandCImpl#getEReference3 <em>EReference3</em>}</li>
- *   <li>{@link datamodel.amb.MandCImpl#getEReference4 <em>EReference4</em>}</li>
+ *   <li>{@link datamodel.amb.MandCImpl#getGetInfoSheet <em>Get Info Sheet</em>}</li>
+ *   <li>{@link datamodel.amb.MandCImpl#getGetDataFromMain <em>Get Data From Main</em>}</li>
+ *   <li>{@link datamodel.amb.MandCImpl#getIsMPDataType <em>Is MP Data Type</em>}</li>
+ *   <li>{@link datamodel.amb.MandCImpl#getIsCPDataType <em>Is CP Data Type</em>}</li>
+ *   <li>{@link datamodel.amb.MandCImpl#getUtilsToData <em>Utils To Data</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,12 +46,12 @@ public interface MandCImpl extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Row</em>' attribute.
-	 * @see #setRow(String)
+	 * @see #setRow(String[])
 	 * @see datamodel.amb.AmbPackage#getMandCImpl_Row()
-	 * @model
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String getRow();
+	String[] getRow();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getRow <em>Row</em>}' attribute.
@@ -61,7 +61,7 @@ public interface MandCImpl extends EObject {
 	 * @see #getRow()
 	 * @generated
 	 */
-	void setRow(String value);
+	void setRow(String[] value);
 
 	/**
 	 * Returns the value of the '<em><b>Sheet</b></em>' attribute.
@@ -125,12 +125,12 @@ public interface MandCImpl extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mask</em>' attribute.
-	 * @see #setMask(String)
+	 * @see #setMask(String[])
 	 * @see datamodel.amb.AmbPackage#getMandCImpl_Mask()
-	 * @model default="\"0x01\", \"0x02\", \"0x04\", \"0x08\", \"0x10\",\"0x20\", \"0x40\", \"0x80\""
+	 * @model default="\"0x01\", \"0x02\", \"0x04\", \"0x08\", \"0x10\",\"0x20\", \"0x40\", \"0x80\"" dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String getMask();
+	String[] getMask();
 
 	/**
 	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getMask <em>Mask</em>}' attribute.
@@ -140,137 +140,137 @@ public interface MandCImpl extends EObject {
 	 * @see #getMask()
 	 * @generated
 	 */
-	void setMask(String value);
+	void setMask(String[] value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Info Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Info Sheet</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(MandCBase)
-	 * @see datamodel.amb.AmbPackage#getMandCImpl_EReference0()
+	 * @return the value of the '<em>Get Info Sheet</em>' reference.
+	 * @see #setGetInfoSheet(MandCBase)
+	 * @see datamodel.amb.AmbPackage#getMandCImpl_GetInfoSheet()
 	 * @model
 	 * @generated
 	 */
-	MandCBase getEReference0();
+	MandCBase getGetInfoSheet();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getEReference0 <em>EReference0</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getGetInfoSheet <em>Get Info Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
+	 * @param value the new value of the '<em>Get Info Sheet</em>' reference.
+	 * @see #getGetInfoSheet()
 	 * @generated
 	 */
-	void setEReference0(MandCBase value);
+	void setGetInfoSheet(MandCBase value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference1</b></em>' reference.
+	 * Returns the value of the '<em><b>Get Data From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference1</em>' reference isn't clear,
+	 * If the meaning of the '<em>Get Data From Main</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference1</em>' reference.
-	 * @see #setEReference1(Table)
-	 * @see datamodel.amb.AmbPackage#getMandCImpl_EReference1()
+	 * @return the value of the '<em>Get Data From Main</em>' reference.
+	 * @see #setGetDataFromMain(Table)
+	 * @see datamodel.amb.AmbPackage#getMandCImpl_GetDataFromMain()
 	 * @model
 	 * @generated
 	 */
-	Table getEReference1();
+	Table getGetDataFromMain();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getEReference1 <em>EReference1</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getGetDataFromMain <em>Get Data From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference1</em>' reference.
-	 * @see #getEReference1()
+	 * @param value the new value of the '<em>Get Data From Main</em>' reference.
+	 * @see #getGetDataFromMain()
 	 * @generated
 	 */
-	void setEReference1(Table value);
+	void setGetDataFromMain(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference2</b></em>' reference.
+	 * Returns the value of the '<em><b>Is MP Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference2</em>' reference isn't clear,
+	 * If the meaning of the '<em>Is MP Data Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference2</em>' reference.
-	 * @see #setEReference2(MonitorImpl)
-	 * @see datamodel.amb.AmbPackage#getMandCImpl_EReference2()
+	 * @return the value of the '<em>Is MP Data Type</em>' reference.
+	 * @see #setIsMPDataType(MonitorImpl)
+	 * @see datamodel.amb.AmbPackage#getMandCImpl_IsMPDataType()
 	 * @model
 	 * @generated
 	 */
-	MonitorImpl getEReference2();
+	MonitorImpl getIsMPDataType();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getEReference2 <em>EReference2</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getIsMPDataType <em>Is MP Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference2</em>' reference.
-	 * @see #getEReference2()
+	 * @param value the new value of the '<em>Is MP Data Type</em>' reference.
+	 * @see #getIsMPDataType()
 	 * @generated
 	 */
-	void setEReference2(MonitorImpl value);
+	void setIsMPDataType(MonitorImpl value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference3</b></em>' reference.
+	 * Returns the value of the '<em><b>Is CP Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference3</em>' reference isn't clear,
+	 * If the meaning of the '<em>Is CP Data Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference3</em>' reference.
-	 * @see #setEReference3(ControlImpl)
-	 * @see datamodel.amb.AmbPackage#getMandCImpl_EReference3()
+	 * @return the value of the '<em>Is CP Data Type</em>' reference.
+	 * @see #setIsCPDataType(ControlImpl)
+	 * @see datamodel.amb.AmbPackage#getMandCImpl_IsCPDataType()
 	 * @model
 	 * @generated
 	 */
-	ControlImpl getEReference3();
+	ControlImpl getIsCPDataType();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getEReference3 <em>EReference3</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getIsCPDataType <em>Is CP Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference3</em>' reference.
-	 * @see #getEReference3()
+	 * @param value the new value of the '<em>Is CP Data Type</em>' reference.
+	 * @see #getIsCPDataType()
 	 * @generated
 	 */
-	void setEReference3(ControlImpl value);
+	void setIsCPDataType(ControlImpl value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference4</b></em>' reference.
+	 * Returns the value of the '<em><b>Utils To Data</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference4</em>' reference isn't clear,
+	 * If the meaning of the '<em>Utils To Data</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference4</em>' reference.
-	 * @see #setEReference4(Util)
-	 * @see datamodel.amb.AmbPackage#getMandCImpl_EReference4()
+	 * @return the value of the '<em>Utils To Data</em>' reference.
+	 * @see #setUtilsToData(Util)
+	 * @see datamodel.amb.AmbPackage#getMandCImpl_UtilsToData()
 	 * @model
 	 * @generated
 	 */
-	Util getEReference4();
+	Util getUtilsToData();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getEReference4 <em>EReference4</em>}' reference.
+	 * Sets the value of the '{@link datamodel.amb.MandCImpl#getUtilsToData <em>Utils To Data</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference4</em>' reference.
-	 * @see #getEReference4()
+	 * @param value the new value of the '<em>Utils To Data</em>' reference.
+	 * @see #getUtilsToData()
 	 * @generated
 	 */
-	void setEReference4(Util value);
+	void setUtilsToData(Util value);
 
 	/**
 	 * <!-- begin-user-doc -->

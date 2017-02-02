@@ -13,6 +13,4 @@ Export-Package: datamodel.amb,
  datamodel.base,
  datamodel.base.impl,
  datamodel.base.util
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

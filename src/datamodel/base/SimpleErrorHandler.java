@@ -29,6 +29,7 @@ import org.xml.sax.SAXParseException;
 public interface SimpleErrorHandler extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Errors</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Errors</em>' attribute isn't clear,
@@ -38,7 +39,7 @@ public interface SimpleErrorHandler extends EObject {
 	 * @return the value of the '<em>Errors</em>' attribute.
 	 * @see #setErrors(boolean)
 	 * @see datamodel.base.BasePackage#getSimpleErrorHandler_Errors()
-	 * @model
+	 * @model default="false"
 	 * @generated
 	 */
 	boolean isErrors();

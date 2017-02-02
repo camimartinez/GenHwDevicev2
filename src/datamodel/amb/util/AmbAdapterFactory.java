@@ -10,7 +10,6 @@ import datamodel.amb.*;
 
 import datamodel.base.ArchiveProperty;
 import datamodel.base.ControlPoint;
-import datamodel.base.DeviceModel;
 import datamodel.base.MainBase;
 import datamodel.base.MandCBase;
 import datamodel.base.MonitorPoint;
@@ -87,8 +86,8 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 				return createControlImplAdapter();
 			}
 			@Override
-			public Adapter caseDeviceModelAMB(DeviceModelAMB object) {
-				return createDeviceModelAMBAdapter();
+			public Adapter caseDeviceModel(DeviceModel object) {
+				return createDeviceModelAdapter();
 			}
 			@Override
 			public Adapter caseMainImpl(MainImpl object) {
@@ -107,6 +106,10 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 				return createSWModuleAdapter();
 			}
 			@Override
+			public Adapter caseGenericMonitorPoints(GenericMonitorPoints object) {
+				return createGenericMonitorPointsAdapter();
+			}
+			@Override
 			public Adapter caseArchiveProperty(ArchiveProperty object) {
 				return createArchivePropertyAdapter();
 			}
@@ -119,8 +122,8 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 				return createControlPointAdapter();
 			}
 			@Override
-			public Adapter caseDeviceModel(DeviceModel object) {
-				return createDeviceModelAdapter();
+			public Adapter caseBase_DeviceModel(datamodel.base.DeviceModel object) {
+				return createBase_DeviceModelAdapter();
 			}
 			@Override
 			public Adapter caseMainBase(MainBase object) {
@@ -179,16 +182,16 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link datamodel.amb.DeviceModelAMB <em>Device Model AMB</em>}'.
+	 * Creates a new adapter for an object of class '{@link datamodel.amb.DeviceModel <em>Device Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see datamodel.amb.DeviceModelAMB
+	 * @see datamodel.amb.DeviceModel
 	 * @generated
 	 */
-	public Adapter createDeviceModelAMBAdapter() {
+	public Adapter createDeviceModelAdapter() {
 		return null;
 	}
 
@@ -249,6 +252,20 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link datamodel.amb.GenericMonitorPoints <em>Generic Monitor Points</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see datamodel.amb.GenericMonitorPoints
+	 * @generated
+	 */
+	public Adapter createGenericMonitorPointsAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link datamodel.base.ArchiveProperty <em>Archive Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -300,7 +317,7 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @see datamodel.base.DeviceModel
 	 * @generated
 	 */
-	public Adapter createDeviceModelAdapter() {
+	public Adapter createBase_DeviceModelAdapter() {
 		return null;
 	}
 

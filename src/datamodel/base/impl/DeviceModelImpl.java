@@ -48,12 +48,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link datamodel.base.impl.DeviceModelImpl#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link datamodel.base.impl.DeviceModelImpl#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link datamodel.base.impl.DeviceModelImpl#isGenerateAlt <em>Generate Alt</em>}</li>
- *   <li>{@link datamodel.base.impl.DeviceModelImpl#getEReference1 <em>EReference1</em>}</li>
- *   <li>{@link datamodel.base.impl.DeviceModelImpl#getEReference3 <em>EReference3</em>}</li>
- *   <li>{@link datamodel.base.impl.DeviceModelImpl#getEReference4 <em>EReference4</em>}</li>
- *   <li>{@link datamodel.base.impl.DeviceModelImpl#getEReference5 <em>EReference5</em>}</li>
- *   <li>{@link datamodel.base.impl.DeviceModelImpl#getEReference6 <em>EReference6</em>}</li>
- *   <li>{@link datamodel.base.impl.DeviceModelImpl#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link datamodel.base.impl.DeviceModelImpl#getGetArchiveIndex <em>Get Archive Index</em>}</li>
+ *   <li>{@link datamodel.base.impl.DeviceModelImpl#getGetContPoints <em>Get Cont Points</em>}</li>
+ *   <li>{@link datamodel.base.impl.DeviceModelImpl#getGetMoniPoints <em>Get Moni Points</em>}</li>
+ *   <li>{@link datamodel.base.impl.DeviceModelImpl#getGetEndOfGeneration <em>Get End Of Generation</em>}</li>
+ *   <li>{@link datamodel.base.impl.DeviceModelImpl#getGetArchivProp <em>Get Archiv Prop</em>}</li>
+ *   <li>{@link datamodel.base.impl.DeviceModelImpl#getGetInfFromSpread <em>Get Inf From Spread</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,7 +88,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SPREADSHEET_EDEFAULT = null;
+	protected static final String[][][] SPREADSHEET_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getSpreadsheet() <em>Spreadsheet</em>}' attribute.
@@ -98,7 +98,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 * @ordered
 	 */
-	protected String spreadsheet = SPREADSHEET_EDEFAULT;
+	protected String[][][] spreadsheet = SPREADSHEET_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMain() <em>Main</em>}' attribute.
@@ -351,64 +351,64 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	protected boolean generateAlt = GENERATE_ALT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference1() <em>EReference1</em>}' reference.
+	 * The cached value of the '{@link #getGetArchiveIndex() <em>Get Archive Index</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference1()
+	 * @see #getGetArchiveIndex()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table eReference1;
+	protected Table getArchiveIndex;
 
 	/**
-	 * The cached value of the '{@link #getEReference3() <em>EReference3</em>}' reference.
+	 * The cached value of the '{@link #getGetContPoints() <em>Get Cont Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference3()
+	 * @see #getGetContPoints()
 	 * @generated
 	 * @ordered
 	 */
-	protected ControlPoint eReference3;
+	protected ControlPoint getContPoints;
 
 	/**
-	 * The cached value of the '{@link #getEReference4() <em>EReference4</em>}' reference.
+	 * The cached value of the '{@link #getGetMoniPoints() <em>Get Moni Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference4()
+	 * @see #getGetMoniPoints()
 	 * @generated
 	 * @ordered
 	 */
-	protected MonitorPoint eReference4;
+	protected MonitorPoint getMoniPoints;
 
 	/**
-	 * The cached value of the '{@link #getEReference5() <em>EReference5</em>}' reference.
+	 * The cached value of the '{@link #getGetEndOfGeneration() <em>Get End Of Generation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference5()
+	 * @see #getGetEndOfGeneration()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util eReference5;
+	protected Util getEndOfGeneration;
 
 	/**
-	 * The cached value of the '{@link #getEReference6() <em>EReference6</em>}' reference.
+	 * The cached value of the '{@link #getGetArchivProp() <em>Get Archiv Prop</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference6()
+	 * @see #getGetArchivProp()
 	 * @generated
 	 * @ordered
 	 */
-	protected ArchiveProperty eReference6;
+	protected ArchiveProperty getArchivProp;
 
 	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * The cached value of the '{@link #getGetInfFromSpread() <em>Get Inf From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
+	 * @see #getGetInfFromSpread()
 	 * @generated
 	 * @ordered
 	 */
-	protected MainBase eReference0;
+	protected MainBase getInfFromSpread;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -455,7 +455,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSpreadsheet() {
+	public String[][][] getSpreadsheet() {
 		return spreadsheet;
 	}
 
@@ -464,8 +464,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSpreadsheet(String newSpreadsheet) {
-		String oldSpreadsheet = spreadsheet;
+	public void setSpreadsheet(String[][][] newSpreadsheet) {
+		String[][][] oldSpreadsheet = spreadsheet;
 		spreadsheet = newSpreadsheet;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__SPREADSHEET, oldSpreadsheet, spreadsheet));
@@ -749,16 +749,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getEReference1() {
-		if (eReference1 != null && eReference1.eIsProxy()) {
-			InternalEObject oldEReference1 = (InternalEObject)eReference1;
-			eReference1 = (Table)eResolveProxy(oldEReference1);
-			if (eReference1 != oldEReference1) {
+	public Table getGetArchiveIndex() {
+		if (getArchiveIndex != null && getArchiveIndex.eIsProxy()) {
+			InternalEObject oldGetArchiveIndex = (InternalEObject)getArchiveIndex;
+			getArchiveIndex = (Table)eResolveProxy(oldGetArchiveIndex);
+			if (getArchiveIndex != oldGetArchiveIndex) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__EREFERENCE1, oldEReference1, eReference1));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__GET_ARCHIVE_INDEX, oldGetArchiveIndex, getArchiveIndex));
 			}
 		}
-		return eReference1;
+		return getArchiveIndex;
 	}
 
 	/**
@@ -766,8 +766,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetEReference1() {
-		return eReference1;
+	public Table basicGetGetArchiveIndex() {
+		return getArchiveIndex;
 	}
 
 	/**
@@ -775,11 +775,11 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference1(Table newEReference1) {
-		Table oldEReference1 = eReference1;
-		eReference1 = newEReference1;
+	public void setGetArchiveIndex(Table newGetArchiveIndex) {
+		Table oldGetArchiveIndex = getArchiveIndex;
+		getArchiveIndex = newGetArchiveIndex;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__EREFERENCE1, oldEReference1, eReference1));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__GET_ARCHIVE_INDEX, oldGetArchiveIndex, getArchiveIndex));
 	}
 
 	/**
@@ -787,16 +787,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlPoint getEReference3() {
-		if (eReference3 != null && eReference3.eIsProxy()) {
-			InternalEObject oldEReference3 = (InternalEObject)eReference3;
-			eReference3 = (ControlPoint)eResolveProxy(oldEReference3);
-			if (eReference3 != oldEReference3) {
+	public ControlPoint getGetContPoints() {
+		if (getContPoints != null && getContPoints.eIsProxy()) {
+			InternalEObject oldGetContPoints = (InternalEObject)getContPoints;
+			getContPoints = (ControlPoint)eResolveProxy(oldGetContPoints);
+			if (getContPoints != oldGetContPoints) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__EREFERENCE3, oldEReference3, eReference3));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__GET_CONT_POINTS, oldGetContPoints, getContPoints));
 			}
 		}
-		return eReference3;
+		return getContPoints;
 	}
 
 	/**
@@ -804,8 +804,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlPoint basicGetEReference3() {
-		return eReference3;
+	public ControlPoint basicGetGetContPoints() {
+		return getContPoints;
 	}
 
 	/**
@@ -813,11 +813,11 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference3(ControlPoint newEReference3) {
-		ControlPoint oldEReference3 = eReference3;
-		eReference3 = newEReference3;
+	public void setGetContPoints(ControlPoint newGetContPoints) {
+		ControlPoint oldGetContPoints = getContPoints;
+		getContPoints = newGetContPoints;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__EREFERENCE3, oldEReference3, eReference3));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__GET_CONT_POINTS, oldGetContPoints, getContPoints));
 	}
 
 	/**
@@ -825,16 +825,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorPoint getEReference4() {
-		if (eReference4 != null && eReference4.eIsProxy()) {
-			InternalEObject oldEReference4 = (InternalEObject)eReference4;
-			eReference4 = (MonitorPoint)eResolveProxy(oldEReference4);
-			if (eReference4 != oldEReference4) {
+	public MonitorPoint getGetMoniPoints() {
+		if (getMoniPoints != null && getMoniPoints.eIsProxy()) {
+			InternalEObject oldGetMoniPoints = (InternalEObject)getMoniPoints;
+			getMoniPoints = (MonitorPoint)eResolveProxy(oldGetMoniPoints);
+			if (getMoniPoints != oldGetMoniPoints) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__EREFERENCE4, oldEReference4, eReference4));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__GET_MONI_POINTS, oldGetMoniPoints, getMoniPoints));
 			}
 		}
-		return eReference4;
+		return getMoniPoints;
 	}
 
 	/**
@@ -842,8 +842,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorPoint basicGetEReference4() {
-		return eReference4;
+	public MonitorPoint basicGetGetMoniPoints() {
+		return getMoniPoints;
 	}
 
 	/**
@@ -851,11 +851,11 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference4(MonitorPoint newEReference4) {
-		MonitorPoint oldEReference4 = eReference4;
-		eReference4 = newEReference4;
+	public void setGetMoniPoints(MonitorPoint newGetMoniPoints) {
+		MonitorPoint oldGetMoniPoints = getMoniPoints;
+		getMoniPoints = newGetMoniPoints;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__EREFERENCE4, oldEReference4, eReference4));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__GET_MONI_POINTS, oldGetMoniPoints, getMoniPoints));
 	}
 
 	/**
@@ -863,16 +863,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getEReference5() {
-		if (eReference5 != null && eReference5.eIsProxy()) {
-			InternalEObject oldEReference5 = (InternalEObject)eReference5;
-			eReference5 = (Util)eResolveProxy(oldEReference5);
-			if (eReference5 != oldEReference5) {
+	public Util getGetEndOfGeneration() {
+		if (getEndOfGeneration != null && getEndOfGeneration.eIsProxy()) {
+			InternalEObject oldGetEndOfGeneration = (InternalEObject)getEndOfGeneration;
+			getEndOfGeneration = (Util)eResolveProxy(oldGetEndOfGeneration);
+			if (getEndOfGeneration != oldGetEndOfGeneration) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__EREFERENCE5, oldEReference5, eReference5));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__GET_END_OF_GENERATION, oldGetEndOfGeneration, getEndOfGeneration));
 			}
 		}
-		return eReference5;
+		return getEndOfGeneration;
 	}
 
 	/**
@@ -880,8 +880,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetEReference5() {
-		return eReference5;
+	public Util basicGetGetEndOfGeneration() {
+		return getEndOfGeneration;
 	}
 
 	/**
@@ -889,11 +889,11 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference5(Util newEReference5) {
-		Util oldEReference5 = eReference5;
-		eReference5 = newEReference5;
+	public void setGetEndOfGeneration(Util newGetEndOfGeneration) {
+		Util oldGetEndOfGeneration = getEndOfGeneration;
+		getEndOfGeneration = newGetEndOfGeneration;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__EREFERENCE5, oldEReference5, eReference5));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__GET_END_OF_GENERATION, oldGetEndOfGeneration, getEndOfGeneration));
 	}
 
 	/**
@@ -901,16 +901,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveProperty getEReference6() {
-		if (eReference6 != null && eReference6.eIsProxy()) {
-			InternalEObject oldEReference6 = (InternalEObject)eReference6;
-			eReference6 = (ArchiveProperty)eResolveProxy(oldEReference6);
-			if (eReference6 != oldEReference6) {
+	public ArchiveProperty getGetArchivProp() {
+		if (getArchivProp != null && getArchivProp.eIsProxy()) {
+			InternalEObject oldGetArchivProp = (InternalEObject)getArchivProp;
+			getArchivProp = (ArchiveProperty)eResolveProxy(oldGetArchivProp);
+			if (getArchivProp != oldGetArchivProp) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__EREFERENCE6, oldEReference6, eReference6));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__GET_ARCHIV_PROP, oldGetArchivProp, getArchivProp));
 			}
 		}
-		return eReference6;
+		return getArchivProp;
 	}
 
 	/**
@@ -918,8 +918,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveProperty basicGetEReference6() {
-		return eReference6;
+	public ArchiveProperty basicGetGetArchivProp() {
+		return getArchivProp;
 	}
 
 	/**
@@ -927,11 +927,11 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference6(ArchiveProperty newEReference6) {
-		ArchiveProperty oldEReference6 = eReference6;
-		eReference6 = newEReference6;
+	public void setGetArchivProp(ArchiveProperty newGetArchivProp) {
+		ArchiveProperty oldGetArchivProp = getArchivProp;
+		getArchivProp = newGetArchivProp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__EREFERENCE6, oldEReference6, eReference6));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__GET_ARCHIV_PROP, oldGetArchivProp, getArchivProp));
 	}
 
 	/**
@@ -939,16 +939,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainBase getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (MainBase)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+	public MainBase getGetInfFromSpread() {
+		if (getInfFromSpread != null && getInfFromSpread.eIsProxy()) {
+			InternalEObject oldGetInfFromSpread = (InternalEObject)getInfFromSpread;
+			getInfFromSpread = (MainBase)eResolveProxy(oldGetInfFromSpread);
+			if (getInfFromSpread != oldGetInfFromSpread) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__EREFERENCE0, oldEReference0, eReference0));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__GET_INF_FROM_SPREAD, oldGetInfFromSpread, getInfFromSpread));
 			}
 		}
-		return eReference0;
+		return getInfFromSpread;
 	}
 
 	/**
@@ -956,8 +956,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainBase basicGetEReference0() {
-		return eReference0;
+	public MainBase basicGetGetInfFromSpread() {
+		return getInfFromSpread;
 	}
 
 	/**
@@ -965,11 +965,11 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference0(MainBase newEReference0) {
-		MainBase oldEReference0 = eReference0;
-		eReference0 = newEReference0;
+	public void setGetInfFromSpread(MainBase newGetInfFromSpread) {
+		MainBase oldGetInfFromSpread = getInfFromSpread;
+		getInfFromSpread = newGetInfFromSpread;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__EREFERENCE0, oldEReference0, eReference0));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__GET_INF_FROM_SPREAD, oldGetInfFromSpread, getInfFromSpread));
 	}
 
 	/**
@@ -1296,24 +1296,24 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return isMonitorDBOnly();
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
 				return isGenerateAlt();
-			case BasePackage.DEVICE_MODEL__EREFERENCE1:
-				if (resolve) return getEReference1();
-				return basicGetEReference1();
-			case BasePackage.DEVICE_MODEL__EREFERENCE3:
-				if (resolve) return getEReference3();
-				return basicGetEReference3();
-			case BasePackage.DEVICE_MODEL__EREFERENCE4:
-				if (resolve) return getEReference4();
-				return basicGetEReference4();
-			case BasePackage.DEVICE_MODEL__EREFERENCE5:
-				if (resolve) return getEReference5();
-				return basicGetEReference5();
-			case BasePackage.DEVICE_MODEL__EREFERENCE6:
-				if (resolve) return getEReference6();
-				return basicGetEReference6();
-			case BasePackage.DEVICE_MODEL__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
+			case BasePackage.DEVICE_MODEL__GET_ARCHIVE_INDEX:
+				if (resolve) return getGetArchiveIndex();
+				return basicGetGetArchiveIndex();
+			case BasePackage.DEVICE_MODEL__GET_CONT_POINTS:
+				if (resolve) return getGetContPoints();
+				return basicGetGetContPoints();
+			case BasePackage.DEVICE_MODEL__GET_MONI_POINTS:
+				if (resolve) return getGetMoniPoints();
+				return basicGetGetMoniPoints();
+			case BasePackage.DEVICE_MODEL__GET_END_OF_GENERATION:
+				if (resolve) return getGetEndOfGeneration();
+				return basicGetGetEndOfGeneration();
+			case BasePackage.DEVICE_MODEL__GET_ARCHIV_PROP:
+				if (resolve) return getGetArchivProp();
+				return basicGetGetArchivProp();
+			case BasePackage.DEVICE_MODEL__GET_INF_FROM_SPREAD:
+				if (resolve) return getGetInfFromSpread();
+				return basicGetGetInfFromSpread();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1330,7 +1330,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				setDescriptionIndex((Integer)newValue);
 				return;
 			case BasePackage.DEVICE_MODEL__SPREADSHEET:
-				setSpreadsheet((String)newValue);
+				setSpreadsheet((String[][][])newValue);
 				return;
 			case BasePackage.DEVICE_MODEL__MAIN:
 				setMain(newValue);
@@ -1371,23 +1371,23 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
 				setGenerateAlt((Boolean)newValue);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE1:
-				setEReference1((Table)newValue);
+			case BasePackage.DEVICE_MODEL__GET_ARCHIVE_INDEX:
+				setGetArchiveIndex((Table)newValue);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE3:
-				setEReference3((ControlPoint)newValue);
+			case BasePackage.DEVICE_MODEL__GET_CONT_POINTS:
+				setGetContPoints((ControlPoint)newValue);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE4:
-				setEReference4((MonitorPoint)newValue);
+			case BasePackage.DEVICE_MODEL__GET_MONI_POINTS:
+				setGetMoniPoints((MonitorPoint)newValue);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE5:
-				setEReference5((Util)newValue);
+			case BasePackage.DEVICE_MODEL__GET_END_OF_GENERATION:
+				setGetEndOfGeneration((Util)newValue);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE6:
-				setEReference6((ArchiveProperty)newValue);
+			case BasePackage.DEVICE_MODEL__GET_ARCHIV_PROP:
+				setGetArchivProp((ArchiveProperty)newValue);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE0:
-				setEReference0((MainBase)newValue);
+			case BasePackage.DEVICE_MODEL__GET_INF_FROM_SPREAD:
+				setGetInfFromSpread((MainBase)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1446,23 +1446,23 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
 				setGenerateAlt(GENERATE_ALT_EDEFAULT);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE1:
-				setEReference1((Table)null);
+			case BasePackage.DEVICE_MODEL__GET_ARCHIVE_INDEX:
+				setGetArchiveIndex((Table)null);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE3:
-				setEReference3((ControlPoint)null);
+			case BasePackage.DEVICE_MODEL__GET_CONT_POINTS:
+				setGetContPoints((ControlPoint)null);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE4:
-				setEReference4((MonitorPoint)null);
+			case BasePackage.DEVICE_MODEL__GET_MONI_POINTS:
+				setGetMoniPoints((MonitorPoint)null);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE5:
-				setEReference5((Util)null);
+			case BasePackage.DEVICE_MODEL__GET_END_OF_GENERATION:
+				setGetEndOfGeneration((Util)null);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE6:
-				setEReference6((ArchiveProperty)null);
+			case BasePackage.DEVICE_MODEL__GET_ARCHIV_PROP:
+				setGetArchivProp((ArchiveProperty)null);
 				return;
-			case BasePackage.DEVICE_MODEL__EREFERENCE0:
-				setEReference0((MainBase)null);
+			case BasePackage.DEVICE_MODEL__GET_INF_FROM_SPREAD:
+				setGetInfFromSpread((MainBase)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1506,18 +1506,18 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return monitorDBOnly != MONITOR_DB_ONLY_EDEFAULT;
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
 				return generateAlt != GENERATE_ALT_EDEFAULT;
-			case BasePackage.DEVICE_MODEL__EREFERENCE1:
-				return eReference1 != null;
-			case BasePackage.DEVICE_MODEL__EREFERENCE3:
-				return eReference3 != null;
-			case BasePackage.DEVICE_MODEL__EREFERENCE4:
-				return eReference4 != null;
-			case BasePackage.DEVICE_MODEL__EREFERENCE5:
-				return eReference5 != null;
-			case BasePackage.DEVICE_MODEL__EREFERENCE6:
-				return eReference6 != null;
-			case BasePackage.DEVICE_MODEL__EREFERENCE0:
-				return eReference0 != null;
+			case BasePackage.DEVICE_MODEL__GET_ARCHIVE_INDEX:
+				return getArchiveIndex != null;
+			case BasePackage.DEVICE_MODEL__GET_CONT_POINTS:
+				return getContPoints != null;
+			case BasePackage.DEVICE_MODEL__GET_MONI_POINTS:
+				return getMoniPoints != null;
+			case BasePackage.DEVICE_MODEL__GET_END_OF_GENERATION:
+				return getEndOfGeneration != null;
+			case BasePackage.DEVICE_MODEL__GET_ARCHIV_PROP:
+				return getArchivProp != null;
+			case BasePackage.DEVICE_MODEL__GET_INF_FROM_SPREAD:
+				return getInfFromSpread != null;
 		}
 		return super.eIsSet(featureID);
 	}
