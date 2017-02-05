@@ -67,7 +67,6 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.MONITOR_POINT;
 	}
@@ -351,7 +350,6 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
@@ -369,7 +367,6 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
@@ -387,7 +384,6 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
@@ -405,7 +401,6 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:

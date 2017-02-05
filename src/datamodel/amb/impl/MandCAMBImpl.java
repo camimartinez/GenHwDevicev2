@@ -88,6 +88,16 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	protected int sheet = SHEET_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMcp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Object MCP_EDEFAULT = null;
+
+	/**
 	 * The cached value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,7 +105,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 * @ordered
 	 */
-	protected Object mcp;
+	protected Object mcp = MCP_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMask() <em>Mask</em>}' attribute.
@@ -181,7 +191,6 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.MAND_CAMB;
 	}
@@ -1015,13 +1024,12 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AmbPackage.MAND_CAMB__ROW:
 				return getRow();
 			case AmbPackage.MAND_CAMB__SHEET:
-				return getSheet();
+				return new Integer(getSheet());
 			case AmbPackage.MAND_CAMB__MCP:
 				return getMcp();
 			case AmbPackage.MAND_CAMB__MASK:
@@ -1050,14 +1058,13 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AmbPackage.MAND_CAMB__ROW:
 				setRow((String[])newValue);
 				return;
 			case AmbPackage.MAND_CAMB__SHEET:
-				setSheet((Integer)newValue);
+				setSheet(((Integer)newValue).intValue());
 				return;
 			case AmbPackage.MAND_CAMB__MCP:
 				setMcp(newValue);
@@ -1089,7 +1096,6 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AmbPackage.MAND_CAMB__ROW:
@@ -1099,7 +1105,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 				setSheet(SHEET_EDEFAULT);
 				return;
 			case AmbPackage.MAND_CAMB__MCP:
-				setMcp((Object)null);
+				setMcp(MCP_EDEFAULT);
 				return;
 			case AmbPackage.MAND_CAMB__MASK:
 				setMask(MASK_EDEFAULT);
@@ -1128,7 +1134,6 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AmbPackage.MAND_CAMB__ROW:
@@ -1136,7 +1141,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 			case AmbPackage.MAND_CAMB__SHEET:
 				return sheet != SHEET_EDEFAULT;
 			case AmbPackage.MAND_CAMB__MCP:
-				return mcp != null;
+				return MCP_EDEFAULT == null ? mcp != null : !MCP_EDEFAULT.equals(mcp);
 			case AmbPackage.MAND_CAMB__MASK:
 				return MASK_EDEFAULT == null ? mask != null : !MASK_EDEFAULT.equals(mask);
 			case AmbPackage.MAND_CAMB__GET_INFO_SHEET:
@@ -1158,7 +1163,6 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

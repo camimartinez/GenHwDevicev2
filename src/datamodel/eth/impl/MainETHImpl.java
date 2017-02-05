@@ -37,7 +37,6 @@ public class MainETHImpl extends MainBaseImpl implements MainETH {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.MAIN_ETH;
 	}

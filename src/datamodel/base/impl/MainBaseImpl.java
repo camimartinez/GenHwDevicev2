@@ -122,7 +122,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.MAIN_BASE;
 	}
@@ -387,13 +386,12 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.MAIN_BASE__ROW:
 				return getRow();
 			case BasePackage.MAIN_BASE__SHEET:
-				return getSheet();
+				return new Integer(getSheet());
 			case BasePackage.MAIN_BASE__EREFERENCE0:
 				if (resolve) return getEReference0();
 				return basicGetEReference0();
@@ -412,14 +410,13 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.MAIN_BASE__ROW:
 				setRow((String[])newValue);
 				return;
 			case BasePackage.MAIN_BASE__SHEET:
-				setSheet((Integer)newValue);
+				setSheet(((Integer)newValue).intValue());
 				return;
 			case BasePackage.MAIN_BASE__EREFERENCE0:
 				setEReference0((DeviceModel)newValue);
@@ -439,7 +436,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.MAIN_BASE__ROW:
@@ -466,7 +462,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.MAIN_BASE__ROW:
@@ -488,7 +483,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

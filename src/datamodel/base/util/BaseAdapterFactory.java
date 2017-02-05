@@ -52,7 +52,6 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
-	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -69,62 +68,48 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BaseSwitch<Adapter> modelSwitch =
-		new BaseSwitch<Adapter>() {
-			@Override
-			public Adapter caseDeviceModel(DeviceModel object) {
+	protected BaseSwitch modelSwitch =
+		new BaseSwitch() {
+			public Object caseDeviceModel(DeviceModel object) {
 				return createDeviceModelAdapter();
 			}
-			@Override
-			public Adapter caseMonitorPoint(MonitorPoint object) {
+			public Object caseMonitorPoint(MonitorPoint object) {
 				return createMonitorPointAdapter();
 			}
-			@Override
-			public Adapter caseControlPoint(ControlPoint object) {
+			public Object caseControlPoint(ControlPoint object) {
 				return createControlPointAdapter();
 			}
-			@Override
-			public Adapter caseTable(Table object) {
+			public Object caseTable(Table object) {
 				return createTableAdapter();
 			}
-			@Override
-			public Adapter caseMandCBase(MandCBase object) {
+			public Object caseMandCBase(MandCBase object) {
 				return createMandCBaseAdapter();
 			}
-			@Override
-			public Adapter caseArchiveProperty(ArchiveProperty object) {
+			public Object caseArchiveProperty(ArchiveProperty object) {
 				return createArchivePropertyAdapter();
 			}
-			@Override
-			public Adapter caseNote(Note object) {
+			public Object caseNote(Note object) {
 				return createNoteAdapter();
 			}
-			@Override
-			public Adapter caseSpreadsheetValidator(SpreadsheetValidator object) {
+			public Object caseSpreadsheetValidator(SpreadsheetValidator object) {
 				return createSpreadsheetValidatorAdapter();
 			}
-			@Override
-			public Adapter caseSpreadsheetParser(SpreadsheetParser object) {
+			public Object caseSpreadsheetParser(SpreadsheetParser object) {
 				return createSpreadsheetParserAdapter();
 			}
-			@Override
-			public Adapter caseUtil(Util object) {
+			public Object caseUtil(Util object) {
 				return createUtilAdapter();
 			}
-			@Override
-			public Adapter casePair(Pair object) {
+			public Object casePair(Pair object) {
 				return createPairAdapter();
 			}
-			@Override
-			public Adapter caseSimpleErrorHandler(SimpleErrorHandler object) {
+			public Object caseSimpleErrorHandler(SimpleErrorHandler object) {
 				return createSimpleErrorHandlerAdapter();
 			}
-			@Override
-			public Adapter caseMainBase(MainBase object) {
+			public Object caseMainBase(MainBase object) {
 				return createMainBaseAdapter();
 			}
-			@Override
-			public Adapter defaultCase(EObject object) {
+			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -137,9 +122,8 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
-	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return (Adapter)modelSwitch.doSwitch((EObject)target);
 	}
 
 

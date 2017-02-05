@@ -37,7 +37,6 @@ public class MandCETHImpl extends EObjectImpl implements MandCETH {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.MAND_CETH;
 	}

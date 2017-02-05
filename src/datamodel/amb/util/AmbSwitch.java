@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see datamodel.amb.AmbPackage
  * @generated
  */
-public class AmbSwitch<T> {
+public class AmbSwitch {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public class AmbSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
+	public Object doSwitch(EObject theEObject) {
 		return doSwitch(theEObject.eClass(), theEObject);
 	}
 
@@ -71,16 +71,16 @@ public class AmbSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
+	protected Object doSwitch(EClass theEClass, EObject theEObject) {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
 		}
 		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
+			List eSuperTypes = theEClass.getESuperTypes();
 			return
 				eSuperTypes.isEmpty() ?
 					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
+					doSwitch((EClass)eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -91,18 +91,18 @@ public class AmbSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(int classifierID, EObject theEObject) {
+	protected Object doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case AmbPackage.ARCHIVE_AMB: {
 				ArchiveAMB archiveAMB = (ArchiveAMB)theEObject;
-				T result = caseArchiveAMB(archiveAMB);
+				Object result = caseArchiveAMB(archiveAMB);
 				if (result == null) result = caseArchiveProperty(archiveAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AmbPackage.CONTROL_AMB: {
 				ControlAMB controlAMB = (ControlAMB)theEObject;
-				T result = caseControlAMB(controlAMB);
+				Object result = caseControlAMB(controlAMB);
 				if (result == null) result = caseControlPoint(controlAMB);
 				if (result == null) result = caseMandCBase(controlAMB);
 				if (result == null) result = defaultCase(theEObject);
@@ -110,27 +110,27 @@ public class AmbSwitch<T> {
 			}
 			case AmbPackage.DEVICE_MODEL: {
 				DeviceModel deviceModel = (DeviceModel)theEObject;
-				T result = caseDeviceModel(deviceModel);
+				Object result = caseDeviceModel(deviceModel);
 				if (result == null) result = caseBase_DeviceModel(deviceModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AmbPackage.MAIN_AMB: {
 				MainAMB mainAMB = (MainAMB)theEObject;
-				T result = caseMainAMB(mainAMB);
+				Object result = caseMainAMB(mainAMB);
 				if (result == null) result = caseMainBase(mainAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AmbPackage.MAND_CAMB: {
 				MandCAMB mandCAMB = (MandCAMB)theEObject;
-				T result = caseMandCAMB(mandCAMB);
+				Object result = caseMandCAMB(mandCAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AmbPackage.MONITOR_AMB: {
 				MonitorAMB monitorAMB = (MonitorAMB)theEObject;
-				T result = caseMonitorAMB(monitorAMB);
+				Object result = caseMonitorAMB(monitorAMB);
 				if (result == null) result = caseMonitorPoint(monitorAMB);
 				if (result == null) result = caseMandCBase(monitorAMB);
 				if (result == null) result = defaultCase(theEObject);
@@ -138,13 +138,13 @@ public class AmbSwitch<T> {
 			}
 			case AmbPackage.SW_MODULE: {
 				SWModule swModule = (SWModule)theEObject;
-				T result = caseSWModule(swModule);
+				Object result = caseSWModule(swModule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AmbPackage.GENERIC_MONITOR_POINTS: {
 				GenericMonitorPoints genericMonitorPoints = (GenericMonitorPoints)theEObject;
-				T result = caseGenericMonitorPoints(genericMonitorPoints);
+				Object result = caseGenericMonitorPoints(genericMonitorPoints);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -163,7 +163,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseArchiveAMB(ArchiveAMB object) {
+	public Object caseArchiveAMB(ArchiveAMB object) {
 		return null;
 	}
 
@@ -178,7 +178,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseControlAMB(ControlAMB object) {
+	public Object caseControlAMB(ControlAMB object) {
 		return null;
 	}
 
@@ -193,7 +193,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDeviceModel(DeviceModel object) {
+	public Object caseDeviceModel(DeviceModel object) {
 		return null;
 	}
 
@@ -208,7 +208,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMainAMB(MainAMB object) {
+	public Object caseMainAMB(MainAMB object) {
 		return null;
 	}
 
@@ -223,7 +223,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMandCAMB(MandCAMB object) {
+	public Object caseMandCAMB(MandCAMB object) {
 		return null;
 	}
 
@@ -238,7 +238,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMonitorAMB(MonitorAMB object) {
+	public Object caseMonitorAMB(MonitorAMB object) {
 		return null;
 	}
 
@@ -253,7 +253,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSWModule(SWModule object) {
+	public Object caseSWModule(SWModule object) {
 		return null;
 	}
 
@@ -268,7 +268,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGenericMonitorPoints(GenericMonitorPoints object) {
+	public Object caseGenericMonitorPoints(GenericMonitorPoints object) {
 		return null;
 	}
 
@@ -283,7 +283,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseArchiveProperty(ArchiveProperty object) {
+	public Object caseArchiveProperty(ArchiveProperty object) {
 		return null;
 	}
 
@@ -298,7 +298,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMandCBase(MandCBase object) {
+	public Object caseMandCBase(MandCBase object) {
 		return null;
 	}
 
@@ -313,7 +313,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseControlPoint(ControlPoint object) {
+	public Object caseControlPoint(ControlPoint object) {
 		return null;
 	}
 
@@ -328,7 +328,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBase_DeviceModel(datamodel.base.DeviceModel object) {
+	public Object caseBase_DeviceModel(datamodel.base.DeviceModel object) {
 		return null;
 	}
 
@@ -343,7 +343,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMainBase(MainBase object) {
+	public Object caseMainBase(MainBase object) {
 		return null;
 	}
 
@@ -358,7 +358,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMonitorPoint(MonitorPoint object) {
+	public Object caseMonitorPoint(MonitorPoint object) {
 		return null;
 	}
 
@@ -373,7 +373,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public T defaultCase(EObject object) {
+	public Object defaultCase(EObject object) {
 		return null;
 	}
 

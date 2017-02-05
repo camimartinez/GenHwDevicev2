@@ -58,7 +58,6 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.ARCHIVE_AMB;
 	}
@@ -128,7 +127,6 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AmbPackage.ARCHIVE_AMB__GET_ASSEMBLY_COLUMN:
@@ -143,7 +141,6 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AmbPackage.ARCHIVE_AMB__GET_ASSEMBLY_COLUMN:
@@ -158,7 +155,6 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AmbPackage.ARCHIVE_AMB__GET_ASSEMBLY_COLUMN:
@@ -173,7 +169,6 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AmbPackage.ARCHIVE_AMB__GET_ASSEMBLY_COLUMN:

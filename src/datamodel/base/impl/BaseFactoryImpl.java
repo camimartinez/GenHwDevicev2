@@ -63,7 +63,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BasePackage.TABLE: return createTable();
@@ -85,7 +84,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
@@ -114,7 +112,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
@@ -306,7 +303,9 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String[][][] createString3DTFromString(EDataType eDataType, String initialValue) {
-		return (String[][][])super.createFromString(initialValue);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -315,7 +314,9 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertString3DTToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(instanceValue);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -324,7 +325,9 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String[][] createString2DTFromString(EDataType eDataType, String initialValue) {
-		return (String[][])super.createFromString(initialValue);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -333,7 +336,9 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertString2DTToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(instanceValue);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -342,7 +347,9 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String[] createString1DTFromString(EDataType eDataType, String initialValue) {
-		return (String[])super.createFromString(initialValue);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -351,7 +358,9 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertString1DTToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(instanceValue);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -387,7 +396,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @deprecated
 	 * @generated
 	 */
-	@Deprecated
 	public static BasePackage getPackage() {
 		return BasePackage.eINSTANCE;
 	}

@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see datamodel.eth.EthPackage
  * @generated
  */
-public class EthSwitch<T> {
+public class EthSwitch {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public class EthSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
+	public Object doSwitch(EObject theEObject) {
 		return doSwitch(theEObject.eClass(), theEObject);
 	}
 
@@ -71,16 +71,16 @@ public class EthSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
+	protected Object doSwitch(EClass theEClass, EObject theEObject) {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
 		}
 		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
+			List eSuperTypes = theEClass.getESuperTypes();
 			return
 				eSuperTypes.isEmpty() ?
 					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
+					doSwitch((EClass)eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -91,18 +91,18 @@ public class EthSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(int classifierID, EObject theEObject) {
+	protected Object doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case EthPackage.ARCHIVE_ETH: {
 				ArchiveETH archiveETH = (ArchiveETH)theEObject;
-				T result = caseArchiveETH(archiveETH);
+				Object result = caseArchiveETH(archiveETH);
 				if (result == null) result = caseArchiveProperty(archiveETH);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case EthPackage.CONTROL_ETH: {
 				ControlETH controlETH = (ControlETH)theEObject;
-				T result = caseControlETH(controlETH);
+				Object result = caseControlETH(controlETH);
 				if (result == null) result = caseControlPoint(controlETH);
 				if (result == null) result = caseMandCBase(controlETH);
 				if (result == null) result = defaultCase(theEObject);
@@ -110,27 +110,27 @@ public class EthSwitch<T> {
 			}
 			case EthPackage.DEVICE_MODEL: {
 				DeviceModel deviceModel = (DeviceModel)theEObject;
-				T result = caseDeviceModel(deviceModel);
+				Object result = caseDeviceModel(deviceModel);
 				if (result == null) result = caseBase_DeviceModel(deviceModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case EthPackage.MAIN_ETH: {
 				MainETH mainETH = (MainETH)theEObject;
-				T result = caseMainETH(mainETH);
+				Object result = caseMainETH(mainETH);
 				if (result == null) result = caseMainBase(mainETH);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case EthPackage.MAND_CETH: {
 				MandCETH mandCETH = (MandCETH)theEObject;
-				T result = caseMandCETH(mandCETH);
+				Object result = caseMandCETH(mandCETH);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case EthPackage.MONITOR_ETH: {
 				MonitorETH monitorETH = (MonitorETH)theEObject;
-				T result = caseMonitorETH(monitorETH);
+				Object result = caseMonitorETH(monitorETH);
 				if (result == null) result = caseMonitorPoint(monitorETH);
 				if (result == null) result = caseMandCBase(monitorETH);
 				if (result == null) result = defaultCase(theEObject);
@@ -151,7 +151,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseArchiveETH(ArchiveETH object) {
+	public Object caseArchiveETH(ArchiveETH object) {
 		return null;
 	}
 
@@ -166,7 +166,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseControlETH(ControlETH object) {
+	public Object caseControlETH(ControlETH object) {
 		return null;
 	}
 
@@ -181,7 +181,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDeviceModel(DeviceModel object) {
+	public Object caseDeviceModel(DeviceModel object) {
 		return null;
 	}
 
@@ -196,7 +196,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMainETH(MainETH object) {
+	public Object caseMainETH(MainETH object) {
 		return null;
 	}
 
@@ -211,7 +211,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMandCETH(MandCETH object) {
+	public Object caseMandCETH(MandCETH object) {
 		return null;
 	}
 
@@ -226,7 +226,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMonitorETH(MonitorETH object) {
+	public Object caseMonitorETH(MonitorETH object) {
 		return null;
 	}
 
@@ -241,7 +241,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseArchiveProperty(ArchiveProperty object) {
+	public Object caseArchiveProperty(ArchiveProperty object) {
 		return null;
 	}
 
@@ -256,7 +256,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMandCBase(MandCBase object) {
+	public Object caseMandCBase(MandCBase object) {
 		return null;
 	}
 
@@ -271,7 +271,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseControlPoint(ControlPoint object) {
+	public Object caseControlPoint(ControlPoint object) {
 		return null;
 	}
 
@@ -286,7 +286,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBase_DeviceModel(datamodel.base.DeviceModel object) {
+	public Object caseBase_DeviceModel(datamodel.base.DeviceModel object) {
 		return null;
 	}
 
@@ -301,7 +301,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMainBase(MainBase object) {
+	public Object caseMainBase(MainBase object) {
 		return null;
 	}
 
@@ -316,7 +316,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMonitorPoint(MonitorPoint object) {
+	public Object caseMonitorPoint(MonitorPoint object) {
 		return null;
 	}
 
@@ -331,7 +331,7 @@ public class EthSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public T defaultCase(EObject object) {
+	public Object defaultCase(EObject object) {
 		return null;
 	}
 

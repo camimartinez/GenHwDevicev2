@@ -196,7 +196,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.SPREADSHEET_PARSER;
 	}
@@ -523,7 +522,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
@@ -537,7 +535,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_PARSER__EREFERENCE0:
@@ -546,7 +543,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 			case BasePackage.SPREADSHEET_PARSER__REF_PATH:
 				return getRefPath();
 			case BasePackage.SPREADSHEET_PARSER__REF_STATUS:
-				return isRefStatus();
+				return isRefStatus() ? Boolean.TRUE : Boolean.FALSE;
 			case BasePackage.SPREADSHEET_PARSER__XML:
 				return getXml();
 			case BasePackage.SPREADSHEET_PARSER__XSD_FILE:
@@ -566,7 +563,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_PARSER__EREFERENCE0:
@@ -576,7 +572,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				setRefPath((String)newValue);
 				return;
 			case BasePackage.SPREADSHEET_PARSER__REF_STATUS:
-				setRefStatus((Boolean)newValue);
+				setRefStatus(((Boolean)newValue).booleanValue());
 				return;
 			case BasePackage.SPREADSHEET_PARSER__XML:
 				setXml((String)newValue);
@@ -602,7 +598,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_PARSER__EREFERENCE0:
@@ -638,7 +633,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_PARSER__EREFERENCE0:
@@ -666,7 +660,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

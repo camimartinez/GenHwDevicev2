@@ -37,7 +37,6 @@ public class ControlETHImpl extends ControlPointImpl implements ControlETH {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.CONTROL_ETH;
 	}

@@ -82,7 +82,6 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.CONTROL_AMB;
 	}
@@ -899,7 +898,6 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
@@ -920,7 +918,6 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
@@ -941,7 +938,6 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
@@ -962,7 +958,6 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:

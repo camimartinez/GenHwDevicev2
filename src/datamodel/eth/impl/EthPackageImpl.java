@@ -267,10 +267,6 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 		// Obtain other dependent packages
 		BasePackage theBasePackage = (BasePackage)EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
 
-		// Create type parameters
-
-		// Set bounds for type parameters
-
 		// Add supertypes to classes
 		archiveETHEClass.getESuperTypes().add(theBasePackage.getArchiveProperty());
 		controlETHEClass.getESuperTypes().add(theBasePackage.getControlPoint());

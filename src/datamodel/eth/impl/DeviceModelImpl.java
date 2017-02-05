@@ -35,7 +35,6 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.DEVICE_MODEL;
 	}

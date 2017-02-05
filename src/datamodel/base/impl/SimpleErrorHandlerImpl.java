@@ -66,7 +66,6 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.SIMPLE_ERROR_HANDLER;
 	}
@@ -130,11 +129,10 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.SIMPLE_ERROR_HANDLER__ERRORS:
-				return isErrors();
+				return isErrors() ? Boolean.TRUE : Boolean.FALSE;
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -144,11 +142,10 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.SIMPLE_ERROR_HANDLER__ERRORS:
-				setErrors((Boolean)newValue);
+				setErrors(((Boolean)newValue).booleanValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -159,7 +156,6 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.SIMPLE_ERROR_HANDLER__ERRORS:
@@ -174,7 +170,6 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.SIMPLE_ERROR_HANDLER__ERRORS:
@@ -188,7 +183,6 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

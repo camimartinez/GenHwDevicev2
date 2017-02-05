@@ -57,7 +57,6 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case AmbPackage.ARCHIVE_AMB: return createArchiveAMB();
@@ -168,7 +167,6 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	 * @deprecated
 	 * @generated
 	 */
-	@Deprecated
 	public static AmbPackage getPackage() {
 		return AmbPackage.eINSTANCE;
 	}

@@ -55,7 +55,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.CONTROL_POINT;
 	}
@@ -136,7 +135,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
@@ -151,7 +149,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
@@ -166,7 +163,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
@@ -181,7 +177,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:

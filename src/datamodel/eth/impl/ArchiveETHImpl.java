@@ -37,7 +37,6 @@ public class ArchiveETHImpl extends ArchivePropertyImpl implements ArchiveETH {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.ARCHIVE_ETH;
 	}

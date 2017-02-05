@@ -140,7 +140,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.UTIL;
 	}
@@ -525,13 +524,12 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
 				return getNewline();
 			case BasePackage.UTIL__MAX_LENGTH:
-				return getMaxLength();
+				return new Integer(getMaxLength());
 			case BasePackage.UTIL__MONTH:
 				return getMONTH();
 			case BasePackage.UTIL__MONT_HALT:
@@ -548,14 +546,13 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
 				setNewline((String)newValue);
 				return;
 			case BasePackage.UTIL__MAX_LENGTH:
-				setMaxLength((Integer)newValue);
+				setMaxLength(((Integer)newValue).intValue());
 				return;
 			case BasePackage.UTIL__MONTH:
 				setMONTH((String)newValue);
@@ -575,7 +572,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
@@ -602,7 +598,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
@@ -624,7 +619,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

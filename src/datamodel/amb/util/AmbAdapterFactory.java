@@ -58,7 +58,6 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
-	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -75,66 +74,51 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AmbSwitch<Adapter> modelSwitch =
-		new AmbSwitch<Adapter>() {
-			@Override
-			public Adapter caseArchiveAMB(ArchiveAMB object) {
+	protected AmbSwitch modelSwitch =
+		new AmbSwitch() {
+			public Object caseArchiveAMB(ArchiveAMB object) {
 				return createArchiveAMBAdapter();
 			}
-			@Override
-			public Adapter caseControlAMB(ControlAMB object) {
+			public Object caseControlAMB(ControlAMB object) {
 				return createControlAMBAdapter();
 			}
-			@Override
-			public Adapter caseDeviceModel(DeviceModel object) {
+			public Object caseDeviceModel(DeviceModel object) {
 				return createDeviceModelAdapter();
 			}
-			@Override
-			public Adapter caseMainAMB(MainAMB object) {
+			public Object caseMainAMB(MainAMB object) {
 				return createMainAMBAdapter();
 			}
-			@Override
-			public Adapter caseMandCAMB(MandCAMB object) {
+			public Object caseMandCAMB(MandCAMB object) {
 				return createMandCAMBAdapter();
 			}
-			@Override
-			public Adapter caseMonitorAMB(MonitorAMB object) {
+			public Object caseMonitorAMB(MonitorAMB object) {
 				return createMonitorAMBAdapter();
 			}
-			@Override
-			public Adapter caseSWModule(SWModule object) {
+			public Object caseSWModule(SWModule object) {
 				return createSWModuleAdapter();
 			}
-			@Override
-			public Adapter caseGenericMonitorPoints(GenericMonitorPoints object) {
+			public Object caseGenericMonitorPoints(GenericMonitorPoints object) {
 				return createGenericMonitorPointsAdapter();
 			}
-			@Override
-			public Adapter caseArchiveProperty(ArchiveProperty object) {
+			public Object caseArchiveProperty(ArchiveProperty object) {
 				return createArchivePropertyAdapter();
 			}
-			@Override
-			public Adapter caseMandCBase(MandCBase object) {
+			public Object caseMandCBase(MandCBase object) {
 				return createMandCBaseAdapter();
 			}
-			@Override
-			public Adapter caseControlPoint(ControlPoint object) {
+			public Object caseControlPoint(ControlPoint object) {
 				return createControlPointAdapter();
 			}
-			@Override
-			public Adapter caseBase_DeviceModel(datamodel.base.DeviceModel object) {
+			public Object caseBase_DeviceModel(datamodel.base.DeviceModel object) {
 				return createBase_DeviceModelAdapter();
 			}
-			@Override
-			public Adapter caseMainBase(MainBase object) {
+			public Object caseMainBase(MainBase object) {
 				return createMainBaseAdapter();
 			}
-			@Override
-			public Adapter caseMonitorPoint(MonitorPoint object) {
+			public Object caseMonitorPoint(MonitorPoint object) {
 				return createMonitorPointAdapter();
 			}
-			@Override
-			public Adapter defaultCase(EObject object) {
+			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -147,9 +131,8 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
-	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return (Adapter)modelSwitch.doSwitch((EObject)target);
 	}
 
 

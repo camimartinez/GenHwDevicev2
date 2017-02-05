@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see datamodel.base.BasePackage
  * @generated
  */
-public class BaseSwitch<T> {
+public class BaseSwitch {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -54,7 +54,7 @@ public class BaseSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
+	public Object doSwitch(EObject theEObject) {
 		return doSwitch(theEObject.eClass(), theEObject);
 	}
 
@@ -65,16 +65,16 @@ public class BaseSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
+	protected Object doSwitch(EClass theEClass, EObject theEObject) {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
 		}
 		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
+			List eSuperTypes = theEClass.getESuperTypes();
 			return
 				eSuperTypes.isEmpty() ?
 					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
+					doSwitch((EClass)eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -85,85 +85,85 @@ public class BaseSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(int classifierID, EObject theEObject) {
+	protected Object doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case BasePackage.DEVICE_MODEL: {
 				DeviceModel deviceModel = (DeviceModel)theEObject;
-				T result = caseDeviceModel(deviceModel);
+				Object result = caseDeviceModel(deviceModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.MONITOR_POINT: {
 				MonitorPoint monitorPoint = (MonitorPoint)theEObject;
-				T result = caseMonitorPoint(monitorPoint);
+				Object result = caseMonitorPoint(monitorPoint);
 				if (result == null) result = caseMandCBase(monitorPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.CONTROL_POINT: {
 				ControlPoint controlPoint = (ControlPoint)theEObject;
-				T result = caseControlPoint(controlPoint);
+				Object result = caseControlPoint(controlPoint);
 				if (result == null) result = caseMandCBase(controlPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.TABLE: {
 				Table table = (Table)theEObject;
-				T result = caseTable(table);
+				Object result = caseTable(table);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.MAND_CBASE: {
 				MandCBase mandCBase = (MandCBase)theEObject;
-				T result = caseMandCBase(mandCBase);
+				Object result = caseMandCBase(mandCBase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.ARCHIVE_PROPERTY: {
 				ArchiveProperty archiveProperty = (ArchiveProperty)theEObject;
-				T result = caseArchiveProperty(archiveProperty);
+				Object result = caseArchiveProperty(archiveProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.NOTE: {
 				Note note = (Note)theEObject;
-				T result = caseNote(note);
+				Object result = caseNote(note);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.SPREADSHEET_VALIDATOR: {
 				SpreadsheetValidator spreadsheetValidator = (SpreadsheetValidator)theEObject;
-				T result = caseSpreadsheetValidator(spreadsheetValidator);
+				Object result = caseSpreadsheetValidator(spreadsheetValidator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.SPREADSHEET_PARSER: {
 				SpreadsheetParser spreadsheetParser = (SpreadsheetParser)theEObject;
-				T result = caseSpreadsheetParser(spreadsheetParser);
+				Object result = caseSpreadsheetParser(spreadsheetParser);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.UTIL: {
 				Util util = (Util)theEObject;
-				T result = caseUtil(util);
+				Object result = caseUtil(util);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.PAIR: {
 				Pair pair = (Pair)theEObject;
-				T result = casePair(pair);
+				Object result = casePair(pair);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.SIMPLE_ERROR_HANDLER: {
 				SimpleErrorHandler simpleErrorHandler = (SimpleErrorHandler)theEObject;
-				T result = caseSimpleErrorHandler(simpleErrorHandler);
+				Object result = caseSimpleErrorHandler(simpleErrorHandler);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.MAIN_BASE: {
 				MainBase mainBase = (MainBase)theEObject;
-				T result = caseMainBase(mainBase);
+				Object result = caseMainBase(mainBase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -182,7 +182,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDeviceModel(DeviceModel object) {
+	public Object caseDeviceModel(DeviceModel object) {
 		return null;
 	}
 
@@ -197,7 +197,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMonitorPoint(MonitorPoint object) {
+	public Object caseMonitorPoint(MonitorPoint object) {
 		return null;
 	}
 
@@ -212,7 +212,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseControlPoint(ControlPoint object) {
+	public Object caseControlPoint(ControlPoint object) {
 		return null;
 	}
 
@@ -227,7 +227,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTable(Table object) {
+	public Object caseTable(Table object) {
 		return null;
 	}
 
@@ -242,7 +242,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMandCBase(MandCBase object) {
+	public Object caseMandCBase(MandCBase object) {
 		return null;
 	}
 
@@ -257,7 +257,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseArchiveProperty(ArchiveProperty object) {
+	public Object caseArchiveProperty(ArchiveProperty object) {
 		return null;
 	}
 
@@ -272,7 +272,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNote(Note object) {
+	public Object caseNote(Note object) {
 		return null;
 	}
 
@@ -287,7 +287,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSpreadsheetValidator(SpreadsheetValidator object) {
+	public Object caseSpreadsheetValidator(SpreadsheetValidator object) {
 		return null;
 	}
 
@@ -302,7 +302,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSpreadsheetParser(SpreadsheetParser object) {
+	public Object caseSpreadsheetParser(SpreadsheetParser object) {
 		return null;
 	}
 
@@ -317,7 +317,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUtil(Util object) {
+	public Object caseUtil(Util object) {
 		return null;
 	}
 
@@ -332,7 +332,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePair(Pair object) {
+	public Object casePair(Pair object) {
 		return null;
 	}
 
@@ -347,7 +347,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSimpleErrorHandler(SimpleErrorHandler object) {
+	public Object caseSimpleErrorHandler(SimpleErrorHandler object) {
 		return null;
 	}
 
@@ -362,7 +362,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMainBase(MainBase object) {
+	public Object caseMainBase(MainBase object) {
 		return null;
 	}
 
@@ -377,7 +377,7 @@ public class BaseSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public T defaultCase(EObject object) {
+	public Object defaultCase(EObject object) {
 		return null;
 	}
 

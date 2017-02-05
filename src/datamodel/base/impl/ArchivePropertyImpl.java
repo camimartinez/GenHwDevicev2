@@ -142,7 +142,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.ARCHIVE_PROPERTY;
 	}
@@ -461,13 +460,12 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.ARCHIVE_PROPERTY__ROW:
 				return getRow();
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
-				return getSheet();
+				return new Integer(getSheet());
 			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
 				if (resolve) return getGetColumnsInfoOfArchi();
 				return basicGetGetColumnsInfoOfArchi();
@@ -484,14 +482,13 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.ARCHIVE_PROPERTY__ROW:
 				setRow((String[])newValue);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
-				setSheet((Integer)newValue);
+				setSheet(((Integer)newValue).intValue());
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
 				setGetColumnsInfoOfArchi((Table)newValue);
@@ -511,7 +508,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.ARCHIVE_PROPERTY__ROW:
@@ -538,7 +534,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.ARCHIVE_PROPERTY__ROW:
@@ -560,7 +555,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

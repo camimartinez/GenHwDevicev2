@@ -14,14 +14,21 @@
       <package
             uri="http://alma.Control.datamodel.meta.amb/1.0"
             class="datamodel.amb.AmbPackage"
-            genModel="modelAMBGen.genmodel"/>
+            genModel="config/model/modelGenHwDevicev2Gen.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://alma.Control.datamodel.base/1.0"
             class="datamodel.base.BasePackage"
-            genModel="modelAMBGen.genmodel"/>
+            genModel="config/model/modelGenHwDevicev2Gen.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://alma.Control.datamodel.eth/1.0"
+            class="datamodel.eth.EthPackage"
+            genModel="config/model/modelGenHwDevicev2Gen.genmodel"/>
    </extension>
 
 </plugin>

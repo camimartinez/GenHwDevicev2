@@ -37,7 +37,6 @@ public class MonitorETHImpl extends MonitorPointImpl implements MonitorETH {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.MONITOR_ETH;
 	}

@@ -263,7 +263,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.MAND_CBASE;
 	}
@@ -890,7 +889,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.MAND_CBASE__SPREADSHEET_NAME:
@@ -902,7 +900,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 			case BasePackage.MAND_CBASE__PARENT_ROW:
 				return getParentRow();
 			case BasePackage.MAND_CBASE__SHEET:
-				return getSheet();
+				return new Integer(getSheet());
 			case BasePackage.MAND_CBASE__PARENT:
 				return getParent();
 			case BasePackage.MAND_CBASE__ARCHIVE:
@@ -930,7 +928,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.MAND_CBASE__SPREADSHEET_NAME:
@@ -946,7 +943,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				setParentRow((String[])newValue);
 				return;
 			case BasePackage.MAND_CBASE__SHEET:
-				setSheet((Integer)newValue);
+				setSheet(((Integer)newValue).intValue());
 				return;
 			case BasePackage.MAND_CBASE__PARENT:
 				setParent((Resource)newValue);
@@ -978,7 +975,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.MAND_CBASE__SPREADSHEET_NAME:
@@ -1026,7 +1022,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.MAND_CBASE__SPREADSHEET_NAME:
@@ -1062,7 +1057,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

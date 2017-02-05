@@ -57,7 +57,6 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case EthPackage.ARCHIVE_ETH: return createArchiveETH();
@@ -146,7 +145,6 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	 * @deprecated
 	 * @generated
 	 */
-	@Deprecated
 	public static EthPackage getPackage() {
 		return EthPackage.eINSTANCE;
 	}

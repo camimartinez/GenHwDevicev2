@@ -144,7 +144,6 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.GENERIC_MONITOR_POINTS;
 	}
@@ -353,7 +352,6 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AmbPackage.GENERIC_MONITOR_POINTS__NEW_SPREADSHEET:
@@ -380,7 +378,6 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AmbPackage.GENERIC_MONITOR_POINTS__NEW_SPREADSHEET:
@@ -410,7 +407,6 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AmbPackage.GENERIC_MONITOR_POINTS__NEW_SPREADSHEET:
@@ -440,7 +436,6 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AmbPackage.GENERIC_MONITOR_POINTS__NEW_SPREADSHEET:
@@ -464,7 +459,6 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

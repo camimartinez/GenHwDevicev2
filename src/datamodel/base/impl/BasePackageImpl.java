@@ -1488,10 +1488,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Create type parameters
-
-		// Set bounds for type parameters
-
 		// Add supertypes to classes
 		monitorPointEClass.getESuperTypes().add(this.getMandCBase());
 		controlPointEClass.getESuperTypes().add(this.getMandCBase());
@@ -1520,121 +1516,121 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEReference(getDeviceModel_GetArchivProp(), this.getArchiveProperty(), null, "getArchivProp", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_GetInfFromSpread(), this.getMainBase(), null, "getInfFromSpread", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "CheckConstraints", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "CheckConstraints", 0, 1);
 
-		addEOperation(deviceModelEClass, null, "initializeModelDependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, null, "initializeModelDependencies");
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "DirPath", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "DirPath", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "TheEnd", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "TheEnd", 0, 1);
 
-		EOperation op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfFileExists", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "fileName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfFileExists", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "fileName", 0, 1);
 
-		op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfFileExists", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "directory", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "fileName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfFileExists", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "directory", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "fileName", 0, 1);
 
-		op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfDeviceFileExists", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "directory", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "localFileName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfDeviceFileExists", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "directory", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "localFileName", 0, 1);
 
-		op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfTestFileExists", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "directory", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "localFileName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfTestFileExists", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "directory", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "localFileName", 0, 1);
 
-		op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfCvsignoreFileExists", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "directory", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "checkIfCvsignoreFileExists", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "directory", 0, 1);
 
-		op = addEOperation(deviceModelEClass, this.getMonitorPoint(), "getMonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "fullName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(deviceModelEClass, this.getMonitorPoint(), "getMonitorPoint", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "fullName", 0, 1);
 
-		op = addEOperation(deviceModelEClass, this.getControlPoint(), "getControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "fullName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(deviceModelEClass, this.getControlPoint(), "getControlPoint", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "fullName", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "CreateModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "CreateModel", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "Assembly", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "Extends", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "Extends", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "DeviceName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "DeviceName", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "Description", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "Description", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "DescriptionAsString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "DescriptionAsString", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "ICD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "ICD", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "ICDDate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "ICDDate", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "ICDDateAsDatabaseDate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "ICDDateAsDatabaseDate", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEString(), "ICDDateAsArrayTime", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEString(), "ICDDateAsArrayTime", 0, 1);
 
-		op = addEOperation(deviceModelEClass, ecorePackage.getEResource(), "getArchive", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(deviceModelEClass, ecorePackage.getEResource(), "getArchive", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEResourceSet(), "Notes", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEResourceSet(), "Notes", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEResourceSet(), "MonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEResourceSet(), "MonitorPoint", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEResourceSet(), "ControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEResourceSet(), "ControlPoint", 0, 1);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEResourceSet(), "ArchiveProperty", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEResourceSet(), "ArchiveProperty", 0, 1);
 
 		initEClass(monitorPointEClass, MonitorPoint.class, "MonitorPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMonitorPoint_GetInfoFromAPSpread(), this.getArchiveProperty(), null, "getInfoFromAPSpread", null, 0, 1, MonitorPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMonitorPoint_GetInfoFromMPSpread(), this.getTable(), null, "getInfoFromMPSpread", null, 0, 1, MonitorPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Default", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Default", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "ErrorCondition", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "ErrorCondition", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "ErrorSeverity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "ErrorSeverity", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "ErrorAction", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "ErrorAction", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "APName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "APName", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "RefersTo", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "RefersTo", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Interval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Interval", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "OnlyOnChange", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "OnlyOnChange", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "DisplayUnits", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "DisplayUnits", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "GraphMin", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "GraphMin", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "GraphMax", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "GraphMax", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Format", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Format", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Tittle", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Tittle", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "MPName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "MPName", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "AltMPName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "AltMPName", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isMonitored", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isMonitored", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isPartOfPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isPartOfPattern", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isHomogeneous", 0, 1);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isPartOfHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isPartOfHomogeneous", 0, 1);
 
 		initEClass(controlPointEClass, ControlPoint.class, "ControlPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControlPoint_GetArchOnUseControl(), this.getTable(), null, "getArchOnUseControl", null, 0, 1, ControlPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(controlPointEClass, ecorePackage.getEString(), "CPName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlPointEClass, ecorePackage.getEString(), "CPName", 0, 1);
 
-		addEOperation(controlPointEClass, ecorePackage.getEString(), "AltCPName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlPointEClass, ecorePackage.getEString(), "AltCPName", 0, 1);
 
-		addEOperation(controlPointEClass, ecorePackage.getEBoolean(), "ArchiveOnUse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlPointEClass, ecorePackage.getEBoolean(), "ArchiveOnUse", 0, 1);
 
-		addEOperation(controlPointEClass, ecorePackage.getEBoolean(), "isMonitored", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlPointEClass, ecorePackage.getEBoolean(), "isMonitored", 0, 1);
 
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTable_DepChar(), ecorePackage.getEString(), "DepChar", "^", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1663,22 +1659,22 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEAttribute(getTable_WorldToJava(), this.getHashtable(), "worldToJava", "null", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_WorldToDatabase(), this.getHashtable(), "worldToDatabase", "null", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(tableEClass, ecorePackage.getEInt(), "getSheetNum", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(tableEClass, ecorePackage.getEInt(), "getSheetNum", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1);
 
-		op = addEOperation(tableEClass, ecorePackage.getEInt(), "getColNum", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "sheet", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(tableEClass, ecorePackage.getEInt(), "getColNum", 0, 1);
+		addEParameter(op, ecorePackage.getEInt(), "sheet", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1);
 
-		op = addEOperation(tableEClass, null, "addSheet", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(tableEClass, null, "addSheet");
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1);
 
-		op = addEOperation(tableEClass, null, "addCol", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "sheet", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(tableEClass, null, "addCol");
+		addEParameter(op, ecorePackage.getEInt(), "sheet", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1);
 
-		op = addEOperation(tableEClass, null, "initialize", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getString3DT(), "sh", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(tableEClass, null, "initialize");
+		addEParameter(op, this.getString3DT(), "sh", 0, 1);
 
 		initEClass(mandCBaseEClass, MandCBase.class, "MandCBase", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMandCBase_SpreadsheetName(), ecorePackage.getEString(), "spreadsheetName", "\"Not needed\"", 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1694,61 +1690,61 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEReference(getMandCBase_SetMPorCP(), this.getArchiveProperty(), null, "setMPorCP", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandCBase_GetSheetMP(), this.getMonitorPoint(), null, "getSheetMP", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(mandCBaseEClass, null, "addDependent", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEResource(), "son", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(mandCBaseEClass, null, "addDependent");
+		addEParameter(op, ecorePackage.getEResource(), "son", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isDependent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isDependent", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "hasDependents", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "hasDependents", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "FullName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "FullName", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "Name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "Name", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getDependentName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getDependentName", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getAltDependentName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getAltDependentName", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getDependsOnName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getDependsOnName", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getAltDependsOnName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getAltDependsOnName", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DataUnits", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DataUnits", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "MinRange", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "MinRange", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "MaxRange", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "MaxRange", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "Mode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "Mode", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "Implement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "Implement", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "External", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "External", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "Description", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "Description", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isExternal", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isExternal", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isArchived", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isArchived", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isImplemented", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isImplemented", 0, 1);
 
-		op = addEOperation(mandCBaseEClass, ecorePackage.getEString(), "dropPrefix", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(mandCBaseEClass, ecorePackage.getEString(), "dropPrefix", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "PName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "PName", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "AltPName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "AltPName", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DescriptionAsString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DescriptionAsString", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DescriptionFormatted", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DescriptionFormatted", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DescriptionFormattedL4", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DescriptionFormattedL4", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DescriptionFormattedL5", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DescriptionFormattedL5", 0, 1);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isMonitored", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isMonitored", 0, 1);
 
 		initEClass(archivePropertyEClass, ArchiveProperty.class, "ArchiveProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArchiveProperty_Row(), this.getString1DT(), "row", null, 0, 1, ArchiveProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1757,39 +1753,39 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEAttribute(getArchiveProperty_Mp(), ecorePackage.getEResource(), "mp", null, 0, 1, ArchiveProperty.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchiveProperty_Cp(), ecorePackage.getEResource(), "cp", null, 0, 1, ArchiveProperty.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isRefersTo", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isRefersTo", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isMonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isMonitorPoint", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isControlPoint", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEResource(), "getMonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEResource(), "getMonitorPoint", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEResource(), "getControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEResource(), "getControlPoint", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "APName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "APName", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Name", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "RefersTo", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "RefersTo", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "IntervalFull", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "IntervalFull", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Interval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Interval", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "OnlyOnChange", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "OnlyOnChange", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "DisplayUnits", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "DisplayUnits", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "GraphMin", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "GraphMin", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "GraphMax", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "GraphMax", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Format", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Format", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "OnStartup", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "OnStartup", 0, 1);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Tittle", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Tittle", 0, 1);
 
 		initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNote_Note(), ecorePackage.getEString(), "note", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1799,9 +1795,9 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEAttribute(getSpreadsheetValidator_ErrorList(), this.getArrayList(), "errorList", null, 0, 1, SpreadsheetValidator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpreadsheetValidator_Seh(), this.getSimpleErrorHandlerDT(), "seh", null, 0, 1, SpreadsheetValidator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(spreadsheetValidatorEClass, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "xmlFile", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "xsdFile", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(spreadsheetValidatorEClass, ecorePackage.getEBoolean(), "validate", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "xmlFile", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "xsdFile", 0, 1);
 
 		initEClass(spreadsheetParserEClass, SpreadsheetParser.class, "SpreadsheetParser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSpreadsheetParser_EReference0(), this.getSpreadsheetValidator(), null, "EReference0", null, 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1813,40 +1809,40 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEReference(getSpreadsheetParser_SetNewContent(), this.getPair(), null, "setNewContent", null, 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpreadsheetParser_Newlinetmp(), this.getSystemDT(), "newlinetmp", "line.separator", 0, 1, SpreadsheetParser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(spreadsheetParserEClass, ecorePackage.getEString(), "getSpreadsheet", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "dirName", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "fileName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(spreadsheetParserEClass, ecorePackage.getEString(), "getSpreadsheet", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "dirName", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "fileName", 0, 1);
 
-		op = addEOperation(spreadsheetParserEClass, this.getPair(), "getBoundedContent", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "beginPart1", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "beginPart2", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "end", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(spreadsheetParserEClass, this.getPair(), "getBoundedContent", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "beginPart1", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "beginPart2", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "end", 0, 1);
 
-		op = addEOperation(spreadsheetParserEClass, this.getString1DT(), "getDataCells", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(spreadsheetParserEClass, this.getString1DT(), "getDataCells", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "row", 0, 1);
 
-		addEOperation(spreadsheetParserEClass, this.getString2DT(), "getWorksheets", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(spreadsheetParserEClass, this.getString2DT(), "getWorksheets", 0, 1);
 
-		addEOperation(spreadsheetParserEClass, ecorePackage.getEBoolean(), "isReference", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(spreadsheetParserEClass, ecorePackage.getEBoolean(), "isReference", 0, 1);
 
-		addEOperation(spreadsheetParserEClass, ecorePackage.getEString(), "getReference", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(spreadsheetParserEClass, ecorePackage.getEString(), "getReference", 0, 1);
 
-		op = addEOperation(spreadsheetParserEClass, null, "setXSD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "xsd", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(spreadsheetParserEClass, null, "setXSD");
+		addEParameter(op, ecorePackage.getEString(), "xsd", 0, 1);
 
-		op = addEOperation(spreadsheetParserEClass, this.getString2DT(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "doc", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(spreadsheetParserEClass, this.getString2DT(), "filter", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "doc", 0, 1);
 
-		op = addEOperation(spreadsheetParserEClass, null, "deleteRow", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getString2DT(), "worksheet", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(spreadsheetParserEClass, null, "deleteRow");
+		addEParameter(op, this.getString2DT(), "worksheet", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1);
 
-		op = addEOperation(spreadsheetParserEClass, null, "modifyRow", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getString2DT(), "worksheet", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "lineNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "rowName", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(spreadsheetParserEClass, null, "modifyRow");
+		addEParameter(op, this.getString2DT(), "worksheet", 0, 1);
+		addEParameter(op, ecorePackage.getEInt(), "lineNumber", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "rowName", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
 		initEClass(utilEClass, Util.class, "Util", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUtil_Newline(), ecorePackage.getEString(), "newline", "System.getProperty(\"line.separator\")", 0, 1, Util.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1855,78 +1851,78 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEAttribute(getUtil_MONTHalt(), ecorePackage.getEString(), "MONTHalt", "\"01\", \"02\", \"03\", \"04\", \"05\", \"06\", \"07\", \"08\", \"09\", \"10\", \"11\", \"12\"", 0, 1, Util.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUtil_GetRawBytes(), this.getTable(), null, "getRawBytes", null, 0, 1, Util.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(utilEClass, null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "msg", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, null, "error");
+		addEParameter(op, ecorePackage.getEString(), "msg", 0, 1);
 
-		op = addEOperation(utilEClass, null, "RemoveLinesFromFile", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "dirName", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "fileName", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "replace", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, null, "RemoveLinesFromFile");
+		addEParameter(op, ecorePackage.getEString(), "dirName", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "fileName", 0, 1);
+		addEParameter(op, ecorePackage.getEInt(), "replace", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "AltName", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "str", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "AltName", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "str", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionBase", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "prefix", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionBase", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "prefix", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescription", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescription", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionL1", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionL1", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionL2", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionL2", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionL4", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionL4", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionL5", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "formatDescriptionL5", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "descriptionAsString", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "descriptionAsString", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "decodeHTMLChars", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "decodeHTMLChars", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEBoolean(), "isArray", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEBoolean(), "isArray", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "NumberRawDataTypeBytes", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "NumberRawDataTypeBytes", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "RawDataTypeTotalBytes", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "RawDataTypeTotalBytes", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "NumberOfItems", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "NumberOfItems", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEInt(), "getRawDataTypeIndex", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEInt(), "getRawDataTypeIndex", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "toArrayTime", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "toArrayTime", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "parseDateString", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "alt", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "parseDateString", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
+		addEParameter(op, ecorePackage.getEBoolean(), "alt", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "normalizeNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "wdt", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "normalizeNumber", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "wdt", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "value", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "normalizeFloat", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "normalizeFloat", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "value", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "normalizeBoolean", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "normalizeBoolean", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "value", 0, 1);
 
-		addEOperation(utilEClass, ecorePackage.getEString(), "getInstallDir", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(utilEClass, ecorePackage.getEString(), "getInstallDir", 0, 1);
 
-		op = addEOperation(utilEClass, ecorePackage.getEString(), "toDatabaseDate", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(utilEClass, ecorePackage.getEString(), "toDatabaseDate", 0, 1);
+		addEParameter(op, ecorePackage.getEString(), "s", 0, 1);
 
 		initEClass(pairEClass, Pair.class, "Pair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPair_Content(), ecorePackage.getEString(), "content", null, 0, 1, Pair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1935,14 +1931,14 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEClass(simpleErrorHandlerEClass, SimpleErrorHandler.class, "SimpleErrorHandler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSimpleErrorHandler_Errors(), ecorePackage.getEBoolean(), "errors", "false", 0, 1, SimpleErrorHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "error", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "error", 0, 1);
+		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1);
 
-		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "fatalError", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "fatalError", 0, 1);
+		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1);
 
-		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "warning", 0, 1);
+		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1);
 
 		initEClass(mainBaseEClass, MainBase.class, "MainBase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMainBase_Row(), this.getString1DT(), "row", null, 0, 1, MainBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1951,23 +1947,23 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEReference(getMainBase_ConvertInfoTo(), this.getUtil(), null, "convertInfoTo", null, 0, 1, MainBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMainBase_GetInfoFromSpread(), this.getTable(), null, "getInfoFromSpread", null, 0, 1, MainBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(mainBaseEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainBaseEClass, ecorePackage.getEString(), "Assembly", 0, 1);
 
-		addEOperation(mainBaseEClass, ecorePackage.getEString(), "Description", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainBaseEClass, ecorePackage.getEString(), "Description", 0, 1);
 
-		addEOperation(mainBaseEClass, ecorePackage.getEString(), "DescriptionAsString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainBaseEClass, ecorePackage.getEString(), "DescriptionAsString", 0, 1);
 
-		addEOperation(mainBaseEClass, ecorePackage.getEString(), "DeviceName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainBaseEClass, ecorePackage.getEString(), "DeviceName", 0, 1);
 
-		addEOperation(mainBaseEClass, ecorePackage.getEString(), "Extends", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainBaseEClass, ecorePackage.getEString(), "Extends", 0, 1);
 
-		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICD", 0, 1);
 
-		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICDDate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICDDate", 0, 1);
 
-		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICDDateAsDatabaseDate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICDDateAsDatabaseDate", 0, 1);
 
-		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICDDateAsArrayTime", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICDDateAsArrayTime", 0, 1);
 
 		// Initialize data types
 		initEDataType(simpleErrorHandlerDTEDataType, Object.class, "SimpleErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

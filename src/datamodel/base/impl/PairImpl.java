@@ -85,7 +85,6 @@ public class PairImpl extends EObjectImpl implements Pair {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.PAIR;
 	}
@@ -137,7 +136,6 @@ public class PairImpl extends EObjectImpl implements Pair {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.PAIR__CONTENT:
@@ -153,7 +151,6 @@ public class PairImpl extends EObjectImpl implements Pair {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.PAIR__CONTENT:
@@ -171,7 +168,6 @@ public class PairImpl extends EObjectImpl implements Pair {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.PAIR__CONTENT:
@@ -189,7 +185,6 @@ public class PairImpl extends EObjectImpl implements Pair {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.PAIR__CONTENT:
@@ -205,7 +200,6 @@ public class PairImpl extends EObjectImpl implements Pair {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

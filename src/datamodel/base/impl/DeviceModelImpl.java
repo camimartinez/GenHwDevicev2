@@ -101,6 +101,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	protected String[][][] spreadsheet = SPREADSHEET_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getMain() <em>Main</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMain()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Object MAIN_EDEFAULT = null;
+
+	/**
 	 * The cached value of the '{@link #getMain() <em>Main</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,7 +118,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 * @ordered
 	 */
-	protected Object main;
+	protected Object main = MAIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNotes() <em>Notes</em>}' attribute.
@@ -424,7 +434,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.DEVICE_MODEL;
 	}
@@ -1263,11 +1272,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
-				return getDescriptionIndex();
+				return new Integer(getDescriptionIndex());
 			case BasePackage.DEVICE_MODEL__SPREADSHEET:
 				return getSpreadsheet();
 			case BasePackage.DEVICE_MODEL__MAIN:
@@ -1293,9 +1301,9 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__GENERATED_DIR:
 				return getGeneratedDir();
 			case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
-				return isMonitorDBOnly();
+				return isMonitorDBOnly() ? Boolean.TRUE : Boolean.FALSE;
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
-				return isGenerateAlt();
+				return isGenerateAlt() ? Boolean.TRUE : Boolean.FALSE;
 			case BasePackage.DEVICE_MODEL__GET_ARCHIVE_INDEX:
 				if (resolve) return getGetArchiveIndex();
 				return basicGetGetArchiveIndex();
@@ -1323,11 +1331,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
-				setDescriptionIndex((Integer)newValue);
+				setDescriptionIndex(((Integer)newValue).intValue());
 				return;
 			case BasePackage.DEVICE_MODEL__SPREADSHEET:
 				setSpreadsheet((String[][][])newValue);
@@ -1366,10 +1373,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				setGeneratedDir((String)newValue);
 				return;
 			case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
-				setMonitorDBOnly((Boolean)newValue);
+				setMonitorDBOnly(((Boolean)newValue).booleanValue());
 				return;
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
-				setGenerateAlt((Boolean)newValue);
+				setGenerateAlt(((Boolean)newValue).booleanValue());
 				return;
 			case BasePackage.DEVICE_MODEL__GET_ARCHIVE_INDEX:
 				setGetArchiveIndex((Table)newValue);
@@ -1398,7 +1405,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
@@ -1408,7 +1414,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				setSpreadsheet(SPREADSHEET_EDEFAULT);
 				return;
 			case BasePackage.DEVICE_MODEL__MAIN:
-				setMain((Object)null);
+				setMain(MAIN_EDEFAULT);
 				return;
 			case BasePackage.DEVICE_MODEL__NOTES:
 				setNotes(NOTES_EDEFAULT);
@@ -1473,7 +1479,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
@@ -1481,7 +1486,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__SPREADSHEET:
 				return SPREADSHEET_EDEFAULT == null ? spreadsheet != null : !SPREADSHEET_EDEFAULT.equals(spreadsheet);
 			case BasePackage.DEVICE_MODEL__MAIN:
-				return main != null;
+				return MAIN_EDEFAULT == null ? main != null : !MAIN_EDEFAULT.equals(main);
 			case BasePackage.DEVICE_MODEL__NOTES:
 				return NOTES_EDEFAULT == null ? notes != null : !NOTES_EDEFAULT.equals(notes);
 			case BasePackage.DEVICE_MODEL__MONITOR_POINTS:
@@ -1527,7 +1532,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

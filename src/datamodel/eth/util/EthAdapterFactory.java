@@ -58,7 +58,6 @@ public class EthAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
-	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -75,58 +74,45 @@ public class EthAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EthSwitch<Adapter> modelSwitch =
-		new EthSwitch<Adapter>() {
-			@Override
-			public Adapter caseArchiveETH(ArchiveETH object) {
+	protected EthSwitch modelSwitch =
+		new EthSwitch() {
+			public Object caseArchiveETH(ArchiveETH object) {
 				return createArchiveETHAdapter();
 			}
-			@Override
-			public Adapter caseControlETH(ControlETH object) {
+			public Object caseControlETH(ControlETH object) {
 				return createControlETHAdapter();
 			}
-			@Override
-			public Adapter caseDeviceModel(DeviceModel object) {
+			public Object caseDeviceModel(DeviceModel object) {
 				return createDeviceModelAdapter();
 			}
-			@Override
-			public Adapter caseMainETH(MainETH object) {
+			public Object caseMainETH(MainETH object) {
 				return createMainETHAdapter();
 			}
-			@Override
-			public Adapter caseMandCETH(MandCETH object) {
+			public Object caseMandCETH(MandCETH object) {
 				return createMandCETHAdapter();
 			}
-			@Override
-			public Adapter caseMonitorETH(MonitorETH object) {
+			public Object caseMonitorETH(MonitorETH object) {
 				return createMonitorETHAdapter();
 			}
-			@Override
-			public Adapter caseArchiveProperty(ArchiveProperty object) {
+			public Object caseArchiveProperty(ArchiveProperty object) {
 				return createArchivePropertyAdapter();
 			}
-			@Override
-			public Adapter caseMandCBase(MandCBase object) {
+			public Object caseMandCBase(MandCBase object) {
 				return createMandCBaseAdapter();
 			}
-			@Override
-			public Adapter caseControlPoint(ControlPoint object) {
+			public Object caseControlPoint(ControlPoint object) {
 				return createControlPointAdapter();
 			}
-			@Override
-			public Adapter caseBase_DeviceModel(datamodel.base.DeviceModel object) {
+			public Object caseBase_DeviceModel(datamodel.base.DeviceModel object) {
 				return createBase_DeviceModelAdapter();
 			}
-			@Override
-			public Adapter caseMainBase(MainBase object) {
+			public Object caseMainBase(MainBase object) {
 				return createMainBaseAdapter();
 			}
-			@Override
-			public Adapter caseMonitorPoint(MonitorPoint object) {
+			public Object caseMonitorPoint(MonitorPoint object) {
 				return createMonitorPointAdapter();
 			}
-			@Override
-			public Adapter defaultCase(EObject object) {
+			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -139,9 +125,8 @@ public class EthAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
-	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return (Adapter)modelSwitch.doSwitch((EObject)target);
 	}
 
 

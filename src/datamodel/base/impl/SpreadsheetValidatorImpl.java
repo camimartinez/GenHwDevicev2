@@ -67,6 +67,16 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	protected ArrayList errorList = ERROR_LIST_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getSeh() <em>Seh</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSeh()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Object SEH_EDEFAULT = null;
+
+	/**
 	 * The cached value of the '{@link #getSeh() <em>Seh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,7 +84,7 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * @generated
 	 * @ordered
 	 */
-	protected Object seh;
+	protected Object seh = SEH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,7 +100,6 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.SPREADSHEET_VALIDATOR;
 	}
@@ -191,7 +200,6 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
@@ -210,7 +218,6 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
@@ -231,7 +238,6 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
@@ -241,7 +247,7 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 				setErrorList(ERROR_LIST_EDEFAULT);
 				return;
 			case BasePackage.SPREADSHEET_VALIDATOR__SEH:
-				setSeh((Object)null);
+				setSeh(SEH_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -252,7 +258,6 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
@@ -260,7 +265,7 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_LIST:
 				return ERROR_LIST_EDEFAULT == null ? errorList != null : !ERROR_LIST_EDEFAULT.equals(errorList);
 			case BasePackage.SPREADSHEET_VALIDATOR__SEH:
-				return seh != null;
+				return SEH_EDEFAULT == null ? seh != null : !SEH_EDEFAULT.equals(seh);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,7 +275,6 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

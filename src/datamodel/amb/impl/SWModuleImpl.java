@@ -348,7 +348,6 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.SW_MODULE;
 	}
@@ -1037,7 +1036,6 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
@@ -1047,13 +1045,13 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 			case AmbPackage.SW_MODULE__MAIN_ASSEMBLY:
 				return getMainAssembly();
 			case AmbPackage.SW_MODULE__ONE_SW_MODULE:
-				return isOneSwModule();
+				return isOneSwModule() ? Boolean.TRUE : Boolean.FALSE;
 			case AmbPackage.SW_MODULE__ROW:
 				return getRow();
 			case AmbPackage.SW_MODULE__PARENT_ROW:
 				return getParentRow();
 			case AmbPackage.SW_MODULE__SHEET:
-				return getSheet();
+				return new Integer(getSheet());
 			case AmbPackage.SW_MODULE__MONITOR_POINTS:
 				return getMonitorPoints();
 			case AmbPackage.SW_MODULE__CONTROL_POINTS:
@@ -1085,7 +1083,6 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
@@ -1098,7 +1095,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				setMainAssembly((String)newValue);
 				return;
 			case AmbPackage.SW_MODULE__ONE_SW_MODULE:
-				setOneSwModule((Boolean)newValue);
+				setOneSwModule(((Boolean)newValue).booleanValue());
 				return;
 			case AmbPackage.SW_MODULE__ROW:
 				setRow((String[])newValue);
@@ -1107,7 +1104,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				setParentRow((String[])newValue);
 				return;
 			case AmbPackage.SW_MODULE__SHEET:
-				setSheet((Integer)newValue);
+				setSheet(((Integer)newValue).intValue());
 				return;
 			case AmbPackage.SW_MODULE__MONITOR_POINTS:
 				setMonitorPoints((ResourceSet)newValue);
@@ -1145,7 +1142,6 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
@@ -1205,7 +1201,6 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
@@ -1249,7 +1244,6 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

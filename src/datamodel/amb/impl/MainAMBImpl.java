@@ -58,7 +58,6 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.MAIN_AMB;
 	}
@@ -172,7 +171,6 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AmbPackage.MAIN_AMB__GET_INFO_FROM_MAIN:
@@ -187,7 +185,6 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AmbPackage.MAIN_AMB__GET_INFO_FROM_MAIN:
@@ -202,7 +199,6 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AmbPackage.MAIN_AMB__GET_INFO_FROM_MAIN:
@@ -217,7 +213,6 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AmbPackage.MAIN_AMB__GET_INFO_FROM_MAIN:
