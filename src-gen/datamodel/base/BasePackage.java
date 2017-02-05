@@ -65,7 +65,7 @@ public interface BasePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "base";
+	String eNS_PREFIX = "alma.Control.datamodel.meta.base";
 
 	/**
 	 * The singleton instance of the package.

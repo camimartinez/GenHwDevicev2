@@ -2,8 +2,8 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datamodel"
-    nsURI="http://alma.Control.datamodel.meta/1.0" nsPrefix="datamodel">
-  <eSubpackages name="amb" nsURI="http://alma.Control.datamodel.meta.amb/1.0" nsPrefix="amb">
+    nsURI="http://alma.Control.datamodel.meta/1.0" nsPrefix="alma.Control.datamodel">
+  <eSubpackages name="amb" nsURI="http://alma.Control.datamodel.meta.amb/1.0" nsPrefix="alma.Control.datamodel.meta.amb">
     <eClassifiers xsi:type="ecore:EClass" name="ArchiveAMB" eSuperTypes="#//base/ArchiveProperty">
       <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="isIntervalTE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -321,7 +321,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="toInstallDir" eType="#//base/Util"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="base" nsURI="http://alma.Control.datamodel.base/1.0" nsPrefix="base">
+  <eSubpackages name="base" nsURI="http://alma.Control.datamodel.base/1.0" nsPrefix="alma.Control.datamodel.meta.base">
     <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" abstract="true">
       <eOperations name="CheckConstraints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="initializeModelDependencies"/>
@@ -759,7 +759,7 @@
     <eClassifiers xsi:type="ecore:EDataType" name="String1DT" instanceClassName="java.lang.String[]"/>
     <eClassifiers xsi:type="ecore:EDataType" name="SystemDT" instanceClassName="java.lang.System"/>
   </eSubpackages>
-  <eSubpackages name="eth" nsURI="http://alma.Control.datamodel.eth/1.0" nsPrefix="eth">
+  <eSubpackages name="eth" nsURI="http://alma.Control.datamodel.eth/1.0" nsPrefix="alma.Control.datamodel.meta.eth">
     <eClassifiers xsi:type="ecore:EClass" name="ArchiveETH" eSuperTypes="#//base/ArchiveProperty"/>
     <eClassifiers xsi:type="ecore:EClass" name="ControlETH" eSuperTypes="#//base/ControlPoint"/>
     <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//base/DeviceModel"/>

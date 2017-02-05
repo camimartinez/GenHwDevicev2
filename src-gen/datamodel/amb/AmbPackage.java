@@ -66,7 +66,7 @@ public interface AmbPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "amb";
+	String eNS_PREFIX = "alma.Control.datamodel.meta.amb";
 
 	/**
 	 * The singleton instance of the package.

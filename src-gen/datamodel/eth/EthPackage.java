@@ -64,7 +64,7 @@ public interface EthPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "eth";
+	String eNS_PREFIX = "alma.Control.datamodel.meta.eth";
 
 	/**
 	 * The singleton instance of the package.

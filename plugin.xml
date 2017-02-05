@@ -30,5 +30,19 @@
             class="datamodel.eth.EthPackage"
             genModel="config/model/modelGenHwDevicev2Gen.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="datamodel.amb.impl.MyAmbFactoryImpl"
+            uri="http://alma.Control.datamodel.meta.amb/1.0">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="datamodel.base.impl.MyBaseFactoryImpl"
+            uri="http://alma.Control.datamodel.meta.base/1.0">
+      </factory>
+   </extension>
 
 </plugin>
