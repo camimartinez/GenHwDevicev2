@@ -53,7 +53,7 @@ public interface ControlPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return PName();'"
 	 * @generated
 	 */
 	String CPName();
@@ -61,7 +61,7 @@ public interface ControlPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return AltPName();\r\n'"
 	 * @generated
 	 */
 	String AltCPName();
@@ -69,7 +69,7 @@ public interface ControlPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Archive On Use\")].equals(\"yes\");\r\n'"
 	 * @generated
 	 */
 	boolean ArchiveOnUse();
@@ -78,6 +78,7 @@ public interface ControlPoint extends MandCBase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return false;\r\n'"
 	 * @generated
 	 */
 	boolean isMonitored();

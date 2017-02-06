@@ -1611,7 +1611,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Format", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Tittle", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Title", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(monitorPointEClass, ecorePackage.getEString(), "MPName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1789,7 +1789,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "OnStartup", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Tittle", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Title", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNote_Note(), ecorePackage.getEString(), "note", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

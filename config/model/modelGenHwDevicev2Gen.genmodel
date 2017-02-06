@@ -445,7 +445,7 @@
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/MonitorPoint/GraphMin"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/MonitorPoint/GraphMax"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/MonitorPoint/Format"/>
-        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/MonitorPoint/Tittle"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/MonitorPoint/Title"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/MonitorPoint/MPName"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/MonitorPoint/AltMPName"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/MonitorPoint/isMonitored"/>
@@ -577,7 +577,7 @@
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/ArchiveProperty/GraphMax"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/ArchiveProperty/Format"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/ArchiveProperty/OnStartup"/>
-        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/ArchiveProperty/Tittle"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/ArchiveProperty/Title"/>
       </genClasses>
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//base/Note">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/Note/note"/>

@@ -450,7 +450,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String Tittle() {
+	public String Title() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -295,6 +295,6 @@ public interface ArchiveProperty extends EObject {
 	 * @model
 	 * @generated
 	 */
-	String Tittle();
+	String Title();
 
 } // ArchiveProperty

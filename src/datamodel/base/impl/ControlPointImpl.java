@@ -104,9 +104,7 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * @generated
 	 */
 	public String CPName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return PName();
 	}
 
 	/**
@@ -115,9 +113,8 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * @generated
 	 */
 	public String AltCPName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return AltPName();
+		
 	}
 
 	/**
@@ -126,9 +123,18 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * @generated
 	 */
 	public boolean ArchiveOnUse() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Archive On Use")].equals("yes");
+		
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isMonitored() {
+		return false;
+		
 	}
 
 	/**

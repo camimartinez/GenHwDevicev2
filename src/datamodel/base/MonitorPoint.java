@@ -80,7 +80,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Default\")];\r\n'"
 	 * @generated
 	 */
 	String Default();
@@ -88,7 +88,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Error Condition\")];\r\n'"
 	 * @generated
 	 */
 	String ErrorCondition();
@@ -96,7 +96,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Error Severity\")];\r\n'"
 	 * @generated
 	 */
 	String ErrorSeverity();
@@ -104,7 +104,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Error Action\")];\r\n'"
 	 * @generated
 	 */
 	String ErrorAction();
@@ -112,7 +112,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return PName();'"
 	 * @generated
 	 */
 	String APName();
@@ -120,7 +120,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return PName();'"
 	 * @generated
 	 */
 	String RefersTo();
@@ -128,7 +128,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='int defaultValue = 300;\r\n\tif(archive != null) {\r\n\t\t\tif ( ((ArchiveProperty)archive).Interval().equals(\"none\") )\r\n\t\t\t\treturn Integer.toString(defaultValue);\r\n\t\t\tint value = Integer.valueOf(((ArchiveProperty)archive).Interval());\r\n\t\t\tif (value <= 0)\r\n\t\t\t\tvalue = defaultValue;\r\n\t\t\treturn Integer.toString(value);\r\n\t\t}\r\n\t\telse\r\n\t\t\treturn Integer.toString(defaultValue);'"
 	 * @generated
 	 */
 	String Interval();
@@ -136,7 +136,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).OnlyOnChange();\r\nelse\r\n\treturn false;'"
 	 * @generated
 	 */
 	boolean OnlyOnChange();
@@ -144,7 +144,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).DisplayUnits();\r\nelse\r\n\treturn DataUnits();'"
 	 * @generated
 	 */
 	String DisplayUnits();
@@ -152,7 +152,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).GraphMin();\r\nelse\r\n\treturn \"none\";'"
 	 * @generated
 	 */
 	String GraphMin();
@@ -160,7 +160,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).GraphMax();\r\nelse\r\n\treturn \"none\";'"
 	 * @generated
 	 */
 	String GraphMax();
@@ -168,7 +168,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).Format();\r\nelse\r\n\treturn \"none\";'"
 	 * @generated
 	 */
 	String Format();
@@ -176,15 +176,15 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).Title();\r\nelse\r\n\treturn Description();'"
 	 * @generated
 	 */
-	String Tittle();
+	String Title();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return PName();\r\n'"
 	 * @generated
 	 */
 	String MPName();
@@ -192,7 +192,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return AltPName();\r\n'"
 	 * @generated
 	 */
 	String AltMPName();

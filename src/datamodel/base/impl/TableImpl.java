@@ -1108,9 +1108,11 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 */
 	public int getSheetNum(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		int i;
+			for(i = 0; i < sheetNames.size(); i++)
+				if(((String)sheetNames.get(i)).compareTo(name) == 0)
+					return i;
+			return -1;
 	}
 
 	/**
@@ -1119,9 +1121,11 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 */
 	public int getColNum(int sheet, String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		int i;
+		for(i = 0; i < ((ArrayList)colNames.get(sheet)).size(); i++)
+			if(((String)((ArrayList)colNames.get(sheet)).get(i)).compareTo(name) == 0)
+				return i;
+			return -1;
 	}
 
 	/**
@@ -1130,9 +1134,8 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 */
 	public void addSheet(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		sheetNames.add(name);
+		colNames.add(new ArrayList());
 	}
 
 	/**
@@ -1141,9 +1144,8 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 */
 	public void addCol(int sheet, String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		((ArrayList)colNames.get(sheet)).add(name);
+		
 	}
 
 	/**
@@ -1152,9 +1154,300 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 */
 	public void initialize(String[][][] sh) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				int i, j;
+				sheetNames = new ArrayList();
+				colNames = new ArrayList();
+				for(i = 0; i < sh.length; i++){
+					addSheet(sh[i][0][0]);
+					for(j = 0; j < sh[i][1].length; j++){
+						addCol(i, sh[i][1][j]);
+					}
+				}
+				toCPP = new Hashtable();
+				toCPP.put("char", "char");
+				toCPP.put("short", "short");
+				toCPP.put("int", "int");
+				toCPP.put("long long", "long long");
+				toCPP.put("float", "float");
+				toCPP.put("double", "double");
+				toCPP.put("bool", "bool");
+				toCPP.put("string", "char *");
+				toCPP.put("void", "void");
+		
+				toIDL = new Hashtable();
+				toIDL.put("char", "long");
+				toIDL.put("short", "long");
+				toIDL.put("int", "long");
+				toIDL.put("long long", "long long");
+				toIDL.put("float", "float");
+				toIDL.put("double", "double");
+				toIDL.put("bool", "boolean");
+				toIDL.put("string", "string");
+				toIDL.put("void", "void");
+		
+				toIDLSeq = new Hashtable();
+				toIDLSeq.put("char", "Control::LongSeq");
+				toIDLSeq.put("short", "Control::LongSeq");
+				toIDLSeq.put("int", "Control::LongSeq");
+				toIDLSeq.put("long long", "Control::LongLongSeq");
+				toIDLSeq.put("float", "Control::FloatSeq");
+				toIDLSeq.put("double", "Control::DoubleSeq");
+				toIDLSeq.put("bool", "Control::BooleanSeq");
+				toIDLSeq.put("string", "Control::StringSeq");
+				toIDLSeq.put("void", "NOTHING");
+		
+				toCORBA = new Hashtable();
+				toCORBA.put("char", "CORBA::Long");
+				toCORBA.put("short", "CORBA::Long");
+				toCORBA.put("int", "CORBA::Long");
+				toCORBA.put("long long", "CORBA::LongLong");
+				toCORBA.put("float", "CORBA::Float");
+				toCORBA.put("double", "CORBA::Double");
+				toCORBA.put("bool", "CORBA::Boolean");
+				toCORBA.put("string", "char *");
+				toCORBA.put("void", "void");
+		
+				toCORBADevIO = new Hashtable();
+				toCORBADevIO.put("char", "CORBA::Long");
+				toCORBADevIO.put("short", "CORBA::Long");
+				toCORBADevIO.put("int", "CORBA::Long");
+				toCORBADevIO.put("long long", "CORBA::LongLong");
+				toCORBADevIO.put("float", "CORBA::Float");
+				toCORBADevIO.put("double", "CORBA::Double");
+				toCORBADevIO.put("bool", "CORBA::Boolean");
+				toCORBADevIO.put("string", "CORBA::String");
+				toCORBADevIO.put("void", "NOTHING");
+		
+				toCORBASeq = new Hashtable();
+				toCORBASeq.put("char", "Control::LongSeq");
+				toCORBASeq.put("short", "Control::LongSeq");
+				toCORBASeq.put("int", "Control::LongSeq");
+				toCORBASeq.put("long long", "Control::LongLongSeq");
+				toCORBASeq.put("float", "Control::FloatSeq");
+				toCORBASeq.put("double", "Control::DoubleSeq");
+				toCORBASeq.put("bool", "Control::BooleanSeq");
+				toCORBASeq.put("string", "Control::StringSeq");
+				toCORBASeq.put("void", "NOTHING");
+		
+				toBACI = new Hashtable();
+				toBACI.put("char", "long");
+				toBACI.put("short", "long");
+				toBACI.put("int", "long");
+				toBACI.put("long long", "longLong");
+				toBACI.put("float", "float");
+				toBACI.put("double", "double");
+				toBACI.put("bool", "boolean");
+				toBACI.put("string", "string");
+				toBACI.put("void", "void");
+		
+				toDatabase = new Hashtable();
+				toDatabase.put("char", "char");
+				toDatabase.put("short", "integer");
+				toDatabase.put("int", "integer");
+				toDatabase.put("long long", "integer");
+				toDatabase.put("float", "float");
+				toDatabase.put("double", "double");
+				toDatabase.put("bool", "boolean");
+				toDatabase.put("string", "string");
+				toDatabase.put("void", "-none-");
+		
+		rawToCPP = new Hashtable();
+				rawToCPP.put("bit", "char");
+				rawToCPP.put("ubyte", "unsigned char");
+				rawToCPP.put("int8", "char");
+				rawToCPP.put("uint8", "unsigned char");
+				rawToCPP.put("int16", "short");
+				rawToCPP.put("uint16", "unsigned short");
+				rawToCPP.put("int24", "int");
+				rawToCPP.put("uint24", "unsigned int");
+				rawToCPP.put("int32", "int");
+				rawToCPP.put("uint32", "unsigned int");
+				rawToCPP.put("int48", "long long");
+				rawToCPP.put("uint48", "unsigned long long");
+				rawToCPP.put("int64", "long long");
+				rawToCPP.put("uint64", "unsigned long long");
+				rawToCPP.put("float", "float");
+				rawToCPP.put("double", "double");
+		
+				rawToByteSwapped = new Hashtable();
+				rawToByteSwapped.put("bit", "false");
+				rawToByteSwapped.put("ubyte", "false");
+				rawToByteSwapped.put("int8", "false");
+				rawToByteSwapped.put("uint8", "false");
+				rawToByteSwapped.put("int16", "true");
+				rawToByteSwapped.put("uint16", "true");
+				rawToByteSwapped.put("int24", "true");
+				rawToByteSwapped.put("uint24", "true");
+				rawToByteSwapped.put("int32", "true");
+				rawToByteSwapped.put("uint32", "true");
+				rawToByteSwapped.put("int48", "true");
+				rawToByteSwapped.put("uint48", "true");
+				rawToByteSwapped.put("int64", "true");
+				rawToByteSwapped.put("uint64", "true");
+				rawToByteSwapped.put("float", "true");
+				rawToByteSwapped.put("double", "true");
+		
+				rawBytes = new Hashtable();
+				rawBytes.put("bit", "1");
+				rawBytes.put("ubyte", "1");
+				rawBytes.put("int8", "1");
+				rawBytes.put("uint8", "1");
+				rawBytes.put("int16", "2");
+				rawBytes.put("uint16", "2");
+				rawBytes.put("int24", "3");
+				rawBytes.put("uint24", "3");
+				rawBytes.put("int32", "4");
+				rawBytes.put("uint32", "4");
+				rawBytes.put("int48", "6");
+				rawBytes.put("uint48", "6");
+				rawBytes.put("int64", "8");
+				rawBytes.put("uint64", "8");
+				rawBytes.put("float", "4");
+				rawBytes.put("double", "8");
+		
+				worldToCPP = new Hashtable();
+				worldToCPP.put("byte", "char");
+				worldToCPP.put("ubyte", "unsigned char");
+				worldToCPP.put("short", "short");
+				worldToCPP.put("ushort", "unsigned short");
+				worldToCPP.put("int", "int");
+				worldToCPP.put("uint", "unsigned int");
+				worldToCPP.put("long", "long long");
+				worldToCPP.put("ulong", "unsigned long long");
+				worldToCPP.put("float", "float");
+				worldToCPP.put("double", "double");
+				worldToCPP.put("boolean", "bool");
+				worldToCPP.put("string", "std::string");
+				worldToCPP.put("acstime", "ACS::Time");
+				worldToCPP.put("void", "void");
+		
+				worldToJava = new Hashtable();
+				worldToJava.put("byte", "int");
+				worldToJava.put("ubyte", "int");
+				worldToJava.put("short", "int");
+				worldToJava.put("ushort", "int");
+				worldToJava.put("int", "int");
+				worldToJava.put("uint", "long");
+				worldToJava.put("long", "long");
+				worldToJava.put("ulong", "long");
+				worldToJava.put("float", "float");
+				worldToJava.put("double", "double");
+				worldToJava.put("boolean", "boolean");
+				worldToJava.put("string", "String");
+				worldToJava.put("acstime", "ACSTime");
+				worldToJava.put("void", "void");
+		
+				worldToBACI = new Hashtable();
+				worldToBACI.put("byte", "long");
+				worldToBACI.put("ubyte", "long");
+				worldToBACI.put("short", "long");
+				worldToBACI.put("ushort", "long");
+				worldToBACI.put("int", "long");
+				worldToBACI.put("uint", "uLong");
+				worldToBACI.put("long", "longLong");
+				worldToBACI.put("ulong", "uLongLong");
+				worldToBACI.put("float", "float");
+				worldToBACI.put("double", "double");
+				worldToBACI.put("boolean", "boolean");
+				worldToBACI.put("string", "string");
+				worldToBACI.put("acstime", "uLongLong");
+				worldToBACI.put("void", "void");
+		
+		worldToCORBA = new Hashtable();
+				worldToCORBA.put("byte", "CORBA::Long");
+				worldToCORBA.put("ubyte", "CORBA::Long");
+				worldToCORBA.put("short", "CORBA::Long");
+				worldToCORBA.put("ushort", "CORBA::Long");
+				worldToCORBA.put("int", "CORBA::Long");
+				worldToCORBA.put("uint", "CORBA::ULong");
+				worldToCORBA.put("long", "CORBA::LongLong");
+				worldToCORBA.put("ulong", "CORBA::ULongLong");
+				worldToCORBA.put("float", "CORBA::Float");
+				worldToCORBA.put("double", "CORBA::Double");
+				worldToCORBA.put("boolean", "CORBA::Boolean");
+				worldToCORBA.put("string", "char *");
+				worldToCORBA.put("acstime", "ACS::Time");
+				worldToCORBA.put("void", "void");
+		
+				worldToCORBADevIO = new Hashtable();
+				worldToCORBADevIO.put("byte", "CORBA::Long");
+				worldToCORBADevIO.put("ubyte", "CORBA::Long");
+				worldToCORBADevIO.put("short", "CORBA::Long");
+				worldToCORBADevIO.put("ushort", "CORBA::Long");
+				worldToCORBADevIO.put("int", "CORBA::Long");
+				worldToCORBADevIO.put("uint", "CORBA::ULong");
+				worldToCORBADevIO.put("long", "CORBA::LongLong");
+				worldToCORBADevIO.put("ulong", "CORBA::ULongLong");
+				worldToCORBADevIO.put("float", "CORBA::Float");
+				worldToCORBADevIO.put("double", "CORBA::Double");
+				worldToCORBADevIO.put("boolean", "CORBA::Boolean");
+				worldToCORBADevIO.put("string", "CORBA::String");
+				worldToCORBADevIO.put("acstime", "ACS::Time");
+				worldToCORBADevIO.put("void", "NOTHING");
+		
+				worldToCORBASeq = new Hashtable();
+				worldToCORBASeq.put("byte", "Control::LongSeq");
+				worldToCORBASeq.put("ubyte", "Control::LongSeq");
+				worldToCORBASeq.put("short", "Control::LongSeq");
+				worldToCORBASeq.put("ushort", "Control::LongSeq");
+				worldToCORBASeq.put("int", "Control::LongSeq");
+				worldToCORBASeq.put("uint", "Control::ULongSeq");
+				worldToCORBASeq.put("long", "Control::LongLongSeq");
+				worldToCORBASeq.put("ulong", "Control::ULongLongSeq");
+				worldToCORBASeq.put("float", "Control::FloatSeq");
+				worldToCORBASeq.put("double", "Control::DoubleSeq");
+				worldToCORBASeq.put("boolean", "Control::BooleanSeq");
+				worldToCORBASeq.put("string", "Control::StringSeq");
+				worldToCORBASeq.put("acstime", "Control::ACSTimeSeq");
+				worldToCORBASeq.put("void", "NOTHING");
+		
+				worldToIDLSeq = new Hashtable();
+				worldToIDLSeq.put("byte", "Control::LongSeq");
+				worldToIDLSeq.put("ubyte", "Control::LongSeq");
+				worldToIDLSeq.put("short", "Control::LongSeq");
+				worldToIDLSeq.put("ushort", "Control::LongSeq");
+				worldToIDLSeq.put("int", "Control::LongSeq");
+				worldToIDLSeq.put("uint", "Control::ULongSeq");
+				worldToIDLSeq.put("long", "Control::LongLongSeq");
+				worldToIDLSeq.put("ulong", "Control::ULongLongSeq");
+				worldToIDLSeq.put("float", "Control::FloatSeq");
+				worldToIDLSeq.put("double", "Control::DoubleSeq");
+				worldToIDLSeq.put("boolean", "Control::BooleanSeq");
+				worldToIDLSeq.put("string", "Control::StringSeq");
+				worldToIDLSeq.put("acstime", "Control::ACSTimeSeq");
+				worldToIDLSeq.put("void", "NOTHING");
+		
+				worldToIDL = new Hashtable();
+				worldToIDL.put("byte", "long");
+				worldToIDL.put("ubyte", "long");
+				worldToIDL.put("short", "long");
+				worldToIDL.put("ushort", "long");
+				worldToIDL.put("int", "long");
+				worldToIDL.put("uint", "unsigned long");
+				worldToIDL.put("long", "long long");
+				worldToIDL.put("ulong", "unsigned long long");
+				worldToIDL.put("float", "float");
+				worldToIDL.put("double", "double");
+				worldToIDL.put("boolean", "boolean");
+				worldToIDL.put("string", "string");
+				worldToIDL.put("acstime", "ACS::Time");
+				worldToIDL.put("void", "void");
+		
+				worldToDatabase = new Hashtable();
+				worldToDatabase.put("byte", "integer");
+				worldToDatabase.put("ubyte", "integer");
+				worldToDatabase.put("short", "integer");
+				worldToDatabase.put("ushort", "integer");
+				worldToDatabase.put("int", "integer");
+				worldToDatabase.put("uint", "integer");
+				worldToDatabase.put("long", "integer");
+				worldToDatabase.put("ulong", "integer");
+				worldToDatabase.put("float", "float");
+				worldToDatabase.put("double", "double");
+				worldToDatabase.put("boolean", "boolean");
+				worldToDatabase.put("string", "string");
+				worldToDatabase.put("acstime", "integer");
+				worldToDatabase.put("void", "-none-");
 	}
 
 	/**

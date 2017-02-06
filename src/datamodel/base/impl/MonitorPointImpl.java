@@ -154,9 +154,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String Default() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Default")];
+		
 	}
 
 	/**
@@ -165,9 +164,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String ErrorCondition() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Error Condition")];
+		
 	}
 
 	/**
@@ -176,9 +174,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String ErrorSeverity() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Error Severity")];
+		
 	}
 
 	/**
@@ -187,9 +184,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String ErrorAction() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Error Action")];
+		
 	}
 
 	/**
@@ -198,9 +194,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String APName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return PName();
 	}
 
 	/**
@@ -209,9 +203,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String RefersTo() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return PName();
 	}
 
 	/**
@@ -220,9 +212,17 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String Interval() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		int defaultValue = 300;
+			if(archive != null) {
+					if ( ((ArchiveProperty)archive).Interval().equals("none") )
+						return Integer.toString(defaultValue);
+					int value = Integer.valueOf(((ArchiveProperty)archive).Interval());
+					if (value <= 0)
+						value = defaultValue;
+					return Integer.toString(value);
+				}
+				else
+					return Integer.toString(defaultValue);
 	}
 
 	/**
@@ -231,9 +231,10 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public boolean OnlyOnChange() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(archive != null)
+			return ((ArchiveProperty)archive).OnlyOnChange();
+		else
+			return false;
 	}
 
 	/**
@@ -242,9 +243,10 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String DisplayUnits() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(archive != null)
+			return ((ArchiveProperty)archive).DisplayUnits();
+		else
+			return DataUnits();
 	}
 
 	/**
@@ -253,9 +255,10 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String GraphMin() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(archive != null)
+			return ((ArchiveProperty)archive).GraphMin();
+		else
+			return "none";
 	}
 
 	/**
@@ -264,9 +267,10 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String GraphMax() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(archive != null)
+			return ((ArchiveProperty)archive).GraphMax();
+		else
+			return "none";
 	}
 
 	/**
@@ -275,9 +279,10 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String Format() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(archive != null)
+			return ((ArchiveProperty)archive).Format();
+		else
+			return "none";
 	}
 
 	/**
@@ -285,10 +290,11 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String Tittle() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String Title() {
+		if(archive != null)
+			return ((ArchiveProperty)archive).Title();
+		else
+			return Description();
 	}
 
 	/**
@@ -297,9 +303,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String MPName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return PName();
+		
 	}
 
 	/**
@@ -308,9 +313,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String AltMPName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return AltPName();
+		
 	}
 
 	/**
