@@ -557,10 +557,10 @@
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//base/ArchiveProperty">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/ArchiveProperty/row"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/ArchiveProperty/sheet"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/ArchiveProperty/getColumnsInfoOfArchi"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/ArchiveProperty/mp"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/ArchiveProperty/cp"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/ArchiveProperty/getColumnsInfoOfArchi"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/ArchiveProperty/isRefersTo"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/ArchiveProperty/isMonitorPoint"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/ArchiveProperty/isControlPoint"/>
