@@ -323,52 +323,141 @@
   </eSubpackages>
   <eSubpackages name="base" nsURI="http://alma.Control.datamodel.base/1.0" nsPrefix="alma.Control.datamodel.meta.base">
     <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" abstract="true">
-      <eOperations name="CheckConstraints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="CheckConstraints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return &quot;&quot;;&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations name="initializeModelDependencies"/>
-      <eOperations name="DirPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="TheEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="DirPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return Assembly();&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="TheEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="String dir = generatedDir + &quot;/&quot; + Assembly();&#xD;&#xA;Util utils = BaseFactoryImpl.eINSTANCE.createUtil();&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;Base.cpp&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;Base.h&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Base.idl&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.xml&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;Component.xml&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/config/CDB/schemas&quot;, Assembly() + &quot;Base.xsd&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/config&quot;, &quot;TMCDB&quot; + Assembly() + &quot;Add.xml&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, Assembly() + &quot;Base.py&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, &quot;__init__.py&quot;, 1);&#xD;&#xA;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xD;&#xA;return &quot;&quot;;"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations name="checkIfFileExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="java.io.File f = new java.io.File(fileName);&#xD;&#xA;if(f.exists() == true){&#xD;&#xA;            return true;&#xD;&#xA;  }else{&#xD;&#xA;            return false;&#xD;&#xA;          }"/>
+        </eAnnotations>
         <eParameters name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="checkIfFileExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if(directory.isEmpty() == false){&#xD;&#xA;            return checkIfFileExists(directory + &quot;/&quot; + fileName);&#xD;&#xA;        } else{&#xD;&#xA;            return checkIfFileExists(fileName);&#xD;&#xA;                }"/>
+        </eAnnotations>
         <eParameters name="directory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="checkIfDeviceFileExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="String fileName = getDeviceDir() + &quot;/&quot; + directory + &quot;/&quot; + Assembly() + localFileName;&#xD;&#xA;        return checkIfFileExists(fileName);"/>
+        </eAnnotations>
         <eParameters name="directory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="localFileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="checkIfTestFileExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="String fileName = getDeviceDir() + &quot;/&quot; + directory + &quot;/Test&quot; + Assembly() + localFileName;&#xD;&#xA;        return checkIfFileExists(fileName);"/>
+        </eAnnotations>
         <eParameters name="directory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="localFileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="checkIfCvsignoreFileExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="String fileName = getDeviceDir() + &quot;/&quot; + directory + &quot;/.cvsignore&quot;;&#xD;&#xA;        return checkIfFileExists(fileName);"/>
+        </eAnnotations>
         <eParameters name="directory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eOperations name="getArchive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="int archiveIndex = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum(&quot;ArchiveProperty&quot;);&#xD;&#xA;&#x9;for(int i = 2; i &lt; spreadsheet[archiveIndex].length; i++)  {&#xD;&#xA;&#x9;&#x9;if(spreadsheet[archiveIndex][i].length == 0)&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;            &#x9;&#xD;&#xA;&#x9;&#x9; String[] row = spreadsheet[archiveIndex][i];&#xD;&#xA;&#x9;&#x9;  ArchiveProperty ap = BaseFactoryImpl.eINSTANCE.createArchiveProperty();&#xD;&#xA;&#x9;&#x9;  if(name.equals(ap.RefersTo()))&#xD;&#xA;&#x9;&#x9;             return (Resource) ap;&#xD;&#xA;&#x9;&#x9;   }&#xD;&#xA;&#x9;&#x9;        return null;"/>
+        </eAnnotations>
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eOperations name="getMonitorPoint" eType="#//base/MonitorPoint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="for(int i = 0; i &lt; monitorPoints.getResources().size(); i++){&#xD;&#xA;&#x9;MonitorPoint mp = (MonitorPoint) monitorPoints.getResources().get(i);&#xD;&#xA;      if(mp.FullName().equals(fullName))&#xD;&#xA;&#x9;&#x9;      return mp;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#x9;return null;"/>
+        </eAnnotations>
         <eParameters name="fullName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getControlPoint" eType="#//base/ControlPoint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="for (int i = 0; i &lt; controlPoints.getResources().size(); i++) {&#xD;&#xA;&#x9; ControlPoint cp = (ControlPoint) controlPoints.getResources().get(i);&#xD;&#xA;&#x9; if (cp.FullName().equals(fullName))&#xD;&#xA;&#x9;&#x9;         return cp;&#xD;&#xA;&#x9; }&#xD;&#xA;&#x9;&#x9;  return null;"/>
+        </eAnnotations>
         <eParameters name="fullName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="Extends" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="DeviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="DescriptionAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="ICD" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="ICDDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="ICDDateAsDatabaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="ICDDateAsArrayTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="getArchive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
-        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return main.Assembly();&#xD;&#xA;"/>
+        </eAnnotations>
       </eOperations>
-      <eOperations name="Notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-      <eOperations name="MonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-      <eOperations name="ControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-      <eOperations name="ArchiveProperty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="DescriptionIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="Extends" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return main.Extends();&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DeviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return main.DeviceName();&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return main.Description();&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DescriptionAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return main.DescriptionAsString();&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="ICD" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return main.ICD();&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="ICDDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return main.ICDDate();&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="ICDDateAsDatabaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return main.ICDDateAsDatabaseDate();&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="ICDDateAsArrayTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return main.ICDDateAsArrayTime();&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="Notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return notes;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="MonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return monitorPoints;&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="ControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return controlPoints;&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="ArchiveProperty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return archiveProperties;&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="DescriptionIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet" eType="#//base/String3DT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="#//base/MainBaseDT"
           transient="true"/>
@@ -746,10 +835,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="convertInfoTo" eType="#//base/Util"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromSpread" eType="#//base/Table"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandlerDT" instanceTypeName="SimpleErrorHandler"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="MandCBaseDT" instanceTypeName="MandCBase"
+    <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandlerDT" instanceClassName="datamodel.base.SimpleErrorHandler"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="MandCBaseDT" instanceClassName="datamodel.base.MandCBase"
         serializable="false"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="MainBaseDT" instanceTypeName="MainBase"
+    <eClassifiers xsi:type="ecore:EDataType" name="MainBaseDT" instanceClassName="datamodel.base.MainBase"
         serializable="false"/>
     <eClassifiers xsi:type="ecore:EDataType" name="ArrayList" instanceClassName="java.util.ArrayList"/>
     <eClassifiers xsi:type="ecore:EDataType" name="Hashtable" instanceClassName="java.util.Hashtable"/>
