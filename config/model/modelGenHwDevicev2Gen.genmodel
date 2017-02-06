@@ -583,25 +583,24 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/Note/note"/>
       </genClasses>
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//base/SpreadsheetValidator">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/seh"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/errorList"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/errorHandler"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/errorList"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/seh"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/validate">
           <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/validate/xmlFile"/>
           <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/validate/xsdFile"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//base/SpreadsheetParser">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/SpreadsheetParser/EReference0"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetParser/refPath"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetParser/refStatus"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetParser/xml"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetParser/xsdFile"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetParser/newline"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/SpreadsheetParser/setNewContent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetParser/newlinetmp"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/SpreadsheetParser/tovalidateSpreads"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/SpreadsheetParser/getSpreadsheet">
           <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//base/SpreadsheetParser/getSpreadsheet/dirName"/>
           <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//base/SpreadsheetParser/getSpreadsheet/fileName"/>
@@ -715,7 +714,7 @@
           <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//base/Util/toDatabaseDate/s"/>
         </genOperations>
       </genClasses>
-      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//base/Pair">
+      <genClasses image="false" ecoreClass="modelGenHwDevicev2.ecore#//base/Pair">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/Pair/content"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/Pair/newString"/>
       </genClasses>
@@ -730,12 +729,13 @@
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/SimpleErrorHandler/warning">
           <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//base/SimpleErrorHandler/warning/exception"/>
         </genOperations>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/SimpleErrorHandler/areErrors"/>
       </genClasses>
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//base/MainBase">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/MainBase/row"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/MainBase/sheet"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/MainBase/EReference0"/>
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/MainBase/implementTo"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/MainBase/convertInfoTo"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

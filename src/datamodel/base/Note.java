@@ -1,0 +1,55 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package datamodel.base;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Note</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link datamodel.base.Note#getNote <em>Note</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see datamodel.base.BasePackage#getNote()
+ * @model
+ * @generated
+ */
+public interface Note extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Note</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Note</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Note</em>' attribute.
+	 * @see #setNote(String)
+	 * @see datamodel.base.BasePackage#getNote_Note()
+	 * @model default=""
+	 * @generated
+	 */
+	String getNote();
+
+	/**
+	 * Sets the value of the '{@link datamodel.base.Note#getNote <em>Note</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Note</em>' attribute.
+	 * @see #getNote()
+	 * @generated
+	 */
+	void setNote(String value);
+
+} // Note
