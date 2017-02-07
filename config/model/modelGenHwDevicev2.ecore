@@ -2222,6 +2222,7 @@
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//eth/MandCETHDT"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="infoControlEth" eType="#//eth/MandCETH"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//base/DeviceModel">
       <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -2230,6 +2231,15 @@
           <details key="body" value="return ((MainETH)main).VendorClass();"/>
         </eAnnotations>
       </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="infoDevMain" eType="#//base/MainBase"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="infoControl" eType="#//eth/ControlETH"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="infoMonitor" eType="#//eth/MonitorETH"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toEndEth" eType="#//base/Util"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="infoArch" eType="#//eth/ArchiveETH"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dataSpreadsheet" eType="#//base/Table"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="notesTo" eType="#//base/Note"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="validateSpreadEth" eType="#//base/SpreadsheetValidator"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fromSpreadEth" eType="#//base/SpreadsheetParser"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MainETH" eSuperTypes="#//base/MainBase">
       <eOperations name="VendorClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -2237,6 +2247,7 @@
           <details key="body" value="return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;Vendor Class&quot;)];"/>
         </eAnnotations>
       </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoMain" eType="#//base/Table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MandCETH">
       <eOperations name="setAssemblyName">
@@ -2319,6 +2330,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//amb/BaseFactoryImpDT"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromCol" eType="#//base/Table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MonitorETH" eSuperTypes="#//base/MonitorPoint">
       <eOperations name="setAssembly">
@@ -2423,6 +2435,7 @@
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//eth/MandCETHDT"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoMPEth" eType="#//eth/MandCETH"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MandCETHDT" instanceClassName="datamodel.eth.MandCETH"/>
   </eSubpackages>
