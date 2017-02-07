@@ -10,9 +10,11 @@ import datamodel.amb.AmbPackage;
 import datamodel.amb.ControlAMB;
 import datamodel.amb.MandCAMB;
 
+import datamodel.base.BaseFactory;
 import datamodel.base.Table;
 import datamodel.base.Util;
 
+import datamodel.base.impl.BaseFactoryImpl;
 import datamodel.base.impl.ControlPointImpl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -29,6 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getMac <em>Mac</em>}</li>
+ *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getTmp <em>Tmp</em>}</li>
+ *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getTmp2 <em>Tmp2</em>}</li>
  *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getWorldToDataColumns <em>World To Data Columns</em>}</li>
  *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getGetInfoControlSheet <em>Get Info Control Sheet</em>}</li>
  *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getToNormalizeNumber <em>To Normalize Number</em>}</li>
@@ -38,6 +43,66 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
+	/**
+	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMac()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MandCAMB MAC_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMac() <em>Mac</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMac()
+	 * @generated
+	 * @ordered
+	 */
+	protected MandCAMB mac = MAC_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTmp() <em>Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactory TMP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTmp() <em>Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactory tmp = TMP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTmp2() <em>Tmp2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTmp2()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactoryImpl TMP2_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTmp2() <em>Tmp2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTmp2()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactoryImpl tmp2 = TMP2_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getWorldToDataColumns() <em>World To Data Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -85,6 +150,69 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.CONTROL_AMB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandCAMB getMac() {
+		return mac;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMac(MandCAMB newMac) {
+		MandCAMB oldMac = mac;
+		mac = newMac;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_AMB__MAC, oldMac, mac));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactory getTmp() {
+		return tmp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTmp(BaseFactory newTmp) {
+		BaseFactory oldTmp = tmp;
+		tmp = newTmp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_AMB__TMP, oldTmp, tmp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactoryImpl getTmp2() {
+		return tmp2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTmp2(BaseFactoryImpl newTmp2) {
+		BaseFactoryImpl oldTmp2 = tmp2;
+		tmp2 = newTmp2;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_AMB__TMP2, oldTmp2, tmp2));
 	}
 
 	/**
@@ -207,9 +335,8 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String Data() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Data")];
+		
 	}
 
 	/**
@@ -218,9 +345,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String Value() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Value")];
 	}
 
 	/**
@@ -229,9 +354,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String Returns() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Returns")];
 	}
 
 	/**
@@ -240,9 +363,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String Parameter() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Parameter")];
 	}
 
 	/**
@@ -251,9 +372,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String Assembly() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.Assembly();
 	}
 
 	/**
@@ -262,9 +381,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String RCA() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RCA();
 	}
 
 	/**
@@ -273,9 +390,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String RawDataType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RawDataType();
 	}
 
 	/**
@@ -284,9 +399,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean TeRelated() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.TeRelated();
 	}
 
 	/**
@@ -295,9 +408,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataType();
 	}
 
 	/**
@@ -306,9 +417,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String Scale() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.Scale();
 	}
 
 	/**
@@ -317,9 +426,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String Offset() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.Offset();
 	}
 
 	/**
@@ -328,9 +435,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String RawDataToCPPType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RawDataToCPPType();
 	}
 
 	/**
@@ -339,9 +444,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataToCPPType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToCPPType();
 	}
 
 	/**
@@ -350,9 +453,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataToCORBAType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToCORBAType();
 	}
 
 	/**
@@ -361,9 +462,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataToIDLSeqType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToIDLSeqType();
 	}
 
 	/**
@@ -372,9 +471,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataToIDLType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToIDLType();
 	}
 
 	/**
@@ -383,9 +480,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataToCORBASeqType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToCORBASeqType();
 	}
 
 	/**
@@ -394,9 +489,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataToCORBADevIOType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToCORBADevIOType();
 	}
 
 	/**
@@ -405,9 +498,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataToJavaType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToJavaType();
 	}
 
 	/**
@@ -416,9 +507,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataToDatabaseType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToDatabaseType();
 	}
 
 	/**
@@ -427,9 +516,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataToBACIType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToBACIType();
 	}
 
 	/**
@@ -438,9 +525,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isRawDataArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isRawDataArray();
 	}
 
 	/**
@@ -449,9 +534,26 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isWorldDataArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isWorldDataArray();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String MinRange() {
+		return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(),super.MinRange());
+		
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String MaxRange() {
+		return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(),super.MaxRange());
 	}
 
 	/**
@@ -460,9 +562,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String idlReturns() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToIDL().get(Returns());
 	}
 
 	/**
@@ -471,9 +571,8 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String corbaReturns() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToCORBA().get(Returns());
+		
 	}
 
 	/**
@@ -482,9 +581,8 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String idlDeclaration() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		String s = idlSignature();
+		return s;
 	}
 
 	/**
@@ -493,9 +591,38 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String idlSignature() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = "SET_" + CPName();
+				if (!Parameter().equals("default")) {
+					if (Parameter().equals("void"))
+						s += "()";
+					else
+						s += "(" + idlParameters() + ")";
+					if (External()) {
+						s +=  " raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx)";
+					}
+					return s;
+					// This gets the non-default case out of the way.
+				}
+				// This is the "default" case.
+				boolean isTeRelated = TeRelated();
+				boolean isExternal = External();
+				boolean isArray = isWorldDataArray();
+				if (isExternal) {
+					if (isArray) {
+						s += "(in " + WorldDataToIDLSeqType() + " world";
+					} else {
+						s += "(in " + WorldDataToIDLType() + " world";
+					}
+				}
+				if (isTeRelated) {
+					s += ", in ACS::Time requestTime)";
+				} else {
+					s += ")";
+				}
+				if (isExternal) {
+					s += " raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx)";
+				}
+				return s;
 	}
 
 	/**
@@ -504,9 +631,49 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String idlParameters() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = Parameter();
+				int pos = 0;
+				int n = s.indexOf(' ');
+				if (n == -1)
+					throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+				String word = s.substring(pos,n);
+				String out = "";
+				boolean isArray = isWorldDataArray();
+				if (isArray) {
+					out += "in " + (String)BaseFactory.eINSTANCE.createTable().getWorldToIDLSeq().get(word) + " ";
+				}
+				else
+					out = "in " + (String)BaseFactory.eINSTANCE.createTable().getWorldToIDL().get(word) + " ";
+				pos = n + 1;
+				while (true) {
+					n = s.indexOf(',',pos);
+					if (n == -1)
+						break;
+					word = s.substring(pos,n);
+					out += word + ", ";
+					pos = n + 1;
+					while (true) {
+						if (s.charAt(pos) == ' ')
+							pos++;
+						else
+							break;
+					}
+					n = s.indexOf(' ',pos);
+					if (n == -1)
+						throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+					word = s.substring(pos,n);
+					if (isArray) {
+						String type = (String)BaseFactory.eINSTANCE.createTable().getWorldToIDL().get(word);
+						type = type.replace("unsigned long", "uLong");
+						out += "in " + type;
+					}
+					else
+						out = "in " + (String)BaseFactory.eINSTANCE.createTable().getWorldToIDL().get(word) + " ";
+					pos = n + 1;
+				}
+				word = s.substring(pos);
+				out += word;
+				return out;
 	}
 
 	/**
@@ -515,9 +682,36 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String corbaDeclaration() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		String s = "";
+		        if (!Parameter().equals("default")) {
+		            if (Parameter().equals("void"))
+		                s += "()";
+		            else
+		                s += "(" + corbaParameters() + ")";
+		            return s;
+		            // This gets the non-default case out of the way.
+		        }
+		        // This is the "default" case.
+		        boolean isTeRelated = TeRelated();
+		        boolean isArray = isWorldDataArray();
+		        if(isArray == true) {
+		            s += "(const " + WorldDataToCORBASeqType() + "& world";
+		        }
+		        else {
+		            String type = WorldDataToCORBAType();
+		            if(type.equalsIgnoreCase("CORBA::String") == true) {
+		                type = "const " + type + "_var&";
+		            }
+		
+		            s += "(" + type + " world";
+		        }
+		        if (isTeRelated) {
+		            s += ", const acstime::Epoch& requestTime)";
+		        }
+		        else {
+		            s += ")";
+		        }
+		        return s;
 	}
 
 	/**
@@ -526,9 +720,38 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String corbaParameters() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = Parameter();
+				int pos = 0;
+				int n = s.indexOf(' ');
+				if (n == -1)
+					throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+				String word = s.substring(pos,n);
+				String out = (String)BaseFactory.eINSTANCE.createTable().getWorldToCORBA().get(word) + " ";
+				pos = n + 1;
+				while (true) {
+					n = s.indexOf(',',pos);
+					if (n == -1)
+						break;
+					word = s.substring(pos,n);
+					out += word + ", ";
+					pos = n + 1;
+					while (true) {
+						if (s.charAt(pos) == ' ')
+							pos++;
+						else
+							break;
+					}
+					n = s.indexOf(' ',pos);
+					if (n == -1)
+						throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+					word = s.substring(pos,n);
+					out += (String)BaseFactory.eINSTANCE.createTable().getWorldToCORBA().get(word);
+					//worldToCORBA.get(word) + " ";
+					pos = n + 1;
+				}
+				word = s.substring(pos);
+				out += word;
+				return out;
 	}
 
 	/**
@@ -537,9 +760,8 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String cppReturns() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToCPP().get(Returns());
+		
 	}
 
 	/**
@@ -548,9 +770,29 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String cppDeclaration() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		        String s = "";
+		        if (!Parameter().equals("default")) {
+		            if (Parameter().equals("void"))
+		                s += "()";
+		            else
+		                s += "(" + cppParameters() + ")";
+		            return s;
+		            // This gets the non-default case out of the way.
+		        }
+		        // This is the "default" case.
+		        boolean isTeRelated = TeRelated();
+		        boolean isArray = isWorldDataArray();
+		        if (isArray) {
+		            s += "(const std::vector< " + WorldDataToCPPType() + " >& world";
+		        } else {
+		            s += "(const " + WorldDataToCPPType() + " world";
+		        }
+		        if (isTeRelated) {
+		            s += ", const acstime::Epoch& requestTime)";
+		        } else {
+		            s += ")";
+		        }
+		        return s;
 	}
 
 	/**
@@ -559,9 +801,37 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String cppParameters() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = Parameter();
+				int pos = 0;
+				int n = s.indexOf(' ');
+				if (n == -1)
+					throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+				String word = s.substring(pos,n);
+				String out = (String)BaseFactory.eINSTANCE.createTable().getWorldToCPP().get(word) + " ";
+				pos = n + 1;
+				while (true) {
+					n = s.indexOf(',',pos);
+					if (n == -1)
+						break;
+					word = s.substring(pos,n);
+					out += word + ", ";
+					pos = n + 1;
+					while (true) {
+						if (s.charAt(pos) == ' ')
+							pos++;
+						else
+							break;
+					}
+					n = s.indexOf(' ',pos);
+					if (n == -1)
+						throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+					word = s.substring(pos,n);
+					out += (String)BaseFactory.eINSTANCE.createTable().getWorldToCPP().get(word) + " ";
+					pos = n + 1;
+				}
+				word = s.substring(pos);
+				out += word;
+				return out;
 	}
 
 	/**
@@ -570,9 +840,20 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String argList() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		        if (!Parameter().equals("default")) {
+		            if (Parameter().equals("void"))
+		                return "";
+		            else
+		                return argWords();
+		            // This gets the non-default case out of the way.
+		        }
+		        // This is the "default" case.
+		        String s = "world";
+		        boolean isTeRelated = TeRelated();
+		        if (isTeRelated) {
+		            s += ", requestTime";
+		        }
+		        return s;
 	}
 
 	/**
@@ -581,9 +862,36 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String argWords() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = Parameter();
+				int pos = 0;
+				int n = s.indexOf(' ');
+				if (n == -1)
+					throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+				String word = s.substring(pos,n);
+				String out = "";
+				pos = n + 1;
+				while (true) {
+					n = s.indexOf(',',pos);
+					if (n == -1)
+						break;
+					word = s.substring(pos,n);
+					out += word + ", ";
+					pos = n + 1;
+					while (true) {
+						if (s.charAt(pos) == ' ')
+							pos++;
+						else
+							break;
+					}
+					n = s.indexOf(' ',pos);
+					if (n == -1)
+						throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+					word = s.substring(pos,n);
+					pos = n + 1;
+				}
+				word = s.substring(pos);
+				out += word;
+				return out;
 	}
 
 	/**
@@ -592,9 +900,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isConversion() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isConversion();
 	}
 
 	/**
@@ -603,9 +909,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isSpecialConversion() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isSpecialConversion();
 	}
 
 	/**
@@ -614,9 +918,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String NumberItemsRawData() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.NumberItemsRawData();
 	}
 
 	/**
@@ -625,9 +927,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String TotalBytesRawData() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.TotalBytesRawData();
 	}
 
 	/**
@@ -636,9 +936,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String NumberRawDataTypeBytes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.NumberRawDataTypeBytes();
 	}
 
 	/**
@@ -647,9 +945,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String NumberItemsWorldData() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.NumberItemsWorldData();
 	}
 
 	/**
@@ -658,9 +954,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String RCACell() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RCACell();
 	}
 
 	/**
@@ -669,9 +963,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String TeRelatedCell() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.TeRelatedCell();
 	}
 
 	/**
@@ -680,9 +972,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isDependentGroupBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentGroupBit();
 	}
 
 	/**
@@ -691,9 +981,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isDependentBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentBit();
 	}
 
 	/**
@@ -702,9 +990,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isDependentElement() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentElement();
 	}
 
 	/**
@@ -713,9 +999,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isByteSwapped() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isByteSwapped();
 	}
 
 	/**
@@ -724,9 +1008,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isDependentBitElement() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentBitElement();
 	}
 
 	/**
@@ -735,9 +1017,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isDependentArrayElement() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentArrayElement();
 	}
 
 	/**
@@ -746,9 +1026,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String GetDimension() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.GetDimension();
 	}
 
 	/**
@@ -757,9 +1035,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isSingleBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isSingleBit();
 	}
 
 	/**
@@ -768,9 +1044,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String getBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getBit();
 	}
 
 	/**
@@ -790,9 +1064,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String getFirstBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getFirstBit();
 	}
 
 	/**
@@ -801,9 +1073,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String getLastBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getLastBit();
 	}
 
 	/**
@@ -812,9 +1082,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String getGroupMask() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getGroupMask();
 	}
 
 	/**
@@ -823,9 +1091,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String getGroupEnd() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getGroupEnd();
 	}
 
 	/**
@@ -834,9 +1100,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String getGroupStart() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getGroupStart();
 	}
 
 	/**
@@ -845,9 +1109,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String RawSubArrayEndIndex() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RawSubArrayEndIndex();
 	}
 
 	/**
@@ -856,9 +1118,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String RawSubArrayStartIndex() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RawSubArrayStartIndex();
 	}
 
 	/**
@@ -867,9 +1127,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public boolean isRawSubArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isRawSubArray();
 	}
 
 	/**
@@ -878,9 +1136,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorlDataToDatabaseTypeUpper1() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToDatabaseTypeUpper1();
 	}
 
 	/**
@@ -889,9 +1145,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String WorldDataTypeUpper1() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataTypeUpper1();
 	}
 
 	/**
@@ -902,6 +1156,12 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AmbPackage.CONTROL_AMB__MAC:
+				return getMac();
+			case AmbPackage.CONTROL_AMB__TMP:
+				return getTmp();
+			case AmbPackage.CONTROL_AMB__TMP2:
+				return getTmp2();
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
 				if (resolve) return getWorldToDataColumns();
 				return basicGetWorldToDataColumns();
@@ -923,6 +1183,15 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AmbPackage.CONTROL_AMB__MAC:
+				setMac((MandCAMB)newValue);
+				return;
+			case AmbPackage.CONTROL_AMB__TMP:
+				setTmp((BaseFactory)newValue);
+				return;
+			case AmbPackage.CONTROL_AMB__TMP2:
+				setTmp2((BaseFactoryImpl)newValue);
+				return;
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
 				setWorldToDataColumns((Table)newValue);
 				return;
@@ -944,6 +1213,15 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AmbPackage.CONTROL_AMB__MAC:
+				setMac(MAC_EDEFAULT);
+				return;
+			case AmbPackage.CONTROL_AMB__TMP:
+				setTmp(TMP_EDEFAULT);
+				return;
+			case AmbPackage.CONTROL_AMB__TMP2:
+				setTmp2(TMP2_EDEFAULT);
+				return;
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
 				setWorldToDataColumns((Table)null);
 				return;
@@ -965,6 +1243,12 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AmbPackage.CONTROL_AMB__MAC:
+				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
+			case AmbPackage.CONTROL_AMB__TMP:
+				return TMP_EDEFAULT == null ? tmp != null : !TMP_EDEFAULT.equals(tmp);
+			case AmbPackage.CONTROL_AMB__TMP2:
+				return TMP2_EDEFAULT == null ? tmp2 != null : !TMP2_EDEFAULT.equals(tmp2);
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
 				return worldToDataColumns != null;
 			case AmbPackage.CONTROL_AMB__GET_INFO_CONTROL_SHEET:
@@ -973,6 +1257,26 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 				return toNormalizeNumber != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (mac: ");
+		result.append(mac);
+		result.append(", tmp: ");
+		result.append(tmp);
+		result.append(", tmp2: ");
+		result.append(tmp2);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ControlAMBImpl

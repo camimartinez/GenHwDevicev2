@@ -13,7 +13,10 @@ import datamodel.amb.MonitorAMB;
 import datamodel.base.Table;
 import datamodel.base.Util;
 
+import datamodel.base.impl.BaseFactoryImpl;
 import datamodel.base.impl.MonitorPointImpl;
+
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -22,6 +25,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Monitor AMB</b></em>'.
@@ -29,6 +34,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getAux <em>Aux</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getMac <em>Mac</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getAux2 <em>Aux2</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getAux3 <em>Aux3</em>}</li>
  *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getToNormalizeData <em>To Normalize Data</em>}</li>
  *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}</li>
  *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getGetInfoMPSheet <em>Get Info MP Sheet</em>}</li>
@@ -38,6 +47,86 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
+	/**
+	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactoryImpl AUX_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactoryImpl aux = AUX_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMac()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MandCAMB MAC_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMac() <em>Mac</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMac()
+	 * @generated
+	 * @ordered
+	 */
+	protected MandCAMB mac = MAC_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAux2() <em>Aux2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux2()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Iterator AUX2_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux2() <em>Aux2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux2()
+	 * @generated
+	 * @ordered
+	 */
+	protected Iterator aux2 = AUX2_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAux3() <em>Aux3</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux3()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Resource AUX3_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux3() <em>Aux3</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux3()
+	 * @generated
+	 * @ordered
+	 */
+	protected Resource aux3 = AUX3_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getToNormalizeData() <em>To Normalize Data</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -85,6 +174,90 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.MONITOR_AMB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactoryImpl getAux() {
+		return aux;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux(BaseFactoryImpl newAux) {
+		BaseFactoryImpl oldAux = aux;
+		aux = newAux;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_AMB__AUX, oldAux, aux));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandCAMB getMac() {
+		return mac;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMac(MandCAMB newMac) {
+		MandCAMB oldMac = mac;
+		mac = newMac;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_AMB__MAC, oldMac, mac));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iterator getAux2() {
+		return aux2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux2(Iterator newAux2) {
+		Iterator oldAux2 = aux2;
+		aux2 = newAux2;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_AMB__AUX2, oldAux2, aux2));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Resource getAux3() {
+		return aux3;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux3(Resource newAux3) {
+		Resource oldAux3 = aux3;
+		aux3 = newAux3;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_AMB__AUX3, oldAux3, aux3));
 	}
 
 	/**
@@ -207,9 +380,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String CanBeInvalid() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Can Be Invalid")];
 	}
 
 	/**
@@ -218,9 +389,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isFEStatus() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return CanBeInvalid().equals("yes-feStatus");
 	}
 
 	/**
@@ -229,9 +398,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String Assembly() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.Assembly();
 	}
 
 	/**
@@ -240,9 +407,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String RCA() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RCA();
 	}
 
 	/**
@@ -251,9 +416,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String RawDataType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RawDataType();
 	}
 
 	/**
@@ -262,9 +425,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean TeRelated() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.TeRelated();
 	}
 
 	/**
@@ -273,9 +434,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataType();
 	}
 
 	/**
@@ -284,9 +443,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String Scale() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.Scale();
 	}
 
 	/**
@@ -295,9 +452,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String Offset() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.Offset();
 	}
 
 	/**
@@ -306,9 +461,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String RawDataToCPPType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RawDataToCPPType();
 	}
 
 	/**
@@ -317,9 +470,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToCPPType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToCPPType();
 	}
 
 	/**
@@ -328,9 +479,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToCORBAType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToCORBAType();
 	}
 
 	/**
@@ -339,9 +488,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToIDLSeqType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToIDLSeqType();
 	}
 
 	/**
@@ -350,9 +497,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToIDLType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToIDLType();
 	}
 
 	/**
@@ -361,9 +506,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToCORBASeqType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToCORBASeqType();
 	}
 
 	/**
@@ -372,9 +515,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToCORBADevIOType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToCORBADevIOType();
 	}
 
 	/**
@@ -383,9 +524,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToJavaType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToJavaType();
 	}
 
 	/**
@@ -394,9 +533,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToDatabaseType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToDatabaseType();
 	}
 
 	/**
@@ -405,9 +542,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToBACIType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToBACIType();
 	}
 
 	/**
@@ -416,9 +551,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isRawDataArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isRawDataArray();
 	}
 
 	/**
@@ -427,9 +560,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isWorldDataArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isWorldDataArray();
 	}
 
 	/**
@@ -438,9 +569,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isConversion() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isConversion();
 	}
 
 	/**
@@ -449,9 +578,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isSpecialConversion() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isSpecialConversion();
 	}
 
 	/**
@@ -460,9 +587,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String NumberItemsRawData() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.NumberItemsRawData();
 	}
 
 	/**
@@ -471,9 +596,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String TotalBytesRawData() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.TotalBytesRawData();
 	}
 
 	/**
@@ -482,9 +605,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String NumberRawDataTypeBytes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.NumberRawDataTypeBytes();
 	}
 
 	/**
@@ -493,9 +614,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String RCACell() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RCACell();
 	}
 
 	/**
@@ -504,9 +623,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String NumberItemsWorldData() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.NumberItemsWorldData();
 	}
 
 	/**
@@ -515,9 +632,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String TeRelatedCell() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.TeRelatedCell();
 	}
 
 	/**
@@ -526,9 +641,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isDependentGroupBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentGroupBit();
 	}
 
 	/**
@@ -537,9 +650,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isDependentBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentBit();
 	}
 
 	/**
@@ -548,9 +659,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isDependentElement() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentElement();
 	}
 
 	/**
@@ -559,9 +668,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isByteSwapped() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isByteSwapped();
 	}
 
 	/**
@@ -570,9 +677,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isDependentBitElement() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentBitElement();
 	}
 
 	/**
@@ -581,9 +686,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isDependentArrayElement() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isDependentArrayElement();
 	}
 
 	/**
@@ -592,9 +695,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String getDimension() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.GetDimension();
 	}
 
 	/**
@@ -603,9 +704,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isSingleBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isSingleBit();
 	}
 
 	/**
@@ -614,9 +713,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String getBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getBit();
 	}
 
 	/**
@@ -636,9 +733,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String getFirstBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getFirstBit();
 	}
 
 	/**
@@ -647,9 +742,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String getLastBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getLastBit();
 	}
 
 	/**
@@ -658,9 +751,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String getGroupMask() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getGroupMask();
 	}
 
 	/**
@@ -669,9 +760,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String getGroupEnd() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getGroupEnd();
 	}
 
 	/**
@@ -680,9 +769,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String getGroupStart() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getGroupStart();
 	}
 
 	/**
@@ -691,9 +778,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String RawSubArrayEndIndex() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RawSubArrayEndIndex();
 	}
 
 	/**
@@ -702,9 +787,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String RawSubArrayStartIndex() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.RawSubArrayStartIndex();
 	}
 
 	/**
@@ -713,9 +796,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isRawSubArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.isRawSubArray();
 	}
 
 	/**
@@ -724,9 +805,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataToDatabaseTypeUpper1() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataToDatabaseTypeUpper1();
 	}
 
 	/**
@@ -735,9 +814,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String WorldDataTypeUpper1() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.WorldDataTypeUpper1();
 	}
 
 	/**
@@ -746,9 +823,8 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String minRange() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(), super.MinRange());
+		
 	}
 
 	/**
@@ -757,9 +833,16 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String maxRange() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(), super.MaxRange());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String Default() {
+		return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(), super.Default());
 	}
 
 	/**
@@ -768,9 +851,67 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public boolean isPattern() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				boolean ret = true;
+				if( this.isDependent()) ret = false;
+				if( this.getDependents().getResources().isEmpty()) ret = false;
+				for (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {
+					MonitorAMBImpl var = (MonitorAMBImpl) iter.next();
+					if( var.WorldDataType().compareTo("boolean") != 0 ) ret = false;
+				}
+				return ret;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isPartOfPattern() {
+			boolean ret = false;
+				if( isDependent() ){
+					MonitorAMBImpl parent = ((MonitorAMBImpl)this.getParent());
+					if( parent.isPattern() )
+						ret = true;
+				}
+				return ret;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isHomogeneous() {
+				boolean ret = true;
+				String firsttype = null;
+				if( hasDependents() ){
+					for (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {
+						MonitorAMBImpl var = (MonitorAMBImpl) iter.next();
+						if( firsttype == null){
+							firsttype = new String(var.WorldDataType());
+							continue;
+						}
+						if( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;
+					}
+				}else{
+					ret = false;
+				}
+				return ret;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isPartOfHomogeneous() {
+				boolean ret = false;
+				if( isDependent() ){
+					MonitorAMBImpl parent = ((MonitorAMBImpl)this.getParent());
+					if( parent.isHomogeneous() )
+						ret = true;
+				}
+				return ret;
 	}
 
 	/**
@@ -781,6 +922,14 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AmbPackage.MONITOR_AMB__AUX:
+				return getAux();
+			case AmbPackage.MONITOR_AMB__MAC:
+				return getMac();
+			case AmbPackage.MONITOR_AMB__AUX2:
+				return getAux2();
+			case AmbPackage.MONITOR_AMB__AUX3:
+				return getAux3();
 			case AmbPackage.MONITOR_AMB__TO_NORMALIZE_DATA:
 				if (resolve) return getToNormalizeData();
 				return basicGetToNormalizeData();
@@ -802,6 +951,18 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AmbPackage.MONITOR_AMB__AUX:
+				setAux((BaseFactoryImpl)newValue);
+				return;
+			case AmbPackage.MONITOR_AMB__MAC:
+				setMac((MandCAMB)newValue);
+				return;
+			case AmbPackage.MONITOR_AMB__AUX2:
+				setAux2((Iterator)newValue);
+				return;
+			case AmbPackage.MONITOR_AMB__AUX3:
+				setAux3((Resource)newValue);
+				return;
 			case AmbPackage.MONITOR_AMB__TO_NORMALIZE_DATA:
 				setToNormalizeData((Util)newValue);
 				return;
@@ -823,6 +984,18 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AmbPackage.MONITOR_AMB__AUX:
+				setAux(AUX_EDEFAULT);
+				return;
+			case AmbPackage.MONITOR_AMB__MAC:
+				setMac(MAC_EDEFAULT);
+				return;
+			case AmbPackage.MONITOR_AMB__AUX2:
+				setAux2(AUX2_EDEFAULT);
+				return;
+			case AmbPackage.MONITOR_AMB__AUX3:
+				setAux3(AUX3_EDEFAULT);
+				return;
 			case AmbPackage.MONITOR_AMB__TO_NORMALIZE_DATA:
 				setToNormalizeData((Util)null);
 				return;
@@ -844,6 +1017,14 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AmbPackage.MONITOR_AMB__AUX:
+				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
+			case AmbPackage.MONITOR_AMB__MAC:
+				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
+			case AmbPackage.MONITOR_AMB__AUX2:
+				return AUX2_EDEFAULT == null ? aux2 != null : !AUX2_EDEFAULT.equals(aux2);
+			case AmbPackage.MONITOR_AMB__AUX3:
+				return AUX3_EDEFAULT == null ? aux3 != null : !AUX3_EDEFAULT.equals(aux3);
 			case AmbPackage.MONITOR_AMB__TO_NORMALIZE_DATA:
 				return toNormalizeData != null;
 			case AmbPackage.MONITOR_AMB__GET_COLUMNS_CAN_BE_INV:
@@ -852,6 +1033,28 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 				return getInfoMPSheet != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (aux: ");
+		result.append(aux);
+		result.append(", mac: ");
+		result.append(mac);
+		result.append(", aux2: ");
+		result.append(aux2);
+		result.append(", aux3: ");
+		result.append(aux3);
+		result.append(')');
+		return result.toString();
 	}
 
 } //MonitorAMBImpl

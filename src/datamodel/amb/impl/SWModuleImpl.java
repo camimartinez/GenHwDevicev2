@@ -14,6 +14,8 @@ import datamodel.amb.SWModule;
 import datamodel.base.Table;
 import datamodel.base.Util;
 
+import datamodel.base.impl.BaseFactoryImpl;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -44,6 +46,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getArchiveProperties <em>Archive Properties</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getSimMonitorPoints <em>Sim Monitor Points</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getSimControlPoints <em>Sim Control Points</em>}</li>
+ *   <li>{@link datamodel.amb.impl.SWModuleImpl#getAux <em>Aux</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getAddAllMP <em>Add All MP</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getAddAllCP <em>Add All CP</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getSetFormatDescriptions <em>Set Format Descriptions</em>}</li>
@@ -293,6 +296,26 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @ordered
 	 */
 	protected ResourceSet simControlPoints = SIM_CONTROL_POINTS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactoryImpl AUX_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactoryImpl aux = AUX_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAddAllMP() <em>Add All MP</em>}' reference.
@@ -610,6 +633,27 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BaseFactoryImpl getAux() {
+		return aux;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux(BaseFactoryImpl newAux) {
+		BaseFactoryImpl oldAux = aux;
+		aux = newAux;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__AUX, oldAux, aux));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MonitorAMB getAddAllMP() {
 		if (addAllMP != null && addAllMP.eIsProxy()) {
 			InternalEObject oldAddAllMP = (InternalEObject)addAllMP;
@@ -763,9 +807,21 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public void addMP(Resource mp) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				monitorPoints.getResources().add(mp);
+				if (!(((MonitorAMBImpl)mp).RCA().equals("none") ||
+						((MonitorAMBImpl)mp).RCA().equals("0x00000") ||
+						((MonitorAMBImpl)mp).RCA().equals("0x30000") ||
+						((MonitorAMBImpl)mp).RCA().equals("0x30001") ||
+						((MonitorAMBImpl)mp).RCA().equals("0x30002") ||
+						((MonitorAMBImpl)mp).RCA().equals("0x30003") ||
+						((MonitorAMBImpl)mp).RCA().equals("0x30004") ||
+						((MonitorAMBImpl)mp).RCA().equals("0x30005")
+				)){
+					for(int i=0;i< simMonitorPoints.getResources().size();i++)
+						if(((MonitorAMBImpl)mp).RCA().equals(((MonitorAMBImpl)simMonitorPoints.getResources().get(i)).RCA()))
+							return;
+					simMonitorPoints.getResources().add(mp);
+				}
 	}
 
 	/**
@@ -774,9 +830,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public void addCP(Resource cp) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				controlPoints.getResources().add(cp);
+				if (!(((ControlAMBImpl)cp).RCA().equals("none") ||
+						((ControlAMBImpl)cp).RCA().equals("0x31000") ||
+						((ControlAMBImpl)cp).RCA().equals("0x31001")
+				)){
+					for(int i=0;i< simControlPoints.getResources().size();i++)
+						if(((ControlAMBImpl)cp).RCA().equals(((ControlAMBImpl)simControlPoints.getResources().get(i)).RCA()))
+							return;
+					simControlPoints.getResources().add(cp);
+				}
 	}
 
 	/**
@@ -785,9 +848,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public void addAP(Resource ap) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		archiveProperties.getResources().add(ap);
+		
 	}
 
 	/**
@@ -796,9 +858,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String Initialize() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return "";
 	}
 
 	/**
@@ -807,9 +867,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String DirPath() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return dirPath;
 	}
 
 	/**
@@ -818,9 +876,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public ResourceSet MonitorPoint() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return monitorPoints;
 	}
 
 	/**
@@ -829,9 +885,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public ResourceSet ControlPoint() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return controlPoints;
 	}
 
 	/**
@@ -840,9 +894,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public ResourceSet ArchiveProperty() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return archiveProperties;
 	}
 
 	/**
@@ -851,9 +903,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public ResourceSet SimMonitorPoint() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return simMonitorPoints;
 	}
 
 	/**
@@ -862,9 +912,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public ResourceSet SimControlPoint() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return simControlPoints;
 	}
 
 	/**
@@ -873,9 +921,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String Assembly() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Assembly")];
+		
 	}
 
 	/**
@@ -884,9 +931,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String Description() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Description")];
+		
 	}
 
 	/**
@@ -895,9 +941,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String DescriptionL1() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return BaseFactoryImpl.eINSTANCE.createUtil().formatDescriptionL1(Description());
+		
 	}
 
 	/**
@@ -905,10 +950,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void DescriptionAsString() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String DescriptionAsString() {
+		return BaseFactoryImpl.eINSTANCE.createUtil().descriptionAsString(Description());
 	}
 
 	/**
@@ -917,9 +960,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String DeviceName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Device Name")];
 	}
 
 	/**
@@ -928,9 +969,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String Extends() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Extends")];
 	}
 
 	/**
@@ -939,9 +978,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String Parent() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Parent")];
+		
 	}
 
 	/**
@@ -950,9 +988,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String Cardinality() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Cardinality")];
 	}
 
 	/**
@@ -961,9 +997,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public boolean GenericMonitorPoints() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Generic Monitor Points")].equals("yes");
 	}
 
 	/**
@@ -972,9 +1006,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String NodeAddress() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Node Address")];
+		
 	}
 
 	/**
@@ -983,9 +1016,13 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String HexToDec(String s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		        int n = -1;
+		        try {
+		            n = Integer.parseInt(s.substring(2),16);
+		        } catch (NumberFormatException err) {
+		            throw new RuntimeException("Invalid number (" + s + ")");
+		        }
+		        return Integer.toString(n);
 	}
 
 	/**
@@ -994,9 +1031,10 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String NodeAddressInDecimal() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		String s = NodeAddress();
+				if (s.equals("parm"))
+				    return "0";
+				return HexToDec(s);
 	}
 
 	/**
@@ -1005,9 +1043,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String Channel() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Channel")];
 	}
 
 	/**
@@ -1016,9 +1052,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String BaseAddress() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Base Address")];
 	}
 
 	/**
@@ -1027,9 +1061,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String SimSerialNumber() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String hex = Integer.toHexString(Assembly().hashCode()).toLowerCase();
+				hex = "0000000000000000" + hex;
+				int len = hex.length();
+				hex = "0x" + hex.substring(len - 16, len);
+				return hex;
 	}
 
 	/**
@@ -1064,6 +1100,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				return getSimMonitorPoints();
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				return getSimControlPoints();
+			case AmbPackage.SW_MODULE__AUX:
+				return getAux();
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
 				if (resolve) return getAddAllMP();
 				return basicGetAddAllMP();
@@ -1123,6 +1161,9 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				return;
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				setSimControlPoints((ResourceSet)newValue);
+				return;
+			case AmbPackage.SW_MODULE__AUX:
+				setAux((BaseFactoryImpl)newValue);
 				return;
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
 				setAddAllMP((MonitorAMB)newValue);
@@ -1184,6 +1225,9 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				setSimControlPoints(SIM_CONTROL_POINTS_EDEFAULT);
 				return;
+			case AmbPackage.SW_MODULE__AUX:
+				setAux(AUX_EDEFAULT);
+				return;
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
 				setAddAllMP((MonitorAMB)null);
 				return;
@@ -1232,6 +1276,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				return SIM_MONITOR_POINTS_EDEFAULT == null ? simMonitorPoints != null : !SIM_MONITOR_POINTS_EDEFAULT.equals(simMonitorPoints);
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				return SIM_CONTROL_POINTS_EDEFAULT == null ? simControlPoints != null : !SIM_CONTROL_POINTS_EDEFAULT.equals(simControlPoints);
+			case AmbPackage.SW_MODULE__AUX:
+				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
 				return addAllMP != null;
 			case AmbPackage.SW_MODULE__ADD_ALL_CP:
@@ -1278,6 +1324,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 		result.append(simMonitorPoints);
 		result.append(", simControlPoints: ");
 		result.append(simControlPoints);
+		result.append(", aux: ");
+		result.append(aux);
 		result.append(')');
 		return result.toString();
 	}

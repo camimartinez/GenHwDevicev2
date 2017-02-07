@@ -17,21 +17,28 @@ import datamodel.amb.MandCAMB;
 import datamodel.amb.MonitorAMB;
 import datamodel.amb.SWModule;
 
+import datamodel.base.BaseFactory;
 import datamodel.base.BasePackage;
 
+import datamodel.base.impl.BaseFactoryImpl;
 import datamodel.base.impl.BasePackageImpl;
 
 import datamodel.eth.EthPackage;
 
 import datamodel.eth.impl.EthPackageImpl;
 
+import java.util.Iterator;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,6 +102,41 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * @generated
 	 */
 	private EClass genericMonitorPointsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType mandCAMBDTEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType baseFactoryImpDTEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType baseFactoryDTEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType iteratorDTEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType resourceDTEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -179,8 +221,17 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getArchiveAMB_BaseFacTmp() {
+		return (EAttribute)archiveAMBEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getArchiveAMB_GetAssemblyColumn() {
-		return (EReference)archiveAMBEClass.getEStructuralFeatures().get(0);
+		return (EReference)archiveAMBEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -197,8 +248,35 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getControlAMB_Mac() {
+		return (EAttribute)controlAMBEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getControlAMB_Tmp() {
+		return (EAttribute)controlAMBEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getControlAMB_Tmp2() {
+		return (EAttribute)controlAMBEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getControlAMB_WorldToDataColumns() {
-		return (EReference)controlAMBEClass.getEStructuralFeatures().get(0);
+		return (EReference)controlAMBEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -207,7 +285,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * @generated
 	 */
 	public EReference getControlAMB_GetInfoControlSheet() {
-		return (EReference)controlAMBEClass.getEStructuralFeatures().get(1);
+		return (EReference)controlAMBEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -216,7 +294,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * @generated
 	 */
 	public EReference getControlAMB_ToNormalizeNumber() {
-		return (EReference)controlAMBEClass.getEStructuralFeatures().get(2);
+		return (EReference)controlAMBEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -233,8 +311,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_ToAddCP() {
-		return (EReference)deviceModelEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDeviceModel_Tmp() {
+		return (EAttribute)deviceModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -242,7 +320,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_GetNoteFromMain() {
+	public EReference getDeviceModel_ToAddCP() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -251,7 +329,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_ToAddMP() {
+	public EReference getDeviceModel_GetNoteFromMain() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -260,7 +338,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_GetInfoMain() {
+	public EReference getDeviceModel_ToAddMP() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -269,7 +347,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_GetCPfromControl() {
+	public EReference getDeviceModel_GetInfoMain() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -278,7 +356,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_GetInfoFromMainSheet() {
+	public EReference getDeviceModel_GetCPfromControl() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -287,7 +365,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_GetMPfromMonitor() {
+	public EReference getDeviceModel_GetInfoFromMainSheet() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -296,7 +374,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_GetDataFromSpread() {
+	public EReference getDeviceModel_GetMPfromMonitor() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -305,7 +383,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_GetAPfromArchive() {
+	public EReference getDeviceModel_GetDataFromSpread() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -314,7 +392,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_ToinstallEndGeneration() {
+	public EReference getDeviceModel_GetAPfromArchive() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -323,7 +401,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_GetFromSpreadsheet() {
+	public EReference getDeviceModel_ToinstallEndGeneration() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -332,7 +410,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_ToValidateSpreadsheet() {
+	public EReference getDeviceModel_GetFromSpreadsheet() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -341,8 +419,17 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_GetGenericMP() {
+	public EReference getDeviceModel_ToValidateSpreadsheet() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDeviceModel_GetGenericMP() {
+		return (EReference)deviceModelEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -359,8 +446,17 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMainAMB_Tmp() {
+		return (EAttribute)mainAMBEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getMainAMB_GetInfoFromMain() {
-		return (EReference)mainAMBEClass.getEStructuralFeatures().get(0);
+		return (EReference)mainAMBEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -467,8 +563,44 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMonitorAMB_Aux() {
+		return (EAttribute)monitorAMBEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMonitorAMB_Mac() {
+		return (EAttribute)monitorAMBEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMonitorAMB_Aux2() {
+		return (EAttribute)monitorAMBEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMonitorAMB_Aux3() {
+		return (EAttribute)monitorAMBEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getMonitorAMB_ToNormalizeData() {
-		return (EReference)monitorAMBEClass.getEStructuralFeatures().get(0);
+		return (EReference)monitorAMBEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -477,7 +609,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * @generated
 	 */
 	public EReference getMonitorAMB_GetColumnsCanBeInv() {
-		return (EReference)monitorAMBEClass.getEStructuralFeatures().get(1);
+		return (EReference)monitorAMBEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -486,7 +618,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * @generated
 	 */
 	public EReference getMonitorAMB_GetInfoMPSheet() {
-		return (EReference)monitorAMBEClass.getEStructuralFeatures().get(2);
+		return (EReference)monitorAMBEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -611,8 +743,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSWModule_AddAllMP() {
-		return (EReference)swModuleEClass.getEStructuralFeatures().get(12);
+	public EAttribute getSWModule_Aux() {
+		return (EAttribute)swModuleEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -620,7 +752,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSWModule_AddAllCP() {
+	public EReference getSWModule_AddAllMP() {
 		return (EReference)swModuleEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -629,7 +761,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSWModule_SetFormatDescriptions() {
+	public EReference getSWModule_AddAllCP() {
 		return (EReference)swModuleEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -638,8 +770,17 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSWModule_GetSheetColumns() {
+	public EReference getSWModule_SetFormatDescriptions() {
 		return (EReference)swModuleEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSWModule_GetSheetColumns() {
+		return (EReference)swModuleEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -710,6 +851,51 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getMandCAMBDT() {
+		return mandCAMBDTEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getBaseFactoryImpDT() {
+		return baseFactoryImpDTEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getBaseFactoryDT() {
+		return baseFactoryDTEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getIteratorDT() {
+		return iteratorDTEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getResourceDT() {
+		return resourceDTEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AmbFactory getAmbFactory() {
 		return (AmbFactory)getEFactoryInstance();
 	}
@@ -734,14 +920,19 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		// Create classes and their features
 		archiveAMBEClass = createEClass(ARCHIVE_AMB);
+		createEAttribute(archiveAMBEClass, ARCHIVE_AMB__BASE_FAC_TMP);
 		createEReference(archiveAMBEClass, ARCHIVE_AMB__GET_ASSEMBLY_COLUMN);
 
 		controlAMBEClass = createEClass(CONTROL_AMB);
+		createEAttribute(controlAMBEClass, CONTROL_AMB__MAC);
+		createEAttribute(controlAMBEClass, CONTROL_AMB__TMP);
+		createEAttribute(controlAMBEClass, CONTROL_AMB__TMP2);
 		createEReference(controlAMBEClass, CONTROL_AMB__WORLD_TO_DATA_COLUMNS);
 		createEReference(controlAMBEClass, CONTROL_AMB__GET_INFO_CONTROL_SHEET);
 		createEReference(controlAMBEClass, CONTROL_AMB__TO_NORMALIZE_NUMBER);
 
 		deviceModelEClass = createEClass(DEVICE_MODEL);
+		createEAttribute(deviceModelEClass, DEVICE_MODEL__TMP);
 		createEReference(deviceModelEClass, DEVICE_MODEL__TO_ADD_CP);
 		createEReference(deviceModelEClass, DEVICE_MODEL__GET_NOTE_FROM_MAIN);
 		createEReference(deviceModelEClass, DEVICE_MODEL__TO_ADD_MP);
@@ -757,6 +948,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		createEReference(deviceModelEClass, DEVICE_MODEL__GET_GENERIC_MP);
 
 		mainAMBEClass = createEClass(MAIN_AMB);
+		createEAttribute(mainAMBEClass, MAIN_AMB__TMP);
 		createEReference(mainAMBEClass, MAIN_AMB__GET_INFO_FROM_MAIN);
 
 		mandCAMBEClass = createEClass(MAND_CAMB);
@@ -771,6 +963,10 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		createEReference(mandCAMBEClass, MAND_CAMB__UTILS_TO_DATA);
 
 		monitorAMBEClass = createEClass(MONITOR_AMB);
+		createEAttribute(monitorAMBEClass, MONITOR_AMB__AUX);
+		createEAttribute(monitorAMBEClass, MONITOR_AMB__MAC);
+		createEAttribute(monitorAMBEClass, MONITOR_AMB__AUX2);
+		createEAttribute(monitorAMBEClass, MONITOR_AMB__AUX3);
 		createEReference(monitorAMBEClass, MONITOR_AMB__TO_NORMALIZE_DATA);
 		createEReference(monitorAMBEClass, MONITOR_AMB__GET_COLUMNS_CAN_BE_INV);
 		createEReference(monitorAMBEClass, MONITOR_AMB__GET_INFO_MP_SHEET);
@@ -788,6 +984,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		createEAttribute(swModuleEClass, SW_MODULE__ARCHIVE_PROPERTIES);
 		createEAttribute(swModuleEClass, SW_MODULE__SIM_MONITOR_POINTS);
 		createEAttribute(swModuleEClass, SW_MODULE__SIM_CONTROL_POINTS);
+		createEAttribute(swModuleEClass, SW_MODULE__AUX);
 		createEReference(swModuleEClass, SW_MODULE__ADD_ALL_MP);
 		createEReference(swModuleEClass, SW_MODULE__ADD_ALL_CP);
 		createEReference(swModuleEClass, SW_MODULE__SET_FORMAT_DESCRIPTIONS);
@@ -800,6 +997,13 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		createEReference(genericMonitorPointsEClass, GENERIC_MONITOR_POINTS__GET_THE_SPREADSHEET);
 		createEReference(genericMonitorPointsEClass, GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET);
 		createEReference(genericMonitorPointsEClass, GENERIC_MONITOR_POINTS__TO_INSTALL_DIR);
+
+		// Create data types
+		mandCAMBDTEDataType = createEDataType(MAND_CAMBDT);
+		baseFactoryImpDTEDataType = createEDataType(BASE_FACTORY_IMP_DT);
+		baseFactoryDTEDataType = createEDataType(BASE_FACTORY_DT);
+		iteratorDTEDataType = createEDataType(ITERATOR_DT);
+		resourceDTEDataType = createEDataType(RESOURCE_DT);
 	}
 
 	/**
@@ -841,6 +1045,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(archiveAMBEClass, ArchiveAMB.class, "ArchiveAMB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArchiveAMB_BaseFacTmp(), this.getBaseFactoryImpDT(), "baseFacTmp", null, 0, 1, ArchiveAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArchiveAMB_GetAssemblyColumn(), theBasePackage.getTable(), null, "getAssemblyColumn", null, 0, 1, ArchiveAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(archiveAMBEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -850,6 +1055,9 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEOperation(archiveAMBEClass, ecorePackage.getEString(), "Interval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(controlAMBEClass, ControlAMB.class, "ControlAMB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getControlAMB_Mac(), this.getMandCAMBDT(), "mac", null, 0, 1, ControlAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getControlAMB_Tmp(), this.getBaseFactoryDT(), "tmp", null, 0, 1, ControlAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getControlAMB_Tmp2(), this.getBaseFactoryImpDT(), "tmp2", null, 0, 1, ControlAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlAMB_WorldToDataColumns(), theBasePackage.getTable(), null, "worldToDataColumns", null, 0, 1, ControlAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlAMB_GetInfoControlSheet(), this.getMandCAMB(), null, "getInfoControlSheet", null, 0, 1, ControlAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlAMB_ToNormalizeNumber(), theBasePackage.getUtil(), null, "toNormalizeNumber", null, 0, 1, ControlAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -985,6 +1193,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEOperation(controlAMBEClass, ecorePackage.getEString(), "WorldDataTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDeviceModel_Tmp(), this.getBaseFactoryImpDT(), "tmp", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_ToAddCP(), theBasePackage.getControlPoint(), null, "toAddCP", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_GetNoteFromMain(), theBasePackage.getNote(), null, "getNoteFromMain", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_ToAddMP(), theBasePackage.getMonitorPoint(), null, "toAddMP", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1025,6 +1234,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEParameter(op, ecorePackage.getEString(), "s", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mainAMBEClass, MainAMB.class, "MainAMB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMainAMB_Tmp(), this.getBaseFactoryDT(), "tmp", null, 0, 1, MainAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMainAMB_GetInfoFromMain(), theBasePackage.getTable(), null, "getInfoFromMain", null, 0, 1, MainAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(mainAMBEClass, ecorePackage.getEString(), "Parent", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1061,6 +1271,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "RawDataTypeCell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(mandCAMBEClass, ecorePackage.getEBoolean(), "TeRelated", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "TeRelatedCell", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1153,6 +1365,10 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEOperation(mandCAMBEClass, ecorePackage.getEString(), "WorldDataTypeUpper1", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(monitorAMBEClass, MonitorAMB.class, "MonitorAMB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMonitorAMB_Aux(), this.getBaseFactoryImpDT(), "aux", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMonitorAMB_Mac(), this.getMandCAMBDT(), "mac", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMonitorAMB_Aux2(), this.getIteratorDT(), "aux2", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMonitorAMB_Aux3(), this.getResourceDT(), "aux3", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMonitorAMB_ToNormalizeData(), theBasePackage.getUtil(), null, "toNormalizeData", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMonitorAMB_GetColumnsCanBeInv(), theBasePackage.getTable(), null, "getColumnsCanBeInv", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMonitorAMB_GetInfoMPSheet(), this.getMandCAMB(), null, "getInfoMPSheet", null, 0, 1, MonitorAMB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1282,6 +1498,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		initEAttribute(getSWModule_ArchiveProperties(), ecorePackage.getEResourceSet(), "archiveProperties", null, 0, 1, SWModule.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSWModule_SimMonitorPoints(), ecorePackage.getEResourceSet(), "simMonitorPoints", null, 0, 1, SWModule.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSWModule_SimControlPoints(), ecorePackage.getEResourceSet(), "simControlPoints", null, 0, 1, SWModule.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSWModule_Aux(), this.getBaseFactoryImpDT(), "aux", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSWModule_AddAllMP(), this.getMonitorAMB(), null, "addAllMP", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSWModule_AddAllCP(), this.getControlAMB(), null, "addAllCP", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSWModule_SetFormatDescriptions(), theBasePackage.getUtil(), null, "setFormatDescriptions", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1316,7 +1533,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		addEOperation(swModuleEClass, ecorePackage.getEString(), "DescriptionL1", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(swModuleEClass, null, "DescriptionAsString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(swModuleEClass, ecorePackage.getEString(), "DescriptionAsString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(swModuleEClass, ecorePackage.getEString(), "DeviceName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1353,6 +1570,13 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		op = addEOperation(genericMonitorPointsEClass, theBasePackage.getString3DT(), "getDeviceWorksheetWithGenericPointsAdded", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getString3DT(), "spreadsheet", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		// Initialize data types
+		initEDataType(mandCAMBDTEDataType, MandCAMB.class, "MandCAMBDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(baseFactoryImpDTEDataType, BaseFactoryImpl.class, "BaseFactoryImpDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(baseFactoryDTEDataType, BaseFactory.class, "BaseFactoryDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(iteratorDTEDataType, Iterator.class, "IteratorDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(resourceDTEDataType, Resource.class, "ResourceDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

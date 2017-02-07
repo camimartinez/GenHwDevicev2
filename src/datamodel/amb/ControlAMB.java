@@ -6,9 +6,12 @@
  */
 package datamodel.amb;
 
+import datamodel.base.BaseFactory;
 import datamodel.base.ControlPoint;
 import datamodel.base.Table;
 import datamodel.base.Util;
+
+import datamodel.base.impl.BaseFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +21,9 @@ import datamodel.base.Util;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link datamodel.amb.ControlAMB#getMac <em>Mac</em>}</li>
+ *   <li>{@link datamodel.amb.ControlAMB#getTmp <em>Tmp</em>}</li>
+ *   <li>{@link datamodel.amb.ControlAMB#getTmp2 <em>Tmp2</em>}</li>
  *   <li>{@link datamodel.amb.ControlAMB#getWorldToDataColumns <em>World To Data Columns</em>}</li>
  *   <li>{@link datamodel.amb.ControlAMB#getGetInfoControlSheet <em>Get Info Control Sheet</em>}</li>
  *   <li>{@link datamodel.amb.ControlAMB#getToNormalizeNumber <em>To Normalize Number</em>}</li>
@@ -29,6 +35,84 @@ import datamodel.base.Util;
  * @generated
  */
 public interface ControlAMB extends ControlPoint {
+	/**
+	 * Returns the value of the '<em><b>Mac</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mac</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mac</em>' attribute.
+	 * @see #setMac(MandCAMB)
+	 * @see datamodel.amb.AmbPackage#getControlAMB_Mac()
+	 * @model dataType="datamodel.amb.MandCAMBDT"
+	 * @generated
+	 */
+	MandCAMB getMac();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.ControlAMB#getMac <em>Mac</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mac</em>' attribute.
+	 * @see #getMac()
+	 * @generated
+	 */
+	void setMac(MandCAMB value);
+
+	/**
+	 * Returns the value of the '<em><b>Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tmp</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tmp</em>' attribute.
+	 * @see #setTmp(BaseFactory)
+	 * @see datamodel.amb.AmbPackage#getControlAMB_Tmp()
+	 * @model dataType="datamodel.amb.BaseFactoryDT"
+	 * @generated
+	 */
+	BaseFactory getTmp();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.ControlAMB#getTmp <em>Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tmp</em>' attribute.
+	 * @see #getTmp()
+	 * @generated
+	 */
+	void setTmp(BaseFactory value);
+
+	/**
+	 * Returns the value of the '<em><b>Tmp2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tmp2</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tmp2</em>' attribute.
+	 * @see #setTmp2(BaseFactoryImpl)
+	 * @see datamodel.amb.AmbPackage#getControlAMB_Tmp2()
+	 * @model dataType="datamodel.amb.BaseFactoryImpDT"
+	 * @generated
+	 */
+	BaseFactoryImpl getTmp2();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.ControlAMB#getTmp2 <em>Tmp2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tmp2</em>' attribute.
+	 * @see #getTmp2()
+	 * @generated
+	 */
+	void setTmp2(BaseFactoryImpl value);
+
 	/**
 	 * Returns the value of the '<em><b>World To Data Columns</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -110,7 +194,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Data\")];\r\n'"
 	 * @generated
 	 */
 	String Data();
@@ -118,7 +202,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Value\")];'"
 	 * @generated
 	 */
 	String Value();
@@ -126,7 +210,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Returns\")];'"
 	 * @generated
 	 */
 	String Returns();
@@ -134,7 +218,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Parameter\")];'"
 	 * @generated
 	 */
 	String Parameter();
@@ -142,7 +226,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.Assembly();'"
 	 * @generated
 	 */
 	String Assembly();
@@ -150,7 +234,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RCA();'"
 	 * @generated
 	 */
 	String RCA();
@@ -158,7 +242,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RawDataType();'"
 	 * @generated
 	 */
 	String RawDataType();
@@ -166,7 +250,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.TeRelated();'"
 	 * @generated
 	 */
 	boolean TeRelated();
@@ -174,7 +258,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataType();'"
 	 * @generated
 	 */
 	String WorldDataType();
@@ -182,7 +266,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.Scale();'"
 	 * @generated
 	 */
 	String Scale();
@@ -190,7 +274,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.Offset();'"
 	 * @generated
 	 */
 	String Offset();
@@ -198,7 +282,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RawDataToCPPType();'"
 	 * @generated
 	 */
 	String RawDataToCPPType();
@@ -206,7 +290,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToCPPType();'"
 	 * @generated
 	 */
 	String WorldDataToCPPType();
@@ -214,7 +298,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToCORBAType();'"
 	 * @generated
 	 */
 	String WorldDataToCORBAType();
@@ -222,7 +306,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToIDLSeqType();'"
 	 * @generated
 	 */
 	String WorldDataToIDLSeqType();
@@ -230,7 +314,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToIDLType();'"
 	 * @generated
 	 */
 	String WorldDataToIDLType();
@@ -238,7 +322,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToCORBASeqType();'"
 	 * @generated
 	 */
 	String WorldDataToCORBASeqType();
@@ -246,7 +330,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToCORBADevIOType();'"
 	 * @generated
 	 */
 	String WorldDataToCORBADevIOType();
@@ -254,7 +338,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToJavaType();'"
 	 * @generated
 	 */
 	String WorldDataToJavaType();
@@ -262,7 +346,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToDatabaseType();'"
 	 * @generated
 	 */
 	String WorldDataToDatabaseType();
@@ -270,7 +354,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToBACIType();'"
 	 * @generated
 	 */
 	String WorldDataToBACIType();
@@ -279,6 +363,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isRawDataArray();'"
 	 * @generated
 	 */
 	boolean isRawDataArray();
@@ -287,6 +372,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isWorldDataArray();'"
 	 * @generated
 	 */
 	boolean isWorldDataArray();
@@ -294,7 +380,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(),super.MinRange());\r\n'"
 	 * @generated
 	 */
 	String MinRange();
@@ -302,7 +388,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(),super.MaxRange());'"
 	 * @generated
 	 */
 	String MaxRange();
@@ -310,7 +396,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)BaseFactory.eINSTANCE.createTable().getWorldToIDL().get(Returns());'"
 	 * @generated
 	 */
 	String idlReturns();
@@ -318,7 +404,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)BaseFactory.eINSTANCE.createTable().getWorldToCORBA().get(Returns());\r\n'"
 	 * @generated
 	 */
 	String corbaReturns();
@@ -326,7 +412,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = idlSignature();\r\nreturn s;'"
 	 * @generated
 	 */
 	String idlDeclaration();
@@ -334,7 +420,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = \"SET_\" + CPName();\r\n\t\tif (!Parameter().equals(\"default\")) {\r\n\t\t\tif (Parameter().equals(\"void\"))\r\n\t\t\t\ts += \"()\";\r\n\t\t\telse\r\n\t\t\t\ts += \"(\" + idlParameters() + \")\";\r\n\t\t\tif (External()) {\r\n\t\t\t\ts +=  \" raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx)\";\r\n\t\t\t}\r\n\t\t\treturn s;\r\n\t\t\t// This gets the non-default case out of the way.\r\n\t\t}\r\n\t\t// This is the \"default\" case.\r\n\t\tboolean isTeRelated = TeRelated();\r\n\t\tboolean isExternal = External();\r\n\t\tboolean isArray = isWorldDataArray();\r\n\t\tif (isExternal) {\r\n\t\t\tif (isArray) {\r\n\t\t\t\ts += \"(in \" + WorldDataToIDLSeqType() + \" world\";\r\n\t\t\t} else {\r\n\t\t\t\ts += \"(in \" + WorldDataToIDLType() + \" world\";\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (isTeRelated) {\r\n\t\t\ts += \", in ACS::Time requestTime)\";\r\n\t\t} else {\r\n\t\t\ts += \")\";\r\n\t\t}\r\n\t\tif (isExternal) {\r\n\t\t\ts += \" raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx)\";\r\n\t\t}\r\n\t\treturn s;'"
 	 * @generated
 	 */
 	String idlSignature();
@@ -342,7 +428,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\r\n\t\tint pos = 0;\r\n\t\tint n = s.indexOf(\' \');\r\n\t\tif (n == -1)\r\n\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\r\n\t\tString word = s.substring(pos,n);\r\n\t\tString out = \"\";\r\n\t\tboolean isArray = isWorldDataArray();\r\n\t\tif (isArray) {\r\n\t\t\tout += \"in \" + (String)BaseFactory.eINSTANCE.createTable().getWorldToIDLSeq().get(word) + \" \";\r\n\t\t}\r\n\t\telse\r\n\t\t\tout = \"in \" + (String)BaseFactory.eINSTANCE.createTable().getWorldToIDL().get(word) + \" \";\r\n\t\tpos = n + 1;\r\n\t\twhile (true) {\r\n\t\t\tn = s.indexOf(\',\',pos);\r\n\t\t\tif (n == -1)\r\n\t\t\t\tbreak;\r\n\t\t\tword = s.substring(pos,n);\r\n\t\t\tout += word + \", \";\r\n\t\t\tpos = n + 1;\r\n\t\t\twhile (true) {\r\n\t\t\t\tif (s.charAt(pos) == \' \')\r\n\t\t\t\t\tpos++;\r\n\t\t\t\telse\r\n\t\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tn = s.indexOf(\' \',pos);\r\n\t\t\tif (n == -1)\r\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\r\n\t\t\tword = s.substring(pos,n);\r\n\t\t\tif (isArray) {\r\n\t\t\t\tString type = (String)BaseFactory.eINSTANCE.createTable().getWorldToIDL().get(word);\r\n\t\t\t\ttype = type.replace(\"unsigned long\", \"uLong\");\r\n\t\t\t\tout += \"in \" + type;\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t\tout = \"in \" + (String)BaseFactory.eINSTANCE.createTable().getWorldToIDL().get(word) + \" \";\r\n\t\t\tpos = n + 1;\r\n\t\t}\r\n\t\tword = s.substring(pos);\r\n\t\tout += word;\r\n\t\treturn out;'"
 	 * @generated
 	 */
 	String idlParameters();
@@ -350,7 +436,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + corbaParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = isWorldDataArray();\r\n        if(isArray == true)\r\n        {\r\n            s += \"(const \" + WorldDataToCORBASeqType() + \"& world\";\r\n        }\r\n        else\r\n        {\r\n            String type = WorldDataToCORBAType();\r\n            if(type.equalsIgnoreCase(\"CORBA::String\") == true)\r\n            {\r\n                type = \"const \" + type + \"_var&\";\r\n            }\r\n\r\n            s += \"(\" + type + \" world\";\r\n        }\r\n        if (isTeRelated)\r\n        {\r\n            s += \", const acstime::Epoch& requestTime)\";\r\n        }\r\n        else\r\n        {\r\n            s += \")\";\r\n        }\r\n        return s;'"
 	 * @generated
 	 */
 	String corbaDeclaration();
@@ -358,7 +444,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\r\n\t\tint pos = 0;\r\n\t\tint n = s.indexOf(\' \');\r\n\t\tif (n == -1)\r\n\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\r\n\t\tString word = s.substring(pos,n);\r\n\t\tString out = (String)BaseFactory.eINSTANCE.createTable().getWorldToCORBA().get(word) + \" \";\r\n\t\tpos = n + 1;\r\n\t\twhile (true) {\r\n\t\t\tn = s.indexOf(\',\',pos);\r\n\t\t\tif (n == -1)\r\n\t\t\t\tbreak;\r\n\t\t\tword = s.substring(pos,n);\r\n\t\t\tout += word + \", \";\r\n\t\t\tpos = n + 1;\r\n\t\t\twhile (true) {\r\n\t\t\t\tif (s.charAt(pos) == \' \')\r\n\t\t\t\t\tpos++;\r\n\t\t\t\telse\r\n\t\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tn = s.indexOf(\' \',pos);\r\n\t\t\tif (n == -1)\r\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\r\n\t\t\tword = s.substring(pos,n);\r\n\t\t\tout += (String)BaseFactory.eINSTANCE.createTable().getWorldToCORBA().get(word);\r\n\t\t\t//worldToCORBA.get(word) + \" \";\r\n\t\t\tpos = n + 1;\r\n\t\t}\r\n\t\tword = s.substring(pos);\r\n\t\tout += word;\r\n\t\treturn out;'"
 	 * @generated
 	 */
 	String corbaParameters();
@@ -366,7 +452,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)BaseFactory.eINSTANCE.createTable().getWorldToCPP().get(Returns());\r\n'"
 	 * @generated
 	 */
 	String cppReturns();
@@ -374,7 +460,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='        String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + cppParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = isWorldDataArray();\r\n        if (isArray) {\r\n            s += \"(const std::vector< \" + WorldDataToCPPType() + \" >& world\";\r\n        } else {\r\n            s += \"(const \" + WorldDataToCPPType() + \" world\";\r\n        }\r\n        if (isTeRelated) {\r\n            s += \", const acstime::Epoch& requestTime)\";\r\n        } else {\r\n            s += \")\";\r\n        }\r\n        return s;'"
 	 * @generated
 	 */
 	String cppDeclaration();
@@ -382,7 +468,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\r\n\t\tint pos = 0;\r\n\t\tint n = s.indexOf(\' \');\r\n\t\tif (n == -1)\r\n\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\r\n\t\tString word = s.substring(pos,n);\r\n\t\tString out = (String)BaseFactory.eINSTANCE.createTable().getWorldToCPP().get(word) + \" \";\r\n\t\tpos = n + 1;\r\n\t\twhile (true) {\r\n\t\t\tn = s.indexOf(\',\',pos);\r\n\t\t\tif (n == -1)\r\n\t\t\t\tbreak;\r\n\t\t\tword = s.substring(pos,n);\r\n\t\t\tout += word + \", \";\r\n\t\t\tpos = n + 1;\r\n\t\t\twhile (true) {\r\n\t\t\t\tif (s.charAt(pos) == \' \')\r\n\t\t\t\t\tpos++;\r\n\t\t\t\telse\r\n\t\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tn = s.indexOf(\' \',pos);\r\n\t\t\tif (n == -1)\r\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\r\n\t\t\tword = s.substring(pos,n);\r\n\t\t\tout += (String)BaseFactory.eINSTANCE.createTable().getWorldToCPP().get(word) + \" \";\r\n\t\t\tpos = n + 1;\r\n\t\t}\r\n\t\tword = s.substring(pos);\r\n\t\tout += word;\r\n\t\treturn out;'"
 	 * @generated
 	 */
 	String cppParameters();
@@ -390,7 +476,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                return \"\";\r\n            else\r\n                return argWords();\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        String s = \"world\";\r\n        boolean isTeRelated = TeRelated();\r\n        if (isTeRelated) {\r\n            s += \", requestTime\";\r\n        }\r\n        return s;'"
 	 * @generated
 	 */
 	String argList();
@@ -398,7 +484,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\r\n\t\tint pos = 0;\r\n\t\tint n = s.indexOf(\' \');\r\n\t\tif (n == -1)\r\n\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\r\n\t\tString word = s.substring(pos,n);\r\n\t\tString out = \"\";\r\n\t\tpos = n + 1;\r\n\t\twhile (true) {\r\n\t\t\tn = s.indexOf(\',\',pos);\r\n\t\t\tif (n == -1)\r\n\t\t\t\tbreak;\r\n\t\t\tword = s.substring(pos,n);\r\n\t\t\tout += word + \", \";\r\n\t\t\tpos = n + 1;\r\n\t\t\twhile (true) {\r\n\t\t\t\tif (s.charAt(pos) == \' \')\r\n\t\t\t\t\tpos++;\r\n\t\t\t\telse\r\n\t\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tn = s.indexOf(\' \',pos);\r\n\t\t\tif (n == -1)\r\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\r\n\t\t\tword = s.substring(pos,n);\r\n\t\t\tpos = n + 1;\r\n\t\t}\r\n\t\tword = s.substring(pos);\r\n\t\tout += word;\r\n\t\treturn out;'"
 	 * @generated
 	 */
 	String argWords();
@@ -407,6 +493,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isConversion();'"
 	 * @generated
 	 */
 	boolean isConversion();
@@ -415,6 +502,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isSpecialConversion();'"
 	 * @generated
 	 */
 	boolean isSpecialConversion();
@@ -422,7 +510,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.NumberItemsRawData();'"
 	 * @generated
 	 */
 	String NumberItemsRawData();
@@ -430,7 +518,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.TotalBytesRawData();'"
 	 * @generated
 	 */
 	String TotalBytesRawData();
@@ -438,7 +526,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.NumberRawDataTypeBytes();'"
 	 * @generated
 	 */
 	String NumberRawDataTypeBytes();
@@ -446,7 +534,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.NumberItemsWorldData();'"
 	 * @generated
 	 */
 	String NumberItemsWorldData();
@@ -454,7 +542,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RCACell();'"
 	 * @generated
 	 */
 	String RCACell();
@@ -462,7 +550,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.TeRelatedCell();'"
 	 * @generated
 	 */
 	String TeRelatedCell();
@@ -471,6 +559,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentGroupBit();'"
 	 * @generated
 	 */
 	boolean isDependentGroupBit();
@@ -479,6 +568,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentBit();'"
 	 * @generated
 	 */
 	boolean isDependentBit();
@@ -487,6 +577,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentElement();'"
 	 * @generated
 	 */
 	boolean isDependentElement();
@@ -495,6 +586,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isByteSwapped();'"
 	 * @generated
 	 */
 	boolean isByteSwapped();
@@ -503,6 +595,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentBitElement();'"
 	 * @generated
 	 */
 	boolean isDependentBitElement();
@@ -511,6 +604,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentArrayElement();'"
 	 * @generated
 	 */
 	boolean isDependentArrayElement();
@@ -518,7 +612,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetDimension();'"
 	 * @generated
 	 */
 	String GetDimension();
@@ -527,6 +621,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isSingleBit();'"
 	 * @generated
 	 */
 	boolean isSingleBit();
@@ -535,6 +630,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getBit();'"
 	 * @generated
 	 */
 	String getBit();
@@ -551,6 +647,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getFirstBit();'"
 	 * @generated
 	 */
 	String getFirstBit();
@@ -559,6 +656,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getLastBit();'"
 	 * @generated
 	 */
 	String getLastBit();
@@ -567,6 +665,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupMask();'"
 	 * @generated
 	 */
 	String getGroupMask();
@@ -575,6 +674,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupEnd();'"
 	 * @generated
 	 */
 	String getGroupEnd();
@@ -583,6 +683,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupStart();'"
 	 * @generated
 	 */
 	String getGroupStart();
@@ -590,7 +691,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RawSubArrayEndIndex();'"
 	 * @generated
 	 */
 	String RawSubArrayEndIndex();
@@ -598,7 +699,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RawSubArrayStartIndex();'"
 	 * @generated
 	 */
 	String RawSubArrayStartIndex();
@@ -607,6 +708,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isRawSubArray();'"
 	 * @generated
 	 */
 	boolean isRawSubArray();
@@ -614,7 +716,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToDatabaseTypeUpper1();'"
 	 * @generated
 	 */
 	String WorlDataToDatabaseTypeUpper1();
@@ -622,7 +724,7 @@ public interface ControlAMB extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataTypeUpper1();'"
 	 * @generated
 	 */
 	String WorldDataTypeUpper1();

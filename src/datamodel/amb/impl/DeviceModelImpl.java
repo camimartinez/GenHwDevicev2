@@ -23,6 +23,8 @@ import datamodel.base.SpreadsheetValidator;
 import datamodel.base.Table;
 import datamodel.base.Util;
 
+import datamodel.base.impl.BaseFactoryImpl;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -37,6 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link datamodel.amb.impl.DeviceModelImpl#getTmp <em>Tmp</em>}</li>
  *   <li>{@link datamodel.amb.impl.DeviceModelImpl#getToAddCP <em>To Add CP</em>}</li>
  *   <li>{@link datamodel.amb.impl.DeviceModelImpl#getGetNoteFromMain <em>Get Note From Main</em>}</li>
  *   <li>{@link datamodel.amb.impl.DeviceModelImpl#getToAddMP <em>To Add MP</em>}</li>
@@ -56,6 +59,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl implements DeviceModel {
+	/**
+	 * The default value of the '{@link #getTmp() <em>Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactoryImpl TMP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTmp() <em>Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactoryImpl tmp = TMP_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getToAddCP() <em>To Add CP</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -203,6 +226,27 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.DEVICE_MODEL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactoryImpl getTmp() {
+		return tmp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTmp(BaseFactoryImpl newTmp) {
+		BaseFactoryImpl oldTmp = tmp;
+		tmp = newTmp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TMP, oldTmp, tmp));
 	}
 
 	/**
@@ -704,10 +748,17 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isMonitorDBOnly() {
+		return monitorDBOnly;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean IsGeneratedAlt() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return generateAlt;
 	}
 
 	/**
@@ -716,9 +767,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 */
 	public String Parent() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ((MainAMBImpl)main).Parent();
 	}
 
 	/**
@@ -727,9 +776,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 */
 	public String Cardinality() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ((MainAMBImpl)main).Cardinality();
 	}
 
 	/**
@@ -738,9 +785,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 */
 	public String NodeAddress() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ((MainAMBImpl)main).NodeAddress();
 	}
 
 	/**
@@ -749,9 +794,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 */
 	public String Channel() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ((MainAMBImpl)main).Channel();
 	}
 
 	/**
@@ -760,9 +803,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 */
 	public String BaseAddress() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ((MainAMBImpl)main).BaseAddress();
 	}
 
 	/**
@@ -771,9 +812,37 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 */
 	public boolean GenericMonitorPoints() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ((MainAMBImpl)main).GenericMonitorPoints();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String TheEnd() {
+				String dir = generatedDir + "/" + Assembly();
+				Util utils = BaseFactoryImpl.eINSTANCE.createUtil();
+				utils.RemoveLinesFromFile(dir + "/doc", Assembly() + ".html", 1);
+				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
+				utils.RemoveLinesFromFile(dir + "/include", Assembly() + "HWSimBase.h", 1);
+				utils.RemoveLinesFromFile(dir + "/src", Assembly() + "HWSimBase.cpp", 1);
+				utils.RemoveLinesFromFile(dir + "/include", Assembly() + "CompSimBase.h", 1);
+				utils.RemoveLinesFromFile(dir + "/src", Assembly() + "CompSimBase.cpp", 1);
+				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "CompSimBase.idl", 1);
+				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "HWSimImpl.cpp", 1);
+				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "AmbDeviceInt.cpp", 1);
+				if (!isMonitorDBOnly()) {
+					if (isGenerateAlt()) {
+						utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + ".makefile", 1);
+						utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.idl", 1);
+						utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.h", 1);
+						utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.cpp", 1);
+					}
+					super.TheEnd();
+				} else 
+					System.out.println("Code generation for " + deviceName + " done.");
+				return "";
 	}
 
 	/**
@@ -782,9 +851,10 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 */
 	public String NodeAddressInDecimal() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = NodeAddress();
+				if (s.equals("parm"))
+					return "0";
+				return HexToDec(s);
 	}
 
 	/**
@@ -793,9 +863,13 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * @generated
 	 */
 	public String HexToDec(String s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				int n = -1;
+				try {
+					n = Integer.parseInt(s.substring(2),16);
+				} catch (NumberFormatException err) {
+					throw new RuntimeException("Invalid number (" + s + ")");
+				}
+				return Integer.toString(n);
 	}
 
 	/**
@@ -806,6 +880,8 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AmbPackage.DEVICE_MODEL__TMP:
+				return getTmp();
 			case AmbPackage.DEVICE_MODEL__TO_ADD_CP:
 				if (resolve) return getToAddCP();
 				return basicGetToAddCP();
@@ -857,6 +933,9 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AmbPackage.DEVICE_MODEL__TMP:
+				setTmp((BaseFactoryImpl)newValue);
+				return;
 			case AmbPackage.DEVICE_MODEL__TO_ADD_CP:
 				setToAddCP((ControlPoint)newValue);
 				return;
@@ -908,6 +987,9 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AmbPackage.DEVICE_MODEL__TMP:
+				setTmp(TMP_EDEFAULT);
+				return;
 			case AmbPackage.DEVICE_MODEL__TO_ADD_CP:
 				setToAddCP((ControlPoint)null);
 				return;
@@ -959,6 +1041,8 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AmbPackage.DEVICE_MODEL__TMP:
+				return TMP_EDEFAULT == null ? tmp != null : !TMP_EDEFAULT.equals(tmp);
 			case AmbPackage.DEVICE_MODEL__TO_ADD_CP:
 				return toAddCP != null;
 			case AmbPackage.DEVICE_MODEL__GET_NOTE_FROM_MAIN:
@@ -987,6 +1071,22 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 				return getGenericMP != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (tmp: ");
+		result.append(tmp);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DeviceModelImpl

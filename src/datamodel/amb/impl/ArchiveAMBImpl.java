@@ -12,6 +12,7 @@ import datamodel.amb.ArchiveAMB;
 import datamodel.base.Table;
 
 import datamodel.base.impl.ArchivePropertyImpl;
+import datamodel.base.impl.BaseFactoryImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link datamodel.amb.impl.ArchiveAMBImpl#getBaseFacTmp <em>Base Fac Tmp</em>}</li>
  *   <li>{@link datamodel.amb.impl.ArchiveAMBImpl#getGetAssemblyColumn <em>Get Assembly Column</em>}</li>
  * </ul>
  * </p>
@@ -34,6 +36,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
+	/**
+	 * The default value of the '{@link #getBaseFacTmp() <em>Base Fac Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBaseFacTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactoryImpl BASE_FAC_TMP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getBaseFacTmp() <em>Base Fac Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBaseFacTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactoryImpl baseFacTmp = BASE_FAC_TMP_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getGetAssemblyColumn() <em>Get Assembly Column</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -61,6 +83,27 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.ARCHIVE_AMB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactoryImpl getBaseFacTmp() {
+		return baseFacTmp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBaseFacTmp(BaseFactoryImpl newBaseFacTmp) {
+		BaseFactoryImpl oldBaseFacTmp = baseFacTmp;
+		baseFacTmp = newBaseFacTmp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.ARCHIVE_AMB__BASE_FAC_TMP, oldBaseFacTmp, baseFacTmp));
 	}
 
 	/**
@@ -107,9 +150,7 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	 * @generated
 	 */
 	public String Assembly() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Assembly")];
 	}
 
 	/**
@@ -118,9 +159,21 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	 * @generated
 	 */
 	public boolean isIntervalTE() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		String s = IntervalFull();
+		       if (s.startsWith("te/"))
+		           return true;
+		return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String Interval() {
+		if(isIntervalTE())
+			return IntervalFull().substring(3);
+		return IntervalFull();
 	}
 
 	/**
@@ -131,6 +184,8 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AmbPackage.ARCHIVE_AMB__BASE_FAC_TMP:
+				return getBaseFacTmp();
 			case AmbPackage.ARCHIVE_AMB__GET_ASSEMBLY_COLUMN:
 				if (resolve) return getGetAssemblyColumn();
 				return basicGetGetAssemblyColumn();
@@ -146,6 +201,9 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AmbPackage.ARCHIVE_AMB__BASE_FAC_TMP:
+				setBaseFacTmp((BaseFactoryImpl)newValue);
+				return;
 			case AmbPackage.ARCHIVE_AMB__GET_ASSEMBLY_COLUMN:
 				setGetAssemblyColumn((Table)newValue);
 				return;
@@ -161,6 +219,9 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AmbPackage.ARCHIVE_AMB__BASE_FAC_TMP:
+				setBaseFacTmp(BASE_FAC_TMP_EDEFAULT);
+				return;
 			case AmbPackage.ARCHIVE_AMB__GET_ASSEMBLY_COLUMN:
 				setGetAssemblyColumn((Table)null);
 				return;
@@ -176,10 +237,28 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AmbPackage.ARCHIVE_AMB__BASE_FAC_TMP:
+				return BASE_FAC_TMP_EDEFAULT == null ? baseFacTmp != null : !BASE_FAC_TMP_EDEFAULT.equals(baseFacTmp);
 			case AmbPackage.ARCHIVE_AMB__GET_ASSEMBLY_COLUMN:
 				return getAssemblyColumn != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (baseFacTmp: ");
+		result.append(baseFacTmp);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ArchiveAMBImpl

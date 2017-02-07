@@ -8,13 +8,22 @@ package datamodel.amb.impl;
 
 import datamodel.amb.*;
 
+import datamodel.base.BaseFactory;
+
+import datamodel.base.impl.BaseFactoryImpl;
+
+import java.util.Iterator;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,6 +79,52 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 			case AmbPackage.GENERIC_MONITOR_POINTS: return createGenericMonitorPoints();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case AmbPackage.MAND_CAMBDT:
+				return createMandCAMBDTFromString(eDataType, initialValue);
+			case AmbPackage.BASE_FACTORY_IMP_DT:
+				return createBaseFactoryImpDTFromString(eDataType, initialValue);
+			case AmbPackage.BASE_FACTORY_DT:
+				return createBaseFactoryDTFromString(eDataType, initialValue);
+			case AmbPackage.ITERATOR_DT:
+				return createIteratorDTFromString(eDataType, initialValue);
+			case AmbPackage.RESOURCE_DT:
+				return createResourceDTFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case AmbPackage.MAND_CAMBDT:
+				return convertMandCAMBDTToString(eDataType, instanceValue);
+			case AmbPackage.BASE_FACTORY_IMP_DT:
+				return convertBaseFactoryImpDTToString(eDataType, instanceValue);
+			case AmbPackage.BASE_FACTORY_DT:
+				return convertBaseFactoryDTToString(eDataType, instanceValue);
+			case AmbPackage.ITERATOR_DT:
+				return convertIteratorDTToString(eDataType, instanceValue);
+			case AmbPackage.RESOURCE_DT:
+				return convertResourceDTToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -151,6 +206,96 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	public GenericMonitorPoints createGenericMonitorPoints() {
 		GenericMonitorPointsImpl genericMonitorPoints = new GenericMonitorPointsImpl();
 		return genericMonitorPoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandCAMB createMandCAMBDTFromString(EDataType eDataType, String initialValue) {
+		return (MandCAMB)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMandCAMBDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactoryImpl createBaseFactoryImpDTFromString(EDataType eDataType, String initialValue) {
+		return (BaseFactoryImpl)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBaseFactoryImpDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactory createBaseFactoryDTFromString(EDataType eDataType, String initialValue) {
+		return (BaseFactory)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBaseFactoryDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iterator createIteratorDTFromString(EDataType eDataType, String initialValue) {
+		return (Iterator)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIteratorDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Resource createResourceDTFromString(EDataType eDataType, String initialValue) {
+		return (Resource)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertResourceDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

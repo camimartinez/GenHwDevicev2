@@ -10,6 +10,7 @@ import datamodel.base.BasePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -117,13 +118,22 @@ public interface AmbPackage extends EPackage {
 	int ARCHIVE_AMB__GET_COLUMNS_INFO_OF_ARCHI = BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI;
 
 	/**
+	 * The feature id for the '<em><b>Base Fac Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE_AMB__BASE_FAC_TMP = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Get Assembly Column</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_AMB__GET_ASSEMBLY_COLUMN = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 0;
+	int ARCHIVE_AMB__GET_ASSEMBLY_COLUMN = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Archive AMB</em>' class.
@@ -132,7 +142,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_AMB_FEATURE_COUNT = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 1;
+	int ARCHIVE_AMB_FEATURE_COUNT = BasePackage.ARCHIVE_PROPERTY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link datamodel.amb.impl.ControlAMBImpl <em>Control AMB</em>}' class.
@@ -262,13 +272,40 @@ public interface AmbPackage extends EPackage {
 	int CONTROL_AMB__GET_ARCH_ON_USE_CONTROL = BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL;
 
 	/**
+	 * The feature id for the '<em><b>Mac</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_AMB__MAC = BasePackage.CONTROL_POINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_AMB__TMP = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tmp2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_AMB__TMP2 = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>World To Data Columns</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_AMB__WORLD_TO_DATA_COLUMNS = BasePackage.CONTROL_POINT_FEATURE_COUNT + 0;
+	int CONTROL_AMB__WORLD_TO_DATA_COLUMNS = BasePackage.CONTROL_POINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Get Info Control Sheet</b></em>' reference.
@@ -277,7 +314,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_AMB__GET_INFO_CONTROL_SHEET = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
+	int CONTROL_AMB__GET_INFO_CONTROL_SHEET = BasePackage.CONTROL_POINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>To Normalize Number</b></em>' reference.
@@ -286,7 +323,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_AMB__TO_NORMALIZE_NUMBER = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
+	int CONTROL_AMB__TO_NORMALIZE_NUMBER = BasePackage.CONTROL_POINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Control AMB</em>' class.
@@ -295,7 +332,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_AMB_FEATURE_COUNT = BasePackage.CONTROL_POINT_FEATURE_COUNT + 3;
+	int CONTROL_AMB_FEATURE_COUNT = BasePackage.CONTROL_POINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link datamodel.amb.impl.DeviceModelImpl <em>Device Model</em>}' class.
@@ -497,13 +534,22 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL__GET_INF_FROM_SPREAD = BasePackage.DEVICE_MODEL__GET_INF_FROM_SPREAD;
 
 	/**
+	 * The feature id for the '<em><b>Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__TMP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>To Add CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__TO_ADD_CP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 0;
+	int DEVICE_MODEL__TO_ADD_CP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Get Note From Main</b></em>' reference.
@@ -512,7 +558,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_NOTE_FROM_MAIN = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 1;
+	int DEVICE_MODEL__GET_NOTE_FROM_MAIN = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>To Add MP</b></em>' reference.
@@ -521,7 +567,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__TO_ADD_MP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 2;
+	int DEVICE_MODEL__TO_ADD_MP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Get Info Main</b></em>' reference.
@@ -530,7 +576,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_INFO_MAIN = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 3;
+	int DEVICE_MODEL__GET_INFO_MAIN = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Get CPfrom Control</b></em>' reference.
@@ -539,7 +585,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_CPFROM_CONTROL = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 4;
+	int DEVICE_MODEL__GET_CPFROM_CONTROL = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Get Info From Main Sheet</b></em>' reference.
@@ -548,7 +594,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 5;
+	int DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Get MPfrom Monitor</b></em>' reference.
@@ -557,7 +603,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_MPFROM_MONITOR = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 6;
+	int DEVICE_MODEL__GET_MPFROM_MONITOR = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Get Data From Spread</b></em>' reference.
@@ -566,7 +612,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_DATA_FROM_SPREAD = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 7;
+	int DEVICE_MODEL__GET_DATA_FROM_SPREAD = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Get APfrom Archive</b></em>' reference.
@@ -575,7 +621,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_APFROM_ARCHIVE = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 8;
+	int DEVICE_MODEL__GET_APFROM_ARCHIVE = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Toinstall End Generation</b></em>' reference.
@@ -584,7 +630,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__TOINSTALL_END_GENERATION = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 9;
+	int DEVICE_MODEL__TOINSTALL_END_GENERATION = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Get From Spreadsheet</b></em>' reference.
@@ -593,7 +639,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_FROM_SPREADSHEET = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 10;
+	int DEVICE_MODEL__GET_FROM_SPREADSHEET = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>To Validate Spreadsheet</b></em>' reference.
@@ -602,7 +648,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__TO_VALIDATE_SPREADSHEET = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 11;
+	int DEVICE_MODEL__TO_VALIDATE_SPREADSHEET = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Get Generic MP</b></em>' reference.
@@ -611,7 +657,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_GENERIC_MP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 12;
+	int DEVICE_MODEL__GET_GENERIC_MP = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
@@ -620,7 +666,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 13;
+	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link datamodel.amb.impl.MainAMBImpl <em>Main AMB</em>}' class.
@@ -678,13 +724,22 @@ public interface AmbPackage extends EPackage {
 	int MAIN_AMB__GET_INFO_FROM_SPREAD = BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD;
 
 	/**
+	 * The feature id for the '<em><b>Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAIN_AMB__TMP = BasePackage.MAIN_BASE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Get Info From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_AMB__GET_INFO_FROM_MAIN = BasePackage.MAIN_BASE_FEATURE_COUNT + 0;
+	int MAIN_AMB__GET_INFO_FROM_MAIN = BasePackage.MAIN_BASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Main AMB</em>' class.
@@ -693,7 +748,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_AMB_FEATURE_COUNT = BasePackage.MAIN_BASE_FEATURE_COUNT + 1;
+	int MAIN_AMB_FEATURE_COUNT = BasePackage.MAIN_BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link datamodel.amb.impl.MandCAMBImpl <em>Mand CAMB</em>}' class.
@@ -932,13 +987,49 @@ public interface AmbPackage extends EPackage {
 	int MONITOR_AMB__GET_INFO_FROM_MP_SPREAD = BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD;
 
 	/**
+	 * The feature id for the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_AMB__AUX = BasePackage.MONITOR_POINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Mac</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_AMB__MAC = BasePackage.MONITOR_POINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Aux2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_AMB__AUX2 = BasePackage.MONITOR_POINT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Aux3</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_AMB__AUX3 = BasePackage.MONITOR_POINT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>To Normalize Data</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_AMB__TO_NORMALIZE_DATA = BasePackage.MONITOR_POINT_FEATURE_COUNT + 0;
+	int MONITOR_AMB__TO_NORMALIZE_DATA = BasePackage.MONITOR_POINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Get Columns Can Be Inv</b></em>' reference.
@@ -947,7 +1038,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_AMB__GET_COLUMNS_CAN_BE_INV = BasePackage.MONITOR_POINT_FEATURE_COUNT + 1;
+	int MONITOR_AMB__GET_COLUMNS_CAN_BE_INV = BasePackage.MONITOR_POINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Get Info MP Sheet</b></em>' reference.
@@ -956,7 +1047,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_AMB__GET_INFO_MP_SHEET = BasePackage.MONITOR_POINT_FEATURE_COUNT + 2;
+	int MONITOR_AMB__GET_INFO_MP_SHEET = BasePackage.MONITOR_POINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Monitor AMB</em>' class.
@@ -965,7 +1056,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_AMB_FEATURE_COUNT = BasePackage.MONITOR_POINT_FEATURE_COUNT + 3;
+	int MONITOR_AMB_FEATURE_COUNT = BasePackage.MONITOR_POINT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link datamodel.amb.impl.SWModuleImpl <em>SW Module</em>}' class.
@@ -1086,13 +1177,22 @@ public interface AmbPackage extends EPackage {
 	int SW_MODULE__SIM_CONTROL_POINTS = 11;
 
 	/**
+	 * The feature id for the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SW_MODULE__AUX = 12;
+
+	/**
 	 * The feature id for the '<em><b>Add All MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SW_MODULE__ADD_ALL_MP = 12;
+	int SW_MODULE__ADD_ALL_MP = 13;
 
 	/**
 	 * The feature id for the '<em><b>Add All CP</b></em>' reference.
@@ -1101,7 +1201,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SW_MODULE__ADD_ALL_CP = 13;
+	int SW_MODULE__ADD_ALL_CP = 14;
 
 	/**
 	 * The feature id for the '<em><b>Set Format Descriptions</b></em>' reference.
@@ -1110,7 +1210,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SW_MODULE__SET_FORMAT_DESCRIPTIONS = 14;
+	int SW_MODULE__SET_FORMAT_DESCRIPTIONS = 15;
 
 	/**
 	 * The feature id for the '<em><b>Get Sheet Columns</b></em>' reference.
@@ -1119,7 +1219,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SW_MODULE__GET_SHEET_COLUMNS = 15;
+	int SW_MODULE__GET_SHEET_COLUMNS = 16;
 
 	/**
 	 * The number of structural features of the '<em>SW Module</em>' class.
@@ -1128,7 +1228,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SW_MODULE_FEATURE_COUNT = 16;
+	int SW_MODULE_FEATURE_COUNT = 17;
 
 	/**
 	 * The meta object id for the '{@link datamodel.amb.impl.GenericMonitorPointsImpl <em>Generic Monitor Points</em>}' class.
@@ -1203,6 +1303,56 @@ public interface AmbPackage extends EPackage {
 	 */
 	int GENERIC_MONITOR_POINTS_FEATURE_COUNT = 6;
 
+	/**
+	 * The meta object id for the '<em>Mand CAMBDT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see datamodel.amb.MandCAMB
+	 * @see datamodel.amb.impl.AmbPackageImpl#getMandCAMBDT()
+	 * @generated
+	 */
+	int MAND_CAMBDT = 8;
+
+	/**
+	 * The meta object id for the '<em>Base Factory Imp DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see datamodel.base.impl.BaseFactoryImpl
+	 * @see datamodel.amb.impl.AmbPackageImpl#getBaseFactoryImpDT()
+	 * @generated
+	 */
+	int BASE_FACTORY_IMP_DT = 9;
+
+	/**
+	 * The meta object id for the '<em>Base Factory DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see datamodel.base.BaseFactory
+	 * @see datamodel.amb.impl.AmbPackageImpl#getBaseFactoryDT()
+	 * @generated
+	 */
+	int BASE_FACTORY_DT = 10;
+
+	/**
+	 * The meta object id for the '<em>Iterator DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.Iterator
+	 * @see datamodel.amb.impl.AmbPackageImpl#getIteratorDT()
+	 * @generated
+	 */
+	int ITERATOR_DT = 11;
+
+	/**
+	 * The meta object id for the '<em>Resource DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.ecore.resource.Resource
+	 * @see datamodel.amb.impl.AmbPackageImpl#getResourceDT()
+	 * @generated
+	 */
+	int RESOURCE_DT = 12;
+
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.amb.ArchiveAMB <em>Archive AMB</em>}'.
@@ -1213,6 +1363,17 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getArchiveAMB();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.ArchiveAMB#getBaseFacTmp <em>Base Fac Tmp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Base Fac Tmp</em>'.
+	 * @see datamodel.amb.ArchiveAMB#getBaseFacTmp()
+	 * @see #getArchiveAMB()
+	 * @generated
+	 */
+	EAttribute getArchiveAMB_BaseFacTmp();
 
 	/**
 	 * Returns the meta object for the reference '{@link datamodel.amb.ArchiveAMB#getGetAssemblyColumn <em>Get Assembly Column</em>}'.
@@ -1234,6 +1395,39 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getControlAMB();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.ControlAMB#getMac <em>Mac</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mac</em>'.
+	 * @see datamodel.amb.ControlAMB#getMac()
+	 * @see #getControlAMB()
+	 * @generated
+	 */
+	EAttribute getControlAMB_Mac();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.ControlAMB#getTmp <em>Tmp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tmp</em>'.
+	 * @see datamodel.amb.ControlAMB#getTmp()
+	 * @see #getControlAMB()
+	 * @generated
+	 */
+	EAttribute getControlAMB_Tmp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.ControlAMB#getTmp2 <em>Tmp2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tmp2</em>'.
+	 * @see datamodel.amb.ControlAMB#getTmp2()
+	 * @see #getControlAMB()
+	 * @generated
+	 */
+	EAttribute getControlAMB_Tmp2();
 
 	/**
 	 * Returns the meta object for the reference '{@link datamodel.amb.ControlAMB#getWorldToDataColumns <em>World To Data Columns</em>}'.
@@ -1277,6 +1471,17 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDeviceModel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.DeviceModel#getTmp <em>Tmp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tmp</em>'.
+	 * @see datamodel.amb.DeviceModel#getTmp()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EAttribute getDeviceModel_Tmp();
 
 	/**
 	 * Returns the meta object for the reference '{@link datamodel.amb.DeviceModel#getToAddCP <em>To Add CP</em>}'.
@@ -1432,6 +1637,17 @@ public interface AmbPackage extends EPackage {
 	EClass getMainAMB();
 
 	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.MainAMB#getTmp <em>Tmp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tmp</em>'.
+	 * @see datamodel.amb.MainAMB#getTmp()
+	 * @see #getMainAMB()
+	 * @generated
+	 */
+	EAttribute getMainAMB_Tmp();
+
+	/**
 	 * Returns the meta object for the reference '{@link datamodel.amb.MainAMB#getGetInfoFromMain <em>Get Info From Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1560,6 +1776,50 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMonitorAMB();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.MonitorAMB#getAux <em>Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aux</em>'.
+	 * @see datamodel.amb.MonitorAMB#getAux()
+	 * @see #getMonitorAMB()
+	 * @generated
+	 */
+	EAttribute getMonitorAMB_Aux();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.MonitorAMB#getMac <em>Mac</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mac</em>'.
+	 * @see datamodel.amb.MonitorAMB#getMac()
+	 * @see #getMonitorAMB()
+	 * @generated
+	 */
+	EAttribute getMonitorAMB_Mac();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.MonitorAMB#getAux2 <em>Aux2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aux2</em>'.
+	 * @see datamodel.amb.MonitorAMB#getAux2()
+	 * @see #getMonitorAMB()
+	 * @generated
+	 */
+	EAttribute getMonitorAMB_Aux2();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.MonitorAMB#getAux3 <em>Aux3</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aux3</em>'.
+	 * @see datamodel.amb.MonitorAMB#getAux3()
+	 * @see #getMonitorAMB()
+	 * @generated
+	 */
+	EAttribute getMonitorAMB_Aux3();
 
 	/**
 	 * Returns the meta object for the reference '{@link datamodel.amb.MonitorAMB#getToNormalizeData <em>To Normalize Data</em>}'.
@@ -1737,6 +1997,17 @@ public interface AmbPackage extends EPackage {
 	EAttribute getSWModule_SimControlPoints();
 
 	/**
+	 * Returns the meta object for the attribute '{@link datamodel.amb.SWModule#getAux <em>Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aux</em>'.
+	 * @see datamodel.amb.SWModule#getAux()
+	 * @see #getSWModule()
+	 * @generated
+	 */
+	EAttribute getSWModule_Aux();
+
+	/**
 	 * Returns the meta object for the reference '{@link datamodel.amb.SWModule#getAddAllMP <em>Add All MP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1857,6 +2128,61 @@ public interface AmbPackage extends EPackage {
 	EReference getGenericMonitorPoints_ToInstallDir();
 
 	/**
+	 * Returns the meta object for data type '{@link datamodel.amb.MandCAMB <em>Mand CAMBDT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Mand CAMBDT</em>'.
+	 * @see datamodel.amb.MandCAMB
+	 * @model instanceClass="datamodel.amb.MandCAMB"
+	 * @generated
+	 */
+	EDataType getMandCAMBDT();
+
+	/**
+	 * Returns the meta object for data type '{@link datamodel.base.impl.BaseFactoryImpl <em>Base Factory Imp DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Base Factory Imp DT</em>'.
+	 * @see datamodel.base.impl.BaseFactoryImpl
+	 * @model instanceClass="datamodel.base.impl.BaseFactoryImpl"
+	 * @generated
+	 */
+	EDataType getBaseFactoryImpDT();
+
+	/**
+	 * Returns the meta object for data type '{@link datamodel.base.BaseFactory <em>Base Factory DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Base Factory DT</em>'.
+	 * @see datamodel.base.BaseFactory
+	 * @model instanceClass="datamodel.base.BaseFactory"
+	 * @generated
+	 */
+	EDataType getBaseFactoryDT();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.Iterator <em>Iterator DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Iterator DT</em>'.
+	 * @see java.util.Iterator
+	 * @model instanceClass="java.util.Iterator"
+	 * @generated
+	 */
+	EDataType getIteratorDT();
+
+	/**
+	 * Returns the meta object for data type '{@link org.eclipse.emf.ecore.resource.Resource <em>Resource DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Resource DT</em>'.
+	 * @see org.eclipse.emf.ecore.resource.Resource
+	 * @model instanceClass="org.eclipse.emf.ecore.resource.Resource"
+	 * @generated
+	 */
+	EDataType getResourceDT();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1889,6 +2215,14 @@ public interface AmbPackage extends EPackage {
 		EClass ARCHIVE_AMB = eINSTANCE.getArchiveAMB();
 
 		/**
+		 * The meta object literal for the '<em><b>Base Fac Tmp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHIVE_AMB__BASE_FAC_TMP = eINSTANCE.getArchiveAMB_BaseFacTmp();
+
+		/**
 		 * The meta object literal for the '<em><b>Get Assembly Column</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1905,6 +2239,30 @@ public interface AmbPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONTROL_AMB = eINSTANCE.getControlAMB();
+
+		/**
+		 * The meta object literal for the '<em><b>Mac</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL_AMB__MAC = eINSTANCE.getControlAMB_Mac();
+
+		/**
+		 * The meta object literal for the '<em><b>Tmp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL_AMB__TMP = eINSTANCE.getControlAMB_Tmp();
+
+		/**
+		 * The meta object literal for the '<em><b>Tmp2</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL_AMB__TMP2 = eINSTANCE.getControlAMB_Tmp2();
 
 		/**
 		 * The meta object literal for the '<em><b>World To Data Columns</b></em>' reference feature.
@@ -1939,6 +2297,14 @@ public interface AmbPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DEVICE_MODEL = eINSTANCE.getDeviceModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Tmp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE_MODEL__TMP = eINSTANCE.getDeviceModel_Tmp();
 
 		/**
 		 * The meta object literal for the '<em><b>To Add CP</b></em>' reference feature.
@@ -2055,6 +2421,14 @@ public interface AmbPackage extends EPackage {
 		EClass MAIN_AMB = eINSTANCE.getMainAMB();
 
 		/**
+		 * The meta object literal for the '<em><b>Tmp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAIN_AMB__TMP = eINSTANCE.getMainAMB_Tmp();
+
+		/**
 		 * The meta object literal for the '<em><b>Get Info From Main</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2153,6 +2527,38 @@ public interface AmbPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MONITOR_AMB = eINSTANCE.getMonitorAMB();
+
+		/**
+		 * The meta object literal for the '<em><b>Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MONITOR_AMB__AUX = eINSTANCE.getMonitorAMB_Aux();
+
+		/**
+		 * The meta object literal for the '<em><b>Mac</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MONITOR_AMB__MAC = eINSTANCE.getMonitorAMB_Mac();
+
+		/**
+		 * The meta object literal for the '<em><b>Aux2</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MONITOR_AMB__AUX2 = eINSTANCE.getMonitorAMB_Aux2();
+
+		/**
+		 * The meta object literal for the '<em><b>Aux3</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MONITOR_AMB__AUX3 = eINSTANCE.getMonitorAMB_Aux3();
 
 		/**
 		 * The meta object literal for the '<em><b>To Normalize Data</b></em>' reference feature.
@@ -2285,6 +2691,14 @@ public interface AmbPackage extends EPackage {
 		EAttribute SW_MODULE__SIM_CONTROL_POINTS = eINSTANCE.getSWModule_SimControlPoints();
 
 		/**
+		 * The meta object literal for the '<em><b>Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SW_MODULE__AUX = eINSTANCE.getSWModule_Aux();
+
+		/**
 		 * The meta object literal for the '<em><b>Add All MP</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2373,6 +2787,56 @@ public interface AmbPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GENERIC_MONITOR_POINTS__TO_INSTALL_DIR = eINSTANCE.getGenericMonitorPoints_ToInstallDir();
+
+		/**
+		 * The meta object literal for the '<em>Mand CAMBDT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see datamodel.amb.MandCAMB
+		 * @see datamodel.amb.impl.AmbPackageImpl#getMandCAMBDT()
+		 * @generated
+		 */
+		EDataType MAND_CAMBDT = eINSTANCE.getMandCAMBDT();
+
+		/**
+		 * The meta object literal for the '<em>Base Factory Imp DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see datamodel.base.impl.BaseFactoryImpl
+		 * @see datamodel.amb.impl.AmbPackageImpl#getBaseFactoryImpDT()
+		 * @generated
+		 */
+		EDataType BASE_FACTORY_IMP_DT = eINSTANCE.getBaseFactoryImpDT();
+
+		/**
+		 * The meta object literal for the '<em>Base Factory DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see datamodel.base.BaseFactory
+		 * @see datamodel.amb.impl.AmbPackageImpl#getBaseFactoryDT()
+		 * @generated
+		 */
+		EDataType BASE_FACTORY_DT = eINSTANCE.getBaseFactoryDT();
+
+		/**
+		 * The meta object literal for the '<em>Iterator DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.Iterator
+		 * @see datamodel.amb.impl.AmbPackageImpl#getIteratorDT()
+		 * @generated
+		 */
+		EDataType ITERATOR_DT = eINSTANCE.getIteratorDT();
+
+		/**
+		 * The meta object literal for the '<em>Resource DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.emf.ecore.resource.Resource
+		 * @see datamodel.amb.impl.AmbPackageImpl#getResourceDT()
+		 * @generated
+		 */
+		EDataType RESOURCE_DT = eINSTANCE.getResourceDT();
 
 	}
 

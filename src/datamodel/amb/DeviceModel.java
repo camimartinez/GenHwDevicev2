@@ -15,6 +15,8 @@ import datamodel.base.SpreadsheetValidator;
 import datamodel.base.Table;
 import datamodel.base.Util;
 
+import datamodel.base.impl.BaseFactoryImpl;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Device Model</b></em>'.
@@ -23,6 +25,7 @@ import datamodel.base.Util;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link datamodel.amb.DeviceModel#getTmp <em>Tmp</em>}</li>
  *   <li>{@link datamodel.amb.DeviceModel#getToAddCP <em>To Add CP</em>}</li>
  *   <li>{@link datamodel.amb.DeviceModel#getGetNoteFromMain <em>Get Note From Main</em>}</li>
  *   <li>{@link datamodel.amb.DeviceModel#getToAddMP <em>To Add MP</em>}</li>
@@ -44,6 +47,32 @@ import datamodel.base.Util;
  * @generated
  */
 public interface DeviceModel extends datamodel.base.DeviceModel {
+	/**
+	 * Returns the value of the '<em><b>Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tmp</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tmp</em>' attribute.
+	 * @see #setTmp(BaseFactoryImpl)
+	 * @see datamodel.amb.AmbPackage#getDeviceModel_Tmp()
+	 * @model dataType="datamodel.amb.BaseFactoryImpDT"
+	 * @generated
+	 */
+	BaseFactoryImpl getTmp();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.DeviceModel#getTmp <em>Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tmp</em>' attribute.
+	 * @see #getTmp()
+	 * @generated
+	 */
+	void setTmp(BaseFactoryImpl value);
+
 	/**
 	 * Returns the value of the '<em><b>To Add CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -386,6 +415,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return monitorDBOnly;'"
 	 * @generated
 	 */
 	boolean isMonitorDBOnly();
@@ -393,7 +423,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return generateAlt;'"
 	 * @generated
 	 */
 	boolean IsGeneratedAlt();
@@ -401,7 +431,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainAMBImpl)main).Parent();'"
 	 * @generated
 	 */
 	String Parent();
@@ -409,7 +439,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainAMBImpl)main).Cardinality();'"
 	 * @generated
 	 */
 	String Cardinality();
@@ -417,7 +447,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainAMBImpl)main).NodeAddress();'"
 	 * @generated
 	 */
 	String NodeAddress();
@@ -425,7 +455,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainAMBImpl)main).Channel();'"
 	 * @generated
 	 */
 	String Channel();
@@ -433,7 +463,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainAMBImpl)main).BaseAddress();'"
 	 * @generated
 	 */
 	String BaseAddress();
@@ -441,7 +471,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainAMBImpl)main).GenericMonitorPoints();'"
 	 * @generated
 	 */
 	boolean GenericMonitorPoints();
@@ -457,7 +487,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString dir = generatedDir + \"/\" + Assembly();\r\n\t\tUtil utils = BaseFactoryImpl.eINSTANCE.createUtil();\r\n\t\tutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".html\", 1);\r\n\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\r\n\t\tutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"HWSimBase.h\", 1);\r\n\t\tutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"HWSimBase.cpp\", 1);\r\n\t\tutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"CompSimBase.h\", 1);\r\n\t\tutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"CompSimBase.cpp\", 1);\r\n\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"CompSimBase.idl\", 1);\r\n\t\tutils.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"HWSimImpl.cpp\", 1);\r\n\t\tutils.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"AmbDeviceInt.cpp\", 1);\r\n\t\tif (!isMonitorDBOnly()) {\r\n\t\t\tif (isGenerateAlt()) {\r\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \".makefile\", 1);\r\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.idl\", 1);\r\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.h\", 1);\r\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.cpp\", 1);\r\n\t\t\t}\r\n\t\t\tsuper.TheEnd();\r\n\t\t} else \r\n\t\t\tSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\r\n\t\treturn \"\";'"
 	 * @generated
 	 */
 	String TheEnd();
@@ -465,7 +495,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = NodeAddress();\r\n\t\tif (s.equals(\"parm\"))\r\n\t\t\treturn \"0\";\r\n\t\treturn HexToDec(s);'"
 	 * @generated
 	 */
 	String NodeAddressInDecimal();
@@ -473,7 +503,7 @@ public interface DeviceModel extends datamodel.base.DeviceModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tint n = -1;\r\n\t\ttry {\r\n\t\t\tn = Integer.parseInt(s.substring(2),16);\r\n\t\t} catch (NumberFormatException err) {\r\n\t\t\tthrow new RuntimeException(\"Invalid number (\" + s + \")\");\r\n\t\t}\r\n\t\treturn Integer.toString(n);'"
 	 * @generated
 	 */
 	String HexToDec(String s);

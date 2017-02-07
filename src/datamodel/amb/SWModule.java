@@ -9,6 +9,8 @@ package datamodel.amb;
 import datamodel.base.Table;
 import datamodel.base.Util;
 
+import datamodel.base.impl.BaseFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link datamodel.amb.SWModule#getArchiveProperties <em>Archive Properties</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getSimMonitorPoints <em>Sim Monitor Points</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getSimControlPoints <em>Sim Control Points</em>}</li>
+ *   <li>{@link datamodel.amb.SWModule#getAux <em>Aux</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getAddAllMP <em>Add All MP</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getAddAllCP <em>Add All CP</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getSetFormatDescriptions <em>Set Format Descriptions</em>}</li>
@@ -360,6 +363,32 @@ public interface SWModule extends EObject {
 	void setSimControlPoints(ResourceSet value);
 
 	/**
+	 * Returns the value of the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux</em>' attribute.
+	 * @see #setAux(BaseFactoryImpl)
+	 * @see datamodel.amb.AmbPackage#getSWModule_Aux()
+	 * @model dataType="datamodel.amb.BaseFactoryImpDT"
+	 * @generated
+	 */
+	BaseFactoryImpl getAux();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.SWModule#getAux <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux</em>' attribute.
+	 * @see #getAux()
+	 * @generated
+	 */
+	void setAux(BaseFactoryImpl value);
+
+	/**
 	 * Returns the value of the '<em><b>Add All MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -466,7 +495,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tmonitorPoints.getResources().add(mp);\r\n\t\tif (!(((MonitorAMBImpl)mp).RCA().equals(\"none\") ||\r\n\t\t\t\t((MonitorAMBImpl)mp).RCA().equals(\"0x00000\") ||\r\n\t\t\t\t((MonitorAMBImpl)mp).RCA().equals(\"0x30000\") ||\r\n\t\t\t\t((MonitorAMBImpl)mp).RCA().equals(\"0x30001\") ||\r\n\t\t\t\t((MonitorAMBImpl)mp).RCA().equals(\"0x30002\") ||\r\n\t\t\t\t((MonitorAMBImpl)mp).RCA().equals(\"0x30003\") ||\r\n\t\t\t\t((MonitorAMBImpl)mp).RCA().equals(\"0x30004\") ||\r\n\t\t\t\t((MonitorAMBImpl)mp).RCA().equals(\"0x30005\")\r\n\t\t)){\r\n\t\t\tfor(int i=0;i< simMonitorPoints.getResources().size();i++)\r\n\t\t\t\tif(((MonitorAMBImpl)mp).RCA().equals(((MonitorAMBImpl)simMonitorPoints.getResources().get(i)).RCA()))\r\n\t\t\t\t\treturn;\r\n\t\t\tsimMonitorPoints.getResources().add(mp);\r\n\t\t}'"
 	 * @generated
 	 */
 	void addMP(Resource mp);
@@ -474,7 +503,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tcontrolPoints.getResources().add(cp);\r\n\t\tif (!(((ControlAMBImpl)cp).RCA().equals(\"none\") ||\r\n\t\t\t\t((ControlAMBImpl)cp).RCA().equals(\"0x31000\") ||\r\n\t\t\t\t((ControlAMBImpl)cp).RCA().equals(\"0x31001\")\r\n\t\t)){\r\n\t\t\tfor(int i=0;i< simControlPoints.getResources().size();i++)\r\n\t\t\t\tif(((ControlAMBImpl)cp).RCA().equals(((ControlAMBImpl)simControlPoints.getResources().get(i)).RCA()))\r\n\t\t\t\t\treturn;\r\n\t\t\tsimControlPoints.getResources().add(cp);\r\n\t\t}'"
 	 * @generated
 	 */
 	void addCP(Resource cp);
@@ -482,7 +511,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='archiveProperties.getResources().add(ap);\r\n'"
 	 * @generated
 	 */
 	void addAP(Resource ap);
@@ -490,7 +519,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return \"\";'"
 	 * @generated
 	 */
 	String Initialize();
@@ -498,7 +527,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return dirPath;'"
 	 * @generated
 	 */
 	String DirPath();
@@ -506,7 +535,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return monitorPoints;'"
 	 * @generated
 	 */
 	ResourceSet MonitorPoint();
@@ -514,7 +543,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return controlPoints;'"
 	 * @generated
 	 */
 	ResourceSet ControlPoint();
@@ -522,7 +551,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return archiveProperties;'"
 	 * @generated
 	 */
 	ResourceSet ArchiveProperty();
@@ -530,7 +559,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return simMonitorPoints;'"
 	 * @generated
 	 */
 	ResourceSet SimMonitorPoint();
@@ -538,7 +567,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return simControlPoints;'"
 	 * @generated
 	 */
 	ResourceSet SimControlPoint();
@@ -546,7 +575,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Assembly\")];\r\n'"
 	 * @generated
 	 */
 	String Assembly();
@@ -554,7 +583,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Description\")];\r\n'"
 	 * @generated
 	 */
 	String Description();
@@ -562,7 +591,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return BaseFactoryImpl.eINSTANCE.createUtil().formatDescriptionL1(Description());\r\n'"
 	 * @generated
 	 */
 	String DescriptionL1();
@@ -570,15 +599,15 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return BaseFactoryImpl.eINSTANCE.createUtil().descriptionAsString(Description());'"
 	 * @generated
 	 */
-	void DescriptionAsString();
+	String DescriptionAsString();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Device Name\")];'"
 	 * @generated
 	 */
 	String DeviceName();
@@ -586,7 +615,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Extends\")];'"
 	 * @generated
 	 */
 	String Extends();
@@ -594,7 +623,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Parent\")];\r\n'"
 	 * @generated
 	 */
 	String Parent();
@@ -602,7 +631,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Cardinality\")];'"
 	 * @generated
 	 */
 	String Cardinality();
@@ -610,7 +639,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Generic Monitor Points\")].equals(\"yes\");'"
 	 * @generated
 	 */
 	boolean GenericMonitorPoints();
@@ -618,7 +647,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Node Address\")];\r\n'"
 	 * @generated
 	 */
 	String NodeAddress();
@@ -626,7 +655,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='        int n = -1;\r\n        try {\r\n            n = Integer.parseInt(s.substring(2),16);\r\n        } catch (NumberFormatException err) {\r\n            throw new RuntimeException(\"Invalid number (\" + s + \")\");\r\n        }\r\n        return Integer.toString(n);'"
 	 * @generated
 	 */
 	String HexToDec(String s);
@@ -634,7 +663,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = NodeAddress();\r\n\t\tif (s.equals(\"parm\"))\r\n\t\t    return \"0\";\r\n\t\treturn HexToDec(s);'"
 	 * @generated
 	 */
 	String NodeAddressInDecimal();
@@ -642,7 +671,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Channel\")];'"
 	 * @generated
 	 */
 	String Channel();
@@ -650,7 +679,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Base Address\")];'"
 	 * @generated
 	 */
 	String BaseAddress();
@@ -658,7 +687,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString hex = Integer.toHexString(Assembly().hashCode()).toLowerCase();\r\n\t\thex = \"0000000000000000\" + hex;\r\n\t\tint len = hex.length();\r\n\t\thex = \"0x\" + hex.substring(len - 16, len);\r\n\t\treturn hex;'"
 	 * @generated
 	 */
 	String SimSerialNumber();

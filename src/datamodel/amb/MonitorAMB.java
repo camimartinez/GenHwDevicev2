@@ -10,6 +10,12 @@ import datamodel.base.MonitorPoint;
 import datamodel.base.Table;
 import datamodel.base.Util;
 
+import datamodel.base.impl.BaseFactoryImpl;
+
+import java.util.Iterator;
+
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Monitor AMB</b></em>'.
@@ -18,6 +24,10 @@ import datamodel.base.Util;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link datamodel.amb.MonitorAMB#getAux <em>Aux</em>}</li>
+ *   <li>{@link datamodel.amb.MonitorAMB#getMac <em>Mac</em>}</li>
+ *   <li>{@link datamodel.amb.MonitorAMB#getAux2 <em>Aux2</em>}</li>
+ *   <li>{@link datamodel.amb.MonitorAMB#getAux3 <em>Aux3</em>}</li>
  *   <li>{@link datamodel.amb.MonitorAMB#getToNormalizeData <em>To Normalize Data</em>}</li>
  *   <li>{@link datamodel.amb.MonitorAMB#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}</li>
  *   <li>{@link datamodel.amb.MonitorAMB#getGetInfoMPSheet <em>Get Info MP Sheet</em>}</li>
@@ -29,6 +39,110 @@ import datamodel.base.Util;
  * @generated
  */
 public interface MonitorAMB extends MonitorPoint {
+	/**
+	 * Returns the value of the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux</em>' attribute.
+	 * @see #setAux(BaseFactoryImpl)
+	 * @see datamodel.amb.AmbPackage#getMonitorAMB_Aux()
+	 * @model dataType="datamodel.amb.BaseFactoryImpDT"
+	 * @generated
+	 */
+	BaseFactoryImpl getAux();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.MonitorAMB#getAux <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux</em>' attribute.
+	 * @see #getAux()
+	 * @generated
+	 */
+	void setAux(BaseFactoryImpl value);
+
+	/**
+	 * Returns the value of the '<em><b>Mac</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mac</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mac</em>' attribute.
+	 * @see #setMac(MandCAMB)
+	 * @see datamodel.amb.AmbPackage#getMonitorAMB_Mac()
+	 * @model dataType="datamodel.amb.MandCAMBDT"
+	 * @generated
+	 */
+	MandCAMB getMac();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.MonitorAMB#getMac <em>Mac</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mac</em>' attribute.
+	 * @see #getMac()
+	 * @generated
+	 */
+	void setMac(MandCAMB value);
+
+	/**
+	 * Returns the value of the '<em><b>Aux2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux2</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux2</em>' attribute.
+	 * @see #setAux2(Iterator)
+	 * @see datamodel.amb.AmbPackage#getMonitorAMB_Aux2()
+	 * @model dataType="datamodel.amb.IteratorDT"
+	 * @generated
+	 */
+	Iterator getAux2();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.MonitorAMB#getAux2 <em>Aux2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux2</em>' attribute.
+	 * @see #getAux2()
+	 * @generated
+	 */
+	void setAux2(Iterator value);
+
+	/**
+	 * Returns the value of the '<em><b>Aux3</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux3</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux3</em>' attribute.
+	 * @see #setAux3(Resource)
+	 * @see datamodel.amb.AmbPackage#getMonitorAMB_Aux3()
+	 * @model dataType="datamodel.amb.ResourceDT"
+	 * @generated
+	 */
+	Resource getAux3();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.MonitorAMB#getAux3 <em>Aux3</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux3</em>' attribute.
+	 * @see #getAux3()
+	 * @generated
+	 */
+	void setAux3(Resource value);
+
 	/**
 	 * Returns the value of the '<em><b>To Normalize Data</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -110,7 +224,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, \"Can Be Invalid\")];'"
 	 * @generated
 	 */
 	String CanBeInvalid();
@@ -119,6 +233,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return CanBeInvalid().equals(\"yes-feStatus\");'"
 	 * @generated
 	 */
 	boolean isFEStatus();
@@ -126,7 +241,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.Assembly();'"
 	 * @generated
 	 */
 	String Assembly();
@@ -134,7 +249,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RCA();'"
 	 * @generated
 	 */
 	String RCA();
@@ -142,7 +257,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RawDataType();'"
 	 * @generated
 	 */
 	String RawDataType();
@@ -150,7 +265,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.TeRelated();'"
 	 * @generated
 	 */
 	boolean TeRelated();
@@ -158,7 +273,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataType();'"
 	 * @generated
 	 */
 	String WorldDataType();
@@ -166,7 +281,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.Scale();'"
 	 * @generated
 	 */
 	String Scale();
@@ -174,7 +289,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.Offset();'"
 	 * @generated
 	 */
 	String Offset();
@@ -182,7 +297,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RawDataToCPPType();'"
 	 * @generated
 	 */
 	String RawDataToCPPType();
@@ -190,7 +305,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToCPPType();'"
 	 * @generated
 	 */
 	String WorldDataToCPPType();
@@ -198,7 +313,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToCORBAType();'"
 	 * @generated
 	 */
 	String WorldDataToCORBAType();
@@ -206,7 +321,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToIDLSeqType();'"
 	 * @generated
 	 */
 	String WorldDataToIDLSeqType();
@@ -214,7 +329,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToIDLType();'"
 	 * @generated
 	 */
 	String WorldDataToIDLType();
@@ -222,7 +337,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToCORBASeqType();'"
 	 * @generated
 	 */
 	String WorldDataToCORBASeqType();
@@ -230,7 +345,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToCORBADevIOType();'"
 	 * @generated
 	 */
 	String WorldDataToCORBADevIOType();
@@ -238,7 +353,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToJavaType();'"
 	 * @generated
 	 */
 	String WorldDataToJavaType();
@@ -246,7 +361,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToDatabaseType();'"
 	 * @generated
 	 */
 	String WorldDataToDatabaseType();
@@ -254,7 +369,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToBACIType();'"
 	 * @generated
 	 */
 	String WorldDataToBACIType();
@@ -263,6 +378,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isRawDataArray();'"
 	 * @generated
 	 */
 	boolean isRawDataArray();
@@ -271,6 +387,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isWorldDataArray();'"
 	 * @generated
 	 */
 	boolean isWorldDataArray();
@@ -279,6 +396,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isConversion();'"
 	 * @generated
 	 */
 	boolean isConversion();
@@ -287,6 +405,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isSpecialConversion();'"
 	 * @generated
 	 */
 	boolean isSpecialConversion();
@@ -294,7 +413,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.NumberItemsRawData();'"
 	 * @generated
 	 */
 	String NumberItemsRawData();
@@ -302,7 +421,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.TotalBytesRawData();'"
 	 * @generated
 	 */
 	String TotalBytesRawData();
@@ -310,7 +429,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.NumberRawDataTypeBytes();'"
 	 * @generated
 	 */
 	String NumberRawDataTypeBytes();
@@ -318,7 +437,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RCACell();'"
 	 * @generated
 	 */
 	String RCACell();
@@ -326,7 +445,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.NumberItemsWorldData();'"
 	 * @generated
 	 */
 	String NumberItemsWorldData();
@@ -334,7 +453,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.TeRelatedCell();'"
 	 * @generated
 	 */
 	String TeRelatedCell();
@@ -343,6 +462,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentGroupBit();'"
 	 * @generated
 	 */
 	boolean isDependentGroupBit();
@@ -351,6 +471,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentBit();'"
 	 * @generated
 	 */
 	boolean isDependentBit();
@@ -359,6 +480,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentElement();'"
 	 * @generated
 	 */
 	boolean isDependentElement();
@@ -367,6 +489,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isByteSwapped();'"
 	 * @generated
 	 */
 	boolean isByteSwapped();
@@ -375,6 +498,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentBitElement();'"
 	 * @generated
 	 */
 	boolean isDependentBitElement();
@@ -383,6 +507,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentArrayElement();'"
 	 * @generated
 	 */
 	boolean isDependentArrayElement();
@@ -391,6 +516,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetDimension();'"
 	 * @generated
 	 */
 	String getDimension();
@@ -399,6 +525,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isSingleBit();'"
 	 * @generated
 	 */
 	boolean isSingleBit();
@@ -407,6 +534,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getBit();'"
 	 * @generated
 	 */
 	String getBit();
@@ -423,6 +551,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getFirstBit();'"
 	 * @generated
 	 */
 	String getFirstBit();
@@ -431,6 +560,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getLastBit();'"
 	 * @generated
 	 */
 	String getLastBit();
@@ -439,6 +569,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupMask();'"
 	 * @generated
 	 */
 	String getGroupMask();
@@ -447,6 +578,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupEnd();'"
 	 * @generated
 	 */
 	String getGroupEnd();
@@ -455,6 +587,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupStart();'"
 	 * @generated
 	 */
 	String getGroupStart();
@@ -462,7 +595,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RawSubArrayEndIndex();'"
 	 * @generated
 	 */
 	String RawSubArrayEndIndex();
@@ -470,7 +603,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.RawSubArrayStartIndex();'"
 	 * @generated
 	 */
 	String RawSubArrayStartIndex();
@@ -479,6 +612,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isRawSubArray();'"
 	 * @generated
 	 */
 	boolean isRawSubArray();
@@ -486,7 +620,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataToDatabaseTypeUpper1();'"
 	 * @generated
 	 */
 	String WorldDataToDatabaseTypeUpper1();
@@ -494,7 +628,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.WorldDataTypeUpper1();'"
 	 * @generated
 	 */
 	String WorldDataTypeUpper1();
@@ -502,7 +636,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(), super.MinRange());\r\n'"
 	 * @generated
 	 */
 	String minRange();
@@ -510,7 +644,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(), super.MaxRange());'"
 	 * @generated
 	 */
 	String maxRange();
@@ -518,7 +652,7 @@ public interface MonitorAMB extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return BaseFactoryImpl.eINSTANCE.createUtil().normalizeNumber(WorldDataType(), super.Default());'"
 	 * @generated
 	 */
 	String Default();
@@ -527,6 +661,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = true;\r\n\t\tif( this.isDependent()) ret = false;\r\n\t\tif( this.getDependents().getResources().isEmpty()) ret = false;\r\n\t\tfor (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {\r\n\t\t\tMonitorAMBImpl var = (MonitorAMBImpl) iter.next();\r\n\t\t\tif( var.WorldDataType().compareTo(\"boolean\") != 0 ) ret = false;\r\n\t\t}\r\n\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean isPattern();
@@ -535,6 +670,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\tboolean ret = false;\r\n\t\tif( isDependent() ){\r\n\t\t\tMonitorAMBImpl parent = ((MonitorAMBImpl)this.getParent());\r\n\t\t\tif( parent.isPattern() )\r\n\t\t\t\tret = true;\r\n\t\t}\r\n\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean isPartOfPattern();
@@ -543,6 +679,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = true;\r\n\t\tString firsttype = null;\r\n\t\tif( hasDependents() ){\r\n\t\t\tfor (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {\r\n\t\t\t\tMonitorAMBImpl var = (MonitorAMBImpl) iter.next();\r\n\t\t\t\tif( firsttype == null){\r\n\t\t\t\t\tfirsttype = new String(var.WorldDataType());\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\t}\r\n\t\t\t\tif( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;\r\n\t\t\t}\r\n\t\t}else{\r\n\t\t\tret = false;\r\n\t\t}\r\n\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean isHomogeneous();
@@ -551,6 +688,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = false;\r\n\t\tif( isDependent() ){\r\n\t\t\tMonitorAMBImpl parent = ((MonitorAMBImpl)this.getParent());\r\n\t\t\tif( parent.isHomogeneous() )\r\n\t\t\t\tret = true;\r\n\t\t}\r\n\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean isPartOfHomogeneous();

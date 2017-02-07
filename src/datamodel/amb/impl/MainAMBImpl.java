@@ -9,6 +9,7 @@ package datamodel.amb.impl;
 import datamodel.amb.AmbPackage;
 import datamodel.amb.MainAMB;
 
+import datamodel.base.BaseFactory;
 import datamodel.base.Table;
 
 import datamodel.base.impl.MainBaseImpl;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link datamodel.amb.impl.MainAMBImpl#getTmp <em>Tmp</em>}</li>
  *   <li>{@link datamodel.amb.impl.MainAMBImpl#getGetInfoFromMain <em>Get Info From Main</em>}</li>
  * </ul>
  * </p>
@@ -34,6 +36,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class MainAMBImpl extends MainBaseImpl implements MainAMB {
+	/**
+	 * The default value of the '{@link #getTmp() <em>Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactory TMP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTmp() <em>Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactory tmp = TMP_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getGetInfoFromMain() <em>Get Info From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -61,6 +83,27 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.MAIN_AMB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactory getTmp() {
+		return tmp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTmp(BaseFactory newTmp) {
+		BaseFactory oldTmp = tmp;
+		tmp = newTmp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAIN_AMB__TMP, oldTmp, tmp));
 	}
 
 	/**
@@ -107,9 +150,7 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * @generated
 	 */
 	public String Parent() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Parent")];
 	}
 
 	/**
@@ -118,9 +159,7 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * @generated
 	 */
 	public String NodeAddress() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Node Address")];
 	}
 
 	/**
@@ -129,9 +168,7 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * @generated
 	 */
 	public String Cardinality() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Cardinality")];
 	}
 
 	/**
@@ -140,9 +177,7 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * @generated
 	 */
 	public String Channel() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Channel")];
 	}
 
 	/**
@@ -151,9 +186,7 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * @generated
 	 */
 	public boolean GenericMonitorPoints() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Generic Monitor Points")].equals("yes");
 	}
 
 	/**
@@ -162,9 +195,7 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * @generated
 	 */
 	public String BaseAddress() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Base Address")];
 	}
 
 	/**
@@ -175,6 +206,8 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AmbPackage.MAIN_AMB__TMP:
+				return getTmp();
 			case AmbPackage.MAIN_AMB__GET_INFO_FROM_MAIN:
 				if (resolve) return getGetInfoFromMain();
 				return basicGetGetInfoFromMain();
@@ -190,6 +223,9 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AmbPackage.MAIN_AMB__TMP:
+				setTmp((BaseFactory)newValue);
+				return;
 			case AmbPackage.MAIN_AMB__GET_INFO_FROM_MAIN:
 				setGetInfoFromMain((Table)newValue);
 				return;
@@ -205,6 +241,9 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AmbPackage.MAIN_AMB__TMP:
+				setTmp(TMP_EDEFAULT);
+				return;
 			case AmbPackage.MAIN_AMB__GET_INFO_FROM_MAIN:
 				setGetInfoFromMain((Table)null);
 				return;
@@ -220,10 +259,28 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AmbPackage.MAIN_AMB__TMP:
+				return TMP_EDEFAULT == null ? tmp != null : !TMP_EDEFAULT.equals(tmp);
 			case AmbPackage.MAIN_AMB__GET_INFO_FROM_MAIN:
 				return getInfoFromMain != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (tmp: ");
+		result.append(tmp);
+		result.append(')');
+		return result.toString();
 	}
 
 } //MainAMBImpl

@@ -476,9 +476,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String Assembly() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Assembly")];
 	}
 
 	/**
@@ -487,9 +485,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String RCA() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "RCA")];
 	}
 
 	/**
@@ -498,9 +494,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String RCACell() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "RCA")];
 	}
 
 	/**
@@ -509,9 +503,14 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String RawDataType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Raw Data Type")];
+				if(!mcp.isDependent())
+					return isRawDataArray() ? s.substring(0, s.indexOf("[")) : s;
+					if(mcp instanceof MonitorAMBImpl)
+						return ((MonitorAMBImpl) mcp.getParent()).RawDataType();
+					if(mcp instanceof ControlAMBImpl)
+						return ((ControlAMBImpl) mcp.getParent()).RawDataType();
+					return "ERROR";
 	}
 
 	/**
@@ -520,9 +519,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String RawDataTypeCell() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Raw Data Type")];
+		
 	}
 
 	/**
@@ -531,9 +529,17 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean TeRelated() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String TeRelatedCell() {
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "TE Related")];
+		
 	}
 
 	/**
@@ -542,9 +548,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		String s = row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "World Data Type")];
+		return isWorldDataArray() ? s.substring(0, s.indexOf("[")) : s;
 	}
 
 	/**
@@ -553,9 +558,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataTypeCell() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "World Data Type")];
 	}
 
 	/**
@@ -564,9 +567,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String Scale() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = ScaleCell();
+				if((s.equals("none") == true) || (s.equals("extended") == true)
+						|| (s.equals(BaseFactory.eINSTANCE.createTable().getCelsiusToKelvin()) == true))
+					s = "1.0";
+				return s;
 	}
 
 	/**
@@ -575,9 +580,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String ScaleCell() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return BaseFactory.eINSTANCE.createUtil().normalizeNumber(WorldDataType(), row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Scale")]);
+		
 	}
 
 	/**
@@ -586,9 +590,14 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String Offset() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = ScaleCell();
+				if(s.equals(BaseFactory.eINSTANCE.createTable().getCelsiusToKelvin()))
+					return "273.15";
+				String o = OffsetCell();
+				if((o.equals("0") == true) || (o.equals("none") == true)
+						|| (o.equals("extended") == true))
+					o = "0.0";
+				return o;
 	}
 
 	/**
@@ -597,9 +606,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String OffsetCell() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return BaseFactory.eINSTANCE.createUtil().normalizeNumber(WorldDataType(), row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Offset")]);
+		
 	}
 
 	/**
@@ -608,9 +616,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String RawDataToCPPType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getRawToCPP().get(RawDataType());
+		
 	}
 
 	/**
@@ -619,9 +626,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToCPPType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToCPP().get(WorldDataType());
 	}
 
 	/**
@@ -630,9 +635,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToCORBAType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToCORBA().get(WorldDataType());
 	}
 
 	/**
@@ -641,9 +644,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToIDLSeqType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToIDLSeq().get(WorldDataType());
 	}
 
 	/**
@@ -652,9 +653,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToIDLType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToIDL().get(WorldDataType());
+		
 	}
 
 	/**
@@ -663,9 +663,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToCORBASeqType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToCORBASeq().get(WorldDataType());
 	}
 
 	/**
@@ -674,9 +672,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToCORBADevIOType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToCORBADevIO().get(WorldDataType());
 	}
 
 	/**
@@ -685,9 +681,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToJavaType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToJava().get(WorldDataType());
 	}
 
 	/**
@@ -696,9 +690,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToDatabaseType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToDatabase().get(WorldDataType());
 	}
 
 	/**
@@ -707,9 +699,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToBACIType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)BaseFactory.eINSTANCE.createTable().getWorldToBACI().get(WorldDataType());
 	}
 
 	/**
@@ -718,9 +708,20 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isConversion() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				if(ScaleCell().equals("none") && OffsetCell().equals("none")) {
+					return false;
+				}
+				else if(ScaleCell().equals("1.0") && OffsetCell().equals("0.0")) {
+					return false;
+				}
+				else if(ScaleCell().equals("1.0") && OffsetCell().equals("none")) {
+					return false;
+				}
+				else if(ScaleCell().equals("none") && OffsetCell().equals("0.0")) {
+					return false;
+				}
+		
+				return true;
 	}
 
 	/**
@@ -729,9 +730,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isSpecialConversion() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ScaleCell().equals("extended");
 	}
 
 	/**
@@ -740,9 +739,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isWorldDataArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		String s = 	row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "World Data Type")];
+		return s.endsWith("]") ? true : false;
 	}
 
 	/**
@@ -751,9 +749,12 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isRawDataArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Raw Data Type")];
+				if(!mcp.isDependent())
+					return s.endsWith("]") ? true : false;
+				if(s.startsWith("&lt;") && s.substring(1).indexOf("&lt;") != -1)
+					return true;
+				return false;
 	}
 
 	/**
@@ -762,9 +763,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String NumberItemsRawData() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		String s = row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Raw Data Type")];
+		return BaseFactory.eINSTANCE.createUtil().NumberOfItems(s);
 	}
 
 	/**
@@ -773,9 +773,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String TotalBytesRawData() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		String s = row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "Raw Data Type")];
+		return BaseFactory.eINSTANCE.createUtil().RawDataTypeTotalBytes(s);
 	}
 
 	/**
@@ -784,9 +783,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String NumberRawDataTypeBytes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return BaseFactory.eINSTANCE.createUtil().NumberRawDataTypeBytes(RawDataType());
 	}
 
 	/**
@@ -795,9 +792,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String NumberItemsWorldData() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		String s = row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, "World Data Type")];
+		return BaseFactory.eINSTANCE.createUtil().NumberOfItems(s);
 	}
 
 	/**
@@ -806,9 +802,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isDependentGroupBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				if(!mcp.isDependent())
+					return false;
+				if(isDependentBit() && RawDataTypeCell().indexOf("-") != -1)
+					return true;
+				return false;
 	}
 
 	/**
@@ -817,9 +815,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isDependentBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				if(!mcp.isDependent())
+					return false;
+				if(RawDataTypeCell().startsWith("&lt;"))
+					return true;
+				return false;
 	}
 
 	/**
@@ -828,9 +828,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isDependentElement() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				if(!mcp.isDependent())
+					return false;
+				if(RawDataTypeCell().startsWith("["))
+					return true;
+				return false;
 	}
 
 	/**
@@ -839,9 +841,7 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isByteSwapped() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ((String)BaseFactory.eINSTANCE.createTable().getRawToByteSwapped().get(RawDataType())).equals(true);
 	}
 
 	/**
@@ -850,9 +850,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isDependentBitElement() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				if(!mcp.isDependent())
+					return false;
+				if(RawDataTypeCell().startsWith("&lt;"))
+					return true;
+				return false;
 	}
 
 	/**
@@ -861,9 +863,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isDependentArrayElement() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				if(!mcp.isDependent())
+					return false;
+				if(RawDataTypeCell().startsWith("["))
+					return true;
+				return false;
 	}
 
 	/**
@@ -872,9 +876,18 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String GetDimension() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				if(isDependentArrayElement()) {
+					int n = s.indexOf("]");
+					return s.substring(1, n);
+				}
+				if(!isRawDataArray())
+					return "0";
+				if(isDependentBitElement()) {
+					int n = s.indexOf("&gt;");
+					return s.substring(4, n);
+				}
+				return "0";
 	}
 
 	/**
@@ -883,9 +896,14 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isSingleBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				if(!s.startsWith("&lt;"))// &lt;0&gt;
+					return false;
+				if(!s.endsWith("&gt;"))
+					return false;
+				if(s.indexOf("-") == -1)
+					return true;
+				return false;
 	}
 
 	/**
@@ -894,9 +912,9 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String getBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				int n = s.indexOf("&gt;");
+				return s.substring(4, n);
 	}
 
 	/**
@@ -905,9 +923,15 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String getFirstBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				if(!s.startsWith("&lt;") || !s.endsWith("&gt;"))
+					return "";
+				if(isSingleBit())
+					return getBit();
+				int n = s.indexOf("-");
+				if(n == -1)
+					return "";
+				return s.substring(4, n);
 	}
 
 	/**
@@ -916,9 +940,15 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String getLastBit() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				if(!s.startsWith("&lt;") || !s.endsWith("&gt;"))
+					return "";
+				if(isSingleBit())
+					return getBit();
+				int n = s.indexOf("-");
+				if(n == -1)
+					return "";
+				return s.substring(n + 1, s.length() - 4);
 	}
 
 	/**
@@ -927,9 +957,23 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String getGroupStart() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				if(isRawDataArray()) {
+					s = s.substring(4);
+					int n = s.indexOf("&lt;");
+					int m = s.substring(n + 4).indexOf("&gt;");
+					if(n == -1 || m == -1)
+						return "";
+					s = s.substring(n + 4, m + n + 4);
+				}
+				else {
+					s = s.substring(4, s.length() - 4);
+				}
+				// "s" is of type "i-j"
+				int n = s.indexOf("-");
+				if(n == -1)
+					return "";
+				return s.substring(0, n);
 	}
 
 	/**
@@ -938,9 +982,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String getGroupEnd() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				int n = s.indexOf("-");
+				if(n == -1)
+					return "";
+				return s.substring(n + 1, s.length() - 4);
 	}
 
 	/**
@@ -949,9 +995,17 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String getGroupMask() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String firstBit = getGroupStart();
+				String lastBit = getGroupEnd();
+				int n = Integer.parseInt(firstBit);
+				int m = Integer.parseInt(lastBit);
+				int intMaskSize = m - n;
+				int intMask = 0;
+				for(int i = 0; i <= intMaskSize; i++) {
+					intMask += Math.pow(2, i);
+				}
+				String mask = "0x".concat(Integer.toHexString(intMask).toUpperCase());
+				return mask;
 	}
 
 	/**
@@ -960,9 +1014,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public boolean isRawSubArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				if((s.indexOf("[") != -1) && (s.indexOf("-") != -1)
+						&& (s.indexOf("]") != -1))
+					return true;
+				return false;
 	}
 
 	/**
@@ -971,9 +1027,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String RawSubArrayStartIndex() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				return String.valueOf(findRawSubArrayIndex(s, true));
 	}
 
 	/**
@@ -982,9 +1037,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String RawSubArrayEndIndex() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = RawDataTypeCell();
+				return String.valueOf(findRawSubArrayIndex(s, false));
 	}
 
 	/**
@@ -993,9 +1047,39 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public int findRawSubArrayIndex(String s, boolean startOrEnd) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				int end = s.indexOf("]");
+				if(end == -1)
+					throw new RuntimeException(
+							"In Raw Datatype column of monitor spreadsheet, subarray notation does not contain \"]\" ("
+							+ s + ")");
+				int start = s.indexOf("[") + 1;
+				if(start < 1)
+					throw new RuntimeException(
+							"In Raw Datatype column of monitor spreadsheet, subarray notation does not start with \"[\" ("
+							+ s + ")");
+		
+				String subString = s.substring(start, end);
+				String interpretStrings[] = subString.split("-");
+				if(interpretStrings.length != 2)
+					throw new RuntimeException(
+							"In Raw Datatype column of monitor spreadsheet, subarray notation does contain a range ("
+							+ s + ")");
+				int index = -1;
+				try {
+					if(startOrEnd == true)
+						index = Integer.parseInt(interpretStrings[0]);
+					else
+						index = Integer.parseInt(interpretStrings[1]);
+				}
+				catch(NumberFormatException err) {
+					throw new RuntimeException(
+							"In Raw Datatype column of monitor spreadsheet, subarray notation does not contain an integer as index ("
+							+ s
+							+ ", "
+							+ interpretStrings[0]
+							                   + interpretStrings[1] + ")");
+				}
+				return index;
 	}
 
 	/**
@@ -1004,9 +1088,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataToDatabaseTypeUpper1() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = WorldDataToDatabaseType();
+				return Character.toUpperCase(s.charAt(0)) + s.substring(1);
 	}
 
 	/**
@@ -1015,9 +1098,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * @generated
 	 */
 	public String WorldDataTypeUpper1() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				String s = WorldDataType();
+				return Character.toUpperCase(s.charAt(0)) + s.substring(1);
 	}
 
 	/**

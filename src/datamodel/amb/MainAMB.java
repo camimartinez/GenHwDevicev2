@@ -6,6 +6,7 @@
  */
 package datamodel.amb;
 
+import datamodel.base.BaseFactory;
 import datamodel.base.MainBase;
 import datamodel.base.Table;
 
@@ -17,6 +18,7 @@ import datamodel.base.Table;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link datamodel.amb.MainAMB#getTmp <em>Tmp</em>}</li>
  *   <li>{@link datamodel.amb.MainAMB#getGetInfoFromMain <em>Get Info From Main</em>}</li>
  * </ul>
  * </p>
@@ -26,6 +28,32 @@ import datamodel.base.Table;
  * @generated
  */
 public interface MainAMB extends MainBase {
+	/**
+	 * Returns the value of the '<em><b>Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tmp</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tmp</em>' attribute.
+	 * @see #setTmp(BaseFactory)
+	 * @see datamodel.amb.AmbPackage#getMainAMB_Tmp()
+	 * @model dataType="datamodel.amb.BaseFactoryDT"
+	 * @generated
+	 */
+	BaseFactory getTmp();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.MainAMB#getTmp <em>Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tmp</em>' attribute.
+	 * @see #getTmp()
+	 * @generated
+	 */
+	void setTmp(BaseFactory value);
+
 	/**
 	 * Returns the value of the '<em><b>Get Info From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -55,7 +83,7 @@ public interface MainAMB extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, \"Parent\")];'"
 	 * @generated
 	 */
 	String Parent();
@@ -63,7 +91,7 @@ public interface MainAMB extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, \"Node Address\")];'"
 	 * @generated
 	 */
 	String NodeAddress();
@@ -71,7 +99,7 @@ public interface MainAMB extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, \"Cardinality\")];'"
 	 * @generated
 	 */
 	String Cardinality();
@@ -79,7 +107,7 @@ public interface MainAMB extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, \"Channel\")];'"
 	 * @generated
 	 */
 	String Channel();
@@ -87,7 +115,7 @@ public interface MainAMB extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, \"Generic Monitor Points\")].equals(\"yes\");'"
 	 * @generated
 	 */
 	boolean GenericMonitorPoints();
@@ -95,7 +123,7 @@ public interface MainAMB extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, \"Base Address\")];'"
 	 * @generated
 	 */
 	String BaseAddress();
