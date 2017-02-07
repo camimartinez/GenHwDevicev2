@@ -9,6 +9,7 @@ package datamodel.eth.impl;
 import datamodel.eth.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -76,6 +77,36 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case EthPackage.MAND_CETHDT:
+				return createMandCETHDTFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case EthPackage.MAND_CETHDT:
+				return convertMandCETHDTToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ArchiveETH createArchiveETH() {
 		ArchiveETHImpl archiveETH = new ArchiveETHImpl();
 		return archiveETH;
@@ -129,6 +160,24 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	public MonitorETH createMonitorETH() {
 		MonitorETHImpl monitorETH = new MonitorETHImpl();
 		return monitorETH;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandCETH createMandCETHDTFromString(EDataType eDataType, String initialValue) {
+		return (MandCETH)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMandCETHDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

@@ -2146,7 +2146,7 @@
         </eAnnotations>
         <eParameters name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="Assembly">
+      <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return mac.Assembly();"/>
         </eAnnotations>
@@ -2168,7 +2168,7 @@
       </eOperations>
       <eOperations name="isDataArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="mac.isDataArray();"/>
+          <details key="body" value="return mac.isDataArray();"/>
         </eAnnotations>
       </eOperations>
       <eOperations name="isOpenArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -2228,7 +2228,7 @@
       <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="VendorClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return ((MainETH)main).VendorClass();"/>
+          <details key="body" value="return ((MainETHImpl)main).VendorClass();"/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="infoDevMain" eType="#//base/MainBase"/>
@@ -2247,6 +2247,7 @@
           <details key="body" value="return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;Vendor Class&quot;)];"/>
         </eAnnotations>
       </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//amb/BaseFactoryImpDT"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoMain" eType="#//base/Table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MandCETH">
@@ -2288,42 +2289,42 @@
       </eOperations>
       <eOperations name="DataToCPPType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCPP.get(DataType());"/>
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCPP().get(DataType());"/>
         </eAnnotations>
       </eOperations>
       <eOperations name="DataToIDLType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToIDL.get(DataType());"/>
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToIDL().get(DataType());"/>
         </eAnnotations>
       </eOperations>
       <eOperations name="DataToIDLSeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToIDLSeqType.get(DataType());"/>
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToIDLSeq().get(DataType());"/>
         </eAnnotations>
       </eOperations>
       <eOperations name="DataToCORBAType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToDataCORBAType.get(DataType());"/>
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCORBA().get(DataType());"/>
         </eAnnotations>
       </eOperations>
       <eOperations name="DataToCORBADevIOType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCORBADevIO.get(DataType());"/>
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCORBADevIO().get(DataType());"/>
         </eAnnotations>
       </eOperations>
       <eOperations name="DataToCORBASeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCORBASeq.get(DataType());"/>
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCORBASeq().get(DataType());"/>
         </eAnnotations>
       </eOperations>
       <eOperations name="DataToBACIType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToBACI.get(DataType());"/>
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToBACI().get(DataType());"/>
         </eAnnotations>
       </eOperations>
       <eOperations name="DataToDatabaseType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToDatabase.get(DataType());"/>
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToDatabase().get(DataType());"/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//base/String1DT"/>
@@ -2339,7 +2340,7 @@
         </eAnnotations>
         <eParameters name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="Assembly">
+      <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return mac.Assembly();"/>
         </eAnnotations>
@@ -2361,7 +2362,7 @@
       </eOperations>
       <eOperations name="isDataArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="mac.isDataArray();"/>
+          <details key="body" value="return mac.isDataArray();"/>
         </eAnnotations>
       </eOperations>
       <eOperations name="isOpenArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

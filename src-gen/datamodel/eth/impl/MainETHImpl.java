@@ -1,0 +1,241 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package datamodel.eth.impl;
+
+import datamodel.base.Table;
+
+import datamodel.base.impl.BaseFactoryImpl;
+import datamodel.base.impl.MainBaseImpl;
+
+import datamodel.eth.EthPackage;
+import datamodel.eth.MainETH;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Main ETH</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link datamodel.eth.impl.MainETHImpl#getAux <em>Aux</em>}</li>
+ *   <li>{@link datamodel.eth.impl.MainETHImpl#getToInfoMain <em>To Info Main</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class MainETHImpl extends MainBaseImpl implements MainETH {
+	/**
+	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactoryImpl AUX_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactoryImpl aux = AUX_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getToInfoMain() <em>To Info Main</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToInfoMain()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table toInfoMain;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MainETHImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return EthPackage.Literals.MAIN_ETH;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactoryImpl getAux() {
+		return aux;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux(BaseFactoryImpl newAux) {
+		BaseFactoryImpl oldAux = aux;
+		aux = newAux;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MAIN_ETH__AUX, oldAux, aux));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table getToInfoMain() {
+		if (toInfoMain != null && toInfoMain.eIsProxy()) {
+			InternalEObject oldToInfoMain = (InternalEObject)toInfoMain;
+			toInfoMain = (Table)eResolveProxy(oldToInfoMain);
+			if (toInfoMain != oldToInfoMain) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MAIN_ETH__TO_INFO_MAIN, oldToInfoMain, toInfoMain));
+			}
+		}
+		return toInfoMain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table basicGetToInfoMain() {
+		return toInfoMain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setToInfoMain(Table newToInfoMain) {
+		Table oldToInfoMain = toInfoMain;
+		toInfoMain = newToInfoMain;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MAIN_ETH__TO_INFO_MAIN, oldToInfoMain, toInfoMain));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String VendorClass() {
+		return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Vendor Class")];
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case EthPackage.MAIN_ETH__AUX:
+				return getAux();
+			case EthPackage.MAIN_ETH__TO_INFO_MAIN:
+				if (resolve) return getToInfoMain();
+				return basicGetToInfoMain();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case EthPackage.MAIN_ETH__AUX:
+				setAux((BaseFactoryImpl)newValue);
+				return;
+			case EthPackage.MAIN_ETH__TO_INFO_MAIN:
+				setToInfoMain((Table)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case EthPackage.MAIN_ETH__AUX:
+				setAux(AUX_EDEFAULT);
+				return;
+			case EthPackage.MAIN_ETH__TO_INFO_MAIN:
+				setToInfoMain((Table)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case EthPackage.MAIN_ETH__AUX:
+				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
+			case EthPackage.MAIN_ETH__TO_INFO_MAIN:
+				return toInfoMain != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (aux: ");
+		result.append(aux);
+		result.append(')');
+		return result.toString();
+	}
+
+} //MainETHImpl

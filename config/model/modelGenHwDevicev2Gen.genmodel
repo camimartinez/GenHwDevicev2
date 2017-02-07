@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/GenHwDevicev2/src"
-    modelPluginID="GenHwDevicev2" modelName="ModelGenHwDevicev2Gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/GenHwDevicev2/src-gen"
+    editDirectory="/GenHwDevicev2.edit/src-gen" editorDirectory="/GenHwDevicev2.editor/src-gen"
+    modelPluginID="GenHwDevicev2" modelName="ModelGenHwDevicev2Gen" testsDirectory="/GenHwDevicev2.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
   <foreignModel>modelGenHwDevicev2.ecore</foreignModel>
   <genPackages prefix="Datamodel" disposableProviderFactory="true" ecorePackage="modelGenHwDevicev2.ecore#/">
     <nestedGenPackages prefix="Amb" disposableProviderFactory="true" ecorePackage="modelGenHwDevicev2.ecore#//amb">
@@ -771,12 +772,111 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Eth" disposableProviderFactory="true" ecorePackage="modelGenHwDevicev2.ecore#//eth">
+      <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//eth/MandCETHDT"/>
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/ArchiveETH"/>
-      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/ControlETH"/>
-      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/DeviceModel"/>
-      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/MainETH"/>
-      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/MandCETH"/>
-      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/MonitorETH"/>
+      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/ControlETH">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//eth/ControlETH/mac"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/ControlETH/infoControlEth"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/setAssembly">
+          <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//eth/ControlETH/setAssembly/assembly"/>
+        </genOperations>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/Assembly"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/Address"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/isEnumAddress"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/DataType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/isDataArray"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/isOpenArray"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/getArrayLength"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/DataToIDLType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/DataToIDLSeqType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/DataToCPPType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/DataToCORBAType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/DataToCORBADevIOType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/DataToCORBASeqType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/DataToBACIType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/ControlETH/DataToDatabaseType"/>
+      </genClasses>
+      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/DeviceModel">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/DeviceModel/infoDevMain"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/DeviceModel/infoControl"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/DeviceModel/infoMonitor"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/DeviceModel/toEndEth"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/DeviceModel/infoArch"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/DeviceModel/dataSpreadsheet"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/DeviceModel/notesTo"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/DeviceModel/validateSpreadEth"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/DeviceModel/fromSpreadEth"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/DeviceModel/CreateModel"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/DeviceModel/VendorClass"/>
+      </genClasses>
+      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/MainETH">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//eth/MainETH/aux"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/MainETH/toInfoMain"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MainETH/VendorClass"/>
+      </genClasses>
+      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/MandCETH">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//eth/MandCETH/row"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//eth/MandCETH/sheet"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//eth/MandCETH/assembly"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//eth/MandCETH/aux"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/MandCETH/getInfoFromCol"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/setAssemblyName">
+          <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//eth/MandCETH/setAssemblyName/assembly"/>
+        </genOperations>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/Assembly"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/Address"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/DataType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/isDataArray"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/isOpenArray"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/getArrayLength"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/DataToCPPType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/DataToIDLType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/DataToIDLSeqType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/DataToCORBAType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/DataToCORBADevIOType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/DataToCORBASeqType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/DataToBACIType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MandCETH/DataToDatabaseType"/>
+      </genClasses>
+      <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/MonitorETH">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//eth/MonitorETH/mac"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/MonitorETH/getInfoMPEth"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/setAssembly">
+          <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//eth/MonitorETH/setAssembly/assembly"/>
+        </genOperations>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/Assembly"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/Address"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/isEnumAddress"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/DataType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/isDataArray"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/isOpenArray"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/getArrayLength"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/DataToIDLType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/DataToIDLSeqType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/DataToCPPType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/DataToCORBAType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/DataToCORBADevIOType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/DataToCORBASeqType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/DataToBACIType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/DataToDatabaseType"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/isArchived"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/isPartOfPattern"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/isHomogeneous"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/isPartOfHomogeneous"/>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
