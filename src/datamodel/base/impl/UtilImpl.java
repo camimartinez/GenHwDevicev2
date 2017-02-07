@@ -572,20 +572,20 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	public String NumberOfItems(String s) {
-		        if (s.startsWith("&lt;"))
-		            return "1";
-		        if (!isArray(s))
-		            return "1";
-		        int i = s.indexOf("[");
-		        if (i == -1)
-		            throw new DesignError("Invalid syntax in array notation: (" + s + ")");
-		        String x = s.substring(i + 1, s.length() - 1);
-		        try {
-		            int n = Integer.parseInt(x);
-		        } catch (NumberFormatException err) {
-		            throw new DesignError("Invalid syntax in array notation: (" + s + ")");
-		        }
-		        return x;
+				if (s.startsWith("&lt;"))
+					return "1";
+				if (!isArray(s))
+					return "1";
+				int i = s.indexOf("[");
+				if (i == -1)
+					throw new RuntimeException("Invalid syntax in array notation: (" + s + ")");
+				String x = s.substring(i + 1, s.length() - 1);
+				try {
+					int n = Integer.parseInt(x);
+				} catch (NumberFormatException err) {
+					throw new RuntimeException("Invalid syntax in array notation: (" + s + ")");
+				}
+				return x;
 	}
 
 	/**
@@ -594,30 +594,19 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	public int getRawDataTypeIndex(String s) {
-		 // Temporary <<<<<<<<<<<Must fix this bug<<<<<<<<<<<<<<<<<<<<<<<<
-		        //if (s.equals("~"))
-		            //return 5;
-		        // End Temporary <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-		        if (s.startsWith("&lt;"))
-		            return 0;
-		        if (s.startsWith("["))
-		            return 0; // This isn't really true, but it will pass the validation.
-		        String x = s;
-		        if (isArray(s)) {
-		            int i = s.indexOf("[");
-		            if (i == -1)
-		                throw new DesignError("Invalid syntax in array notation: (" + s + ")");
-		            x = s.substring(0, i);
-		        }
-		        //int i = 0;
-		        //for (; i < Table.RawDataType.length; ++i) {
-		        //    if (Table.RawDataType[i].equals(x))
-		        //        break;
-		        //}
-		        //if (i < Table.RawDataType.length)
-		        //    return i;
+				if (s.startsWith("&lt;"))
 					return 0;
-		        //throw new DesignError("Unknown RawDatatype: (" + s + ")");
+				if (s.startsWith("["))
+					return 0; // This isn't really true, but it will pass the validation.
+				String x = s;
+				if (isArray(s)) {
+					int i = s.indexOf("[");
+					if (i == -1)
+						throw new RuntimeException("Invalid syntax in array notation: (" + s + ")");
+					x = s.substring(0, i);
+				}
+				return 0;
+		
 	}
 
 	/**

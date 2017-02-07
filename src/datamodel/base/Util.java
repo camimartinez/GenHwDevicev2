@@ -277,7 +277,7 @@ public interface Util extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='        if (s.startsWith(\"&lt;\"))\r\n            return \"1\";\r\n        if (!isArray(s))\r\n            return \"1\";\r\n        int i = s.indexOf(\"[\");\r\n        if (i == -1)\r\n            throw new DesignError(\"Invalid syntax in array notation: (\" + s + \")\");\r\n        String x = s.substring(i + 1, s.length() - 1);\r\n        try {\r\n            int n = Integer.parseInt(x);\r\n        } catch (NumberFormatException err) {\r\n            throw new DesignError(\"Invalid syntax in array notation: (\" + s + \")\");\r\n        }\r\n        return x;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (s.startsWith(\"&lt;\"))\r\n\t\t\treturn \"1\";\r\n\t\tif (!isArray(s))\r\n\t\t\treturn \"1\";\r\n\t\tint i = s.indexOf(\"[\");\r\n\t\tif (i == -1)\r\n\t\t\tthrow new RuntimeException(\"Invalid syntax in array notation: (\" + s + \")\");\r\n\t\tString x = s.substring(i + 1, s.length() - 1);\r\n\t\ttry {\r\n\t\t\tint n = Integer.parseInt(x);\r\n\t\t} catch (NumberFormatException err) {\r\n\t\t\tthrow new RuntimeException(\"Invalid syntax in array notation: (\" + s + \")\");\r\n\t\t}\r\n\t\treturn x;'"
 	 * @generated
 	 */
 	String NumberOfItems(String s);
@@ -285,7 +285,7 @@ public interface Util extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body=' // Temporary <<<<<<<<<<<Must fix this bug<<<<<<<<<<<<<<<<<<<<<<<<\r\n        //if (s.equals(\"~\"))\r\n            //return 5;\r\n        // End Temporary <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\r\n        if (s.startsWith(\"&lt;\"))\r\n            return 0;\r\n        if (s.startsWith(\"[\"))\r\n            return 0; // This isn\'t really true, but it will pass the validation.\r\n        String x = s;\r\n        if (isArray(s)) {\r\n            int i = s.indexOf(\"[\");\r\n            if (i == -1)\r\n                throw new DesignError(\"Invalid syntax in array notation: (\" + s + \")\");\r\n            x = s.substring(0, i);\r\n        }\r\n        //int i = 0;\r\n        //for (; i < Table.RawDataType.length; ++i) {\r\n        //    if (Table.RawDataType[i].equals(x))\r\n        //        break;\r\n        //}\r\n        //if (i < Table.RawDataType.length)\r\n        //    return i;\r\n\t\t\treturn 0;\r\n        //throw new DesignError(\"Unknown RawDatatype: (\" + s + \")\");'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (s.startsWith(\"&lt;\"))\r\n\t\t\treturn 0;\r\n\t\tif (s.startsWith(\"[\"))\r\n\t\t\treturn 0; // This isn\'t really true, but it will pass the validation.\r\n\t\tString x = s;\r\n\t\tif (isArray(s)) {\r\n\t\t\tint i = s.indexOf(\"[\");\r\n\t\t\tif (i == -1)\r\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax in array notation: (\" + s + \")\");\r\n\t\t\tx = s.substring(0, i);\r\n\t\t}\r\n\t\treturn 0;\r\n'"
 	 * @generated
 	 */
 	int getRawDataTypeIndex(String s);

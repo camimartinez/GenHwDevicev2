@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.xml.sax.ErrorHandler;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Spreadsheet Validator</b></em>'.
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link datamodel.base.SpreadsheetValidator#getSeh <em>Seh</em>}</li>
  *   <li>{@link datamodel.base.SpreadsheetValidator#getErrorList <em>Error List</em>}</li>
+ *   <li>{@link datamodel.base.SpreadsheetValidator#getSehTmp <em>Seh Tmp</em>}</li>
  *   <li>{@link datamodel.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}</li>
  * </ul>
  * </p>
@@ -82,6 +85,32 @@ public interface SpreadsheetValidator extends EObject {
 	void setErrorList(ArrayList value);
 
 	/**
+	 * Returns the value of the '<em><b>Seh Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Seh Tmp</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Seh Tmp</em>' attribute.
+	 * @see #setSehTmp(ErrorHandler)
+	 * @see datamodel.base.BasePackage#getSpreadsheetValidator_SehTmp()
+	 * @model dataType="datamodel.base.ErrorHandlerDT"
+	 * @generated
+	 */
+	ErrorHandler getSehTmp();
+
+	/**
+	 * Sets the value of the '{@link datamodel.base.SpreadsheetValidator#getSehTmp <em>Seh Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Seh Tmp</em>' attribute.
+	 * @see #getSehTmp()
+	 * @generated
+	 */
+	void setSehTmp(ErrorHandler value);
+
+	/**
 	 * Returns the value of the '<em><b>Error Handler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -110,7 +139,7 @@ public interface SpreadsheetValidator extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tjavax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();\r\n\t\t        factory.setNamespaceAware(true);\r\n\t\t        factory.setValidating(true);\r\n\t\t        factory.setAttribute(\r\n\t\t                \"http://java.sun.com/xml/jaxp/properties/schemaLanguage\",\r\n\t\t                \"http://www.w3.org/2001/XMLSchema\");\r\n\t\t        // Specify our own schema - this overrides the schemaLocation in the xml\r\n\t\t        // file\r\n\t\t        factory.setAttribute(\r\n\t\t                \"http://java.sun.com/xml/jaxp/properties/schemaSource\",\r\n\t\t                \"file://\" + xsdFile);\r\n\t\t       seh = BaseFactoryImpl.eINSTANCE.createSimpleErrorHandler();\r\n\t\t\r\n\t\t        try {\r\n\t\t        \tjavax.xml.parsers.DocumentBuilder builder = factory.newDocumentBuilder();\r\n\t\t            builder.setErrorHandler(seh);\r\n\t\t            org.w3c.dom.Document document = builder.parse(xmlFile);\r\n\t\t        }\r\n\t\t        catch(Exception e) {\r\n\t\t            System.out.println(\"Validating error file \" + xmlFile\r\n\t\t                    + \" with schema file \" + xsdFile + \" failed!\");\r\n\t\t            return false;\r\n\t\t        }\r\n\t\t\r\n\t\t        if(seh.areErrors()) {\r\n\t\t            System.out.println(\"Validating error file \" + xmlFile\r\n\t\t                    + \" with schema file \" + xsdFile + \" failed!\");\r\n\t\t            return false;\r\n\t\t        }\r\n\t\t        else {\r\n\t\t            return true;\r\n\t\t        }'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tjavax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();\r\n\t\tfactory.setNamespaceAware(true);\r\n\t\tfactory.setValidating(true);\r\n\t\tfactory.setAttribute(\r\n\t\t\t\t\"http://java.sun.com/xml/jaxp/properties/schemaLanguage\",\r\n\t\t\"http://www.w3.org/2001/XMLSchema\");\r\n\t\t// Specify our own schema - this overrides the schemaLocation in the xml\r\n\t\t// file\r\n\t\tfactory.setAttribute(\r\n\t\t\t\t\"http://java.sun.com/xml/jaxp/properties/schemaSource\",\r\n\t\t\t\t\"file://\" + xsdFile);\r\n\t\tseh = BaseFactoryImpl.eINSTANCE.createSimpleErrorHandler();\r\n\r\n\t\ttry {\r\n\t\t\tjavax.xml.parsers.DocumentBuilder builder = factory.newDocumentBuilder();\r\n\t\t\tbuilder.setErrorHandler((ErrorHandler)seh);\r\n\t\t\torg.w3c.dom.Document document = builder.parse(xmlFile);\r\n\t\t}\r\n\t\tcatch(Exception e) {\r\n\t\t\tSystem.out.println(\"Validating error file \" + xmlFile\r\n\t\t\t\t\t+ \" with schema file \" + xsdFile + \" failed!\");\r\n\t\t\treturn false;\r\n\t\t}\r\n\r\n\t\tif(seh.areErrors()) {\r\n\t\t\tSystem.out.println(\"Validating error file \" + xmlFile\r\n\t\t\t\t\t+ \" with schema file \" + xsdFile + \" failed!\");\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse {\r\n\t\t\treturn true;\r\n\t\t}'"
 	 * @generated
 	 */
 	boolean validate(String xmlFile, String xsdFile);

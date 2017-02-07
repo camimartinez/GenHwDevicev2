@@ -1041,13 +1041,22 @@ public interface BasePackage extends EPackage {
 	int SPREADSHEET_VALIDATOR__ERROR_LIST = 1;
 
 	/**
+	 * The feature id for the '<em><b>Seh Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPREADSHEET_VALIDATOR__SEH_TMP = 2;
+
+	/**
 	 * The feature id for the '<em><b>Error Handler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPREADSHEET_VALIDATOR__ERROR_HANDLER = 2;
+	int SPREADSHEET_VALIDATOR__ERROR_HANDLER = 3;
 
 	/**
 	 * The number of structural features of the '<em>Spreadsheet Validator</em>' class.
@@ -1056,7 +1065,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPREADSHEET_VALIDATOR_FEATURE_COUNT = 3;
+	int SPREADSHEET_VALIDATOR_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link datamodel.base.impl.SpreadsheetParserImpl <em>Spreadsheet Parser</em>}' class.
@@ -1447,6 +1456,16 @@ public interface BasePackage extends EPackage {
 	int HASHTABLE = 17;
 
 	/**
+	 * The meta object id for the '<em>Error Handler DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.xml.sax.ErrorHandler
+	 * @see datamodel.base.impl.BasePackageImpl#getErrorHandlerDT()
+	 * @generated
+	 */
+	int ERROR_HANDLER_DT = 18;
+
+	/**
 	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1454,7 +1473,7 @@ public interface BasePackage extends EPackage {
 	 * @see datamodel.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION_DT = 18;
+	int SAX_PARSE_EXCEPTION_DT = 19;
 
 	/**
 	 * The meta object id for the '<em>String3 DT</em>' data type.
@@ -1463,7 +1482,7 @@ public interface BasePackage extends EPackage {
 	 * @see datamodel.base.impl.BasePackageImpl#getString3DT()
 	 * @generated
 	 */
-	int STRING3_DT = 19;
+	int STRING3_DT = 20;
 
 	/**
 	 * The meta object id for the '<em>String2 DT</em>' data type.
@@ -1472,7 +1491,7 @@ public interface BasePackage extends EPackage {
 	 * @see datamodel.base.impl.BasePackageImpl#getString2DT()
 	 * @generated
 	 */
-	int STRING2_DT = 20;
+	int STRING2_DT = 21;
 
 	/**
 	 * The meta object id for the '<em>String1 DT</em>' data type.
@@ -1481,7 +1500,7 @@ public interface BasePackage extends EPackage {
 	 * @see datamodel.base.impl.BasePackageImpl#getString1DT()
 	 * @generated
 	 */
-	int STRING1_DT = 21;
+	int STRING1_DT = 22;
 
 	/**
 	 * The meta object id for the '<em>System DT</em>' data type.
@@ -1491,7 +1510,7 @@ public interface BasePackage extends EPackage {
 	 * @see datamodel.base.impl.BasePackageImpl#getSystemDT()
 	 * @generated
 	 */
-	int SYSTEM_DT = 22;
+	int SYSTEM_DT = 23;
 
 
 	/**
@@ -2334,6 +2353,17 @@ public interface BasePackage extends EPackage {
 	EAttribute getSpreadsheetValidator_ErrorList();
 
 	/**
+	 * Returns the meta object for the attribute '{@link datamodel.base.SpreadsheetValidator#getSehTmp <em>Seh Tmp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Seh Tmp</em>'.
+	 * @see datamodel.base.SpreadsheetValidator#getSehTmp()
+	 * @see #getSpreadsheetValidator()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetValidator_SehTmp();
+
+	/**
 	 * Returns the meta object for the reference '{@link datamodel.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2668,6 +2698,17 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getHashtable();
+
+	/**
+	 * Returns the meta object for data type '{@link org.xml.sax.ErrorHandler <em>Error Handler DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Error Handler DT</em>'.
+	 * @see org.xml.sax.ErrorHandler
+	 * @model instanceClass="org.xml.sax.ErrorHandler"
+	 * @generated
+	 */
+	EDataType getErrorHandlerDT();
 
 	/**
 	 * Returns the meta object for data type '{@link org.xml.sax.SAXParseException <em>SAX Parse Exception DT</em>}'.
@@ -3376,6 +3417,14 @@ public interface BasePackage extends EPackage {
 		EAttribute SPREADSHEET_VALIDATOR__ERROR_LIST = eINSTANCE.getSpreadsheetValidator_ErrorList();
 
 		/**
+		 * The meta object literal for the '<em><b>Seh Tmp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_VALIDATOR__SEH_TMP = eINSTANCE.getSpreadsheetValidator_SehTmp();
+
+		/**
 		 * The meta object literal for the '<em><b>Error Handler</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3642,6 +3691,16 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType HASHTABLE = eINSTANCE.getHashtable();
+
+		/**
+		 * The meta object literal for the '<em>Error Handler DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.xml.sax.ErrorHandler
+		 * @see datamodel.base.impl.BasePackageImpl#getErrorHandlerDT()
+		 * @generated
+		 */
+		EDataType ERROR_HANDLER_DT = eINSTANCE.getErrorHandlerDT();
 
 		/**
 		 * The meta object literal for the '<em>SAX Parse Exception DT</em>' data type.

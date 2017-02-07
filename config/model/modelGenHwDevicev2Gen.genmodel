@@ -349,6 +349,7 @@
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/MainBaseDT"/>
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/ArrayList"/>
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/Hashtable"/>
+      <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/ErrorHandlerDT"/>
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/SAXParseExceptionDT"/>
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/String3DT"/>
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/String2DT"/>
@@ -585,6 +586,7 @@
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//base/SpreadsheetValidator">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/seh"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/errorList"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/sehTmp"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/errorHandler"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/SpreadsheetValidator/validate">

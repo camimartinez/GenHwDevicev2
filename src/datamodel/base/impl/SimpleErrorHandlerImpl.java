@@ -97,7 +97,7 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SAXParseException error(SAXParseException exception) {
+	public void error(SAXParseException exception) {
 		System.out.println("error: line "+ exception.getLineNumber() + ": " + exception.getMessage());
 		errors = true;
 	}
@@ -107,7 +107,7 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SAXParseException fatalError(SAXParseException exception) {
+	public void fatalError(SAXParseException exception) {
 		System.out.println("fatalError: line "+ exception.getLineNumber() + ": " + exception.getMessage());
 		errors = true;
 	}
@@ -117,7 +117,7 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SAXParseException warning(SAXParseException exception) {
+	public void warning(SAXParseException exception) {
 		System.out.println("warning: line "+ exception.getLineNumber() + ": " + exception.getMessage());
 		errors = true;
 	}

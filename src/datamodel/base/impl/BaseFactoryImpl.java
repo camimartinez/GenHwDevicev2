@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
 
 /**
@@ -93,6 +94,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createArrayListFromString(eDataType, initialValue);
 			case BasePackage.HASHTABLE:
 				return createHashtableFromString(eDataType, initialValue);
+			case BasePackage.ERROR_HANDLER_DT:
+				return createErrorHandlerDTFromString(eDataType, initialValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
 				return createSAXParseExceptionDTFromString(eDataType, initialValue);
 			case BasePackage.STRING3_DT:
@@ -122,6 +125,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertArrayListToString(eDataType, instanceValue);
 			case BasePackage.HASHTABLE:
 				return convertHashtableToString(eDataType, instanceValue);
+			case BasePackage.ERROR_HANDLER_DT:
+				return convertErrorHandlerDTToString(eDataType, instanceValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
 				return convertSAXParseExceptionDTToString(eDataType, instanceValue);
 			case BasePackage.STRING3_DT:
@@ -268,6 +273,24 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertHashtableToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ErrorHandler createErrorHandlerDTFromString(EDataType eDataType, String initialValue) {
+		return (ErrorHandler)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertErrorHandlerDTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

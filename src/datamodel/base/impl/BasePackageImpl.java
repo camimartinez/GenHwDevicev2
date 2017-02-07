@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
 
 /**
@@ -176,6 +177,13 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	private EDataType hashtableEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType errorHandlerDTEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -979,8 +987,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSpreadsheetValidator_SehTmp() {
+		return (EAttribute)spreadsheetValidatorEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getSpreadsheetValidator_ErrorHandler() {
-		return (EReference)spreadsheetValidatorEClass.getEStructuralFeatures().get(2);
+		return (EReference)spreadsheetValidatorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1258,6 +1275,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getErrorHandlerDT() {
+		return errorHandlerDTEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getSAXParseExceptionDT() {
 		return saxParseExceptionDTEDataType;
 	}
@@ -1410,6 +1436,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		spreadsheetValidatorEClass = createEClass(SPREADSHEET_VALIDATOR);
 		createEAttribute(spreadsheetValidatorEClass, SPREADSHEET_VALIDATOR__SEH);
 		createEAttribute(spreadsheetValidatorEClass, SPREADSHEET_VALIDATOR__ERROR_LIST);
+		createEAttribute(spreadsheetValidatorEClass, SPREADSHEET_VALIDATOR__SEH_TMP);
 		createEReference(spreadsheetValidatorEClass, SPREADSHEET_VALIDATOR__ERROR_HANDLER);
 
 		spreadsheetParserEClass = createEClass(SPREADSHEET_PARSER);
@@ -1448,6 +1475,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		mainBaseDTEDataType = createEDataType(MAIN_BASE_DT);
 		arrayListEDataType = createEDataType(ARRAY_LIST);
 		hashtableEDataType = createEDataType(HASHTABLE);
+		errorHandlerDTEDataType = createEDataType(ERROR_HANDLER_DT);
 		saxParseExceptionDTEDataType = createEDataType(SAX_PARSE_EXCEPTION_DT);
 		string3DTEDataType = createEDataType(STRING3_DT);
 		string2DTEDataType = createEDataType(STRING2_DT);
@@ -1788,6 +1816,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEClass(spreadsheetValidatorEClass, SpreadsheetValidator.class, "SpreadsheetValidator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSpreadsheetValidator_Seh(), this.getSimpleErrorHandlerDT(), "seh", null, 0, 1, SpreadsheetValidator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpreadsheetValidator_ErrorList(), this.getArrayList(), "errorList", null, 0, 1, SpreadsheetValidator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpreadsheetValidator_SehTmp(), this.getErrorHandlerDT(), "sehTmp", null, 0, 1, SpreadsheetValidator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpreadsheetValidator_ErrorHandler(), this.getSimpleErrorHandler(), null, "errorHandler", null, 0, 1, SpreadsheetValidator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(spreadsheetValidatorEClass, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1925,13 +1954,13 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEClass(simpleErrorHandlerEClass, SimpleErrorHandler.class, "SimpleErrorHandler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSimpleErrorHandler_Errors(), ecorePackage.getEBoolean(), "errors", "false", 0, 1, SimpleErrorHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "error", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(simpleErrorHandlerEClass, null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "fatalError", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(simpleErrorHandlerEClass, null, "fatalError", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(simpleErrorHandlerEClass, this.getSAXParseExceptionDT(), "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(simpleErrorHandlerEClass, null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSAXParseExceptionDT(), "exception", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(simpleErrorHandlerEClass, ecorePackage.getEBoolean(), "areErrors", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1967,6 +1996,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEDataType(mainBaseDTEDataType, MainBase.class, "MainBaseDT", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(arrayListEDataType, ArrayList.class, "ArrayList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(hashtableEDataType, Hashtable.class, "Hashtable", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(errorHandlerDTEDataType, ErrorHandler.class, "ErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(saxParseExceptionDTEDataType, SAXParseException.class, "SAXParseExceptionDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(string3DTEDataType, String[][][].class, "String3DT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(string2DTEDataType, String[][].class, "String2DT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

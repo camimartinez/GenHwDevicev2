@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.xml.sax.ErrorHandler;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Spreadsheet Validator</b></em>'.
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link datamodel.base.impl.SpreadsheetValidatorImpl#getSeh <em>Seh</em>}</li>
  *   <li>{@link datamodel.base.impl.SpreadsheetValidatorImpl#getErrorList <em>Error List</em>}</li>
+ *   <li>{@link datamodel.base.impl.SpreadsheetValidatorImpl#getSehTmp <em>Seh Tmp</em>}</li>
  *   <li>{@link datamodel.base.impl.SpreadsheetValidatorImpl#getErrorHandler <em>Error Handler</em>}</li>
  * </ul>
  * </p>
@@ -75,6 +78,26 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * @ordered
 	 */
 	protected ArrayList errorList = ERROR_LIST_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSehTmp() <em>Seh Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSehTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ErrorHandler SEH_TMP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSehTmp() <em>Seh Tmp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSehTmp()
+	 * @generated
+	 * @ordered
+	 */
+	protected ErrorHandler sehTmp = SEH_TMP_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getErrorHandler() <em>Error Handler</em>}' reference.
@@ -152,6 +175,27 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ErrorHandler getSehTmp() {
+		return sehTmp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSehTmp(ErrorHandler newSehTmp) {
+		ErrorHandler oldSehTmp = sehTmp;
+		sehTmp = newSehTmp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_VALIDATOR__SEH_TMP, oldSehTmp, sehTmp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SimpleErrorHandler getErrorHandler() {
 		if (errorHandler != null && errorHandler.eIsProxy()) {
 			InternalEObject oldErrorHandler = (InternalEObject)errorHandler;
@@ -191,38 +235,38 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * @generated
 	 */
 	public boolean validate(String xmlFile, String xsdFile) {
-			javax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();
-				        factory.setNamespaceAware(true);
-				        factory.setValidating(true);
-				        factory.setAttribute(
-				                "http://java.sun.com/xml/jaxp/properties/schemaLanguage",
-				                "http://www.w3.org/2001/XMLSchema");
-				        // Specify our own schema - this overrides the schemaLocation in the xml
-				        // file
-				        factory.setAttribute(
-				                "http://java.sun.com/xml/jaxp/properties/schemaSource",
-				                "file://" + xsdFile);
-				       seh = BaseFactoryImpl.eINSTANCE.createSimpleErrorHandler();
-				
-				        try {
-				        	javax.xml.parsers.DocumentBuilder builder = factory.newDocumentBuilder();
-				            builder.setErrorHandler(seh);
-				            org.w3c.dom.Document document = builder.parse(xmlFile);
-				        }
-				        catch(Exception e) {
-				            System.out.println("Validating error file " + xmlFile
-				                    + " with schema file " + xsdFile + " failed!");
-				            return false;
-				        }
-				
-				        if(seh.areErrors()) {
-				            System.out.println("Validating error file " + xmlFile
-				                    + " with schema file " + xsdFile + " failed!");
-				            return false;
-				        }
-				        else {
-				            return true;
-				        }
+				javax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();
+				factory.setNamespaceAware(true);
+				factory.setValidating(true);
+				factory.setAttribute(
+						"http://java.sun.com/xml/jaxp/properties/schemaLanguage",
+				"http://www.w3.org/2001/XMLSchema");
+				// Specify our own schema - this overrides the schemaLocation in the xml
+				// file
+				factory.setAttribute(
+						"http://java.sun.com/xml/jaxp/properties/schemaSource",
+						"file://" + xsdFile);
+				seh = BaseFactoryImpl.eINSTANCE.createSimpleErrorHandler();
+		
+				try {
+					javax.xml.parsers.DocumentBuilder builder = factory.newDocumentBuilder();
+					builder.setErrorHandler((ErrorHandler)seh);
+					org.w3c.dom.Document document = builder.parse(xmlFile);
+				}
+				catch(Exception e) {
+					System.out.println("Validating error file " + xmlFile
+							+ " with schema file " + xsdFile + " failed!");
+					return false;
+				}
+		
+				if(seh.areErrors()) {
+					System.out.println("Validating error file " + xmlFile
+							+ " with schema file " + xsdFile + " failed!");
+					return false;
+				}
+				else {
+					return true;
+				}
 	}
 
 	/**
@@ -237,6 +281,8 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 				return getSeh();
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_LIST:
 				return getErrorList();
+			case BasePackage.SPREADSHEET_VALIDATOR__SEH_TMP:
+				return getSehTmp();
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
 				if (resolve) return getErrorHandler();
 				return basicGetErrorHandler();
@@ -257,6 +303,9 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 				return;
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_LIST:
 				setErrorList((ArrayList)newValue);
+				return;
+			case BasePackage.SPREADSHEET_VALIDATOR__SEH_TMP:
+				setSehTmp((ErrorHandler)newValue);
 				return;
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
 				setErrorHandler((SimpleErrorHandler)newValue);
@@ -279,6 +328,9 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_LIST:
 				setErrorList(ERROR_LIST_EDEFAULT);
 				return;
+			case BasePackage.SPREADSHEET_VALIDATOR__SEH_TMP:
+				setSehTmp(SEH_TMP_EDEFAULT);
+				return;
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
 				setErrorHandler((SimpleErrorHandler)null);
 				return;
@@ -298,6 +350,8 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 				return SEH_EDEFAULT == null ? seh != null : !SEH_EDEFAULT.equals(seh);
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_LIST:
 				return ERROR_LIST_EDEFAULT == null ? errorList != null : !ERROR_LIST_EDEFAULT.equals(errorList);
+			case BasePackage.SPREADSHEET_VALIDATOR__SEH_TMP:
+				return SEH_TMP_EDEFAULT == null ? sehTmp != null : !SEH_TMP_EDEFAULT.equals(sehTmp);
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
 				return errorHandler != null;
 		}
@@ -318,6 +372,8 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 		result.append(seh);
 		result.append(", errorList: ");
 		result.append(errorList);
+		result.append(", sehTmp: ");
+		result.append(sehTmp);
 		result.append(')');
 		return result.toString();
 	}

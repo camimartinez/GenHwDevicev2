@@ -57,29 +57,29 @@ public interface SimpleErrorHandler extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="datamodel.base.SAXParseExceptionDT" exceptionDataType="datamodel.base.SAXParseExceptionDT"
+	 * @model exceptionDataType="datamodel.base.SAXParseExceptionDT"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='System.out.println(\"error: line \"+ exception.getLineNumber() + \": \" + exception.getMessage());\r\nerrors = true;'"
 	 * @generated
 	 */
-	SAXParseException error(SAXParseException exception);
+	void error(SAXParseException exception);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="datamodel.base.SAXParseExceptionDT" exceptionDataType="datamodel.base.SAXParseExceptionDT"
+	 * @model exceptionDataType="datamodel.base.SAXParseExceptionDT"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='System.out.println(\"fatalError: line \"+ exception.getLineNumber() + \": \" + exception.getMessage());\r\nerrors = true;'"
 	 * @generated
 	 */
-	SAXParseException fatalError(SAXParseException exception);
+	void fatalError(SAXParseException exception);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="datamodel.base.SAXParseExceptionDT" exceptionDataType="datamodel.base.SAXParseExceptionDT"
+	 * @model exceptionDataType="datamodel.base.SAXParseExceptionDT"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='System.out.println(\"warning: line \"+ exception.getLineNumber() + \": \" + exception.getMessage());\r\nerrors = true;'"
 	 * @generated
 	 */
-	SAXParseException warning(SAXParseException exception);
+	void warning(SAXParseException exception);
 
 	/**
 	 * <!-- begin-user-doc -->
