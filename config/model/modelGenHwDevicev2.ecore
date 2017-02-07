@@ -2139,10 +2139,291 @@
   </eSubpackages>
   <eSubpackages name="eth" nsURI="http://alma.Control.datamodel.eth/1.0" nsPrefix="alma.Control.datamodel.meta.eth">
     <eClassifiers xsi:type="ecore:EClass" name="ArchiveETH" eSuperTypes="#//base/ArchiveProperty"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ControlETH" eSuperTypes="#//base/ControlPoint"/>
-    <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//base/DeviceModel"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MainETH" eSuperTypes="#//base/MainBase"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MandCETH"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MonitorETH" eSuperTypes="#//base/MonitorPoint"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ControlETH" eSuperTypes="#//base/ControlPoint">
+      <eOperations name="setAssembly">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="mac.setAssemblyName(assembly);"/>
+        </eAnnotations>
+        <eParameters name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="Assembly">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.Assembly();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="Address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.Address();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isEnumAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="&#x9;&#x9;try&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;Integer.decode(mac.Address());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;catch(Exception e)&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;return true;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return false;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isDataArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="mac.isDataArray();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isOpenArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.isOpenArray();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getArrayLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.getArrayLength();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToIDLType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToIDLType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToIDLSeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToIDLSeqType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCPPType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToCPPType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCORBAType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToCORBAType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCORBADevIOType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToCORBADevIOType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCORBASeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToCORBASeqType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToBACIType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToBACIType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToDatabaseType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToDatabaseType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//eth/MandCETHDT"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//base/DeviceModel">
+      <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="VendorClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return ((MainETH)main).VendorClass();"/>
+        </eAnnotations>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MainETH" eSuperTypes="#//base/MainBase">
+      <eOperations name="VendorClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;Vendor Class&quot;)];"/>
+        </eAnnotations>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MandCETH">
+      <eOperations name="setAssemblyName">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="this.assembly = assembly;"/>
+        </eAnnotations>
+        <eParameters name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return assembly;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="Address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;Address&quot;)];"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="String s = row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;DataType&quot;)];&#xD;&#xA;return isDataArray() ? s.substring(0,s.indexOf(&quot;[&quot;)) : s;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isDataArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;Data Type&quot;)].endsWith(&quot;]&quot;) ? true : false;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isOpenArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if(!isDataArray()) return false;&#xD;&#xA;String s =  row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;Data Type&quot;)];&#xD;&#xA;return (s.indexOf(&quot;]&quot;) - s.indexOf(&quot;[&quot;) == 1) ? true : false;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getArrayLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if(!isDataArray()) return &quot;1&quot;;&#xD;&#xA;String s = row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;Data Type&quot;)];&#xD;&#xA;return s.substring(s.indexOf(&quot;[&quot;)+1,s.indexOf(&quot;]&quot;));&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCPPType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCPP.get(DataType());"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToIDLType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToIDL.get(DataType());"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToIDLSeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToIDLSeqType.get(DataType());"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCORBAType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToDataCORBAType.get(DataType());"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCORBADevIOType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCORBADevIO.get(DataType());"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCORBASeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToCORBASeq.get(DataType());"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToBACIType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToBACI.get(DataType());"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToDatabaseType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToDatabase.get(DataType());"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//base/String1DT"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//amb/BaseFactoryImpDT"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MonitorETH" eSuperTypes="#//base/MonitorPoint">
+      <eOperations name="setAssembly">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="mac.setAssemblyName(assembly);"/>
+        </eAnnotations>
+        <eParameters name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="Assembly">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.Assembly();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="Address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.Address();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isEnumAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="&#x9;&#x9;try&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;Integer.decode(mac.Address());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;catch(Exception e)&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;return true;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return false;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isDataArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="mac.isDataArray();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isOpenArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.isOpenArray();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getArrayLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.getArrayLength();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToIDLType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToIDLType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToIDLSeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToIDLSeqType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCPPType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToCPPType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCORBAType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToCORBAType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCORBADevIOType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToCORBADevIOType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToCORBASeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToCORBASeqType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToBACIType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToBACIType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="DataToDatabaseType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.DataToDatabaseType();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isArchived" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="&#xD;&#xA;&#x9;&#x9;if (DataType().equals(&quot;uint&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;return false;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&#x9;if ( DataType().equals(&quot;bool&quot;) || DataType().equals(&quot;boolean&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;|| DataType().equals(&quot;string&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;|| (DataType().equals(&quot;double&quot;) &amp;&amp; isDataArray())&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;|| (DataType().equals(&quot;int&quot;) &amp;&amp; isDataArray()) )&#xD;&#xA;&#x9;&#x9;&#x9;return false;&#xD;&#xA;&#x9;&#x9;return true;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isPartOfPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return false;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return true;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="isPartOfHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details value="return false;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//eth/MandCETHDT"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="MandCETHDT" instanceClassName="datamodel.eth.MandCETH"/>
   </eSubpackages>
 </ecore:EPackage>
