@@ -150,7 +150,7 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GenericMonitorPointsImpl() {
+	public GenericMonitorPointsImpl() {
 		super();
 	}
 

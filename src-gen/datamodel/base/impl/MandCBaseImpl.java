@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -269,10 +270,22 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MandCBaseImpl() {
+	public MandCBaseImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MandCBaseImpl(String[] row, Resource parent) {
+		this.row = row;
+		this.parent = parent;
+		dependents = new ResourceSetImpl();
+		sheet = (this instanceof MonitorPoint) ? BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Monitor Point") : BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Control Point");
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

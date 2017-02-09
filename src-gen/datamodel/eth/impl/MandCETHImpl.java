@@ -149,10 +149,20 @@ public class MandCETHImpl extends EObjectImpl implements MandCETH {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MandCETHImpl() {
+	public MandCETHImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MandCETHImpl(String[] row, int sheet) {
+		this.row = row;
+		this.sheet = sheet;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

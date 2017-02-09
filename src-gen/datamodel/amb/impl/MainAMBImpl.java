@@ -86,10 +86,19 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MainAMBImpl() {
+	public MainAMBImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MainAMBImpl(String[] row) {
+		super(row);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -21,6 +21,7 @@
  */
 package datamodel.base;
 
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +32,7 @@ package datamodel.base;
  * The following features are supported:
  * <ul>
  *   <li>{@link datamodel.base.ControlPoint#getGetArchOnUseControl <em>Get Arch On Use Control</em>}</li>
+ *   <li>{@link datamodel.base.ControlPoint#getAux <em>Aux</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,6 +66,32 @@ public interface ControlPoint extends MandCBase {
 	 * @generated
 	 */
 	void setGetArchOnUseControl(Table value);
+
+	/**
+	 * Returns the value of the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux</em>' attribute.
+	 * @see #setAux(Resource)
+	 * @see datamodel.base.BasePackage#getControlPoint_Aux()
+	 * @model transient="true"
+	 * @generated
+	 */
+	Resource getAux();
+
+	/**
+	 * Sets the value of the '{@link datamodel.base.ControlPoint#getAux <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux</em>' attribute.
+	 * @see #getAux()
+	 * @generated
+	 */
+	void setAux(Resource value);
 
 	/**
 	 * <!-- begin-user-doc -->

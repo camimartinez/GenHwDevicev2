@@ -57,10 +57,10 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNewline()
-	 * @generated
+	 * @!generated
 	 * @ordered
 	 */
-	protected static final String NEWLINE_EDEFAULT = null;
+	protected static final String NEWLINE_EDEFAULT = System.getProperty("line.separator");
 
 	/**
 	 * The cached value of the '{@link #getNewline() <em>Newline</em>}' attribute.
@@ -97,10 +97,10 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMONTH()
-	 * @generated
+	 * @!generated
 	 * @ordered
 	 */
-	protected static final String[] MONTH_EDEFAULT = (String[])BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getString1DT(), "\"JAN\", \"FEB\", \"MAR\", \"APR\", \"MAY\", \"JUN\", \"JUL\", \"AUG\", \"SEP\", \"OCT\", \"NOV\", \"DEC\"");
+	protected static final String[] MONTH_EDEFAULT = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
 
 	/**
 	 * The cached value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
@@ -117,10 +117,10 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMONTHalt()
-	 * @generated
+	 * @!generated
 	 * @ordered
 	 */
-	protected static final String[] MONT_HALT_EDEFAULT = (String[])BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getString1DT(), "\"01\", \"02\", \"03\", \"04\", \"05\", \"06\", \"07\", \"08\", \"09\", \"10\", \"11\", \"12\"");
+	protected static final String[] MONT_HALT_EDEFAULT = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
 
 	/**
 	 * The cached value of the '{@link #getMONTHalt() <em>MONT Halt</em>}' attribute.
@@ -147,7 +147,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UtilImpl() {
+	public UtilImpl() {
 		super();
 	}
 

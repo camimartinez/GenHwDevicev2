@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,10 +85,20 @@ public class ControlETHImpl extends ControlPointImpl implements ControlETH {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ControlETHImpl() {
+	public ControlETHImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ControlETHImpl(String[] row, Resource parent) {
+		super(row, parent);
+		mac = new MandCETHImpl(row, sheet);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

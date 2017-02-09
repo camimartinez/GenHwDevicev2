@@ -72,7 +72,7 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SimpleErrorHandlerImpl() {
+	public SimpleErrorHandlerImpl() {
 		super();
 	}
 

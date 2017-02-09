@@ -31,6 +31,7 @@ import datamodel.base.BasePackage;
 import datamodel.base.MandCBase;
 import datamodel.base.Table;
 import datamodel.base.Util;
+import datamodel.base.impl.MandCBaseImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -197,10 +198,21 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MandCAMBImpl() {
+	public MandCAMBImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MandCAMBImpl(String[] row, int sheet, MandCBaseImpl mcp) {
+		this.row = row;
+		this.sheet = sheet;
+		this.mcp = mcp;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

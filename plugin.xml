@@ -44,5 +44,12 @@
             uri="http://alma.Control.datamodel.meta.base/1.0">
       </factory>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="datamodel.eth.impl.EthFactoryImpl"
+            uri="http://alma.Control.datamodel.meta.eth/1.0">
+      </factory>
+   </extension>
 
 </plugin>

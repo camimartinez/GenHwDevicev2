@@ -32,6 +32,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Control Point</b></em>'.
@@ -40,6 +42,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link datamodel.base.impl.ControlPointImpl#getGetArchOnUseControl <em>Get Arch On Use Control</em>}</li>
+ *   <li>{@link datamodel.base.impl.ControlPointImpl#getAux <em>Aux</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,14 +60,43 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	protected Table getArchOnUseControl;
 
 	/**
+	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Resource AUX_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected Resource aux = AUX_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ControlPointImpl() {
+	public ControlPointImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ControlPointImpl(String[] row, Resource parent) {
+		super(row, parent);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,6 +150,27 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Resource getAux() {
+		return aux;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux(Resource newAux) {
+		Resource oldAux = aux;
+		aux = newAux;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.CONTROL_POINT__AUX, oldAux, aux));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String CPName() {
 		return PName();
 	}
@@ -163,6 +216,8 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
 				if (resolve) return getGetArchOnUseControl();
 				return basicGetGetArchOnUseControl();
+			case BasePackage.CONTROL_POINT__AUX:
+				return getAux();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,6 +232,9 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 		switch (featureID) {
 			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
 				setGetArchOnUseControl((Table)newValue);
+				return;
+			case BasePackage.CONTROL_POINT__AUX:
+				setAux((Resource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,6 +251,9 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
 				setGetArchOnUseControl((Table)null);
 				return;
+			case BasePackage.CONTROL_POINT__AUX:
+				setAux(AUX_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -207,8 +268,26 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 		switch (featureID) {
 			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
 				return getArchOnUseControl != null;
+			case BasePackage.CONTROL_POINT__AUX:
+				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (aux: ");
+		result.append(aux);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ControlPointImpl

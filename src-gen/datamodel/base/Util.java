@@ -99,7 +99,6 @@ public interface Util extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>MONTH</b></em>' attribute.
-	 * The default value is <code>"\"JAN\", \"FEB\", \"MAR\", \"APR\", \"MAY\", \"JUN\", \"JUL\", \"AUG\", \"SEP\", \"OCT\", \"NOV\", \"DEC\""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MONTH</em>' attribute isn't clear,
@@ -109,7 +108,7 @@ public interface Util extends EObject {
 	 * @return the value of the '<em>MONTH</em>' attribute.
 	 * @see #setMONTH(String[])
 	 * @see datamodel.base.BasePackage#getUtil_MONTH()
-	 * @model default="\"JAN\", \"FEB\", \"MAR\", \"APR\", \"MAY\", \"JUN\", \"JUL\", \"AUG\", \"SEP\", \"OCT\", \"NOV\", \"DEC\"" dataType="datamodel.base.String1DT"
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
 	String[] getMONTH();
@@ -126,7 +125,6 @@ public interface Util extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>MONT Halt</b></em>' attribute.
-	 * The default value is <code>"\"01\", \"02\", \"03\", \"04\", \"05\", \"06\", \"07\", \"08\", \"09\", \"10\", \"11\", \"12\""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MONT Halt</em>' attribute isn't clear,
@@ -136,7 +134,7 @@ public interface Util extends EObject {
 	 * @return the value of the '<em>MONT Halt</em>' attribute.
 	 * @see #setMONTHalt(String[])
 	 * @see datamodel.base.BasePackage#getUtil_MONTHalt()
-	 * @model default="\"01\", \"02\", \"03\", \"04\", \"05\", \"06\", \"07\", \"08\", \"09\", \"10\", \"11\", \"12\"" dataType="datamodel.base.String1DT"
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
 	String[] getMONTHalt();

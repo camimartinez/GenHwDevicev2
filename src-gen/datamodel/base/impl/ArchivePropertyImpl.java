@@ -148,8 +148,18 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ArchivePropertyImpl() {
+	public ArchivePropertyImpl() {
 		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArchivePropertyImpl(String[] row) {
+		this.row = row;
+		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Archive Property");
 	}
 
 	/**

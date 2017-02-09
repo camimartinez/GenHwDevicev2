@@ -158,7 +158,7 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DeviceModelImpl() {
+	public DeviceModelImpl() {
 		super();
 	}
 

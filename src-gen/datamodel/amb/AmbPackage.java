@@ -287,6 +287,15 @@ public interface AmbPackage extends EPackage {
 	int CONTROL_AMB__GET_ARCH_ON_USE_CONTROL = BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL;
 
 	/**
+	 * The feature id for the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_AMB__AUX = BasePackage.CONTROL_POINT__AUX;
+
+	/**
 	 * The feature id for the '<em><b>Mac</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

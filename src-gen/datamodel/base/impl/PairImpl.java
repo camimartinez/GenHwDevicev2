@@ -90,10 +90,20 @@ public abstract class PairImpl extends SpreadsheetParserImpl implements Pair {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PairImpl() {
+	public PairImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public PairImpl(String c, String n) {
+		content = c;
+		newString = n;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

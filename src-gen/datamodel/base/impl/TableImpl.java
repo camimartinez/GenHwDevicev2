@@ -578,7 +578,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TableImpl() {
+	public TableImpl() {
 		super();
 	}
 

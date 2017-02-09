@@ -177,10 +177,20 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MonitorAMBImpl() {
+	public MonitorAMBImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MonitorAMBImpl(String[] row, Resource parent) {
+		super(row, parent);
+		mac = new MandCAMBImpl(row, sheet, this);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

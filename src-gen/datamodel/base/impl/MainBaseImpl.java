@@ -128,10 +128,19 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MainBaseImpl() {
+	public MainBaseImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MainBaseImpl(String[] row) {
+		this.row = row;
+		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Hardware Device");
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -86,10 +86,19 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ArchiveAMBImpl() {
+	public ArchiveAMBImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArchiveAMBImpl(String[] row) {
+		super(row);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

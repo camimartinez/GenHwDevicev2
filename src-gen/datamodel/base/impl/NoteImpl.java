@@ -70,7 +70,7 @@ public class NoteImpl extends EObjectImpl implements Note {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NoteImpl() {
+	public NoteImpl() {
 		super();
 	}
 
@@ -103,6 +103,15 @@ public class NoteImpl extends EObjectImpl implements Note {
 		note = newNote;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.NOTE__NOTE, oldNote, note));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String Note() {
+		return note;
 	}
 
 	/**

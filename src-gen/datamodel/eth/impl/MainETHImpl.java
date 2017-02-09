@@ -86,10 +86,19 @@ public class MainETHImpl extends MainBaseImpl implements MainETH {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MainETHImpl() {
+	public MainETHImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MainETHImpl(String[] row) {
+		super(row);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -683,13 +683,22 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__GET_ARCH_ON_USE_CONTROL = MAND_CBASE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__AUX = MAND_CBASE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Control Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 1;
+	int CONTROL_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link datamodel.base.impl.TableImpl <em>Table</em>}' class.
@@ -1821,6 +1830,17 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getControlPoint_GetArchOnUseControl();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.base.ControlPoint#getAux <em>Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aux</em>'.
+	 * @see datamodel.base.ControlPoint#getAux()
+	 * @see #getControlPoint()
+	 * @generated
+	 */
+	EAttribute getControlPoint_Aux();
 
 	/**
 	 * Returns the meta object for class '{@link datamodel.base.Table <em>Table</em>}'.
@@ -3020,6 +3040,14 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTROL_POINT__GET_ARCH_ON_USE_CONTROL = eINSTANCE.getControlPoint_GetArchOnUseControl();
+
+		/**
+		 * The meta object literal for the '<em><b>Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL_POINT__AUX = eINSTANCE.getControlPoint_Aux();
 
 		/**
 		 * The meta object literal for the '{@link datamodel.base.impl.TableImpl <em>Table</em>}' class.

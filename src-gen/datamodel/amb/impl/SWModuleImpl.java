@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -377,10 +378,35 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SWModuleImpl() {
+	public SWModuleImpl() {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public SWModuleImpl(String[] row, boolean oneSwModule, String mainAssembly) {
+		this.row = row;
+		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Hardware Device");
+		this.oneSwModule = oneSwModule;
+		int assemblyIndex = BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Assembly");
+		this.assemblyName = row[assemblyIndex];
+		this.mainAssembly = mainAssembly;
+		if(oneSwModule){
+			setDirPath(row[assemblyIndex]);
+		}
+		else{
+			setDirPath(mainAssembly + "/" + row[assemblyIndex]);
+		}
+		monitorPoints = new ResourceSetImpl();
+		controlPoints = new ResourceSetImpl();
+		archiveProperties = new ResourceSetImpl();
+		simMonitorPoints = new ResourceSetImpl();
+		simControlPoints = new ResourceSetImpl();
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

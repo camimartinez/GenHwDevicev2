@@ -348,6 +348,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//amb/MandCAMBDT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tmp" eType="#//amb/BaseFactoryDT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tmp2" eType="#//amb/BaseFactoryImpDT"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+          transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="worldToDataColumns" eType="#//base/Table"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoControlSheet"
           eType="#//amb/MandCAMB"/>
@@ -1010,7 +1012,7 @@
           <details key="body" value="&#x9;&#x9;boolean ret = false;&#xD;&#xA;&#x9;&#x9;if( isDependent() ){&#xD;&#xA;&#x9;&#x9;&#x9;MonitorAMBImpl parent = ((MonitorAMBImpl)this.getParent());&#xD;&#xA;&#x9;&#x9;&#x9;if( parent.isHomogeneous() )&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;ret = true;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return ret;"/>
         </eAnnotations>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//amb/BaseFactoryImpDT"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux7" eType="#//amb/BaseFactoryImpDT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//amb/MandCAMBDT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux2" eType="#//amb/IteratorDT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux3" eType="#//amb/ResourceDT"/>
@@ -1166,7 +1168,7 @@
           transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="simControlPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
           transient="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//amb/BaseFactoryImpDT"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux5" eType="#//amb/BaseFactoryImpDT"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="addAllMP" eType="#//amb/MonitorAMB"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="addAllCP" eType="#//amb/ControlAMB"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="setFormatDescriptions"
@@ -1438,6 +1440,8 @@
       <eOperations name="isPartOfPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="isHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="isPartOfHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+          transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromAPSpread"
           eType="#//base/ArchiveProperty"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromMPSpread"
@@ -1466,6 +1470,8 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getArchOnUseControl"
           eType="#//base/Table"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+          transient="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Table">
       <eOperations name="getSheetNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
@@ -1798,6 +1804,11 @@
           eType="#//base/Table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Note">
+      <eOperations name="Note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return note;"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral=""/>
     </eClassifiers>
@@ -2032,12 +2043,11 @@
         <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="newline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//amb/BaseFactoryDT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
           defaultValueLiteral="54"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTH" eType="#//base/String1DT"
-          defaultValueLiteral="&quot;JAN&quot;, &quot;FEB&quot;, &quot;MAR&quot;, &quot;APR&quot;, &quot;MAY&quot;, &quot;JUN&quot;, &quot;JUL&quot;, &quot;AUG&quot;, &quot;SEP&quot;, &quot;OCT&quot;, &quot;NOV&quot;, &quot;DEC&quot;"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTHalt" eType="#//base/String1DT"
-          defaultValueLiteral="&quot;01&quot;, &quot;02&quot;, &quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;, &quot;07&quot;, &quot;08&quot;, &quot;09&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot;"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTH" eType="#//base/String1DT"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTHalt" eType="#//base/String1DT"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getRawBytes" eType="#//base/Table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Pair" abstract="true" eSuperTypes="#//base/SpreadsheetParser">
@@ -2222,6 +2232,8 @@
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//eth/MandCETHDT"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+          transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="infoControlEth" eType="#//eth/MandCETH"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//base/DeviceModel">
@@ -2436,6 +2448,8 @@
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//eth/MandCETHDT"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+          transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoMPEth" eType="#//eth/MandCETH"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MandCETHDT" instanceClassName="datamodel.eth.MandCETH"/>
