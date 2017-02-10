@@ -438,14 +438,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
 	public DeviceModelImpl() {
-		this.setDeviceName(System.getProperty("deviceName"));
-		this.setDeviceDir(System.getProperty("deviceDir"));
-		this.setCodegenDir(System.getProperty("codegenDir"));
-		this.setSpreadsheetDir(System.getProperty("spreadsheetDir"));
-		this.setGeneratedDir(System.getProperty("generatedDir"));
+		super();
 	}
 
 	/**
@@ -1128,17 +1124,9 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public Resource getArchive(String name) {
-		int archiveIndex = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("ArchiveProperty");
-			for(int i = 2; i < spreadsheet[archiveIndex].length; i++)  {
-				if(spreadsheet[archiveIndex][i].length == 0)
-				break;
-				            	
-				 String[] row = spreadsheet[archiveIndex][i];
-				  ArchiveProperty ap = BaseFactoryImpl.eINSTANCE.createArchiveProperty();
-				  if(name.equals(ap.RefersTo()))
-				             return (Resource) ap;
-				   }
-				        return null;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link datamodel.base.impl.UtilImpl#getNewline <em>Newline</em>}</li>
+ *   <li>{@link datamodel.base.impl.UtilImpl#getAux <em>Aux</em>}</li>
  *   <li>{@link datamodel.base.impl.UtilImpl#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link datamodel.base.impl.UtilImpl#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link datamodel.base.impl.UtilImpl#getMONTHalt <em>MONT Halt</em>}</li>
@@ -57,10 +58,10 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNewline()
-	 * @!generated
+	 * @generated
 	 * @ordered
 	 */
-	protected static final String NEWLINE_EDEFAULT = System.getProperty("line.separator");
+	protected static final String NEWLINE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getNewline() <em>Newline</em>}' attribute.
@@ -71,6 +72,26 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @ordered
 	 */
 	protected String newline = NEWLINE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactory AUX_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactory aux = AUX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaxLength() <em>Max Length</em>}' attribute.
@@ -97,10 +118,10 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMONTH()
-	 * @!generated
+	 * @generated
 	 * @ordered
 	 */
-	protected static final String[] MONTH_EDEFAULT = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
+	protected static final String[] MONTH_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
@@ -117,10 +138,10 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMONTHalt()
-	 * @!generated
+	 * @generated
 	 * @ordered
 	 */
-	protected static final String[] MONT_HALT_EDEFAULT = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
+	protected static final String[] MONT_HALT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getMONTHalt() <em>MONT Halt</em>}' attribute.
@@ -180,6 +201,27 @@ public class UtilImpl extends EObjectImpl implements Util {
 		newline = newNewline;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__NEWLINE, oldNewline, newline));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactory getAux() {
+		return aux;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux(BaseFactory newAux) {
+		BaseFactory oldAux = aux;
+		aux = newAux;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__AUX, oldAux, aux));
 	}
 
 	/**
@@ -785,6 +827,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
 				return getNewline();
+			case BasePackage.UTIL__AUX:
+				return getAux();
 			case BasePackage.UTIL__MAX_LENGTH:
 				return getMaxLength();
 			case BasePackage.UTIL__MONTH:
@@ -808,6 +852,9 @@ public class UtilImpl extends EObjectImpl implements Util {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
 				setNewline((String)newValue);
+				return;
+			case BasePackage.UTIL__AUX:
+				setAux((BaseFactory)newValue);
 				return;
 			case BasePackage.UTIL__MAX_LENGTH:
 				setMaxLength((Integer)newValue);
@@ -836,6 +883,9 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__NEWLINE:
 				setNewline(NEWLINE_EDEFAULT);
 				return;
+			case BasePackage.UTIL__AUX:
+				setAux(AUX_EDEFAULT);
+				return;
 			case BasePackage.UTIL__MAX_LENGTH:
 				setMaxLength(MAX_LENGTH_EDEFAULT);
 				return;
@@ -862,6 +912,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
 				return NEWLINE_EDEFAULT == null ? newline != null : !NEWLINE_EDEFAULT.equals(newline);
+			case BasePackage.UTIL__AUX:
+				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
 			case BasePackage.UTIL__MAX_LENGTH:
 				return maxLength != MAX_LENGTH_EDEFAULT;
 			case BasePackage.UTIL__MONTH:
@@ -886,6 +938,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (newline: ");
 		result.append(newline);
+		result.append(", aux: ");
+		result.append(aux);
 		result.append(", maxLength: ");
 		result.append(maxLength);
 		result.append(", MONTH: ");

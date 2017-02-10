@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link datamodel.amb.MonitorAMB#getAux <em>Aux</em>}</li>
+ *   <li>{@link datamodel.amb.MonitorAMB#getAux7 <em>Aux7</em>}</li>
  *   <li>{@link datamodel.amb.MonitorAMB#getMac <em>Mac</em>}</li>
  *   <li>{@link datamodel.amb.MonitorAMB#getAux2 <em>Aux2</em>}</li>
  *   <li>{@link datamodel.amb.MonitorAMB#getAux3 <em>Aux3</em>}</li>
@@ -55,30 +55,30 @@ import org.eclipse.emf.ecore.resource.Resource;
  */
 public interface MonitorAMB extends MonitorPoint {
 	/**
-	 * Returns the value of the '<em><b>Aux</b></em>' attribute.
+	 * Returns the value of the '<em><b>Aux7</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Aux</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Aux7</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Aux</em>' attribute.
-	 * @see #setAux(BaseFactoryImpl)
-	 * @see datamodel.amb.AmbPackage#getMonitorAMB_Aux()
+	 * @return the value of the '<em>Aux7</em>' attribute.
+	 * @see #setAux7(BaseFactoryImpl)
+	 * @see datamodel.amb.AmbPackage#getMonitorAMB_Aux7()
 	 * @model dataType="datamodel.amb.BaseFactoryImpDT"
 	 * @generated
 	 */
-	BaseFactoryImpl getAux();
+	BaseFactoryImpl getAux7();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MonitorAMB#getAux <em>Aux</em>}' attribute.
+	 * Sets the value of the '{@link datamodel.amb.MonitorAMB#getAux7 <em>Aux7</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Aux</em>' attribute.
-	 * @see #getAux()
+	 * @param value the new value of the '<em>Aux7</em>' attribute.
+	 * @see #getAux7()
 	 * @generated
 	 */
-	void setAux(BaseFactoryImpl value);
+	void setAux7(BaseFactoryImpl value);
 
 	/**
 	 * Returns the value of the '<em><b>Mac</b></em>' attribute.
@@ -558,6 +558,7 @@ public interface MonitorAMB extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getMask();'"
 	 * @generated
 	 */
 	String getMask();

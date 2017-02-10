@@ -59,6 +59,33 @@ public interface BaseFactory extends EFactory {
 	ArchiveProperty createArchiveProperty();
 
 	/**
+	 * Returns a new object of class '<em>Archive Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Archive Property</em>'.
+	 * @!generated
+	 */
+	ArchiveProperty createArchiveProperty(String[] row);
+
+	/**
+	 * Returns a new object of class '<em>Spreadsheet Parser</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Spreadsheet Parser</em>'.
+	 * @!generated
+	 */
+	SpreadsheetParser createSpreadsheetParser(String xml);
+
+	/**
+	 * Returns a new object of class '<em>Main Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Main Base</em>'.
+	 * @!generated
+	 */
+	MainBase createMainBase(String[] row);
+	
+	/**
 	 * Returns a new object of class '<em>Note</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

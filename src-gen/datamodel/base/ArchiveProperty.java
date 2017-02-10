@@ -42,10 +42,10 @@ import org.eclipse.emf.ecore.resource.Resource;
  * </p>
  *
  * @see datamodel.base.BasePackage#getArchiveProperty()
- * @model
+ * @model superTypes="datamodel.amb.ResourceAuxClass"
  * @generated
  */
-public interface ArchiveProperty extends EObject {
+public interface ArchiveProperty extends EObject, Resource {
 	/**
 	 * Returns the value of the '<em><b>Row</b></em>' attribute.
 	 * <!-- begin-user-doc -->

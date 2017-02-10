@@ -23,6 +23,8 @@ package datamodel.eth;
 
 import datamodel.base.MonitorPoint;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Monitor ETH</b></em>'.
@@ -32,6 +34,7 @@ import datamodel.base.MonitorPoint;
  * The following features are supported:
  * <ul>
  *   <li>{@link datamodel.eth.MonitorETH#getMac <em>Mac</em>}</li>
+ *   <li>{@link datamodel.eth.MonitorETH#getAux1 <em>Aux1</em>}</li>
  *   <li>{@link datamodel.eth.MonitorETH#getGetInfoMPEth <em>Get Info MP Eth</em>}</li>
  * </ul>
  * </p>
@@ -66,6 +69,32 @@ public interface MonitorETH extends MonitorPoint {
 	 * @generated
 	 */
 	void setMac(MandCETH value);
+
+	/**
+	 * Returns the value of the '<em><b>Aux1</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux1</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux1</em>' attribute.
+	 * @see #setAux1(Resource)
+	 * @see datamodel.eth.EthPackage#getMonitorETH_Aux1()
+	 * @model transient="true"
+	 * @generated
+	 */
+	Resource getAux1();
+
+	/**
+	 * Sets the value of the '{@link datamodel.eth.MonitorETH#getAux1 <em>Aux1</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux1</em>' attribute.
+	 * @see #getAux1()
+	 * @generated
+	 */
+	void setAux1(Resource value);
 
 	/**
 	 * Returns the value of the '<em><b>Get Info MP Eth</b></em>' reference.

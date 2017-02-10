@@ -37,10 +37,10 @@ import org.eclipse.emf.ecore.resource.Resource;
  * </p>
  *
  * @see datamodel.base.BasePackage#getControlPoint()
- * @model abstract="true"
+ * @model abstract="true" superTypes="datamodel.base.MandCBase datamodel.amb.ResourceAuxClass"
  * @generated
  */
-public interface ControlPoint extends MandCBase {
+public interface ControlPoint extends MandCBase, Resource {
 	/**
 	 * Returns the value of the '<em><b>Get Arch On Use Control</b></em>' reference.
 	 * <!-- begin-user-doc -->

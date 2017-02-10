@@ -127,11 +127,10 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
 	public SpreadsheetValidatorImpl() {
 		super();
-		this.errorList = new ArrayList<String>();
 	}
 
 	/**

@@ -294,7 +294,11 @@
           <details key="body" value="return mac.getBit();"/>
         </eAnnotations>
       </eOperations>
-      <eOperations name="getMask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getMask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.getMask();"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations name="getFirstBit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return mac.getFirstBit();"/>
@@ -396,7 +400,11 @@
           <details key="body" value="return ((MainAMBImpl)main).GenericMonitorPoints();"/>
         </eAnnotations>
       </eOperations>
-      <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return &quot;true&quot;;"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations name="TheEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="&#x9;&#x9;String dir = generatedDir + &quot;/&quot; + Assembly();&#xD;&#xA;&#x9;&#x9;Util utils = BaseFactoryImpl.eINSTANCE.createUtil();&#xD;&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.html&quot;, 1);&#xD;&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xD;&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;HWSimBase.h&quot;, 1);&#xD;&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;HWSimBase.cpp&quot;, 1);&#xD;&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;CompSimBase.h&quot;, 1);&#xD;&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;CompSimBase.cpp&quot;, 1);&#xD;&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;CompSimBase.idl&quot;, 1);&#xD;&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/test&quot;, &quot;Test&quot; + Assembly() + &quot;HWSimImpl.cpp&quot;, 1);&#xD;&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/test&quot;, &quot;Test&quot; + Assembly() + &quot;AmbDeviceInt.cpp&quot;, 1);&#xD;&#xA;&#x9;&#x9;if (!isMonitorDBOnly()) {&#xD;&#xA;&#x9;&#x9;&#x9;if (isGenerateAlt()) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;.makefile&quot;, 1);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;Impl.idl&quot;, 1);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;Impl.h&quot;, 1);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;Impl.cpp&quot;, 1);&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;super.TheEnd();&#xD;&#xA;&#x9;&#x9;} else &#xD;&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xD;&#xA;&#x9;&#x9;return &quot;&quot;;"/>
@@ -723,12 +731,17 @@
           <details key="body" value="&#x9;&#x9;String s = WorldDataType();&#xD;&#xA;&#x9;&#x9;return Character.toUpperCase(s.charAt(0)) + s.substring(1);"/>
         </eAnnotations>
       </eOperations>
+      <eOperations name="getMask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if(!isSingleBit())&#xD;&#xA;&#x9;&#x9;&#x9;return &quot;&quot;;&#xD;&#xA;&#x9;&#x9;String s = null;&#xD;&#xA;&#x9;&#x9;if(isRawDataArray())&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;s = RawDataTypeCell().substring(4);&#xD;&#xA;&#x9;&#x9;&#x9;int n = s.indexOf(&quot;&amp;lt;&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;int m = s.substring(n + 4).indexOf(&quot;&amp;gt;&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;s = s.substring(n + 4, m + n + 4);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;s = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;int n = Integer.parseInt(s);&#xD;&#xA;&#x9;&#x9;return amask[n];"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//base/String1DT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//base/MandCBaseDT"
           transient="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="#//base/String1DT"
-          defaultValueLiteral="&quot;0x01&quot;, &quot;0x02&quot;, &quot;0x04&quot;, &quot;0x08&quot;, &quot;0x10&quot;,&quot;0x20&quot;, &quot;0x40&quot;, &quot;0x80&quot;"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Amask" eType="#//base/String1DT"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//amb/BaseFactoryDT"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoSheet" eType="#//base/MandCBase"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getDataFromMain" eType="#//base/Table"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="isMPDataType" eType="#//amb/MonitorAMB"/>
@@ -926,7 +939,11 @@
           <details key="body" value="return mac.getBit();"/>
         </eAnnotations>
       </eOperations>
-      <eOperations name="getMask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getMask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return mac.getMask();"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations name="getFirstBit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return mac.getFirstBit();"/>
@@ -1196,6 +1213,8 @@
     <eClassifiers xsi:type="ecore:EDataType" name="BaseFactoryDT" instanceClassName="datamodel.base.BaseFactory"/>
     <eClassifiers xsi:type="ecore:EDataType" name="IteratorDT" instanceClassName="java.util.Iterator"/>
     <eClassifiers xsi:type="ecore:EDataType" name="ResourceDT" instanceClassName="org.eclipse.emf.ecore.resource.Resource"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceAuxClass" instanceClassName="org.eclipse.emf.ecore.resource.Resource"
+        abstract="true" interface="true"/>
   </eSubpackages>
   <eSubpackages name="base" nsURI="http://alma.Control.datamodel.base/1.0" nsPrefix="alma.Control.datamodel.meta.base">
     <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" abstract="true">
@@ -1250,9 +1269,6 @@
         <eParameters name="directory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getArchive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="int archiveIndex = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum(&quot;ArchiveProperty&quot;);&#xD;&#xA;&#x9;for(int i = 2; i &lt; spreadsheet[archiveIndex].length; i++)  {&#xD;&#xA;&#x9;&#x9;if(spreadsheet[archiveIndex][i].length == 0)&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;            &#x9;&#xD;&#xA;&#x9;&#x9; String[] row = spreadsheet[archiveIndex][i];&#xD;&#xA;&#x9;&#x9;  ArchiveProperty ap = BaseFactoryImpl.eINSTANCE.createArchiveProperty();&#xD;&#xA;&#x9;&#x9;  if(name.equals(ap.RefersTo()))&#xD;&#xA;&#x9;&#x9;             return (Resource) ap;&#xD;&#xA;&#x9;&#x9;   }&#xD;&#xA;&#x9;&#x9;        return null;"/>
-        </eAnnotations>
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getMonitorPoint" eType="#//base/MonitorPoint">
@@ -1360,7 +1376,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="getArchivProp" eType="#//base/ArchiveProperty"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getInfFromSpread" eType="#//base/MainBase"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MonitorPoint" abstract="true" eSuperTypes="#//base/MandCBase">
+    <eClassifiers xsi:type="ecore:EClass" name="MonitorPoint" abstract="true" eSuperTypes="#//base/MandCBase #//amb/ResourceAuxClass">
       <eOperations name="Default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;Default&quot;)];&#xD;&#xA;"/>
@@ -1447,7 +1463,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromMPSpread"
           eType="#//base/Table"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ControlPoint" abstract="true" eSuperTypes="#//base/MandCBase">
+    <eClassifiers xsi:type="ecore:EClass" name="ControlPoint" abstract="true" eSuperTypes="#//base/MandCBase #//amb/ResourceAuxClass">
       <eOperations name="CPName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return PName();"/>
@@ -1708,7 +1724,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="setMPorCP" eType="#//base/ArchiveProperty"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getSheetMP" eType="#//base/MonitorPoint"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ArchiveProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="ArchiveProperty" eSuperTypes="#//amb/ResourceAuxClass">
       <eOperations name="isRefersTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return mp != null || cp != null;&#xD;&#xA;"/>
@@ -1840,16 +1856,9 @@
         <eParameters name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getDataCells" eType="#//base/String1DT">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="&#x9;&#x9;&#x9;&#x9;&#x9;java.util.ArrayList list = new java.util.ArrayList ();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String data = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String content = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;while (row != null &amp;&amp; row.length() > 0) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Pair p = getBoundedContent(row,&quot;&lt;Cell&quot;,&quot;>&quot;,&quot;&lt;/Cell>&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (p == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;data = PairImpl.CONTENT_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;row = PairImpl.NEW_STRING_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;p = getBoundedContent(data,&quot;&lt;Data&quot;,&quot;>&quot;,&quot;&lt;/Data>&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (p == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;content = PairImpl.CONTENT_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;list.add(content);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(list.size() == 0)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String[] x = new String [list.size()];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return (String[])list.toArray(x);"/>
-        </eAnnotations>
         <eParameters name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getWorksheets" eType="#//base/String3DT">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="&#x9;&#x9;&#x9;java.util.ArrayList rowList = null;&#xD;&#xA;&#x9;&#x9;&#x9;java.util.ArrayList sheetList = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;String sheet = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;String row = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;String[] data = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;sheetList = new java.util.ArrayList ();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;String doc = new String (xml);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (doc.startsWith(&quot;@reference&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;refStatus = true;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return filter(doc);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Pair p = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;while (doc != null &amp;&amp; doc.length() > 0) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;p = getBoundedContent(doc,&quot;&lt;Worksheet&quot;,&quot;>&quot;,&quot;&lt;/Worksheet>&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (p == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sheet = PairImpl.CONTENT_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;doc = PairImpl.NEW_STRING_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;rowList = new java.util.ArrayList ();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (sheet != null &amp;&amp; sheet.length() > 0) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Pair p2 = getBoundedContent(sheet,&quot;&lt;Row&quot;,&quot;>&quot;,&quot;&lt;/Row>&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (p2 == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;row = PairImpl.CONTENT_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sheet = PairImpl.NEW_STRING_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;data = getDataCells(row);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (data != null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;rowList.add(data);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sheetList.add(rowList);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if(p == null){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;doc = new String(xml);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (doc != null &amp;&amp; doc.length() > 0) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;p = getBoundedContent(doc,&quot;&lt;ss:Worksheet&quot;,&quot;>&quot;,&quot;&lt;/ss:Worksheet>&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(p == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sheet = PairImpl.CONTENT_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;doc = PairImpl.NEW_STRING_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;rowList = new java.util.ArrayList ();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;while (sheet != null &amp;&amp; sheet.length() > 0) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Pair p2 = getBoundedContent(sheet,&quot;&lt;Row&quot;,&quot;>&quot;,&quot;&lt;/Row>&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (p2 == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;row = PairImpl.CONTENT_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sheet = PairImpl.NEW_STRING_EDEFAULT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;data = getDataCells(row);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (data != null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;rowList.add(data);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sheetList.add(rowList);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;String[][][] result = new String [sheetList.size()][][];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; result.length; ++i) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;java.util.ArrayList x = (java.util.ArrayList)sheetList.get(i);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;result[i] = new String [x.size()][];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;for (int j = 0; j &lt; result[i].length; ++j) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String[] y = (String[])x.get(j);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;result[i][j] = new String [y.length];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int k = 0; k &lt; y.length; ++k)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;result[i][j][k] = y[k];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return result;"/>
-        </eAnnotations>
-      </eOperations>
+      <eOperations name="getWorksheets" eType="#//base/String3DT"/>
       <eOperations name="isReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return refStatus;&#xD;&#xA;"/>
@@ -1867,9 +1876,6 @@
         <eParameters name="xsd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="filter" eType="#//base/String3DT">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="&#x9;&#x9;java.io.LineNumberReader text = new java.io.LineNumberReader(new java.io.StringReader(doc));&#xD;&#xA;&#x9;&#x9;String line = null;&#xD;&#xA;&#x9;&#x9;try {&#xD;&#xA;&#x9;&#x9;&#x9;line = text.readLine();&#xD;&#xA;&#x9;&#x9;} catch (java.io.IOException err) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Cannot read file: &quot; + err.toString());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;String[] tmp = line.split(&quot;[ |\t]+&quot;);&#xD;&#xA;&#x9;&#x9;if (!tmp[0].equals(&quot;@reference&quot;) || !tmp[1].equals(&quot;=&quot;) || !tmp[4].equals(&quot;=&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax at line number &quot; + text.getLineNumber() + &quot; in file filter.&quot;);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;String baseDirectory = tmp[2];&#xD;&#xA;&#x9;&#x9;String baseAssemblyName = tmp[3];&#xD;&#xA;&#x9;&#x9;String newAssemblyName = tmp[5];&#xD;&#xA;&#x9;&#x9;System.out.println(&quot;Applying filter in directory &quot; + baseDirectory + &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&quot; to assembly &quot; + baseAssemblyName + &quot;.  New assembly is &quot; + newAssemblyName + &quot;.&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// B. Get the contents of this base spreadsheet.&#xD;&#xA;&#x9;&#x9;String referenceXml = getSpreadsheet(baseDirectory, baseAssemblyName + &quot;_spreadsheet.xml&quot;);&#xD;&#xA;&#x9;&#x9;refPath = baseDirectory + &quot;/&quot; + baseAssemblyName + &quot;_spreadsheet.xml&quot;;&#xD;&#xA;&#x9;&#x9;SpreadsheetParser p = BaseFactoryImpl.eINSTANCE.createSpreadsheetParser();&#xD;&#xA;&#x9;&#x9;SpreadsheetValidator v = BaseFactoryImpl.eINSTANCE.createSpreadsheetValidator();&#xD;&#xA;&#x9;&#x9;if (!v.validate(refPath,xsdFile)) {&#xD;&#xA;&#x9;&#x9;&#x9;String s = &quot;Spreadsheet &quot; + baseAssemblyName + &quot;_spreadsheet.xml is not a valid spreadsheet.&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;throw new RuntimeException(s);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;System.out.println(&quot;Base spreadsheet &quot; + baseAssemblyName + &quot; has been validated.&quot;);&#xD;&#xA;&#x9;&#x9;String[][][] base = p.getWorksheets();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// C. Change the assembly name in the base spreadsheet.&#xD;&#xA;&#x9;&#x9;for (int i = 0; i &lt; base.length; ++i) {&#xD;&#xA;&#x9;&#x9;&#x9;for (int j = 0; j &lt; base[i].length; ++j) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (base[i][j][0].equals(baseAssemblyName)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;base[i][j][0] = newAssemblyName;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// D. Apply the filter to the base.&#xD;&#xA;&#x9;&#x9;//    Any deleted rows we will simply make null.&#xD;&#xA;&#x9;&#x9;String[][] worksheet = null;&#xD;&#xA;&#x9;&#x9;while (true) {&#xD;&#xA;&#x9;&#x9;&#x9;try {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;line = text.readLine();&#xD;&#xA;&#x9;&#x9;&#x9;} catch (java.io.IOException err) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Cannot read file: &quot; + err.toString());&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;if (line == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;if (line.trim().length() == 0)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#x9;&#x9;if (line.startsWith(&quot;Main&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;worksheet = base[0];&#xD;&#xA;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndMain&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xD;&#xA;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;Monitor&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;worksheet = base[1];&#xD;&#xA;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndMonitor&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xD;&#xA;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;Control&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;worksheet = base[2];&#xD;&#xA;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndControl&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xD;&#xA;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;Archive&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;worksheet = base[3];&#xD;&#xA;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndArchive&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xD;&#xA;&#x9;&#x9;&#x9;else {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (worksheet == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax at line number &quot; + text.getLineNumber() + &quot; in file filter. (Missing statement)&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;tmp = line.split(&quot;[ |\t]+&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (line.startsWith(&quot;~&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;deleteRow(worksheet,tmp[0].substring(1));&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;String s = line.substring(tmp[0].length());&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;modifyRow(worksheet,text.getLineNumber(),tmp[0],s);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// E. Assign the non-null array.&#xD;&#xA;&#x9;&#x9;String[][][] result = new String [base.length] [] [];&#xD;&#xA;&#x9;&#x9;for (int i = 0; i &lt; result.length; ++i) {&#xD;&#xA;&#x9;&#x9;&#x9;int nrow = 0;&#xD;&#xA;&#x9;&#x9;&#x9;for (int j = 0; j &lt; base[i].length; ++j) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (base[i][j] != null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;++nrow;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;result[i] = new String [nrow] [];&#xD;&#xA;&#x9;&#x9;&#x9;int jj = 0;&#xD;&#xA;&#x9;&#x9;&#x9;for (int j = 0; j &lt; base[i].length; ++j) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (base[i][j] != null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;result[i][jj] = new String [base[i][j].length];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;for (int k = 0; k &lt; base[i][j].length; ++k)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;result[i][jj][k] = base[i][j][k];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;++jj;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// F. Return the new spreadsheet. &#xD;&#xA;&#x9;&#x9;return result;"/>
-        </eAnnotations>
         <eParameters name="doc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="deleteRow">
@@ -2150,7 +2156,7 @@
   <eSubpackages name="eth" nsURI="http://alma.Control.datamodel.eth/1.0" nsPrefix="alma.Control.datamodel.meta.eth">
     <eClassifiers xsi:type="ecore:EClass" name="ArchiveETH" eSuperTypes="#//base/ArchiveProperty"/>
     <eClassifiers xsi:type="ecore:EClass" name="ControlETH" eSuperTypes="#//base/ControlPoint">
-      <eOperations name="setAssembly">
+      <eOperations name="setAssemblyName">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="mac.setAssemblyName(assembly);"/>
         </eAnnotations>
@@ -2237,7 +2243,11 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="infoControlEth" eType="#//eth/MandCETH"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//base/DeviceModel">
-      <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return &quot;true&quot;;"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations name="VendorClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return ((MainETHImpl)main).VendorClass();"/>
@@ -2346,7 +2356,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromCol" eType="#//base/Table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MonitorETH" eSuperTypes="#//base/MonitorPoint">
-      <eOperations name="setAssembly">
+      <eOperations name="setAssemblyName">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="mac.setAssemblyName(assembly);"/>
         </eAnnotations>

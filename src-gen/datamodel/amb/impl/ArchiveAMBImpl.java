@@ -51,6 +51,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArchiveAMBImpl(String[] row) {
+		super(row);
+	}
+	
 	/**
 	 * The default value of the '{@link #getBaseFacTmp() <em>Base Fac Tmp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,15 +100,6 @@ public class ArchiveAMBImpl extends ArchivePropertyImpl implements ArchiveAMB {
 		super();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchiveAMBImpl(String[] row) {
-		super(row);
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

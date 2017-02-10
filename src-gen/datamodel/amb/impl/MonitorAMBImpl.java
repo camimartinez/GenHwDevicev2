@@ -31,16 +31,25 @@ import datamodel.base.Util;
 import datamodel.base.impl.BaseFactoryImpl;
 import datamodel.base.impl.MonitorPointImpl;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Iterator;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,7 +58,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getAux <em>Aux</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getAux7 <em>Aux7</em>}</li>
  *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getMac <em>Mac</em>}</li>
  *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getAux2 <em>Aux2</em>}</li>
  *   <li>{@link datamodel.amb.impl.MonitorAMBImpl#getAux3 <em>Aux3</em>}</li>
@@ -62,25 +71,36 @@ import org.eclipse.emf.ecore.resource.Resource;
  * @generated
  */
 public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
-	/**
-	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAux()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BaseFactoryImpl AUX_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAux() <em>Aux</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAux()
+	 * @!generated
+	 */
+	public MonitorAMBImpl(String[] row, Resource parent) {
+		super(row, parent);
+		mac = new MandCAMBImpl(row, sheet, this);
+	}
+	
+	/**
+	 * The default value of the '{@link #getAux7() <em>Aux7</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux7()
 	 * @generated
 	 * @ordered
 	 */
-	protected BaseFactoryImpl aux = AUX_EDEFAULT;
+	protected static final BaseFactoryImpl AUX7_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux7() <em>Aux7</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux7()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactoryImpl aux7 = AUX7_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
@@ -184,16 +204,6 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MonitorAMBImpl(String[] row, Resource parent) {
-		super(row, parent);
-		mac = new MandCAMBImpl(row, sheet, this);
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -206,8 +216,8 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BaseFactoryImpl getAux() {
-		return aux;
+	public BaseFactoryImpl getAux7() {
+		return aux7;
 	}
 
 	/**
@@ -215,11 +225,11 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAux(BaseFactoryImpl newAux) {
-		BaseFactoryImpl oldAux = aux;
-		aux = newAux;
+	public void setAux7(BaseFactoryImpl newAux7) {
+		BaseFactoryImpl oldAux7 = aux7;
+		aux7 = newAux7;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_AMB__AUX, oldAux, aux));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR_AMB__AUX7, oldAux7, aux7));
 	}
 
 	/**
@@ -747,9 +757,7 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	 * @generated
 	 */
 	public String getMask() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getMask();
 	}
 
 	/**
@@ -947,8 +955,8 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AmbPackage.MONITOR_AMB__AUX:
-				return getAux();
+			case AmbPackage.MONITOR_AMB__AUX7:
+				return getAux7();
 			case AmbPackage.MONITOR_AMB__MAC:
 				return getMac();
 			case AmbPackage.MONITOR_AMB__AUX2:
@@ -976,8 +984,8 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AmbPackage.MONITOR_AMB__AUX:
-				setAux((BaseFactoryImpl)newValue);
+			case AmbPackage.MONITOR_AMB__AUX7:
+				setAux7((BaseFactoryImpl)newValue);
 				return;
 			case AmbPackage.MONITOR_AMB__MAC:
 				setMac((MandCAMB)newValue);
@@ -1009,8 +1017,8 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AmbPackage.MONITOR_AMB__AUX:
-				setAux(AUX_EDEFAULT);
+			case AmbPackage.MONITOR_AMB__AUX7:
+				setAux7(AUX7_EDEFAULT);
 				return;
 			case AmbPackage.MONITOR_AMB__MAC:
 				setMac(MAC_EDEFAULT);
@@ -1042,8 +1050,8 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AmbPackage.MONITOR_AMB__AUX:
-				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
+			case AmbPackage.MONITOR_AMB__AUX7:
+				return AUX7_EDEFAULT == null ? aux7 != null : !AUX7_EDEFAULT.equals(aux7);
 			case AmbPackage.MONITOR_AMB__MAC:
 				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
 			case AmbPackage.MONITOR_AMB__AUX2:
@@ -1070,8 +1078,8 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (aux: ");
-		result.append(aux);
+		result.append(" (aux7: ");
+		result.append(aux7);
 		result.append(", mac: ");
 		result.append(mac);
 		result.append(", aux2: ");
@@ -1080,6 +1088,140 @@ public class MonitorAMBImpl extends MonitorPointImpl implements MonitorAMB {
 		result.append(aux3);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public ResourceSet getResourceSet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public URI getURI() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setURI(URI uri) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public long getTimeStamp() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setTimeStamp(long timeStamp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public EList<EObject> getContents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TreeIterator<EObject> getAllContents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getURIFragment(EObject eObject) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EObject getEObject(String uriFragment) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void save(Map<?, ?> options) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void load(Map<?, ?> options) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void save(OutputStream outputStream, Map<?, ?> options)
+			throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void load(InputStream inputStream, Map<?, ?> options)
+			throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isTrackingModification() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setTrackingModification(boolean isTrackingModification) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isModified() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setModified(boolean isModified) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isLoaded() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void unload() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Map<?, ?> options) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public EList<Diagnostic> getErrors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EList<Diagnostic> getWarnings() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 } //MonitorAMBImpl

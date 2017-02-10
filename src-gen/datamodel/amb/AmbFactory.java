@@ -22,6 +22,9 @@
 package datamodel.amb;
 
 import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.resource.Resource;
+
+import datamodel.base.MandCBase;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +35,35 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface AmbFactory extends EFactory {
+	
+	/**
+	 * Returns a new object of class '<em>Main AMB</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Main AMB</em>'.
+	 * @!generated
+	 */
+	MainAMB createMainAMB(String[] row);
+	
+		/**
+	 * Returns a new object of class '<em>Mand CAMB</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mand CAMB</em>'.
+	 * @!generated
+	 */
+	MandCAMB createMandCAMB(String[] row, int sheet, MandCBase mcp);
+	
+		/**
+	 * Returns a new object of class '<em>Monitor AMB</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Monitor AMB</em>'.
+	 * @!generated
+	 */
+	MonitorAMB createMonitorAMB(String[] row, Resource parent);
+	
+	
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->

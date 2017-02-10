@@ -95,7 +95,7 @@ public class MainETHImpl extends MainBaseImpl implements MainETH {
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	public MainETHImpl(String[] row) {
+	public MainETHImpl(String[] row){
 		super(row);
 	}
 	

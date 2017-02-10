@@ -28,6 +28,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -112,6 +114,7 @@ public class BaseSwitch<T> {
 				MonitorPoint monitorPoint = (MonitorPoint)theEObject;
 				T result = caseMonitorPoint(monitorPoint);
 				if (result == null) result = caseMandCBase(monitorPoint);
+				if (result == null) result = caseResourceAuxClass(monitorPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,6 +122,7 @@ public class BaseSwitch<T> {
 				ControlPoint controlPoint = (ControlPoint)theEObject;
 				T result = caseControlPoint(controlPoint);
 				if (result == null) result = caseMandCBase(controlPoint);
+				if (result == null) result = caseResourceAuxClass(controlPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -137,6 +141,7 @@ public class BaseSwitch<T> {
 			case BasePackage.ARCHIVE_PROPERTY: {
 				ArchiveProperty archiveProperty = (ArchiveProperty)theEObject;
 				T result = caseArchiveProperty(archiveProperty);
+				if (result == null) result = caseResourceAuxClass(archiveProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -379,6 +384,21 @@ public class BaseSwitch<T> {
 	 * @generated
 	 */
 	public T caseMainBase(MainBase object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResourceAuxClass(Resource object) {
 		return null;
 	}
 

@@ -28,6 +28,8 @@ import datamodel.base.Util;
 
 import datamodel.base.impl.BaseFactoryImpl;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Control AMB</b></em>'.
@@ -39,6 +41,7 @@ import datamodel.base.impl.BaseFactoryImpl;
  *   <li>{@link datamodel.amb.ControlAMB#getMac <em>Mac</em>}</li>
  *   <li>{@link datamodel.amb.ControlAMB#getTmp <em>Tmp</em>}</li>
  *   <li>{@link datamodel.amb.ControlAMB#getTmp2 <em>Tmp2</em>}</li>
+ *   <li>{@link datamodel.amb.ControlAMB#getAux2 <em>Aux2</em>}</li>
  *   <li>{@link datamodel.amb.ControlAMB#getWorldToDataColumns <em>World To Data Columns</em>}</li>
  *   <li>{@link datamodel.amb.ControlAMB#getGetInfoControlSheet <em>Get Info Control Sheet</em>}</li>
  *   <li>{@link datamodel.amb.ControlAMB#getToNormalizeNumber <em>To Normalize Number</em>}</li>
@@ -127,6 +130,32 @@ public interface ControlAMB extends ControlPoint {
 	 * @generated
 	 */
 	void setTmp2(BaseFactoryImpl value);
+
+	/**
+	 * Returns the value of the '<em><b>Aux2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux2</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux2</em>' attribute.
+	 * @see #setAux2(Resource)
+	 * @see datamodel.amb.AmbPackage#getControlAMB_Aux2()
+	 * @model transient="true"
+	 * @generated
+	 */
+	Resource getAux2();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.ControlAMB#getAux2 <em>Aux2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux2</em>' attribute.
+	 * @see #getAux2()
+	 * @generated
+	 */
+	void setAux2(Resource value);
 
 	/**
 	 * Returns the value of the '<em><b>World To Data Columns</b></em>' reference.
@@ -654,6 +683,7 @@ public interface ControlAMB extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getMask();'"
 	 * @generated
 	 */
 	String getMask();

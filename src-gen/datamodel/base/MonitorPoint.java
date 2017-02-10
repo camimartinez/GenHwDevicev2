@@ -21,6 +21,7 @@
  */
 package datamodel.base;
 
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,16 +31,43 @@ package datamodel.base;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link datamodel.base.MonitorPoint#getAux <em>Aux</em>}</li>
  *   <li>{@link datamodel.base.MonitorPoint#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}</li>
  *   <li>{@link datamodel.base.MonitorPoint#getGetInfoFromMPSpread <em>Get Info From MP Spread</em>}</li>
  * </ul>
  * </p>
  *
  * @see datamodel.base.BasePackage#getMonitorPoint()
- * @model abstract="true"
+ * @model abstract="true" superTypes="datamodel.base.MandCBase datamodel.amb.ResourceAuxClass"
  * @generated
  */
-public interface MonitorPoint extends MandCBase {
+public interface MonitorPoint extends MandCBase, Resource {
+	/**
+	 * Returns the value of the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux</em>' attribute.
+	 * @see #setAux(Resource)
+	 * @see datamodel.base.BasePackage#getMonitorPoint_Aux()
+	 * @model transient="true"
+	 * @generated
+	 */
+	Resource getAux();
+
+	/**
+	 * Sets the value of the '{@link datamodel.base.MonitorPoint#getAux <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux</em>' attribute.
+	 * @see #getAux()
+	 * @generated
+	 */
+	void setAux(Resource value);
+
 	/**
 	 * Returns the value of the '<em><b>Get Info From AP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -34,6 +34,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -112,6 +114,7 @@ public class AmbSwitch<T> {
 				ArchiveAMB archiveAMB = (ArchiveAMB)theEObject;
 				T result = caseArchiveAMB(archiveAMB);
 				if (result == null) result = caseArchiveProperty(archiveAMB);
+				if (result == null) result = caseResourceAuxClass(archiveAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,6 +123,7 @@ public class AmbSwitch<T> {
 				T result = caseControlAMB(controlAMB);
 				if (result == null) result = caseControlPoint(controlAMB);
 				if (result == null) result = caseMandCBase(controlAMB);
+				if (result == null) result = caseResourceAuxClass(controlAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -148,6 +152,7 @@ public class AmbSwitch<T> {
 				T result = caseMonitorAMB(monitorAMB);
 				if (result == null) result = caseMonitorPoint(monitorAMB);
 				if (result == null) result = caseMandCBase(monitorAMB);
+				if (result == null) result = caseResourceAuxClass(monitorAMB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -284,6 +289,21 @@ public class AmbSwitch<T> {
 	 * @generated
 	 */
 	public T caseGenericMonitorPoints(GenericMonitorPoints object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResourceAuxClass(Resource object) {
 		return null;
 	}
 

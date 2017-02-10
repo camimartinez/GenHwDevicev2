@@ -34,6 +34,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -112,6 +114,7 @@ public class EthSwitch<T> {
 				ArchiveETH archiveETH = (ArchiveETH)theEObject;
 				T result = caseArchiveETH(archiveETH);
 				if (result == null) result = caseArchiveProperty(archiveETH);
+				if (result == null) result = caseResourceAuxClass(archiveETH);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,6 +123,7 @@ public class EthSwitch<T> {
 				T result = caseControlETH(controlETH);
 				if (result == null) result = caseControlPoint(controlETH);
 				if (result == null) result = caseMandCBase(controlETH);
+				if (result == null) result = caseResourceAuxClass(controlETH);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -148,6 +152,7 @@ public class EthSwitch<T> {
 				T result = caseMonitorETH(monitorETH);
 				if (result == null) result = caseMonitorPoint(monitorETH);
 				if (result == null) result = caseMandCBase(monitorETH);
+				if (result == null) result = caseResourceAuxClass(monitorETH);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,6 +247,21 @@ public class EthSwitch<T> {
 	 * @generated
 	 */
 	public T caseMonitorETH(MonitorETH object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResourceAuxClass(Resource object) {
 		return null;
 	}
 

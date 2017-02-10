@@ -287,13 +287,22 @@ public interface EthPackage extends EPackage {
 	int CONTROL_ETH__MAC = BasePackage.CONTROL_POINT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Aux2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_ETH__AUX2 = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Info Control Eth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_ETH__INFO_CONTROL_ETH = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
+	int CONTROL_ETH__INFO_CONTROL_ETH = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Control ETH</em>' class.
@@ -302,7 +311,7 @@ public interface EthPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_ETH_FEATURE_COUNT = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
+	int CONTROL_ETH_FEATURE_COUNT = BasePackage.CONTROL_POINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link datamodel.eth.impl.DeviceModelImpl <em>Device Model</em>}' class.
@@ -858,6 +867,15 @@ public interface EthPackage extends EPackage {
 	int MONITOR_ETH__GET_SHEET_MP = BasePackage.MONITOR_POINT__GET_SHEET_MP;
 
 	/**
+	 * The feature id for the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_ETH__AUX = BasePackage.MONITOR_POINT__AUX;
+
+	/**
 	 * The feature id for the '<em><b>Get Info From AP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -885,13 +903,22 @@ public interface EthPackage extends EPackage {
 	int MONITOR_ETH__MAC = BasePackage.MONITOR_POINT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Aux1</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_ETH__AUX1 = BasePackage.MONITOR_POINT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Get Info MP Eth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_ETH__GET_INFO_MP_ETH = BasePackage.MONITOR_POINT_FEATURE_COUNT + 1;
+	int MONITOR_ETH__GET_INFO_MP_ETH = BasePackage.MONITOR_POINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Monitor ETH</em>' class.
@@ -900,7 +927,7 @@ public interface EthPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_ETH_FEATURE_COUNT = BasePackage.MONITOR_POINT_FEATURE_COUNT + 2;
+	int MONITOR_ETH_FEATURE_COUNT = BasePackage.MONITOR_POINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '<em>Mand CETHDT</em>' data type.
@@ -943,6 +970,17 @@ public interface EthPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getControlETH_Mac();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.eth.ControlETH#getAux2 <em>Aux2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aux2</em>'.
+	 * @see datamodel.eth.ControlETH#getAux2()
+	 * @see #getControlETH()
+	 * @generated
+	 */
+	EAttribute getControlETH_Aux2();
 
 	/**
 	 * Returns the meta object for the reference '{@link datamodel.eth.ControlETH#getInfoControlEth <em>Info Control Eth</em>}'.
@@ -1183,6 +1221,17 @@ public interface EthPackage extends EPackage {
 	EAttribute getMonitorETH_Mac();
 
 	/**
+	 * Returns the meta object for the attribute '{@link datamodel.eth.MonitorETH#getAux1 <em>Aux1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aux1</em>'.
+	 * @see datamodel.eth.MonitorETH#getAux1()
+	 * @see #getMonitorETH()
+	 * @generated
+	 */
+	EAttribute getMonitorETH_Aux1();
+
+	/**
 	 * Returns the meta object for the reference '{@link datamodel.eth.MonitorETH#getGetInfoMPEth <em>Get Info MP Eth</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1253,6 +1302,14 @@ public interface EthPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTROL_ETH__MAC = eINSTANCE.getControlETH_Mac();
+
+		/**
+		 * The meta object literal for the '<em><b>Aux2</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL_ETH__AUX2 = eINSTANCE.getControlETH_Aux2();
 
 		/**
 		 * The meta object literal for the '<em><b>Info Control Eth</b></em>' reference feature.
@@ -1437,6 +1494,14 @@ public interface EthPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MONITOR_ETH__MAC = eINSTANCE.getMonitorETH_Mac();
+
+		/**
+		 * The meta object literal for the '<em><b>Aux1</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MONITOR_ETH__AUX1 = eINSTANCE.getMonitorETH_Aux1();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Info MP Eth</b></em>' reference feature.

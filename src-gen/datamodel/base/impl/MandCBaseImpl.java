@@ -22,6 +22,7 @@
 package datamodel.base.impl;
 
 import datamodel.base.ArchiveProperty;
+import datamodel.base.BaseFactory;
 import datamodel.base.BasePackage;
 import datamodel.base.MandCBase;
 import datamodel.base.MonitorPoint;
@@ -283,9 +284,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		this.row = row;
 		this.parent = parent;
 		dependents = new ResourceSetImpl();
-		sheet = (this instanceof MonitorPoint) ? BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Monitor Point") : BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Control Point");
+		sheet = (this instanceof MonitorPoint) ? BaseFactory.eINSTANCE.createTable().getSheetNum("Monitor Point") : BaseFactory.eINSTANCE.createTable().getSheetNum("Control Point");
 	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

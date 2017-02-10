@@ -21,6 +21,8 @@
  */
 package datamodel.base;
 
+import datamodel.amb.AmbPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -529,13 +531,22 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__GET_SHEET_MP = MAND_CBASE__GET_SHEET_MP;
 
 	/**
+	 * The feature id for the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__AUX = MAND_CBASE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Get Info From AP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__GET_INFO_FROM_AP_SPREAD = MAND_CBASE_FEATURE_COUNT + 0;
+	int MONITOR_POINT__GET_INFO_FROM_AP_SPREAD = MAND_CBASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Get Info From MP Spread</b></em>' reference.
@@ -544,7 +555,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__GET_INFO_FROM_MP_SPREAD = MAND_CBASE_FEATURE_COUNT + 1;
+	int MONITOR_POINT__GET_INFO_FROM_MP_SPREAD = MAND_CBASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Monitor Point</em>' class.
@@ -553,7 +564,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 2;
+	int MONITOR_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link datamodel.base.impl.ControlPointImpl <em>Control Point</em>}' class.
@@ -961,7 +972,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_PROPERTY__ROW = 0;
+	int ARCHIVE_PROPERTY__ROW = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
@@ -970,7 +981,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_PROPERTY__SHEET = 1;
+	int ARCHIVE_PROPERTY__SHEET = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Mp</b></em>' attribute.
@@ -979,7 +990,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_PROPERTY__MP = 2;
+	int ARCHIVE_PROPERTY__MP = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Cp</b></em>' attribute.
@@ -988,7 +999,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_PROPERTY__CP = 3;
+	int ARCHIVE_PROPERTY__CP = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Get Columns Info Of Archi</b></em>' reference.
@@ -997,7 +1008,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI = 4;
+	int ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Archive Property</em>' class.
@@ -1006,7 +1017,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_PROPERTY_FEATURE_COUNT = 5;
+	int ARCHIVE_PROPERTY_FEATURE_COUNT = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link datamodel.base.impl.NoteImpl <em>Note</em>}' class.
@@ -1193,13 +1204,22 @@ public interface BasePackage extends EPackage {
 	int UTIL__NEWLINE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTIL__AUX = 1;
+
+	/**
 	 * The feature id for the '<em><b>Max Length</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__MAX_LENGTH = 1;
+	int UTIL__MAX_LENGTH = 2;
 
 	/**
 	 * The feature id for the '<em><b>MONTH</b></em>' attribute.
@@ -1208,7 +1228,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__MONTH = 2;
+	int UTIL__MONTH = 3;
 
 	/**
 	 * The feature id for the '<em><b>MONT Halt</b></em>' attribute.
@@ -1217,7 +1237,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__MONT_HALT = 3;
+	int UTIL__MONT_HALT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Get Raw Bytes</b></em>' reference.
@@ -1226,7 +1246,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__GET_RAW_BYTES = 4;
+	int UTIL__GET_RAW_BYTES = 5;
 
 	/**
 	 * The number of structural features of the '<em>Util</em>' class.
@@ -1235,7 +1255,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL_FEATURE_COUNT = 5;
+	int UTIL_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link datamodel.base.impl.PairImpl <em>Pair</em>}' class.
@@ -1787,6 +1807,17 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMonitorPoint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodel.base.MonitorPoint#getAux <em>Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aux</em>'.
+	 * @see datamodel.base.MonitorPoint#getAux()
+	 * @see #getMonitorPoint()
+	 * @generated
+	 */
+	EAttribute getMonitorPoint_Aux();
 
 	/**
 	 * Returns the meta object for the reference '{@link datamodel.base.MonitorPoint#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}'.
@@ -2518,6 +2549,17 @@ public interface BasePackage extends EPackage {
 	EAttribute getUtil_Newline();
 
 	/**
+	 * Returns the meta object for the attribute '{@link datamodel.base.Util#getAux <em>Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aux</em>'.
+	 * @see datamodel.base.Util#getAux()
+	 * @see #getUtil()
+	 * @generated
+	 */
+	EAttribute getUtil_Aux();
+
+	/**
 	 * Returns the meta object for the attribute '{@link datamodel.base.Util#getMaxLength <em>Max Length</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3006,6 +3048,14 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EClass MONITOR_POINT = eINSTANCE.getMonitorPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MONITOR_POINT__AUX = eINSTANCE.getMonitorPoint_Aux();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Info From AP Spread</b></em>' reference feature.
@@ -3558,6 +3608,14 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UTIL__NEWLINE = eINSTANCE.getUtil_Newline();
+
+		/**
+		 * The meta object literal for the '<em><b>Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UTIL__AUX = eINSTANCE.getUtil_Aux();
 
 		/**
 		 * The meta object literal for the '<em><b>Max Length</b></em>' attribute feature.

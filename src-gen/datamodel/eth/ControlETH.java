@@ -23,6 +23,8 @@ package datamodel.eth;
 
 import datamodel.base.ControlPoint;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Control ETH</b></em>'.
@@ -32,6 +34,7 @@ import datamodel.base.ControlPoint;
  * The following features are supported:
  * <ul>
  *   <li>{@link datamodel.eth.ControlETH#getMac <em>Mac</em>}</li>
+ *   <li>{@link datamodel.eth.ControlETH#getAux2 <em>Aux2</em>}</li>
  *   <li>{@link datamodel.eth.ControlETH#getInfoControlEth <em>Info Control Eth</em>}</li>
  * </ul>
  * </p>
@@ -66,6 +69,32 @@ public interface ControlETH extends ControlPoint {
 	 * @generated
 	 */
 	void setMac(MandCETH value);
+
+	/**
+	 * Returns the value of the '<em><b>Aux2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux2</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux2</em>' attribute.
+	 * @see #setAux2(Resource)
+	 * @see datamodel.eth.EthPackage#getControlETH_Aux2()
+	 * @model transient="true"
+	 * @generated
+	 */
+	Resource getAux2();
+
+	/**
+	 * Sets the value of the '{@link datamodel.eth.ControlETH#getAux2 <em>Aux2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux2</em>' attribute.
+	 * @see #getAux2()
+	 * @generated
+	 */
+	void setAux2(Resource value);
 
 	/**
 	 * Returns the value of the '<em><b>Info Control Eth</b></em>' reference.

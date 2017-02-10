@@ -21,6 +21,7 @@
  */
 package datamodel.amb;
 
+import datamodel.base.BaseFactory;
 import datamodel.base.MandCBase;
 import datamodel.base.Table;
 import datamodel.base.Util;
@@ -38,7 +39,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link datamodel.amb.MandCAMB#getRow <em>Row</em>}</li>
  *   <li>{@link datamodel.amb.MandCAMB#getSheet <em>Sheet</em>}</li>
  *   <li>{@link datamodel.amb.MandCAMB#getMcp <em>Mcp</em>}</li>
- *   <li>{@link datamodel.amb.MandCAMB#getMask <em>Mask</em>}</li>
+ *   <li>{@link datamodel.amb.MandCAMB#getAmask <em>Amask</em>}</li>
+ *   <li>{@link datamodel.amb.MandCAMB#getAux <em>Aux</em>}</li>
  *   <li>{@link datamodel.amb.MandCAMB#getGetInfoSheet <em>Get Info Sheet</em>}</li>
  *   <li>{@link datamodel.amb.MandCAMB#getGetDataFromMain <em>Get Data From Main</em>}</li>
  *   <li>{@link datamodel.amb.MandCAMB#getIsMPDataType <em>Is MP Data Type</em>}</li>
@@ -131,31 +133,56 @@ public interface MandCAMB extends EObject {
 	void setMcp(MandCBase value);
 
 	/**
-	 * Returns the value of the '<em><b>Mask</b></em>' attribute.
-	 * The default value is <code>"\"0x01\", \"0x02\", \"0x04\", \"0x08\", \"0x10\",\"0x20\", \"0x40\", \"0x80\""</code>.
+	 * Returns the value of the '<em><b>Amask</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mask</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Amask</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mask</em>' attribute.
-	 * @see #setMask(String[])
-	 * @see datamodel.amb.AmbPackage#getMandCAMB_Mask()
-	 * @model default="\"0x01\", \"0x02\", \"0x04\", \"0x08\", \"0x10\",\"0x20\", \"0x40\", \"0x80\"" dataType="datamodel.base.String1DT"
+	 * @return the value of the '<em>Amask</em>' attribute.
+	 * @see #setAmask(String[])
+	 * @see datamodel.amb.AmbPackage#getMandCAMB_Amask()
+	 * @model dataType="datamodel.base.String1DT"
 	 * @generated
 	 */
-	String[] getMask();
+	String[] getAmask();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.MandCAMB#getMask <em>Mask</em>}' attribute.
+	 * Sets the value of the '{@link datamodel.amb.MandCAMB#getAmask <em>Amask</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mask</em>' attribute.
-	 * @see #getMask()
+	 * @param value the new value of the '<em>Amask</em>' attribute.
+	 * @see #getAmask()
 	 * @generated
 	 */
-	void setMask(String[] value);
+	void setAmask(String[] value);
+
+	/**
+	 * Returns the value of the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux</em>' attribute.
+	 * @see #setAux(BaseFactory)
+	 * @see datamodel.amb.AmbPackage#getMandCAMB_Aux()
+	 * @model dataType="datamodel.amb.BaseFactoryDT"
+	 * @generated
+	 */
+	BaseFactory getAux();
+
+	/**
+	 * Sets the value of the '{@link datamodel.amb.MandCAMB#getAux <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux</em>' attribute.
+	 * @see #getAux()
+	 * @generated
+	 */
+	void setAux(BaseFactory value);
 
 	/**
 	 * Returns the value of the '<em><b>Get Info Sheet</b></em>' reference.
@@ -712,5 +739,14 @@ public interface MandCAMB extends EObject {
 	 * @generated
 	 */
 	String WorldDataTypeUpper1();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!isSingleBit())\r\n\t\t\treturn \"\";\r\n\t\tString s = null;\r\n\t\tif(isRawDataArray())\r\n\t\t{\r\n\t\t\ts = RawDataTypeCell().substring(4);\r\n\t\t\tint n = s.indexOf(\"&lt;\");\r\n\t\t\tint m = s.substring(n + 4).indexOf(\"&gt;\");\r\n\t\t\ts = s.substring(n + 4, m + n + 4);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\ts = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);\r\n\t\t}\r\n\t\tint n = Integer.parseInt(s);\r\n\t\treturn amask[n];'"
+	 * @generated
+	 */
+	String getMask();
 
 } // MandCAMB

@@ -24,6 +24,7 @@ package datamodel.amb.impl;
 import datamodel.amb.*;
 
 import datamodel.base.BaseFactory;
+import datamodel.base.MandCBase;
 
 import datamodel.base.impl.BaseFactoryImpl;
 
@@ -66,6 +67,47 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 		return new AmbFactoryImpl();
 	}
 
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ControlAMB createControlAMB(String[] row, Resource parent) {
+		ControlAMBImpl controlAMB = new ControlAMBImpl(row,parent);
+		return controlAMB;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MainAMB createMainAMB(String[] row) {
+		MainAMBImpl mainAMB = new MainAMBImpl(row);
+		return mainAMB;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MandCAMB createMandCAMB(String[] row, int sheet, MandCBase mcp) {
+		MandCAMBImpl mandCAMB = new MandCAMBImpl(row,sheet,mcp);
+		return mandCAMB;
+	}
+	
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MonitorAMB createMonitorAMB(String[] row, Resource parent) {
+		MonitorAMBImpl monitorAMB = new MonitorAMBImpl();
+		return monitorAMB;
+	}
+	
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->

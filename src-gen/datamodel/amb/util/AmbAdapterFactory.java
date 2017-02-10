@@ -36,6 +36,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
@@ -123,6 +125,10 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseGenericMonitorPoints(GenericMonitorPoints object) {
 				return createGenericMonitorPointsAdapter();
+			}
+			@Override
+			public Adapter caseResourceAuxClass(Resource object) {
+				return createResourceAuxClassAdapter();
 			}
 			@Override
 			public Adapter caseArchiveProperty(ArchiveProperty object) {
@@ -277,6 +283,20 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGenericMonitorPointsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.resource.Resource <em>Resource Aux Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.resource.Resource
+	 * @generated
+	 */
+	public Adapter createResourceAuxClassAdapter() {
 		return null;
 	}
 

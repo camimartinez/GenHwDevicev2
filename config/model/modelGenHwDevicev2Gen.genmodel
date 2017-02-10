@@ -7,7 +7,8 @@
     publicConstructors="true">
   <foreignModel>modelGenHwDevicev2.ecore</foreignModel>
   <genPackages prefix="Datamodel" disposableProviderFactory="true" ecorePackage="modelGenHwDevicev2.ecore#/">
-    <nestedGenPackages prefix="Amb" disposableProviderFactory="true" ecorePackage="modelGenHwDevicev2.ecore#//amb">
+    <nestedGenPackages prefix="Amb" basePackage="datamodel" disposableProviderFactory="true"
+        ecorePackage="modelGenHwDevicev2.ecore#//amb">
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//amb/MandCAMBDT"/>
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//amb/BaseFactoryImpDT"/>
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//amb/BaseFactoryDT"/>
@@ -156,7 +157,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//amb/MandCAMB/row"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//amb/MandCAMB/sheet"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//amb/MandCAMB/mcp"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//amb/MandCAMB/mask"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//amb/MandCAMB/Amask"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//amb/MandCAMB/aux"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//amb/MandCAMB/getInfoSheet"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -221,6 +223,7 @@
         </genOperations>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//amb/MandCAMB/WorldDataToDatabaseTypeUpper1"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//amb/MandCAMB/WorldDataTypeUpper1"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//amb/MandCAMB/getMask"/>
       </genClasses>
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//amb/MonitorAMB">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//amb/MonitorAMB/aux7"/>
@@ -361,8 +364,10 @@
           <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//amb/GenericMonitorPoints/getDeviceWorksheetWithGenericPointsAdded/spreadsheet"/>
         </genOperations>
       </genClasses>
+      <genClasses image="false" ecoreClass="modelGenHwDevicev2.ecore#//amb/ResourceAuxClass"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Base" disposableProviderFactory="true" ecorePackage="modelGenHwDevicev2.ecore#//base">
+    <nestedGenPackages prefix="Base" basePackage="datamodel" disposableProviderFactory="true"
+        ecorePackage="modelGenHwDevicev2.ecore#//base">
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/SimpleErrorHandlerDT"/>
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/MandCBaseDT"/>
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//base/MainBaseDT"/>
@@ -776,7 +781,8 @@
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//base/MainBase/ICDDateAsArrayTime"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Eth" disposableProviderFactory="true" ecorePackage="modelGenHwDevicev2.ecore#//eth">
+    <nestedGenPackages prefix="Eth" basePackage="datamodel" disposableProviderFactory="true"
+        ecorePackage="modelGenHwDevicev2.ecore#//eth">
       <genDataTypes ecoreDataType="modelGenHwDevicev2.ecore#//eth/MandCETHDT"/>
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/ArchiveETH"/>
       <genClasses ecoreClass="modelGenHwDevicev2.ecore#//eth/ControlETH">
@@ -861,8 +867,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelGenHwDevicev2.ecore#//eth/MonitorETH/aux1"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference modelGenHwDevicev2.ecore#//eth/MonitorETH/getInfoMPEth"/>
-        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/setAssembly">
-          <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//eth/MonitorETH/setAssembly/assembly"/>
+        <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/setAssemblyName">
+          <genParameters ecoreParameter="modelGenHwDevicev2.ecore#//eth/MonitorETH/setAssemblyName/assembly"/>
         </genOperations>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/Assembly"/>
         <genOperations ecoreOperation="modelGenHwDevicev2.ecore#//eth/MonitorETH/Address"/>

@@ -23,6 +23,8 @@ package datamodel.eth;
 
 import org.eclipse.emf.ecore.EFactory;
 
+import datamodel.base.MainBase;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
@@ -102,5 +104,14 @@ public interface EthFactory extends EFactory {
 	 * @generated
 	 */
 	EthPackage getEthPackage();
+
+	/**
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the package supported by this factory.
+	 * @!generated
+	 */
+	MainBase createMainETH(String[] strings);
 
 } //EthFactory

@@ -21,6 +21,7 @@
  */
 package datamodel.eth.impl;
 
+import datamodel.base.MainBase;
 import datamodel.eth.*;
 
 import org.eclipse.emf.ecore.EClass;
@@ -213,6 +214,12 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	@Deprecated
 	public static EthPackage getPackage() {
 		return EthPackage.eINSTANCE;
+	}
+
+	@Override
+	public MainBase createMainETH(String[] strings) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 } //EthFactoryImpl

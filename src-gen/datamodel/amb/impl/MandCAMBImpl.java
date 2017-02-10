@@ -27,11 +27,9 @@ import datamodel.amb.MandCAMB;
 import datamodel.amb.MonitorAMB;
 
 import datamodel.base.BaseFactory;
-import datamodel.base.BasePackage;
 import datamodel.base.MandCBase;
 import datamodel.base.Table;
 import datamodel.base.Util;
-import datamodel.base.impl.MandCBaseImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -51,7 +49,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link datamodel.amb.impl.MandCAMBImpl#getRow <em>Row</em>}</li>
  *   <li>{@link datamodel.amb.impl.MandCAMBImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link datamodel.amb.impl.MandCAMBImpl#getMcp <em>Mcp</em>}</li>
- *   <li>{@link datamodel.amb.impl.MandCAMBImpl#getMask <em>Mask</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MandCAMBImpl#getAmask <em>Amask</em>}</li>
+ *   <li>{@link datamodel.amb.impl.MandCAMBImpl#getAux <em>Aux</em>}</li>
  *   <li>{@link datamodel.amb.impl.MandCAMBImpl#getGetInfoSheet <em>Get Info Sheet</em>}</li>
  *   <li>{@link datamodel.amb.impl.MandCAMBImpl#getGetDataFromMain <em>Get Data From Main</em>}</li>
  *   <li>{@link datamodel.amb.impl.MandCAMBImpl#getIsMPDataType <em>Is MP Data Type</em>}</li>
@@ -63,6 +62,18 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @generated
  */
 public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MandCAMBImpl(String[] row, int sheet, MandCBase mcp) {
+		this.row = row;
+		this.sheet = sheet;
+		this.mcp = mcp;
+	}
+	
 	/**
 	 * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -124,24 +135,44 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	protected MandCBase mcp = MCP_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMask() <em>Mask</em>}' attribute.
+	 * The default value of the '{@link #getAmask() <em>Amask</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMask()
+	 * @see #getAmask()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String[] MASK_EDEFAULT = (String[])BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getString1DT(), "\"0x01\", \"0x02\", \"0x04\", \"0x08\", \"0x10\",\"0x20\", \"0x40\", \"0x80\"");
+	protected static final String[] AMASK_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMask() <em>Mask</em>}' attribute.
+	 * The cached value of the '{@link #getAmask() <em>Amask</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMask()
+	 * @see #getAmask()
 	 * @generated
 	 * @ordered
 	 */
-	protected String[] mask = MASK_EDEFAULT;
+	protected String[] amask = AMASK_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactory AUX_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactory aux = AUX_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getGetInfoSheet() <em>Get Info Sheet</em>}' reference.
@@ -202,17 +233,6 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 		super();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MandCAMBImpl(String[] row, int sheet, MandCBaseImpl mcp) {
-		this.row = row;
-		this.sheet = sheet;
-		this.mcp = mcp;
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -291,8 +311,8 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String[] getMask() {
-		return mask;
+	public String[] getAmask() {
+		return amask;
 	}
 
 	/**
@@ -300,11 +320,32 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMask(String[] newMask) {
-		String[] oldMask = mask;
-		mask = newMask;
+	public void setAmask(String[] newAmask) {
+		String[] oldAmask = amask;
+		amask = newAmask;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CAMB__MASK, oldMask, mask));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CAMB__AMASK, oldAmask, amask));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactory getAux() {
+		return aux;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux(BaseFactory newAux) {
+		BaseFactory oldAux = aux;
+		aux = newAux;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_CAMB__AUX, oldAux, aux));
 	}
 
 	/**
@@ -1134,6 +1175,28 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getMask() {
+		if(!isSingleBit())
+					return "";
+				String s = null;
+				if(isRawDataArray()) {
+					s = RawDataTypeCell().substring(4);
+					int n = s.indexOf("&lt;");
+					int m = s.substring(n + 4).indexOf("&gt;");
+					s = s.substring(n + 4, m + n + 4);
+				}
+				else {
+					s = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);
+				}
+				int n = Integer.parseInt(s);
+				return amask[n];
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -1143,8 +1206,10 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 				return getSheet();
 			case AmbPackage.MAND_CAMB__MCP:
 				return getMcp();
-			case AmbPackage.MAND_CAMB__MASK:
-				return getMask();
+			case AmbPackage.MAND_CAMB__AMASK:
+				return getAmask();
+			case AmbPackage.MAND_CAMB__AUX:
+				return getAux();
 			case AmbPackage.MAND_CAMB__GET_INFO_SHEET:
 				if (resolve) return getGetInfoSheet();
 				return basicGetGetInfoSheet();
@@ -1181,8 +1246,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 			case AmbPackage.MAND_CAMB__MCP:
 				setMcp((MandCBase)newValue);
 				return;
-			case AmbPackage.MAND_CAMB__MASK:
-				setMask((String[])newValue);
+			case AmbPackage.MAND_CAMB__AMASK:
+				setAmask((String[])newValue);
+				return;
+			case AmbPackage.MAND_CAMB__AUX:
+				setAux((BaseFactory)newValue);
 				return;
 			case AmbPackage.MAND_CAMB__GET_INFO_SHEET:
 				setGetInfoSheet((MandCBase)newValue);
@@ -1220,8 +1288,11 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 			case AmbPackage.MAND_CAMB__MCP:
 				setMcp(MCP_EDEFAULT);
 				return;
-			case AmbPackage.MAND_CAMB__MASK:
-				setMask(MASK_EDEFAULT);
+			case AmbPackage.MAND_CAMB__AMASK:
+				setAmask(AMASK_EDEFAULT);
+				return;
+			case AmbPackage.MAND_CAMB__AUX:
+				setAux(AUX_EDEFAULT);
 				return;
 			case AmbPackage.MAND_CAMB__GET_INFO_SHEET:
 				setGetInfoSheet((MandCBase)null);
@@ -1256,8 +1327,10 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 				return sheet != SHEET_EDEFAULT;
 			case AmbPackage.MAND_CAMB__MCP:
 				return MCP_EDEFAULT == null ? mcp != null : !MCP_EDEFAULT.equals(mcp);
-			case AmbPackage.MAND_CAMB__MASK:
-				return MASK_EDEFAULT == null ? mask != null : !MASK_EDEFAULT.equals(mask);
+			case AmbPackage.MAND_CAMB__AMASK:
+				return AMASK_EDEFAULT == null ? amask != null : !AMASK_EDEFAULT.equals(amask);
+			case AmbPackage.MAND_CAMB__AUX:
+				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
 			case AmbPackage.MAND_CAMB__GET_INFO_SHEET:
 				return getInfoSheet != null;
 			case AmbPackage.MAND_CAMB__GET_DATA_FROM_MAIN:
@@ -1288,8 +1361,10 @@ public class MandCAMBImpl extends EObjectImpl implements MandCAMB {
 		result.append(sheet);
 		result.append(", mcp: ");
 		result.append(mcp);
-		result.append(", mask: ");
-		result.append(mask);
+		result.append(", Amask: ");
+		result.append(amask);
+		result.append(", aux: ");
+		result.append(aux);
 		result.append(')');
 		return result.toString();
 	}

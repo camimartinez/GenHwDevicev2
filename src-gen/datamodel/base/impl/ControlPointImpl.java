@@ -49,6 +49,16 @@ import org.eclipse.emf.ecore.resource.Resource;
  * @generated
  */
 public abstract class ControlPointImpl extends MandCBaseImpl implements ControlPoint {
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ControlPointImpl(String[] row, Resource parent) {
+		super(row, parent);
+	}
+	
 	/**
 	 * The cached value of the '{@link #getGetArchOnUseControl() <em>Get Arch On Use Control</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -88,15 +98,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 		super();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ControlPointImpl(String[] row, Resource parent) {
-		super(row, parent);
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

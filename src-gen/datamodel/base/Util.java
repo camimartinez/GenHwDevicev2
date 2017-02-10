@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link datamodel.base.Util#getNewline <em>Newline</em>}</li>
+ *   <li>{@link datamodel.base.Util#getAux <em>Aux</em>}</li>
  *   <li>{@link datamodel.base.Util#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link datamodel.base.Util#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link datamodel.base.Util#getMONTHalt <em>MONT Halt</em>}</li>
@@ -69,6 +70,32 @@ public interface Util extends EObject {
 	 * @generated
 	 */
 	void setNewline(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aux</em>' attribute.
+	 * @see #setAux(BaseFactory)
+	 * @see datamodel.base.BasePackage#getUtil_Aux()
+	 * @model dataType="datamodel.amb.BaseFactoryDT"
+	 * @generated
+	 */
+	BaseFactory getAux();
+
+	/**
+	 * Sets the value of the '{@link datamodel.base.Util#getAux <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aux</em>' attribute.
+	 * @see #getAux()
+	 * @generated
+	 */
+	void setAux(BaseFactory value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Length</b></em>' attribute.

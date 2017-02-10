@@ -41,7 +41,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,7 +61,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getArchiveProperties <em>Archive Properties</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getSimMonitorPoints <em>Sim Monitor Points</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getSimControlPoints <em>Sim Control Points</em>}</li>
- *   <li>{@link datamodel.amb.impl.SWModuleImpl#getAux <em>Aux</em>}</li>
+ *   <li>{@link datamodel.amb.impl.SWModuleImpl#getAux5 <em>Aux5</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getAddAllMP <em>Add All MP</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getAddAllCP <em>Add All CP</em>}</li>
  *   <li>{@link datamodel.amb.impl.SWModuleImpl#getSetFormatDescriptions <em>Set Format Descriptions</em>}</li>
@@ -314,24 +313,24 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	protected ResourceSet simControlPoints = SIM_CONTROL_POINTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * The default value of the '{@link #getAux5() <em>Aux5</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAux()
+	 * @see #getAux5()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BaseFactoryImpl AUX_EDEFAULT = null;
+	protected static final BaseFactoryImpl AUX5_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * The cached value of the '{@link #getAux5() <em>Aux5</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAux()
+	 * @see #getAux5()
 	 * @generated
 	 * @ordered
 	 */
-	protected BaseFactoryImpl aux = AUX_EDEFAULT;
+	protected BaseFactoryImpl aux5 = AUX5_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAddAllMP() <em>Add All MP</em>}' reference.
@@ -382,31 +381,6 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 		super();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public SWModuleImpl(String[] row, boolean oneSwModule, String mainAssembly) {
-		this.row = row;
-		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Hardware Device");
-		this.oneSwModule = oneSwModule;
-		int assemblyIndex = BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, "Assembly");
-		this.assemblyName = row[assemblyIndex];
-		this.mainAssembly = mainAssembly;
-		if(oneSwModule){
-			setDirPath(row[assemblyIndex]);
-		}
-		else{
-			setDirPath(mainAssembly + "/" + row[assemblyIndex]);
-		}
-		monitorPoints = new ResourceSetImpl();
-		controlPoints = new ResourceSetImpl();
-		archiveProperties = new ResourceSetImpl();
-		simMonitorPoints = new ResourceSetImpl();
-		simControlPoints = new ResourceSetImpl();
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -674,8 +648,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BaseFactoryImpl getAux() {
-		return aux;
+	public BaseFactoryImpl getAux5() {
+		return aux5;
 	}
 
 	/**
@@ -683,11 +657,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAux(BaseFactoryImpl newAux) {
-		BaseFactoryImpl oldAux = aux;
-		aux = newAux;
+	public void setAux5(BaseFactoryImpl newAux5) {
+		BaseFactoryImpl oldAux5 = aux5;
+		aux5 = newAux5;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__AUX, oldAux, aux));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__AUX5, oldAux5, aux5));
 	}
 
 	/**
@@ -1141,8 +1115,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				return getSimMonitorPoints();
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				return getSimControlPoints();
-			case AmbPackage.SW_MODULE__AUX:
-				return getAux();
+			case AmbPackage.SW_MODULE__AUX5:
+				return getAux5();
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
 				if (resolve) return getAddAllMP();
 				return basicGetAddAllMP();
@@ -1203,8 +1177,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				setSimControlPoints((ResourceSet)newValue);
 				return;
-			case AmbPackage.SW_MODULE__AUX:
-				setAux((BaseFactoryImpl)newValue);
+			case AmbPackage.SW_MODULE__AUX5:
+				setAux5((BaseFactoryImpl)newValue);
 				return;
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
 				setAddAllMP((MonitorAMB)newValue);
@@ -1266,8 +1240,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				setSimControlPoints(SIM_CONTROL_POINTS_EDEFAULT);
 				return;
-			case AmbPackage.SW_MODULE__AUX:
-				setAux(AUX_EDEFAULT);
+			case AmbPackage.SW_MODULE__AUX5:
+				setAux5(AUX5_EDEFAULT);
 				return;
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
 				setAddAllMP((MonitorAMB)null);
@@ -1317,8 +1291,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				return SIM_MONITOR_POINTS_EDEFAULT == null ? simMonitorPoints != null : !SIM_MONITOR_POINTS_EDEFAULT.equals(simMonitorPoints);
 			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
 				return SIM_CONTROL_POINTS_EDEFAULT == null ? simControlPoints != null : !SIM_CONTROL_POINTS_EDEFAULT.equals(simControlPoints);
-			case AmbPackage.SW_MODULE__AUX:
-				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
+			case AmbPackage.SW_MODULE__AUX5:
+				return AUX5_EDEFAULT == null ? aux5 != null : !AUX5_EDEFAULT.equals(aux5);
 			case AmbPackage.SW_MODULE__ADD_ALL_MP:
 				return addAllMP != null;
 			case AmbPackage.SW_MODULE__ADD_ALL_CP:
@@ -1365,8 +1339,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 		result.append(simMonitorPoints);
 		result.append(", simControlPoints: ");
 		result.append(simControlPoints);
-		result.append(", aux: ");
-		result.append(aux);
+		result.append(", aux5: ");
+		result.append(aux5);
 		result.append(')');
 		return result.toString();
 	}

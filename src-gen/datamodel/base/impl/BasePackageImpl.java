@@ -516,8 +516,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMonitorPoint_Aux() {
+		return (EAttribute)monitorPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getMonitorPoint_GetInfoFromAPSpread() {
-		return (EReference)monitorPointEClass.getEStructuralFeatures().get(0);
+		return (EReference)monitorPointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -526,7 +535,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	public EReference getMonitorPoint_GetInfoFromMPSpread() {
-		return (EReference)monitorPointEClass.getEStructuralFeatures().get(1);
+		return (EReference)monitorPointEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1119,7 +1128,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUtil_MaxLength() {
+	public EAttribute getUtil_Aux() {
 		return (EAttribute)utilEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1128,7 +1137,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUtil_MONTH() {
+	public EAttribute getUtil_MaxLength() {
 		return (EAttribute)utilEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1137,7 +1146,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUtil_MONTHalt() {
+	public EAttribute getUtil_MONTH() {
 		return (EAttribute)utilEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1146,8 +1155,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getUtil_MONTHalt() {
+		return (EAttribute)utilEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getUtil_GetRawBytes() {
-		return (EReference)utilEClass.getEStructuralFeatures().get(4);
+		return (EReference)utilEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1400,6 +1418,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEReference(deviceModelEClass, DEVICE_MODEL__GET_INF_FROM_SPREAD);
 
 		monitorPointEClass = createEClass(MONITOR_POINT);
+		createEAttribute(monitorPointEClass, MONITOR_POINT__AUX);
 		createEReference(monitorPointEClass, MONITOR_POINT__GET_INFO_FROM_AP_SPREAD);
 		createEReference(monitorPointEClass, MONITOR_POINT__GET_INFO_FROM_MP_SPREAD);
 
@@ -1475,6 +1494,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		utilEClass = createEClass(UTIL);
 		createEAttribute(utilEClass, UTIL__NEWLINE);
+		createEAttribute(utilEClass, UTIL__AUX);
 		createEAttribute(utilEClass, UTIL__MAX_LENGTH);
 		createEAttribute(utilEClass, UTIL__MONTH);
 		createEAttribute(utilEClass, UTIL__MONT_HALT);
@@ -1531,13 +1551,19 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		AmbPackage theAmbPackage = (AmbPackage)EPackage.Registry.INSTANCE.getEPackage(AmbPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
 		monitorPointEClass.getESuperTypes().add(this.getMandCBase());
+		monitorPointEClass.getESuperTypes().add(theAmbPackage.getResourceAuxClass());
 		controlPointEClass.getESuperTypes().add(this.getMandCBase());
+		controlPointEClass.getESuperTypes().add(theAmbPackage.getResourceAuxClass());
+		archivePropertyEClass.getESuperTypes().add(theAmbPackage.getResourceAuxClass());
 		pairEClass.getESuperTypes().add(this.getSpreadsheetParser());
 
 		// Initialize classes and features; add operations and parameters
@@ -1628,6 +1654,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		addEOperation(deviceModelEClass, ecorePackage.getEResourceSet(), "ArchiveProperty", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(monitorPointEClass, MonitorPoint.class, "MonitorPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMonitorPoint_Aux(), ecorePackage.getEResource(), "aux", null, 0, 1, MonitorPoint.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMonitorPoint_GetInfoFromAPSpread(), this.getArchiveProperty(), null, "getInfoFromAPSpread", null, 0, 1, MonitorPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMonitorPoint_GetInfoFromMPSpread(), this.getTable(), null, "getInfoFromMPSpread", null, 0, 1, MonitorPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1897,6 +1924,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		initEClass(utilEClass, Util.class, "Util", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUtil_Newline(), ecorePackage.getEString(), "newline", null, 0, 1, Util.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUtil_Aux(), theAmbPackage.getBaseFactoryDT(), "aux", null, 0, 1, Util.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUtil_MaxLength(), ecorePackage.getEInt(), "maxLength", "54", 0, 1, Util.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUtil_MONTH(), this.getString1DT(), "MONTH", null, 0, 1, Util.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUtil_MONTHalt(), this.getString1DT(), "MONTHalt", null, 0, 1, Util.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

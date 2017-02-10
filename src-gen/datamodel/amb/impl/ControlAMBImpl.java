@@ -21,6 +21,11 @@
  */
 package datamodel.amb.impl;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Map;
+
 import datamodel.amb.AmbPackage;
 import datamodel.amb.ControlAMB;
 import datamodel.amb.MandCAMB;
@@ -33,12 +38,18 @@ import datamodel.base.impl.BaseFactoryImpl;
 import datamodel.base.impl.ControlPointImpl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,6 +61,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getMac <em>Mac</em>}</li>
  *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getTmp <em>Tmp</em>}</li>
  *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getTmp2 <em>Tmp2</em>}</li>
+ *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getAux2 <em>Aux2</em>}</li>
  *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getWorldToDataColumns <em>World To Data Columns</em>}</li>
  *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getGetInfoControlSheet <em>Get Info Control Sheet</em>}</li>
  *   <li>{@link datamodel.amb.impl.ControlAMBImpl#getToNormalizeNumber <em>To Normalize Number</em>}</li>
@@ -59,6 +71,17 @@ import org.eclipse.emf.ecore.resource.Resource;
  * @generated
  */
 public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ControlAMBImpl(String[] row, Resource parent) {
+		super(row, parent);
+		mac = new MandCAMBImpl(row,sheet,this);
+	}
+	
 	/**
 	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -120,6 +143,26 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	protected BaseFactoryImpl tmp2 = TMP2_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getAux2() <em>Aux2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux2()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Resource AUX2_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux2() <em>Aux2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux2()
+	 * @generated
+	 * @ordered
+	 */
+	protected Resource aux2 = AUX2_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getWorldToDataColumns() <em>World To Data Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,16 +201,6 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 		super();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ControlAMBImpl(String[] row, Resource parent) {
-		super(row, parent);
-		mac = new MandCAMBImpl(row,sheet,this);
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -239,6 +272,27 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 		tmp2 = newTmp2;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_AMB__TMP2, oldTmp2, tmp2));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Resource getAux2() {
+		return aux2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux2(Resource newAux2) {
+		Resource oldAux2 = aux2;
+		aux2 = newAux2;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL_AMB__AUX2, oldAux2, aux2));
 	}
 
 	/**
@@ -1079,9 +1133,7 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 	 * @generated
 	 */
 	public String getMask() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return mac.getMask();
 	}
 
 	/**
@@ -1188,6 +1240,8 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 				return getTmp();
 			case AmbPackage.CONTROL_AMB__TMP2:
 				return getTmp2();
+			case AmbPackage.CONTROL_AMB__AUX2:
+				return getAux2();
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
 				if (resolve) return getWorldToDataColumns();
 				return basicGetWorldToDataColumns();
@@ -1217,6 +1271,9 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 				return;
 			case AmbPackage.CONTROL_AMB__TMP2:
 				setTmp2((BaseFactoryImpl)newValue);
+				return;
+			case AmbPackage.CONTROL_AMB__AUX2:
+				setAux2((Resource)newValue);
 				return;
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
 				setWorldToDataColumns((Table)newValue);
@@ -1248,6 +1305,9 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 			case AmbPackage.CONTROL_AMB__TMP2:
 				setTmp2(TMP2_EDEFAULT);
 				return;
+			case AmbPackage.CONTROL_AMB__AUX2:
+				setAux2(AUX2_EDEFAULT);
+				return;
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
 				setWorldToDataColumns((Table)null);
 				return;
@@ -1275,6 +1335,8 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 				return TMP_EDEFAULT == null ? tmp != null : !TMP_EDEFAULT.equals(tmp);
 			case AmbPackage.CONTROL_AMB__TMP2:
 				return TMP2_EDEFAULT == null ? tmp2 != null : !TMP2_EDEFAULT.equals(tmp2);
+			case AmbPackage.CONTROL_AMB__AUX2:
+				return AUX2_EDEFAULT == null ? aux2 != null : !AUX2_EDEFAULT.equals(aux2);
 			case AmbPackage.CONTROL_AMB__WORLD_TO_DATA_COLUMNS:
 				return worldToDataColumns != null;
 			case AmbPackage.CONTROL_AMB__GET_INFO_CONTROL_SHEET:
@@ -1301,8 +1363,144 @@ public class ControlAMBImpl extends ControlPointImpl implements ControlAMB {
 		result.append(tmp);
 		result.append(", tmp2: ");
 		result.append(tmp2);
+		result.append(", aux2: ");
+		result.append(aux2);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public ResourceSet getResourceSet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public URI getURI() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setURI(URI uri) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public long getTimeStamp() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setTimeStamp(long timeStamp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public EList<EObject> getContents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TreeIterator<EObject> getAllContents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getURIFragment(EObject eObject) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EObject getEObject(String uriFragment) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void save(Map<?, ?> options) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void load(Map<?, ?> options) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void save(OutputStream outputStream, Map<?, ?> options)
+			throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void load(InputStream inputStream, Map<?, ?> options)
+			throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isTrackingModification() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setTrackingModification(boolean isTrackingModification) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isModified() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setModified(boolean isModified) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isLoaded() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void unload() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Map<?, ?> options) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public EList<Diagnostic> getErrors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EList<Diagnostic> getWarnings() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 } //ControlAMBImpl

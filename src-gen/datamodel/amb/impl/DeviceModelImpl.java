@@ -835,6 +835,15 @@ public class DeviceModelImpl extends datamodel.base.impl.DeviceModelImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String CreateModel() {
+		return "true";
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String TheEnd() {
 				String dir = generatedDir + "/" + Assembly();
 				Util utils = BaseFactoryImpl.eINSTANCE.createUtil();

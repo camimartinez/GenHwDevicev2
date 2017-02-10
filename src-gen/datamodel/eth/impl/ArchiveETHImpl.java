@@ -46,16 +46,15 @@ public class ArchiveETHImpl extends ArchivePropertyImpl implements ArchiveETH {
 	public ArchiveETHImpl() {
 		super();
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	public ArchiveETHImpl(String[] row) {
+	public ArchiveETHImpl(String[] row){
 		super(row);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -51,7 +51,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link datamodel.amb.SWModule#getArchiveProperties <em>Archive Properties</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getSimMonitorPoints <em>Sim Monitor Points</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getSimControlPoints <em>Sim Control Points</em>}</li>
- *   <li>{@link datamodel.amb.SWModule#getAux <em>Aux</em>}</li>
+ *   <li>{@link datamodel.amb.SWModule#getAux5 <em>Aux5</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getAddAllMP <em>Add All MP</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getAddAllCP <em>Add All CP</em>}</li>
  *   <li>{@link datamodel.amb.SWModule#getSetFormatDescriptions <em>Set Format Descriptions</em>}</li>
@@ -378,30 +378,30 @@ public interface SWModule extends EObject {
 	void setSimControlPoints(ResourceSet value);
 
 	/**
-	 * Returns the value of the '<em><b>Aux</b></em>' attribute.
+	 * Returns the value of the '<em><b>Aux5</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Aux</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Aux5</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Aux</em>' attribute.
-	 * @see #setAux(BaseFactoryImpl)
-	 * @see datamodel.amb.AmbPackage#getSWModule_Aux()
+	 * @return the value of the '<em>Aux5</em>' attribute.
+	 * @see #setAux5(BaseFactoryImpl)
+	 * @see datamodel.amb.AmbPackage#getSWModule_Aux5()
 	 * @model dataType="datamodel.amb.BaseFactoryImpDT"
 	 * @generated
 	 */
-	BaseFactoryImpl getAux();
+	BaseFactoryImpl getAux5();
 
 	/**
-	 * Sets the value of the '{@link datamodel.amb.SWModule#getAux <em>Aux</em>}' attribute.
+	 * Sets the value of the '{@link datamodel.amb.SWModule#getAux5 <em>Aux5</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Aux</em>' attribute.
-	 * @see #getAux()
+	 * @param value the new value of the '<em>Aux5</em>' attribute.
+	 * @see #getAux5()
 	 * @generated
 	 */
-	void setAux(BaseFactoryImpl value);
+	void setAux5(BaseFactoryImpl value);
 
 	/**
 	 * Returns the value of the '<em><b>Add All MP</b></em>' reference.

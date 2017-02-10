@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -41,6 +42,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link datamodel.base.impl.MonitorPointImpl#getAux <em>Aux</em>}</li>
  *   <li>{@link datamodel.base.impl.MonitorPointImpl#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}</li>
  *   <li>{@link datamodel.base.impl.MonitorPointImpl#getGetInfoFromMPSpread <em>Get Info From MP Spread</em>}</li>
  * </ul>
@@ -49,6 +51,26 @@ import org.eclipse.emf.ecore.resource.Resource;
  * @generated
  */
 public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorPoint {
+	/**
+	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Resource AUX_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAux() <em>Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected Resource aux = AUX_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getGetInfoFromAPSpread() <em>Get Info From AP Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -86,7 +108,6 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	public MonitorPointImpl(String[] row, Resource parent) {
 		super(row, parent);
 	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,6 +116,27 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.MONITOR_POINT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Resource getAux() {
+		return aux;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAux(Resource newAux) {
+		Resource oldAux = aux;
+		aux = newAux;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MONITOR_POINT__AUX, oldAux, aux));
 	}
 
 	/**
@@ -383,6 +425,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case BasePackage.MONITOR_POINT__AUX:
+				return getAux();
 			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
 				if (resolve) return getGetInfoFromAPSpread();
 				return basicGetGetInfoFromAPSpread();
@@ -401,6 +445,9 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case BasePackage.MONITOR_POINT__AUX:
+				setAux((Resource)newValue);
+				return;
 			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
 				setGetInfoFromAPSpread((ArchiveProperty)newValue);
 				return;
@@ -419,6 +466,9 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case BasePackage.MONITOR_POINT__AUX:
+				setAux(AUX_EDEFAULT);
+				return;
 			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
 				setGetInfoFromAPSpread((ArchiveProperty)null);
 				return;
@@ -437,12 +487,30 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case BasePackage.MONITOR_POINT__AUX:
+				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
 			case BasePackage.MONITOR_POINT__GET_INFO_FROM_AP_SPREAD:
 				return getInfoFromAPSpread != null;
 			case BasePackage.MONITOR_POINT__GET_INFO_FROM_MP_SPREAD:
 				return getInfoFromMPSpread != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (aux: ");
+		result.append(aux);
+		result.append(')');
+		return result.toString();
 	}
 
 } //MonitorPointImpl

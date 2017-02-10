@@ -204,8 +204,17 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getControlETH_Aux2() {
+		return (EAttribute)controlETHEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getControlETH_InfoControlEth() {
-		return (EReference)controlETHEClass.getEStructuralFeatures().get(1);
+		return (EReference)controlETHEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -402,8 +411,17 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMonitorETH_Aux1() {
+		return (EAttribute)monitorETHEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getMonitorETH_GetInfoMPEth() {
-		return (EReference)monitorETHEClass.getEStructuralFeatures().get(1);
+		return (EReference)monitorETHEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -447,6 +465,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		controlETHEClass = createEClass(CONTROL_ETH);
 		createEAttribute(controlETHEClass, CONTROL_ETH__MAC);
+		createEAttribute(controlETHEClass, CONTROL_ETH__AUX2);
 		createEReference(controlETHEClass, CONTROL_ETH__INFO_CONTROL_ETH);
 
 		deviceModelEClass = createEClass(DEVICE_MODEL);
@@ -473,6 +492,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		monitorETHEClass = createEClass(MONITOR_ETH);
 		createEAttribute(monitorETHEClass, MONITOR_ETH__MAC);
+		createEAttribute(monitorETHEClass, MONITOR_ETH__AUX1);
 		createEReference(monitorETHEClass, MONITOR_ETH__GET_INFO_MP_ETH);
 
 		// Create data types
@@ -522,6 +542,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		initEClass(controlETHEClass, ControlETH.class, "ControlETH", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getControlETH_Mac(), this.getMandCETHDT(), "mac", null, 0, 1, ControlETH.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getControlETH_Aux2(), ecorePackage.getEResource(), "aux2", null, 0, 1, ControlETH.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlETH_InfoControlEth(), this.getMandCETH(), null, "infoControlEth", null, 0, 1, ControlETH.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(controlETHEClass, null, "setAssembly", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -618,6 +639,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		initEClass(monitorETHEClass, MonitorETH.class, "MonitorETH", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMonitorETH_Mac(), this.getMandCETHDT(), "mac", null, 0, 1, MonitorETH.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMonitorETH_Aux1(), ecorePackage.getEResource(), "aux1", null, 0, 1, MonitorETH.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMonitorETH_GetInfoMPEth(), this.getMandCETH(), null, "getInfoMPEth", null, 0, 1, MonitorETH.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(monitorETHEClass, null, "setAssembly", 0, 1, IS_UNIQUE, IS_ORDERED);

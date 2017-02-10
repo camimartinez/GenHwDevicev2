@@ -51,6 +51,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class MainAMBImpl extends MainBaseImpl implements MainAMB {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MainAMBImpl(String[] row){
+		super(row);
+	}
+	
 	/**
 	 * The default value of the '{@link #getTmp() <em>Tmp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,15 +100,6 @@ public class MainAMBImpl extends MainBaseImpl implements MainAMB {
 		super();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MainAMBImpl(String[] row) {
-		super(row);
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

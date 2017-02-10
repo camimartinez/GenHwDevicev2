@@ -693,7 +693,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='int archiveIndex = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum(\"ArchiveProperty\");\r\n\tfor(int i = 2; i < spreadsheet[archiveIndex].length; i++)  {\r\n\t\tif(spreadsheet[archiveIndex][i].length == 0)\r\n\t\tbreak;\r\n\t\t            \t\r\n\t\t String[] row = spreadsheet[archiveIndex][i];\r\n\t\t  ArchiveProperty ap = BaseFactoryImpl.eINSTANCE.createArchiveProperty();\r\n\t\t  if(name.equals(ap.RefersTo()))\r\n\t\t             return (Resource) ap;\r\n\t\t   }\r\n\t\t        return null;'"
+	 * @model
 	 * @generated
 	 */
 	Resource getArchive(String name);
