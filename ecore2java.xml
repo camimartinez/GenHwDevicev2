@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"
+
+<project name="GenHwDevicev2" default="generateCode">
+	<description> Build the javacode from ecore model </description>
+	
+	<target name="generateCode" description="description">
+	<emf.Ecore2Java genModel="config/model/modelGenHwDevicev2Gen.genmodel"
+					model="config/model/modelGenHwDevicev2.ecore"
+					generatemodelproject="true"
+					generateeditorproject="false"
+					generateeditproject="false"
+					reconcilegenmodel="reload"/>
+	</target>
+</project>
