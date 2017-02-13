@@ -63,6 +63,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * @generated
  */
 public class MonitorImpl extends MonitorPointImpl implements Monitor {
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -505,6 +506,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		result.append(')');
 		return result.toString();
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -545,7 +547,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
 	@Override
 	public void setTimeStamp(long timeStamp) {
 		// TODO Auto-generated method stub

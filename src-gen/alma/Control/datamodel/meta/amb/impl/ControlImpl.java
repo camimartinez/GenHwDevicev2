@@ -51,7 +51,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,6 +82,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		super(row, parent);
 		mac = new MandCImpl(row,sheet,this);
 	}
+	
 	/**
 	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -1410,7 +1410,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
 	@Override
 	public void setTimeStamp(long timeStamp) {
 		// TODO Auto-generated method stub
@@ -1588,4 +1592,5 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 } //ControlImpl

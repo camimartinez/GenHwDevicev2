@@ -67,6 +67,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * @generated
  */
 public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

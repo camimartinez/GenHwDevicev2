@@ -52,6 +52,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  * @generated
  */
 public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorPoint {
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

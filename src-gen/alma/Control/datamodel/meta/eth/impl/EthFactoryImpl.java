@@ -70,6 +70,17 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	}
 
 	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Main createMain(String[] row){
+		MainImpl main = new MainImpl(row);
+		return main;
+	}
+	
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -158,16 +169,6 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 		return main;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Main createMain(String[] row){
-		MainImpl main = new MainImpl(row);
-		return main;
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -39,16 +39,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchiveImpl(String[] row){
-		super(row);
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,6 +48,15 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArchiveImpl(String[] row){
+		super(row);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

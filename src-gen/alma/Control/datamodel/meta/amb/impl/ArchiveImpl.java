@@ -53,7 +53,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,7 +61,7 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	public ArchiveImpl(String[] row) {
 		super(row);
 	}
-	
+
 	/**
 	 * The default value of the '{@link #getBaseFacTmp() <em>Base Fac Tmp</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -55,6 +55,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @generated
  */
 public class MandCImpl extends EObjectImpl implements MandC {
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

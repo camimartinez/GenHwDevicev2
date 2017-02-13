@@ -45,6 +45,7 @@ import alma.Control.datamodel.meta.base.Util;
 
 import alma.Control.datamodel.meta.base.impl.BaseFactoryImpl;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -560,6 +561,7 @@ public class MyDeviceModelImpl extends alma.Control.datamodel.meta.amb.impl.Devi
 
 		// Get the Main
 		main = ambFac.createMain(spreadsheet[mainIndex][2]);
+	
 		//main.setMetaEnvironment(this.getMetaEnvironment());
 
 		// Get the Notes

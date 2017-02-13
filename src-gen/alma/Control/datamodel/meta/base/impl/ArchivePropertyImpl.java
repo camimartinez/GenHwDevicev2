@@ -45,7 +45,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,6 +64,7 @@ import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
  * @generated
  */
 public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty {
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -584,7 +584,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 		result.append(')');
 		return result.toString();
 	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -625,7 +624,11 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
 	@Override
 	public void setTimeStamp(long timeStamp) {
 		// TODO Auto-generated method stub

@@ -64,6 +64,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 		this.row = row;
 		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Hardware Device");
 	}
+	
 	/**
 	 * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->

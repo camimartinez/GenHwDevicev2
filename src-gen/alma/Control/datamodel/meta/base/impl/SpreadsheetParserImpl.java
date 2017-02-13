@@ -56,6 +56,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @generated
  */
 public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetParser {
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

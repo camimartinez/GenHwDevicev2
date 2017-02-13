@@ -51,7 +51,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,6 +72,7 @@ import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
  * @generated
  */
 public class MonitorImpl extends MonitorPointImpl implements Monitor {
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1090,7 +1090,6 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		result.append(')');
 		return result.toString();
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1131,7 +1130,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
 	@Override
 	public void setTimeStamp(long timeStamp) {
 		// TODO Auto-generated method stub
@@ -1309,4 +1312,5 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 } //MonitorImpl

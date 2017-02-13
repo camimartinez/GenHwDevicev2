@@ -78,6 +78,15 @@ public interface EthFactory extends EFactory {
 	Main createMain();
 
 	/**
+	 * Returns a new object of class '<em>Main</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Main</em>'.
+	 * @!generated
+	 */
+	Main createMain(String[] row);
+	
+	/**
 	 * Returns a new object of class '<em>Mand C</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,14 +112,5 @@ public interface EthFactory extends EFactory {
 	 * @generated
 	 */
 	EthPackage getEthPackage();
-
-	/**
-	 * Returns the package supported by this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the package supported by this factory.
-	 * @!generated
-	 */
-	Main createMain(String[] row);
 
 } //EthFactory

@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface BaseFactory extends EFactory {
+	
 	/**
 	 * Returns a new object of class '<em>Archive Property</em>'.
 	 * <!-- begin-user-doc -->

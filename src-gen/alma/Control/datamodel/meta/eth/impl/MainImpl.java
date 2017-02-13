@@ -52,6 +52,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class MainImpl extends MainBaseImpl implements Main {
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -47,6 +47,25 @@ import org.xml.sax.SAXParseException;
  */
 public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	/**
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static BaseFactory init() {
+		try {
+			BaseFactory theBaseFactory = (BaseFactory)EPackage.Registry.INSTANCE.getEFactory("http://alma/Control/datamodel/meta/base/1.0"); 
+			if (theBaseFactory != null) {
+				return theBaseFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new BaseFactoryImpl();
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -56,6 +75,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 		return archiveProperty;
 	}
 	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,25 +96,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 		return mainBase;
 	}
 	
-	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static BaseFactory init() {
-		try {
-			BaseFactory theBaseFactory = (BaseFactory)EPackage.Registry.INSTANCE.getEFactory("http://alma/Control/datamodel/meta/base/1.0"); 
-			if (theBaseFactory != null) {
-				return theBaseFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new BaseFactoryImpl();
-	}
-
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->

@@ -3,14 +3,18 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="ALMA - Atacama Large Millimiter Array&#xD;&#xA;(c) European Southern Observatory, 2017&#xD;&#xA;Copyright by ESO (in the framework of the ALMA collaboration),&#xD;&#xA;All rights reserved&#xD;&#xA;&#xD;&#xA;This library is free software; you can redistribute it and/or&#xD;&#xA;modify it under the terms of the GNU Lesser General Public&#xD;&#xA;License as published by the Free Software Foundation; either&#xD;&#xA;version 2.1 of the License, or (at your option) any later version.&#xD;&#xA;&#xD;&#xA;This library is distributed in the hope that it will be useful,&#xD;&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xD;&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU&#xD;&#xA;Lesser General Public License for more details.&#xD;&#xA;&#xD;&#xA;You should have received a copy of the GNU Lesser General Public&#xD;&#xA;License along with this library; if not, write to the Free Software&#xD;&#xA;Foundation, Inc., 59 Temple Place, Suite 330, Boston, &#xD;&#xA;MA 02111-1307  USA&#xD;&#xA;"
     modelDirectory="/GenHwDevicev2/src-gen" modelPluginID="GenHwDevicev2" modelName="GenHwDevicev2Gen"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    publicConstructors="true">
+    suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" publicConstructors="true">
   <foreignModel>genHwDevicev2.ecore</foreignModel>
   <genPackages prefix="Alma" disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#/">
-    <nestedGenPackages prefix="Control" disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//Control">
-      <nestedGenPackages prefix="Datamodel" disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//Control/datamodel">
-        <nestedGenPackages prefix="Meta" disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//Control/datamodel/meta">
-          <nestedGenPackages prefix="Amb" disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//Control/datamodel/meta/amb">
+    <nestedGenPackages prefix="Control" basePackage="alma" disposableProviderFactory="true"
+        ecorePackage="genHwDevicev2.ecore#//Control">
+      <nestedGenPackages prefix="Datamodel" basePackage="alma.Control" disposableProviderFactory="true"
+          ecorePackage="genHwDevicev2.ecore#//Control/datamodel">
+        <nestedGenPackages prefix="Meta" basePackage="alma.Control.datamodel" disposableProviderFactory="true"
+            ecorePackage="genHwDevicev2.ecore#//Control/datamodel/meta">
+          <nestedGenPackages prefix="Amb" basePackage="alma.Control.datamodel.meta"
+              disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//Control/datamodel/meta/amb">
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//Control/datamodel/meta/amb/MandCAMBDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//Control/datamodel/meta/amb/BaseFactoryImpDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//Control/datamodel/meta/amb/BaseFactoryDT"/>
@@ -368,7 +372,8 @@
             </genClasses>
             <genClasses image="false" ecoreClass="genHwDevicev2.ecore#//Control/datamodel/meta/amb/ResourceAuxClass"/>
           </nestedGenPackages>
-          <nestedGenPackages prefix="Base" disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//Control/datamodel/meta/base">
+          <nestedGenPackages prefix="Base" basePackage="alma.Control.datamodel.meta"
+              disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//Control/datamodel/meta/base">
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//Control/datamodel/meta/base/SimpleErrorHandlerDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//Control/datamodel/meta/base/MandCBaseDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//Control/datamodel/meta/base/MainBaseDT"/>
@@ -781,7 +786,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//Control/datamodel/meta/base/MainBase/ICDDateAsArrayTime"/>
             </genClasses>
           </nestedGenPackages>
-          <nestedGenPackages prefix="Eth" disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//Control/datamodel/meta/eth">
+          <nestedGenPackages prefix="Eth" basePackage="alma.Control.datamodel.meta"
+              disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//Control/datamodel/meta/eth">
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//Control/datamodel/meta/eth/MandCETHDT"/>
             <genClasses ecoreClass="genHwDevicev2.ecore#//Control/datamodel/meta/eth/Archive"/>
             <genClasses ecoreClass="genHwDevicev2.ecore#//Control/datamodel/meta/eth/Control">
