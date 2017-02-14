@@ -151,10 +151,10 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNewline()
-	 * @generated
+	 * @!generated
 	 * @ordered
 	 */
-	protected static final String NEWLINE_EDEFAULT = "";
+	protected static final String NEWLINE_EDEFAULT = System.getProperty("line.separator");
 
 	/**
 	 * The cached value of the '{@link #getNewline() <em>Newline</em>}' attribute.

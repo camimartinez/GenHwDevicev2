@@ -32,6 +32,7 @@ import alma.Control.datamodel.meta.amb.GenericMonitorPoints;
 import alma.Control.datamodel.meta.amb.Main;
 import alma.Control.datamodel.meta.amb.Monitor;
 import alma.Control.datamodel.meta.amb.MyDeviceModel;
+import alma.Control.datamodel.meta.amb.util.AmbAdapterFactory;
 
 import alma.Control.datamodel.meta.base.BaseFactory;
 import alma.Control.datamodel.meta.base.ControlPoint;
@@ -559,9 +560,9 @@ public class MyDeviceModelImpl extends alma.Control.datamodel.meta.amb.impl.Devi
 			spreadsheet = spreadsheetWithGenericPointsAdded;
 		}
 
+		//AmbAdapterFactory ambF = new AmbAdapterFactory();
 		// Get the Main
 		main = ambFac.createMain(spreadsheet[mainIndex][2]);
-	
 		//main.setMetaEnvironment(this.getMetaEnvironment());
 
 		// Get the Notes

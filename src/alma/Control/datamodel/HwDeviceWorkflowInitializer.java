@@ -9,6 +9,7 @@ import org.eclipse.emf.mwe.core.lib.WorkflowComponentWithModelSlot;
 
 import alma.Control.datamodel.meta.base.BaseFactory;
 
+
 public class HwDeviceWorkflowInitializer extends WorkflowComponentWithModelSlot{
 	private String deviceDir;
 	private String spreadsheetDir;
@@ -30,6 +31,7 @@ public class HwDeviceWorkflowInitializer extends WorkflowComponentWithModelSlot{
 		System.out.println("HwDeviceWorkflowInitializer.invoke started.");
 		
 		alma.Control.datamodel.meta.base.impl.DeviceModelImpl devType = null;
+		
 		if(System.getProperty(deviceType).equals(deviceAMB)){
 			devType = new alma.Control.datamodel.meta.amb.impl.DeviceModelImpl();
 		}else if (System.getProperty(deviceType).equals(deviceETH)){
@@ -38,8 +40,7 @@ public class HwDeviceWorkflowInitializer extends WorkflowComponentWithModelSlot{
 			System.out.println("The device type: "+System.getProperty(deviceType)+ "is not supported.");
 			return;
 		}
-	
-	    //
+
 		devType.setCodegenDir(BaseFactory.eINSTANCE.createUtil().getInstallDir());
 		devType.setDeviceDir(deviceDir);
 		devType.setDeviceName(System.getProperty("DEVICE_NAME"));

@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.mwe.core.WorkflowEngine;
+import org.eclipse.emf.mwe.core.monitor.NullProgressMonitor;
 import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 
 import alma.Control.datamodel.meta.base.BaseFactory;
