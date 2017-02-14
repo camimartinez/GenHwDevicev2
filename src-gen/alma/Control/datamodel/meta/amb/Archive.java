@@ -34,11 +34,11 @@ import alma.Control.datamodel.meta.base.impl.BaseFactoryImpl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.Archive#getBaseFacTmp <em>Base Fac Tmp</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.Archive#getGetAssemblyColumn <em>Get Assembly Column</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.Archive#getToAssemblyColumn <em>To Assembly Column</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.amb.AmbPackage#getArchive()
  * @model
@@ -72,30 +72,30 @@ public interface Archive extends ArchiveProperty {
 	void setBaseFacTmp(BaseFactoryImpl value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Assembly Column</b></em>' reference.
+	 * Returns the value of the '<em><b>To Assembly Column</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Assembly Column</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Assembly Column</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Assembly Column</em>' reference.
-	 * @see #setGetAssemblyColumn(Table)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getArchive_GetAssemblyColumn()
+	 * @return the value of the '<em>To Assembly Column</em>' reference.
+	 * @see #setToAssemblyColumn(Table)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getArchive_ToAssemblyColumn()
 	 * @model
 	 * @generated
 	 */
-	Table getGetAssemblyColumn();
+	Table getToAssemblyColumn();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Archive#getGetAssemblyColumn <em>Get Assembly Column</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Archive#getToAssemblyColumn <em>To Assembly Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Assembly Column</em>' reference.
-	 * @see #getGetAssemblyColumn()
+	 * @param value the new value of the '<em>To Assembly Column</em>' reference.
+	 * @see #getToAssemblyColumn()
 	 * @generated
 	 */
-	void setGetAssemblyColumn(Table value);
+	void setToAssemblyColumn(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

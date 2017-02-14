@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getSpreadsheetName <em>Spreadsheet Name</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getSheetName <em>Sheet Name</em>}</li>
@@ -44,11 +45,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getSetInfFromSpread <em>Set Inf From Spread</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getGetCommonInf <em>Get Common Inf</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getSetMPorCP <em>Set MPor CP</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getGetSheetMP <em>Get Sheet MP</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getToCommonInf <em>To Common Inf</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getToMPorCP <em>To MPor CP</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.MandCBase#getToSheetMP <em>To Sheet MP</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getMandCBase()
  * @model abstract="true"
@@ -119,7 +119,7 @@ public interface MandCBase extends EObject {
 	 * @return the value of the '<em>Row</em>' attribute.
 	 * @see #setRow(String[])
 	 * @see alma.Control.datamodel.meta.base.BasePackage#getMandCBase_Row()
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getRow();
@@ -145,7 +145,7 @@ public interface MandCBase extends EObject {
 	 * @return the value of the '<em>Parent Row</em>' attribute.
 	 * @see #setParentRow(String[])
 	 * @see alma.Control.datamodel.meta.base.BasePackage#getMandCBase_ParentRow()
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getParentRow();
@@ -291,82 +291,82 @@ public interface MandCBase extends EObject {
 	void setSetInfFromSpread(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Common Inf</b></em>' reference.
+	 * Returns the value of the '<em><b>To Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Common Inf</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Common Inf</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Common Inf</em>' reference.
-	 * @see #setGetCommonInf(Table)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getMandCBase_GetCommonInf()
+	 * @return the value of the '<em>To Common Inf</em>' reference.
+	 * @see #setToCommonInf(Table)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getMandCBase_ToCommonInf()
 	 * @model
 	 * @generated
 	 */
-	Table getGetCommonInf();
+	Table getToCommonInf();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MandCBase#getGetCommonInf <em>Get Common Inf</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MandCBase#getToCommonInf <em>To Common Inf</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Common Inf</em>' reference.
-	 * @see #getGetCommonInf()
+	 * @param value the new value of the '<em>To Common Inf</em>' reference.
+	 * @see #getToCommonInf()
 	 * @generated
 	 */
-	void setGetCommonInf(Table value);
+	void setToCommonInf(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Set MPor CP</b></em>' reference.
+	 * Returns the value of the '<em><b>To MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Set MPor CP</em>' reference isn't clear,
+	 * If the meaning of the '<em>To MPor CP</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Set MPor CP</em>' reference.
-	 * @see #setSetMPorCP(ArchiveProperty)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getMandCBase_SetMPorCP()
+	 * @return the value of the '<em>To MPor CP</em>' reference.
+	 * @see #setToMPorCP(ArchiveProperty)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getMandCBase_ToMPorCP()
 	 * @model
 	 * @generated
 	 */
-	ArchiveProperty getSetMPorCP();
+	ArchiveProperty getToMPorCP();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MandCBase#getSetMPorCP <em>Set MPor CP</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MandCBase#getToMPorCP <em>To MPor CP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Set MPor CP</em>' reference.
-	 * @see #getSetMPorCP()
+	 * @param value the new value of the '<em>To MPor CP</em>' reference.
+	 * @see #getToMPorCP()
 	 * @generated
 	 */
-	void setSetMPorCP(ArchiveProperty value);
+	void setToMPorCP(ArchiveProperty value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Sheet MP</b></em>' reference.
+	 * Returns the value of the '<em><b>To Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Sheet MP</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Sheet MP</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Sheet MP</em>' reference.
-	 * @see #setGetSheetMP(MonitorPoint)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getMandCBase_GetSheetMP()
+	 * @return the value of the '<em>To Sheet MP</em>' reference.
+	 * @see #setToSheetMP(MonitorPoint)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getMandCBase_ToSheetMP()
 	 * @model
 	 * @generated
 	 */
-	MonitorPoint getGetSheetMP();
+	MonitorPoint getToSheetMP();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MandCBase#getGetSheetMP <em>Get Sheet MP</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MandCBase#getToSheetMP <em>To Sheet MP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Sheet MP</em>' reference.
-	 * @see #getGetSheetMP()
+	 * @param value the new value of the '<em>To Sheet MP</em>' reference.
+	 * @see #getToSheetMP()
 	 * @generated
 	 */
-	void setGetSheetMP(MonitorPoint value);
+	void setToSheetMP(MonitorPoint value);
 
 	/**
 	 * <!-- begin-user-doc -->

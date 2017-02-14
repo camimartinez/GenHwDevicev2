@@ -18,6 +18,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
  * MA 02111-1307  USA
+ * 
  */
 package alma.Control.datamodel.meta.eth.impl;
 
@@ -31,10 +32,10 @@ import alma.Control.datamodel.meta.base.Util;
 
 import alma.Control.datamodel.meta.eth.Archive;
 import alma.Control.datamodel.meta.eth.Control;
+import alma.Control.datamodel.meta.eth.DeviceModel;
 import alma.Control.datamodel.meta.eth.EthFactory;
 import alma.Control.datamodel.meta.eth.EthPackage;
 import alma.Control.datamodel.meta.eth.Monitor;
-import alma.Control.datamodel.meta.eth.MyDeviceModel;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -46,8 +47,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 
-public class MyDeviceModelImpl extends alma.Control.datamodel.meta.eth.impl.DeviceModelImpl implements MyDeviceModel {
-	
+public class MyDeviceModelImpl extends alma.Control.datamodel.meta.base.impl.DeviceModelImpl implements DeviceModel {
 	
 	protected MainBase infoDevMain;
 
@@ -67,13 +67,13 @@ public class MyDeviceModelImpl extends alma.Control.datamodel.meta.eth.impl.Devi
 	protected Table dataSpreadsheet;
 
 	
-	protected Note notesTo;
+	protected Note toNotes;
 
 	
-	protected SpreadsheetValidator validateSpreadEth;
+	protected SpreadsheetValidator toValidateSpreadEth;
 
 	
-	protected SpreadsheetParser fromSpreadEth;
+	protected SpreadsheetParser toSpreadEth;
 
 	
 	public MyDeviceModelImpl() {
@@ -243,83 +243,84 @@ public class MyDeviceModelImpl extends alma.Control.datamodel.meta.eth.impl.Devi
 	}
 
 	
-	public Note getNotesTo() {
-		if (notesTo != null && notesTo.eIsProxy()) {
-			InternalEObject oldNotesTo = (InternalEObject)notesTo;
-			notesTo = (Note)eResolveProxy(oldNotesTo);
-			if (notesTo != oldNotesTo) {
+	public Note getToNotes() {
+		if (toNotes != null && toNotes.eIsProxy()) {
+			InternalEObject oldToNotes = (InternalEObject)toNotes;
+			toNotes = (Note)eResolveProxy(oldToNotes);
+			if (toNotes != oldToNotes) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.DEVICE_MODEL__NOTES_TO, oldNotesTo, notesTo));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.DEVICE_MODEL__TO_NOTES, oldToNotes, toNotes));
 			}
 		}
-		return notesTo;
+		return toNotes;
 	}
 
 	
-	public Note basicGetNotesTo() {
-		return notesTo;
+	public Note basicGetToNotes() {
+		return toNotes;
 	}
 
 	
-	public void setNotesTo(Note newNotesTo) {
-		Note oldNotesTo = notesTo;
-		notesTo = newNotesTo;
+	public void setToNotes(Note newToNotes) {
+		Note oldToNotes = toNotes;
+		toNotes = newToNotes;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.DEVICE_MODEL__NOTES_TO, oldNotesTo, notesTo));
+			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.DEVICE_MODEL__TO_NOTES, oldToNotes, toNotes));
 	}
 
 	
-	public SpreadsheetValidator getValidateSpreadEth() {
-		if (validateSpreadEth != null && validateSpreadEth.eIsProxy()) {
-			InternalEObject oldValidateSpreadEth = (InternalEObject)validateSpreadEth;
-			validateSpreadEth = (SpreadsheetValidator)eResolveProxy(oldValidateSpreadEth);
-			if (validateSpreadEth != oldValidateSpreadEth) {
+	public SpreadsheetValidator getToValidateSpreadEth() {
+		if (toValidateSpreadEth != null && toValidateSpreadEth.eIsProxy()) {
+			InternalEObject oldToValidateSpreadEth = (InternalEObject)toValidateSpreadEth;
+			toValidateSpreadEth = (SpreadsheetValidator)eResolveProxy(oldToValidateSpreadEth);
+			if (toValidateSpreadEth != oldToValidateSpreadEth) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.DEVICE_MODEL__VALIDATE_SPREAD_ETH, oldValidateSpreadEth, validateSpreadEth));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.DEVICE_MODEL__TO_VALIDATE_SPREAD_ETH, oldToValidateSpreadEth, toValidateSpreadEth));
 			}
 		}
-		return validateSpreadEth;
+		return toValidateSpreadEth;
 	}
 
 	
-	public SpreadsheetValidator basicGetValidateSpreadEth() {
-		return validateSpreadEth;
+	public SpreadsheetValidator basicGetToValidateSpreadEth() {
+		return toValidateSpreadEth;
 	}
 
 	
-	public void setValidateSpreadEth(SpreadsheetValidator newValidateSpreadEth) {
-		SpreadsheetValidator oldValidateSpreadEth = validateSpreadEth;
-		validateSpreadEth = newValidateSpreadEth;
+	public void setToValidateSpreadEth(SpreadsheetValidator newToValidateSpreadEth) {
+		SpreadsheetValidator oldToValidateSpreadEth = toValidateSpreadEth;
+		toValidateSpreadEth = newToValidateSpreadEth;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.DEVICE_MODEL__VALIDATE_SPREAD_ETH, oldValidateSpreadEth, validateSpreadEth));
+			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.DEVICE_MODEL__TO_VALIDATE_SPREAD_ETH, oldToValidateSpreadEth, toValidateSpreadEth));
 	}
 
 	
-	public SpreadsheetParser getFromSpreadEth() {
-		if (fromSpreadEth != null && fromSpreadEth.eIsProxy()) {
-			InternalEObject oldFromSpreadEth = (InternalEObject)fromSpreadEth;
-			fromSpreadEth = (SpreadsheetParser)eResolveProxy(oldFromSpreadEth);
-			if (fromSpreadEth != oldFromSpreadEth) {
+	public SpreadsheetParser getToSpreadEth() {
+		if (toSpreadEth != null && toSpreadEth.eIsProxy()) {
+			InternalEObject oldToSpreadEth = (InternalEObject)toSpreadEth;
+			toSpreadEth = (SpreadsheetParser)eResolveProxy(oldToSpreadEth);
+			if (toSpreadEth != oldToSpreadEth) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.DEVICE_MODEL__FROM_SPREAD_ETH, oldFromSpreadEth, fromSpreadEth));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.DEVICE_MODEL__TO_SPREAD_ETH, oldToSpreadEth, toSpreadEth));
 			}
 		}
-		return fromSpreadEth;
+		return toSpreadEth;
 	}
 
 	
-	public SpreadsheetParser basicGetFromSpreadEth() {
-		return fromSpreadEth;
+	public SpreadsheetParser basicGetToSpreadEth() {
+		return toSpreadEth;
 	}
 
 	
-	public void setFromSpreadEth(SpreadsheetParser newFromSpreadEth) {
-		SpreadsheetParser oldFromSpreadEth = fromSpreadEth;
-		fromSpreadEth = newFromSpreadEth;
+	public void setToSpreadEth(SpreadsheetParser newToSpreadEth) {
+		SpreadsheetParser oldToSpreadEth = toSpreadEth;
+		toSpreadEth = newToSpreadEth;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.DEVICE_MODEL__FROM_SPREAD_ETH, oldFromSpreadEth, fromSpreadEth));
+			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.DEVICE_MODEL__TO_SPREAD_ETH, oldToSpreadEth, toSpreadEth));
 	}
 
+	
 	@Override
 	public String CreateModel() {
 		// Parse and validate the spreadsheet.
@@ -469,15 +470,15 @@ public class MyDeviceModelImpl extends alma.Control.datamodel.meta.eth.impl.Devi
 			case EthPackage.DEVICE_MODEL__DATA_SPREADSHEET:
 				if (resolve) return getDataSpreadsheet();
 				return basicGetDataSpreadsheet();
-			case EthPackage.DEVICE_MODEL__NOTES_TO:
-				if (resolve) return getNotesTo();
-				return basicGetNotesTo();
-			case EthPackage.DEVICE_MODEL__VALIDATE_SPREAD_ETH:
-				if (resolve) return getValidateSpreadEth();
-				return basicGetValidateSpreadEth();
-			case EthPackage.DEVICE_MODEL__FROM_SPREAD_ETH:
-				if (resolve) return getFromSpreadEth();
-				return basicGetFromSpreadEth();
+			case EthPackage.DEVICE_MODEL__TO_NOTES:
+				if (resolve) return getToNotes();
+				return basicGetToNotes();
+			case EthPackage.DEVICE_MODEL__TO_VALIDATE_SPREAD_ETH:
+				if (resolve) return getToValidateSpreadEth();
+				return basicGetToValidateSpreadEth();
+			case EthPackage.DEVICE_MODEL__TO_SPREAD_ETH:
+				if (resolve) return getToSpreadEth();
+				return basicGetToSpreadEth();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -504,14 +505,14 @@ public class MyDeviceModelImpl extends alma.Control.datamodel.meta.eth.impl.Devi
 			case EthPackage.DEVICE_MODEL__DATA_SPREADSHEET:
 				setDataSpreadsheet((Table)newValue);
 				return;
-			case EthPackage.DEVICE_MODEL__NOTES_TO:
-				setNotesTo((Note)newValue);
+			case EthPackage.DEVICE_MODEL__TO_NOTES:
+				setToNotes((Note)newValue);
 				return;
-			case EthPackage.DEVICE_MODEL__VALIDATE_SPREAD_ETH:
-				setValidateSpreadEth((SpreadsheetValidator)newValue);
+			case EthPackage.DEVICE_MODEL__TO_VALIDATE_SPREAD_ETH:
+				setToValidateSpreadEth((SpreadsheetValidator)newValue);
 				return;
-			case EthPackage.DEVICE_MODEL__FROM_SPREAD_ETH:
-				setFromSpreadEth((SpreadsheetParser)newValue);
+			case EthPackage.DEVICE_MODEL__TO_SPREAD_ETH:
+				setToSpreadEth((SpreadsheetParser)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -539,14 +540,14 @@ public class MyDeviceModelImpl extends alma.Control.datamodel.meta.eth.impl.Devi
 			case EthPackage.DEVICE_MODEL__DATA_SPREADSHEET:
 				setDataSpreadsheet((Table)null);
 				return;
-			case EthPackage.DEVICE_MODEL__NOTES_TO:
-				setNotesTo((Note)null);
+			case EthPackage.DEVICE_MODEL__TO_NOTES:
+				setToNotes((Note)null);
 				return;
-			case EthPackage.DEVICE_MODEL__VALIDATE_SPREAD_ETH:
-				setValidateSpreadEth((SpreadsheetValidator)null);
+			case EthPackage.DEVICE_MODEL__TO_VALIDATE_SPREAD_ETH:
+				setToValidateSpreadEth((SpreadsheetValidator)null);
 				return;
-			case EthPackage.DEVICE_MODEL__FROM_SPREAD_ETH:
-				setFromSpreadEth((SpreadsheetParser)null);
+			case EthPackage.DEVICE_MODEL__TO_SPREAD_ETH:
+				setToSpreadEth((SpreadsheetParser)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -568,12 +569,12 @@ public class MyDeviceModelImpl extends alma.Control.datamodel.meta.eth.impl.Devi
 				return infoArch != null;
 			case EthPackage.DEVICE_MODEL__DATA_SPREADSHEET:
 				return dataSpreadsheet != null;
-			case EthPackage.DEVICE_MODEL__NOTES_TO:
-				return notesTo != null;
-			case EthPackage.DEVICE_MODEL__VALIDATE_SPREAD_ETH:
-				return validateSpreadEth != null;
-			case EthPackage.DEVICE_MODEL__FROM_SPREAD_ETH:
-				return fromSpreadEth != null;
+			case EthPackage.DEVICE_MODEL__TO_NOTES:
+				return toNotes != null;
+			case EthPackage.DEVICE_MODEL__TO_VALIDATE_SPREAD_ETH:
+				return toValidateSpreadEth != null;
+			case EthPackage.DEVICE_MODEL__TO_SPREAD_ETH:
+				return toSpreadEth != null;
 		}
 		return super.eIsSet(featureID);
 	}

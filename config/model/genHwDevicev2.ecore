@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="alma"
-    nsURI="http://alma/1.0" nsPrefix="alma">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="alma" nsURI="http://alma/1.0" nsPrefix="alma">
   <eSubpackages name="Control" nsURI="http://alma.Control/1.0" nsPrefix="alma.Control">
     <eSubpackages name="datamodel" nsURI="http://alma/Control/datamodel/1.0" nsPrefix="alma.Control.datamodel">
       <eSubpackages name="meta" nsURI="http://alma/Control/datamodel/meta/1.0" nsPrefix="alma.Control.datamodel.meta">
@@ -25,7 +23,7 @@
               </eAnnotations>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseFacTmp" eType="#//Control/datamodel/meta/amb/BaseFactoryImpDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getAssemblyColumn"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toAssemblyColumn"
                 eType="#//Control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//Control/datamodel/meta/base/ControlPoint">
@@ -359,9 +357,9 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="tmp2" eType="#//Control/datamodel/meta/amb/BaseFactoryImpDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="worldToDataColumns"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toWorldToDataColumns"
                 eType="#//Control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoControlSheet"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoControlSheet"
                 eType="#//Control/datamodel/meta/amb/MandC"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="toNormalizeNumber"
                 eType="#//Control/datamodel/meta/base/Util"/>
@@ -430,27 +428,27 @@
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="tmp" eType="#//Control/datamodel/meta/amb/BaseFactoryImpDT"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="toAddCP" eType="#//Control/datamodel/meta/base/ControlPoint"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getNoteFromMain"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toNoteFromMain"
                 eType="#//Control/datamodel/meta/base/Note"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="toAddMP" eType="#//Control/datamodel/meta/base/MonitorPoint"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoMain" eType="#//Control/datamodel/meta/base/MainBase"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getCPfromControl"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoMain" eType="#//Control/datamodel/meta/base/MainBase"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toCPfromControl"
                 eType="#//Control/datamodel/meta/amb/Control"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromMainSheet"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromMainSheet"
                 eType="#//Control/datamodel/meta/amb/Main"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getMPfromMonitor"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toMPfromMonitor"
                 eType="#//Control/datamodel/meta/amb/Monitor"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getDataFromSpread"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toDataFromSpread"
                 eType="#//Control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getAPfromArchive"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toAPfromArchive"
                 eType="#//Control/datamodel/meta/amb/Archive"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="ToinstallEndGeneration"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInstallEndGeneration"
                 eType="#//Control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getFromSpreadsheet"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toSpreadsheetFrom"
                 eType="#//Control/datamodel/meta/base/SpreadsheetParser"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="toValidateSpreadsheet"
                 eType="#//Control/datamodel/meta/base/SpreadsheetValidator"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getGenericMP" eType="#//Control/datamodel/meta/amb/GenericMonitorPoints"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toGenericMP" eType="#//Control/datamodel/meta/amb/GenericMonitorPoints"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Main" eSuperTypes="#//Control/datamodel/meta/base/MainBase">
             <eOperations name="Parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -484,7 +482,7 @@
               </eAnnotations>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="tmp" eType="#//Control/datamodel/meta/amb/BaseFactoryDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromMain"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromMain"
                 eType="#//Control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MandC">
@@ -750,18 +748,19 @@
                 <details key="body" value="if(!isSingleBit())&#xD;&#xA;&#x9;&#x9;&#x9;return &quot;&quot;;&#xD;&#xA;&#x9;&#x9;String s = null;&#xD;&#xA;&#x9;&#x9;if(isRawDataArray())&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;s = RawDataTypeCell().substring(4);&#xD;&#xA;&#x9;&#x9;&#x9;int n = s.indexOf(&quot;&amp;lt;&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;int m = s.substring(n + 4).indexOf(&quot;&amp;gt;&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;s = s.substring(n + 4, m + n + 4);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;s = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;int n = Integer.parseInt(s);&#xD;&#xA;&#x9;&#x9;return amask[n];"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/String1DT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//Control/datamodel/meta/base/MandCBaseDT"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="Amask" eType="#//Control/datamodel/meta/base/String1DT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="Amask" eType="#//Control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//Control/datamodel/meta/amb/BaseFactoryDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoSheet" eType="#//Control/datamodel/meta/base/MandCBase"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getDataFromMain"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoSheet" eType="#//Control/datamodel/meta/base/MandCBase"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toDataFromMain"
                 eType="#//Control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="isMPDataType" eType="#//Control/datamodel/meta/amb/Monitor"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="isCPDataType" eType="#//Control/datamodel/meta/amb/Control"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="utilsToData" eType="#//Control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toMPDataType" eType="#//Control/datamodel/meta/amb/Monitor"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toCPDataType" eType="#//Control/datamodel/meta/amb/Control"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toUtilsToData"
+                eType="#//Control/datamodel/meta/base/Util"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Monitor" eSuperTypes="#//Control/datamodel/meta/base/MonitorPoint">
             <eOperations name="CanBeInvalid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1050,9 +1049,9 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux3" eType="#//Control/datamodel/meta/amb/ResourceDT"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="toNormalizeData"
                 eType="#//Control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getColumnsCanBeInv"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toColumnsCanBeInv"
                 eType="#//Control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoMPSheet"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoMPSheet"
                 eType="#//Control/datamodel/meta/amb/MandC"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="SWModule">
@@ -1190,8 +1189,8 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainAssembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="oneSwModule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/String1DT"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="#//Control/datamodel/meta/base/String1DT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/EStringArray"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="#//Control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
@@ -1209,26 +1208,26 @@
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux5" eType="#//Control/datamodel/meta/amb/BaseFactoryImpDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="addAllMP" eType="#//Control/datamodel/meta/amb/Monitor"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="addAllCP" eType="#//Control/datamodel/meta/amb/Control"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="setFormatDescriptions"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toAddAllMP" eType="#//Control/datamodel/meta/amb/Monitor"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toAddAllCP" eType="#//Control/datamodel/meta/amb/Control"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toFormatDescriptions"
                 eType="#//Control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getSheetColumns"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toSheetColumns"
                 eType="#//Control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="GenericMonitorPoints">
-            <eOperations name="getParsedGenericSpreadsheet" eType="#//Control/datamodel/meta/base/String3DT"/>
-            <eOperations name="getDeviceWorksheetWithGenericPointsAdded" eType="#//Control/datamodel/meta/base/String3DT">
+            <eOperations name="getParsedGenericSpreadsheet" eType="#//Control/datamodel/meta/base/EStringArray3"/>
+            <eOperations name="getDeviceWorksheetWithGenericPointsAdded" eType="#//Control/datamodel/meta/base/EStringArray3">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value=" // Create the SP class&#xD;&#xA;        setDeviceName(spreadsheet[0][2][0]);&#xD;&#xA;        String [][][] genericSpreadsheet = getParsedGenericSpreadsheet();&#xD;&#xA;        // Now we iterate through spreadsheet adding monitor, control and archive generic points.&#xD;&#xA;        &#xD;&#xA;        // I coded this way to make the things clear&#xD;&#xA;        int[] Rows = null;&#xD;&#xA;        int[] Columns = null;&#xD;&#xA;        int[] GenericRows = null;&#xD;&#xA;        &#xD;&#xA;        Rows = new int[4];&#xD;&#xA;        Columns = new int[4];&#xD;&#xA;        GenericRows = new int[4];&#xD;&#xA;        &#xD;&#xA;        String deviceName=spreadsheet[0][2][0];&#xD;&#xA;        &#xD;&#xA;        int mainRows = spreadsheet[0].length;&#xD;&#xA;        int monitorRows = spreadsheet[1].length;&#xD;&#xA;        int controlRows = spreadsheet[2].length;&#xD;&#xA;        int archiveRows = spreadsheet[3].length;&#xD;&#xA;        &#xD;&#xA;        int mainColumns = spreadsheet[0][1].length;&#xD;&#xA;        int monitorColumns = spreadsheet[1][1].length;&#xD;&#xA;        int controlColumns = spreadsheet[2][1].length;&#xD;&#xA;        int archiveColumns = spreadsheet[3][1].length;&#xD;&#xA;        &#xD;&#xA;        int genericMonitorRows = genericSpreadsheet[1].length;&#xD;&#xA;        int genericControlRows = genericSpreadsheet[2].length;&#xD;&#xA;        int genericArchiveRows = genericSpreadsheet[3].length;&#xD;&#xA;        &#xD;&#xA;        // Well, first the newSpreadsheet is created. Arrays are static structures....&#xD;&#xA;        newSpreadsheet = new String[4][][];&#xD;&#xA;        newSpreadsheet[0] = new String[mainRows][mainColumns];&#xD;&#xA;        newSpreadsheet[1] = new String[monitorRows+genericMonitorRows-2][monitorColumns];&#xD;&#xA;        newSpreadsheet[2] = new String[controlRows+genericControlRows-2][controlColumns];&#xD;&#xA;        newSpreadsheet[3] = new String[archiveRows+genericArchiveRows-2][archiveColumns];&#xD;&#xA;        &#xD;&#xA;&#x9;// Hardware Device&#xD;&#xA;        newSpreadsheet[0][0] = new String[1];&#xD;&#xA;        newSpreadsheet[0][0][0] = spreadsheet[0][0][0];&#xD;&#xA;&#x9;// Monitor Point&#xD;&#xA;        newSpreadsheet[1][0] = new String[1];&#xD;&#xA;        newSpreadsheet[1][0][0] = spreadsheet[1][0][0];&#xD;&#xA;&#x9;// Control Point&#xD;&#xA;        newSpreadsheet[2][0] = new String[1];&#xD;&#xA;        newSpreadsheet[2][0][0] = spreadsheet[2][0][0];&#xD;&#xA;&#x9;// Archive Property&#xD;&#xA;        newSpreadsheet[3][0] = new String[1];&#xD;&#xA;        newSpreadsheet[3][0][0] = spreadsheet[3][0][0];&#xD;&#xA;        &#xD;&#xA;        Rows[0] = mainRows; // Yes here I ignore Notes on Main spreadsheet&#xD;&#xA;        Rows[1] = monitorRows;&#xD;&#xA;        Rows[2] = controlRows;&#xD;&#xA;        Rows[3] = archiveRows;&#xD;&#xA;        &#xD;&#xA;        Columns[0] = mainColumns;&#xD;&#xA;        Columns[1] = monitorColumns;&#xD;&#xA;        Columns[2] = controlColumns;&#xD;&#xA;        Columns[3] = archiveColumns;&#xD;&#xA;        &#xD;&#xA;        // Then I copy elements from spreadsheet to newSpreadsheet&#xD;&#xA;        for (int i = 0; i &lt; Rows.length; i++ ) {&#xD;&#xA;            for (int j = 1; j &lt; Rows[i]; j++) {&#xD;&#xA;                for (int k = 0; k &lt; Columns[i]; k++) {&#xD;&#xA;                    if (spreadsheet[i][j][k].equals(&quot;Notes&quot;)){&#xD;&#xA;                        newSpreadsheet[i][j] = new String[2];&#xD;&#xA;                        newSpreadsheet[i][j][k] = spreadsheet[i][j][k];&#xD;&#xA;                        newSpreadsheet[i][j][k+1] = spreadsheet[i][j][k+1];&#xD;&#xA;                        break; &#xD;&#xA;                    }&#xD;&#xA;                    newSpreadsheet[i][j][k] = spreadsheet[i][j][k];&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;            }&#xD;&#xA;        }        &#xD;&#xA;        &#xD;&#xA;        // Here we start the copy process from generic spreadsheet&#xD;&#xA;        GenericRows[0] = 0;&#xD;&#xA;        GenericRows[1] = genericMonitorRows;&#xD;&#xA;        GenericRows[2] = genericControlRows;&#xD;&#xA;        GenericRows[3] = genericArchiveRows;&#xD;&#xA;&#xD;&#xA;        for (int i = 1; i &lt; Rows.length ; i++ ) {&#xD;&#xA;            for (int j = Rows[i];j &lt; (Rows[i] + GenericRows[i] - 2); j++) {&#xD;&#xA;                for (int k = 0; k &lt; Columns[i]; k++) {&#xD;&#xA;                    if ( (genericSpreadsheet[i][j-Rows[i]+2][k]).equals(&quot;GENERIC&quot;)){&#xD;&#xA;                        newSpreadsheet[i][j][k] = deviceName;&#xD;&#xA;                    } else {&#xD;&#xA;                        newSpreadsheet[i][j][k] = genericSpreadsheet[i][j-Rows[i]+2][k];&#xD;&#xA;                    }&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;        return newSpreadsheet;"/>
               </eAnnotations>
-              <eParameters name="spreadsheet" eType="#//Control/datamodel/meta/base/String3DT"/>
+              <eParameters name="spreadsheet" eType="#//Control/datamodel/meta/base/EStringArray3"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="newSpreadsheet"
-                eType="#//Control/datamodel/meta/base/String3DT"/>
+                eType="#//Control/datamodel/meta/base/EStringArray3"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirLocation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getTheSpreadsheet"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toGetSpreadsheet"
                 eType="#//Control/datamodel/meta/base/SpreadsheetParser"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="toValidateTheSpreadsheet"
                 eType="#//Control/datamodel/meta/base/SpreadsheetValidator"/>
@@ -1378,7 +1377,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="DescriptionIndex"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
                 defaultValueLiteral="1"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet" eType="#//Control/datamodel/meta/base/String3DT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet" eType="#//Control/datamodel/meta/base/EStringArray3"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="#//Control/datamodel/meta/base/MainBaseDT"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
@@ -1402,17 +1401,14 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorDBOnly"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateAlt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getArchiveIndex"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toArchiveIndex"
                 eType="#//Control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getContPoints"
-                eType="#//Control/datamodel/meta/base/ControlPoint"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getMoniPoints"
-                eType="#//Control/datamodel/meta/base/MonitorPoint"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getEndOfGeneration"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toContPoints" eType="#//Control/datamodel/meta/base/ControlPoint"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toMoniPoints" eType="#//Control/datamodel/meta/base/MonitorPoint"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toEndOfGeneration"
                 eType="#//Control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getArchivProp"
-                eType="#//Control/datamodel/meta/base/ArchiveProperty"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfFromSpread"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toArchivProp" eType="#//Control/datamodel/meta/base/ArchiveProperty"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfFromSpread"
                 eType="#//Control/datamodel/meta/base/MainBase"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MonitorPoint" abstract="true"
@@ -1498,9 +1494,9 @@
             <eOperations name="isPartOfHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromAPSpread"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromAPSpread"
                 eType="#//Control/datamodel/meta/base/ArchiveProperty"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromMPSpread"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromMPSpread"
                 eType="#//Control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="ControlPoint" abstract="true"
@@ -1525,7 +1521,7 @@
                 <details key="body" value="return false;&#xD;&#xA;"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getArchOnUseControl"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toArchOnUseControl"
                 eType="#//Control/datamodel/meta/base/Table"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
@@ -1561,7 +1557,7 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="&#x9;&#x9;int i, j;&#xD;&#xA;&#x9;&#x9;sheetNames = new ArrayList();&#xD;&#xA;&#x9;&#x9;colNames = new ArrayList();&#xD;&#xA;&#x9;&#x9;for(i = 0; i &lt; sh.length; i++){&#xD;&#xA;&#x9;&#x9;&#x9;addSheet(sh[i][0][0]);&#xD;&#xA;&#x9;&#x9;&#x9;for(j = 0; j &lt; sh[i][1].length; j++){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;addCol(i, sh[i][1][j]);&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;toCPP = new Hashtable();&#xD;&#xA;&#x9;&#x9;toCPP.put(&quot;char&quot;, &quot;char&quot;);&#xD;&#xA;&#x9;&#x9;toCPP.put(&quot;short&quot;, &quot;short&quot;);&#xD;&#xA;&#x9;&#x9;toCPP.put(&quot;int&quot;, &quot;int&quot;);&#xD;&#xA;&#x9;&#x9;toCPP.put(&quot;long long&quot;, &quot;long long&quot;);&#xD;&#xA;&#x9;&#x9;toCPP.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;toCPP.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#x9;&#x9;toCPP.put(&quot;bool&quot;, &quot;bool&quot;);&#xD;&#xA;&#x9;&#x9;toCPP.put(&quot;string&quot;, &quot;char *&quot;);&#xD;&#xA;&#x9;&#x9;toCPP.put(&quot;void&quot;, &quot;void&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;toIDL = new Hashtable();&#xD;&#xA;&#x9;&#x9;toIDL.put(&quot;char&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;toIDL.put(&quot;short&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;toIDL.put(&quot;int&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;toIDL.put(&quot;long long&quot;, &quot;long long&quot;);&#xD;&#xA;&#x9;&#x9;toIDL.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;toIDL.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#x9;&#x9;toIDL.put(&quot;bool&quot;, &quot;boolean&quot;);&#xD;&#xA;&#x9;&#x9;toIDL.put(&quot;string&quot;, &quot;string&quot;);&#xD;&#xA;&#x9;&#x9;toIDL.put(&quot;void&quot;, &quot;void&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;toIDLSeq = new Hashtable();&#xD;&#xA;&#x9;&#x9;toIDLSeq.put(&quot;char&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;toIDLSeq.put(&quot;short&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;toIDLSeq.put(&quot;int&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;toIDLSeq.put(&quot;long long&quot;, &quot;Control::LongLongSeq&quot;);&#xD;&#xA;&#x9;&#x9;toIDLSeq.put(&quot;float&quot;, &quot;Control::FloatSeq&quot;);&#xD;&#xA;&#x9;&#x9;toIDLSeq.put(&quot;double&quot;, &quot;Control::DoubleSeq&quot;);&#xD;&#xA;&#x9;&#x9;toIDLSeq.put(&quot;bool&quot;, &quot;Control::BooleanSeq&quot;);&#xD;&#xA;&#x9;&#x9;toIDLSeq.put(&quot;string&quot;, &quot;Control::StringSeq&quot;);&#xD;&#xA;&#x9;&#x9;toIDLSeq.put(&quot;void&quot;, &quot;NOTHING&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;toCORBA = new Hashtable();&#xD;&#xA;&#x9;&#x9;toCORBA.put(&quot;char&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;toCORBA.put(&quot;short&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;toCORBA.put(&quot;int&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;toCORBA.put(&quot;long long&quot;, &quot;CORBA::LongLong&quot;);&#xD;&#xA;&#x9;&#x9;toCORBA.put(&quot;float&quot;, &quot;CORBA::Float&quot;);&#xD;&#xA;&#x9;&#x9;toCORBA.put(&quot;double&quot;, &quot;CORBA::Double&quot;);&#xD;&#xA;&#x9;&#x9;toCORBA.put(&quot;bool&quot;, &quot;CORBA::Boolean&quot;);&#xD;&#xA;&#x9;&#x9;toCORBA.put(&quot;string&quot;, &quot;char *&quot;);&#xD;&#xA;&#x9;&#x9;toCORBA.put(&quot;void&quot;, &quot;void&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;toCORBADevIO = new Hashtable();&#xD;&#xA;&#x9;&#x9;toCORBADevIO.put(&quot;char&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;toCORBADevIO.put(&quot;short&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;toCORBADevIO.put(&quot;int&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;toCORBADevIO.put(&quot;long long&quot;, &quot;CORBA::LongLong&quot;);&#xD;&#xA;&#x9;&#x9;toCORBADevIO.put(&quot;float&quot;, &quot;CORBA::Float&quot;);&#xD;&#xA;&#x9;&#x9;toCORBADevIO.put(&quot;double&quot;, &quot;CORBA::Double&quot;);&#xD;&#xA;&#x9;&#x9;toCORBADevIO.put(&quot;bool&quot;, &quot;CORBA::Boolean&quot;);&#xD;&#xA;&#x9;&#x9;toCORBADevIO.put(&quot;string&quot;, &quot;CORBA::String&quot;);&#xD;&#xA;&#x9;&#x9;toCORBADevIO.put(&quot;void&quot;, &quot;NOTHING&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;toCORBASeq = new Hashtable();&#xD;&#xA;&#x9;&#x9;toCORBASeq.put(&quot;char&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;toCORBASeq.put(&quot;short&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;toCORBASeq.put(&quot;int&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;toCORBASeq.put(&quot;long long&quot;, &quot;Control::LongLongSeq&quot;);&#xD;&#xA;&#x9;&#x9;toCORBASeq.put(&quot;float&quot;, &quot;Control::FloatSeq&quot;);&#xD;&#xA;&#x9;&#x9;toCORBASeq.put(&quot;double&quot;, &quot;Control::DoubleSeq&quot;);&#xD;&#xA;&#x9;&#x9;toCORBASeq.put(&quot;bool&quot;, &quot;Control::BooleanSeq&quot;);&#xD;&#xA;&#x9;&#x9;toCORBASeq.put(&quot;string&quot;, &quot;Control::StringSeq&quot;);&#xD;&#xA;&#x9;&#x9;toCORBASeq.put(&quot;void&quot;, &quot;NOTHING&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;toBACI = new Hashtable();&#xD;&#xA;&#x9;&#x9;toBACI.put(&quot;char&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;toBACI.put(&quot;short&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;toBACI.put(&quot;int&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;toBACI.put(&quot;long long&quot;, &quot;longLong&quot;);&#xD;&#xA;&#x9;&#x9;toBACI.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;toBACI.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#x9;&#x9;toBACI.put(&quot;bool&quot;, &quot;boolean&quot;);&#xD;&#xA;&#x9;&#x9;toBACI.put(&quot;string&quot;, &quot;string&quot;);&#xD;&#xA;&#x9;&#x9;toBACI.put(&quot;void&quot;, &quot;void&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;toDatabase = new Hashtable();&#xD;&#xA;&#x9;&#x9;toDatabase.put(&quot;char&quot;, &quot;char&quot;);&#xD;&#xA;&#x9;&#x9;toDatabase.put(&quot;short&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;toDatabase.put(&quot;int&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;toDatabase.put(&quot;long long&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;toDatabase.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;toDatabase.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#x9;&#x9;toDatabase.put(&quot;bool&quot;, &quot;boolean&quot;);&#xD;&#xA;&#x9;&#x9;toDatabase.put(&quot;string&quot;, &quot;string&quot;);&#xD;&#xA;&#x9;&#x9;toDatabase.put(&quot;void&quot;, &quot;-none-&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;rawToCPP = new Hashtable();&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;bit&quot;, &quot;char&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;ubyte&quot;, &quot;unsigned char&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;int8&quot;, &quot;char&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;uint8&quot;, &quot;unsigned char&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;int16&quot;, &quot;short&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;uint16&quot;, &quot;unsigned short&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;int24&quot;, &quot;int&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;uint24&quot;, &quot;unsigned int&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;int32&quot;, &quot;int&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;uint32&quot;, &quot;unsigned int&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;int48&quot;, &quot;long long&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;uint48&quot;, &quot;unsigned long long&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;int64&quot;, &quot;long long&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;uint64&quot;, &quot;unsigned long long&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;rawToCPP.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;rawToByteSwapped = new Hashtable();&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;bit&quot;, &quot;false&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;ubyte&quot;, &quot;false&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;int8&quot;, &quot;false&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;uint8&quot;, &quot;false&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;int16&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;uint16&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;int24&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;uint24&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;int32&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;uint32&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;int48&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;uint48&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;int64&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;uint64&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;float&quot;, &quot;true&quot;);&#xD;&#xA;&#x9;&#x9;rawToByteSwapped.put(&quot;double&quot;, &quot;true&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;rawBytes = new Hashtable();&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;bit&quot;, &quot;1&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;ubyte&quot;, &quot;1&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;int8&quot;, &quot;1&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;uint8&quot;, &quot;1&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;int16&quot;, &quot;2&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;uint16&quot;, &quot;2&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;int24&quot;, &quot;3&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;uint24&quot;, &quot;3&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;int32&quot;, &quot;4&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;uint32&quot;, &quot;4&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;int48&quot;, &quot;6&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;uint48&quot;, &quot;6&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;int64&quot;, &quot;8&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;uint64&quot;, &quot;8&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;float&quot;, &quot;4&quot;);&#xD;&#xA;&#x9;&#x9;rawBytes.put(&quot;double&quot;, &quot;8&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;worldToCPP = new Hashtable();&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;byte&quot;, &quot;char&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;ubyte&quot;, &quot;unsigned char&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;short&quot;, &quot;short&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;ushort&quot;, &quot;unsigned short&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;int&quot;, &quot;int&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;uint&quot;, &quot;unsigned int&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;long&quot;, &quot;long long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;ulong&quot;, &quot;unsigned long long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;boolean&quot;, &quot;bool&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;string&quot;, &quot;std::string&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;acstime&quot;, &quot;ACS::Time&quot;);&#xD;&#xA;&#x9;&#x9;worldToCPP.put(&quot;void&quot;, &quot;void&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;worldToJava = new Hashtable();&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;byte&quot;, &quot;int&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;ubyte&quot;, &quot;int&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;short&quot;, &quot;int&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;ushort&quot;, &quot;int&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;int&quot;, &quot;int&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;uint&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;long&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;ulong&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;boolean&quot;, &quot;boolean&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;string&quot;, &quot;String&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;acstime&quot;, &quot;ACSTime&quot;);&#xD;&#xA;&#x9;&#x9;worldToJava.put(&quot;void&quot;, &quot;void&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;worldToBACI = new Hashtable();&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;byte&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;ubyte&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;short&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;ushort&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;int&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;uint&quot;, &quot;uLong&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;long&quot;, &quot;longLong&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;ulong&quot;, &quot;uLongLong&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;boolean&quot;, &quot;boolean&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;string&quot;, &quot;string&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;acstime&quot;, &quot;uLongLong&quot;);&#xD;&#xA;&#x9;&#x9;worldToBACI.put(&quot;void&quot;, &quot;void&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;worldToCORBA = new Hashtable();&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;byte&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;ubyte&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;short&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;ushort&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;int&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;uint&quot;, &quot;CORBA::ULong&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;long&quot;, &quot;CORBA::LongLong&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;ulong&quot;, &quot;CORBA::ULongLong&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;float&quot;, &quot;CORBA::Float&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;double&quot;, &quot;CORBA::Double&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;boolean&quot;, &quot;CORBA::Boolean&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;string&quot;, &quot;char *&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;acstime&quot;, &quot;ACS::Time&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBA.put(&quot;void&quot;, &quot;void&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO = new Hashtable();&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;byte&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;ubyte&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;short&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;ushort&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;int&quot;, &quot;CORBA::Long&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;uint&quot;, &quot;CORBA::ULong&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;long&quot;, &quot;CORBA::LongLong&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;ulong&quot;, &quot;CORBA::ULongLong&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;float&quot;, &quot;CORBA::Float&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;double&quot;, &quot;CORBA::Double&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;boolean&quot;, &quot;CORBA::Boolean&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;string&quot;, &quot;CORBA::String&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;acstime&quot;, &quot;ACS::Time&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBADevIO.put(&quot;void&quot;, &quot;NOTHING&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;worldToCORBASeq = new Hashtable();&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;byte&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;ubyte&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;short&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;ushort&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;int&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;uint&quot;, &quot;Control::ULongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;long&quot;, &quot;Control::LongLongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;ulong&quot;, &quot;Control::ULongLongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;float&quot;, &quot;Control::FloatSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;double&quot;, &quot;Control::DoubleSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;boolean&quot;, &quot;Control::BooleanSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;string&quot;, &quot;Control::StringSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;acstime&quot;, &quot;Control::ACSTimeSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToCORBASeq.put(&quot;void&quot;, &quot;NOTHING&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;worldToIDLSeq = new Hashtable();&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;byte&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;ubyte&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;short&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;ushort&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;int&quot;, &quot;Control::LongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;uint&quot;, &quot;Control::ULongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;long&quot;, &quot;Control::LongLongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;ulong&quot;, &quot;Control::ULongLongSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;float&quot;, &quot;Control::FloatSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;double&quot;, &quot;Control::DoubleSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;boolean&quot;, &quot;Control::BooleanSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;string&quot;, &quot;Control::StringSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;acstime&quot;, &quot;Control::ACSTimeSeq&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDLSeq.put(&quot;void&quot;, &quot;NOTHING&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;worldToIDL = new Hashtable();&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;byte&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;ubyte&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;short&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;ushort&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;int&quot;, &quot;long&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;uint&quot;, &quot;unsigned long&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;long&quot;, &quot;long long&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;ulong&quot;, &quot;unsigned long long&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;boolean&quot;, &quot;boolean&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;string&quot;, &quot;string&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;acstime&quot;, &quot;ACS::Time&quot;);&#xD;&#xA;&#x9;&#x9;worldToIDL.put(&quot;void&quot;, &quot;void&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;worldToDatabase = new Hashtable();&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;byte&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;ubyte&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;short&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;ushort&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;int&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;uint&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;long&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;ulong&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;float&quot;, &quot;float&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;double&quot;, &quot;double&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;boolean&quot;, &quot;boolean&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;string&quot;, &quot;string&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;acstime&quot;, &quot;integer&quot;);&#xD;&#xA;&#x9;&#x9;worldToDatabase.put(&quot;void&quot;, &quot;-none-&quot;);"/>
               </eAnnotations>
-              <eParameters name="sh" eType="#//Control/datamodel/meta/base/String3DT"/>
+              <eParameters name="sh" eType="#//Control/datamodel/meta/base/EStringArray3"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="DepChar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
                 defaultValueLiteral="^"/>
@@ -1753,8 +1749,8 @@
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
                 defaultValueLiteral="Not needed"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheetName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/String1DT"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="#//Control/datamodel/meta/base/String1DT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/EStringArray"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="#//Control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
@@ -1764,9 +1760,9 @@
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="setInfFromSpread"
                 eType="#//Control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getCommonInf" eType="#//Control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="setMPorCP" eType="#//Control/datamodel/meta/base/ArchiveProperty"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getSheetMP" eType="#//Control/datamodel/meta/base/MonitorPoint"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toCommonInf" eType="#//Control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toMPorCP" eType="#//Control/datamodel/meta/base/ArchiveProperty"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toSheetMP" eType="#//Control/datamodel/meta/base/MonitorPoint"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="ArchiveProperty" eSuperTypes="#//Control/datamodel/meta/amb/ResourceAuxClass">
             <eOperations name="isRefersTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1854,13 +1850,13 @@
                 <details key="body" value="return row[BaseFactoryImpl.eINSTANCE.createTable().getColNum(sheet, &quot;Title&quot;)];"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/String1DT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="cp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getColumnsInfoOfArchi"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toColumnsInfoOfArchi"
                 eType="#//Control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Note">
@@ -1899,10 +1895,10 @@
               <eParameters name="beginPart2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eParameters name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
-            <eOperations name="getDataCells" eType="#//Control/datamodel/meta/base/String1DT">
+            <eOperations name="getDataCells" eType="#//Control/datamodel/meta/base/EStringArray">
               <eParameters name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
-            <eOperations name="getWorksheets" eType="#//Control/datamodel/meta/base/String3DT"/>
+            <eOperations name="getWorksheets" eType="#//Control/datamodel/meta/base/EStringArray3"/>
             <eOperations name="isReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="return refStatus;&#xD;&#xA;"/>
@@ -1919,21 +1915,21 @@
               </eAnnotations>
               <eParameters name="xsd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
-            <eOperations name="filter" eType="#//Control/datamodel/meta/base/String3DT">
+            <eOperations name="filter" eType="#//Control/datamodel/meta/base/EStringArray3">
               <eParameters name="doc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eOperations name="deleteRow">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="if (worksheet[0][0].equals(&quot;Hardware Device&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;for (int i = 2; i &lt; worksheet.length; ++i) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (worksheet[i] == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (worksheet[i][0].equals(name)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet[i] = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;The name &quot; + name + &quot; is not the name of a row in the Main worksheet.&quot;);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;for (int i = 2; i &lt; worksheet.length; ++i) {&#xD;&#xA;&#x9;&#x9;&#x9;if (worksheet[i] == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#x9;&#x9;if (worksheet[i][1].equals(name)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;worksheet[i] = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;throw new RuntimeException(&quot;The name &quot; + name + &quot; is not the name of a row in the &quot; + worksheet[0][0] + &quot; worksheet.&quot;);"/>
               </eAnnotations>
-              <eParameters name="worksheet" eType="#//Control/datamodel/meta/base/String2DT"/>
+              <eParameters name="worksheet" eType="#//Control/datamodel/meta/base/EStringArray2"/>
               <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eOperations name="modifyRow">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="&#x9;&#x9;// Find the row.&#xD;&#xA;&#x9;&#x9;int row = 0;&#xD;&#xA;&#x9;&#x9;if (worksheet[0][0].equals(&quot;Hardware Device&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;int i = 2;&#xD;&#xA;&#x9;&#x9;&#x9;for (; i &lt; worksheet.length; ++i) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (worksheet[i] == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (worksheet[i][0].equals(rowName)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;row = i;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;if (i == worksheet.length)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;The name &quot; + rowName + &quot; is not the name of a row in the Main worksheet.&quot;);&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;int i = 2;&#xD;&#xA;&#x9;&#x9;&#x9;for (; i &lt; worksheet.length; ++i) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (worksheet[i] == null)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (worksheet[i][1].equals(rowName)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;row = i;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;if (i == worksheet.length)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;The name &quot; + rowName + &quot; is not the name of a row in the &quot; + worksheet[0][0] + &quot; worksheet.&quot;);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;String name;&#xD;&#xA;&#x9;&#x9;String value;&#xD;&#xA;&#x9;&#x9;int b;&#xD;&#xA;&#x9;&#x9;int m;&#xD;&#xA;&#x9;&#x9;int e;        &#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;while(true) {&#xD;&#xA;&#x9;&#x9;&#x9;b = s.indexOf('&lt;');&#xD;&#xA;&#x9;&#x9;&#x9;m = s.indexOf('=');&#xD;&#xA;&#x9;&#x9;&#x9;e = s.indexOf('>');&#xD;&#xA;&#x9;&#x9;&#x9;if (b == -1 || m == -1 || e == -1 || m &lt; b || e &lt; m) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax at line number &quot; + lineNumber + &quot; in file filter.&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;name = s.substring(b + 1, m).trim();&#xD;&#xA;&#x9;&#x9;&#x9;value = s.substring(m + 1, e).trim();&#xD;&#xA;&#x9;&#x9;&#x9;// Apply the change.&#xD;&#xA;&#x9;&#x9;&#x9;int j = 0;&#xD;&#xA;&#x9;&#x9;&#x9;for (; j &lt; worksheet[row].length; ++j) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (worksheet[1][j].equals(name)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet[row][j] = value;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;if (j == worksheet[row].length)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;The name &quot; + name + &quot; is not the name of a column in the &quot; + worksheet[0][0] + &quot; worksheet.&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;// Get the next change.&#xD;&#xA;&#x9;&#x9;&#x9;++e;&#xD;&#xA;&#x9;&#x9;&#x9;while (e &lt; s.length() &amp;&amp; (s.charAt(e) == ' ' || s.charAt(e) == '\t'))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;++e;&#xD;&#xA;&#x9;&#x9;&#x9;if (e == s.length())&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;s = s.substring(e);&#xD;&#xA;&#x9;&#x9;}"/>
               </eAnnotations>
-              <eParameters name="worksheet" eType="#//Control/datamodel/meta/base/String2DT"/>
+              <eParameters name="worksheet" eType="#//Control/datamodel/meta/base/EStringArray2"/>
               <eParameters name="lineNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               <eParameters name="rowName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1945,8 +1941,8 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="xsdFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="newline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
                 defaultValueLiteral=""/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="setNewContent"
-                eType="#//Control/datamodel/meta/base/Pair" containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toNewContent" eType="#//Control/datamodel/meta/base/Pair"
+                containment="true"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="tovalidateSpreads"
                 eType="#//Control/datamodel/meta/base/SpreadsheetValidator"/>
           </eClassifiers>
@@ -2097,9 +2093,9 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//Control/datamodel/meta/amb/BaseFactoryDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
                 defaultValueLiteral="54"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTH" eType="#//Control/datamodel/meta/base/String1DT"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTHalt" eType="#//Control/datamodel/meta/base/String1DT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getRawBytes" eType="#//Control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTH" eType="#//Control/datamodel/meta/base/EStringArray"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTHalt" eType="#//Control/datamodel/meta/base/EStringArray"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toRawBytes" eType="#//Control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Pair" abstract="true" eSuperTypes="#//Control/datamodel/meta/base/SpreadsheetParser">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -2178,12 +2174,12 @@
                 <details key="body" value="return BaseFactoryImpl.eINSTANCE.createUtil().toArrayTime(ICDDate());"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/String1DT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="implementTo" eType="#//Control/datamodel/meta/base/DeviceModel"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="convertInfoTo"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toImplement" eType="#//Control/datamodel/meta/base/DeviceModel"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toConvertInfo"
                 eType="#//Control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromSpread"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromSpread"
                 eType="#//Control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandlerDT" instanceClassName="alma.Control.datamodel.meta.base.SimpleErrorHandler"/>
@@ -2195,9 +2191,9 @@
           <eClassifiers xsi:type="ecore:EDataType" name="Hashtable" instanceClassName="java.util.Hashtable"/>
           <eClassifiers xsi:type="ecore:EDataType" name="ErrorHandlerDT" instanceClassName="org.xml.sax.ErrorHandler"/>
           <eClassifiers xsi:type="ecore:EDataType" name="SAXParseExceptionDT" instanceClassName="org.xml.sax.SAXParseException"/>
-          <eClassifiers xsi:type="ecore:EDataType" name="String3DT" instanceClassName="java.lang.String[][][]"/>
-          <eClassifiers xsi:type="ecore:EDataType" name="String2DT" instanceClassName="java.lang.String[][]"/>
-          <eClassifiers xsi:type="ecore:EDataType" name="String1DT" instanceClassName="java.lang.String[]"/>
+          <eClassifiers xsi:type="ecore:EDataType" name="EStringArray3" instanceClassName="java.lang.String[][][]"/>
+          <eClassifiers xsi:type="ecore:EDataType" name="EStringArray2" instanceClassName="java.lang.String[][]"/>
+          <eClassifiers xsi:type="ecore:EDataType" name="EStringArray" instanceClassName="java.lang.String[]"/>
         </eSubpackages>
         <eSubpackages name="eth" nsURI="http://alma/Control/datamodel/meta/eth/1.0"
             nsPrefix="alma.Control.datamodel.meta.eth">
@@ -2287,7 +2283,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//Control/datamodel/meta/eth/MandCETHDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="infoControlEth"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoControlEth"
                 eType="#//Control/datamodel/meta/eth/MandC"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//Control/datamodel/meta/base/DeviceModel">
@@ -2308,11 +2304,10 @@
             <eStructuralFeatures xsi:type="ecore:EReference" name="infoArch" eType="#//Control/datamodel/meta/eth/Archive"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="dataSpreadsheet"
                 eType="#//Control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="notesTo" eType="#//Control/datamodel/meta/base/Note"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="validateSpreadEth"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toNotes" eType="#//Control/datamodel/meta/base/Note"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toValidateSpreadEth"
                 eType="#//Control/datamodel/meta/base/SpreadsheetValidator"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="fromSpreadEth"
-                eType="#//Control/datamodel/meta/base/SpreadsheetParser"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toSpreadEth" eType="#//Control/datamodel/meta/base/SpreadsheetParser"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Main" eSuperTypes="#//Control/datamodel/meta/base/MainBase">
             <eOperations name="VendorClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -2400,11 +2395,11 @@
                 <details key="body" value="return (String)BaseFactoryImpl.eINSTANCE.createTable().getToDatabase().get(DataType());"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/String1DT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//Control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux" eType="#//Control/datamodel/meta/amb/BaseFactoryImpDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoFromCol"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromCol"
                 eType="#//Control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Monitor" eSuperTypes="#//Control/datamodel/meta/base/MonitorPoint">
@@ -2512,7 +2507,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//Control/datamodel/meta/eth/MandCETHDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="getInfoMPEth" eType="#//Control/datamodel/meta/eth/MandC"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoMPEth" eType="#//Control/datamodel/meta/eth/MandC"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EDataType" name="MandCETHDT" instanceClassName="alma.Control.datamodel.meta.eth.MandC"/>
         </eSubpackages>

@@ -224,58 +224,58 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__GENERATE_ALT = 14;
 
 	/**
-	 * The feature id for the '<em><b>Get Archive Index</b></em>' reference.
+	 * The feature id for the '<em><b>To Archive Index</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_ARCHIVE_INDEX = 15;
+	int DEVICE_MODEL__TO_ARCHIVE_INDEX = 15;
 
 	/**
-	 * The feature id for the '<em><b>Get Cont Points</b></em>' reference.
+	 * The feature id for the '<em><b>To Cont Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_CONT_POINTS = 16;
+	int DEVICE_MODEL__TO_CONT_POINTS = 16;
 
 	/**
-	 * The feature id for the '<em><b>Get Moni Points</b></em>' reference.
+	 * The feature id for the '<em><b>To Moni Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_MONI_POINTS = 17;
+	int DEVICE_MODEL__TO_MONI_POINTS = 17;
 
 	/**
-	 * The feature id for the '<em><b>Get End Of Generation</b></em>' reference.
+	 * The feature id for the '<em><b>To End Of Generation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_END_OF_GENERATION = 18;
+	int DEVICE_MODEL__TO_END_OF_GENERATION = 18;
 
 	/**
-	 * The feature id for the '<em><b>Get Archiv Prop</b></em>' reference.
+	 * The feature id for the '<em><b>To Archiv Prop</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_ARCHIV_PROP = 19;
+	int DEVICE_MODEL__TO_ARCHIV_PROP = 19;
 
 	/**
-	 * The feature id for the '<em><b>Get Inf From Spread</b></em>' reference.
+	 * The feature id for the '<em><b>To Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GET_INF_FROM_SPREAD = 20;
+	int DEVICE_MODEL__TO_INF_FROM_SPREAD = 20;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
@@ -378,31 +378,31 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE__SET_INF_FROM_SPREAD = 8;
 
 	/**
-	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
+	 * The feature id for the '<em><b>To Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__GET_COMMON_INF = 9;
+	int MAND_CBASE__TO_COMMON_INF = 9;
 
 	/**
-	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
+	 * The feature id for the '<em><b>To MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__SET_MPOR_CP = 10;
+	int MAND_CBASE__TO_MPOR_CP = 10;
 
 	/**
-	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
+	 * The feature id for the '<em><b>To Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__GET_SHEET_MP = 11;
+	int MAND_CBASE__TO_SHEET_MP = 11;
 
 	/**
 	 * The number of structural features of the '<em>Mand CBase</em>' class.
@@ -505,31 +505,31 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__SET_INF_FROM_SPREAD = MAND_CBASE__SET_INF_FROM_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
+	 * The feature id for the '<em><b>To Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__GET_COMMON_INF = MAND_CBASE__GET_COMMON_INF;
+	int MONITOR_POINT__TO_COMMON_INF = MAND_CBASE__TO_COMMON_INF;
 
 	/**
-	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
+	 * The feature id for the '<em><b>To MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__SET_MPOR_CP = MAND_CBASE__SET_MPOR_CP;
+	int MONITOR_POINT__TO_MPOR_CP = MAND_CBASE__TO_MPOR_CP;
 
 	/**
-	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
+	 * The feature id for the '<em><b>To Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__GET_SHEET_MP = MAND_CBASE__GET_SHEET_MP;
+	int MONITOR_POINT__TO_SHEET_MP = MAND_CBASE__TO_SHEET_MP;
 
 	/**
 	 * The feature id for the '<em><b>Aux</b></em>' attribute.
@@ -541,22 +541,22 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__AUX = MAND_CBASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Get Info From AP Spread</b></em>' reference.
+	 * The feature id for the '<em><b>To Info From AP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__GET_INFO_FROM_AP_SPREAD = MAND_CBASE_FEATURE_COUNT + 1;
+	int MONITOR_POINT__TO_INFO_FROM_AP_SPREAD = MAND_CBASE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Get Info From MP Spread</b></em>' reference.
+	 * The feature id for the '<em><b>To Info From MP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__GET_INFO_FROM_MP_SPREAD = MAND_CBASE_FEATURE_COUNT + 2;
+	int MONITOR_POINT__TO_INFO_FROM_MP_SPREAD = MAND_CBASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Monitor Point</em>' class.
@@ -659,40 +659,40 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__SET_INF_FROM_SPREAD = MAND_CBASE__SET_INF_FROM_SPREAD;
 
 	/**
-	 * The feature id for the '<em><b>Get Common Inf</b></em>' reference.
+	 * The feature id for the '<em><b>To Common Inf</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__GET_COMMON_INF = MAND_CBASE__GET_COMMON_INF;
+	int CONTROL_POINT__TO_COMMON_INF = MAND_CBASE__TO_COMMON_INF;
 
 	/**
-	 * The feature id for the '<em><b>Set MPor CP</b></em>' reference.
+	 * The feature id for the '<em><b>To MPor CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__SET_MPOR_CP = MAND_CBASE__SET_MPOR_CP;
+	int CONTROL_POINT__TO_MPOR_CP = MAND_CBASE__TO_MPOR_CP;
 
 	/**
-	 * The feature id for the '<em><b>Get Sheet MP</b></em>' reference.
+	 * The feature id for the '<em><b>To Sheet MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__GET_SHEET_MP = MAND_CBASE__GET_SHEET_MP;
+	int CONTROL_POINT__TO_SHEET_MP = MAND_CBASE__TO_SHEET_MP;
 
 	/**
-	 * The feature id for the '<em><b>Get Arch On Use Control</b></em>' reference.
+	 * The feature id for the '<em><b>To Arch On Use Control</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__GET_ARCH_ON_USE_CONTROL = MAND_CBASE_FEATURE_COUNT + 0;
+	int CONTROL_POINT__TO_ARCH_ON_USE_CONTROL = MAND_CBASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Aux</b></em>' attribute.
@@ -1003,13 +1003,13 @@ public interface BasePackage extends EPackage {
 	int ARCHIVE_PROPERTY__CP = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Get Columns Info Of Archi</b></em>' reference.
+	 * The feature id for the '<em><b>To Columns Info Of Archi</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 4;
+	int ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Archive Property</em>' class.
@@ -1159,13 +1159,13 @@ public interface BasePackage extends EPackage {
 	int SPREADSHEET_PARSER__NEWLINE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Set New Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>To New Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPREADSHEET_PARSER__SET_NEW_CONTENT = 5;
+	int SPREADSHEET_PARSER__TO_NEW_CONTENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Tovalidate Spreads</b></em>' reference.
@@ -1241,13 +1241,13 @@ public interface BasePackage extends EPackage {
 	int UTIL__MONT_HALT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Get Raw Bytes</b></em>' reference.
+	 * The feature id for the '<em><b>To Raw Bytes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__GET_RAW_BYTES = 5;
+	int UTIL__TO_RAW_BYTES = 5;
 
 	/**
 	 * The number of structural features of the '<em>Util</em>' class.
@@ -1314,13 +1314,13 @@ public interface BasePackage extends EPackage {
 	int PAIR__NEWLINE = SPREADSHEET_PARSER__NEWLINE;
 
 	/**
-	 * The feature id for the '<em><b>Set New Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>To New Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAIR__SET_NEW_CONTENT = SPREADSHEET_PARSER__SET_NEW_CONTENT;
+	int PAIR__TO_NEW_CONTENT = SPREADSHEET_PARSER__TO_NEW_CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Tovalidate Spreads</b></em>' reference.
@@ -1415,31 +1415,31 @@ public interface BasePackage extends EPackage {
 	int MAIN_BASE__SHEET = 1;
 
 	/**
-	 * The feature id for the '<em><b>Implement To</b></em>' reference.
+	 * The feature id for the '<em><b>To Implement</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_BASE__IMPLEMENT_TO = 2;
+	int MAIN_BASE__TO_IMPLEMENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Convert Info To</b></em>' reference.
+	 * The feature id for the '<em><b>To Convert Info</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_BASE__CONVERT_INFO_TO = 3;
+	int MAIN_BASE__TO_CONVERT_INFO = 3;
 
 	/**
-	 * The feature id for the '<em><b>Get Info From Spread</b></em>' reference.
+	 * The feature id for the '<em><b>To Info From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_BASE__GET_INFO_FROM_SPREAD = 4;
+	int MAIN_BASE__TO_INFO_FROM_SPREAD = 4;
 
 	/**
 	 * The number of structural features of the '<em>Main Base</em>' class.
@@ -1521,32 +1521,31 @@ public interface BasePackage extends EPackage {
 	int SAX_PARSE_EXCEPTION_DT = 19;
 
 	/**
-	 * The meta object id for the '<em>String3 DT</em>' data type.
+	 * The meta object id for the '<em>EString Array3</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getString3DT()
+	 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray3()
 	 * @generated
 	 */
-	int STRING3_DT = 20;
+	int ESTRING_ARRAY3 = 20;
 
 	/**
-	 * The meta object id for the '<em>String2 DT</em>' data type.
+	 * The meta object id for the '<em>EString Array2</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getString2DT()
+	 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray2()
 	 * @generated
 	 */
-	int STRING2_DT = 21;
+	int ESTRING_ARRAY2 = 21;
 
 	/**
-	 * The meta object id for the '<em>String1 DT</em>' data type.
+	 * The meta object id for the '<em>EString Array</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getString1DT()
+	 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray()
 	 * @generated
 	 */
-	int STRING1_DT = 22;
-
+	int ESTRING_ARRAY = 22;
 
 	/**
 	 * Returns the meta object for class '{@link alma.Control.datamodel.meta.base.DeviceModel <em>Device Model</em>}'.
@@ -1724,70 +1723,70 @@ public interface BasePackage extends EPackage {
 	EAttribute getDeviceModel_GenerateAlt();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetArchiveIndex <em>Get Archive Index</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getToArchiveIndex <em>To Archive Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Archive Index</em>'.
-	 * @see alma.Control.datamodel.meta.base.DeviceModel#getGetArchiveIndex()
+	 * @return the meta object for the reference '<em>To Archive Index</em>'.
+	 * @see alma.Control.datamodel.meta.base.DeviceModel#getToArchiveIndex()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_GetArchiveIndex();
+	EReference getDeviceModel_ToArchiveIndex();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetContPoints <em>Get Cont Points</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getToContPoints <em>To Cont Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Cont Points</em>'.
-	 * @see alma.Control.datamodel.meta.base.DeviceModel#getGetContPoints()
+	 * @return the meta object for the reference '<em>To Cont Points</em>'.
+	 * @see alma.Control.datamodel.meta.base.DeviceModel#getToContPoints()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_GetContPoints();
+	EReference getDeviceModel_ToContPoints();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetMoniPoints <em>Get Moni Points</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getToMoniPoints <em>To Moni Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Moni Points</em>'.
-	 * @see alma.Control.datamodel.meta.base.DeviceModel#getGetMoniPoints()
+	 * @return the meta object for the reference '<em>To Moni Points</em>'.
+	 * @see alma.Control.datamodel.meta.base.DeviceModel#getToMoniPoints()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_GetMoniPoints();
+	EReference getDeviceModel_ToMoniPoints();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetEndOfGeneration <em>Get End Of Generation</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getToEndOfGeneration <em>To End Of Generation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get End Of Generation</em>'.
-	 * @see alma.Control.datamodel.meta.base.DeviceModel#getGetEndOfGeneration()
+	 * @return the meta object for the reference '<em>To End Of Generation</em>'.
+	 * @see alma.Control.datamodel.meta.base.DeviceModel#getToEndOfGeneration()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_GetEndOfGeneration();
+	EReference getDeviceModel_ToEndOfGeneration();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetArchivProp <em>Get Archiv Prop</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getToArchivProp <em>To Archiv Prop</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Archiv Prop</em>'.
-	 * @see alma.Control.datamodel.meta.base.DeviceModel#getGetArchivProp()
+	 * @return the meta object for the reference '<em>To Archiv Prop</em>'.
+	 * @see alma.Control.datamodel.meta.base.DeviceModel#getToArchivProp()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_GetArchivProp();
+	EReference getDeviceModel_ToArchivProp();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetInfFromSpread <em>Get Inf From Spread</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.DeviceModel#getToInfFromSpread <em>To Inf From Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Inf From Spread</em>'.
-	 * @see alma.Control.datamodel.meta.base.DeviceModel#getGetInfFromSpread()
+	 * @return the meta object for the reference '<em>To Inf From Spread</em>'.
+	 * @see alma.Control.datamodel.meta.base.DeviceModel#getToInfFromSpread()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_GetInfFromSpread();
+	EReference getDeviceModel_ToInfFromSpread();
 
 	/**
 	 * Returns the meta object for class '{@link alma.Control.datamodel.meta.base.MonitorPoint <em>Monitor Point</em>}'.
@@ -1811,26 +1810,26 @@ public interface BasePackage extends EPackage {
 	EAttribute getMonitorPoint_Aux();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MonitorPoint#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MonitorPoint#getToInfoFromAPSpread <em>To Info From AP Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Info From AP Spread</em>'.
-	 * @see alma.Control.datamodel.meta.base.MonitorPoint#getGetInfoFromAPSpread()
+	 * @return the meta object for the reference '<em>To Info From AP Spread</em>'.
+	 * @see alma.Control.datamodel.meta.base.MonitorPoint#getToInfoFromAPSpread()
 	 * @see #getMonitorPoint()
 	 * @generated
 	 */
-	EReference getMonitorPoint_GetInfoFromAPSpread();
+	EReference getMonitorPoint_ToInfoFromAPSpread();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MonitorPoint#getGetInfoFromMPSpread <em>Get Info From MP Spread</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MonitorPoint#getToInfoFromMPSpread <em>To Info From MP Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Info From MP Spread</em>'.
-	 * @see alma.Control.datamodel.meta.base.MonitorPoint#getGetInfoFromMPSpread()
+	 * @return the meta object for the reference '<em>To Info From MP Spread</em>'.
+	 * @see alma.Control.datamodel.meta.base.MonitorPoint#getToInfoFromMPSpread()
 	 * @see #getMonitorPoint()
 	 * @generated
 	 */
-	EReference getMonitorPoint_GetInfoFromMPSpread();
+	EReference getMonitorPoint_ToInfoFromMPSpread();
 
 	/**
 	 * Returns the meta object for class '{@link alma.Control.datamodel.meta.base.ControlPoint <em>Control Point</em>}'.
@@ -1843,15 +1842,15 @@ public interface BasePackage extends EPackage {
 	EClass getControlPoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.ControlPoint#getGetArchOnUseControl <em>Get Arch On Use Control</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.ControlPoint#getToArchOnUseControl <em>To Arch On Use Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Arch On Use Control</em>'.
-	 * @see alma.Control.datamodel.meta.base.ControlPoint#getGetArchOnUseControl()
+	 * @return the meta object for the reference '<em>To Arch On Use Control</em>'.
+	 * @see alma.Control.datamodel.meta.base.ControlPoint#getToArchOnUseControl()
 	 * @see #getControlPoint()
 	 * @generated
 	 */
-	EReference getControlPoint_GetArchOnUseControl();
+	EReference getControlPoint_ToArchOnUseControl();
 
 	/**
 	 * Returns the meta object for the attribute '{@link alma.Control.datamodel.meta.base.ControlPoint#getAux <em>Aux</em>}'.
@@ -2259,37 +2258,37 @@ public interface BasePackage extends EPackage {
 	EReference getMandCBase_SetInfFromSpread();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MandCBase#getGetCommonInf <em>Get Common Inf</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MandCBase#getToCommonInf <em>To Common Inf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Common Inf</em>'.
-	 * @see alma.Control.datamodel.meta.base.MandCBase#getGetCommonInf()
+	 * @return the meta object for the reference '<em>To Common Inf</em>'.
+	 * @see alma.Control.datamodel.meta.base.MandCBase#getToCommonInf()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_GetCommonInf();
+	EReference getMandCBase_ToCommonInf();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MandCBase#getSetMPorCP <em>Set MPor CP</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MandCBase#getToMPorCP <em>To MPor CP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Set MPor CP</em>'.
-	 * @see alma.Control.datamodel.meta.base.MandCBase#getSetMPorCP()
+	 * @return the meta object for the reference '<em>To MPor CP</em>'.
+	 * @see alma.Control.datamodel.meta.base.MandCBase#getToMPorCP()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_SetMPorCP();
+	EReference getMandCBase_ToMPorCP();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MandCBase#getGetSheetMP <em>Get Sheet MP</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MandCBase#getToSheetMP <em>To Sheet MP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Sheet MP</em>'.
-	 * @see alma.Control.datamodel.meta.base.MandCBase#getGetSheetMP()
+	 * @return the meta object for the reference '<em>To Sheet MP</em>'.
+	 * @see alma.Control.datamodel.meta.base.MandCBase#getToSheetMP()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_GetSheetMP();
+	EReference getMandCBase_ToSheetMP();
 
 	/**
 	 * Returns the meta object for class '{@link alma.Control.datamodel.meta.base.ArchiveProperty <em>Archive Property</em>}'.
@@ -2346,15 +2345,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getArchiveProperty_Cp();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.ArchiveProperty#getGetColumnsInfoOfArchi <em>Get Columns Info Of Archi</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.ArchiveProperty#getToColumnsInfoOfArchi <em>To Columns Info Of Archi</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Columns Info Of Archi</em>'.
-	 * @see alma.Control.datamodel.meta.base.ArchiveProperty#getGetColumnsInfoOfArchi()
+	 * @return the meta object for the reference '<em>To Columns Info Of Archi</em>'.
+	 * @see alma.Control.datamodel.meta.base.ArchiveProperty#getToColumnsInfoOfArchi()
 	 * @see #getArchiveProperty()
 	 * @generated
 	 */
-	EReference getArchiveProperty_GetColumnsInfoOfArchi();
+	EReference getArchiveProperty_ToColumnsInfoOfArchi();
 
 	/**
 	 * Returns the meta object for class '{@link alma.Control.datamodel.meta.base.Note <em>Note</em>}'.
@@ -2497,15 +2496,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getSpreadsheetParser_Newline();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getSetNewContent <em>Set New Content</em>}'.
+	 * Returns the meta object for the containment reference '{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getToNewContent <em>To New Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Set New Content</em>'.
-	 * @see alma.Control.datamodel.meta.base.SpreadsheetParser#getSetNewContent()
+	 * @return the meta object for the containment reference '<em>To New Content</em>'.
+	 * @see alma.Control.datamodel.meta.base.SpreadsheetParser#getToNewContent()
 	 * @see #getSpreadsheetParser()
 	 * @generated
 	 */
-	EReference getSpreadsheetParser_SetNewContent();
+	EReference getSpreadsheetParser_ToNewContent();
 
 	/**
 	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getTovalidateSpreads <em>Tovalidate Spreads</em>}'.
@@ -2584,15 +2583,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getUtil_MONTHalt();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.Util#getGetRawBytes <em>Get Raw Bytes</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.Util#getToRawBytes <em>To Raw Bytes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Raw Bytes</em>'.
-	 * @see alma.Control.datamodel.meta.base.Util#getGetRawBytes()
+	 * @return the meta object for the reference '<em>To Raw Bytes</em>'.
+	 * @see alma.Control.datamodel.meta.base.Util#getToRawBytes()
 	 * @see #getUtil()
 	 * @generated
 	 */
-	EReference getUtil_GetRawBytes();
+	EReference getUtil_ToRawBytes();
 
 	/**
 	 * Returns the meta object for class '{@link alma.Control.datamodel.meta.base.Pair <em>Pair</em>}'.
@@ -2680,37 +2679,37 @@ public interface BasePackage extends EPackage {
 	EAttribute getMainBase_Sheet();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MainBase#getImplementTo <em>Implement To</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MainBase#getToImplement <em>To Implement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Implement To</em>'.
-	 * @see alma.Control.datamodel.meta.base.MainBase#getImplementTo()
+	 * @return the meta object for the reference '<em>To Implement</em>'.
+	 * @see alma.Control.datamodel.meta.base.MainBase#getToImplement()
 	 * @see #getMainBase()
 	 * @generated
 	 */
-	EReference getMainBase_ImplementTo();
+	EReference getMainBase_ToImplement();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MainBase#getConvertInfoTo <em>Convert Info To</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MainBase#getToConvertInfo <em>To Convert Info</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Convert Info To</em>'.
-	 * @see alma.Control.datamodel.meta.base.MainBase#getConvertInfoTo()
+	 * @return the meta object for the reference '<em>To Convert Info</em>'.
+	 * @see alma.Control.datamodel.meta.base.MainBase#getToConvertInfo()
 	 * @see #getMainBase()
 	 * @generated
 	 */
-	EReference getMainBase_ConvertInfoTo();
+	EReference getMainBase_ToConvertInfo();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MainBase#getGetInfoFromSpread <em>Get Info From Spread</em>}'.
+	 * Returns the meta object for the reference '{@link alma.Control.datamodel.meta.base.MainBase#getToInfoFromSpread <em>To Info From Spread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Get Info From Spread</em>'.
-	 * @see alma.Control.datamodel.meta.base.MainBase#getGetInfoFromSpread()
+	 * @return the meta object for the reference '<em>To Info From Spread</em>'.
+	 * @see alma.Control.datamodel.meta.base.MainBase#getToInfoFromSpread()
 	 * @see #getMainBase()
 	 * @generated
 	 */
-	EReference getMainBase_GetInfoFromSpread();
+	EReference getMainBase_ToInfoFromSpread();
 
 	/**
 	 * Returns the meta object for data type '{@link alma.Control.datamodel.meta.base.SimpleErrorHandler <em>Simple Error Handler DT</em>}'.
@@ -2790,34 +2789,34 @@ public interface BasePackage extends EPackage {
 	EDataType getSAXParseExceptionDT();
 
 	/**
-	 * Returns the meta object for data type '<em>String3 DT</em>'.
+	 * Returns the meta object for data type '<em>EString Array3</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>String3 DT</em>'.
+	 * @return the meta object for data type '<em>EString Array3</em>'.
 	 * @model instanceClass="java.lang.String[][][]"
 	 * @generated
 	 */
-	EDataType getString3DT();
+	EDataType getEStringArray3();
 
 	/**
-	 * Returns the meta object for data type '<em>String2 DT</em>'.
+	 * Returns the meta object for data type '<em>EString Array2</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>String2 DT</em>'.
+	 * @return the meta object for data type '<em>EString Array2</em>'.
 	 * @model instanceClass="java.lang.String[][]"
 	 * @generated
 	 */
-	EDataType getString2DT();
+	EDataType getEStringArray2();
 
 	/**
-	 * Returns the meta object for data type '<em>String1 DT</em>'.
+	 * Returns the meta object for data type '<em>EString Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>String1 DT</em>'.
+	 * @return the meta object for data type '<em>EString Array</em>'.
 	 * @model instanceClass="java.lang.String[]"
 	 * @generated
 	 */
-	EDataType getString1DT();
+	EDataType getEStringArray();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2972,52 +2971,52 @@ public interface BasePackage extends EPackage {
 		EAttribute DEVICE_MODEL__GENERATE_ALT = eINSTANCE.getDeviceModel_GenerateAlt();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Archive Index</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Archive Index</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__GET_ARCHIVE_INDEX = eINSTANCE.getDeviceModel_GetArchiveIndex();
+		EReference DEVICE_MODEL__TO_ARCHIVE_INDEX = eINSTANCE.getDeviceModel_ToArchiveIndex();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Cont Points</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Cont Points</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__GET_CONT_POINTS = eINSTANCE.getDeviceModel_GetContPoints();
+		EReference DEVICE_MODEL__TO_CONT_POINTS = eINSTANCE.getDeviceModel_ToContPoints();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Moni Points</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Moni Points</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__GET_MONI_POINTS = eINSTANCE.getDeviceModel_GetMoniPoints();
+		EReference DEVICE_MODEL__TO_MONI_POINTS = eINSTANCE.getDeviceModel_ToMoniPoints();
 
 		/**
-		 * The meta object literal for the '<em><b>Get End Of Generation</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To End Of Generation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__GET_END_OF_GENERATION = eINSTANCE.getDeviceModel_GetEndOfGeneration();
+		EReference DEVICE_MODEL__TO_END_OF_GENERATION = eINSTANCE.getDeviceModel_ToEndOfGeneration();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Archiv Prop</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Archiv Prop</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__GET_ARCHIV_PROP = eINSTANCE.getDeviceModel_GetArchivProp();
+		EReference DEVICE_MODEL__TO_ARCHIV_PROP = eINSTANCE.getDeviceModel_ToArchivProp();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Inf From Spread</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Inf From Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__GET_INF_FROM_SPREAD = eINSTANCE.getDeviceModel_GetInfFromSpread();
+		EReference DEVICE_MODEL__TO_INF_FROM_SPREAD = eINSTANCE.getDeviceModel_ToInfFromSpread();
 
 		/**
 		 * The meta object literal for the '{@link alma.Control.datamodel.meta.base.impl.MonitorPointImpl <em>Monitor Point</em>}' class.
@@ -3038,20 +3037,20 @@ public interface BasePackage extends EPackage {
 		EAttribute MONITOR_POINT__AUX = eINSTANCE.getMonitorPoint_Aux();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Info From AP Spread</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Info From AP Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_POINT__GET_INFO_FROM_AP_SPREAD = eINSTANCE.getMonitorPoint_GetInfoFromAPSpread();
+		EReference MONITOR_POINT__TO_INFO_FROM_AP_SPREAD = eINSTANCE.getMonitorPoint_ToInfoFromAPSpread();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Info From MP Spread</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Info From MP Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MONITOR_POINT__GET_INFO_FROM_MP_SPREAD = eINSTANCE.getMonitorPoint_GetInfoFromMPSpread();
+		EReference MONITOR_POINT__TO_INFO_FROM_MP_SPREAD = eINSTANCE.getMonitorPoint_ToInfoFromMPSpread();
 
 		/**
 		 * The meta object literal for the '{@link alma.Control.datamodel.meta.base.impl.ControlPointImpl <em>Control Point</em>}' class.
@@ -3064,12 +3063,12 @@ public interface BasePackage extends EPackage {
 		EClass CONTROL_POINT = eINSTANCE.getControlPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Arch On Use Control</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Arch On Use Control</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_POINT__GET_ARCH_ON_USE_CONTROL = eINSTANCE.getControlPoint_GetArchOnUseControl();
+		EReference CONTROL_POINT__TO_ARCH_ON_USE_CONTROL = eINSTANCE.getControlPoint_ToArchOnUseControl();
 
 		/**
 		 * The meta object literal for the '<em><b>Aux</b></em>' attribute feature.
@@ -3372,28 +3371,28 @@ public interface BasePackage extends EPackage {
 		EReference MAND_CBASE__SET_INF_FROM_SPREAD = eINSTANCE.getMandCBase_SetInfFromSpread();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Common Inf</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Common Inf</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__GET_COMMON_INF = eINSTANCE.getMandCBase_GetCommonInf();
+		EReference MAND_CBASE__TO_COMMON_INF = eINSTANCE.getMandCBase_ToCommonInf();
 
 		/**
-		 * The meta object literal for the '<em><b>Set MPor CP</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To MPor CP</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__SET_MPOR_CP = eINSTANCE.getMandCBase_SetMPorCP();
+		EReference MAND_CBASE__TO_MPOR_CP = eINSTANCE.getMandCBase_ToMPorCP();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Sheet MP</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Sheet MP</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__GET_SHEET_MP = eINSTANCE.getMandCBase_GetSheetMP();
+		EReference MAND_CBASE__TO_SHEET_MP = eINSTANCE.getMandCBase_ToSheetMP();
 
 		/**
 		 * The meta object literal for the '{@link alma.Control.datamodel.meta.base.impl.ArchivePropertyImpl <em>Archive Property</em>}' class.
@@ -3438,12 +3437,12 @@ public interface BasePackage extends EPackage {
 		EAttribute ARCHIVE_PROPERTY__CP = eINSTANCE.getArchiveProperty_Cp();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Columns Info Of Archi</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Columns Info Of Archi</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI = eINSTANCE.getArchiveProperty_GetColumnsInfoOfArchi();
+		EReference ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI = eINSTANCE.getArchiveProperty_ToColumnsInfoOfArchi();
 
 		/**
 		 * The meta object literal for the '{@link alma.Control.datamodel.meta.base.impl.NoteImpl <em>Note</em>}' class.
@@ -3556,12 +3555,12 @@ public interface BasePackage extends EPackage {
 		EAttribute SPREADSHEET_PARSER__NEWLINE = eINSTANCE.getSpreadsheetParser_Newline();
 
 		/**
-		 * The meta object literal for the '<em><b>Set New Content</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>To New Content</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SPREADSHEET_PARSER__SET_NEW_CONTENT = eINSTANCE.getSpreadsheetParser_SetNewContent();
+		EReference SPREADSHEET_PARSER__TO_NEW_CONTENT = eINSTANCE.getSpreadsheetParser_ToNewContent();
 
 		/**
 		 * The meta object literal for the '<em><b>Tovalidate Spreads</b></em>' reference feature.
@@ -3622,12 +3621,12 @@ public interface BasePackage extends EPackage {
 		EAttribute UTIL__MONT_HALT = eINSTANCE.getUtil_MONTHalt();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Raw Bytes</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Raw Bytes</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UTIL__GET_RAW_BYTES = eINSTANCE.getUtil_GetRawBytes();
+		EReference UTIL__TO_RAW_BYTES = eINSTANCE.getUtil_ToRawBytes();
 
 		/**
 		 * The meta object literal for the '{@link alma.Control.datamodel.meta.base.impl.PairImpl <em>Pair</em>}' class.
@@ -3700,28 +3699,28 @@ public interface BasePackage extends EPackage {
 		EAttribute MAIN_BASE__SHEET = eINSTANCE.getMainBase_Sheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Implement To</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Implement</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAIN_BASE__IMPLEMENT_TO = eINSTANCE.getMainBase_ImplementTo();
+		EReference MAIN_BASE__TO_IMPLEMENT = eINSTANCE.getMainBase_ToImplement();
 
 		/**
-		 * The meta object literal for the '<em><b>Convert Info To</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Convert Info</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAIN_BASE__CONVERT_INFO_TO = eINSTANCE.getMainBase_ConvertInfoTo();
+		EReference MAIN_BASE__TO_CONVERT_INFO = eINSTANCE.getMainBase_ToConvertInfo();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Info From Spread</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Info From Spread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAIN_BASE__GET_INFO_FROM_SPREAD = eINSTANCE.getMainBase_GetInfoFromSpread();
+		EReference MAIN_BASE__TO_INFO_FROM_SPREAD = eINSTANCE.getMainBase_ToInfoFromSpread();
 
 		/**
 		 * The meta object literal for the '<em>Simple Error Handler DT</em>' data type.
@@ -3794,31 +3793,31 @@ public interface BasePackage extends EPackage {
 		EDataType SAX_PARSE_EXCEPTION_DT = eINSTANCE.getSAXParseExceptionDT();
 
 		/**
-		 * The meta object literal for the '<em>String3 DT</em>' data type.
+		 * The meta object literal for the '<em>EString Array3</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getString3DT()
+		 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray3()
 		 * @generated
 		 */
-		EDataType STRING3_DT = eINSTANCE.getString3DT();
+		EDataType ESTRING_ARRAY3 = eINSTANCE.getEStringArray3();
 
 		/**
-		 * The meta object literal for the '<em>String2 DT</em>' data type.
+		 * The meta object literal for the '<em>EString Array2</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getString2DT()
+		 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray2()
 		 * @generated
 		 */
-		EDataType STRING2_DT = eINSTANCE.getString2DT();
+		EDataType ESTRING_ARRAY2 = eINSTANCE.getEStringArray2();
 
 		/**
-		 * The meta object literal for the '<em>String1 DT</em>' data type.
+		 * The meta object literal for the '<em>EString Array</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getString1DT()
+		 * @see alma.Control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray()
 		 * @generated
 		 */
-		EDataType STRING1_DT = eINSTANCE.getString1DT();
+		EDataType ESTRING_ARRAY = eINSTANCE.getEStringArray();
 
 	}
 

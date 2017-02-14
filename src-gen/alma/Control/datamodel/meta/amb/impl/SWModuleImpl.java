@@ -49,6 +49,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getAssemblyName <em>Assembly Name</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getDirPath <em>Dir Path</em>}</li>
@@ -63,12 +64,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getSimMonitorPoints <em>Sim Monitor Points</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getSimControlPoints <em>Sim Control Points</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getAux5 <em>Aux5</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getAddAllMP <em>Add All MP</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getAddAllCP <em>Add All CP</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getSetFormatDescriptions <em>Set Format Descriptions</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getGetSheetColumns <em>Get Sheet Columns</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getToAddAllMP <em>To Add All MP</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getToAddAllCP <em>To Add All CP</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getToFormatDescriptions <em>To Format Descriptions</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.SWModuleImpl#getToSheetColumns <em>To Sheet Columns</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -334,44 +334,44 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	protected BaseFactoryImpl aux5 = AUX5_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAddAllMP() <em>Add All MP</em>}' reference.
+	 * The cached value of the '{@link #getToAddAllMP() <em>To Add All MP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAddAllMP()
+	 * @see #getToAddAllMP()
 	 * @generated
 	 * @ordered
 	 */
-	protected Monitor addAllMP;
+	protected Monitor toAddAllMP;
 
 	/**
-	 * The cached value of the '{@link #getAddAllCP() <em>Add All CP</em>}' reference.
+	 * The cached value of the '{@link #getToAddAllCP() <em>To Add All CP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAddAllCP()
+	 * @see #getToAddAllCP()
 	 * @generated
 	 * @ordered
 	 */
-	protected Control addAllCP;
+	protected Control toAddAllCP;
 
 	/**
-	 * The cached value of the '{@link #getSetFormatDescriptions() <em>Set Format Descriptions</em>}' reference.
+	 * The cached value of the '{@link #getToFormatDescriptions() <em>To Format Descriptions</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSetFormatDescriptions()
+	 * @see #getToFormatDescriptions()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util setFormatDescriptions;
+	protected Util toFormatDescriptions;
 
 	/**
-	 * The cached value of the '{@link #getGetSheetColumns() <em>Get Sheet Columns</em>}' reference.
+	 * The cached value of the '{@link #getToSheetColumns() <em>To Sheet Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetSheetColumns()
+	 * @see #getToSheetColumns()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table getSheetColumns;
+	protected Table toSheetColumns;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -670,16 +670,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Monitor getAddAllMP() {
-		if (addAllMP != null && addAllMP.eIsProxy()) {
-			InternalEObject oldAddAllMP = (InternalEObject)addAllMP;
-			addAllMP = (Monitor)eResolveProxy(oldAddAllMP);
-			if (addAllMP != oldAddAllMP) {
+	public Monitor getToAddAllMP() {
+		if (toAddAllMP != null && toAddAllMP.eIsProxy()) {
+			InternalEObject oldToAddAllMP = (InternalEObject)toAddAllMP;
+			toAddAllMP = (Monitor)eResolveProxy(oldToAddAllMP);
+			if (toAddAllMP != oldToAddAllMP) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__ADD_ALL_MP, oldAddAllMP, addAllMP));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__TO_ADD_ALL_MP, oldToAddAllMP, toAddAllMP));
 			}
 		}
-		return addAllMP;
+		return toAddAllMP;
 	}
 
 	/**
@@ -687,8 +687,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Monitor basicGetAddAllMP() {
-		return addAllMP;
+	public Monitor basicGetToAddAllMP() {
+		return toAddAllMP;
 	}
 
 	/**
@@ -696,11 +696,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAddAllMP(Monitor newAddAllMP) {
-		Monitor oldAddAllMP = addAllMP;
-		addAllMP = newAddAllMP;
+	public void setToAddAllMP(Monitor newToAddAllMP) {
+		Monitor oldToAddAllMP = toAddAllMP;
+		toAddAllMP = newToAddAllMP;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__ADD_ALL_MP, oldAddAllMP, addAllMP));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__TO_ADD_ALL_MP, oldToAddAllMP, toAddAllMP));
 	}
 
 	/**
@@ -708,16 +708,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Control getAddAllCP() {
-		if (addAllCP != null && addAllCP.eIsProxy()) {
-			InternalEObject oldAddAllCP = (InternalEObject)addAllCP;
-			addAllCP = (Control)eResolveProxy(oldAddAllCP);
-			if (addAllCP != oldAddAllCP) {
+	public Control getToAddAllCP() {
+		if (toAddAllCP != null && toAddAllCP.eIsProxy()) {
+			InternalEObject oldToAddAllCP = (InternalEObject)toAddAllCP;
+			toAddAllCP = (Control)eResolveProxy(oldToAddAllCP);
+			if (toAddAllCP != oldToAddAllCP) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__ADD_ALL_CP, oldAddAllCP, addAllCP));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__TO_ADD_ALL_CP, oldToAddAllCP, toAddAllCP));
 			}
 		}
-		return addAllCP;
+		return toAddAllCP;
 	}
 
 	/**
@@ -725,8 +725,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Control basicGetAddAllCP() {
-		return addAllCP;
+	public Control basicGetToAddAllCP() {
+		return toAddAllCP;
 	}
 
 	/**
@@ -734,11 +734,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAddAllCP(Control newAddAllCP) {
-		Control oldAddAllCP = addAllCP;
-		addAllCP = newAddAllCP;
+	public void setToAddAllCP(Control newToAddAllCP) {
+		Control oldToAddAllCP = toAddAllCP;
+		toAddAllCP = newToAddAllCP;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__ADD_ALL_CP, oldAddAllCP, addAllCP));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__TO_ADD_ALL_CP, oldToAddAllCP, toAddAllCP));
 	}
 
 	/**
@@ -746,16 +746,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getSetFormatDescriptions() {
-		if (setFormatDescriptions != null && setFormatDescriptions.eIsProxy()) {
-			InternalEObject oldSetFormatDescriptions = (InternalEObject)setFormatDescriptions;
-			setFormatDescriptions = (Util)eResolveProxy(oldSetFormatDescriptions);
-			if (setFormatDescriptions != oldSetFormatDescriptions) {
+	public Util getToFormatDescriptions() {
+		if (toFormatDescriptions != null && toFormatDescriptions.eIsProxy()) {
+			InternalEObject oldToFormatDescriptions = (InternalEObject)toFormatDescriptions;
+			toFormatDescriptions = (Util)eResolveProxy(oldToFormatDescriptions);
+			if (toFormatDescriptions != oldToFormatDescriptions) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS, oldSetFormatDescriptions, setFormatDescriptions));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__TO_FORMAT_DESCRIPTIONS, oldToFormatDescriptions, toFormatDescriptions));
 			}
 		}
-		return setFormatDescriptions;
+		return toFormatDescriptions;
 	}
 
 	/**
@@ -763,8 +763,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetSetFormatDescriptions() {
-		return setFormatDescriptions;
+	public Util basicGetToFormatDescriptions() {
+		return toFormatDescriptions;
 	}
 
 	/**
@@ -772,11 +772,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSetFormatDescriptions(Util newSetFormatDescriptions) {
-		Util oldSetFormatDescriptions = setFormatDescriptions;
-		setFormatDescriptions = newSetFormatDescriptions;
+	public void setToFormatDescriptions(Util newToFormatDescriptions) {
+		Util oldToFormatDescriptions = toFormatDescriptions;
+		toFormatDescriptions = newToFormatDescriptions;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS, oldSetFormatDescriptions, setFormatDescriptions));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__TO_FORMAT_DESCRIPTIONS, oldToFormatDescriptions, toFormatDescriptions));
 	}
 
 	/**
@@ -784,16 +784,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetSheetColumns() {
-		if (getSheetColumns != null && getSheetColumns.eIsProxy()) {
-			InternalEObject oldGetSheetColumns = (InternalEObject)getSheetColumns;
-			getSheetColumns = (Table)eResolveProxy(oldGetSheetColumns);
-			if (getSheetColumns != oldGetSheetColumns) {
+	public Table getToSheetColumns() {
+		if (toSheetColumns != null && toSheetColumns.eIsProxy()) {
+			InternalEObject oldToSheetColumns = (InternalEObject)toSheetColumns;
+			toSheetColumns = (Table)eResolveProxy(oldToSheetColumns);
+			if (toSheetColumns != oldToSheetColumns) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__GET_SHEET_COLUMNS, oldGetSheetColumns, getSheetColumns));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.SW_MODULE__TO_SHEET_COLUMNS, oldToSheetColumns, toSheetColumns));
 			}
 		}
-		return getSheetColumns;
+		return toSheetColumns;
 	}
 
 	/**
@@ -801,8 +801,8 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetSheetColumns() {
-		return getSheetColumns;
+	public Table basicGetToSheetColumns() {
+		return toSheetColumns;
 	}
 
 	/**
@@ -810,11 +810,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetSheetColumns(Table newGetSheetColumns) {
-		Table oldGetSheetColumns = getSheetColumns;
-		getSheetColumns = newGetSheetColumns;
+	public void setToSheetColumns(Table newToSheetColumns) {
+		Table oldToSheetColumns = toSheetColumns;
+		toSheetColumns = newToSheetColumns;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__GET_SHEET_COLUMNS, oldGetSheetColumns, getSheetColumns));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.SW_MODULE__TO_SHEET_COLUMNS, oldToSheetColumns, toSheetColumns));
 	}
 
 	/**
@@ -822,7 +822,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addMP(Resource mp) {
+	public void addMP(final Resource mp) {
 				monitorPoints.getResources().add(mp);
 				if (!(((MonitorImpl)mp).RCA().equals("none") ||
 						((MonitorImpl)mp).RCA().equals("0x00000") ||
@@ -845,7 +845,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addCP(Resource cp) {
+	public void addCP(final Resource cp) {
 				controlPoints.getResources().add(cp);
 				if (!(((ControlImpl)cp).RCA().equals("none") ||
 						((ControlImpl)cp).RCA().equals("0x31000") ||
@@ -863,7 +863,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addAP(Resource ap) {
+	public void addAP(final Resource ap) {
 		archiveProperties.getResources().add(ap);
 		
 	}
@@ -1031,7 +1031,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String HexToDec(String s) {
+	public String HexToDec(final String s) {
 		        int n = -1;
 		        try {
 		            n = Integer.parseInt(s.substring(2),16);
@@ -1118,18 +1118,18 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				return getSimControlPoints();
 			case AmbPackage.SW_MODULE__AUX5:
 				return getAux5();
-			case AmbPackage.SW_MODULE__ADD_ALL_MP:
-				if (resolve) return getAddAllMP();
-				return basicGetAddAllMP();
-			case AmbPackage.SW_MODULE__ADD_ALL_CP:
-				if (resolve) return getAddAllCP();
-				return basicGetAddAllCP();
-			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
-				if (resolve) return getSetFormatDescriptions();
-				return basicGetSetFormatDescriptions();
-			case AmbPackage.SW_MODULE__GET_SHEET_COLUMNS:
-				if (resolve) return getGetSheetColumns();
-				return basicGetGetSheetColumns();
+			case AmbPackage.SW_MODULE__TO_ADD_ALL_MP:
+				if (resolve) return getToAddAllMP();
+				return basicGetToAddAllMP();
+			case AmbPackage.SW_MODULE__TO_ADD_ALL_CP:
+				if (resolve) return getToAddAllCP();
+				return basicGetToAddAllCP();
+			case AmbPackage.SW_MODULE__TO_FORMAT_DESCRIPTIONS:
+				if (resolve) return getToFormatDescriptions();
+				return basicGetToFormatDescriptions();
+			case AmbPackage.SW_MODULE__TO_SHEET_COLUMNS:
+				if (resolve) return getToSheetColumns();
+				return basicGetToSheetColumns();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1181,17 +1181,17 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 			case AmbPackage.SW_MODULE__AUX5:
 				setAux5((BaseFactoryImpl)newValue);
 				return;
-			case AmbPackage.SW_MODULE__ADD_ALL_MP:
-				setAddAllMP((Monitor)newValue);
+			case AmbPackage.SW_MODULE__TO_ADD_ALL_MP:
+				setToAddAllMP((Monitor)newValue);
 				return;
-			case AmbPackage.SW_MODULE__ADD_ALL_CP:
-				setAddAllCP((Control)newValue);
+			case AmbPackage.SW_MODULE__TO_ADD_ALL_CP:
+				setToAddAllCP((Control)newValue);
 				return;
-			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
-				setSetFormatDescriptions((Util)newValue);
+			case AmbPackage.SW_MODULE__TO_FORMAT_DESCRIPTIONS:
+				setToFormatDescriptions((Util)newValue);
 				return;
-			case AmbPackage.SW_MODULE__GET_SHEET_COLUMNS:
-				setGetSheetColumns((Table)newValue);
+			case AmbPackage.SW_MODULE__TO_SHEET_COLUMNS:
+				setToSheetColumns((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1244,17 +1244,17 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 			case AmbPackage.SW_MODULE__AUX5:
 				setAux5(AUX5_EDEFAULT);
 				return;
-			case AmbPackage.SW_MODULE__ADD_ALL_MP:
-				setAddAllMP((Monitor)null);
+			case AmbPackage.SW_MODULE__TO_ADD_ALL_MP:
+				setToAddAllMP((Monitor)null);
 				return;
-			case AmbPackage.SW_MODULE__ADD_ALL_CP:
-				setAddAllCP((Control)null);
+			case AmbPackage.SW_MODULE__TO_ADD_ALL_CP:
+				setToAddAllCP((Control)null);
 				return;
-			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
-				setSetFormatDescriptions((Util)null);
+			case AmbPackage.SW_MODULE__TO_FORMAT_DESCRIPTIONS:
+				setToFormatDescriptions((Util)null);
 				return;
-			case AmbPackage.SW_MODULE__GET_SHEET_COLUMNS:
-				setGetSheetColumns((Table)null);
+			case AmbPackage.SW_MODULE__TO_SHEET_COLUMNS:
+				setToSheetColumns((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1294,14 +1294,14 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 				return SIM_CONTROL_POINTS_EDEFAULT == null ? simControlPoints != null : !SIM_CONTROL_POINTS_EDEFAULT.equals(simControlPoints);
 			case AmbPackage.SW_MODULE__AUX5:
 				return AUX5_EDEFAULT == null ? aux5 != null : !AUX5_EDEFAULT.equals(aux5);
-			case AmbPackage.SW_MODULE__ADD_ALL_MP:
-				return addAllMP != null;
-			case AmbPackage.SW_MODULE__ADD_ALL_CP:
-				return addAllCP != null;
-			case AmbPackage.SW_MODULE__SET_FORMAT_DESCRIPTIONS:
-				return setFormatDescriptions != null;
-			case AmbPackage.SW_MODULE__GET_SHEET_COLUMNS:
-				return getSheetColumns != null;
+			case AmbPackage.SW_MODULE__TO_ADD_ALL_MP:
+				return toAddAllMP != null;
+			case AmbPackage.SW_MODULE__TO_ADD_ALL_CP:
+				return toAddAllCP != null;
+			case AmbPackage.SW_MODULE__TO_FORMAT_DESCRIPTIONS:
+				return toFormatDescriptions != null;
+			case AmbPackage.SW_MODULE__TO_SHEET_COLUMNS:
+				return toSheetColumns != null;
 		}
 		return super.eIsSet(featureID);
 	}

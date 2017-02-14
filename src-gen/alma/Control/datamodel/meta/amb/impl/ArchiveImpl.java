@@ -43,11 +43,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.ArchiveImpl#getBaseFacTmp <em>Base Fac Tmp</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.ArchiveImpl#getGetAssemblyColumn <em>Get Assembly Column</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.ArchiveImpl#getToAssemblyColumn <em>To Assembly Column</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -83,14 +83,14 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	protected BaseFactoryImpl baseFacTmp = BASE_FAC_TMP_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGetAssemblyColumn() <em>Get Assembly Column</em>}' reference.
+	 * The cached value of the '{@link #getToAssemblyColumn() <em>To Assembly Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetAssemblyColumn()
+	 * @see #getToAssemblyColumn()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table getAssemblyColumn;
+	protected Table toAssemblyColumn;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,16 +137,16 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetAssemblyColumn() {
-		if (getAssemblyColumn != null && getAssemblyColumn.eIsProxy()) {
-			InternalEObject oldGetAssemblyColumn = (InternalEObject)getAssemblyColumn;
-			getAssemblyColumn = (Table)eResolveProxy(oldGetAssemblyColumn);
-			if (getAssemblyColumn != oldGetAssemblyColumn) {
+	public Table getToAssemblyColumn() {
+		if (toAssemblyColumn != null && toAssemblyColumn.eIsProxy()) {
+			InternalEObject oldToAssemblyColumn = (InternalEObject)toAssemblyColumn;
+			toAssemblyColumn = (Table)eResolveProxy(oldToAssemblyColumn);
+			if (toAssemblyColumn != oldToAssemblyColumn) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.ARCHIVE__GET_ASSEMBLY_COLUMN, oldGetAssemblyColumn, getAssemblyColumn));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN, oldToAssemblyColumn, toAssemblyColumn));
 			}
 		}
-		return getAssemblyColumn;
+		return toAssemblyColumn;
 	}
 
 	/**
@@ -154,8 +154,8 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetAssemblyColumn() {
-		return getAssemblyColumn;
+	public Table basicGetToAssemblyColumn() {
+		return toAssemblyColumn;
 	}
 
 	/**
@@ -163,11 +163,11 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetAssemblyColumn(Table newGetAssemblyColumn) {
-		Table oldGetAssemblyColumn = getAssemblyColumn;
-		getAssemblyColumn = newGetAssemblyColumn;
+	public void setToAssemblyColumn(Table newToAssemblyColumn) {
+		Table oldToAssemblyColumn = toAssemblyColumn;
+		toAssemblyColumn = newToAssemblyColumn;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.ARCHIVE__GET_ASSEMBLY_COLUMN, oldGetAssemblyColumn, getAssemblyColumn));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN, oldToAssemblyColumn, toAssemblyColumn));
 	}
 
 	/**
@@ -212,9 +212,9 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 		switch (featureID) {
 			case AmbPackage.ARCHIVE__BASE_FAC_TMP:
 				return getBaseFacTmp();
-			case AmbPackage.ARCHIVE__GET_ASSEMBLY_COLUMN:
-				if (resolve) return getGetAssemblyColumn();
-				return basicGetGetAssemblyColumn();
+			case AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN:
+				if (resolve) return getToAssemblyColumn();
+				return basicGetToAssemblyColumn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -230,8 +230,8 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 			case AmbPackage.ARCHIVE__BASE_FAC_TMP:
 				setBaseFacTmp((BaseFactoryImpl)newValue);
 				return;
-			case AmbPackage.ARCHIVE__GET_ASSEMBLY_COLUMN:
-				setGetAssemblyColumn((Table)newValue);
+			case AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN:
+				setToAssemblyColumn((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,8 +248,8 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 			case AmbPackage.ARCHIVE__BASE_FAC_TMP:
 				setBaseFacTmp(BASE_FAC_TMP_EDEFAULT);
 				return;
-			case AmbPackage.ARCHIVE__GET_ASSEMBLY_COLUMN:
-				setGetAssemblyColumn((Table)null);
+			case AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN:
+				setToAssemblyColumn((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -265,8 +265,8 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 		switch (featureID) {
 			case AmbPackage.ARCHIVE__BASE_FAC_TMP:
 				return BASE_FAC_TMP_EDEFAULT == null ? baseFacTmp != null : !BASE_FAC_TMP_EDEFAULT.equals(baseFacTmp);
-			case AmbPackage.ARCHIVE__GET_ASSEMBLY_COLUMN:
-				return getAssemblyColumn != null;
+			case AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN:
+				return toAssemblyColumn != null;
 		}
 		return super.eIsSet(featureID);
 	}

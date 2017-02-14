@@ -24,6 +24,7 @@ package alma.Control.datamodel.meta.base;
 
 public interface MySpreadsheetParser extends SpreadsheetParser {
 	
+	
 	String getRefPath();
 
 	
@@ -54,10 +55,10 @@ public interface MySpreadsheetParser extends SpreadsheetParser {
 	void setNewline(String value);
 
 	
-	Pair getSetNewContent();
+	Pair getToNewContent();
 
 	
-	void setSetNewContent(Pair value);
+	void setToNewContent(Pair value);
 
 	
 	SpreadsheetValidator getTovalidateSpreads();
@@ -94,5 +95,6 @@ public interface MySpreadsheetParser extends SpreadsheetParser {
 
 	
 	void modifyRow(String[][] worksheet, int lineNumber, String rowName, String s);
+
 
 } // MySpreadsheetParser

@@ -43,11 +43,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.MainImpl#getTmp <em>Tmp</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.MainImpl#getGetInfoFromMain <em>Get Info From Main</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.MainImpl#getToInfoFromMain <em>To Info From Main</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -83,14 +83,14 @@ public class MainImpl extends MainBaseImpl implements Main {
 	protected BaseFactory tmp = TMP_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGetInfoFromMain() <em>Get Info From Main</em>}' reference.
+	 * The cached value of the '{@link #getToInfoFromMain() <em>To Info From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetInfoFromMain()
+	 * @see #getToInfoFromMain()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table getInfoFromMain;
+	protected Table toInfoFromMain;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,16 +137,16 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetInfoFromMain() {
-		if (getInfoFromMain != null && getInfoFromMain.eIsProxy()) {
-			InternalEObject oldGetInfoFromMain = (InternalEObject)getInfoFromMain;
-			getInfoFromMain = (Table)eResolveProxy(oldGetInfoFromMain);
-			if (getInfoFromMain != oldGetInfoFromMain) {
+	public Table getToInfoFromMain() {
+		if (toInfoFromMain != null && toInfoFromMain.eIsProxy()) {
+			InternalEObject oldToInfoFromMain = (InternalEObject)toInfoFromMain;
+			toInfoFromMain = (Table)eResolveProxy(oldToInfoFromMain);
+			if (toInfoFromMain != oldToInfoFromMain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAIN__GET_INFO_FROM_MAIN, oldGetInfoFromMain, getInfoFromMain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAIN__TO_INFO_FROM_MAIN, oldToInfoFromMain, toInfoFromMain));
 			}
 		}
-		return getInfoFromMain;
+		return toInfoFromMain;
 	}
 
 	/**
@@ -154,8 +154,8 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetInfoFromMain() {
-		return getInfoFromMain;
+	public Table basicGetToInfoFromMain() {
+		return toInfoFromMain;
 	}
 
 	/**
@@ -163,11 +163,11 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetInfoFromMain(Table newGetInfoFromMain) {
-		Table oldGetInfoFromMain = getInfoFromMain;
-		getInfoFromMain = newGetInfoFromMain;
+	public void setToInfoFromMain(Table newToInfoFromMain) {
+		Table oldToInfoFromMain = toInfoFromMain;
+		toInfoFromMain = newToInfoFromMain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAIN__GET_INFO_FROM_MAIN, oldGetInfoFromMain, getInfoFromMain));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAIN__TO_INFO_FROM_MAIN, oldToInfoFromMain, toInfoFromMain));
 	}
 
 	/**
@@ -234,9 +234,9 @@ public class MainImpl extends MainBaseImpl implements Main {
 		switch (featureID) {
 			case AmbPackage.MAIN__TMP:
 				return getTmp();
-			case AmbPackage.MAIN__GET_INFO_FROM_MAIN:
-				if (resolve) return getGetInfoFromMain();
-				return basicGetGetInfoFromMain();
+			case AmbPackage.MAIN__TO_INFO_FROM_MAIN:
+				if (resolve) return getToInfoFromMain();
+				return basicGetToInfoFromMain();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,8 +252,8 @@ public class MainImpl extends MainBaseImpl implements Main {
 			case AmbPackage.MAIN__TMP:
 				setTmp((BaseFactory)newValue);
 				return;
-			case AmbPackage.MAIN__GET_INFO_FROM_MAIN:
-				setGetInfoFromMain((Table)newValue);
+			case AmbPackage.MAIN__TO_INFO_FROM_MAIN:
+				setToInfoFromMain((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -270,8 +270,8 @@ public class MainImpl extends MainBaseImpl implements Main {
 			case AmbPackage.MAIN__TMP:
 				setTmp(TMP_EDEFAULT);
 				return;
-			case AmbPackage.MAIN__GET_INFO_FROM_MAIN:
-				setGetInfoFromMain((Table)null);
+			case AmbPackage.MAIN__TO_INFO_FROM_MAIN:
+				setToInfoFromMain((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -287,8 +287,8 @@ public class MainImpl extends MainBaseImpl implements Main {
 		switch (featureID) {
 			case AmbPackage.MAIN__TMP:
 				return TMP_EDEFAULT == null ? tmp != null : !TMP_EDEFAULT.equals(tmp);
-			case AmbPackage.MAIN__GET_INFO_FROM_MAIN:
-				return getInfoFromMain != null;
+			case AmbPackage.MAIN__TO_INFO_FROM_MAIN:
+				return toInfoFromMain != null;
 		}
 		return super.eIsSet(featureID);
 	}

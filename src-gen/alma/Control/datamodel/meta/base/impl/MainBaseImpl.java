@@ -42,14 +42,14 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.MainBaseImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.MainBaseImpl#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.impl.MainBaseImpl#getImplementTo <em>Implement To</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.impl.MainBaseImpl#getConvertInfoTo <em>Convert Info To</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.impl.MainBaseImpl#getGetInfoFromSpread <em>Get Info From Spread</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.impl.MainBaseImpl#getToImplement <em>To Implement</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.impl.MainBaseImpl#getToConvertInfo <em>To Convert Info</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.impl.MainBaseImpl#getToInfoFromSpread <em>To Info From Spread</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -106,34 +106,34 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	protected int sheet = SHEET_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getImplementTo() <em>Implement To</em>}' reference.
+	 * The cached value of the '{@link #getToImplement() <em>To Implement</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImplementTo()
+	 * @see #getToImplement()
 	 * @generated
 	 * @ordered
 	 */
-	protected DeviceModel implementTo;
+	protected DeviceModel toImplement;
 
 	/**
-	 * The cached value of the '{@link #getConvertInfoTo() <em>Convert Info To</em>}' reference.
+	 * The cached value of the '{@link #getToConvertInfo() <em>To Convert Info</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConvertInfoTo()
+	 * @see #getToConvertInfo()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util convertInfoTo;
+	protected Util toConvertInfo;
 
 	/**
-	 * The cached value of the '{@link #getGetInfoFromSpread() <em>Get Info From Spread</em>}' reference.
+	 * The cached value of the '{@link #getToInfoFromSpread() <em>To Info From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetInfoFromSpread()
+	 * @see #getToInfoFromSpread()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table getInfoFromSpread;
+	protected Table toInfoFromSpread;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,16 +201,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeviceModel getImplementTo() {
-		if (implementTo != null && implementTo.eIsProxy()) {
-			InternalEObject oldImplementTo = (InternalEObject)implementTo;
-			implementTo = (DeviceModel)eResolveProxy(oldImplementTo);
-			if (implementTo != oldImplementTo) {
+	public DeviceModel getToImplement() {
+		if (toImplement != null && toImplement.eIsProxy()) {
+			InternalEObject oldToImplement = (InternalEObject)toImplement;
+			toImplement = (DeviceModel)eResolveProxy(oldToImplement);
+			if (toImplement != oldToImplement) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__IMPLEMENT_TO, oldImplementTo, implementTo));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TO_IMPLEMENT, oldToImplement, toImplement));
 			}
 		}
-		return implementTo;
+		return toImplement;
 	}
 
 	/**
@@ -218,8 +218,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeviceModel basicGetImplementTo() {
-		return implementTo;
+	public DeviceModel basicGetToImplement() {
+		return toImplement;
 	}
 
 	/**
@@ -227,11 +227,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setImplementTo(DeviceModel newImplementTo) {
-		DeviceModel oldImplementTo = implementTo;
-		implementTo = newImplementTo;
+	public void setToImplement(DeviceModel newToImplement) {
+		DeviceModel oldToImplement = toImplement;
+		toImplement = newToImplement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__IMPLEMENT_TO, oldImplementTo, implementTo));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TO_IMPLEMENT, oldToImplement, toImplement));
 	}
 
 	/**
@@ -239,16 +239,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getConvertInfoTo() {
-		if (convertInfoTo != null && convertInfoTo.eIsProxy()) {
-			InternalEObject oldConvertInfoTo = (InternalEObject)convertInfoTo;
-			convertInfoTo = (Util)eResolveProxy(oldConvertInfoTo);
-			if (convertInfoTo != oldConvertInfoTo) {
+	public Util getToConvertInfo() {
+		if (toConvertInfo != null && toConvertInfo.eIsProxy()) {
+			InternalEObject oldToConvertInfo = (InternalEObject)toConvertInfo;
+			toConvertInfo = (Util)eResolveProxy(oldToConvertInfo);
+			if (toConvertInfo != oldToConvertInfo) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__CONVERT_INFO_TO, oldConvertInfoTo, convertInfoTo));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TO_CONVERT_INFO, oldToConvertInfo, toConvertInfo));
 			}
 		}
-		return convertInfoTo;
+		return toConvertInfo;
 	}
 
 	/**
@@ -256,8 +256,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetConvertInfoTo() {
-		return convertInfoTo;
+	public Util basicGetToConvertInfo() {
+		return toConvertInfo;
 	}
 
 	/**
@@ -265,11 +265,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConvertInfoTo(Util newConvertInfoTo) {
-		Util oldConvertInfoTo = convertInfoTo;
-		convertInfoTo = newConvertInfoTo;
+	public void setToConvertInfo(Util newToConvertInfo) {
+		Util oldToConvertInfo = toConvertInfo;
+		toConvertInfo = newToConvertInfo;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__CONVERT_INFO_TO, oldConvertInfoTo, convertInfoTo));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TO_CONVERT_INFO, oldToConvertInfo, toConvertInfo));
 	}
 
 	/**
@@ -277,16 +277,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetInfoFromSpread() {
-		if (getInfoFromSpread != null && getInfoFromSpread.eIsProxy()) {
-			InternalEObject oldGetInfoFromSpread = (InternalEObject)getInfoFromSpread;
-			getInfoFromSpread = (Table)eResolveProxy(oldGetInfoFromSpread);
-			if (getInfoFromSpread != oldGetInfoFromSpread) {
+	public Table getToInfoFromSpread() {
+		if (toInfoFromSpread != null && toInfoFromSpread.eIsProxy()) {
+			InternalEObject oldToInfoFromSpread = (InternalEObject)toInfoFromSpread;
+			toInfoFromSpread = (Table)eResolveProxy(oldToInfoFromSpread);
+			if (toInfoFromSpread != oldToInfoFromSpread) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD, oldGetInfoFromSpread, getInfoFromSpread));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD, oldToInfoFromSpread, toInfoFromSpread));
 			}
 		}
-		return getInfoFromSpread;
+		return toInfoFromSpread;
 	}
 
 	/**
@@ -294,8 +294,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetInfoFromSpread() {
-		return getInfoFromSpread;
+	public Table basicGetToInfoFromSpread() {
+		return toInfoFromSpread;
 	}
 
 	/**
@@ -303,11 +303,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetInfoFromSpread(Table newGetInfoFromSpread) {
-		Table oldGetInfoFromSpread = getInfoFromSpread;
-		getInfoFromSpread = newGetInfoFromSpread;
+	public void setToInfoFromSpread(Table newToInfoFromSpread) {
+		Table oldToInfoFromSpread = toInfoFromSpread;
+		toInfoFromSpread = newToInfoFromSpread;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD, oldGetInfoFromSpread, getInfoFromSpread));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD, oldToInfoFromSpread, toInfoFromSpread));
 	}
 
 	/**
@@ -411,15 +411,15 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return getRow();
 			case BasePackage.MAIN_BASE__SHEET:
 				return getSheet();
-			case BasePackage.MAIN_BASE__IMPLEMENT_TO:
-				if (resolve) return getImplementTo();
-				return basicGetImplementTo();
-			case BasePackage.MAIN_BASE__CONVERT_INFO_TO:
-				if (resolve) return getConvertInfoTo();
-				return basicGetConvertInfoTo();
-			case BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD:
-				if (resolve) return getGetInfoFromSpread();
-				return basicGetGetInfoFromSpread();
+			case BasePackage.MAIN_BASE__TO_IMPLEMENT:
+				if (resolve) return getToImplement();
+				return basicGetToImplement();
+			case BasePackage.MAIN_BASE__TO_CONVERT_INFO:
+				if (resolve) return getToConvertInfo();
+				return basicGetToConvertInfo();
+			case BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD:
+				if (resolve) return getToInfoFromSpread();
+				return basicGetToInfoFromSpread();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -438,14 +438,14 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__SHEET:
 				setSheet((Integer)newValue);
 				return;
-			case BasePackage.MAIN_BASE__IMPLEMENT_TO:
-				setImplementTo((DeviceModel)newValue);
+			case BasePackage.MAIN_BASE__TO_IMPLEMENT:
+				setToImplement((DeviceModel)newValue);
 				return;
-			case BasePackage.MAIN_BASE__CONVERT_INFO_TO:
-				setConvertInfoTo((Util)newValue);
+			case BasePackage.MAIN_BASE__TO_CONVERT_INFO:
+				setToConvertInfo((Util)newValue);
 				return;
-			case BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD:
-				setGetInfoFromSpread((Table)newValue);
+			case BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD:
+				setToInfoFromSpread((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -465,14 +465,14 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__SHEET:
 				setSheet(SHEET_EDEFAULT);
 				return;
-			case BasePackage.MAIN_BASE__IMPLEMENT_TO:
-				setImplementTo((DeviceModel)null);
+			case BasePackage.MAIN_BASE__TO_IMPLEMENT:
+				setToImplement((DeviceModel)null);
 				return;
-			case BasePackage.MAIN_BASE__CONVERT_INFO_TO:
-				setConvertInfoTo((Util)null);
+			case BasePackage.MAIN_BASE__TO_CONVERT_INFO:
+				setToConvertInfo((Util)null);
 				return;
-			case BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD:
-				setGetInfoFromSpread((Table)null);
+			case BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD:
+				setToInfoFromSpread((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -490,12 +490,12 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return ROW_EDEFAULT == null ? row != null : !ROW_EDEFAULT.equals(row);
 			case BasePackage.MAIN_BASE__SHEET:
 				return sheet != SHEET_EDEFAULT;
-			case BasePackage.MAIN_BASE__IMPLEMENT_TO:
-				return implementTo != null;
-			case BasePackage.MAIN_BASE__CONVERT_INFO_TO:
-				return convertInfoTo != null;
-			case BasePackage.MAIN_BASE__GET_INFO_FROM_SPREAD:
-				return getInfoFromSpread != null;
+			case BasePackage.MAIN_BASE__TO_IMPLEMENT:
+				return toImplement != null;
+			case BasePackage.MAIN_BASE__TO_CONVERT_INFO:
+				return toConvertInfo != null;
+			case BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD:
+				return toInfoFromSpread != null;
 		}
 		return super.eIsSet(featureID);
 	}

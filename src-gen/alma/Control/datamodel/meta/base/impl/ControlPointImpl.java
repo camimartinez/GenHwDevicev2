@@ -41,16 +41,26 @@ import org.eclipse.emf.ecore.resource.Resource;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link alma.Control.datamodel.meta.base.impl.ControlPointImpl#getGetArchOnUseControl <em>Get Arch On Use Control</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.impl.ControlPointImpl#getToArchOnUseControl <em>To Arch On Use Control</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.ControlPointImpl#getAux <em>Aux</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public abstract class ControlPointImpl extends MandCBaseImpl implements ControlPoint {
 	
+	/**
+	 * The cached value of the '{@link #getToArchOnUseControl() <em>To Arch On Use Control</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToArchOnUseControl()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table toArchOnUseControl;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -60,16 +70,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 		super(row, parent);
 	}
 	
-	/**
-	 * The cached value of the '{@link #getGetArchOnUseControl() <em>Get Arch On Use Control</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGetArchOnUseControl()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table getArchOnUseControl;
-
 	/**
 	 * The default value of the '{@link #getAux() <em>Aux</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -114,16 +114,16 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetArchOnUseControl() {
-		if (getArchOnUseControl != null && getArchOnUseControl.eIsProxy()) {
-			InternalEObject oldGetArchOnUseControl = (InternalEObject)getArchOnUseControl;
-			getArchOnUseControl = (Table)eResolveProxy(oldGetArchOnUseControl);
-			if (getArchOnUseControl != oldGetArchOnUseControl) {
+	public Table getToArchOnUseControl() {
+		if (toArchOnUseControl != null && toArchOnUseControl.eIsProxy()) {
+			InternalEObject oldToArchOnUseControl = (InternalEObject)toArchOnUseControl;
+			toArchOnUseControl = (Table)eResolveProxy(oldToArchOnUseControl);
+			if (toArchOnUseControl != oldToArchOnUseControl) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL, oldGetArchOnUseControl, getArchOnUseControl));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.CONTROL_POINT__TO_ARCH_ON_USE_CONTROL, oldToArchOnUseControl, toArchOnUseControl));
 			}
 		}
-		return getArchOnUseControl;
+		return toArchOnUseControl;
 	}
 
 	/**
@@ -131,8 +131,8 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetArchOnUseControl() {
-		return getArchOnUseControl;
+	public Table basicGetToArchOnUseControl() {
+		return toArchOnUseControl;
 	}
 
 	/**
@@ -140,11 +140,11 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetArchOnUseControl(Table newGetArchOnUseControl) {
-		Table oldGetArchOnUseControl = getArchOnUseControl;
-		getArchOnUseControl = newGetArchOnUseControl;
+	public void setToArchOnUseControl(Table newToArchOnUseControl) {
+		Table oldToArchOnUseControl = toArchOnUseControl;
+		toArchOnUseControl = newToArchOnUseControl;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL, oldGetArchOnUseControl, getArchOnUseControl));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.CONTROL_POINT__TO_ARCH_ON_USE_CONTROL, oldToArchOnUseControl, toArchOnUseControl));
 	}
 
 	/**
@@ -215,9 +215,9 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
-				if (resolve) return getGetArchOnUseControl();
-				return basicGetGetArchOnUseControl();
+			case BasePackage.CONTROL_POINT__TO_ARCH_ON_USE_CONTROL:
+				if (resolve) return getToArchOnUseControl();
+				return basicGetToArchOnUseControl();
 			case BasePackage.CONTROL_POINT__AUX:
 				return getAux();
 		}
@@ -232,8 +232,8 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
-				setGetArchOnUseControl((Table)newValue);
+			case BasePackage.CONTROL_POINT__TO_ARCH_ON_USE_CONTROL:
+				setToArchOnUseControl((Table)newValue);
 				return;
 			case BasePackage.CONTROL_POINT__AUX:
 				setAux((Resource)newValue);
@@ -250,8 +250,8 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
-				setGetArchOnUseControl((Table)null);
+			case BasePackage.CONTROL_POINT__TO_ARCH_ON_USE_CONTROL:
+				setToArchOnUseControl((Table)null);
 				return;
 			case BasePackage.CONTROL_POINT__AUX:
 				setAux(AUX_EDEFAULT);
@@ -268,8 +268,8 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.CONTROL_POINT__GET_ARCH_ON_USE_CONTROL:
-				return getArchOnUseControl != null;
+			case BasePackage.CONTROL_POINT__TO_ARCH_ON_USE_CONTROL:
+				return toArchOnUseControl != null;
 			case BasePackage.CONTROL_POINT__AUX:
 				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
 		}

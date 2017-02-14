@@ -41,15 +41,15 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.UtilImpl#getNewline <em>Newline</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.UtilImpl#getAux <em>Aux</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.UtilImpl#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.UtilImpl#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.UtilImpl#getMONTHalt <em>MONT Halt</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.impl.UtilImpl#getGetRawBytes <em>Get Raw Bytes</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.impl.UtilImpl#getToRawBytes <em>To Raw Bytes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -155,14 +155,14 @@ public class UtilImpl extends EObjectImpl implements Util {
 	protected String[] montHalt = MONT_HALT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGetRawBytes() <em>Get Raw Bytes</em>}' reference.
+	 * The cached value of the '{@link #getToRawBytes() <em>To Raw Bytes</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetRawBytes()
+	 * @see #getToRawBytes()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table getRawBytes;
+	protected Table toRawBytes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,16 +293,16 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetRawBytes() {
-		if (getRawBytes != null && getRawBytes.eIsProxy()) {
-			InternalEObject oldGetRawBytes = (InternalEObject)getRawBytes;
-			getRawBytes = (Table)eResolveProxy(oldGetRawBytes);
-			if (getRawBytes != oldGetRawBytes) {
+	public Table getToRawBytes() {
+		if (toRawBytes != null && toRawBytes.eIsProxy()) {
+			InternalEObject oldToRawBytes = (InternalEObject)toRawBytes;
+			toRawBytes = (Table)eResolveProxy(oldToRawBytes);
+			if (toRawBytes != oldToRawBytes) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__GET_RAW_BYTES, oldGetRawBytes, getRawBytes));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__TO_RAW_BYTES, oldToRawBytes, toRawBytes));
 			}
 		}
-		return getRawBytes;
+		return toRawBytes;
 	}
 
 	/**
@@ -310,8 +310,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetRawBytes() {
-		return getRawBytes;
+	public Table basicGetToRawBytes() {
+		return toRawBytes;
 	}
 
 	/**
@@ -319,11 +319,11 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetRawBytes(Table newGetRawBytes) {
-		Table oldGetRawBytes = getRawBytes;
-		getRawBytes = newGetRawBytes;
+	public void setToRawBytes(Table newToRawBytes) {
+		Table oldToRawBytes = toRawBytes;
+		toRawBytes = newToRawBytes;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__GET_RAW_BYTES, oldGetRawBytes, getRawBytes));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__TO_RAW_BYTES, oldToRawBytes, toRawBytes));
 	}
 
 	/**
@@ -331,7 +331,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void error(String msg) {
+	public void error(final String msg) {
 		System.out.println(msg);
 		System.exit(0);
 	}
@@ -341,7 +341,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void RemoveLinesFromFile(String dirName, String fileName, int replace) {
+	public void RemoveLinesFromFile(final String dirName, final String fileName, final int replace) {
 						java.io.PrintStream out = null;
 						java.io.LineNumberReader in = null;
 						String line = null;
@@ -398,7 +398,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String AltName(String str) {
+	public String AltName(final String str) {
 		if (str == null || str.length() == 0)
 		            return null;
 		        String s = str;
@@ -429,7 +429,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String formatDescriptionBase(String s, String prefix) {
+	public String formatDescriptionBase(final String s, final String prefix) {
 		if (s == null)
 		            return "";
 		        String raw = decodeHTMLChars(s);
@@ -462,7 +462,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String formatDescription(String s) {
+	public String formatDescription(final String s) {
 		return formatDescriptionBase(s,"");
 	}
 
@@ -471,7 +471,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String formatDescriptionL1(String s) {
+	public String formatDescriptionL1(final String s) {
 		return formatDescriptionBase(s,"/// ");
 	}
 
@@ -480,7 +480,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String formatDescriptionL2(String s) {
+	public String formatDescriptionL2(final String s) {
 		return formatDescriptionBase(s,"    /// ");
 	}
 
@@ -489,7 +489,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String formatDescriptionL4(String s) {
+	public String formatDescriptionL4(final String s) {
 		return formatDescriptionBase(s,"/// ");
 	}
 
@@ -498,7 +498,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String formatDescriptionL5(String s) {
+	public String formatDescriptionL5(final String s) {
 		return formatDescriptionBase(s,"    /// ");
 	}
 
@@ -507,7 +507,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String descriptionAsString(String s) {
+	public String descriptionAsString(final String s) {
 		if (s == null)
 		            return "";
 		        String raw = decodeHTMLChars(s);
@@ -534,7 +534,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String decodeHTMLChars(String s) {
+	public String decodeHTMLChars(final String s) {
 		 if (s == null || s.length() == 0)
 		            return s;
 		        StringBuffer x = new StringBuffer();
@@ -588,7 +588,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isArray(String s) {
+	public boolean isArray(final String s) {
 		return s.endsWith("]") ? true : false;
 	}
 
@@ -597,7 +597,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String NumberRawDataTypeBytes(String s) {
+	public String NumberRawDataTypeBytes(final String s) {
 		return (String)TableImpl.RAW_BYTES_EDEFAULT.get(s);
 		
 	}
@@ -607,7 +607,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String RawDataTypeTotalBytes(String s) {
+	public String RawDataTypeTotalBytes(final String s) {
 					if (isArray(s)) {
 					int b;
 					int n = Integer.parseInt(NumberOfItems(s));
@@ -629,7 +629,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String NumberOfItems(String s) {
+	public String NumberOfItems(final String s) {
 				if (s.startsWith("&lt;"))
 					return "1";
 				if (!isArray(s))
@@ -651,7 +651,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getRawDataTypeIndex(String s) {
+	public int getRawDataTypeIndex(final String s) {
 				if (s.startsWith("&lt;"))
 					return 0;
 				if (s.startsWith("["))
@@ -672,7 +672,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toArrayTime(String s) {
+	public String toArrayTime(final String s) {
 				    	//The required string date form is "YYYY-MM-DDThh:mm:ss.ssss".
 				    	alma.hla.runtime.asdm.types.ArrayTime t = new alma.hla.runtime.asdm.types.ArrayTime ("20" + parseDateString(s,true) + "T00:00:00.0");
 				    	long l = t.get();
@@ -684,7 +684,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String parseDateString(String s, boolean alt) {
+	public String parseDateString(final String s, final boolean alt) {
 				int pos = 0;
 				int n = s.indexOf('-'); 	if (n == -1) return null;
 				String yy = s.substring(pos,n);
@@ -711,7 +711,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String normalizeNumber(String wdt, String value) {
+	public String normalizeNumber(final String wdt, final String value) {
 		 if (wdt.equals("boolean"))
 				   return normalizeBoolean(value);
 			   else if (wdt.equals("double") || wdt.equals("float"))
@@ -725,7 +725,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String normalizeFloat(String value) {
+	public String normalizeFloat(final String value) {
 			   try {
 		          // Does value contain a valid "double" or "float"?
 				  Double.parseDouble(value);
@@ -766,7 +766,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String normalizeBoolean(String value) {
+	public String normalizeBoolean(final String value) {
 			   int indexOfDot = value.indexOf('.');
 			   if (-1 == indexOfDot) {
 				   return value;
@@ -814,7 +814,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toDatabaseDate(String s) {
+	public String toDatabaseDate(final String s) {
 		return parseDateString(s,false);
 	}
 
@@ -836,9 +836,9 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return getMONTH();
 			case BasePackage.UTIL__MONT_HALT:
 				return getMONTHalt();
-			case BasePackage.UTIL__GET_RAW_BYTES:
-				if (resolve) return getGetRawBytes();
-				return basicGetGetRawBytes();
+			case BasePackage.UTIL__TO_RAW_BYTES:
+				if (resolve) return getToRawBytes();
+				return basicGetToRawBytes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -866,8 +866,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt((String[])newValue);
 				return;
-			case BasePackage.UTIL__GET_RAW_BYTES:
-				setGetRawBytes((Table)newValue);
+			case BasePackage.UTIL__TO_RAW_BYTES:
+				setToRawBytes((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -896,8 +896,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt(MONT_HALT_EDEFAULT);
 				return;
-			case BasePackage.UTIL__GET_RAW_BYTES:
-				setGetRawBytes((Table)null);
+			case BasePackage.UTIL__TO_RAW_BYTES:
+				setToRawBytes((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -921,8 +921,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return MONTH_EDEFAULT == null ? month != null : !MONTH_EDEFAULT.equals(month);
 			case BasePackage.UTIL__MONT_HALT:
 				return MONT_HALT_EDEFAULT == null ? montHalt != null : !MONT_HALT_EDEFAULT.equals(montHalt);
-			case BasePackage.UTIL__GET_RAW_BYTES:
-				return getRawBytes != null;
+			case BasePackage.UTIL__TO_RAW_BYTES:
+				return toRawBytes != null;
 		}
 		return super.eIsSet(featureID);
 	}

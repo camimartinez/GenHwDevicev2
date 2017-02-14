@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getAssemblyName <em>Assembly Name</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getDirPath <em>Dir Path</em>}</li>
@@ -53,12 +54,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getSimMonitorPoints <em>Sim Monitor Points</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getSimControlPoints <em>Sim Control Points</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getAux5 <em>Aux5</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getAddAllMP <em>Add All MP</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getAddAllCP <em>Add All CP</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getSetFormatDescriptions <em>Set Format Descriptions</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getGetSheetColumns <em>Get Sheet Columns</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getToAddAllMP <em>To Add All MP</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getToAddAllCP <em>To Add All CP</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getToFormatDescriptions <em>To Format Descriptions</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.SWModule#getToSheetColumns <em>To Sheet Columns</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule()
  * @model
@@ -181,7 +181,7 @@ public interface SWModule extends EObject {
 	 * @return the value of the '<em>Row</em>' attribute.
 	 * @see #setRow(String[])
 	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_Row()
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getRow();
@@ -207,7 +207,7 @@ public interface SWModule extends EObject {
 	 * @return the value of the '<em>Parent Row</em>' attribute.
 	 * @see #setParentRow(String[])
 	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_ParentRow()
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getParentRow();
@@ -405,113 +405,113 @@ public interface SWModule extends EObject {
 	void setAux5(BaseFactoryImpl value);
 
 	/**
-	 * Returns the value of the '<em><b>Add All MP</b></em>' reference.
+	 * Returns the value of the '<em><b>To Add All MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Add All MP</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Add All MP</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Add All MP</em>' reference.
-	 * @see #setAddAllMP(Monitor)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_AddAllMP()
+	 * @return the value of the '<em>To Add All MP</em>' reference.
+	 * @see #setToAddAllMP(Monitor)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_ToAddAllMP()
 	 * @model
 	 * @generated
 	 */
-	Monitor getAddAllMP();
+	Monitor getToAddAllMP();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.SWModule#getAddAllMP <em>Add All MP</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.SWModule#getToAddAllMP <em>To Add All MP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Add All MP</em>' reference.
-	 * @see #getAddAllMP()
+	 * @param value the new value of the '<em>To Add All MP</em>' reference.
+	 * @see #getToAddAllMP()
 	 * @generated
 	 */
-	void setAddAllMP(Monitor value);
+	void setToAddAllMP(Monitor value);
 
 	/**
-	 * Returns the value of the '<em><b>Add All CP</b></em>' reference.
+	 * Returns the value of the '<em><b>To Add All CP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Add All CP</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Add All CP</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Add All CP</em>' reference.
-	 * @see #setAddAllCP(Control)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_AddAllCP()
+	 * @return the value of the '<em>To Add All CP</em>' reference.
+	 * @see #setToAddAllCP(Control)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_ToAddAllCP()
 	 * @model
 	 * @generated
 	 */
-	Control getAddAllCP();
+	Control getToAddAllCP();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.SWModule#getAddAllCP <em>Add All CP</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.SWModule#getToAddAllCP <em>To Add All CP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Add All CP</em>' reference.
-	 * @see #getAddAllCP()
+	 * @param value the new value of the '<em>To Add All CP</em>' reference.
+	 * @see #getToAddAllCP()
 	 * @generated
 	 */
-	void setAddAllCP(Control value);
+	void setToAddAllCP(Control value);
 
 	/**
-	 * Returns the value of the '<em><b>Set Format Descriptions</b></em>' reference.
+	 * Returns the value of the '<em><b>To Format Descriptions</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Set Format Descriptions</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Format Descriptions</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Set Format Descriptions</em>' reference.
-	 * @see #setSetFormatDescriptions(Util)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_SetFormatDescriptions()
+	 * @return the value of the '<em>To Format Descriptions</em>' reference.
+	 * @see #setToFormatDescriptions(Util)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_ToFormatDescriptions()
 	 * @model
 	 * @generated
 	 */
-	Util getSetFormatDescriptions();
+	Util getToFormatDescriptions();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.SWModule#getSetFormatDescriptions <em>Set Format Descriptions</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.SWModule#getToFormatDescriptions <em>To Format Descriptions</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Set Format Descriptions</em>' reference.
-	 * @see #getSetFormatDescriptions()
+	 * @param value the new value of the '<em>To Format Descriptions</em>' reference.
+	 * @see #getToFormatDescriptions()
 	 * @generated
 	 */
-	void setSetFormatDescriptions(Util value);
+	void setToFormatDescriptions(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Sheet Columns</b></em>' reference.
+	 * Returns the value of the '<em><b>To Sheet Columns</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Sheet Columns</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Sheet Columns</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Sheet Columns</em>' reference.
-	 * @see #setGetSheetColumns(Table)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_GetSheetColumns()
+	 * @return the value of the '<em>To Sheet Columns</em>' reference.
+	 * @see #setToSheetColumns(Table)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getSWModule_ToSheetColumns()
 	 * @model
 	 * @generated
 	 */
-	Table getGetSheetColumns();
+	Table getToSheetColumns();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.SWModule#getGetSheetColumns <em>Get Sheet Columns</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.SWModule#getToSheetColumns <em>To Sheet Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Sheet Columns</em>' reference.
-	 * @see #getGetSheetColumns()
+	 * @param value the new value of the '<em>To Sheet Columns</em>' reference.
+	 * @see #getToSheetColumns()
 	 * @generated
 	 */
-	void setGetSheetColumns(Table value);
+	void setToSheetColumns(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tmonitorPoints.getResources().add(mp);\r\n\t\tif (!(((MonitorImpl)mp).RCA().equals(\"none\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x00000\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30000\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30001\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30002\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30003\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30004\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30005\")\r\n\t\t\t\t)){\r\n\t\t\tfor(int i=0;i< simMonitorPoints.getResources().size();i++)\r\n\t\t\t\tif(((MonitorImpl)mp).RCA().equals(((MonitorImpl)simMonitorPoints.getResources().get(i)).RCA()))\r\n\t\t\t\t\treturn;\r\n\t\t\tsimMonitorPoints.getResources().add(mp);\r\n\t\t}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tmonitorPoints.getResources().add(mp);\r\n\t\tif (!(((MonitorImpl)mp).RCA().equals(\"none\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x00000\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30000\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30001\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30002\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30003\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30004\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30005\")\r\n\t\t\t\t)){\r\n\t\t\tfor(int i=0;i&lt; simMonitorPoints.getResources().size();i++)\r\n\t\t\t\tif(((MonitorImpl)mp).RCA().equals(((MonitorImpl)simMonitorPoints.getResources().get(i)).RCA()))\r\n\t\t\t\t\treturn;\r\n\t\t\tsimMonitorPoints.getResources().add(mp);\r\n\t\t}'"
 	 * @generated
 	 */
 	void addMP(Resource mp);
@@ -519,7 +519,7 @@ public interface SWModule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tcontrolPoints.getResources().add(cp);\r\n\t\tif (!(((ControlImpl)cp).RCA().equals(\"none\") ||\r\n\t\t\t\t((ControlImpl)cp).RCA().equals(\"0x31000\") ||\r\n\t\t\t\t((ControlImpl)cp).RCA().equals(\"0x31001\")\r\n\t\t\t\t)){\r\n\t\t\tfor(int i=0;i< simControlPoints.getResources().size();i++)\r\n\t\t\t\tif(((ControlImpl)cp).RCA().equals(((ControlImpl)simControlPoints.getResources().get(i)).RCA()))\r\n\t\t\t\t\treturn;\r\n\t\t\tsimControlPoints.getResources().add(cp);\r\n\t\t}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tcontrolPoints.getResources().add(cp);\r\n\t\tif (!(((ControlImpl)cp).RCA().equals(\"none\") ||\r\n\t\t\t\t((ControlImpl)cp).RCA().equals(\"0x31000\") ||\r\n\t\t\t\t((ControlImpl)cp).RCA().equals(\"0x31001\")\r\n\t\t\t\t)){\r\n\t\t\tfor(int i=0;i&lt; simControlPoints.getResources().size();i++)\r\n\t\t\t\tif(((ControlImpl)cp).RCA().equals(((ControlImpl)simControlPoints.getResources().get(i)).RCA()))\r\n\t\t\t\t\treturn;\r\n\t\t\tsimControlPoints.getResources().add(cp);\r\n\t\t}'"
 	 * @generated
 	 */
 	void addCP(Resource cp);

@@ -33,10 +33,10 @@ import org.xml.sax.SAXParseException;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.SimpleErrorHandler#isErrors <em>Errors</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getSimpleErrorHandler()
  * @model

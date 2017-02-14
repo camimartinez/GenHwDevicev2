@@ -33,11 +33,11 @@ import alma.Control.datamodel.meta.base.Table;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.Main#getTmp <em>Tmp</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.Main#getGetInfoFromMain <em>Get Info From Main</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.Main#getToInfoFromMain <em>To Info From Main</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.amb.AmbPackage#getMain()
  * @model
@@ -71,30 +71,30 @@ public interface Main extends MainBase {
 	void setTmp(BaseFactory value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info From Main</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info From Main</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info From Main</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info From Main</em>' reference.
-	 * @see #setGetInfoFromMain(Table)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMain_GetInfoFromMain()
+	 * @return the value of the '<em>To Info From Main</em>' reference.
+	 * @see #setToInfoFromMain(Table)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMain_ToInfoFromMain()
 	 * @model
 	 * @generated
 	 */
-	Table getGetInfoFromMain();
+	Table getToInfoFromMain();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Main#getGetInfoFromMain <em>Get Info From Main</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Main#getToInfoFromMain <em>To Info From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info From Main</em>' reference.
-	 * @see #getGetInfoFromMain()
+	 * @param value the new value of the '<em>To Info From Main</em>' reference.
+	 * @see #getToInfoFromMain()
 	 * @generated
 	 */
-	void setGetInfoFromMain(Table value);
+	void setToInfoFromMain(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

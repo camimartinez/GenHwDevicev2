@@ -36,19 +36,19 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getRow <em>Row</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getAmask <em>Amask</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getAux <em>Aux</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getGetInfoSheet <em>Get Info Sheet</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getGetDataFromMain <em>Get Data From Main</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getIsMPDataType <em>Is MP Data Type</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getIsCPDataType <em>Is CP Data Type</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getUtilsToData <em>Utils To Data</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getToInfoSheet <em>To Info Sheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getToDataFromMain <em>To Data From Main</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getToMPDataType <em>To MP Data Type</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getToCPDataType <em>To CP Data Type</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.MandC#getToUtilsToData <em>To Utils To Data</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC()
  * @model
@@ -66,7 +66,7 @@ public interface MandC extends EObject {
 	 * @return the value of the '<em>Row</em>' attribute.
 	 * @see #setRow(String[])
 	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_Row()
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getRow();
@@ -144,7 +144,7 @@ public interface MandC extends EObject {
 	 * @return the value of the '<em>Amask</em>' attribute.
 	 * @see #setAmask(String[])
 	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_Amask()
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getAmask();
@@ -186,134 +186,134 @@ public interface MandC extends EObject {
 	void setAux(BaseFactory value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info Sheet</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info Sheet</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info Sheet</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info Sheet</em>' reference.
-	 * @see #setGetInfoSheet(MandCBase)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_GetInfoSheet()
+	 * @return the value of the '<em>To Info Sheet</em>' reference.
+	 * @see #setToInfoSheet(MandCBase)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_ToInfoSheet()
 	 * @model
 	 * @generated
 	 */
-	MandCBase getGetInfoSheet();
+	MandCBase getToInfoSheet();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getGetInfoSheet <em>Get Info Sheet</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getToInfoSheet <em>To Info Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info Sheet</em>' reference.
-	 * @see #getGetInfoSheet()
+	 * @param value the new value of the '<em>To Info Sheet</em>' reference.
+	 * @see #getToInfoSheet()
 	 * @generated
 	 */
-	void setGetInfoSheet(MandCBase value);
+	void setToInfoSheet(MandCBase value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Data From Main</b></em>' reference.
+	 * Returns the value of the '<em><b>To Data From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Data From Main</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Data From Main</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Data From Main</em>' reference.
-	 * @see #setGetDataFromMain(Table)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_GetDataFromMain()
+	 * @return the value of the '<em>To Data From Main</em>' reference.
+	 * @see #setToDataFromMain(Table)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_ToDataFromMain()
 	 * @model
 	 * @generated
 	 */
-	Table getGetDataFromMain();
+	Table getToDataFromMain();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getGetDataFromMain <em>Get Data From Main</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getToDataFromMain <em>To Data From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Data From Main</em>' reference.
-	 * @see #getGetDataFromMain()
+	 * @param value the new value of the '<em>To Data From Main</em>' reference.
+	 * @see #getToDataFromMain()
 	 * @generated
 	 */
-	void setGetDataFromMain(Table value);
+	void setToDataFromMain(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Is MP Data Type</b></em>' reference.
+	 * Returns the value of the '<em><b>To MP Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is MP Data Type</em>' reference isn't clear,
+	 * If the meaning of the '<em>To MP Data Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is MP Data Type</em>' reference.
-	 * @see #setIsMPDataType(Monitor)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_IsMPDataType()
+	 * @return the value of the '<em>To MP Data Type</em>' reference.
+	 * @see #setToMPDataType(Monitor)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_ToMPDataType()
 	 * @model
 	 * @generated
 	 */
-	Monitor getIsMPDataType();
+	Monitor getToMPDataType();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getIsMPDataType <em>Is MP Data Type</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getToMPDataType <em>To MP Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is MP Data Type</em>' reference.
-	 * @see #getIsMPDataType()
+	 * @param value the new value of the '<em>To MP Data Type</em>' reference.
+	 * @see #getToMPDataType()
 	 * @generated
 	 */
-	void setIsMPDataType(Monitor value);
+	void setToMPDataType(Monitor value);
 
 	/**
-	 * Returns the value of the '<em><b>Is CP Data Type</b></em>' reference.
+	 * Returns the value of the '<em><b>To CP Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is CP Data Type</em>' reference isn't clear,
+	 * If the meaning of the '<em>To CP Data Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is CP Data Type</em>' reference.
-	 * @see #setIsCPDataType(Control)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_IsCPDataType()
+	 * @return the value of the '<em>To CP Data Type</em>' reference.
+	 * @see #setToCPDataType(Control)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_ToCPDataType()
 	 * @model
 	 * @generated
 	 */
-	Control getIsCPDataType();
+	Control getToCPDataType();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getIsCPDataType <em>Is CP Data Type</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getToCPDataType <em>To CP Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is CP Data Type</em>' reference.
-	 * @see #getIsCPDataType()
+	 * @param value the new value of the '<em>To CP Data Type</em>' reference.
+	 * @see #getToCPDataType()
 	 * @generated
 	 */
-	void setIsCPDataType(Control value);
+	void setToCPDataType(Control value);
 
 	/**
-	 * Returns the value of the '<em><b>Utils To Data</b></em>' reference.
+	 * Returns the value of the '<em><b>To Utils To Data</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Utils To Data</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Utils To Data</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Utils To Data</em>' reference.
-	 * @see #setUtilsToData(Util)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_UtilsToData()
+	 * @return the value of the '<em>To Utils To Data</em>' reference.
+	 * @see #setToUtilsToData(Util)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMandC_ToUtilsToData()
 	 * @model
 	 * @generated
 	 */
-	Util getUtilsToData();
+	Util getToUtilsToData();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getUtilsToData <em>Utils To Data</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.MandC#getToUtilsToData <em>To Utils To Data</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Utils To Data</em>' reference.
-	 * @see #getUtilsToData()
+	 * @param value the new value of the '<em>To Utils To Data</em>' reference.
+	 * @see #getToUtilsToData()
 	 * @generated
 	 */
-	void setUtilsToData(Util value);
+	void setToUtilsToData(Util value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -503,7 +503,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(ScaleCell().equals(\"none\") && OffsetCell().equals(\"none\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"1.0\") && OffsetCell().equals(\"0.0\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"1.0\") && OffsetCell().equals(\"none\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"none\") && OffsetCell().equals(\"0.0\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\r\n\t\treturn true;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(ScaleCell().equals(\"none\") &amp;&amp; OffsetCell().equals(\"none\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"1.0\") &amp;&amp; OffsetCell().equals(\"0.0\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"1.0\") &amp;&amp; OffsetCell().equals(\"none\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"none\") &amp;&amp; OffsetCell().equals(\"0.0\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\r\n\t\treturn true;'"
 	 * @generated
 	 */
 	boolean isConversion();
@@ -530,7 +530,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, \"Raw Data Type\")];\r\n\t\tif(!mcp.isDependent())\r\n\t\t\treturn s.endsWith(\"]\") ? true : false;\r\n\t\tif(s.startsWith(\"&lt;\") && s.substring(1).indexOf(\"&lt;\") != -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = row[BaseFactory.eINSTANCE.createTable().getColNum(sheet, \"Raw Data Type\")];\r\n\t\tif(!mcp.isDependent())\r\n\t\t\treturn s.endsWith(\"]\") ? true : false;\r\n\t\tif(s.startsWith(\"&amp;lt;\") &amp;&amp; s.substring(1).indexOf(\"&amp;lt;\") != -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
 	boolean isRawDataArray();
@@ -571,7 +571,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(isDependentBit() && RawDataTypeCell().indexOf(\"-\") != -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(isDependentBit() &amp;&amp; RawDataTypeCell().indexOf(\"-\") != -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
 	boolean isDependentGroupBit();
@@ -580,7 +580,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"&lt;\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"&amp;lt;\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
 	boolean isDependentBit();
@@ -607,7 +607,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"&lt;\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"&amp;lt;\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
 	boolean isDependentBitElement();
@@ -624,7 +624,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(isDependentArrayElement())\r\n\t\t{\r\n\t\t\tint n = s.indexOf(\"]\");\r\n\t\t\treturn s.substring(1, n);\r\n\t\t}\r\n\t\tif(!isRawDataArray())\r\n\t\t\treturn \"0\";\r\n\t\tif(isDependentBitElement())\r\n\t\t{\r\n\t\t\tint n = s.indexOf(\"&gt;\");\r\n\t\t\treturn s.substring(4, n);\r\n\t\t}\r\n\t\treturn \"0\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(isDependentArrayElement())\r\n\t\t{\r\n\t\t\tint n = s.indexOf(\"]\");\r\n\t\t\treturn s.substring(1, n);\r\n\t\t}\r\n\t\tif(!isRawDataArray())\r\n\t\t\treturn \"0\";\r\n\t\tif(isDependentBitElement())\r\n\t\t{\r\n\t\t\tint n = s.indexOf(\"&amp;gt;\");\r\n\t\t\treturn s.substring(4, n);\r\n\t\t}\r\n\t\treturn \"0\";'"
 	 * @generated
 	 */
 	String GetDimension();
@@ -633,7 +633,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&lt;\"))// &lt;0&gt;\r\n\t\t\treturn false;\r\n\t\tif(!s.endsWith(\"&gt;\"))\r\n\t\t\treturn false;\r\n\t\tif(s.indexOf(\"-\") == -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&amp;lt;\"))// &amp;lt;0&amp;gt;\r\n\t\t\treturn false;\r\n\t\tif(!s.endsWith(\"&amp;gt;\"))\r\n\t\t\treturn false;\r\n\t\tif(s.indexOf(\"-\") == -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
 	boolean isSingleBit();
@@ -642,7 +642,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tint n = s.indexOf(\"&gt;\");\r\n\t\treturn s.substring(4, n);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tint n = s.indexOf(\"&amp;gt;\");\r\n\t\treturn s.substring(4, n);'"
 	 * @generated
 	 */
 	String getBit();
@@ -651,7 +651,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&lt;\") || !s.endsWith(\"&gt;\"))\r\n\t\t\treturn \"\";\r\n\t\tif(isSingleBit())\r\n\t\t\treturn getBit();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(4, n);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&amp;lt;\") || !s.endsWith(\"&amp;gt;\"))\r\n\t\t\treturn \"\";\r\n\t\tif(isSingleBit())\r\n\t\t\treturn getBit();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(4, n);'"
 	 * @generated
 	 */
 	String getFirstBit();
@@ -660,7 +660,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&lt;\") || !s.endsWith(\"&gt;\"))\r\n\t\t\treturn \"\";\r\n\t\tif(isSingleBit())\r\n\t\t\treturn getBit();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(n + 1, s.length() - 4);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&amp;lt;\") || !s.endsWith(\"&amp;gt;\"))\r\n\t\t\treturn \"\";\r\n\t\tif(isSingleBit())\r\n\t\t\treturn getBit();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(n + 1, s.length() - 4);'"
 	 * @generated
 	 */
 	String getLastBit();
@@ -669,7 +669,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(isRawDataArray())\r\n\t\t{\r\n\t\t\ts = s.substring(4);\r\n\t\t\tint n = s.indexOf(\"&lt;\");\r\n\t\t\tint m = s.substring(n + 4).indexOf(\"&gt;\");\r\n\t\t\tif(n == -1 || m == -1)\r\n\t\t\t\treturn \"\";\r\n\t\t\ts = s.substring(n + 4, m + n + 4);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\ts = s.substring(4, s.length() - 4);\r\n\t\t}\r\n\t\t// \"s\" is of type \"i-j\"\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(0, n);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(isRawDataArray())\r\n\t\t{\r\n\t\t\ts = s.substring(4);\r\n\t\t\tint n = s.indexOf(\"&amp;lt;\");\r\n\t\t\tint m = s.substring(n + 4).indexOf(\"&amp;gt;\");\r\n\t\t\tif(n == -1 || m == -1)\r\n\t\t\t\treturn \"\";\r\n\t\t\ts = s.substring(n + 4, m + n + 4);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\ts = s.substring(4, s.length() - 4);\r\n\t\t}\r\n\t\t// \"s\" is of type \"i-j\"\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(0, n);'"
 	 * @generated
 	 */
 	String getGroupStart();
@@ -687,7 +687,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString firstBit = getGroupStart();\r\n\t\tString lastBit = getGroupEnd();\r\n\t\tint n = Integer.parseInt(firstBit);\r\n\t\tint m = Integer.parseInt(lastBit);\r\n\t\tint intMaskSize = m - n;\r\n\t\tint intMask = 0;\r\n\t\tfor(int i = 0; i <= intMaskSize; i++)\r\n\t\t{\r\n\t\t\tintMask += Math.pow(2, i);\r\n\t\t}\r\n\t\tString mask = \"0x\".concat(Integer.toHexString(intMask).toUpperCase());\r\n\t\treturn mask;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString firstBit = getGroupStart();\r\n\t\tString lastBit = getGroupEnd();\r\n\t\tint n = Integer.parseInt(firstBit);\r\n\t\tint m = Integer.parseInt(lastBit);\r\n\t\tint intMaskSize = m - n;\r\n\t\tint intMask = 0;\r\n\t\tfor(int i = 0; i &lt;= intMaskSize; i++)\r\n\t\t{\r\n\t\t\tintMask += Math.pow(2, i);\r\n\t\t}\r\n\t\tString mask = \"0x\".concat(Integer.toHexString(intMask).toUpperCase());\r\n\t\treturn mask;'"
 	 * @generated
 	 */
 	String getGroupMask();
@@ -696,7 +696,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif((s.indexOf(\"[\") != -1) && (s.indexOf(\"-\") != -1)\r\n\t\t\t\t&& (s.indexOf(\"]\") != -1))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif((s.indexOf(\"[\") != -1) &amp;&amp; (s.indexOf(\"-\") != -1)\r\n\t\t\t\t&amp;&amp; (s.indexOf(\"]\") != -1))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
 	boolean isRawSubArray();
@@ -720,7 +720,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tint end = s.indexOf(\"]\");\r\n\t\tif(end == -1)\r\n\t\t\tthrow new RuntimeException(\r\n\t\t\t\t\t\"In Raw Datatype column of monitor spreadsheet, subarray notation does not contain \\\"]\\\" (\"\r\n\t\t\t\t\t+ s + \")\");\r\n\t\tint start = s.indexOf(\"[\") + 1;\r\n\t\tif(start < 1)\r\n\t\t\tthrow new RuntimeException(\r\n\t\t\t\t\t\"In Raw Datatype column of monitor spreadsheet, subarray notation does not start with \\\"[\\\" (\"\r\n\t\t\t\t\t+ s + \")\");\r\n\r\n\t\tString subString = s.substring(start, end);\r\n\t\tString interpretStrings[] = subString.split(\"-\");\r\n\t\tif(interpretStrings.length != 2)\r\n\t\t\tthrow new RuntimeException(\r\n\t\t\t\t\t\"In Raw Datatype column of monitor spreadsheet, subarray notation does contain a range (\"\r\n\t\t\t\t\t+ s + \")\");\r\n\t\tint index = -1;\r\n\t\ttry {\r\n\t\t\tif(startOrEnd == true)\r\n\t\t\t\tindex = Integer.parseInt(interpretStrings[0]);\r\n\t\t\telse\r\n\t\t\t\tindex = Integer.parseInt(interpretStrings[1]);\r\n\t\t}\r\n\t\tcatch(NumberFormatException err) {\r\n\t\t\tthrow new RuntimeException(\r\n\t\t\t\t\t\"In Raw Datatype column of monitor spreadsheet, subarray notation does not contain an integer as index (\"\r\n\t\t\t\t\t+ s\r\n\t\t\t\t\t+ \", \"\r\n\t\t\t\t\t+ interpretStrings[0]\r\n\t\t\t\t\t                   + interpretStrings[1] + \")\");\r\n\t\t}\r\n\t\treturn index;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tint end = s.indexOf(\"]\");\r\n\t\tif(end == -1)\r\n\t\t\tthrow new RuntimeException(\r\n\t\t\t\t\t\"In Raw Datatype column of monitor spreadsheet, subarray notation does not contain \\\"]\\\" (\"\r\n\t\t\t\t\t+ s + \")\");\r\n\t\tint start = s.indexOf(\"[\") + 1;\r\n\t\tif(start &lt; 1)\r\n\t\t\tthrow new RuntimeException(\r\n\t\t\t\t\t\"In Raw Datatype column of monitor spreadsheet, subarray notation does not start with \\\"[\\\" (\"\r\n\t\t\t\t\t+ s + \")\");\r\n\r\n\t\tString subString = s.substring(start, end);\r\n\t\tString interpretStrings[] = subString.split(\"-\");\r\n\t\tif(interpretStrings.length != 2)\r\n\t\t\tthrow new RuntimeException(\r\n\t\t\t\t\t\"In Raw Datatype column of monitor spreadsheet, subarray notation does contain a range (\"\r\n\t\t\t\t\t+ s + \")\");\r\n\t\tint index = -1;\r\n\t\ttry {\r\n\t\t\tif(startOrEnd == true)\r\n\t\t\t\tindex = Integer.parseInt(interpretStrings[0]);\r\n\t\t\telse\r\n\t\t\t\tindex = Integer.parseInt(interpretStrings[1]);\r\n\t\t}\r\n\t\tcatch(NumberFormatException err) {\r\n\t\t\tthrow new RuntimeException(\r\n\t\t\t\t\t\"In Raw Datatype column of monitor spreadsheet, subarray notation does not contain an integer as index (\"\r\n\t\t\t\t\t+ s\r\n\t\t\t\t\t+ \", \"\r\n\t\t\t\t\t+ interpretStrings[0]\r\n\t\t\t\t\t                   + interpretStrings[1] + \")\");\r\n\t\t}\r\n\t\treturn index;'"
 	 * @generated
 	 */
 	int findRawSubArrayIndex(String s, boolean startOrEnd);
@@ -745,7 +745,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!isSingleBit())\r\n\t\t\treturn \"\";\r\n\t\tString s = null;\r\n\t\tif(isRawDataArray())\r\n\t\t{\r\n\t\t\ts = RawDataTypeCell().substring(4);\r\n\t\t\tint n = s.indexOf(\"&lt;\");\r\n\t\t\tint m = s.substring(n + 4).indexOf(\"&gt;\");\r\n\t\t\ts = s.substring(n + 4, m + n + 4);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\ts = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);\r\n\t\t}\r\n\t\tint n = Integer.parseInt(s);\r\n\t\treturn amask[n];'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!isSingleBit())\r\n\t\t\treturn \"\";\r\n\t\tString s = null;\r\n\t\tif(isRawDataArray())\r\n\t\t{\r\n\t\t\ts = RawDataTypeCell().substring(4);\r\n\t\t\tint n = s.indexOf(\"&amp;lt;\");\r\n\t\t\tint m = s.substring(n + 4).indexOf(\"&amp;gt;\");\r\n\t\t\ts = s.substring(n + 4, m + n + 4);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\ts = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);\r\n\t\t}\r\n\t\tint n = Integer.parseInt(s);\r\n\t\treturn amask[n];'"
 	 * @generated
 	 */
 	String getMask();

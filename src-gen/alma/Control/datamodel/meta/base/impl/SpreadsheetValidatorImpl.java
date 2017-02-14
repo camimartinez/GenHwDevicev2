@@ -44,13 +44,13 @@ import org.xml.sax.ErrorHandler;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetValidatorImpl#getSeh <em>Seh</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetValidatorImpl#getErrorList <em>Error List</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetValidatorImpl#getSehTmp <em>Seh Tmp</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetValidatorImpl#getErrorHandler <em>Error Handler</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -250,7 +250,7 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validate(String xmlFile, String xsdFile) {
+	public boolean validate(final String xmlFile, final String xsdFile) {
 				javax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();
 				factory.setNamespaceAware(true);
 				factory.setValidating(true);

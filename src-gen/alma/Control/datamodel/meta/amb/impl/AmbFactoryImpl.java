@@ -57,7 +57,7 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	 */
 	public static AmbFactory init() {
 		try {
-			AmbFactory theAmbFactory = (AmbFactory)EPackage.Registry.INSTANCE.getEFactory("http://alma/Control/datamodel/meta/amb/1.0"); 
+			AmbFactory theAmbFactory = (AmbFactory)EPackage.Registry.INSTANCE.getEFactory(AmbPackage.eNS_URI);
 			if (theAmbFactory != null) {
 				return theAmbFactory;
 			}

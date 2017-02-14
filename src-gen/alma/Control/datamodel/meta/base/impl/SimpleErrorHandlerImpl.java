@@ -40,10 +40,10 @@ import org.xml.sax.SAXParseException;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SimpleErrorHandlerImpl#isErrors <em>Errors</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -113,7 +113,7 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void error(SAXParseException exception) {
+	public void error(final SAXParseException exception) {
 		System.out.println("error: line "+ exception.getLineNumber() + ": " + exception.getMessage());
 		errors = true;
 	}
@@ -123,7 +123,7 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fatalError(SAXParseException exception) {
+	public void fatalError(final SAXParseException exception) {
 		System.out.println("fatalError: line "+ exception.getLineNumber() + ": " + exception.getMessage());
 		errors = true;
 	}
@@ -133,7 +133,7 @@ public class SimpleErrorHandlerImpl extends EObjectImpl implements SimpleErrorHa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void warning(SAXParseException exception) {
+	public void warning(final SAXParseException exception) {
 		System.out.println("warning: line "+ exception.getLineNumber() + ": " + exception.getMessage());
 		errors = true;
 	}

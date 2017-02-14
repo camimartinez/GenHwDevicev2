@@ -33,12 +33,12 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.eth.Monitor#getMac <em>Mac</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.Monitor#getAux1 <em>Aux1</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.eth.Monitor#getGetInfoMPEth <em>Get Info MP Eth</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.eth.Monitor#getToInfoMPEth <em>To Info MP Eth</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.eth.EthPackage#getMonitor()
  * @model
@@ -98,30 +98,30 @@ public interface Monitor extends MonitorPoint {
 	void setAux1(Resource value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info MP Eth</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info MP Eth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info MP Eth</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info MP Eth</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info MP Eth</em>' reference.
-	 * @see #setGetInfoMPEth(MandC)
-	 * @see alma.Control.datamodel.meta.eth.EthPackage#getMonitor_GetInfoMPEth()
+	 * @return the value of the '<em>To Info MP Eth</em>' reference.
+	 * @see #setToInfoMPEth(MandC)
+	 * @see alma.Control.datamodel.meta.eth.EthPackage#getMonitor_ToInfoMPEth()
 	 * @model
 	 * @generated
 	 */
-	MandC getGetInfoMPEth();
+	MandC getToInfoMPEth();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.Monitor#getGetInfoMPEth <em>Get Info MP Eth</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.Monitor#getToInfoMPEth <em>To Info MP Eth</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info MP Eth</em>' reference.
-	 * @see #getGetInfoMPEth()
+	 * @param value the new value of the '<em>To Info MP Eth</em>' reference.
+	 * @see #getToInfoMPEth()
 	 * @generated
 	 */
-	void setGetInfoMPEth(MandC value);
+	void setToInfoMPEth(MandC value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,7 +259,7 @@ public interface Monitor extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\r\n\t\tif (DataType().equals(\"uint\"))\r\n\t\t\treturn false;\r\n\t\r\n\t\tif ( DataType().equals(\"bool\") || DataType().equals(\"boolean\")\r\n\t\t\t\t|| DataType().equals(\"string\")\r\n\t\t\t\t|| (DataType().equals(\"double\") && isDataArray())\r\n\t\t\t\t|| (DataType().equals(\"int\") && isDataArray()) )\r\n\t\t\treturn false;\r\n\t\treturn true;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\r\n\t\tif (DataType().equals(\"uint\"))\r\n\t\t\treturn false;\r\n\t\r\n\t\tif ( DataType().equals(\"bool\") || DataType().equals(\"boolean\")\r\n\t\t\t\t|| DataType().equals(\"string\")\r\n\t\t\t\t|| (DataType().equals(\"double\") &amp;&amp; isDataArray())\r\n\t\t\t\t|| (DataType().equals(\"int\") &amp;&amp; isDataArray()) )\r\n\t\t\treturn false;\r\n\t\treturn true;'"
 	 * @generated
 	 */
 	boolean isArchived();

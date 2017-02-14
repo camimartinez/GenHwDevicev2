@@ -54,23 +54,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getTmp <em>Tmp</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToAddCP <em>To Add CP</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getGetNoteFromMain <em>Get Note From Main</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToNoteFromMain <em>To Note From Main</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToAddMP <em>To Add MP</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getGetInfoMain <em>Get Info Main</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getGetCPfromControl <em>Get CPfrom Control</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getGetInfoFromMainSheet <em>Get Info From Main Sheet</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getGetMPfromMonitor <em>Get MPfrom Monitor</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getGetDataFromSpread <em>Get Data From Spread</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getGetAPfromArchive <em>Get APfrom Archive</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToinstallEndGeneration <em>Toinstall End Generation</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getGetFromSpreadsheet <em>Get From Spreadsheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToInfoMain <em>To Info Main</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToCPfromControl <em>To CPfrom Control</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToInfoFromMainSheet <em>To Info From Main Sheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToMPfromMonitor <em>To MPfrom Monitor</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToDataFromSpread <em>To Data From Spread</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToAPfromArchive <em>To APfrom Archive</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToInstallEndGeneration <em>To Install End Generation</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToSpreadsheetFrom <em>To Spreadsheet From</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToValidateSpreadsheet <em>To Validate Spreadsheet</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getGetGenericMP <em>Get Generic MP</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.DeviceModelImpl#getToGenericMP <em>To Generic MP</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -106,14 +106,14 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	protected ControlPoint toAddCP;
 
 	/**
-	 * The cached value of the '{@link #getGetNoteFromMain() <em>Get Note From Main</em>}' reference.
+	 * The cached value of the '{@link #getToNoteFromMain() <em>To Note From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetNoteFromMain()
+	 * @see #getToNoteFromMain()
 	 * @generated
 	 * @ordered
 	 */
-	protected Note getNoteFromMain;
+	protected Note toNoteFromMain;
 
 	/**
 	 * The cached value of the '{@link #getToAddMP() <em>To Add MP</em>}' reference.
@@ -126,84 +126,84 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	protected MonitorPoint toAddMP;
 
 	/**
-	 * The cached value of the '{@link #getGetInfoMain() <em>Get Info Main</em>}' reference.
+	 * The cached value of the '{@link #getToInfoMain() <em>To Info Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetInfoMain()
+	 * @see #getToInfoMain()
 	 * @generated
 	 * @ordered
 	 */
-	protected MainBase getInfoMain;
+	protected MainBase toInfoMain;
 
 	/**
-	 * The cached value of the '{@link #getGetCPfromControl() <em>Get CPfrom Control</em>}' reference.
+	 * The cached value of the '{@link #getToCPfromControl() <em>To CPfrom Control</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetCPfromControl()
+	 * @see #getToCPfromControl()
 	 * @generated
 	 * @ordered
 	 */
-	protected Control getCPfromControl;
+	protected Control toCPfromControl;
 
 	/**
-	 * The cached value of the '{@link #getGetInfoFromMainSheet() <em>Get Info From Main Sheet</em>}' reference.
+	 * The cached value of the '{@link #getToInfoFromMainSheet() <em>To Info From Main Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetInfoFromMainSheet()
+	 * @see #getToInfoFromMainSheet()
 	 * @generated
 	 * @ordered
 	 */
-	protected Main getInfoFromMainSheet;
+	protected Main toInfoFromMainSheet;
 
 	/**
-	 * The cached value of the '{@link #getGetMPfromMonitor() <em>Get MPfrom Monitor</em>}' reference.
+	 * The cached value of the '{@link #getToMPfromMonitor() <em>To MPfrom Monitor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetMPfromMonitor()
+	 * @see #getToMPfromMonitor()
 	 * @generated
 	 * @ordered
 	 */
-	protected Monitor getMPfromMonitor;
+	protected Monitor toMPfromMonitor;
 
 	/**
-	 * The cached value of the '{@link #getGetDataFromSpread() <em>Get Data From Spread</em>}' reference.
+	 * The cached value of the '{@link #getToDataFromSpread() <em>To Data From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetDataFromSpread()
+	 * @see #getToDataFromSpread()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table getDataFromSpread;
+	protected Table toDataFromSpread;
 
 	/**
-	 * The cached value of the '{@link #getGetAPfromArchive() <em>Get APfrom Archive</em>}' reference.
+	 * The cached value of the '{@link #getToAPfromArchive() <em>To APfrom Archive</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetAPfromArchive()
+	 * @see #getToAPfromArchive()
 	 * @generated
 	 * @ordered
 	 */
-	protected Archive getAPfromArchive;
+	protected Archive toAPfromArchive;
 
 	/**
-	 * The cached value of the '{@link #getToinstallEndGeneration() <em>Toinstall End Generation</em>}' reference.
+	 * The cached value of the '{@link #getToInstallEndGeneration() <em>To Install End Generation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToinstallEndGeneration()
+	 * @see #getToInstallEndGeneration()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util toinstallEndGeneration;
+	protected Util toInstallEndGeneration;
 
 	/**
-	 * The cached value of the '{@link #getGetFromSpreadsheet() <em>Get From Spreadsheet</em>}' reference.
+	 * The cached value of the '{@link #getToSpreadsheetFrom() <em>To Spreadsheet From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetFromSpreadsheet()
+	 * @see #getToSpreadsheetFrom()
 	 * @generated
 	 * @ordered
 	 */
-	protected SpreadsheetParser getFromSpreadsheet;
+	protected SpreadsheetParser toSpreadsheetFrom;
 
 	/**
 	 * The cached value of the '{@link #getToValidateSpreadsheet() <em>To Validate Spreadsheet</em>}' reference.
@@ -216,14 +216,14 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	protected SpreadsheetValidator toValidateSpreadsheet;
 
 	/**
-	 * The cached value of the '{@link #getGetGenericMP() <em>Get Generic MP</em>}' reference.
+	 * The cached value of the '{@link #getToGenericMP() <em>To Generic MP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetGenericMP()
+	 * @see #getToGenericMP()
 	 * @generated
 	 * @ordered
 	 */
-	protected GenericMonitorPoints getGenericMP;
+	protected GenericMonitorPoints toGenericMP;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -308,16 +308,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Note getGetNoteFromMain() {
-		if (getNoteFromMain != null && getNoteFromMain.eIsProxy()) {
-			InternalEObject oldGetNoteFromMain = (InternalEObject)getNoteFromMain;
-			getNoteFromMain = (Note)eResolveProxy(oldGetNoteFromMain);
-			if (getNoteFromMain != oldGetNoteFromMain) {
+	public Note getToNoteFromMain() {
+		if (toNoteFromMain != null && toNoteFromMain.eIsProxy()) {
+			InternalEObject oldToNoteFromMain = (InternalEObject)toNoteFromMain;
+			toNoteFromMain = (Note)eResolveProxy(oldToNoteFromMain);
+			if (toNoteFromMain != oldToNoteFromMain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_NOTE_FROM_MAIN, oldGetNoteFromMain, getNoteFromMain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_NOTE_FROM_MAIN, oldToNoteFromMain, toNoteFromMain));
 			}
 		}
-		return getNoteFromMain;
+		return toNoteFromMain;
 	}
 
 	/**
@@ -325,8 +325,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Note basicGetGetNoteFromMain() {
-		return getNoteFromMain;
+	public Note basicGetToNoteFromMain() {
+		return toNoteFromMain;
 	}
 
 	/**
@@ -334,11 +334,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetNoteFromMain(Note newGetNoteFromMain) {
-		Note oldGetNoteFromMain = getNoteFromMain;
-		getNoteFromMain = newGetNoteFromMain;
+	public void setToNoteFromMain(Note newToNoteFromMain) {
+		Note oldToNoteFromMain = toNoteFromMain;
+		toNoteFromMain = newToNoteFromMain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_NOTE_FROM_MAIN, oldGetNoteFromMain, getNoteFromMain));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_NOTE_FROM_MAIN, oldToNoteFromMain, toNoteFromMain));
 	}
 
 	/**
@@ -384,16 +384,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainBase getGetInfoMain() {
-		if (getInfoMain != null && getInfoMain.eIsProxy()) {
-			InternalEObject oldGetInfoMain = (InternalEObject)getInfoMain;
-			getInfoMain = (MainBase)eResolveProxy(oldGetInfoMain);
-			if (getInfoMain != oldGetInfoMain) {
+	public MainBase getToInfoMain() {
+		if (toInfoMain != null && toInfoMain.eIsProxy()) {
+			InternalEObject oldToInfoMain = (InternalEObject)toInfoMain;
+			toInfoMain = (MainBase)eResolveProxy(oldToInfoMain);
+			if (toInfoMain != oldToInfoMain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_INFO_MAIN, oldGetInfoMain, getInfoMain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_INFO_MAIN, oldToInfoMain, toInfoMain));
 			}
 		}
-		return getInfoMain;
+		return toInfoMain;
 	}
 
 	/**
@@ -401,8 +401,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainBase basicGetGetInfoMain() {
-		return getInfoMain;
+	public MainBase basicGetToInfoMain() {
+		return toInfoMain;
 	}
 
 	/**
@@ -410,11 +410,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetInfoMain(MainBase newGetInfoMain) {
-		MainBase oldGetInfoMain = getInfoMain;
-		getInfoMain = newGetInfoMain;
+	public void setToInfoMain(MainBase newToInfoMain) {
+		MainBase oldToInfoMain = toInfoMain;
+		toInfoMain = newToInfoMain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_INFO_MAIN, oldGetInfoMain, getInfoMain));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_INFO_MAIN, oldToInfoMain, toInfoMain));
 	}
 
 	/**
@@ -422,16 +422,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Control getGetCPfromControl() {
-		if (getCPfromControl != null && getCPfromControl.eIsProxy()) {
-			InternalEObject oldGetCPfromControl = (InternalEObject)getCPfromControl;
-			getCPfromControl = (Control)eResolveProxy(oldGetCPfromControl);
-			if (getCPfromControl != oldGetCPfromControl) {
+	public Control getToCPfromControl() {
+		if (toCPfromControl != null && toCPfromControl.eIsProxy()) {
+			InternalEObject oldToCPfromControl = (InternalEObject)toCPfromControl;
+			toCPfromControl = (Control)eResolveProxy(oldToCPfromControl);
+			if (toCPfromControl != oldToCPfromControl) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL, oldGetCPfromControl, getCPfromControl));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_CPFROM_CONTROL, oldToCPfromControl, toCPfromControl));
 			}
 		}
-		return getCPfromControl;
+		return toCPfromControl;
 	}
 
 	/**
@@ -439,8 +439,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Control basicGetGetCPfromControl() {
-		return getCPfromControl;
+	public Control basicGetToCPfromControl() {
+		return toCPfromControl;
 	}
 
 	/**
@@ -448,11 +448,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetCPfromControl(Control newGetCPfromControl) {
-		Control oldGetCPfromControl = getCPfromControl;
-		getCPfromControl = newGetCPfromControl;
+	public void setToCPfromControl(Control newToCPfromControl) {
+		Control oldToCPfromControl = toCPfromControl;
+		toCPfromControl = newToCPfromControl;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL, oldGetCPfromControl, getCPfromControl));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_CPFROM_CONTROL, oldToCPfromControl, toCPfromControl));
 	}
 
 	/**
@@ -460,16 +460,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Main getGetInfoFromMainSheet() {
-		if (getInfoFromMainSheet != null && getInfoFromMainSheet.eIsProxy()) {
-			InternalEObject oldGetInfoFromMainSheet = (InternalEObject)getInfoFromMainSheet;
-			getInfoFromMainSheet = (Main)eResolveProxy(oldGetInfoFromMainSheet);
-			if (getInfoFromMainSheet != oldGetInfoFromMainSheet) {
+	public Main getToInfoFromMainSheet() {
+		if (toInfoFromMainSheet != null && toInfoFromMainSheet.eIsProxy()) {
+			InternalEObject oldToInfoFromMainSheet = (InternalEObject)toInfoFromMainSheet;
+			toInfoFromMainSheet = (Main)eResolveProxy(oldToInfoFromMainSheet);
+			if (toInfoFromMainSheet != oldToInfoFromMainSheet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET, oldGetInfoFromMainSheet, getInfoFromMainSheet));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_INFO_FROM_MAIN_SHEET, oldToInfoFromMainSheet, toInfoFromMainSheet));
 			}
 		}
-		return getInfoFromMainSheet;
+		return toInfoFromMainSheet;
 	}
 
 	/**
@@ -477,8 +477,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Main basicGetGetInfoFromMainSheet() {
-		return getInfoFromMainSheet;
+	public Main basicGetToInfoFromMainSheet() {
+		return toInfoFromMainSheet;
 	}
 
 	/**
@@ -486,11 +486,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetInfoFromMainSheet(Main newGetInfoFromMainSheet) {
-		Main oldGetInfoFromMainSheet = getInfoFromMainSheet;
-		getInfoFromMainSheet = newGetInfoFromMainSheet;
+	public void setToInfoFromMainSheet(Main newToInfoFromMainSheet) {
+		Main oldToInfoFromMainSheet = toInfoFromMainSheet;
+		toInfoFromMainSheet = newToInfoFromMainSheet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET, oldGetInfoFromMainSheet, getInfoFromMainSheet));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_INFO_FROM_MAIN_SHEET, oldToInfoFromMainSheet, toInfoFromMainSheet));
 	}
 
 	/**
@@ -498,16 +498,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Monitor getGetMPfromMonitor() {
-		if (getMPfromMonitor != null && getMPfromMonitor.eIsProxy()) {
-			InternalEObject oldGetMPfromMonitor = (InternalEObject)getMPfromMonitor;
-			getMPfromMonitor = (Monitor)eResolveProxy(oldGetMPfromMonitor);
-			if (getMPfromMonitor != oldGetMPfromMonitor) {
+	public Monitor getToMPfromMonitor() {
+		if (toMPfromMonitor != null && toMPfromMonitor.eIsProxy()) {
+			InternalEObject oldToMPfromMonitor = (InternalEObject)toMPfromMonitor;
+			toMPfromMonitor = (Monitor)eResolveProxy(oldToMPfromMonitor);
+			if (toMPfromMonitor != oldToMPfromMonitor) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR, oldGetMPfromMonitor, getMPfromMonitor));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_MPFROM_MONITOR, oldToMPfromMonitor, toMPfromMonitor));
 			}
 		}
-		return getMPfromMonitor;
+		return toMPfromMonitor;
 	}
 
 	/**
@@ -515,8 +515,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Monitor basicGetGetMPfromMonitor() {
-		return getMPfromMonitor;
+	public Monitor basicGetToMPfromMonitor() {
+		return toMPfromMonitor;
 	}
 
 	/**
@@ -524,11 +524,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetMPfromMonitor(Monitor newGetMPfromMonitor) {
-		Monitor oldGetMPfromMonitor = getMPfromMonitor;
-		getMPfromMonitor = newGetMPfromMonitor;
+	public void setToMPfromMonitor(Monitor newToMPfromMonitor) {
+		Monitor oldToMPfromMonitor = toMPfromMonitor;
+		toMPfromMonitor = newToMPfromMonitor;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR, oldGetMPfromMonitor, getMPfromMonitor));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_MPFROM_MONITOR, oldToMPfromMonitor, toMPfromMonitor));
 	}
 
 	/**
@@ -536,16 +536,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetDataFromSpread() {
-		if (getDataFromSpread != null && getDataFromSpread.eIsProxy()) {
-			InternalEObject oldGetDataFromSpread = (InternalEObject)getDataFromSpread;
-			getDataFromSpread = (Table)eResolveProxy(oldGetDataFromSpread);
-			if (getDataFromSpread != oldGetDataFromSpread) {
+	public Table getToDataFromSpread() {
+		if (toDataFromSpread != null && toDataFromSpread.eIsProxy()) {
+			InternalEObject oldToDataFromSpread = (InternalEObject)toDataFromSpread;
+			toDataFromSpread = (Table)eResolveProxy(oldToDataFromSpread);
+			if (toDataFromSpread != oldToDataFromSpread) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_DATA_FROM_SPREAD, oldGetDataFromSpread, getDataFromSpread));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_DATA_FROM_SPREAD, oldToDataFromSpread, toDataFromSpread));
 			}
 		}
-		return getDataFromSpread;
+		return toDataFromSpread;
 	}
 
 	/**
@@ -553,8 +553,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetDataFromSpread() {
-		return getDataFromSpread;
+	public Table basicGetToDataFromSpread() {
+		return toDataFromSpread;
 	}
 
 	/**
@@ -562,11 +562,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetDataFromSpread(Table newGetDataFromSpread) {
-		Table oldGetDataFromSpread = getDataFromSpread;
-		getDataFromSpread = newGetDataFromSpread;
+	public void setToDataFromSpread(Table newToDataFromSpread) {
+		Table oldToDataFromSpread = toDataFromSpread;
+		toDataFromSpread = newToDataFromSpread;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_DATA_FROM_SPREAD, oldGetDataFromSpread, getDataFromSpread));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_DATA_FROM_SPREAD, oldToDataFromSpread, toDataFromSpread));
 	}
 
 	/**
@@ -574,16 +574,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Archive getGetAPfromArchive() {
-		if (getAPfromArchive != null && getAPfromArchive.eIsProxy()) {
-			InternalEObject oldGetAPfromArchive = (InternalEObject)getAPfromArchive;
-			getAPfromArchive = (Archive)eResolveProxy(oldGetAPfromArchive);
-			if (getAPfromArchive != oldGetAPfromArchive) {
+	public Archive getToAPfromArchive() {
+		if (toAPfromArchive != null && toAPfromArchive.eIsProxy()) {
+			InternalEObject oldToAPfromArchive = (InternalEObject)toAPfromArchive;
+			toAPfromArchive = (Archive)eResolveProxy(oldToAPfromArchive);
+			if (toAPfromArchive != oldToAPfromArchive) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE, oldGetAPfromArchive, getAPfromArchive));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_APFROM_ARCHIVE, oldToAPfromArchive, toAPfromArchive));
 			}
 		}
-		return getAPfromArchive;
+		return toAPfromArchive;
 	}
 
 	/**
@@ -591,8 +591,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Archive basicGetGetAPfromArchive() {
-		return getAPfromArchive;
+	public Archive basicGetToAPfromArchive() {
+		return toAPfromArchive;
 	}
 
 	/**
@@ -600,11 +600,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetAPfromArchive(Archive newGetAPfromArchive) {
-		Archive oldGetAPfromArchive = getAPfromArchive;
-		getAPfromArchive = newGetAPfromArchive;
+	public void setToAPfromArchive(Archive newToAPfromArchive) {
+		Archive oldToAPfromArchive = toAPfromArchive;
+		toAPfromArchive = newToAPfromArchive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE, oldGetAPfromArchive, getAPfromArchive));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_APFROM_ARCHIVE, oldToAPfromArchive, toAPfromArchive));
 	}
 
 	/**
@@ -612,16 +612,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getToinstallEndGeneration() {
-		if (toinstallEndGeneration != null && toinstallEndGeneration.eIsProxy()) {
-			InternalEObject oldToinstallEndGeneration = (InternalEObject)toinstallEndGeneration;
-			toinstallEndGeneration = (Util)eResolveProxy(oldToinstallEndGeneration);
-			if (toinstallEndGeneration != oldToinstallEndGeneration) {
+	public Util getToInstallEndGeneration() {
+		if (toInstallEndGeneration != null && toInstallEndGeneration.eIsProxy()) {
+			InternalEObject oldToInstallEndGeneration = (InternalEObject)toInstallEndGeneration;
+			toInstallEndGeneration = (Util)eResolveProxy(oldToInstallEndGeneration);
+			if (toInstallEndGeneration != oldToInstallEndGeneration) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TOINSTALL_END_GENERATION, oldToinstallEndGeneration, toinstallEndGeneration));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_INSTALL_END_GENERATION, oldToInstallEndGeneration, toInstallEndGeneration));
 			}
 		}
-		return toinstallEndGeneration;
+		return toInstallEndGeneration;
 	}
 
 	/**
@@ -629,8 +629,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetToinstallEndGeneration() {
-		return toinstallEndGeneration;
+	public Util basicGetToInstallEndGeneration() {
+		return toInstallEndGeneration;
 	}
 
 	/**
@@ -638,11 +638,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToinstallEndGeneration(Util newToinstallEndGeneration) {
-		Util oldToinstallEndGeneration = toinstallEndGeneration;
-		toinstallEndGeneration = newToinstallEndGeneration;
+	public void setToInstallEndGeneration(Util newToInstallEndGeneration) {
+		Util oldToInstallEndGeneration = toInstallEndGeneration;
+		toInstallEndGeneration = newToInstallEndGeneration;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TOINSTALL_END_GENERATION, oldToinstallEndGeneration, toinstallEndGeneration));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_INSTALL_END_GENERATION, oldToInstallEndGeneration, toInstallEndGeneration));
 	}
 
 	/**
@@ -650,16 +650,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetParser getGetFromSpreadsheet() {
-		if (getFromSpreadsheet != null && getFromSpreadsheet.eIsProxy()) {
-			InternalEObject oldGetFromSpreadsheet = (InternalEObject)getFromSpreadsheet;
-			getFromSpreadsheet = (SpreadsheetParser)eResolveProxy(oldGetFromSpreadsheet);
-			if (getFromSpreadsheet != oldGetFromSpreadsheet) {
+	public SpreadsheetParser getToSpreadsheetFrom() {
+		if (toSpreadsheetFrom != null && toSpreadsheetFrom.eIsProxy()) {
+			InternalEObject oldToSpreadsheetFrom = (InternalEObject)toSpreadsheetFrom;
+			toSpreadsheetFrom = (SpreadsheetParser)eResolveProxy(oldToSpreadsheetFrom);
+			if (toSpreadsheetFrom != oldToSpreadsheetFrom) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_FROM_SPREADSHEET, oldGetFromSpreadsheet, getFromSpreadsheet));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_SPREADSHEET_FROM, oldToSpreadsheetFrom, toSpreadsheetFrom));
 			}
 		}
-		return getFromSpreadsheet;
+		return toSpreadsheetFrom;
 	}
 
 	/**
@@ -667,8 +667,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetParser basicGetGetFromSpreadsheet() {
-		return getFromSpreadsheet;
+	public SpreadsheetParser basicGetToSpreadsheetFrom() {
+		return toSpreadsheetFrom;
 	}
 
 	/**
@@ -676,11 +676,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetFromSpreadsheet(SpreadsheetParser newGetFromSpreadsheet) {
-		SpreadsheetParser oldGetFromSpreadsheet = getFromSpreadsheet;
-		getFromSpreadsheet = newGetFromSpreadsheet;
+	public void setToSpreadsheetFrom(SpreadsheetParser newToSpreadsheetFrom) {
+		SpreadsheetParser oldToSpreadsheetFrom = toSpreadsheetFrom;
+		toSpreadsheetFrom = newToSpreadsheetFrom;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_FROM_SPREADSHEET, oldGetFromSpreadsheet, getFromSpreadsheet));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_SPREADSHEET_FROM, oldToSpreadsheetFrom, toSpreadsheetFrom));
 	}
 
 	/**
@@ -726,16 +726,16 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GenericMonitorPoints getGetGenericMP() {
-		if (getGenericMP != null && getGenericMP.eIsProxy()) {
-			InternalEObject oldGetGenericMP = (InternalEObject)getGenericMP;
-			getGenericMP = (GenericMonitorPoints)eResolveProxy(oldGetGenericMP);
-			if (getGenericMP != oldGetGenericMP) {
+	public GenericMonitorPoints getToGenericMP() {
+		if (toGenericMP != null && toGenericMP.eIsProxy()) {
+			InternalEObject oldToGenericMP = (InternalEObject)toGenericMP;
+			toGenericMP = (GenericMonitorPoints)eResolveProxy(oldToGenericMP);
+			if (toGenericMP != oldToGenericMP) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__GET_GENERIC_MP, oldGetGenericMP, getGenericMP));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__TO_GENERIC_MP, oldToGenericMP, toGenericMP));
 			}
 		}
-		return getGenericMP;
+		return toGenericMP;
 	}
 
 	/**
@@ -743,8 +743,8 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GenericMonitorPoints basicGetGetGenericMP() {
-		return getGenericMP;
+	public GenericMonitorPoints basicGetToGenericMP() {
+		return toGenericMP;
 	}
 
 	/**
@@ -752,11 +752,11 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetGenericMP(GenericMonitorPoints newGetGenericMP) {
-		GenericMonitorPoints oldGetGenericMP = getGenericMP;
-		getGenericMP = newGetGenericMP;
+	public void setToGenericMP(GenericMonitorPoints newToGenericMP) {
+		GenericMonitorPoints oldToGenericMP = toGenericMP;
+		toGenericMP = newToGenericMP;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__GET_GENERIC_MP, oldGetGenericMP, getGenericMP));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TO_GENERIC_MP, oldToGenericMP, toGenericMP));
 	}
 
 	/**
@@ -887,7 +887,7 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String HexToDec(String s) {
+	public String HexToDec(final String s) {
 				int n = -1;
 				try {
 					n = Integer.parseInt(s.substring(2),16);
@@ -910,42 +910,42 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 			case AmbPackage.DEVICE_MODEL__TO_ADD_CP:
 				if (resolve) return getToAddCP();
 				return basicGetToAddCP();
-			case AmbPackage.DEVICE_MODEL__GET_NOTE_FROM_MAIN:
-				if (resolve) return getGetNoteFromMain();
-				return basicGetGetNoteFromMain();
+			case AmbPackage.DEVICE_MODEL__TO_NOTE_FROM_MAIN:
+				if (resolve) return getToNoteFromMain();
+				return basicGetToNoteFromMain();
 			case AmbPackage.DEVICE_MODEL__TO_ADD_MP:
 				if (resolve) return getToAddMP();
 				return basicGetToAddMP();
-			case AmbPackage.DEVICE_MODEL__GET_INFO_MAIN:
-				if (resolve) return getGetInfoMain();
-				return basicGetGetInfoMain();
-			case AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL:
-				if (resolve) return getGetCPfromControl();
-				return basicGetGetCPfromControl();
-			case AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET:
-				if (resolve) return getGetInfoFromMainSheet();
-				return basicGetGetInfoFromMainSheet();
-			case AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR:
-				if (resolve) return getGetMPfromMonitor();
-				return basicGetGetMPfromMonitor();
-			case AmbPackage.DEVICE_MODEL__GET_DATA_FROM_SPREAD:
-				if (resolve) return getGetDataFromSpread();
-				return basicGetGetDataFromSpread();
-			case AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE:
-				if (resolve) return getGetAPfromArchive();
-				return basicGetGetAPfromArchive();
-			case AmbPackage.DEVICE_MODEL__TOINSTALL_END_GENERATION:
-				if (resolve) return getToinstallEndGeneration();
-				return basicGetToinstallEndGeneration();
-			case AmbPackage.DEVICE_MODEL__GET_FROM_SPREADSHEET:
-				if (resolve) return getGetFromSpreadsheet();
-				return basicGetGetFromSpreadsheet();
+			case AmbPackage.DEVICE_MODEL__TO_INFO_MAIN:
+				if (resolve) return getToInfoMain();
+				return basicGetToInfoMain();
+			case AmbPackage.DEVICE_MODEL__TO_CPFROM_CONTROL:
+				if (resolve) return getToCPfromControl();
+				return basicGetToCPfromControl();
+			case AmbPackage.DEVICE_MODEL__TO_INFO_FROM_MAIN_SHEET:
+				if (resolve) return getToInfoFromMainSheet();
+				return basicGetToInfoFromMainSheet();
+			case AmbPackage.DEVICE_MODEL__TO_MPFROM_MONITOR:
+				if (resolve) return getToMPfromMonitor();
+				return basicGetToMPfromMonitor();
+			case AmbPackage.DEVICE_MODEL__TO_DATA_FROM_SPREAD:
+				if (resolve) return getToDataFromSpread();
+				return basicGetToDataFromSpread();
+			case AmbPackage.DEVICE_MODEL__TO_APFROM_ARCHIVE:
+				if (resolve) return getToAPfromArchive();
+				return basicGetToAPfromArchive();
+			case AmbPackage.DEVICE_MODEL__TO_INSTALL_END_GENERATION:
+				if (resolve) return getToInstallEndGeneration();
+				return basicGetToInstallEndGeneration();
+			case AmbPackage.DEVICE_MODEL__TO_SPREADSHEET_FROM:
+				if (resolve) return getToSpreadsheetFrom();
+				return basicGetToSpreadsheetFrom();
 			case AmbPackage.DEVICE_MODEL__TO_VALIDATE_SPREADSHEET:
 				if (resolve) return getToValidateSpreadsheet();
 				return basicGetToValidateSpreadsheet();
-			case AmbPackage.DEVICE_MODEL__GET_GENERIC_MP:
-				if (resolve) return getGetGenericMP();
-				return basicGetGetGenericMP();
+			case AmbPackage.DEVICE_MODEL__TO_GENERIC_MP:
+				if (resolve) return getToGenericMP();
+				return basicGetToGenericMP();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -964,41 +964,41 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 			case AmbPackage.DEVICE_MODEL__TO_ADD_CP:
 				setToAddCP((ControlPoint)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_NOTE_FROM_MAIN:
-				setGetNoteFromMain((Note)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_NOTE_FROM_MAIN:
+				setToNoteFromMain((Note)newValue);
 				return;
 			case AmbPackage.DEVICE_MODEL__TO_ADD_MP:
 				setToAddMP((MonitorPoint)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_INFO_MAIN:
-				setGetInfoMain((MainBase)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_INFO_MAIN:
+				setToInfoMain((MainBase)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL:
-				setGetCPfromControl((Control)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_CPFROM_CONTROL:
+				setToCPfromControl((Control)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET:
-				setGetInfoFromMainSheet((Main)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_INFO_FROM_MAIN_SHEET:
+				setToInfoFromMainSheet((Main)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR:
-				setGetMPfromMonitor((Monitor)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_MPFROM_MONITOR:
+				setToMPfromMonitor((Monitor)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_DATA_FROM_SPREAD:
-				setGetDataFromSpread((Table)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_DATA_FROM_SPREAD:
+				setToDataFromSpread((Table)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE:
-				setGetAPfromArchive((Archive)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_APFROM_ARCHIVE:
+				setToAPfromArchive((Archive)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__TOINSTALL_END_GENERATION:
-				setToinstallEndGeneration((Util)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_INSTALL_END_GENERATION:
+				setToInstallEndGeneration((Util)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_FROM_SPREADSHEET:
-				setGetFromSpreadsheet((SpreadsheetParser)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_SPREADSHEET_FROM:
+				setToSpreadsheetFrom((SpreadsheetParser)newValue);
 				return;
 			case AmbPackage.DEVICE_MODEL__TO_VALIDATE_SPREADSHEET:
 				setToValidateSpreadsheet((SpreadsheetValidator)newValue);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_GENERIC_MP:
-				setGetGenericMP((GenericMonitorPoints)newValue);
+			case AmbPackage.DEVICE_MODEL__TO_GENERIC_MP:
+				setToGenericMP((GenericMonitorPoints)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1018,41 +1018,41 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 			case AmbPackage.DEVICE_MODEL__TO_ADD_CP:
 				setToAddCP((ControlPoint)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_NOTE_FROM_MAIN:
-				setGetNoteFromMain((Note)null);
+			case AmbPackage.DEVICE_MODEL__TO_NOTE_FROM_MAIN:
+				setToNoteFromMain((Note)null);
 				return;
 			case AmbPackage.DEVICE_MODEL__TO_ADD_MP:
 				setToAddMP((MonitorPoint)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_INFO_MAIN:
-				setGetInfoMain((MainBase)null);
+			case AmbPackage.DEVICE_MODEL__TO_INFO_MAIN:
+				setToInfoMain((MainBase)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL:
-				setGetCPfromControl((Control)null);
+			case AmbPackage.DEVICE_MODEL__TO_CPFROM_CONTROL:
+				setToCPfromControl((Control)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET:
-				setGetInfoFromMainSheet((Main)null);
+			case AmbPackage.DEVICE_MODEL__TO_INFO_FROM_MAIN_SHEET:
+				setToInfoFromMainSheet((Main)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR:
-				setGetMPfromMonitor((Monitor)null);
+			case AmbPackage.DEVICE_MODEL__TO_MPFROM_MONITOR:
+				setToMPfromMonitor((Monitor)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_DATA_FROM_SPREAD:
-				setGetDataFromSpread((Table)null);
+			case AmbPackage.DEVICE_MODEL__TO_DATA_FROM_SPREAD:
+				setToDataFromSpread((Table)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE:
-				setGetAPfromArchive((Archive)null);
+			case AmbPackage.DEVICE_MODEL__TO_APFROM_ARCHIVE:
+				setToAPfromArchive((Archive)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__TOINSTALL_END_GENERATION:
-				setToinstallEndGeneration((Util)null);
+			case AmbPackage.DEVICE_MODEL__TO_INSTALL_END_GENERATION:
+				setToInstallEndGeneration((Util)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_FROM_SPREADSHEET:
-				setGetFromSpreadsheet((SpreadsheetParser)null);
+			case AmbPackage.DEVICE_MODEL__TO_SPREADSHEET_FROM:
+				setToSpreadsheetFrom((SpreadsheetParser)null);
 				return;
 			case AmbPackage.DEVICE_MODEL__TO_VALIDATE_SPREADSHEET:
 				setToValidateSpreadsheet((SpreadsheetValidator)null);
 				return;
-			case AmbPackage.DEVICE_MODEL__GET_GENERIC_MP:
-				setGetGenericMP((GenericMonitorPoints)null);
+			case AmbPackage.DEVICE_MODEL__TO_GENERIC_MP:
+				setToGenericMP((GenericMonitorPoints)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1070,30 +1070,30 @@ public class DeviceModelImpl extends alma.Control.datamodel.meta.base.impl.Devic
 				return TMP_EDEFAULT == null ? tmp != null : !TMP_EDEFAULT.equals(tmp);
 			case AmbPackage.DEVICE_MODEL__TO_ADD_CP:
 				return toAddCP != null;
-			case AmbPackage.DEVICE_MODEL__GET_NOTE_FROM_MAIN:
-				return getNoteFromMain != null;
+			case AmbPackage.DEVICE_MODEL__TO_NOTE_FROM_MAIN:
+				return toNoteFromMain != null;
 			case AmbPackage.DEVICE_MODEL__TO_ADD_MP:
 				return toAddMP != null;
-			case AmbPackage.DEVICE_MODEL__GET_INFO_MAIN:
-				return getInfoMain != null;
-			case AmbPackage.DEVICE_MODEL__GET_CPFROM_CONTROL:
-				return getCPfromControl != null;
-			case AmbPackage.DEVICE_MODEL__GET_INFO_FROM_MAIN_SHEET:
-				return getInfoFromMainSheet != null;
-			case AmbPackage.DEVICE_MODEL__GET_MPFROM_MONITOR:
-				return getMPfromMonitor != null;
-			case AmbPackage.DEVICE_MODEL__GET_DATA_FROM_SPREAD:
-				return getDataFromSpread != null;
-			case AmbPackage.DEVICE_MODEL__GET_APFROM_ARCHIVE:
-				return getAPfromArchive != null;
-			case AmbPackage.DEVICE_MODEL__TOINSTALL_END_GENERATION:
-				return toinstallEndGeneration != null;
-			case AmbPackage.DEVICE_MODEL__GET_FROM_SPREADSHEET:
-				return getFromSpreadsheet != null;
+			case AmbPackage.DEVICE_MODEL__TO_INFO_MAIN:
+				return toInfoMain != null;
+			case AmbPackage.DEVICE_MODEL__TO_CPFROM_CONTROL:
+				return toCPfromControl != null;
+			case AmbPackage.DEVICE_MODEL__TO_INFO_FROM_MAIN_SHEET:
+				return toInfoFromMainSheet != null;
+			case AmbPackage.DEVICE_MODEL__TO_MPFROM_MONITOR:
+				return toMPfromMonitor != null;
+			case AmbPackage.DEVICE_MODEL__TO_DATA_FROM_SPREAD:
+				return toDataFromSpread != null;
+			case AmbPackage.DEVICE_MODEL__TO_APFROM_ARCHIVE:
+				return toAPfromArchive != null;
+			case AmbPackage.DEVICE_MODEL__TO_INSTALL_END_GENERATION:
+				return toInstallEndGeneration != null;
+			case AmbPackage.DEVICE_MODEL__TO_SPREADSHEET_FROM:
+				return toSpreadsheetFrom != null;
 			case AmbPackage.DEVICE_MODEL__TO_VALIDATE_SPREADSHEET:
 				return toValidateSpreadsheet != null;
-			case AmbPackage.DEVICE_MODEL__GET_GENERIC_MP:
-				return getGenericMP != null;
+			case AmbPackage.DEVICE_MODEL__TO_GENERIC_MP:
+				return toGenericMP != null;
 		}
 		return super.eIsSet(featureID);
 	}

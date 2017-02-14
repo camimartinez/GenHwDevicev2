@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getDescriptionIndex <em>Description Index</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getSpreadsheet <em>Spreadsheet</em>}</li>
@@ -50,14 +51,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#isGenerateAlt <em>Generate Alt</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getGetArchiveIndex <em>Get Archive Index</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getGetContPoints <em>Get Cont Points</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getGetMoniPoints <em>Get Moni Points</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getGetEndOfGeneration <em>Get End Of Generation</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getGetArchivProp <em>Get Archiv Prop</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getGetInfFromSpread <em>Get Inf From Spread</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getToArchiveIndex <em>To Archive Index</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getToContPoints <em>To Cont Points</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getToMoniPoints <em>To Moni Points</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getToEndOfGeneration <em>To End Of Generation</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getToArchivProp <em>To Archiv Prop</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.DeviceModel#getToInfFromSpread <em>To Inf From Spread</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel()
  * @model abstract="true"
@@ -102,7 +102,7 @@ public interface DeviceModel extends EObject {
 	 * @return the value of the '<em>Spreadsheet</em>' attribute.
 	 * @see #setSpreadsheet(String[][][])
 	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_Spreadsheet()
-	 * @model dataType="alma.Control.datamodel.meta.base.String3DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray3"
 	 * @generated
 	 */
 	String[][][] getSpreadsheet();
@@ -456,160 +456,160 @@ public interface DeviceModel extends EObject {
 	void setGenerateAlt(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Archive Index</b></em>' reference.
+	 * Returns the value of the '<em><b>To Archive Index</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Archive Index</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Archive Index</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Archive Index</em>' reference.
-	 * @see #setGetArchiveIndex(Table)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_GetArchiveIndex()
+	 * @return the value of the '<em>To Archive Index</em>' reference.
+	 * @see #setToArchiveIndex(Table)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_ToArchiveIndex()
 	 * @model
 	 * @generated
 	 */
-	Table getGetArchiveIndex();
+	Table getToArchiveIndex();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetArchiveIndex <em>Get Archive Index</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getToArchiveIndex <em>To Archive Index</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Archive Index</em>' reference.
-	 * @see #getGetArchiveIndex()
+	 * @param value the new value of the '<em>To Archive Index</em>' reference.
+	 * @see #getToArchiveIndex()
 	 * @generated
 	 */
-	void setGetArchiveIndex(Table value);
+	void setToArchiveIndex(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Cont Points</b></em>' reference.
+	 * Returns the value of the '<em><b>To Cont Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Cont Points</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Cont Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Cont Points</em>' reference.
-	 * @see #setGetContPoints(ControlPoint)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_GetContPoints()
+	 * @return the value of the '<em>To Cont Points</em>' reference.
+	 * @see #setToContPoints(ControlPoint)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_ToContPoints()
 	 * @model
 	 * @generated
 	 */
-	ControlPoint getGetContPoints();
+	ControlPoint getToContPoints();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetContPoints <em>Get Cont Points</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getToContPoints <em>To Cont Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Cont Points</em>' reference.
-	 * @see #getGetContPoints()
+	 * @param value the new value of the '<em>To Cont Points</em>' reference.
+	 * @see #getToContPoints()
 	 * @generated
 	 */
-	void setGetContPoints(ControlPoint value);
+	void setToContPoints(ControlPoint value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Moni Points</b></em>' reference.
+	 * Returns the value of the '<em><b>To Moni Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Moni Points</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Moni Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Moni Points</em>' reference.
-	 * @see #setGetMoniPoints(MonitorPoint)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_GetMoniPoints()
+	 * @return the value of the '<em>To Moni Points</em>' reference.
+	 * @see #setToMoniPoints(MonitorPoint)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_ToMoniPoints()
 	 * @model
 	 * @generated
 	 */
-	MonitorPoint getGetMoniPoints();
+	MonitorPoint getToMoniPoints();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetMoniPoints <em>Get Moni Points</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getToMoniPoints <em>To Moni Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Moni Points</em>' reference.
-	 * @see #getGetMoniPoints()
+	 * @param value the new value of the '<em>To Moni Points</em>' reference.
+	 * @see #getToMoniPoints()
 	 * @generated
 	 */
-	void setGetMoniPoints(MonitorPoint value);
+	void setToMoniPoints(MonitorPoint value);
 
 	/**
-	 * Returns the value of the '<em><b>Get End Of Generation</b></em>' reference.
+	 * Returns the value of the '<em><b>To End Of Generation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get End Of Generation</em>' reference isn't clear,
+	 * If the meaning of the '<em>To End Of Generation</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get End Of Generation</em>' reference.
-	 * @see #setGetEndOfGeneration(Util)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_GetEndOfGeneration()
+	 * @return the value of the '<em>To End Of Generation</em>' reference.
+	 * @see #setToEndOfGeneration(Util)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_ToEndOfGeneration()
 	 * @model
 	 * @generated
 	 */
-	Util getGetEndOfGeneration();
+	Util getToEndOfGeneration();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetEndOfGeneration <em>Get End Of Generation</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getToEndOfGeneration <em>To End Of Generation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get End Of Generation</em>' reference.
-	 * @see #getGetEndOfGeneration()
+	 * @param value the new value of the '<em>To End Of Generation</em>' reference.
+	 * @see #getToEndOfGeneration()
 	 * @generated
 	 */
-	void setGetEndOfGeneration(Util value);
+	void setToEndOfGeneration(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Archiv Prop</b></em>' reference.
+	 * Returns the value of the '<em><b>To Archiv Prop</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Archiv Prop</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Archiv Prop</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Archiv Prop</em>' reference.
-	 * @see #setGetArchivProp(ArchiveProperty)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_GetArchivProp()
+	 * @return the value of the '<em>To Archiv Prop</em>' reference.
+	 * @see #setToArchivProp(ArchiveProperty)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_ToArchivProp()
 	 * @model
 	 * @generated
 	 */
-	ArchiveProperty getGetArchivProp();
+	ArchiveProperty getToArchivProp();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetArchivProp <em>Get Archiv Prop</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getToArchivProp <em>To Archiv Prop</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Archiv Prop</em>' reference.
-	 * @see #getGetArchivProp()
+	 * @param value the new value of the '<em>To Archiv Prop</em>' reference.
+	 * @see #getToArchivProp()
 	 * @generated
 	 */
-	void setGetArchivProp(ArchiveProperty value);
+	void setToArchivProp(ArchiveProperty value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Inf From Spread</b></em>' reference.
+	 * Returns the value of the '<em><b>To Inf From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Inf From Spread</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Inf From Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Inf From Spread</em>' reference.
-	 * @see #setGetInfFromSpread(MainBase)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_GetInfFromSpread()
+	 * @return the value of the '<em>To Inf From Spread</em>' reference.
+	 * @see #setToInfFromSpread(MainBase)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getDeviceModel_ToInfFromSpread()
 	 * @model
 	 * @generated
 	 */
-	MainBase getGetInfFromSpread();
+	MainBase getToInfFromSpread();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getGetInfFromSpread <em>Get Inf From Spread</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.DeviceModel#getToInfFromSpread <em>To Inf From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Inf From Spread</em>' reference.
-	 * @see #getGetInfFromSpread()
+	 * @param value the new value of the '<em>To Inf From Spread</em>' reference.
+	 * @see #getToInfFromSpread()
 	 * @generated
 	 */
-	void setGetInfFromSpread(MainBase value);
+	void setToInfFromSpread(MainBase value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -702,7 +702,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(int i = 0; i < monitorPoints.getResources().size(); i++){\r\n\tMonitorPoint mp = (MonitorPoint) monitorPoints.getResources().get(i);\r\n      if(mp.FullName().equals(fullName))\r\n\t\t      return mp;\r\n\t}\r\n\t\treturn null;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(int i = 0; i &lt; monitorPoints.getResources().size(); i++){\r\n\tMonitorPoint mp = (MonitorPoint) monitorPoints.getResources().get(i);\r\n      if(mp.FullName().equals(fullName))\r\n\t\t      return mp;\r\n\t}\r\n\t\treturn null;'"
 	 * @generated
 	 */
 	MonitorPoint getMonitorPoint(String fullName);
@@ -710,7 +710,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (int i = 0; i < controlPoints.getResources().size(); i++) {\r\n\t ControlPoint cp = (ControlPoint) controlPoints.getResources().get(i);\r\n\t if (cp.FullName().equals(fullName))\r\n\t\t         return cp;\r\n\t }\r\n\t\t  return null;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (int i = 0; i &lt; controlPoints.getResources().size(); i++) {\r\n\t ControlPoint cp = (ControlPoint) controlPoints.getResources().get(i);\r\n\t if (cp.FullName().equals(fullName))\r\n\t\t         return cp;\r\n\t }\r\n\t\t  return null;'"
 	 * @generated
 	 */
 	ControlPoint getControlPoint(String fullName);

@@ -42,16 +42,16 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl#getRefPath <em>Ref Path</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl#isRefStatus <em>Ref Status</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl#getXml <em>Xml</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl#getXsdFile <em>Xsd File</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl#getNewline <em>Newline</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl#getSetNewContent <em>Set New Content</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl#getToNewContent <em>To New Content</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl#getTovalidateSpreads <em>Tovalidate Spreads</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -167,14 +167,14 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	protected String newline = NEWLINE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSetNewContent() <em>Set New Content</em>}' containment reference.
+	 * The cached value of the '{@link #getToNewContent() <em>To New Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSetNewContent()
+	 * @see #getToNewContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected Pair setNewContent;
+	protected Pair toNewContent;
 
 	/**
 	 * The cached value of the '{@link #getTovalidateSpreads() <em>Tovalidate Spreads</em>}' reference.
@@ -315,8 +315,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pair getSetNewContent() {
-		return setNewContent;
+	public Pair getToNewContent() {
+		return toNewContent;
 	}
 
 	/**
@@ -324,11 +324,11 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSetNewContent(Pair newSetNewContent, NotificationChain msgs) {
-		Pair oldSetNewContent = setNewContent;
-		setNewContent = newSetNewContent;
+	public NotificationChain basicSetToNewContent(Pair newToNewContent, NotificationChain msgs) {
+		Pair oldToNewContent = toNewContent;
+		toNewContent = newToNewContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT, oldSetNewContent, newSetNewContent);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT, oldToNewContent, newToNewContent);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -339,18 +339,18 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSetNewContent(Pair newSetNewContent) {
-		if (newSetNewContent != setNewContent) {
+	public void setToNewContent(Pair newToNewContent) {
+		if (newToNewContent != toNewContent) {
 			NotificationChain msgs = null;
-			if (setNewContent != null)
-				msgs = ((InternalEObject)setNewContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT, null, msgs);
-			if (newSetNewContent != null)
-				msgs = ((InternalEObject)newSetNewContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT, null, msgs);
-			msgs = basicSetSetNewContent(newSetNewContent, msgs);
+			if (toNewContent != null)
+				msgs = ((InternalEObject)toNewContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT, null, msgs);
+			if (newToNewContent != null)
+				msgs = ((InternalEObject)newToNewContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT, null, msgs);
+			msgs = basicSetToNewContent(newToNewContent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT, newSetNewContent, newSetNewContent));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT, newToNewContent, newToNewContent));
 	}
 
 	/**
@@ -396,7 +396,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSpreadsheet(String dirName, String fileName) {
+	public String getSpreadsheet(final String dirName, final String fileName) {
 				java.io.File dir = new java.io.File(dirName);
 				if (!dir.isDirectory())
 					throw new RuntimeException ("Directory " + dirName + " does not exist.");
@@ -482,7 +482,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setXSD(String xsd) {
+	public void setXSD(final String xsd) {
 		xsdFile = xsd;
 	}
 
@@ -502,7 +502,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void deleteRow(String[][] worksheet, String name) {
+	public void deleteRow(final String[][] worksheet, final String name) {
 		if (worksheet[0][0].equals("Hardware Device")) {
 					for (int i = 2; i < worksheet.length; ++i) {
 						if (worksheet[i] == null)
@@ -528,7 +528,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
 	public void modifyRow(String[][] worksheet, int lineNumber, String rowName, String s) {
 				// Find the row.
@@ -600,8 +600,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
-				return basicSetSetNewContent(null, msgs);
+			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
+				return basicSetToNewContent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -624,8 +624,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return getXsdFile();
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				return getNewline();
-			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
-				return getSetNewContent();
+			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
+				return getToNewContent();
 			case BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS:
 				if (resolve) return getTovalidateSpreads();
 				return basicGetTovalidateSpreads();
@@ -656,8 +656,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				setNewline((String)newValue);
 				return;
-			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
-				setSetNewContent((Pair)newValue);
+			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
+				setToNewContent((Pair)newValue);
 				return;
 			case BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS:
 				setTovalidateSpreads((SpreadsheetValidator)newValue);
@@ -689,8 +689,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				setNewline(NEWLINE_EDEFAULT);
 				return;
-			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
-				setSetNewContent((Pair)null);
+			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
+				setToNewContent((Pair)null);
 				return;
 			case BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS:
 				setTovalidateSpreads((SpreadsheetValidator)null);
@@ -717,8 +717,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return XSD_FILE_EDEFAULT == null ? xsdFile != null : !XSD_FILE_EDEFAULT.equals(xsdFile);
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				return NEWLINE_EDEFAULT == null ? newline != null : !NEWLINE_EDEFAULT.equals(newline);
-			case BasePackage.SPREADSHEET_PARSER__SET_NEW_CONTENT:
-				return setNewContent != null;
+			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
+				return toNewContent != null;
 			case BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS:
 				return tovalidateSpreads != null;
 		}

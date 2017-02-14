@@ -33,14 +33,14 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.ArchiveProperty#getRow <em>Row</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.ArchiveProperty#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.ArchiveProperty#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.ArchiveProperty#getCp <em>Cp</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.ArchiveProperty#getGetColumnsInfoOfArchi <em>Get Columns Info Of Archi</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.ArchiveProperty#getToColumnsInfoOfArchi <em>To Columns Info Of Archi</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getArchiveProperty()
  * @model superTypes="alma.Control.datamodel.meta.amb.ResourceAuxClass"
@@ -58,7 +58,7 @@ public interface ArchiveProperty extends EObject, Resource {
 	 * @return the value of the '<em>Row</em>' attribute.
 	 * @see #setRow(String[])
 	 * @see alma.Control.datamodel.meta.base.BasePackage#getArchiveProperty_Row()
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getRow();
@@ -152,30 +152,30 @@ public interface ArchiveProperty extends EObject, Resource {
 	void setCp(Resource value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Columns Info Of Archi</b></em>' reference.
+	 * Returns the value of the '<em><b>To Columns Info Of Archi</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Columns Info Of Archi</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Columns Info Of Archi</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Columns Info Of Archi</em>' reference.
-	 * @see #setGetColumnsInfoOfArchi(Table)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getArchiveProperty_GetColumnsInfoOfArchi()
+	 * @return the value of the '<em>To Columns Info Of Archi</em>' reference.
+	 * @see #setToColumnsInfoOfArchi(Table)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getArchiveProperty_ToColumnsInfoOfArchi()
 	 * @model
 	 * @generated
 	 */
-	Table getGetColumnsInfoOfArchi();
+	Table getToColumnsInfoOfArchi();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.ArchiveProperty#getGetColumnsInfoOfArchi <em>Get Columns Info Of Archi</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.ArchiveProperty#getToColumnsInfoOfArchi <em>To Columns Info Of Archi</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Columns Info Of Archi</em>' reference.
-	 * @see #getGetColumnsInfoOfArchi()
+	 * @param value the new value of the '<em>To Columns Info Of Archi</em>' reference.
+	 * @see #getToColumnsInfoOfArchi()
 	 * @generated
 	 */
-	void setGetColumnsInfoOfArchi(Table value);
+	void setToColumnsInfoOfArchi(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

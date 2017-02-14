@@ -30,11 +30,11 @@ package alma.Control.datamodel.meta.base;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.Pair#getContent <em>Content</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.Pair#getNewString <em>New String</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getPair()
  * @model abstract="true"

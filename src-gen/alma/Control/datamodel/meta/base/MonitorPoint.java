@@ -31,12 +31,12 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.MonitorPoint#getAux <em>Aux</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.MonitorPoint#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.MonitorPoint#getGetInfoFromMPSpread <em>Get Info From MP Spread</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.MonitorPoint#getToInfoFromAPSpread <em>To Info From AP Spread</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.MonitorPoint#getToInfoFromMPSpread <em>To Info From MP Spread</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getMonitorPoint()
  * @model abstract="true" superTypes="alma.Control.datamodel.meta.base.MandCBase alma.Control.datamodel.meta.amb.ResourceAuxClass"
@@ -70,56 +70,56 @@ public interface MonitorPoint extends MandCBase, Resource {
 	void setAux(Resource value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info From AP Spread</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info From AP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info From AP Spread</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info From AP Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info From AP Spread</em>' reference.
-	 * @see #setGetInfoFromAPSpread(ArchiveProperty)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getMonitorPoint_GetInfoFromAPSpread()
+	 * @return the value of the '<em>To Info From AP Spread</em>' reference.
+	 * @see #setToInfoFromAPSpread(ArchiveProperty)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getMonitorPoint_ToInfoFromAPSpread()
 	 * @model
 	 * @generated
 	 */
-	ArchiveProperty getGetInfoFromAPSpread();
+	ArchiveProperty getToInfoFromAPSpread();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MonitorPoint#getGetInfoFromAPSpread <em>Get Info From AP Spread</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MonitorPoint#getToInfoFromAPSpread <em>To Info From AP Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info From AP Spread</em>' reference.
-	 * @see #getGetInfoFromAPSpread()
+	 * @param value the new value of the '<em>To Info From AP Spread</em>' reference.
+	 * @see #getToInfoFromAPSpread()
 	 * @generated
 	 */
-	void setGetInfoFromAPSpread(ArchiveProperty value);
+	void setToInfoFromAPSpread(ArchiveProperty value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info From MP Spread</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info From MP Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info From MP Spread</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info From MP Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info From MP Spread</em>' reference.
-	 * @see #setGetInfoFromMPSpread(Table)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getMonitorPoint_GetInfoFromMPSpread()
+	 * @return the value of the '<em>To Info From MP Spread</em>' reference.
+	 * @see #setToInfoFromMPSpread(Table)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getMonitorPoint_ToInfoFromMPSpread()
 	 * @model
 	 * @generated
 	 */
-	Table getGetInfoFromMPSpread();
+	Table getToInfoFromMPSpread();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MonitorPoint#getGetInfoFromMPSpread <em>Get Info From MP Spread</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MonitorPoint#getToInfoFromMPSpread <em>To Info From MP Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info From MP Spread</em>' reference.
-	 * @see #getGetInfoFromMPSpread()
+	 * @param value the new value of the '<em>To Info From MP Spread</em>' reference.
+	 * @see #getToInfoFromMPSpread()
 	 * @generated
 	 */
-	void setGetInfoFromMPSpread(Table value);
+	void setToInfoFromMPSpread(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,7 +172,7 @@ public interface MonitorPoint extends MandCBase, Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='int defaultValue = 300;\r\n\tif(archive != null) {\r\n\t\t\tif ( ((ArchiveProperty)archive).Interval().equals(\"none\") )\r\n\t\t\t\treturn Integer.toString(defaultValue);\r\n\t\t\tint value = Integer.valueOf(((ArchiveProperty)archive).Interval());\r\n\t\t\tif (value <= 0)\r\n\t\t\t\tvalue = defaultValue;\r\n\t\t\treturn Integer.toString(value);\r\n\t\t}\r\n\t\telse\r\n\t\t\treturn Integer.toString(defaultValue);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='int defaultValue = 300;\r\n\tif(archive != null) {\r\n\t\t\tif ( ((ArchiveProperty)archive).Interval().equals(\"none\") )\r\n\t\t\t\treturn Integer.toString(defaultValue);\r\n\t\t\tint value = Integer.valueOf(((ArchiveProperty)archive).Interval());\r\n\t\t\tif (value &lt;= 0)\r\n\t\t\t\tvalue = defaultValue;\r\n\t\t\treturn Integer.toString(value);\r\n\t\t}\r\n\t\telse\r\n\t\t\treturn Integer.toString(defaultValue);'"
 	 * @generated
 	 */
 	String Interval();

@@ -58,16 +58,16 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.ControlImpl#getMac <em>Mac</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.ControlImpl#getTmp <em>Tmp</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.ControlImpl#getTmp2 <em>Tmp2</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.ControlImpl#getAux2 <em>Aux2</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.ControlImpl#getWorldToDataColumns <em>World To Data Columns</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.ControlImpl#getGetInfoControlSheet <em>Get Info Control Sheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.ControlImpl#getToWorldToDataColumns <em>To World To Data Columns</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.ControlImpl#getToInfoControlSheet <em>To Info Control Sheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.ControlImpl#getToNormalizeNumber <em>To Normalize Number</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -164,24 +164,24 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	protected Resource aux2 = AUX2_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getWorldToDataColumns() <em>World To Data Columns</em>}' reference.
+	 * The cached value of the '{@link #getToWorldToDataColumns() <em>To World To Data Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWorldToDataColumns()
+	 * @see #getToWorldToDataColumns()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table worldToDataColumns;
+	protected Table toWorldToDataColumns;
 
 	/**
-	 * The cached value of the '{@link #getGetInfoControlSheet() <em>Get Info Control Sheet</em>}' reference.
+	 * The cached value of the '{@link #getToInfoControlSheet() <em>To Info Control Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetInfoControlSheet()
+	 * @see #getToInfoControlSheet()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandC getInfoControlSheet;
+	protected MandC toInfoControlSheet;
 
 	/**
 	 * The cached value of the '{@link #getToNormalizeNumber() <em>To Normalize Number</em>}' reference.
@@ -301,16 +301,16 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getWorldToDataColumns() {
-		if (worldToDataColumns != null && worldToDataColumns.eIsProxy()) {
-			InternalEObject oldWorldToDataColumns = (InternalEObject)worldToDataColumns;
-			worldToDataColumns = (Table)eResolveProxy(oldWorldToDataColumns);
-			if (worldToDataColumns != oldWorldToDataColumns) {
+	public Table getToWorldToDataColumns() {
+		if (toWorldToDataColumns != null && toWorldToDataColumns.eIsProxy()) {
+			InternalEObject oldToWorldToDataColumns = (InternalEObject)toWorldToDataColumns;
+			toWorldToDataColumns = (Table)eResolveProxy(oldToWorldToDataColumns);
+			if (toWorldToDataColumns != oldToWorldToDataColumns) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL__WORLD_TO_DATA_COLUMNS, oldWorldToDataColumns, worldToDataColumns));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS, oldToWorldToDataColumns, toWorldToDataColumns));
 			}
 		}
-		return worldToDataColumns;
+		return toWorldToDataColumns;
 	}
 
 	/**
@@ -318,8 +318,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetWorldToDataColumns() {
-		return worldToDataColumns;
+	public Table basicGetToWorldToDataColumns() {
+		return toWorldToDataColumns;
 	}
 
 	/**
@@ -327,11 +327,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setWorldToDataColumns(Table newWorldToDataColumns) {
-		Table oldWorldToDataColumns = worldToDataColumns;
-		worldToDataColumns = newWorldToDataColumns;
+	public void setToWorldToDataColumns(Table newToWorldToDataColumns) {
+		Table oldToWorldToDataColumns = toWorldToDataColumns;
+		toWorldToDataColumns = newToWorldToDataColumns;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__WORLD_TO_DATA_COLUMNS, oldWorldToDataColumns, worldToDataColumns));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS, oldToWorldToDataColumns, toWorldToDataColumns));
 	}
 
 	/**
@@ -339,16 +339,16 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC getGetInfoControlSheet() {
-		if (getInfoControlSheet != null && getInfoControlSheet.eIsProxy()) {
-			InternalEObject oldGetInfoControlSheet = (InternalEObject)getInfoControlSheet;
-			getInfoControlSheet = (MandC)eResolveProxy(oldGetInfoControlSheet);
-			if (getInfoControlSheet != oldGetInfoControlSheet) {
+	public MandC getToInfoControlSheet() {
+		if (toInfoControlSheet != null && toInfoControlSheet.eIsProxy()) {
+			InternalEObject oldToInfoControlSheet = (InternalEObject)toInfoControlSheet;
+			toInfoControlSheet = (MandC)eResolveProxy(oldToInfoControlSheet);
+			if (toInfoControlSheet != oldToInfoControlSheet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL__GET_INFO_CONTROL_SHEET, oldGetInfoControlSheet, getInfoControlSheet));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET, oldToInfoControlSheet, toInfoControlSheet));
 			}
 		}
-		return getInfoControlSheet;
+		return toInfoControlSheet;
 	}
 
 	/**
@@ -356,8 +356,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC basicGetGetInfoControlSheet() {
-		return getInfoControlSheet;
+	public MandC basicGetToInfoControlSheet() {
+		return toInfoControlSheet;
 	}
 
 	/**
@@ -365,11 +365,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetInfoControlSheet(MandC newGetInfoControlSheet) {
-		MandC oldGetInfoControlSheet = getInfoControlSheet;
-		getInfoControlSheet = newGetInfoControlSheet;
+	public void setToInfoControlSheet(MandC newToInfoControlSheet) {
+		MandC oldToInfoControlSheet = toInfoControlSheet;
+		toInfoControlSheet = newToInfoControlSheet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__GET_INFO_CONTROL_SHEET, oldGetInfoControlSheet, getInfoControlSheet));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET, oldToInfoControlSheet, toInfoControlSheet));
 	}
 
 	/**
@@ -1243,12 +1243,12 @@ public class ControlImpl extends ControlPointImpl implements Control {
 				return getTmp2();
 			case AmbPackage.CONTROL__AUX2:
 				return getAux2();
-			case AmbPackage.CONTROL__WORLD_TO_DATA_COLUMNS:
-				if (resolve) return getWorldToDataColumns();
-				return basicGetWorldToDataColumns();
-			case AmbPackage.CONTROL__GET_INFO_CONTROL_SHEET:
-				if (resolve) return getGetInfoControlSheet();
-				return basicGetGetInfoControlSheet();
+			case AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS:
+				if (resolve) return getToWorldToDataColumns();
+				return basicGetToWorldToDataColumns();
+			case AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET:
+				if (resolve) return getToInfoControlSheet();
+				return basicGetToInfoControlSheet();
 			case AmbPackage.CONTROL__TO_NORMALIZE_NUMBER:
 				if (resolve) return getToNormalizeNumber();
 				return basicGetToNormalizeNumber();
@@ -1276,11 +1276,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 			case AmbPackage.CONTROL__AUX2:
 				setAux2((Resource)newValue);
 				return;
-			case AmbPackage.CONTROL__WORLD_TO_DATA_COLUMNS:
-				setWorldToDataColumns((Table)newValue);
+			case AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS:
+				setToWorldToDataColumns((Table)newValue);
 				return;
-			case AmbPackage.CONTROL__GET_INFO_CONTROL_SHEET:
-				setGetInfoControlSheet((MandC)newValue);
+			case AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET:
+				setToInfoControlSheet((MandC)newValue);
 				return;
 			case AmbPackage.CONTROL__TO_NORMALIZE_NUMBER:
 				setToNormalizeNumber((Util)newValue);
@@ -1309,11 +1309,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 			case AmbPackage.CONTROL__AUX2:
 				setAux2(AUX2_EDEFAULT);
 				return;
-			case AmbPackage.CONTROL__WORLD_TO_DATA_COLUMNS:
-				setWorldToDataColumns((Table)null);
+			case AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS:
+				setToWorldToDataColumns((Table)null);
 				return;
-			case AmbPackage.CONTROL__GET_INFO_CONTROL_SHEET:
-				setGetInfoControlSheet((MandC)null);
+			case AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET:
+				setToInfoControlSheet((MandC)null);
 				return;
 			case AmbPackage.CONTROL__TO_NORMALIZE_NUMBER:
 				setToNormalizeNumber((Util)null);
@@ -1338,10 +1338,10 @@ public class ControlImpl extends ControlPointImpl implements Control {
 				return TMP2_EDEFAULT == null ? tmp2 != null : !TMP2_EDEFAULT.equals(tmp2);
 			case AmbPackage.CONTROL__AUX2:
 				return AUX2_EDEFAULT == null ? aux2 != null : !AUX2_EDEFAULT.equals(aux2);
-			case AmbPackage.CONTROL__WORLD_TO_DATA_COLUMNS:
-				return worldToDataColumns != null;
-			case AmbPackage.CONTROL__GET_INFO_CONTROL_SHEET:
-				return getInfoControlSheet != null;
+			case AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS:
+				return toWorldToDataColumns != null;
+			case AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET:
+				return toInfoControlSheet != null;
 			case AmbPackage.CONTROL__TO_NORMALIZE_NUMBER:
 				return toNormalizeNumber != null;
 		}

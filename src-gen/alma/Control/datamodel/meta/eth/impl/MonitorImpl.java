@@ -53,12 +53,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.MonitorImpl#getMac <em>Mac</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.MonitorImpl#getAux1 <em>Aux1</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.eth.impl.MonitorImpl#getGetInfoMPEth <em>Get Info MP Eth</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.eth.impl.MonitorImpl#getToInfoMPEth <em>To Info MP Eth</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -115,14 +115,14 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	protected Resource aux1 = AUX1_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGetInfoMPEth() <em>Get Info MP Eth</em>}' reference.
+	 * The cached value of the '{@link #getToInfoMPEth() <em>To Info MP Eth</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetInfoMPEth()
+	 * @see #getToInfoMPEth()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandC getInfoMPEth;
+	protected MandC toInfoMPEth;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,16 +190,16 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC getGetInfoMPEth() {
-		if (getInfoMPEth != null && getInfoMPEth.eIsProxy()) {
-			InternalEObject oldGetInfoMPEth = (InternalEObject)getInfoMPEth;
-			getInfoMPEth = (MandC)eResolveProxy(oldGetInfoMPEth);
-			if (getInfoMPEth != oldGetInfoMPEth) {
+	public MandC getToInfoMPEth() {
+		if (toInfoMPEth != null && toInfoMPEth.eIsProxy()) {
+			InternalEObject oldToInfoMPEth = (InternalEObject)toInfoMPEth;
+			toInfoMPEth = (MandC)eResolveProxy(oldToInfoMPEth);
+			if (toInfoMPEth != oldToInfoMPEth) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MONITOR__GET_INFO_MP_ETH, oldGetInfoMPEth, getInfoMPEth));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MONITOR__TO_INFO_MP_ETH, oldToInfoMPEth, toInfoMPEth));
 			}
 		}
-		return getInfoMPEth;
+		return toInfoMPEth;
 	}
 
 	/**
@@ -207,8 +207,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC basicGetGetInfoMPEth() {
-		return getInfoMPEth;
+	public MandC basicGetToInfoMPEth() {
+		return toInfoMPEth;
 	}
 
 	/**
@@ -216,11 +216,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetInfoMPEth(MandC newGetInfoMPEth) {
-		MandC oldGetInfoMPEth = getInfoMPEth;
-		getInfoMPEth = newGetInfoMPEth;
+	public void setToInfoMPEth(MandC newToInfoMPEth) {
+		MandC oldToInfoMPEth = toInfoMPEth;
+		toInfoMPEth = newToInfoMPEth;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MONITOR__GET_INFO_MP_ETH, oldGetInfoMPEth, getInfoMPEth));
+			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MONITOR__TO_INFO_MP_ETH, oldToInfoMPEth, toInfoMPEth));
 	}
 
 	/**
@@ -228,7 +228,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAssemblyName(String assembly) {
+	public void setAssemblyName(final String assembly) {
 		mac.setAssemblyName(assembly);
 	}
 
@@ -422,9 +422,9 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 				return getMac();
 			case EthPackage.MONITOR__AUX1:
 				return getAux1();
-			case EthPackage.MONITOR__GET_INFO_MP_ETH:
-				if (resolve) return getGetInfoMPEth();
-				return basicGetGetInfoMPEth();
+			case EthPackage.MONITOR__TO_INFO_MP_ETH:
+				if (resolve) return getToInfoMPEth();
+				return basicGetToInfoMPEth();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -443,8 +443,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			case EthPackage.MONITOR__AUX1:
 				setAux1((Resource)newValue);
 				return;
-			case EthPackage.MONITOR__GET_INFO_MP_ETH:
-				setGetInfoMPEth((MandC)newValue);
+			case EthPackage.MONITOR__TO_INFO_MP_ETH:
+				setToInfoMPEth((MandC)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -464,8 +464,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			case EthPackage.MONITOR__AUX1:
 				setAux1(AUX1_EDEFAULT);
 				return;
-			case EthPackage.MONITOR__GET_INFO_MP_ETH:
-				setGetInfoMPEth((MandC)null);
+			case EthPackage.MONITOR__TO_INFO_MP_ETH:
+				setToInfoMPEth((MandC)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -483,8 +483,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
 			case EthPackage.MONITOR__AUX1:
 				return AUX1_EDEFAULT == null ? aux1 != null : !AUX1_EDEFAULT.equals(aux1);
-			case EthPackage.MONITOR__GET_INFO_MP_ETH:
-				return getInfoMPEth != null;
+			case EthPackage.MONITOR__TO_INFO_MP_ETH:
+				return toInfoMPEth != null;
 		}
 		return super.eIsSet(featureID);
 	}

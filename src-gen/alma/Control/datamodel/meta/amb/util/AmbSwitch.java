@@ -35,7 +35,9 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +52,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  * @see alma.Control.datamodel.meta.amb.AmbPackage
  * @generated
  */
-public class AmbSwitch<T> {
+public class AmbSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -72,14 +74,16 @@ public class AmbSwitch<T> {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -89,26 +93,7 @@ public class AmbSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case AmbPackage.ARCHIVE: {
@@ -166,6 +151,12 @@ public class AmbSwitch<T> {
 			case AmbPackage.GENERIC_MONITOR_POINTS: {
 				GenericMonitorPoints genericMonitorPoints = (GenericMonitorPoints)theEObject;
 				T result = caseGenericMonitorPoints(genericMonitorPoints);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AmbPackage.RESOURCE_AUX_CLASS: {
+				Resource resourceAuxClass = (Resource)theEObject;
+				T result = caseResourceAuxClass(resourceAuxClass);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -409,6 +400,7 @@ public class AmbSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

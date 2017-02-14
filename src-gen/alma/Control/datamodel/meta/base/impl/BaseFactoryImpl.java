@@ -54,7 +54,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 */
 	public static BaseFactory init() {
 		try {
-			BaseFactory theBaseFactory = (BaseFactory)EPackage.Registry.INSTANCE.getEFactory("http://alma/Control/datamodel/meta/base/1.0"); 
+			BaseFactory theBaseFactory = (BaseFactory)EPackage.Registry.INSTANCE.getEFactory(BasePackage.eNS_URI);
 			if (theBaseFactory != null) {
 				return theBaseFactory;
 			}
@@ -145,12 +145,12 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createErrorHandlerDTFromString(eDataType, initialValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
 				return createSAXParseExceptionDTFromString(eDataType, initialValue);
-			case BasePackage.STRING3_DT:
-				return createString3DTFromString(eDataType, initialValue);
-			case BasePackage.STRING2_DT:
-				return createString2DTFromString(eDataType, initialValue);
-			case BasePackage.STRING1_DT:
-				return createString1DTFromString(eDataType, initialValue);
+			case BasePackage.ESTRING_ARRAY3:
+				return createEStringArray3FromString(eDataType, initialValue);
+			case BasePackage.ESTRING_ARRAY2:
+				return createEStringArray2FromString(eDataType, initialValue);
+			case BasePackage.ESTRING_ARRAY:
+				return createEStringArrayFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -174,12 +174,12 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertErrorHandlerDTToString(eDataType, instanceValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
 				return convertSAXParseExceptionDTToString(eDataType, instanceValue);
-			case BasePackage.STRING3_DT:
-				return convertString3DTToString(eDataType, instanceValue);
-			case BasePackage.STRING2_DT:
-				return convertString2DTToString(eDataType, instanceValue);
-			case BasePackage.STRING1_DT:
-				return convertString1DTToString(eDataType, instanceValue);
+			case BasePackage.ESTRING_ARRAY3:
+				return convertEStringArray3ToString(eDataType, instanceValue);
+			case BasePackage.ESTRING_ARRAY2:
+				return convertEStringArray2ToString(eDataType, instanceValue);
+			case BasePackage.ESTRING_ARRAY:
+				return convertEStringArrayToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -360,7 +360,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String[][][] createString3DTFromString(EDataType eDataType, String initialValue) {
+	public String[][][] createEStringArray3FromString(EDataType eDataType, String initialValue) {
 		return (String[][][])super.createFromString(initialValue);
 	}
 
@@ -369,7 +369,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertString3DTToString(EDataType eDataType, Object instanceValue) {
+	public String convertEStringArray3ToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);
 	}
 
@@ -378,7 +378,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String[][] createString2DTFromString(EDataType eDataType, String initialValue) {
+	public String[][] createEStringArray2FromString(EDataType eDataType, String initialValue) {
 		return (String[][])super.createFromString(initialValue);
 	}
 
@@ -387,7 +387,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertString2DTToString(EDataType eDataType, Object instanceValue) {
+	public String convertEStringArray2ToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);
 	}
 
@@ -396,7 +396,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String[] createString1DTFromString(EDataType eDataType, String initialValue) {
+	public String[] createEStringArrayFromString(EDataType eDataType, String initialValue) {
 		return (String[])super.createFromString(initialValue);
 	}
 
@@ -405,7 +405,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertString1DTToString(EDataType eDataType, Object instanceValue) {
+	public String convertEStringArrayToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);
 	}
 

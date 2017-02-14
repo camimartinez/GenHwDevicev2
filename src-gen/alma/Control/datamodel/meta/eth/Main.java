@@ -34,11 +34,11 @@ import alma.Control.datamodel.meta.base.impl.BaseFactoryImpl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.eth.Main#getAux <em>Aux</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.Main#getToInfoMain <em>To Info Main</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.eth.EthPackage#getMain()
  * @model

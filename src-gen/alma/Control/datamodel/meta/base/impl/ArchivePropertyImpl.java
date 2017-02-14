@@ -52,14 +52,14 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.ArchivePropertyImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.ArchivePropertyImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.ArchivePropertyImpl#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.ArchivePropertyImpl#getCp <em>Cp</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.impl.ArchivePropertyImpl#getGetColumnsInfoOfArchi <em>Get Columns Info Of Archi</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.impl.ArchivePropertyImpl#getToColumnsInfoOfArchi <em>To Columns Info Of Archi</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -156,14 +156,14 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	protected Resource cp = CP_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGetColumnsInfoOfArchi() <em>Get Columns Info Of Archi</em>}' reference.
+	 * The cached value of the '{@link #getToColumnsInfoOfArchi() <em>To Columns Info Of Archi</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetColumnsInfoOfArchi()
+	 * @see #getToColumnsInfoOfArchi()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table getColumnsInfoOfArchi;
+	protected Table toColumnsInfoOfArchi;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,16 +273,16 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetColumnsInfoOfArchi() {
-		if (getColumnsInfoOfArchi != null && getColumnsInfoOfArchi.eIsProxy()) {
-			InternalEObject oldGetColumnsInfoOfArchi = (InternalEObject)getColumnsInfoOfArchi;
-			getColumnsInfoOfArchi = (Table)eResolveProxy(oldGetColumnsInfoOfArchi);
-			if (getColumnsInfoOfArchi != oldGetColumnsInfoOfArchi) {
+	public Table getToColumnsInfoOfArchi() {
+		if (toColumnsInfoOfArchi != null && toColumnsInfoOfArchi.eIsProxy()) {
+			InternalEObject oldToColumnsInfoOfArchi = (InternalEObject)toColumnsInfoOfArchi;
+			toColumnsInfoOfArchi = (Table)eResolveProxy(oldToColumnsInfoOfArchi);
+			if (toColumnsInfoOfArchi != oldToColumnsInfoOfArchi) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI, oldGetColumnsInfoOfArchi, getColumnsInfoOfArchi));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI, oldToColumnsInfoOfArchi, toColumnsInfoOfArchi));
 			}
 		}
-		return getColumnsInfoOfArchi;
+		return toColumnsInfoOfArchi;
 	}
 
 	/**
@@ -290,8 +290,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetColumnsInfoOfArchi() {
-		return getColumnsInfoOfArchi;
+	public Table basicGetToColumnsInfoOfArchi() {
+		return toColumnsInfoOfArchi;
 	}
 
 	/**
@@ -299,11 +299,11 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetColumnsInfoOfArchi(Table newGetColumnsInfoOfArchi) {
-		Table oldGetColumnsInfoOfArchi = getColumnsInfoOfArchi;
-		getColumnsInfoOfArchi = newGetColumnsInfoOfArchi;
+	public void setToColumnsInfoOfArchi(Table newToColumnsInfoOfArchi) {
+		Table oldToColumnsInfoOfArchi = toColumnsInfoOfArchi;
+		toColumnsInfoOfArchi = newToColumnsInfoOfArchi;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI, oldGetColumnsInfoOfArchi, getColumnsInfoOfArchi));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI, oldToColumnsInfoOfArchi, toColumnsInfoOfArchi));
 	}
 
 	/**
@@ -480,9 +480,9 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return getMp();
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				return getCp();
-			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
-				if (resolve) return getGetColumnsInfoOfArchi();
-				return basicGetGetColumnsInfoOfArchi();
+			case BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI:
+				if (resolve) return getToColumnsInfoOfArchi();
+				return basicGetToColumnsInfoOfArchi();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -507,8 +507,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				setCp((Resource)newValue);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
-				setGetColumnsInfoOfArchi((Table)newValue);
+			case BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI:
+				setToColumnsInfoOfArchi((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -534,8 +534,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				setCp(CP_EDEFAULT);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
-				setGetColumnsInfoOfArchi((Table)null);
+			case BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI:
+				setToColumnsInfoOfArchi((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -557,8 +557,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return MP_EDEFAULT == null ? mp != null : !MP_EDEFAULT.equals(mp);
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				return CP_EDEFAULT == null ? cp != null : !CP_EDEFAULT.equals(cp);
-			case BasePackage.ARCHIVE_PROPERTY__GET_COLUMNS_INFO_OF_ARCHI:
-				return getColumnsInfoOfArchi != null;
+			case BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI:
+				return toColumnsInfoOfArchi != null;
 		}
 		return super.eIsSet(featureID);
 	}

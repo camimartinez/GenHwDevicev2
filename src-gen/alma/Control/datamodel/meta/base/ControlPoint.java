@@ -31,11 +31,11 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- *   <li>{@link alma.Control.datamodel.meta.base.ControlPoint#getGetArchOnUseControl <em>Get Arch On Use Control</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.ControlPoint#getToArchOnUseControl <em>To Arch On Use Control</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.ControlPoint#getAux <em>Aux</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getControlPoint()
  * @model abstract="true" superTypes="alma.Control.datamodel.meta.base.MandCBase alma.Control.datamodel.meta.amb.ResourceAuxClass"
@@ -43,30 +43,30 @@ import org.eclipse.emf.ecore.resource.Resource;
  */
 public interface ControlPoint extends MandCBase, Resource {
 	/**
-	 * Returns the value of the '<em><b>Get Arch On Use Control</b></em>' reference.
+	 * Returns the value of the '<em><b>To Arch On Use Control</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Arch On Use Control</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Arch On Use Control</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Arch On Use Control</em>' reference.
-	 * @see #setGetArchOnUseControl(Table)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getControlPoint_GetArchOnUseControl()
+	 * @return the value of the '<em>To Arch On Use Control</em>' reference.
+	 * @see #setToArchOnUseControl(Table)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getControlPoint_ToArchOnUseControl()
 	 * @model
 	 * @generated
 	 */
-	Table getGetArchOnUseControl();
+	Table getToArchOnUseControl();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.ControlPoint#getGetArchOnUseControl <em>Get Arch On Use Control</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.ControlPoint#getToArchOnUseControl <em>To Arch On Use Control</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Arch On Use Control</em>' reference.
-	 * @see #getGetArchOnUseControl()
+	 * @param value the new value of the '<em>To Arch On Use Control</em>' reference.
+	 * @see #getToArchOnUseControl()
 	 * @generated
 	 */
-	void setGetArchOnUseControl(Table value);
+	void setToArchOnUseControl(Table value);
 
 	/**
 	 * Returns the value of the '<em><b>Aux</b></em>' attribute.

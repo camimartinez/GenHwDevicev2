@@ -43,11 +43,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.MainImpl#getAux <em>Aux</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.MainImpl#getToInfoMain <em>To Info Main</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

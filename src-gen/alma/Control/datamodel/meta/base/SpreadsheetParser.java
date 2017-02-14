@@ -31,16 +31,16 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getRefPath <em>Ref Path</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetParser#isRefStatus <em>Ref Status</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getXml <em>Xml</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getXsdFile <em>Xsd File</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getNewline <em>Newline</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getSetNewContent <em>Set New Content</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getToNewContent <em>To New Content</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getTovalidateSpreads <em>Tovalidate Spreads</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getSpreadsheetParser()
  * @model
@@ -180,30 +180,30 @@ public interface SpreadsheetParser extends EObject {
 	void setNewline(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Set New Content</b></em>' containment reference.
+	 * Returns the value of the '<em><b>To New Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Set New Content</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>To New Content</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Set New Content</em>' containment reference.
-	 * @see #setSetNewContent(Pair)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getSpreadsheetParser_SetNewContent()
+	 * @return the value of the '<em>To New Content</em>' containment reference.
+	 * @see #setToNewContent(Pair)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getSpreadsheetParser_ToNewContent()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Pair getSetNewContent();
+	Pair getToNewContent();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getSetNewContent <em>Set New Content</em>}' containment reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.SpreadsheetParser#getToNewContent <em>To New Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Set New Content</em>' containment reference.
-	 * @see #getSetNewContent()
+	 * @param value the new value of the '<em>To New Content</em>' containment reference.
+	 * @see #getToNewContent()
 	 * @generated
 	 */
-	void setSetNewContent(Pair value);
+	void setToNewContent(Pair value);
 
 	/**
 	 * Returns the value of the '<em><b>Tovalidate Spreads</b></em>' reference.
@@ -250,7 +250,7 @@ public interface SpreadsheetParser extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getDataCells(String row);
@@ -258,7 +258,7 @@ public interface SpreadsheetParser extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="alma.Control.datamodel.meta.base.String3DT"
+	 * @model kind="operation" dataType="alma.Control.datamodel.meta.base.EStringArray3"
 	 * @generated
 	 */
 	String[][][] getWorksheets();
@@ -292,7 +292,7 @@ public interface SpreadsheetParser extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="alma.Control.datamodel.meta.base.String3DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray3"
 	 * @generated
 	 */
 	String[][][] filter(String doc);
@@ -300,8 +300,8 @@ public interface SpreadsheetParser extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model worksheetDataType="alma.Control.datamodel.meta.base.String2DT"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (worksheet[0][0].equals(\"Hardware Device\")) {\r\n\t\t\tfor (int i = 2; i < worksheet.length; ++i) {\r\n\t\t\t\tif (worksheet[i] == null)\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\tif (worksheet[i][0].equals(name)) {\r\n\t\t\t\t\tworksheet[i] = null;\r\n\t\t\t\t\treturn;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tthrow new RuntimeException(\"The name \" + name + \" is not the name of a row in the Main worksheet.\");\r\n\t\t}\r\n\t\tfor (int i = 2; i < worksheet.length; ++i) {\r\n\t\t\tif (worksheet[i] == null)\r\n\t\t\t\tcontinue;\r\n\t\t\tif (worksheet[i][1].equals(name)) {\r\n\t\t\t\tworksheet[i] = null;\r\n\t\t\t\treturn;\r\n\t\t\t}\r\n\t\t}\t\t\r\n\t\tthrow new RuntimeException(\"The name \" + name + \" is not the name of a row in the \" + worksheet[0][0] + \" worksheet.\");'"
+	 * @model worksheetDataType="alma.Control.datamodel.meta.base.EStringArray2"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (worksheet[0][0].equals(\"Hardware Device\")) {\r\n\t\t\tfor (int i = 2; i &lt; worksheet.length; ++i) {\r\n\t\t\t\tif (worksheet[i] == null)\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\tif (worksheet[i][0].equals(name)) {\r\n\t\t\t\t\tworksheet[i] = null;\r\n\t\t\t\t\treturn;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tthrow new RuntimeException(\"The name \" + name + \" is not the name of a row in the Main worksheet.\");\r\n\t\t}\r\n\t\tfor (int i = 2; i &lt; worksheet.length; ++i) {\r\n\t\t\tif (worksheet[i] == null)\r\n\t\t\t\tcontinue;\r\n\t\t\tif (worksheet[i][1].equals(name)) {\r\n\t\t\t\tworksheet[i] = null;\r\n\t\t\t\treturn;\r\n\t\t\t}\r\n\t\t}\t\t\r\n\t\tthrow new RuntimeException(\"The name \" + name + \" is not the name of a row in the \" + worksheet[0][0] + \" worksheet.\");'"
 	 * @generated
 	 */
 	void deleteRow(String[][] worksheet, String name);
@@ -309,8 +309,8 @@ public interface SpreadsheetParser extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model worksheetDataType="alma.Control.datamodel.meta.base.String2DT"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t// Find the row.\r\n\t\tint row = 0;\r\n\t\tif (worksheet[0][0].equals(\"Hardware Device\")) {\r\n\t\t\tint i = 2;\r\n\t\t\tfor (; i < worksheet.length; ++i) {\r\n\t\t\t\tif (worksheet[i] == null)\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\tif (worksheet[i][0].equals(rowName)) {\r\n\t\t\t\t\trow = i;\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tif (i == worksheet.length)\r\n\t\t\t\tthrow new RuntimeException(\"The name \" + rowName + \" is not the name of a row in the Main worksheet.\");\r\n\t\t} else {\r\n\t\t\tint i = 2;\r\n\t\t\tfor (; i < worksheet.length; ++i) {\r\n\t\t\t\tif (worksheet[i] == null)\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\tif (worksheet[i][1].equals(rowName)) {\r\n\t\t\t\t\trow = i;\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tif (i == worksheet.length)\r\n\t\t\t\tthrow new RuntimeException(\"The name \" + rowName + \" is not the name of a row in the \" + worksheet[0][0] + \" worksheet.\");\r\n\t\t}\r\n\t\tString name;\r\n\t\tString value;\r\n\t\tint b;\r\n\t\tint m;\r\n\t\tint e;        \t\t\t\t\r\n\t\twhile(true) {\r\n\t\t\tb = s.indexOf(\'<\');\r\n\t\t\tm = s.indexOf(\'=\');\r\n\t\t\te = s.indexOf(\'>\');\r\n\t\t\tif (b == -1 || m == -1 || e == -1 || m < b || e < m) {\r\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax at line number \" + lineNumber + \" in file filter.\");\r\n\t\t\t}\r\n\t\t\tname = s.substring(b + 1, m).trim();\r\n\t\t\tvalue = s.substring(m + 1, e).trim();\r\n\t\t\t// Apply the change.\r\n\t\t\tint j = 0;\r\n\t\t\tfor (; j < worksheet[row].length; ++j) {\r\n\t\t\t\tif (worksheet[1][j].equals(name)) {\r\n\t\t\t\t\tworksheet[row][j] = value;\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tif (j == worksheet[row].length)\r\n\t\t\t\tthrow new RuntimeException(\"The name \" + name + \" is not the name of a column in the \" + worksheet[0][0] + \" worksheet.\");\r\n\t\t\t// Get the next change.\r\n\t\t\t++e;\r\n\t\t\twhile (e < s.length() && (s.charAt(e) == \' \' || s.charAt(e) == \'\\t\'))\r\n\t\t\t\t++e;\r\n\t\t\tif (e == s.length())\r\n\t\t\t\tbreak;\r\n\t\t\ts = s.substring(e);\r\n\t\t}'"
+	 * @model worksheetDataType="alma.Control.datamodel.meta.base.EStringArray2"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t// Find the row.\r\n\t\tint row = 0;\r\n\t\tif (worksheet[0][0].equals(\"Hardware Device\")) {\r\n\t\t\tint i = 2;\r\n\t\t\tfor (; i &lt; worksheet.length; ++i) {\r\n\t\t\t\tif (worksheet[i] == null)\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\tif (worksheet[i][0].equals(rowName)) {\r\n\t\t\t\t\trow = i;\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tif (i == worksheet.length)\r\n\t\t\t\tthrow new RuntimeException(\"The name \" + rowName + \" is not the name of a row in the Main worksheet.\");\r\n\t\t} else {\r\n\t\t\tint i = 2;\r\n\t\t\tfor (; i &lt; worksheet.length; ++i) {\r\n\t\t\t\tif (worksheet[i] == null)\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\tif (worksheet[i][1].equals(rowName)) {\r\n\t\t\t\t\trow = i;\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tif (i == worksheet.length)\r\n\t\t\t\tthrow new RuntimeException(\"The name \" + rowName + \" is not the name of a row in the \" + worksheet[0][0] + \" worksheet.\");\r\n\t\t}\r\n\t\tString name;\r\n\t\tString value;\r\n\t\tint b;\r\n\t\tint m;\r\n\t\tint e;        \t\t\t\t\r\n\t\twhile(true) {\r\n\t\t\tb = s.indexOf(\'&lt;\');\r\n\t\t\tm = s.indexOf(\'=\');\r\n\t\t\te = s.indexOf(\'&gt;\');\r\n\t\t\tif (b == -1 || m == -1 || e == -1 || m &lt; b || e &lt; m) {\r\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax at line number \" + lineNumber + \" in file filter.\");\r\n\t\t\t}\r\n\t\t\tname = s.substring(b + 1, m).trim();\r\n\t\t\tvalue = s.substring(m + 1, e).trim();\r\n\t\t\t// Apply the change.\r\n\t\t\tint j = 0;\r\n\t\t\tfor (; j &lt; worksheet[row].length; ++j) {\r\n\t\t\t\tif (worksheet[1][j].equals(name)) {\r\n\t\t\t\t\tworksheet[row][j] = value;\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tif (j == worksheet[row].length)\r\n\t\t\t\tthrow new RuntimeException(\"The name \" + name + \" is not the name of a column in the \" + worksheet[0][0] + \" worksheet.\");\r\n\t\t\t// Get the next change.\r\n\t\t\t++e;\r\n\t\t\twhile (e &lt; s.length() &amp;&amp; (s.charAt(e) == \' \' || s.charAt(e) == \'\\t\'))\r\n\t\t\t\t++e;\r\n\t\t\tif (e == s.length())\r\n\t\t\t\tbreak;\r\n\t\t\ts = s.substring(e);\r\n\t\t}'"
 	 * @generated
 	 */
 	void modifyRow(String[][] worksheet, int lineNumber, String rowName, String s);

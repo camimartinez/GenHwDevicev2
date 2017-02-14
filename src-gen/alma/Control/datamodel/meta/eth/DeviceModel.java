@@ -36,6 +36,7 @@ import alma.Control.datamodel.meta.base.Util;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getInfoDevMain <em>Info Dev Main</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getInfoControl <em>Info Control</em>}</li>
@@ -43,11 +44,10 @@ import alma.Control.datamodel.meta.base.Util;
  *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getToEndEth <em>To End Eth</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getInfoArch <em>Info Arch</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getDataSpreadsheet <em>Data Spreadsheet</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getNotesTo <em>Notes To</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getValidateSpreadEth <em>Validate Spread Eth</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getFromSpreadEth <em>From Spread Eth</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getToNotes <em>To Notes</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getToValidateSpreadEth <em>To Validate Spread Eth</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.eth.DeviceModel#getToSpreadEth <em>To Spread Eth</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.eth.EthPackage#getDeviceModel()
  * @model
@@ -211,82 +211,82 @@ public interface DeviceModel extends alma.Control.datamodel.meta.base.DeviceMode
 	void setDataSpreadsheet(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Notes To</b></em>' reference.
+	 * Returns the value of the '<em><b>To Notes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Notes To</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Notes</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Notes To</em>' reference.
-	 * @see #setNotesTo(Note)
-	 * @see alma.Control.datamodel.meta.eth.EthPackage#getDeviceModel_NotesTo()
+	 * @return the value of the '<em>To Notes</em>' reference.
+	 * @see #setToNotes(Note)
+	 * @see alma.Control.datamodel.meta.eth.EthPackage#getDeviceModel_ToNotes()
 	 * @model
 	 * @generated
 	 */
-	Note getNotesTo();
+	Note getToNotes();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.DeviceModel#getNotesTo <em>Notes To</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.DeviceModel#getToNotes <em>To Notes</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Notes To</em>' reference.
-	 * @see #getNotesTo()
+	 * @param value the new value of the '<em>To Notes</em>' reference.
+	 * @see #getToNotes()
 	 * @generated
 	 */
-	void setNotesTo(Note value);
+	void setToNotes(Note value);
 
 	/**
-	 * Returns the value of the '<em><b>Validate Spread Eth</b></em>' reference.
+	 * Returns the value of the '<em><b>To Validate Spread Eth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Validate Spread Eth</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Validate Spread Eth</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Validate Spread Eth</em>' reference.
-	 * @see #setValidateSpreadEth(SpreadsheetValidator)
-	 * @see alma.Control.datamodel.meta.eth.EthPackage#getDeviceModel_ValidateSpreadEth()
+	 * @return the value of the '<em>To Validate Spread Eth</em>' reference.
+	 * @see #setToValidateSpreadEth(SpreadsheetValidator)
+	 * @see alma.Control.datamodel.meta.eth.EthPackage#getDeviceModel_ToValidateSpreadEth()
 	 * @model
 	 * @generated
 	 */
-	SpreadsheetValidator getValidateSpreadEth();
+	SpreadsheetValidator getToValidateSpreadEth();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.DeviceModel#getValidateSpreadEth <em>Validate Spread Eth</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.DeviceModel#getToValidateSpreadEth <em>To Validate Spread Eth</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Validate Spread Eth</em>' reference.
-	 * @see #getValidateSpreadEth()
+	 * @param value the new value of the '<em>To Validate Spread Eth</em>' reference.
+	 * @see #getToValidateSpreadEth()
 	 * @generated
 	 */
-	void setValidateSpreadEth(SpreadsheetValidator value);
+	void setToValidateSpreadEth(SpreadsheetValidator value);
 
 	/**
-	 * Returns the value of the '<em><b>From Spread Eth</b></em>' reference.
+	 * Returns the value of the '<em><b>To Spread Eth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>From Spread Eth</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Spread Eth</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From Spread Eth</em>' reference.
-	 * @see #setFromSpreadEth(SpreadsheetParser)
-	 * @see alma.Control.datamodel.meta.eth.EthPackage#getDeviceModel_FromSpreadEth()
+	 * @return the value of the '<em>To Spread Eth</em>' reference.
+	 * @see #setToSpreadEth(SpreadsheetParser)
+	 * @see alma.Control.datamodel.meta.eth.EthPackage#getDeviceModel_ToSpreadEth()
 	 * @model
 	 * @generated
 	 */
-	SpreadsheetParser getFromSpreadEth();
+	SpreadsheetParser getToSpreadEth();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.DeviceModel#getFromSpreadEth <em>From Spread Eth</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.DeviceModel#getToSpreadEth <em>To Spread Eth</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From Spread Eth</em>' reference.
-	 * @see #getFromSpreadEth()
+	 * @param value the new value of the '<em>To Spread Eth</em>' reference.
+	 * @see #getToSpreadEth()
 	 * @generated
 	 */
-	void setFromSpreadEth(SpreadsheetParser value);
+	void setToSpreadEth(SpreadsheetParser value);
 
 	/**
 	 * <!-- begin-user-doc -->

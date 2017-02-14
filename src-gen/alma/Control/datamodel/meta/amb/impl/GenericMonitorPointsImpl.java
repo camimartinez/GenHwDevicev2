@@ -43,15 +43,15 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getNewSpreadsheet <em>New Spreadsheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getDirLocation <em>Dir Location</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getGetTheSpreadsheet <em>Get The Spreadsheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getToGetSpreadsheet <em>To Get Spreadsheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getToValidateTheSpreadsheet <em>To Validate The Spreadsheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getToInstallDir <em>To Install Dir</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -117,14 +117,14 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	protected String dirLocation = DIR_LOCATION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGetTheSpreadsheet() <em>Get The Spreadsheet</em>}' reference.
+	 * The cached value of the '{@link #getToGetSpreadsheet() <em>To Get Spreadsheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetTheSpreadsheet()
+	 * @see #getToGetSpreadsheet()
 	 * @generated
 	 * @ordered
 	 */
-	protected SpreadsheetParser getTheSpreadsheet;
+	protected SpreadsheetParser toGetSpreadsheet;
 
 	/**
 	 * The cached value of the '{@link #getToValidateTheSpreadsheet() <em>To Validate The Spreadsheet</em>}' reference.
@@ -233,16 +233,16 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetParser getGetTheSpreadsheet() {
-		if (getTheSpreadsheet != null && getTheSpreadsheet.eIsProxy()) {
-			InternalEObject oldGetTheSpreadsheet = (InternalEObject)getTheSpreadsheet;
-			getTheSpreadsheet = (SpreadsheetParser)eResolveProxy(oldGetTheSpreadsheet);
-			if (getTheSpreadsheet != oldGetTheSpreadsheet) {
+	public SpreadsheetParser getToGetSpreadsheet() {
+		if (toGetSpreadsheet != null && toGetSpreadsheet.eIsProxy()) {
+			InternalEObject oldToGetSpreadsheet = (InternalEObject)toGetSpreadsheet;
+			toGetSpreadsheet = (SpreadsheetParser)eResolveProxy(oldToGetSpreadsheet);
+			if (toGetSpreadsheet != oldToGetSpreadsheet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.GENERIC_MONITOR_POINTS__GET_THE_SPREADSHEET, oldGetTheSpreadsheet, getTheSpreadsheet));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET, oldToGetSpreadsheet, toGetSpreadsheet));
 			}
 		}
-		return getTheSpreadsheet;
+		return toGetSpreadsheet;
 	}
 
 	/**
@@ -250,8 +250,8 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetParser basicGetGetTheSpreadsheet() {
-		return getTheSpreadsheet;
+	public SpreadsheetParser basicGetToGetSpreadsheet() {
+		return toGetSpreadsheet;
 	}
 
 	/**
@@ -259,11 +259,11 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetTheSpreadsheet(SpreadsheetParser newGetTheSpreadsheet) {
-		SpreadsheetParser oldGetTheSpreadsheet = getTheSpreadsheet;
-		getTheSpreadsheet = newGetTheSpreadsheet;
+	public void setToGetSpreadsheet(SpreadsheetParser newToGetSpreadsheet) {
+		SpreadsheetParser oldToGetSpreadsheet = toGetSpreadsheet;
+		toGetSpreadsheet = newToGetSpreadsheet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__GET_THE_SPREADSHEET, oldGetTheSpreadsheet, getTheSpreadsheet));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET, oldToGetSpreadsheet, toGetSpreadsheet));
 	}
 
 	/**
@@ -358,7 +358,7 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String[][][] getDeviceWorksheetWithGenericPointsAdded(String[][][] spreadsheet) {
+	public String[][][] getDeviceWorksheetWithGenericPointsAdded(final String[][][] spreadsheet) {
 		 // Create the SP class
 		        setDeviceName(spreadsheet[0][2][0]);
 		        String [][][] genericSpreadsheet = getParsedGenericSpreadsheet();
@@ -469,9 +469,9 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 				return getDeviceName();
 			case AmbPackage.GENERIC_MONITOR_POINTS__DIR_LOCATION:
 				return getDirLocation();
-			case AmbPackage.GENERIC_MONITOR_POINTS__GET_THE_SPREADSHEET:
-				if (resolve) return getGetTheSpreadsheet();
-				return basicGetGetTheSpreadsheet();
+			case AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET:
+				if (resolve) return getToGetSpreadsheet();
+				return basicGetToGetSpreadsheet();
 			case AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET:
 				if (resolve) return getToValidateTheSpreadsheet();
 				return basicGetToValidateTheSpreadsheet();
@@ -499,8 +499,8 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 			case AmbPackage.GENERIC_MONITOR_POINTS__DIR_LOCATION:
 				setDirLocation((String)newValue);
 				return;
-			case AmbPackage.GENERIC_MONITOR_POINTS__GET_THE_SPREADSHEET:
-				setGetTheSpreadsheet((SpreadsheetParser)newValue);
+			case AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET:
+				setToGetSpreadsheet((SpreadsheetParser)newValue);
 				return;
 			case AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET:
 				setToValidateTheSpreadsheet((SpreadsheetValidator)newValue);
@@ -529,8 +529,8 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 			case AmbPackage.GENERIC_MONITOR_POINTS__DIR_LOCATION:
 				setDirLocation(DIR_LOCATION_EDEFAULT);
 				return;
-			case AmbPackage.GENERIC_MONITOR_POINTS__GET_THE_SPREADSHEET:
-				setGetTheSpreadsheet((SpreadsheetParser)null);
+			case AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET:
+				setToGetSpreadsheet((SpreadsheetParser)null);
 				return;
 			case AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET:
 				setToValidateTheSpreadsheet((SpreadsheetValidator)null);
@@ -556,8 +556,8 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 				return DEVICE_NAME_EDEFAULT == null ? deviceName != null : !DEVICE_NAME_EDEFAULT.equals(deviceName);
 			case AmbPackage.GENERIC_MONITOR_POINTS__DIR_LOCATION:
 				return DIR_LOCATION_EDEFAULT == null ? dirLocation != null : !DIR_LOCATION_EDEFAULT.equals(dirLocation);
-			case AmbPackage.GENERIC_MONITOR_POINTS__GET_THE_SPREADSHEET:
-				return getTheSpreadsheet != null;
+			case AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET:
+				return toGetSpreadsheet != null;
 			case AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET:
 				return toValidateTheSpreadsheet != null;
 			case AmbPackage.GENERIC_MONITOR_POINTS__TO_INSTALL_DIR:

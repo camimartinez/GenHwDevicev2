@@ -33,12 +33,12 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.eth.Control#getMac <em>Mac</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.Control#getAux2 <em>Aux2</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.eth.Control#getInfoControlEth <em>Info Control Eth</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.eth.Control#getToInfoControlEth <em>To Info Control Eth</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.eth.EthPackage#getControl()
  * @model
@@ -98,30 +98,30 @@ public interface Control extends ControlPoint {
 	void setAux2(Resource value);
 
 	/**
-	 * Returns the value of the '<em><b>Info Control Eth</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info Control Eth</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Info Control Eth</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info Control Eth</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Info Control Eth</em>' reference.
-	 * @see #setInfoControlEth(MandC)
-	 * @see alma.Control.datamodel.meta.eth.EthPackage#getControl_InfoControlEth()
+	 * @return the value of the '<em>To Info Control Eth</em>' reference.
+	 * @see #setToInfoControlEth(MandC)
+	 * @see alma.Control.datamodel.meta.eth.EthPackage#getControl_ToInfoControlEth()
 	 * @model
 	 * @generated
 	 */
-	MandC getInfoControlEth();
+	MandC getToInfoControlEth();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.Control#getInfoControlEth <em>Info Control Eth</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.Control#getToInfoControlEth <em>To Info Control Eth</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Info Control Eth</em>' reference.
-	 * @see #getInfoControlEth()
+	 * @param value the new value of the '<em>To Info Control Eth</em>' reference.
+	 * @see #getToInfoControlEth()
 	 * @generated
 	 */
-	void setInfoControlEth(MandC value);
+	void setToInfoControlEth(MandC value);
 
 	/**
 	 * <!-- begin-user-doc -->

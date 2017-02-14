@@ -35,13 +35,13 @@ import org.xml.sax.ErrorHandler;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetValidator#getSeh <em>Seh</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetValidator#getErrorList <em>Error List</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetValidator#getSehTmp <em>Seh Tmp</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getSpreadsheetValidator()
  * @model

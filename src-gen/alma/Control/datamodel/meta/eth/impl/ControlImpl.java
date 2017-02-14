@@ -53,12 +53,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.ControlImpl#getMac <em>Mac</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.ControlImpl#getAux2 <em>Aux2</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.eth.impl.ControlImpl#getInfoControlEth <em>Info Control Eth</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.eth.impl.ControlImpl#getToInfoControlEth <em>To Info Control Eth</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -115,14 +115,14 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	protected Resource aux2 = AUX2_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInfoControlEth() <em>Info Control Eth</em>}' reference.
+	 * The cached value of the '{@link #getToInfoControlEth() <em>To Info Control Eth</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInfoControlEth()
+	 * @see #getToInfoControlEth()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandC infoControlEth;
+	protected MandC toInfoControlEth;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,16 +190,16 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC getInfoControlEth() {
-		if (infoControlEth != null && infoControlEth.eIsProxy()) {
-			InternalEObject oldInfoControlEth = (InternalEObject)infoControlEth;
-			infoControlEth = (MandC)eResolveProxy(oldInfoControlEth);
-			if (infoControlEth != oldInfoControlEth) {
+	public MandC getToInfoControlEth() {
+		if (toInfoControlEth != null && toInfoControlEth.eIsProxy()) {
+			InternalEObject oldToInfoControlEth = (InternalEObject)toInfoControlEth;
+			toInfoControlEth = (MandC)eResolveProxy(oldToInfoControlEth);
+			if (toInfoControlEth != oldToInfoControlEth) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.CONTROL__INFO_CONTROL_ETH, oldInfoControlEth, infoControlEth));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.CONTROL__TO_INFO_CONTROL_ETH, oldToInfoControlEth, toInfoControlEth));
 			}
 		}
-		return infoControlEth;
+		return toInfoControlEth;
 	}
 
 	/**
@@ -207,8 +207,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC basicGetInfoControlEth() {
-		return infoControlEth;
+	public MandC basicGetToInfoControlEth() {
+		return toInfoControlEth;
 	}
 
 	/**
@@ -216,11 +216,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInfoControlEth(MandC newInfoControlEth) {
-		MandC oldInfoControlEth = infoControlEth;
-		infoControlEth = newInfoControlEth;
+	public void setToInfoControlEth(MandC newToInfoControlEth) {
+		MandC oldToInfoControlEth = toInfoControlEth;
+		toInfoControlEth = newToInfoControlEth;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.CONTROL__INFO_CONTROL_ETH, oldInfoControlEth, infoControlEth));
+			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.CONTROL__TO_INFO_CONTROL_ETH, oldToInfoControlEth, toInfoControlEth));
 	}
 
 	/**
@@ -228,7 +228,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAssemblyName(String assembly) {
+	public void setAssemblyName(final String assembly) {
 		mac.setAssemblyName(assembly);
 	}
 
@@ -386,9 +386,9 @@ public class ControlImpl extends ControlPointImpl implements Control {
 				return getMac();
 			case EthPackage.CONTROL__AUX2:
 				return getAux2();
-			case EthPackage.CONTROL__INFO_CONTROL_ETH:
-				if (resolve) return getInfoControlEth();
-				return basicGetInfoControlEth();
+			case EthPackage.CONTROL__TO_INFO_CONTROL_ETH:
+				if (resolve) return getToInfoControlEth();
+				return basicGetToInfoControlEth();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -407,8 +407,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 			case EthPackage.CONTROL__AUX2:
 				setAux2((Resource)newValue);
 				return;
-			case EthPackage.CONTROL__INFO_CONTROL_ETH:
-				setInfoControlEth((MandC)newValue);
+			case EthPackage.CONTROL__TO_INFO_CONTROL_ETH:
+				setToInfoControlEth((MandC)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -428,8 +428,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 			case EthPackage.CONTROL__AUX2:
 				setAux2(AUX2_EDEFAULT);
 				return;
-			case EthPackage.CONTROL__INFO_CONTROL_ETH:
-				setInfoControlEth((MandC)null);
+			case EthPackage.CONTROL__TO_INFO_CONTROL_ETH:
+				setToInfoControlEth((MandC)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -447,8 +447,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
 			case EthPackage.CONTROL__AUX2:
 				return AUX2_EDEFAULT == null ? aux2 != null : !AUX2_EDEFAULT.equals(aux2);
-			case EthPackage.CONTROL__INFO_CONTROL_ETH:
-				return infoControlEth != null;
+			case EthPackage.CONTROL__TO_INFO_CONTROL_ETH:
+				return toInfoControlEth != null;
 		}
 		return super.eIsSet(featureID);
 	}

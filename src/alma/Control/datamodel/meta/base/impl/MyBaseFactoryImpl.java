@@ -21,6 +21,8 @@
  */
 package alma.Control.datamodel.meta.base.impl;
 
+import org.eclipse.emf.ecore.EDataType;
+
 import alma.Control.datamodel.meta.base.MyBaseFactory;
 import alma.Control.datamodel.meta.base.MySpreadsheetParser;
 
@@ -39,7 +41,39 @@ public class MyBaseFactoryImpl extends BaseFactoryImpl implements MyBaseFactory 
 		MySpreadsheetParserImpl spreadsheetParser = new MySpreadsheetParserImpl(xml);
 		return spreadsheetParser;
 	}
-		
-
-
+	
+	@Override
+	public String[] createEStringArrayFromString(EDataType eDataType, String initialValue) {
+		return initialValue.split("?");
+	}
+	
+	@Override
+	public String convertEStringArrayToString(EDataType eDataType, Object instanceValue) {
+		String[] array = (String[]) instanceValue;
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < array.length; i++) {
+			sb.append(array[i]);
+			if (i<array.length-1) {
+				sb.append("?");
+			}
+		}
+		return sb.toString();
+	}
+	
+	@Override
+	public String[][][] createEStringArray3FromString(EDataType eDataType, String initialValue) {
+		return (String[][][])super.createFromString(initialValue);
+	}
+	
+	@Override
+	public String convertEStringArray3ToString(EDataType eDataType, Object instanceValue) {
+		String[][][] array = (String[][][])instanceValue;
+		String[][][] aux = new String[array.length][][];
+		for(int i=0; i < array.length; i++){
+			
+			
+		}
+		return null;
+	}
+	
 } //MyBaseFactoryImpl

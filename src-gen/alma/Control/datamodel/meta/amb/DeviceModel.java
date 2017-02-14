@@ -40,23 +40,23 @@ import alma.Control.datamodel.meta.base.impl.BaseFactoryImpl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getTmp <em>Tmp</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToAddCP <em>To Add CP</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetNoteFromMain <em>Get Note From Main</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToNoteFromMain <em>To Note From Main</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToAddMP <em>To Add MP</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetInfoMain <em>Get Info Main</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetCPfromControl <em>Get CPfrom Control</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetInfoFromMainSheet <em>Get Info From Main Sheet</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetMPfromMonitor <em>Get MPfrom Monitor</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetDataFromSpread <em>Get Data From Spread</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetAPfromArchive <em>Get APfrom Archive</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToinstallEndGeneration <em>Toinstall End Generation</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetFromSpreadsheet <em>Get From Spreadsheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToInfoMain <em>To Info Main</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToCPfromControl <em>To CPfrom Control</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToInfoFromMainSheet <em>To Info From Main Sheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToMPfromMonitor <em>To MPfrom Monitor</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToDataFromSpread <em>To Data From Spread</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToAPfromArchive <em>To APfrom Archive</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToInstallEndGeneration <em>To Install End Generation</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToSpreadsheetFrom <em>To Spreadsheet From</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToValidateSpreadsheet <em>To Validate Spreadsheet</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetGenericMP <em>Get Generic MP</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.DeviceModel#getToGenericMP <em>To Generic MP</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel()
  * @model
@@ -116,30 +116,30 @@ public interface DeviceModel extends alma.Control.datamodel.meta.base.DeviceMode
 	void setToAddCP(ControlPoint value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Note From Main</b></em>' reference.
+	 * Returns the value of the '<em><b>To Note From Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Note From Main</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Note From Main</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Note From Main</em>' reference.
-	 * @see #setGetNoteFromMain(Note)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_GetNoteFromMain()
+	 * @return the value of the '<em>To Note From Main</em>' reference.
+	 * @see #setToNoteFromMain(Note)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToNoteFromMain()
 	 * @model
 	 * @generated
 	 */
-	Note getGetNoteFromMain();
+	Note getToNoteFromMain();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetNoteFromMain <em>Get Note From Main</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToNoteFromMain <em>To Note From Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Note From Main</em>' reference.
-	 * @see #getGetNoteFromMain()
+	 * @param value the new value of the '<em>To Note From Main</em>' reference.
+	 * @see #getToNoteFromMain()
 	 * @generated
 	 */
-	void setGetNoteFromMain(Note value);
+	void setToNoteFromMain(Note value);
 
 	/**
 	 * Returns the value of the '<em><b>To Add MP</b></em>' reference.
@@ -168,212 +168,212 @@ public interface DeviceModel extends alma.Control.datamodel.meta.base.DeviceMode
 	void setToAddMP(MonitorPoint value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info Main</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info Main</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info Main</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info Main</em>' reference.
-	 * @see #setGetInfoMain(MainBase)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_GetInfoMain()
+	 * @return the value of the '<em>To Info Main</em>' reference.
+	 * @see #setToInfoMain(MainBase)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToInfoMain()
 	 * @model
 	 * @generated
 	 */
-	MainBase getGetInfoMain();
+	MainBase getToInfoMain();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetInfoMain <em>Get Info Main</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToInfoMain <em>To Info Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info Main</em>' reference.
-	 * @see #getGetInfoMain()
+	 * @param value the new value of the '<em>To Info Main</em>' reference.
+	 * @see #getToInfoMain()
 	 * @generated
 	 */
-	void setGetInfoMain(MainBase value);
+	void setToInfoMain(MainBase value);
 
 	/**
-	 * Returns the value of the '<em><b>Get CPfrom Control</b></em>' reference.
+	 * Returns the value of the '<em><b>To CPfrom Control</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get CPfrom Control</em>' reference isn't clear,
+	 * If the meaning of the '<em>To CPfrom Control</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get CPfrom Control</em>' reference.
-	 * @see #setGetCPfromControl(Control)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_GetCPfromControl()
+	 * @return the value of the '<em>To CPfrom Control</em>' reference.
+	 * @see #setToCPfromControl(Control)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToCPfromControl()
 	 * @model
 	 * @generated
 	 */
-	Control getGetCPfromControl();
+	Control getToCPfromControl();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetCPfromControl <em>Get CPfrom Control</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToCPfromControl <em>To CPfrom Control</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get CPfrom Control</em>' reference.
-	 * @see #getGetCPfromControl()
+	 * @param value the new value of the '<em>To CPfrom Control</em>' reference.
+	 * @see #getToCPfromControl()
 	 * @generated
 	 */
-	void setGetCPfromControl(Control value);
+	void setToCPfromControl(Control value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info From Main Sheet</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info From Main Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info From Main Sheet</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info From Main Sheet</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info From Main Sheet</em>' reference.
-	 * @see #setGetInfoFromMainSheet(Main)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_GetInfoFromMainSheet()
+	 * @return the value of the '<em>To Info From Main Sheet</em>' reference.
+	 * @see #setToInfoFromMainSheet(Main)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToInfoFromMainSheet()
 	 * @model
 	 * @generated
 	 */
-	Main getGetInfoFromMainSheet();
+	Main getToInfoFromMainSheet();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetInfoFromMainSheet <em>Get Info From Main Sheet</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToInfoFromMainSheet <em>To Info From Main Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info From Main Sheet</em>' reference.
-	 * @see #getGetInfoFromMainSheet()
+	 * @param value the new value of the '<em>To Info From Main Sheet</em>' reference.
+	 * @see #getToInfoFromMainSheet()
 	 * @generated
 	 */
-	void setGetInfoFromMainSheet(Main value);
+	void setToInfoFromMainSheet(Main value);
 
 	/**
-	 * Returns the value of the '<em><b>Get MPfrom Monitor</b></em>' reference.
+	 * Returns the value of the '<em><b>To MPfrom Monitor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get MPfrom Monitor</em>' reference isn't clear,
+	 * If the meaning of the '<em>To MPfrom Monitor</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get MPfrom Monitor</em>' reference.
-	 * @see #setGetMPfromMonitor(Monitor)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_GetMPfromMonitor()
+	 * @return the value of the '<em>To MPfrom Monitor</em>' reference.
+	 * @see #setToMPfromMonitor(Monitor)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToMPfromMonitor()
 	 * @model
 	 * @generated
 	 */
-	Monitor getGetMPfromMonitor();
+	Monitor getToMPfromMonitor();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetMPfromMonitor <em>Get MPfrom Monitor</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToMPfromMonitor <em>To MPfrom Monitor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get MPfrom Monitor</em>' reference.
-	 * @see #getGetMPfromMonitor()
+	 * @param value the new value of the '<em>To MPfrom Monitor</em>' reference.
+	 * @see #getToMPfromMonitor()
 	 * @generated
 	 */
-	void setGetMPfromMonitor(Monitor value);
+	void setToMPfromMonitor(Monitor value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Data From Spread</b></em>' reference.
+	 * Returns the value of the '<em><b>To Data From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Data From Spread</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Data From Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Data From Spread</em>' reference.
-	 * @see #setGetDataFromSpread(Table)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_GetDataFromSpread()
+	 * @return the value of the '<em>To Data From Spread</em>' reference.
+	 * @see #setToDataFromSpread(Table)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToDataFromSpread()
 	 * @model
 	 * @generated
 	 */
-	Table getGetDataFromSpread();
+	Table getToDataFromSpread();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetDataFromSpread <em>Get Data From Spread</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToDataFromSpread <em>To Data From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Data From Spread</em>' reference.
-	 * @see #getGetDataFromSpread()
+	 * @param value the new value of the '<em>To Data From Spread</em>' reference.
+	 * @see #getToDataFromSpread()
 	 * @generated
 	 */
-	void setGetDataFromSpread(Table value);
+	void setToDataFromSpread(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Get APfrom Archive</b></em>' reference.
+	 * Returns the value of the '<em><b>To APfrom Archive</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get APfrom Archive</em>' reference isn't clear,
+	 * If the meaning of the '<em>To APfrom Archive</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get APfrom Archive</em>' reference.
-	 * @see #setGetAPfromArchive(Archive)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_GetAPfromArchive()
+	 * @return the value of the '<em>To APfrom Archive</em>' reference.
+	 * @see #setToAPfromArchive(Archive)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToAPfromArchive()
 	 * @model
 	 * @generated
 	 */
-	Archive getGetAPfromArchive();
+	Archive getToAPfromArchive();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetAPfromArchive <em>Get APfrom Archive</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToAPfromArchive <em>To APfrom Archive</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get APfrom Archive</em>' reference.
-	 * @see #getGetAPfromArchive()
+	 * @param value the new value of the '<em>To APfrom Archive</em>' reference.
+	 * @see #getToAPfromArchive()
 	 * @generated
 	 */
-	void setGetAPfromArchive(Archive value);
+	void setToAPfromArchive(Archive value);
 
 	/**
-	 * Returns the value of the '<em><b>Toinstall End Generation</b></em>' reference.
+	 * Returns the value of the '<em><b>To Install End Generation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Toinstall End Generation</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Install End Generation</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Toinstall End Generation</em>' reference.
-	 * @see #setToinstallEndGeneration(Util)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToinstallEndGeneration()
+	 * @return the value of the '<em>To Install End Generation</em>' reference.
+	 * @see #setToInstallEndGeneration(Util)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToInstallEndGeneration()
 	 * @model
 	 * @generated
 	 */
-	Util getToinstallEndGeneration();
+	Util getToInstallEndGeneration();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToinstallEndGeneration <em>Toinstall End Generation</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToInstallEndGeneration <em>To Install End Generation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Toinstall End Generation</em>' reference.
-	 * @see #getToinstallEndGeneration()
+	 * @param value the new value of the '<em>To Install End Generation</em>' reference.
+	 * @see #getToInstallEndGeneration()
 	 * @generated
 	 */
-	void setToinstallEndGeneration(Util value);
+	void setToInstallEndGeneration(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>Get From Spreadsheet</b></em>' reference.
+	 * Returns the value of the '<em><b>To Spreadsheet From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get From Spreadsheet</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Spreadsheet From</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get From Spreadsheet</em>' reference.
-	 * @see #setGetFromSpreadsheet(SpreadsheetParser)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_GetFromSpreadsheet()
+	 * @return the value of the '<em>To Spreadsheet From</em>' reference.
+	 * @see #setToSpreadsheetFrom(SpreadsheetParser)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToSpreadsheetFrom()
 	 * @model
 	 * @generated
 	 */
-	SpreadsheetParser getGetFromSpreadsheet();
+	SpreadsheetParser getToSpreadsheetFrom();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetFromSpreadsheet <em>Get From Spreadsheet</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToSpreadsheetFrom <em>To Spreadsheet From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get From Spreadsheet</em>' reference.
-	 * @see #getGetFromSpreadsheet()
+	 * @param value the new value of the '<em>To Spreadsheet From</em>' reference.
+	 * @see #getToSpreadsheetFrom()
 	 * @generated
 	 */
-	void setGetFromSpreadsheet(SpreadsheetParser value);
+	void setToSpreadsheetFrom(SpreadsheetParser value);
 
 	/**
 	 * Returns the value of the '<em><b>To Validate Spreadsheet</b></em>' reference.
@@ -402,30 +402,30 @@ public interface DeviceModel extends alma.Control.datamodel.meta.base.DeviceMode
 	void setToValidateSpreadsheet(SpreadsheetValidator value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Generic MP</b></em>' reference.
+	 * Returns the value of the '<em><b>To Generic MP</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Generic MP</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Generic MP</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Generic MP</em>' reference.
-	 * @see #setGetGenericMP(GenericMonitorPoints)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_GetGenericMP()
+	 * @return the value of the '<em>To Generic MP</em>' reference.
+	 * @see #setToGenericMP(GenericMonitorPoints)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getDeviceModel_ToGenericMP()
 	 * @model
 	 * @generated
 	 */
-	GenericMonitorPoints getGetGenericMP();
+	GenericMonitorPoints getToGenericMP();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getGetGenericMP <em>Get Generic MP</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.DeviceModel#getToGenericMP <em>To Generic MP</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Generic MP</em>' reference.
-	 * @see #getGetGenericMP()
+	 * @param value the new value of the '<em>To Generic MP</em>' reference.
+	 * @see #getToGenericMP()
 	 * @generated
 	 */
-	void setGetGenericMP(GenericMonitorPoints value);
+	void setToGenericMP(GenericMonitorPoints value);
 
 	/**
 	 * <!-- begin-user-doc -->

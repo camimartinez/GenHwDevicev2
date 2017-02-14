@@ -37,11 +37,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.PairImpl#getContent <em>Content</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.PairImpl#getNewString <em>New String</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

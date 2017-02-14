@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.MainBase#getRow <em>Row</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.MainBase#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.MainBase#getImplementTo <em>Implement To</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.MainBase#getConvertInfoTo <em>Convert Info To</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.base.MainBase#getGetInfoFromSpread <em>Get Info From Spread</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.MainBase#getToImplement <em>To Implement</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.MainBase#getToConvertInfo <em>To Convert Info</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.base.MainBase#getToInfoFromSpread <em>To Info From Spread</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.base.BasePackage#getMainBase()
  * @model
@@ -56,7 +56,7 @@ public interface MainBase extends EObject {
 	 * @return the value of the '<em>Row</em>' attribute.
 	 * @see #setRow(String[])
 	 * @see alma.Control.datamodel.meta.base.BasePackage#getMainBase_Row()
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getRow();
@@ -98,82 +98,82 @@ public interface MainBase extends EObject {
 	void setSheet(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Implement To</b></em>' reference.
+	 * Returns the value of the '<em><b>To Implement</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Implement To</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Implement</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Implement To</em>' reference.
-	 * @see #setImplementTo(DeviceModel)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getMainBase_ImplementTo()
+	 * @return the value of the '<em>To Implement</em>' reference.
+	 * @see #setToImplement(DeviceModel)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getMainBase_ToImplement()
 	 * @model
 	 * @generated
 	 */
-	DeviceModel getImplementTo();
+	DeviceModel getToImplement();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MainBase#getImplementTo <em>Implement To</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MainBase#getToImplement <em>To Implement</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Implement To</em>' reference.
-	 * @see #getImplementTo()
+	 * @param value the new value of the '<em>To Implement</em>' reference.
+	 * @see #getToImplement()
 	 * @generated
 	 */
-	void setImplementTo(DeviceModel value);
+	void setToImplement(DeviceModel value);
 
 	/**
-	 * Returns the value of the '<em><b>Convert Info To</b></em>' reference.
+	 * Returns the value of the '<em><b>To Convert Info</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Convert Info To</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Convert Info</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Convert Info To</em>' reference.
-	 * @see #setConvertInfoTo(Util)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getMainBase_ConvertInfoTo()
+	 * @return the value of the '<em>To Convert Info</em>' reference.
+	 * @see #setToConvertInfo(Util)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getMainBase_ToConvertInfo()
 	 * @model
 	 * @generated
 	 */
-	Util getConvertInfoTo();
+	Util getToConvertInfo();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MainBase#getConvertInfoTo <em>Convert Info To</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MainBase#getToConvertInfo <em>To Convert Info</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Convert Info To</em>' reference.
-	 * @see #getConvertInfoTo()
+	 * @param value the new value of the '<em>To Convert Info</em>' reference.
+	 * @see #getToConvertInfo()
 	 * @generated
 	 */
-	void setConvertInfoTo(Util value);
+	void setToConvertInfo(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info From Spread</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info From Spread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info From Spread</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info From Spread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info From Spread</em>' reference.
-	 * @see #setGetInfoFromSpread(Table)
-	 * @see alma.Control.datamodel.meta.base.BasePackage#getMainBase_GetInfoFromSpread()
+	 * @return the value of the '<em>To Info From Spread</em>' reference.
+	 * @see #setToInfoFromSpread(Table)
+	 * @see alma.Control.datamodel.meta.base.BasePackage#getMainBase_ToInfoFromSpread()
 	 * @model
 	 * @generated
 	 */
-	Table getGetInfoFromSpread();
+	Table getToInfoFromSpread();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MainBase#getGetInfoFromSpread <em>Get Info From Spread</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.base.MainBase#getToInfoFromSpread <em>To Info From Spread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info From Spread</em>' reference.
-	 * @see #getGetInfoFromSpread()
+	 * @param value the new value of the '<em>To Info From Spread</em>' reference.
+	 * @see #getToInfoFromSpread()
 	 * @generated
 	 */
-	void setGetInfoFromSpread(Table value);
+	void setToInfoFromSpread(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -18,6 +18,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
  * MA 02111-1307  USA
+ * 
  */
 package alma.Control.datamodel.meta.base.impl;
 
@@ -27,17 +28,28 @@ import java.io.StringReader;
 import java.util.ArrayList;
 
 import alma.Control.datamodel.meta.base.BaseFactory;
+import alma.Control.datamodel.meta.base.BasePackage;
 import alma.Control.datamodel.meta.base.MySpreadsheetParser;
 import alma.Control.datamodel.meta.base.Pair;
 import alma.Control.datamodel.meta.base.SpreadsheetParser;
 import alma.Control.datamodel.meta.base.SpreadsheetValidator;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 
 public class MySpreadsheetParserImpl extends SpreadsheetParserImpl implements MySpreadsheetParser {
-
-	public MySpreadsheetParserImpl(String xml) {
+	
+	
+	public MySpreadsheetParserImpl(String xml){
 		this.xml = xml;
-	}
+	}	
 	
 	@Override
 	public Pair getBoundedContent(String s, String beginPart1, String beginPart2, String end) {
@@ -263,5 +275,6 @@ public class MySpreadsheetParserImpl extends SpreadsheetParserImpl implements My
 		return result;
 	}
 
+	
 
 } //MySpreadsheetParserImpl

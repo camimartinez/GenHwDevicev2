@@ -39,16 +39,16 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.Monitor#getAux7 <em>Aux7</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.Monitor#getMac <em>Mac</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.Monitor#getAux2 <em>Aux2</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.Monitor#getAux3 <em>Aux3</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.Monitor#getToNormalizeData <em>To Normalize Data</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.Monitor#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.Monitor#getGetInfoMPSheet <em>Get Info MP Sheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.Monitor#getToColumnsCanBeInv <em>To Columns Can Be Inv</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.Monitor#getToInfoMPSheet <em>To Info MP Sheet</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.amb.AmbPackage#getMonitor()
  * @model
@@ -186,56 +186,56 @@ public interface Monitor extends MonitorPoint {
 	void setToNormalizeData(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Columns Can Be Inv</b></em>' reference.
+	 * Returns the value of the '<em><b>To Columns Can Be Inv</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Columns Can Be Inv</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Columns Can Be Inv</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Columns Can Be Inv</em>' reference.
-	 * @see #setGetColumnsCanBeInv(Table)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMonitor_GetColumnsCanBeInv()
+	 * @return the value of the '<em>To Columns Can Be Inv</em>' reference.
+	 * @see #setToColumnsCanBeInv(Table)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMonitor_ToColumnsCanBeInv()
 	 * @model
 	 * @generated
 	 */
-	Table getGetColumnsCanBeInv();
+	Table getToColumnsCanBeInv();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Monitor#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Monitor#getToColumnsCanBeInv <em>To Columns Can Be Inv</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Columns Can Be Inv</em>' reference.
-	 * @see #getGetColumnsCanBeInv()
+	 * @param value the new value of the '<em>To Columns Can Be Inv</em>' reference.
+	 * @see #getToColumnsCanBeInv()
 	 * @generated
 	 */
-	void setGetColumnsCanBeInv(Table value);
+	void setToColumnsCanBeInv(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info MP Sheet</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info MP Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info MP Sheet</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info MP Sheet</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info MP Sheet</em>' reference.
-	 * @see #setGetInfoMPSheet(MandC)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMonitor_GetInfoMPSheet()
+	 * @return the value of the '<em>To Info MP Sheet</em>' reference.
+	 * @see #setToInfoMPSheet(MandC)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getMonitor_ToInfoMPSheet()
 	 * @model
 	 * @generated
 	 */
-	MandC getGetInfoMPSheet();
+	MandC getToInfoMPSheet();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Monitor#getGetInfoMPSheet <em>Get Info MP Sheet</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Monitor#getToInfoMPSheet <em>To Info MP Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info MP Sheet</em>' reference.
-	 * @see #getGetInfoMPSheet()
+	 * @param value the new value of the '<em>To Info MP Sheet</em>' reference.
+	 * @see #getToInfoMPSheet()
 	 * @generated
 	 */
-	void setGetInfoMPSheet(MandC value);
+	void setToInfoMPSheet(MandC value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -678,7 +678,7 @@ public interface Monitor extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = true;\r\n\t\tif( this.isDependent()) ret = false;\r\n\t\tif( this.getDependents().getResources().isEmpty()) ret = false;\r\n\t\tfor (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {\r\n\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\r\n\t\t\tif( var.WorldDataType().compareTo(\"boolean\") != 0 ) ret = false;\r\n\t\t}\r\n\t\treturn ret;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = true;\r\n\t\tif( this.isDependent()) ret = false;\r\n\t\tif( this.getDependents().getResources().isEmpty()) ret = false;\r\n\t\tfor (Iterator&lt;Resource&gt; iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {\r\n\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\r\n\t\t\tif( var.WorldDataType().compareTo(\"boolean\") != 0 ) ret = false;\r\n\t\t}\r\n\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean isPattern();
@@ -696,7 +696,7 @@ public interface Monitor extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = true;\r\n\t\tString firsttype = null;\r\n\t\tif( hasDependents() ){\r\n\t\t\tfor (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {\r\n\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\r\n\t\t\t\tif( firsttype == null){\r\n\t\t\t\t\tfirsttype = new String(var.WorldDataType());\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\t}\r\n\t\t\t\tif( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;\r\n\t\t\t}\r\n\t\t}else{\r\n\t\t\tret = false;\r\n\t\t}\r\n\t\treturn ret;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = true;\r\n\t\tString firsttype = null;\r\n\t\tif( hasDependents() ){\r\n\t\t\tfor (Iterator&lt;Resource&gt; iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {\r\n\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\r\n\t\t\t\tif( firsttype == null){\r\n\t\t\t\t\tfirsttype = new String(var.WorldDataType());\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\t}\r\n\t\t\t\tif( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;\r\n\t\t\t}\r\n\t\t}else{\r\n\t\t\tret = false;\r\n\t\t}\r\n\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean isHomogeneous();

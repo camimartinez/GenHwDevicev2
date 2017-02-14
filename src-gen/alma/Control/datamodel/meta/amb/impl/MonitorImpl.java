@@ -58,16 +58,16 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.MonitorImpl#getAux7 <em>Aux7</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.MonitorImpl#getMac <em>Mac</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.MonitorImpl#getAux2 <em>Aux2</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.MonitorImpl#getAux3 <em>Aux3</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.impl.MonitorImpl#getToNormalizeData <em>To Normalize Data</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.MonitorImpl#getGetColumnsCanBeInv <em>Get Columns Can Be Inv</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.impl.MonitorImpl#getGetInfoMPSheet <em>Get Info MP Sheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.MonitorImpl#getToColumnsCanBeInv <em>To Columns Can Be Inv</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.impl.MonitorImpl#getToInfoMPSheet <em>To Info MP Sheet</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -174,24 +174,24 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	protected Util toNormalizeData;
 
 	/**
-	 * The cached value of the '{@link #getGetColumnsCanBeInv() <em>Get Columns Can Be Inv</em>}' reference.
+	 * The cached value of the '{@link #getToColumnsCanBeInv() <em>To Columns Can Be Inv</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetColumnsCanBeInv()
+	 * @see #getToColumnsCanBeInv()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table getColumnsCanBeInv;
+	protected Table toColumnsCanBeInv;
 
 	/**
-	 * The cached value of the '{@link #getGetInfoMPSheet() <em>Get Info MP Sheet</em>}' reference.
+	 * The cached value of the '{@link #getToInfoMPSheet() <em>To Info MP Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetInfoMPSheet()
+	 * @see #getToInfoMPSheet()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandC getInfoMPSheet;
+	protected MandC toInfoMPSheet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -339,16 +339,16 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetColumnsCanBeInv() {
-		if (getColumnsCanBeInv != null && getColumnsCanBeInv.eIsProxy()) {
-			InternalEObject oldGetColumnsCanBeInv = (InternalEObject)getColumnsCanBeInv;
-			getColumnsCanBeInv = (Table)eResolveProxy(oldGetColumnsCanBeInv);
-			if (getColumnsCanBeInv != oldGetColumnsCanBeInv) {
+	public Table getToColumnsCanBeInv() {
+		if (toColumnsCanBeInv != null && toColumnsCanBeInv.eIsProxy()) {
+			InternalEObject oldToColumnsCanBeInv = (InternalEObject)toColumnsCanBeInv;
+			toColumnsCanBeInv = (Table)eResolveProxy(oldToColumnsCanBeInv);
+			if (toColumnsCanBeInv != oldToColumnsCanBeInv) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR__GET_COLUMNS_CAN_BE_INV, oldGetColumnsCanBeInv, getColumnsCanBeInv));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV, oldToColumnsCanBeInv, toColumnsCanBeInv));
 			}
 		}
-		return getColumnsCanBeInv;
+		return toColumnsCanBeInv;
 	}
 
 	/**
@@ -356,8 +356,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetColumnsCanBeInv() {
-		return getColumnsCanBeInv;
+	public Table basicGetToColumnsCanBeInv() {
+		return toColumnsCanBeInv;
 	}
 
 	/**
@@ -365,11 +365,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetColumnsCanBeInv(Table newGetColumnsCanBeInv) {
-		Table oldGetColumnsCanBeInv = getColumnsCanBeInv;
-		getColumnsCanBeInv = newGetColumnsCanBeInv;
+	public void setToColumnsCanBeInv(Table newToColumnsCanBeInv) {
+		Table oldToColumnsCanBeInv = toColumnsCanBeInv;
+		toColumnsCanBeInv = newToColumnsCanBeInv;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__GET_COLUMNS_CAN_BE_INV, oldGetColumnsCanBeInv, getColumnsCanBeInv));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV, oldToColumnsCanBeInv, toColumnsCanBeInv));
 	}
 
 	/**
@@ -377,16 +377,16 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC getGetInfoMPSheet() {
-		if (getInfoMPSheet != null && getInfoMPSheet.eIsProxy()) {
-			InternalEObject oldGetInfoMPSheet = (InternalEObject)getInfoMPSheet;
-			getInfoMPSheet = (MandC)eResolveProxy(oldGetInfoMPSheet);
-			if (getInfoMPSheet != oldGetInfoMPSheet) {
+	public MandC getToInfoMPSheet() {
+		if (toInfoMPSheet != null && toInfoMPSheet.eIsProxy()) {
+			InternalEObject oldToInfoMPSheet = (InternalEObject)toInfoMPSheet;
+			toInfoMPSheet = (MandC)eResolveProxy(oldToInfoMPSheet);
+			if (toInfoMPSheet != oldToInfoMPSheet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR__GET_INFO_MP_SHEET, oldGetInfoMPSheet, getInfoMPSheet));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR__TO_INFO_MP_SHEET, oldToInfoMPSheet, toInfoMPSheet));
 			}
 		}
-		return getInfoMPSheet;
+		return toInfoMPSheet;
 	}
 
 	/**
@@ -394,8 +394,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC basicGetGetInfoMPSheet() {
-		return getInfoMPSheet;
+	public MandC basicGetToInfoMPSheet() {
+		return toInfoMPSheet;
 	}
 
 	/**
@@ -403,11 +403,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetInfoMPSheet(MandC newGetInfoMPSheet) {
-		MandC oldGetInfoMPSheet = getInfoMPSheet;
-		getInfoMPSheet = newGetInfoMPSheet;
+	public void setToInfoMPSheet(MandC newToInfoMPSheet) {
+		MandC oldToInfoMPSheet = toInfoMPSheet;
+		toInfoMPSheet = newToInfoMPSheet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__GET_INFO_MP_SHEET, oldGetInfoMPSheet, getInfoMPSheet));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__TO_INFO_MP_SHEET, oldToInfoMPSheet, toInfoMPSheet));
 	}
 
 	/**
@@ -967,12 +967,12 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			case AmbPackage.MONITOR__TO_NORMALIZE_DATA:
 				if (resolve) return getToNormalizeData();
 				return basicGetToNormalizeData();
-			case AmbPackage.MONITOR__GET_COLUMNS_CAN_BE_INV:
-				if (resolve) return getGetColumnsCanBeInv();
-				return basicGetGetColumnsCanBeInv();
-			case AmbPackage.MONITOR__GET_INFO_MP_SHEET:
-				if (resolve) return getGetInfoMPSheet();
-				return basicGetGetInfoMPSheet();
+			case AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV:
+				if (resolve) return getToColumnsCanBeInv();
+				return basicGetToColumnsCanBeInv();
+			case AmbPackage.MONITOR__TO_INFO_MP_SHEET:
+				if (resolve) return getToInfoMPSheet();
+				return basicGetToInfoMPSheet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1000,11 +1000,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			case AmbPackage.MONITOR__TO_NORMALIZE_DATA:
 				setToNormalizeData((Util)newValue);
 				return;
-			case AmbPackage.MONITOR__GET_COLUMNS_CAN_BE_INV:
-				setGetColumnsCanBeInv((Table)newValue);
+			case AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV:
+				setToColumnsCanBeInv((Table)newValue);
 				return;
-			case AmbPackage.MONITOR__GET_INFO_MP_SHEET:
-				setGetInfoMPSheet((MandC)newValue);
+			case AmbPackage.MONITOR__TO_INFO_MP_SHEET:
+				setToInfoMPSheet((MandC)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1033,11 +1033,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			case AmbPackage.MONITOR__TO_NORMALIZE_DATA:
 				setToNormalizeData((Util)null);
 				return;
-			case AmbPackage.MONITOR__GET_COLUMNS_CAN_BE_INV:
-				setGetColumnsCanBeInv((Table)null);
+			case AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV:
+				setToColumnsCanBeInv((Table)null);
 				return;
-			case AmbPackage.MONITOR__GET_INFO_MP_SHEET:
-				setGetInfoMPSheet((MandC)null);
+			case AmbPackage.MONITOR__TO_INFO_MP_SHEET:
+				setToInfoMPSheet((MandC)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1061,10 +1061,10 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 				return AUX3_EDEFAULT == null ? aux3 != null : !AUX3_EDEFAULT.equals(aux3);
 			case AmbPackage.MONITOR__TO_NORMALIZE_DATA:
 				return toNormalizeData != null;
-			case AmbPackage.MONITOR__GET_COLUMNS_CAN_BE_INV:
-				return getColumnsCanBeInv != null;
-			case AmbPackage.MONITOR__GET_INFO_MP_SHEET:
-				return getInfoMPSheet != null;
+			case AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV:
+				return toColumnsCanBeInv != null;
+			case AmbPackage.MONITOR__TO_INFO_MP_SHEET:
+				return toInfoMPSheet != null;
 		}
 		return super.eIsSet(featureID);
 	}

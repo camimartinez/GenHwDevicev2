@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.eth.MandC#getRow <em>Row</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.MandC#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.MandC#getAssembly <em>Assembly</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.MandC#getAux <em>Aux</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.eth.MandC#getGetInfoFromCol <em>Get Info From Col</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.eth.MandC#getToInfoFromCol <em>To Info From Col</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.eth.EthPackage#getMandC()
  * @model
@@ -60,7 +60,7 @@ public interface MandC extends EObject {
 	 * @return the value of the '<em>Row</em>' attribute.
 	 * @see #setRow(String[])
 	 * @see alma.Control.datamodel.meta.eth.EthPackage#getMandC_Row()
-	 * @model dataType="alma.Control.datamodel.meta.base.String1DT"
+	 * @model dataType="alma.Control.datamodel.meta.base.EStringArray"
 	 * @generated
 	 */
 	String[] getRow();
@@ -154,30 +154,30 @@ public interface MandC extends EObject {
 	void setAux(BaseFactoryImpl value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info From Col</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info From Col</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info From Col</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info From Col</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info From Col</em>' reference.
-	 * @see #setGetInfoFromCol(Table)
-	 * @see alma.Control.datamodel.meta.eth.EthPackage#getMandC_GetInfoFromCol()
+	 * @return the value of the '<em>To Info From Col</em>' reference.
+	 * @see #setToInfoFromCol(Table)
+	 * @see alma.Control.datamodel.meta.eth.EthPackage#getMandC_ToInfoFromCol()
 	 * @model
 	 * @generated
 	 */
-	Table getGetInfoFromCol();
+	Table getToInfoFromCol();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.MandC#getGetInfoFromCol <em>Get Info From Col</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.eth.MandC#getToInfoFromCol <em>To Info From Col</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info From Col</em>' reference.
-	 * @see #getGetInfoFromCol()
+	 * @param value the new value of the '<em>To Info From Col</em>' reference.
+	 * @see #getToInfoFromCol()
 	 * @generated
 	 */
-	void setGetInfoFromCol(Table value);
+	void setToInfoFromCol(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

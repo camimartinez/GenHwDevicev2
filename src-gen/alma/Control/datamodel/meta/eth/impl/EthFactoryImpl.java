@@ -48,7 +48,7 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	 */
 	public static EthFactory init() {
 		try {
-			EthFactory theEthFactory = (EthFactory)EPackage.Registry.INSTANCE.getEFactory("http://alma/Control/datamodel/meta/eth/1.0"); 
+			EthFactory theEthFactory = (EthFactory)EPackage.Registry.INSTANCE.getEFactory(EthPackage.eNS_URI);
 			if (theEthFactory != null) {
 				return theEthFactory;
 			}

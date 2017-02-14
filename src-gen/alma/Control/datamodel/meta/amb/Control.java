@@ -38,16 +38,16 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.amb.Control#getMac <em>Mac</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.Control#getTmp <em>Tmp</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.Control#getTmp2 <em>Tmp2</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.Control#getAux2 <em>Aux2</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.Control#getWorldToDataColumns <em>World To Data Columns</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.amb.Control#getGetInfoControlSheet <em>Get Info Control Sheet</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.Control#getToWorldToDataColumns <em>To World To Data Columns</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.amb.Control#getToInfoControlSheet <em>To Info Control Sheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.amb.Control#getToNormalizeNumber <em>To Normalize Number</em>}</li>
  * </ul>
- * </p>
  *
  * @see alma.Control.datamodel.meta.amb.AmbPackage#getControl()
  * @model
@@ -159,56 +159,56 @@ public interface Control extends ControlPoint {
 	void setAux2(Resource value);
 
 	/**
-	 * Returns the value of the '<em><b>World To Data Columns</b></em>' reference.
+	 * Returns the value of the '<em><b>To World To Data Columns</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>World To Data Columns</em>' reference isn't clear,
+	 * If the meaning of the '<em>To World To Data Columns</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>World To Data Columns</em>' reference.
-	 * @see #setWorldToDataColumns(Table)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getControl_WorldToDataColumns()
+	 * @return the value of the '<em>To World To Data Columns</em>' reference.
+	 * @see #setToWorldToDataColumns(Table)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getControl_ToWorldToDataColumns()
 	 * @model
 	 * @generated
 	 */
-	Table getWorldToDataColumns();
+	Table getToWorldToDataColumns();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Control#getWorldToDataColumns <em>World To Data Columns</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Control#getToWorldToDataColumns <em>To World To Data Columns</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>World To Data Columns</em>' reference.
-	 * @see #getWorldToDataColumns()
+	 * @param value the new value of the '<em>To World To Data Columns</em>' reference.
+	 * @see #getToWorldToDataColumns()
 	 * @generated
 	 */
-	void setWorldToDataColumns(Table value);
+	void setToWorldToDataColumns(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Get Info Control Sheet</b></em>' reference.
+	 * Returns the value of the '<em><b>To Info Control Sheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Info Control Sheet</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Info Control Sheet</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Info Control Sheet</em>' reference.
-	 * @see #setGetInfoControlSheet(MandC)
-	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getControl_GetInfoControlSheet()
+	 * @return the value of the '<em>To Info Control Sheet</em>' reference.
+	 * @see #setToInfoControlSheet(MandC)
+	 * @see alma.Control.datamodel.meta.amb.AmbPackage#getControl_ToInfoControlSheet()
 	 * @model
 	 * @generated
 	 */
-	MandC getGetInfoControlSheet();
+	MandC getToInfoControlSheet();
 
 	/**
-	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Control#getGetInfoControlSheet <em>Get Info Control Sheet</em>}' reference.
+	 * Sets the value of the '{@link alma.Control.datamodel.meta.amb.Control#getToInfoControlSheet <em>To Info Control Sheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Get Info Control Sheet</em>' reference.
-	 * @see #getGetInfoControlSheet()
+	 * @param value the new value of the '<em>To Info Control Sheet</em>' reference.
+	 * @see #getToInfoControlSheet()
 	 * @generated
 	 */
-	void setGetInfoControlSheet(MandC value);
+	void setToInfoControlSheet(MandC value);
 
 	/**
 	 * Returns the value of the '<em><b>To Normalize Number</b></em>' reference.
@@ -481,7 +481,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + corbaParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = isWorldDataArray();\r\n        if(isArray == true)\r\n        {\r\n            s += \"(const \" + WorldDataToCORBASeqType() + \"& world\";\r\n        }\r\n        else\r\n        {\r\n            String type = WorldDataToCORBAType();\r\n            if(type.equalsIgnoreCase(\"CORBA::String\") == true)\r\n            {\r\n                type = \"const \" + type + \"_var&\";\r\n            }\r\n\r\n            s += \"(\" + type + \" world\";\r\n        }\r\n        if (isTeRelated)\r\n        {\r\n            s += \", const acstime::Epoch& requestTime)\";\r\n        }\r\n        else\r\n        {\r\n            s += \")\";\r\n        }\r\n        return s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + corbaParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = isWorldDataArray();\r\n        if(isArray == true)\r\n        {\r\n            s += \"(const \" + WorldDataToCORBASeqType() + \"&amp; world\";\r\n        }\r\n        else\r\n        {\r\n            String type = WorldDataToCORBAType();\r\n            if(type.equalsIgnoreCase(\"CORBA::String\") == true)\r\n            {\r\n                type = \"const \" + type + \"_var&amp;\";\r\n            }\r\n\r\n            s += \"(\" + type + \" world\";\r\n        }\r\n        if (isTeRelated)\r\n        {\r\n            s += \", const acstime::Epoch&amp; requestTime)\";\r\n        }\r\n        else\r\n        {\r\n            s += \")\";\r\n        }\r\n        return s;'"
 	 * @generated
 	 */
 	String corbaDeclaration();
@@ -505,7 +505,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='        String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + cppParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = isWorldDataArray();\r\n        if (isArray) {\r\n            s += \"(const std::vector< \" + WorldDataToCPPType() + \" >& world\";\r\n        } else {\r\n            s += \"(const \" + WorldDataToCPPType() + \" world\";\r\n        }\r\n        if (isTeRelated) {\r\n            s += \", const acstime::Epoch& requestTime)\";\r\n        } else {\r\n            s += \")\";\r\n        }\r\n        return s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='        String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + cppParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = isWorldDataArray();\r\n        if (isArray) {\r\n            s += \"(const std::vector&lt; \" + WorldDataToCPPType() + \" &gt;&amp; world\";\r\n        } else {\r\n            s += \"(const \" + WorldDataToCPPType() + \" world\";\r\n        }\r\n        if (isTeRelated) {\r\n            s += \", const acstime::Epoch&amp; requestTime)\";\r\n        } else {\r\n            s += \")\";\r\n        }\r\n        return s;'"
 	 * @generated
 	 */
 	String cppDeclaration();

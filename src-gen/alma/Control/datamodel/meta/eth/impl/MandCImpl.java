@@ -43,14 +43,14 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.MandCImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.MandCImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.MandCImpl#getAssembly <em>Assembly</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.eth.impl.MandCImpl#getAux <em>Aux</em>}</li>
- *   <li>{@link alma.Control.datamodel.meta.eth.impl.MandCImpl#getGetInfoFromCol <em>Get Info From Col</em>}</li>
+ *   <li>{@link alma.Control.datamodel.meta.eth.impl.MandCImpl#getToInfoFromCol <em>To Info From Col</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -147,14 +147,14 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	protected BaseFactoryImpl aux = AUX_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGetInfoFromCol() <em>Get Info From Col</em>}' reference.
+	 * The cached value of the '{@link #getToInfoFromCol() <em>To Info From Col</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetInfoFromCol()
+	 * @see #getToInfoFromCol()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table getInfoFromCol;
+	protected Table toInfoFromCol;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,16 +264,16 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getGetInfoFromCol() {
-		if (getInfoFromCol != null && getInfoFromCol.eIsProxy()) {
-			InternalEObject oldGetInfoFromCol = (InternalEObject)getInfoFromCol;
-			getInfoFromCol = (Table)eResolveProxy(oldGetInfoFromCol);
-			if (getInfoFromCol != oldGetInfoFromCol) {
+	public Table getToInfoFromCol() {
+		if (toInfoFromCol != null && toInfoFromCol.eIsProxy()) {
+			InternalEObject oldToInfoFromCol = (InternalEObject)toInfoFromCol;
+			toInfoFromCol = (Table)eResolveProxy(oldToInfoFromCol);
+			if (toInfoFromCol != oldToInfoFromCol) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MAND_C__GET_INFO_FROM_COL, oldGetInfoFromCol, getInfoFromCol));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MAND_C__TO_INFO_FROM_COL, oldToInfoFromCol, toInfoFromCol));
 			}
 		}
-		return getInfoFromCol;
+		return toInfoFromCol;
 	}
 
 	/**
@@ -281,8 +281,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetGetInfoFromCol() {
-		return getInfoFromCol;
+	public Table basicGetToInfoFromCol() {
+		return toInfoFromCol;
 	}
 
 	/**
@@ -290,11 +290,11 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGetInfoFromCol(Table newGetInfoFromCol) {
-		Table oldGetInfoFromCol = getInfoFromCol;
-		getInfoFromCol = newGetInfoFromCol;
+	public void setToInfoFromCol(Table newToInfoFromCol) {
+		Table oldToInfoFromCol = toInfoFromCol;
+		toInfoFromCol = newToInfoFromCol;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MAND_C__GET_INFO_FROM_COL, oldGetInfoFromCol, getInfoFromCol));
+			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MAND_C__TO_INFO_FROM_COL, oldToInfoFromCol, toInfoFromCol));
 	}
 
 	/**
@@ -302,7 +302,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAssemblyName(String assembly) {
+	public void setAssemblyName(final String assembly) {
 		this.assembly = assembly;
 	}
 
@@ -454,9 +454,9 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return getAssembly();
 			case EthPackage.MAND_C__AUX:
 				return getAux();
-			case EthPackage.MAND_C__GET_INFO_FROM_COL:
-				if (resolve) return getGetInfoFromCol();
-				return basicGetGetInfoFromCol();
+			case EthPackage.MAND_C__TO_INFO_FROM_COL:
+				if (resolve) return getToInfoFromCol();
+				return basicGetToInfoFromCol();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -481,8 +481,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case EthPackage.MAND_C__AUX:
 				setAux((BaseFactoryImpl)newValue);
 				return;
-			case EthPackage.MAND_C__GET_INFO_FROM_COL:
-				setGetInfoFromCol((Table)newValue);
+			case EthPackage.MAND_C__TO_INFO_FROM_COL:
+				setToInfoFromCol((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -508,8 +508,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case EthPackage.MAND_C__AUX:
 				setAux(AUX_EDEFAULT);
 				return;
-			case EthPackage.MAND_C__GET_INFO_FROM_COL:
-				setGetInfoFromCol((Table)null);
+			case EthPackage.MAND_C__TO_INFO_FROM_COL:
+				setToInfoFromCol((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -531,8 +531,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return ASSEMBLY_EDEFAULT == null ? assembly != null : !ASSEMBLY_EDEFAULT.equals(assembly);
 			case EthPackage.MAND_C__AUX:
 				return AUX_EDEFAULT == null ? aux != null : !AUX_EDEFAULT.equals(aux);
-			case EthPackage.MAND_C__GET_INFO_FROM_COL:
-				return getInfoFromCol != null;
+			case EthPackage.MAND_C__TO_INFO_FROM_COL:
+				return toInfoFromCol != null;
 		}
 		return super.eIsSet(featureID);
 	}

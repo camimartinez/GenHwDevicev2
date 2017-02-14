@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.TableImpl#getDepChar <em>Dep Char</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.TableImpl#getCelsiusToKelvin <em>Celsius To Kelvin</em>}</li>
@@ -69,7 +70,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.Control.datamodel.meta.base.impl.TableImpl#getWorldToJava <em>World To Java</em>}</li>
  *   <li>{@link alma.Control.datamodel.meta.base.impl.TableImpl#getWorldToDatabase <em>World To Database</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -1123,7 +1123,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getSheetNum(String name) {
+	public int getSheetNum(final String name) {
 		int i;
 			for(i = 0; i < sheetNames.size(); i++)
 				if(((String)sheetNames.get(i)).compareTo(name) == 0)
@@ -1136,7 +1136,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getColNum(int sheet, String name) {
+	public int getColNum(final int sheet, final String name) {
 		int i;
 		for(i = 0; i < ((ArrayList)colNames.get(sheet)).size(); i++)
 			if(((String)((ArrayList)colNames.get(sheet)).get(i)).compareTo(name) == 0)
@@ -1149,7 +1149,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addSheet(String name) {
+	public void addSheet(final String name) {
 		sheetNames.add(name);
 		colNames.add(new ArrayList());
 	}
@@ -1159,7 +1159,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addCol(int sheet, String name) {
+	public void addCol(final int sheet, final String name) {
 		((ArrayList)colNames.get(sheet)).add(name);
 		
 	}
@@ -1169,7 +1169,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void initialize(String[][][] sh) {
+	public void initialize(final String[][][] sh) {
 				int i, j;
 				sheetNames = new ArrayList();
 				colNames = new ArrayList();
