@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: GenHwDevicev2
 Bundle-SymbolicName: GenHwDevicev2;singleton:=true
 Bundle-Version: 1.0.0
-Bundle-ClassPath: lib/emf_v2.12.jar
+Bundle-ClassPath: .
 Bundle-Vendor: ALMA
 Bundle-Localization: plugin
 Export-Package: alma.Control.datamodel.meta.amb,
@@ -17,8 +17,6 @@ Export-Package: alma.Control.datamodel.meta.amb,
  alma.Control.datamodel.meta.eth.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.xpand;bundle-version="2.0.0",
- org.eclipse.xtend;bundle-version="2.0.0",
  org.antlr.runtime;bundle-version="3.2.0",
  com.ibm.icu.source;bundle-version="4.4.2",
  org.eclipse.jdt.core;bundle-version="3.8.3"

@@ -4,8 +4,8 @@
 	<description> Build the javacode from ecore model </description>
 	
 	<target name="generateCode" description="description">
-	<emf.Ecore2Java genModel="config/model/modelGenHwDevicev2Gen.genmodel"
-					model="config/model/modelGenHwDevicev2.ecore"
+	<emf.Ecore2Java genModel="config/model/genHwDevicev2Gen.genmodel"
+					model="config/model/genHwDevicev2.ecore"
 					generatemodelproject="true"
 					generateeditorproject="false"
 					generateeditproject="false"
