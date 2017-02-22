@@ -12,6 +12,8 @@
 	<classpathentry kind="lib" path="lib/asdmRuntime.jar"/>
 	<classpathentry kind="lib" path="lib/emf_v2.13.jar"/>
 	<classpathentry kind="lib" path="lib/mwe_v2.8.3.jar"/>
+	<classpathentry kind="lib" path="lib/antlr.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc14.jar"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
