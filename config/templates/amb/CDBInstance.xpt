@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +18,23 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/doc/"+Assembly+".xml"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/doc/"+Assembly+".xml"Â»
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
  * ALMA - Atacama Large Millimiter Array
@@ -64,59 +64,59 @@ MA 02111-1307  USA
  *  ---------------------------------------------------------
  *
 -->
-<«Assembly»Base xmlns="urn:schemas-cosylab-com:«Assembly»Base:1.0"
-    xsi:schemaLocation="urn:schemas-cosylab-com:«Assembly»Base:1.0 http://www.nrao.edu/schemas/CONTROL/«Assembly»Base.xsd"
+<Â«AssemblyÂ»Base xmlns="urn:schemas-cosylab-com:Â«AssemblyÂ»Base:1.0"
+    xsi:schemaLocation="urn:schemas-cosylab-com:Â«AssemblyÂ»Base:1.0 http://www.nrao.edu/schemas/CONTROL/Â«AssemblyÂ»Base.xsd"
       xmlns:amb="urn:schemas-cosylab-com:AmbDevice:1.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF x.isMonitored»
-  <«x.MPName»
+    Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+        Â«IF x.isMonitoredÂ»
+  <Â«x.MPNameÂ»
     archive_priority="15"
-    «IF x.Interval != "none" && x.Interval != "0"»
-    archive_min_int="«x.Interval»"
-    archive_max_int="«x.Interval»"
-    «ELSE»
+    Â«IF x.Interval != "none" && x.Interval != "0"Â»
+    archive_min_int="Â«x.IntervalÂ»"
+    archive_max_int="Â«x.IntervalÂ»"
+    Â«ELSEÂ»
     archive_min_int="0"
     archive_max_int="0"
     archive_suppress="1"
-    «ENDIF»
+    Â«ENDIFÂ»
     default_value="0"
-    «IF x.GraphMin != "none"»
-    graph_min="«x.GraphMin»"
-    «ENDIF»
-    «IF x.GraphMax != "none"»
-    graph_max="«x.GraphMax»"
-    «ENDIF»
-    format="%«x.Format»"
-    description="«x.Title»"
-    units="«x.DataUnits»"
+    Â«IF x.GraphMin != "none"Â»
+    graph_min="Â«x.GraphMinÂ»"
+    Â«ENDIFÂ»
+    Â«IF x.GraphMax != "none"Â»
+    graph_max="Â«x.GraphMaxÂ»"
+    Â«ENDIFÂ»
+    format="%Â«x.FormatÂ»"
+    description="Â«x.TitleÂ»"
+    units="Â«x.DataUnitsÂ»"
     min_timer_trig="0.048"
-    «IF x.isPattern»
+    Â«IF x.isPatternÂ»
     bitDescription=""
     alarm_mask="0"
     alarm_trigger="0"
-    «ELSE»
+    Â«ELSEÂ»
     min_delta_trig="1"
-    «ENDIF»
+    Â«ENDIFÂ»
     default_timer_trig="1"
     resolution="1"
     min_step="1"
     alarm_timer_trig="0"
     />
-          «ENDIF»
-    «ENDFOREACH»
+          Â«ENDIFÂ»
+    Â«ENDFOREACHÂ»
     <Address
-«IF Channel != "none" && Channel != "parm"»
-        ChannelNumber = "«Channel»"
-«ENDIF»
-«IF NodeAddress != "none"»
-    «IF NodeAddress != "parm"»
-        NodeNumber = "«NodeAddressInDecimal»"
-    «ELSE»
+Â«IF Channel != "none" && Channel != "parm"Â»
+        ChannelNumber = "Â«ChannelÂ»"
+Â«ENDIFÂ»
+Â«IF NodeAddress != "none"Â»
+    Â«IF NodeAddress != "parm"Â»
+        NodeNumber = "Â«NodeAddressInDecimalÂ»"
+    Â«ELSEÂ»
         NodeNumber = "Fill in the correct Node Address!"
-    «ENDIF»
-«ENDIF»
+    Â«ENDIFÂ»
+Â«ENDIFÂ»
     />
-</«Assembly»Base>
-«ENDFILE»
-«ENDDEFINE»
+</Â«AssemblyÂ»Base>
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

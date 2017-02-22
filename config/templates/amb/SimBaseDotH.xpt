@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,25 +18,25 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+  Â«IF !IsMonitorDBOnlyÂ»
+    Â«EXPAND SWModuleDefÂ»
+  Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"SimBase.h"»
-#ifndef «Assembly»SimBase_h
-#define «Assembly»SimBase_h
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/include/"+Assembly+"SimBase.h"Â»
+#ifndef Â«AssemblyÂ»SimBase_h
+#define Â«AssemblyÂ»SimBase_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -71,88 +71,88 @@ MA 02111-1307  USA
 #endif
 
 
-#include <«Assembly»Impl.h>
+#include <Â«AssemblyÂ»Impl.h>
 
 
-/// The «Assembly»SimBase class is the base class for the
-/// «DeviceName»Impl simulation.
+/// The Â«AssemblyÂ»SimBase class is the base class for the
+/// Â«DeviceNameÂ»Impl simulation.
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
-/// <li> Parent:   «Parent»
-/// <li> Node:     «NodeAddress»
-/// <li> Channel:  «Channel»
+/// <li> Device:   Â«DeviceNameÂ»
+/// <li> Assembly: Â«AssemblyÂ»
+/// <li> Parent:   Â«ParentÂ»
+/// <li> Node:     Â«NodeAddressÂ»
+/// <li> Channel:  Â«ChannelÂ»
 /// </ul>
 /// <p>
-/// «DescriptionL1»
-class «Assembly»SimBase: public «Assembly»Impl
+/// Â«DescriptionL1Â»
+class Â«AssemblyÂ»SimBase: public Â«AssemblyÂ»Impl
 {
     public:
     /// Destructor
-    virtual ~«Assembly»SimBase();
+    virtual ~Â«AssemblyÂ»SimBase();
 
     protected:
     /// Constructor. Never instanciate this class directly!
-    «Assembly»SimBase(const ACE_CString& name, maci::ContainerServices* cs);
+    Â«AssemblyÂ»SimBase(const ACE_CString& name, maci::ContainerServices* cs);
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «EXPAND ProtectedMonitorPoint FOR x»
-«ENDFOREACH»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «EXPAND ProtectedControlPoint FOR x»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«EXPAND ProtectedMonitorPoint FOR xÂ»
+Â«ENDFOREACHÂ»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«EXPAND ProtectedControlPoint FOR xÂ»
+Â«ENDFOREACHÂ»
     private:
     /// Default constructor. Never instanciate this class directly!
-    «Assembly»SimBase();
+    Â«AssemblyÂ»SimBase();
 
     /// ALMA coding standards: copy constructor is disabled.
-    «Assembly»SimBase(const «Assembly»SimBase&);
+    Â«AssemblyÂ»SimBase(const Â«AssemblyÂ»SimBase&);
 
     /// ALMA coding standards: assignment operator is disabled.
-    «Assembly»SimBase& operator=(const «Assembly»SimBase&);
+    Â«AssemblyÂ»SimBase& operator=(const Â«AssemblyÂ»SimBase&);
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
-    /// MonitorPoint: «MPName»
-    «IF !isExternal || !isMonitored»
-    /// «DescriptionFormattedL5»
-    «ENDIF»
-    «REM»
+Â«DEFINE ProtectedMonitorPoint FOR MonitorPointÂ»
+    /// MonitorPoint: Â«MPNameÂ»
+    Â«IF !isExternal || !isMonitoredÂ»
+    /// Â«DescriptionFormattedL5Â»
+    Â«ENDIFÂ»
+    Â«REMÂ»
     a. Major monitor method
-    «ENDREM»
-    «IF isImplemented»
-        «IF !isDependent»
+    Â«ENDREMÂ»
+    Â«IF isImplementedÂ»
+        Â«IF !isDependentÂ»
     /// \exception ControlExceptions::INACTErrorExImpl
-            «IF isWorldDataArray»
-    virtual std::vector< «WorldDataToCPPType» > get«AltMPName»(
+            Â«IF isWorldDataArrayÂ»
+    virtual std::vector< Â«WorldDataToCPPTypeÂ» > getÂ«AltMPNameÂ»(
        ACS::Time& timestamp);
-            «ELSE»
-    virtual «WorldDataToCPPType» get«AltMPName»(ACS::Time& timestamp);
-            «ENDIF»
-        «ENDIF»
-    «ENDIF»
-«ENDDEFINE»
+            Â«ELSEÂ»
+    virtual Â«WorldDataToCPPTypeÂ» getÂ«AltMPNameÂ»(ACS::Time& timestamp);
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ProtectedControlPoint FOR ControlPoint»
-    «IF !isDependent»
-    /// ControlPoint: «CPName»
-        «IF !isExternal»
-    /// «DescriptionFormattedL5»
-        «ENDIF»
-    «REM»
+Â«DEFINE ProtectedControlPoint FOR ControlPointÂ»
+    Â«IF !isDependentÂ»
+    /// ControlPoint: Â«CPNameÂ»
+        Â«IF !isExternalÂ»
+    /// Â«DescriptionFormattedL5Â»
+        Â«ENDIFÂ»
+    Â«REMÂ»
     a. Major control method
-    «ENDREM»
-    «REM»
+    Â«ENDREMÂ»
+    Â«REMÂ»
     The "if hasDependents" part of this is not yet implemented.
-    «ENDREM»
+    Â«ENDREMÂ»
     /// \exception ControlExceptions::INACTErrorExImpl
-        «IF Implement»
-    virtual «cppReturns» set«AltCPName»«cppDeclaration»;
-        «ELSE»
-    virtual «cppReturns» set«AltCPName»«cppDeclaration» = 0;
-        «ENDIF»
-    «ENDIF»
-«ENDDEFINE»
+        Â«IF ImplementÂ»
+    virtual Â«cppReturnsÂ» setÂ«AltCPNameÂ»Â«cppDeclarationÂ»;
+        Â«ELSEÂ»
+    virtual Â«cppReturnsÂ» setÂ«AltCPNameÂ»Â«cppDeclarationÂ» = 0;
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»

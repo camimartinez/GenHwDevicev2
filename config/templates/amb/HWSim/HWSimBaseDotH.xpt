@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,28 +18,28 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"HWSimBase.h"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/include/"+Assembly+"HWSimBase.h"Â»
 #ifndef __cplusplus
 #error This is a C++ include file and cannot be used from plain C.
 #endif
-#ifndef «Assembly»HWSimBase_h
-#define «Assembly»HWSimBase_h
+#ifndef Â«AssemblyÂ»HWSimBase_h
+#define Â«AssemblyÂ»HWSimBase_h
 //
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
@@ -70,11 +70,11 @@ MA 02111-1307  USA
 
 
 
-«IF Extends == "none"»
+Â«IF Extends == "none"Â»
 #include <CommonHWSim.h>
-«ELSE»
-#include <«Extends»HWSimImpl.h>
-«ENDIF»
+Â«ELSEÂ»
+#include <Â«ExtendsÂ»HWSimImpl.h>
+Â«ENDIFÂ»
 #include <vector>
 // For AMB::node_t and CAN::byte_t
 #include <CANTypes.h>
@@ -82,31 +82,31 @@ MA 02111-1307  USA
 
 namespace AMB
 {
-    /// The «Assembly»HWSimBase class is the base class for the
-    /// «DeviceName» hardware simulator.
+    /// The Â«AssemblyÂ»HWSimBase class is the base class for the
+    /// Â«DeviceNameÂ» hardware simulator.
     /// <ul>
-    /// <li> Device:   «DeviceName»
-    /// <li> Assembly: «Assembly»
-    /// <li> Parent:   «Parent»
-    /// <li> Node:     «NodeAddress»
-    /// <li> Channel:  «Channel»
+    /// <li> Device:   Â«DeviceNameÂ»
+    /// <li> Assembly: Â«AssemblyÂ»
+    /// <li> Parent:   Â«ParentÂ»
+    /// <li> Node:     Â«NodeAddressÂ»
+    /// <li> Channel:  Â«ChannelÂ»
     /// </ul>
-    class «Assembly»HWSimBase:
-«IF Extends == "none"»
+    class Â«AssemblyÂ»HWSimBase:
+Â«IF Extends == "none"Â»
         public CommonHWSim
-«ELSE»
-        public «Extends»HWSimImpl
-«ENDIF»
+Â«ELSEÂ»
+        public Â«ExtendsÂ»HWSimImpl
+Â«ENDIFÂ»
     {
         public:
         /// Constructor
         /// \param node Node ID of this device
         /// \param serialNumber S/N of this device
-        «Assembly»HWSimBase(AMB::node_t node,
+        Â«AssemblyÂ»HWSimBase(AMB::node_t node,
             const std::vector< CAN::byte_t >& serialNumber);
 
         /// Destructor
-        virtual ~«Assembly»HWSimBase()
+        virtual ~Â«AssemblyÂ»HWSimBase()
         {
         };
 
@@ -142,80 +142,80 @@ namespace AMB
         virtual void monitorSetter(AMB::rca_t rca,
             const std::vector< CAN::byte_t >& data);
 
-        /// Specific Monitor point RCAs for «Assembly»
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent»
-        static const AMB::rca_t monitorPoint_«x.MPName»;
-    «ENDIF»
-«ENDFOREACH»
+        /// Specific Monitor point RCAs for Â«AssemblyÂ»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+        static const AMB::rca_t monitorPoint_Â«x.MPNameÂ»;
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-        /// Specific Monitor points Map for «Assembly»
+        /// Specific Monitor points Map for Â«AssemblyÂ»
         std::map< const AMB::rca_t, std::vector< CAN::byte_t > (
-            AMB::«Assembly»HWSimBase::*)() const > monitorPointsMap;
+            AMB::Â«AssemblyÂ»HWSimBase::*)() const > monitorPointsMap;
 
-        /// Specific Control point RCAs for «Assembly»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent»
-        static const AMB::rca_t controlPoint_«x.CPName»;
-    «ENDIF»
-«ENDFOREACH»
+        /// Specific Control point RCAs for Â«AssemblyÂ»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+        static const AMB::rca_t controlPoint_Â«x.CPNameÂ»;
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-        /// Specific Control points Map for «Assembly»
-        std::map< const AMB::rca_t, void (AMB::«Assembly»HWSimBase::*)(
+        /// Specific Control points Map for Â«AssemblyÂ»
+        std::map< const AMB::rca_t, void (AMB::Â«AssemblyÂ»HWSimBase::*)(
             const std::vector< CAN::byte_t >& data) > controlPointsMap;
 
 
         protected:
         /// Specific Monitor get helper functions
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent»
-        virtual std::vector< CAN::byte_t > getMonitor«x.getAltDependentName»Proxy() const;
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+        virtual std::vector< CAN::byte_t > getMonitorÂ«x.getAltDependentNameÂ»Proxy() const;
 
-        virtual std::vector< CAN::byte_t > getMonitor«x.getAltDependentName»() const;
-    «ENDIF»
-«ENDFOREACH»
+        virtual std::vector< CAN::byte_t > getMonitorÂ«x.getAltDependentNameÂ»() const;
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
         /// Specific Control get helper functions
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent»
-        virtual std::vector< CAN::byte_t > getControl«x.getAltDependentName»Proxy() const;
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+        virtual std::vector< CAN::byte_t > getControlÂ«x.getAltDependentNameÂ»Proxy() const;
 
-        virtual std::vector< CAN::byte_t > getControl«x.getAltDependentName»() const;
-    «ENDIF»
-«ENDFOREACH»
+        virtual std::vector< CAN::byte_t > getControlÂ«x.getAltDependentNameÂ»() const;
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-        /// Specific Control points get helper Map for «Assembly»
+        /// Specific Control points get helper Map for Â«AssemblyÂ»
         std::map< const AMB::rca_t, std::vector< CAN::byte_t > (
-            AMB::«Assembly»HWSimBase::*)() const > controlPointsGetterMap;
+            AMB::Â«AssemblyÂ»HWSimBase::*)() const > controlPointsGetterMap;
 
         /// Specific Control set helper functions
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
         /// \exception CAN:Error
-        virtual void setControl«x.getAltDependentName»Proxy(
+        virtual void setControlÂ«x.getAltDependentNameÂ»Proxy(
             const std::vector< CAN::byte_t >& data);
 
         /// \exception CAN:Error
-        virtual void setControl«x.getAltDependentName»(
+        virtual void setControlÂ«x.getAltDependentNameÂ»(
             const std::vector< CAN::byte_t >& data);
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
         /// Specific Monitor set helper functions
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
         /// \exception CAN:Error
-        virtual void setMonitor«x.getAltDependentName»Proxy(
+        virtual void setMonitorÂ«x.getAltDependentNameÂ»Proxy(
             const std::vector< CAN::byte_t >& data);
 
         /// \exception CAN:Error
-        virtual void setMonitor«x.getAltDependentName»(
+        virtual void setMonitorÂ«x.getAltDependentNameÂ»(
             const std::vector< CAN::byte_t >& data);
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-        /// Specific Monitor points set helper Map for «Assembly»
-        std::map< const AMB::rca_t, void (AMB::«Assembly»HWSimBase::*)(
+        /// Specific Monitor points set helper Map for Â«AssemblyÂ»
+        std::map< const AMB::rca_t, void (AMB::Â«AssemblyÂ»HWSimBase::*)(
             const std::vector< CAN::byte_t >& data) > monitorPointsSetterMap;
 
         virtual void setBaseAddress(unsigned long arg);
@@ -224,17 +224,17 @@ namespace AMB
 
         private:
         /// No default ctor.
-        «Assembly»HWSimBase();
+        Â«AssemblyÂ»HWSimBase();
 
         /// No copy ctor.
-        «Assembly»HWSimBase(const «Assembly»HWSimBase&);
+        Â«AssemblyÂ»HWSimBase(const Â«AssemblyÂ»HWSimBase&);
 
         /// No assigment optor.
-        «Assembly»HWSimBase& operator=(const «Assembly»HWSimBase&);
+        Â«AssemblyÂ»HWSimBase& operator=(const Â«AssemblyÂ»HWSimBase&);
 
         unsigned long baseAddress_m;
     };
 }
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,25 +18,25 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/idl/"+Assembly+"CompSimBase.idl"»
-#ifndef «Assembly»CompSimBase_idl
-#define «Assembly»CompSimBase_idl
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/idl/"+Assembly+"CompSimBase.idl"Â»
+#ifndef Â«AssemblyÂ»CompSimBase_idl
+#define Â«AssemblyÂ»CompSimBase_idl
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -64,7 +64,7 @@ MA 02111-1307  USA
 //  ---------------------------------------------------------
 //
 
-#include <«Assembly».idl>
+#include <Â«AssemblyÂ».idl>
 
 
 #pragma prefix "alma"
@@ -72,8 +72,8 @@ MA 02111-1307  USA
 
 module Control
 {
-    /// This interfaces define data specific to the Control::«Assembly» device.
-    interface «Assembly»CompSimBase: Control::«Assembly»
+    /// This interfaces define data specific to the Control::Â«AssemblyÂ» device.
+    interface Â«AssemblyÂ»CompSimBase: Control::Â«AssemblyÂ»
     {
         void setSimValue(in long rca, in Control::LongSeq data)
             raises(ControlExceptions::SimErrorEx);
@@ -83,5 +83,5 @@ module Control
     };
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

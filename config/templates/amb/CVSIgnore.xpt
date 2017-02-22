@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,60 +18,59 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«IF !checkIfCvsignoreFileExists("idl")Â»
+            Â«EXPAND SWModuleIdlDefÂ»
+        Â«ENDIFÂ»
+        Â«IF !checkIfCvsignoreFileExists("src")Â»
+            Â«EXPAND SWModuleSrcDefÂ»
+        Â«ENDIFÂ»
+        Â«IF !checkIfCvsignoreFileExists("include")Â»
+            Â«EXPAND SWModuleIncludeDefÂ»
+        Â«ENDIFÂ»
+        Â«IF !checkIfCvsignoreFileExists("test")Â»
+            Â«EXPAND SWModuleTestDefÂ»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
-        «IF !checkIfCvsignoreFileExists("idl")»
-            «EXPAND SWModuleIdlDef»
-        «ENDIF»
-        «IF !checkIfCvsignoreFileExists("src")»
-            «EXPAND SWModuleSrcDef»
-        «ENDIF»
-        «IF !checkIfCvsignoreFileExists("include")»
-            «EXPAND SWModuleIncludeDef»
-        «ENDIF»
-        «IF !checkIfCvsignoreFileExists("test")»
-            «EXPAND SWModuleTestDef»
-        «ENDIF»
-    «ENDIF»
-«ENDDEFINE»
+Â«DEFINE SWModuleIdlDef FOR DeviceModelImplÂ»
+Â«FILE DirPath + "/idl/.cvsignore"Â»
+Â«AssemblyÂ»Add.sql
+Â«AssemblyÂ»Base.idl
+Â«AssemblyÂ»CompSimBase.idl
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleIdlDef FOR DeviceModelImpl»
-«FILE DirPath + "/idl/.cvsignore"»
-«Assembly»Add.sql
-«Assembly»Base.idl
-«Assembly»CompSimBase.idl
-«ENDFILE»
-«ENDDEFINE»
+Â«DEFINE SWModuleSrcDef FOR DeviceModelImplÂ»
+Â«FILE DirPath + "/src/.cvsignore"Â»
+Â«AssemblyÂ»Base.cpp
+Â«AssemblyÂ»CompSimBase.cpp
+Â«AssemblyÂ»HWSimBase.cpp
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleSrcDef FOR DeviceModelImpl»
-«FILE DirPath + "/src/.cvsignore"»
-«Assembly»Base.cpp
-«Assembly»CompSimBase.cpp
-«Assembly»HWSimBase.cpp
-«ENDFILE»
-«ENDDEFINE»
+Â«DEFINE SWModuleIncludeDef FOR DeviceModelImplÂ»
+Â«FILE DirPath + "/include/.cvsignore"Â»
+Â«AssemblyÂ»Base.h
+Â«AssemblyÂ»CompSimBase.h
+Â«AssemblyÂ»HWSimBase.h
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleIncludeDef FOR DeviceModelImpl»
-«FILE DirPath + "/include/.cvsignore"»
-«Assembly»Base.h
-«Assembly»CompSimBase.h
-«Assembly»HWSimBase.h
-«ENDFILE»
-«ENDDEFINE»
-
-«DEFINE SWModuleTestDef FOR DeviceModelImpl»
-«FILE DirPath + "/test/.cvsignore"»
-Test«Assembly»AmbDeviceInt.cpp
-Test«Assembly»HWSimImpl.cpp
-«ENDFILE»
-«ENDDEFINE»
+Â«DEFINE SWModuleTestDef FOR DeviceModelImplÂ»
+Â«FILE DirPath + "/test/.cvsignore"Â»
+TestÂ«AssemblyÂ»AmbDeviceInt.cpp
+TestÂ«AssemblyÂ»HWSimImpl.cpp
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

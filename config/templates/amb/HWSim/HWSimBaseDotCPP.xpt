@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +18,23 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"HWSimBase.cpp"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«DEFINE DirPath+"/src/"+Assembly+"HWSimBase.cpp"Â»
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -64,7 +64,7 @@ MA 02111-1307  USA
 
 
 
-#include <«Assembly»HWSimBase.h>
+#include <Â«AssemblyÂ»HWSimBase.h>
 #include <vector>
 #include <map>
 #include <string>
@@ -75,33 +75,33 @@ MA 02111-1307  USA
 #include <CANTypes.h>
 
 
-/// Specific Monitor points RCAs for «Assembly»
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent»
-const AMB::rca_t AMB::«Assembly»HWSimBase::monitorPoint_«x.MPName»(«x.RCA»U);
-    «ENDIF»
-«ENDFOREACH»
+/// Specific Monitor points RCAs for Â«AssemblyÂ»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+const AMB::rca_t AMB::Â«AssemblyÂ»HWSimBase::monitorPoint_Â«x.MPNameÂ»(Â«x.RCAÂ»U);
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-/// Specific Control points RCAs for «Assembly»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent»
-const AMB::rca_t AMB::«Assembly»HWSimBase::controlPoint_«x.CPName»(«x.RCA»U);
-    «ENDIF»
-«ENDFOREACH»
+/// Specific Control points RCAs for Â«AssemblyÂ»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+const AMB::rca_t AMB::Â«AssemblyÂ»HWSimBase::controlPoint_Â«x.CPNameÂ»(Â«x.RCAÂ»U);
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
 /// Constructor
-AMB::«Assembly»HWSimBase::«Assembly»HWSimBase(AMB::node_t node,
+AMB::Â«AssemblyÂ»HWSimBase::Â«AssemblyÂ»HWSimBase(AMB::node_t node,
     const std::vector< CAN::byte_t >& serialNumber):
-«IF Extends != "none"»
-    «Extends»HWSimImpl(node, serialNumber),
-«ENDIF»
-«IF BaseAddress == "none"»
+Â«IF Extends != "none"Â»
+    Â«ExtendsÂ»HWSimImpl(node, serialNumber),
+Â«ENDIFÂ»
+Â«IF BaseAddress == "none"Â»
      baseAddress_m(0UL)
-«ELSEIF BaseAddress == "parm"»
+Â«ELSEIF BaseAddress == "parm"Â»
      baseAddress_m(std::numeric_limits< unsigned long >::max())
-«ELSE»
-     baseAddress_m(«BaseAddress»UL)
-«ENDIF»
+Â«ELSEÂ»
+     baseAddress_m(Â«BaseAddressÂ»UL)
+Â«ENDIFÂ»
 {
 /// TODO
 /// Thomas, 2009-04-03
@@ -120,7 +120,7 @@ AMB::«Assembly»HWSimBase::«Assembly»HWSimBase(AMB::node_t node,
 
 //    std::cout.setf(oldFlags);
 
-//    std::cout << ", «Assembly» device\n";
+//    std::cout << ", Â«AssemblyÂ» device\n";
 
     std::cout << "Creating node 0x" << std::hex << node << ", s/n 0x";
     for(unsigned short i(0U); i < 8U; ++i)
@@ -129,37 +129,37 @@ AMB::«Assembly»HWSimBase::«Assembly»HWSimBase(AMB::node_t node,
             << static_cast<int>(serialNumber[i]);
     }
 
-    std::cout << ", «Assembly» device" << std::endl;
+    std::cout << ", Â«AssemblyÂ» device" << std::endl;
 
     // Set the device name
-    devname_m = "«Assembly»";
+    devname_m = "Â«AssemblyÂ»";
 
     // Initialize monitor and control points
     initialize(node, serialNumber);
-«IF Extends != "none"»
+Â«IF Extends != "none"Â»
     // We already initialized baseAddress_m, but we reset it with the same
     // value using setBaseAddress since it will recurse through all the
     // inheritance levels.
     setBaseAddress(getBaseAddress());
-«ENDIF»
+Â«ENDIFÂ»
 }
 
 /**
  * Override the base address for this device.
  */
-inline void AMB::«Assembly»HWSimBase::setBaseAddress(unsigned long arg)
+inline void AMB::Â«AssemblyÂ»HWSimBase::setBaseAddress(unsigned long arg)
 {
-«IF Extends != "none"»
+Â«IF Extends != "none"Â»
     //We need to set the base class object baseaddress to what every we have.
-    «Extends»HWSimBase::setBaseAddress(arg);
-«ENDIF»
+    Â«ExtendsÂ»HWSimBase::setBaseAddress(arg);
+Â«ENDIFÂ»
     baseAddress_m = arg;
 }
 
 /**
  * Get the base address for this device.
  */
-inline unsigned long AMB::«Assembly»HWSimBase::getBaseAddress() const
+inline unsigned long AMB::Â«AssemblyÂ»HWSimBase::getBaseAddress() const
 {
     return baseAddress_m;
 }
@@ -168,10 +168,10 @@ inline unsigned long AMB::«Assembly»HWSimBase::getBaseAddress() const
 // and default value initialization.
 // NOTE: The default value has to be un-scaled in the spreadsheet.
 // ----------------------------------------------------------------------------
-void AMB::«Assembly»HWSimBase::initialize(AMB::node_t node,
+void AMB::Â«AssemblyÂ»HWSimBase::initialize(AMB::node_t node,
     const std::vector< CAN::byte_t >& serialNumber)
 {
-«IF Extends == "none"»
+Â«IF Extends == "none"Â»
     // Initialize the extended class
     CommonHWSim::initialize();
 
@@ -184,13 +184,13 @@ void AMB::«Assembly»HWSimBase::initialize(AMB::node_t node,
 
     node_m = node;
 
-«ELSE»
+Â«ELSEÂ»
     // Initialize the extended class
-    «Extends»HWSimImpl::initialize(node, serialNumber);
-«ENDIF»
+    Â«ExtendsÂ»HWSimImpl::initialize(node, serialNumber);
+Â«ENDIFÂ»
 
     // Specific monitor points
-«REM»
+Â«REMÂ»
     long long raw(0LL);
     This is a fake usage of the raw variable to avoid warnings
     when a device has no monitor points (i.e.: WCA).
@@ -200,16 +200,16 @@ void AMB::«Assembly»HWSimBase::initialize(AMB::node_t node,
     {
         ;
     }
-«ENDREM»
+Â«ENDREMÂ»
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent»
-    if(state_m.find(monitorPoint_«x.MPName») == state_m.end())
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+    if(state_m.find(monitorPoint_Â«x.MPNameÂ») == state_m.end())
     {
-        «x.RawDataToCPPType» raw = static_cast<«x.RawDataToCPPType»>(0LL);
-        «IF x.Default != "none" && x.NumberItemsRawData != "1" »
+        Â«x.RawDataToCPPTypeÂ» raw = static_cast<Â«x.RawDataToCPPTypeÂ»>(0LL);
+        Â«IF x.Default != "none" && x.NumberItemsRawData != "1" Â»
         #error "Sequences with a not none default value are not allowed.\
- «x.MPName» is a sequence of size «x.NumberItemsRawData ».\
+ Â«x.MPNameÂ» is a sequence of size Â«x.NumberItemsRawData Â».\
  Reffer to section 3.2.12 of the Device Driver Code Generation FrameWork\
  edm: COMP-70.35.05.00-003-A-DSN .\
  Discussion:\
@@ -218,109 +218,109 @@ void AMB::«Assembly»HWSimBase::initialize(AMB::node_t node,
  are not allowed._ The value 'mid' is the value at the midpoint between the minimum and maximum\
  values. The value 'random' is a random value that lies between the minimum and maximum values.\
  A fixed number may also be supplied."
-        «ENDIF»
+        Â«ENDIFÂ»
        
-        «IF x.Default == "none"»
-        «REM»
+        Â«IF x.Default == "none"Â»
+        Â«REMÂ»
         Do nothing, the default value is set to 0 below.
-        «ENDREM»
-        «ELSEIF x.Default == "mid"»
-        double value(«x.MaxRange» + «x.MinRange»);
+        Â«ENDREMÂ»
+        Â«ELSEIF x.Default == "mid"Â»
+        double value(Â«x.MaxRangeÂ» + Â«x.MinRangeÂ»);
         value /= 2.0;
-            «IF x.isConversion»
-                «IF x.Offset != "none"»
-        value -= «x.Offset»;
-                «ENDIF»
-                «IF x.Scale != "none"»
-        value /= «x.Scale»;
-                «ENDIF»
-            «ENDIF»
-        raw = static_cast<«x.RawDataToCPPType»>(value);
-        «ELSEIF x.Default == "random"»
+            Â«IF x.isConversionÂ»
+                Â«IF x.Offset != "none"Â»
+        value -= Â«x.OffsetÂ»;
+                Â«ENDIFÂ»
+                Â«IF x.Scale != "none"Â»
+        value /= Â«x.ScaleÂ»;
+                Â«ENDIFÂ»
+            Â«ENDIFÂ»
+        raw = static_cast<Â«x.RawDataToCPPTypeÂ»>(value);
+        Â«ELSEIF x.Default == "random"Â»
         //raw = 0LL;
-        double value(«x.MaxRange» - «x.MinRange»);
+        double value(Â«x.MaxRangeÂ» - Â«x.MinRangeÂ»);
         value *= std::rand();
-        value += «x.MinRange»;
-            «IF x.isConversion»
-                «IF x.Offset != "none"»
-        value -= «x.Offset»;
-                «ENDIF»
-                «IF x.Scale != "none"»
-        value /= «x.Scale»;
-                «ENDIF»
-            «ENDIF»
-        raw = static_cast<«x.RawDataToCPPType»>(value);
-        «ELSE»
-        double value(«x.Default»);
-            «IF x.isConversion»
-                «IF x.Offset != "none"»
-        value -= «x.Offset»;
-                «ENDIF»
-                «IF x.Scale != "none"»
-        value /= «x.Scale»;
-                «ENDIF»
-            «ENDIF»
-        raw = static_cast<«x.RawDataToCPPType»>(value);
-        «ENDIF»
+        value += Â«x.MinRangeÂ»;
+            Â«IF x.isConversionÂ»
+                Â«IF x.Offset != "none"Â»
+        value -= Â«x.OffsetÂ»;
+                Â«ENDIFÂ»
+                Â«IF x.Scale != "none"Â»
+        value /= Â«x.ScaleÂ»;
+                Â«ENDIFÂ»
+            Â«ENDIFÂ»
+        raw = static_cast<Â«x.RawDataToCPPTypeÂ»>(value);
+        Â«ELSEÂ»
+        double value(Â«x.DefaultÂ»);
+            Â«IF x.isConversionÂ»
+                Â«IF x.Offset != "none"Â»
+        value -= Â«x.OffsetÂ»;
+                Â«ENDIFÂ»
+                Â«IF x.Scale != "none"Â»
+        value /= Â«x.ScaleÂ»;
+                Â«ENDIFÂ»
+            Â«ENDIFÂ»
+        raw = static_cast<Â«x.RawDataToCPPTypeÂ»>(value);
+        Â«ENDIFÂ»
 
 
-        «IF x.Default == "none"»
+        Â«IF x.Default == "none"Â»
         raw = 0;
         std::vector< CAN::byte_t >* vvalue(new std::vector< CAN::byte_t >);
-                «IF x.TotalBytesRawData != "1"»
+                Â«IF x.TotalBytesRawData != "1"Â»
         std::vector< CAN::byte_t > rawVector;
-        for(CAN::byte_t i(0U); i < «x.TotalBytesRawData»U; ++i)
+        for(CAN::byte_t i(0U); i < Â«x.TotalBytesRawDataÂ»U; ++i)
         {
             rawVector.push_back(0);
         }
         AMB::TypeConversion::valueToData(*vvalue, rawVector);
-                «ELSE»
+                Â«ELSEÂ»
         AMB::TypeConversion::valueToData(
             *vvalue, raw);
-                «ENDIF»
-        «ELSE»
-            «IF x.NumberItemsRawData == "1" && x.WorldDataToCPPType != "std::string" && x.WorldDataToCPPType != "void"»
+                Â«ENDIFÂ»
+        Â«ELSEÂ»
+            Â«IF x.NumberItemsRawData == "1" && x.WorldDataToCPPType != "std::string" && x.WorldDataToCPPType != "void"Â»
         std::vector< CAN::byte_t >* vvalue(new std::vector< CAN::byte_t >);
         AMB::TypeConversion::valueToData(
             *vvalue, raw,
-            «x.TotalBytesRawData»U);
-                «IF x.isFEStatus»
+            Â«x.TotalBytesRawDataÂ»U);
+                Â«IF x.isFEStatusÂ»
         // FrontEnd has a status byte. Pushing it by force and making it zero.
             vvalue->push_back(0);
-                «ENDIF»
-            «ELSE»
+                Â«ENDIFÂ»
+            Â«ELSEÂ»
         std::vector< CAN::byte_t >* vvalue(new std::vector< CAN::byte_t >);
-                «IF x.TotalBytesRawData != "1"»
+                Â«IF x.TotalBytesRawData != "1"Â»
         std::vector< CAN::byte_t > rawVector;
         CAN::byte_t* index(reinterpret_cast< CAN::byte_t* >(&raw));
-        for(CAN::byte_t i(0U); i < «x.TotalBytesRawData»U; ++i)
+        for(CAN::byte_t i(0U); i < Â«x.TotalBytesRawDataÂ»U; ++i)
         {
             rawVector.push_back(*(index + i));
         }
         AMB::TypeConversion::valueToData(*vvalue, rawVector);
-                «ELSE»
+                Â«ELSEÂ»
         AMB::TypeConversion::valueToData(
             *vvalue, raw);
-                «ENDIF»
-            «ENDIF»
-        «ENDIF»
-        state_m.insert(std::make_pair(monitorPoint_«x.MPName», vvalue));
+                Â«ENDIFÂ»
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+        state_m.insert(std::make_pair(monitorPoint_Â«x.MPNameÂ», vvalue));
     }
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
     // Specific control points
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent»
-    if(state_m.find(controlPoint_«x.CPName») == state_m.end())
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+    if(state_m.find(controlPoint_Â«x.CPNameÂ») == state_m.end())
     {
-        state_m.insert(std::make_pair(controlPoint_«x.CPName»,
-            new std::vector< CAN::byte_t >(«x.TotalBytesRawData»U, 0x0U)));
+        state_m.insert(std::make_pair(controlPoint_Â«x.CPNameÂ»,
+            new std::vector< CAN::byte_t >(Â«x.TotalBytesRawDataÂ»U, 0x0U)));
     }
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-    «IF GenericMonitorPoints»
+    Â«IF GenericMonitorPointsÂ»
     // Set generic point SERIAL_NUMBER
     //  (all other generic points are set to 0x00 at the extended constructor)
     if(serialNumber.size() != 8)
@@ -349,33 +349,33 @@ void AMB::«Assembly»HWSimBase::initialize(AMB::node_t node,
     data.push_back(0x08);
     data.push_back(0x10);
     monitorSetter(0x30003, data);
-    «ENDIF»
+    Â«ENDIFÂ»
 
-    // Specific Control points Map for «Assembly»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent»
-    controlPointsMap[controlPoint_«x.CPName»] = &AMB::«Assembly»HWSimBase::setControl«x.getAltDependentName»Proxy;
-    controlPointsGetterMap[controlPoint_«x.CPName»] = &AMB::«Assembly»HWSimBase::getControl«x.getAltDependentName»Proxy;
-    «ENDIF»
-«ENDFOREACH»
+    // Specific Control points Map for Â«AssemblyÂ»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+    controlPointsMap[controlPoint_Â«x.CPNameÂ»] = &AMB::Â«AssemblyÂ»HWSimBase::setControlÂ«x.getAltDependentNameÂ»Proxy;
+    controlPointsGetterMap[controlPoint_Â«x.CPNameÂ»] = &AMB::Â«AssemblyÂ»HWSimBase::getControlÂ«x.getAltDependentNameÂ»Proxy;
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-    // Specific Monitor points Map for «Assembly»
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent»
-    monitorPointsMap[monitorPoint_«x.MPName»] = &AMB::«Assembly»HWSimBase::getMonitor«x.getAltDependentName»Proxy;
-    monitorPointsSetterMap[monitorPoint_«x.MPName»] = &AMB::«Assembly»HWSimBase::setMonitor«x.getAltDependentName»Proxy;
-    «ENDIF»
-«ENDFOREACH»
+    // Specific Monitor points Map for Â«AssemblyÂ»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+    monitorPointsMap[monitorPoint_Â«x.MPNameÂ»] = &AMB::Â«AssemblyÂ»HWSimBase::getMonitorÂ«x.getAltDependentNameÂ»Proxy;
+    monitorPointsSetterMap[monitorPoint_Â«x.MPNameÂ»] = &AMB::Â«AssemblyÂ»HWSimBase::setMonitorÂ«x.getAltDependentNameÂ»Proxy;
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
 }
 
 
 // Monitor and Control Points getters
 // ----------------------------------------------------------------------------
-std::vector< CAN::byte_t > AMB::«Assembly»HWSimBase::monitor(
+std::vector< CAN::byte_t > AMB::Â«AssemblyÂ»HWSimBase::monitor(
     AMB::rca_t rca) const
 {
-    «IF GenericMonitorPoints»
+    Â«IF GenericMonitorPointsÂ»
     // monitorPoint_TRANS_NUM++
     if(state_m.find(monitorPoint_TRANS_NUM) != state_m.end())
     {
@@ -391,12 +391,12 @@ std::vector< CAN::byte_t > AMB::«Assembly»HWSimBase::monitor(
     {
         throw CAN::Error("Trying to set monitorPoint_TRANS_NUM. Member not found.");
     }
-    «ENDIF»
+    Â«ENDIFÂ»
 
     // Specific points
     std::map< const AMB::rca_t, std::vector< CAN::byte_t > (
-        AMB::«Assembly»HWSimBase::*)() const >::const_iterator iter(
-            monitorPointsMap.find(rca«IF Assembly != "FEMC"» - baseAddress_m«ENDIF»));
+        AMB::Â«AssemblyÂ»HWSimBase::*)() const >::const_iterator iter(
+            monitorPointsMap.find(rcaÂ«IF Assembly != "FEMC"Â» - baseAddress_mÂ«ENDIFÂ»));
     if(iter != monitorPointsMap.end())
     {
         return (this->*(*iter).second)();
@@ -404,21 +404,21 @@ std::vector< CAN::byte_t > AMB::«Assembly»HWSimBase::monitor(
     else
     {
         // Others
-    «IF Extends == "none"»
+    Â«IF Extends == "none"Â»
         return CommonHWSim::monitor(rca);
-    «ELSE»
-        return «Extends»HWSimImpl::monitor(rca);
-    «ENDIF»
+    Â«ELSEÂ»
+        return Â«ExtendsÂ»HWSimImpl::monitor(rca);
+    Â«ENDIFÂ»
     }
 }
 
-std::vector< CAN::byte_t > AMB::«Assembly»HWSimBase::controlGetter(
+std::vector< CAN::byte_t > AMB::Â«AssemblyÂ»HWSimBase::controlGetter(
     AMB::rca_t rca) const
 {
     // Specific points
     std::map< const AMB::rca_t, std::vector< CAN::byte_t > (
-        AMB::«Assembly»HWSimBase::*)() const >::const_iterator iter(
-            controlPointsGetterMap.find(rca«IF Assembly != "FEMC"» - baseAddress_m«ENDIF»));
+        AMB::Â«AssemblyÂ»HWSimBase::*)() const >::const_iterator iter(
+            controlPointsGetterMap.find(rcaÂ«IF Assembly != "FEMC"Â» - baseAddress_mÂ«ENDIFÂ»));
     if(iter != controlPointsGetterMap.end())
     {
         return (this->*(*iter).second)();
@@ -426,21 +426,21 @@ std::vector< CAN::byte_t > AMB::«Assembly»HWSimBase::controlGetter(
     else
     {
         // Others
-    «IF Extends == "none"»
+    Â«IF Extends == "none"Â»
         return CommonHWSim::controlGetter(rca);
-    «ELSE»
-        return «Extends»HWSimImpl::controlGetter(rca);
-    «ENDIF»
+    Â«ELSEÂ»
+        return Â«ExtendsÂ»HWSimImpl::controlGetter(rca);
+    Â«ENDIFÂ»
     }
 }
 
 
 // Control and Monitor Points setters
 // ----------------------------------------------------------------------------
-void AMB::«Assembly»HWSimBase::control(AMB::rca_t rca,
+void AMB::Â«AssemblyÂ»HWSimBase::control(AMB::rca_t rca,
     const std::vector< CAN::byte_t >& data)
 {
-    «IF GenericMonitorPoints»
+    Â«IF GenericMonitorPointsÂ»
     // monitorPoint_TRANS_NUM++
     if(state_m.find(monitorPoint_TRANS_NUM) != state_m.end())
     {
@@ -456,12 +456,12 @@ void AMB::«Assembly»HWSimBase::control(AMB::rca_t rca,
     {
         throw CAN::Error("Trying to set monitorPoint_TRANS_NUM. Member not found.");
     }
-    «ENDIF»
+    Â«ENDIFÂ»
 
     // Specific points
-    std::map< const AMB::rca_t, void (AMB::«Assembly»HWSimBase::*)(
+    std::map< const AMB::rca_t, void (AMB::Â«AssemblyÂ»HWSimBase::*)(
         const std::vector< CAN::byte_t >& data) >::const_iterator iter(
-            controlPointsMap.find(rca«IF Assembly != "FEMC"» - baseAddress_m«ENDIF»));
+            controlPointsMap.find(rcaÂ«IF Assembly != "FEMC"Â» - baseAddress_mÂ«ENDIFÂ»));
     if(iter != controlPointsMap.end())
     {
         (this->*(*iter).second)(data);
@@ -469,21 +469,21 @@ void AMB::«Assembly»HWSimBase::control(AMB::rca_t rca,
     else
     {
         // Others
-    «IF Extends == "none"»
+    Â«IF Extends == "none"Â»
         CommonHWSim::control(rca, data);
-    «ELSE»
-        «Extends»HWSimImpl::control(rca, data);
-    «ENDIF»
+    Â«ELSEÂ»
+        Â«ExtendsÂ»HWSimImpl::control(rca, data);
+    Â«ENDIFÂ»
     }
 }
 
-void AMB::«Assembly»HWSimBase::monitorSetter(AMB::rca_t rca,
+void AMB::Â«AssemblyÂ»HWSimBase::monitorSetter(AMB::rca_t rca,
     const std::vector< CAN::byte_t >& data)
 {
     // Specific points
-    std::map< const AMB::rca_t, void (AMB::«Assembly»HWSimBase::*)(
+    std::map< const AMB::rca_t, void (AMB::Â«AssemblyÂ»HWSimBase::*)(
     const std::vector< CAN::byte_t >& data) >::const_iterator iter(
-        monitorPointsSetterMap.find(rca«IF Assembly != "FEMC"» - baseAddress_m«ENDIF»));
+        monitorPointsSetterMap.find(rcaÂ«IF Assembly != "FEMC"Â» - baseAddress_mÂ«ENDIFÂ»));
     if(iter != monitorPointsSetterMap.end())
     {
         (this->*(*iter).second)(data);
@@ -491,112 +491,112 @@ void AMB::«Assembly»HWSimBase::monitorSetter(AMB::rca_t rca,
     else
     {
         // Others
-    «IF Extends == "none"»
+    Â«IF Extends == "none"Â»
         CommonHWSim::monitorSetter(rca, data);
-    «ELSE»
-        «Extends»HWSimImpl::monitorSetter(rca, data);
-    «ENDIF»
+    Â«ELSEÂ»
+        Â«ExtendsÂ»HWSimImpl::monitorSetter(rca, data);
+    Â«ENDIFÂ»
     }
 }
 
 // Specific Monitor get helpers
 // ----------------------------------------------------------------------------
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
 
 
 std::vector< CAN::byte_t >
-    AMB::«Assembly»HWSimBase::getMonitor«x.getAltDependentName»Proxy() const
+    AMB::Â«AssemblyÂ»HWSimBase::getMonitorÂ«x.getAltDependentNameÂ»Proxy() const
 {
-    return getMonitor«x.getAltDependentName»();
+    return getMonitorÂ«x.getAltDependentNameÂ»();
 }
 
 std::vector< CAN::byte_t >
-    AMB::«Assembly»HWSimBase::getMonitor«x.getAltDependentName»() const
+    AMB::Â«AssemblyÂ»HWSimBase::getMonitorÂ«x.getAltDependentNameÂ»() const
 {
-    return *(state_m.find(monitorPoint_«x.MPName»)->second);
+    return *(state_m.find(monitorPoint_Â«x.MPNameÂ»)->second);
 }
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
 // Specific Control get helpers
 // ----------------------------------------------------------------------------
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
 std::vector< CAN::byte_t >
-    AMB::«Assembly»HWSimBase::getControl«x.getAltDependentName»Proxy() const
+    AMB::Â«AssemblyÂ»HWSimBase::getControlÂ«x.getAltDependentNameÂ»Proxy() const
 {
-    return getControl«x.getAltDependentName»(); 
+    return getControlÂ«x.getAltDependentNameÂ»(); 
 }
 
 std::vector< CAN::byte_t >
-    AMB::«Assembly»HWSimBase::getControl«x.getAltDependentName»() const
+    AMB::Â«AssemblyÂ»HWSimBase::getControlÂ«x.getAltDependentNameÂ»() const
 {
-    return *(state_m.find(controlPoint_«x.CPName»)->second);
+    return *(state_m.find(controlPoint_Â«x.CPNameÂ»)->second);
 }
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
 // Specific Control set helpers
 // ----------------------------------------------------------------------------
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent»
-void AMB::«Assembly»HWSimBase::setControl«x.getAltDependentName»Proxy(
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+void AMB::Â«AssemblyÂ»HWSimBase::setControlÂ«x.getAltDependentNameÂ»Proxy(
     const std::vector< CAN::byte_t >& data)
 {
-    setControl«x.getAltDependentName»(data);
+    setControlÂ«x.getAltDependentNameÂ»(data);
 }
 
-void AMB::«Assembly»HWSimBase::setControl«x.getAltDependentName»(
+void AMB::Â«AssemblyÂ»HWSimBase::setControlÂ«x.getAltDependentNameÂ»(
     const std::vector< CAN::byte_t >& data)
 {
-    checkSize(data, «x.TotalBytesRawData»U, "controlPoint_«x.CPName»");
-    if(state_m.find(controlPoint_«x.CPName») != state_m.end())
+    checkSize(data, Â«x.TotalBytesRawDataÂ»U, "controlPoint_Â«x.CPNameÂ»");
+    if(state_m.find(controlPoint_Â«x.CPNameÂ») != state_m.end())
     {
-        *(state_m.find(controlPoint_«x.CPName»)->second) = data;
-    «IF Parent == "FrontEnd"»
+        *(state_m.find(controlPoint_Â«x.CPNameÂ»)->second) = data;
+    Â«IF Parent == "FrontEnd"Â»
         //FE has an extra status byte. Push it into the Control point
         //every time its modified.
-        (*(state_m.find(controlPoint_«x.CPName»)->second)).push_back(0);
-    «ENDIF»
+        (*(state_m.find(controlPoint_Â«x.CPNameÂ»)->second)).push_back(0);
+    Â«ENDIFÂ»
     }
     else
     {
-        throw CAN::Error("Trying to set controlPoint_«x.CPName». Member not found.");
+        throw CAN::Error("Trying to set controlPoint_Â«x.CPNameÂ». Member not found.");
     }
 }
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
 // Specific Monitor set helpers
 // ----------------------------------------------------------------------------
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent»
-void AMB::«Assembly»HWSimBase::setMonitor«x.getAltDependentName»Proxy(
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF !x.isDependentÂ»
+void AMB::Â«AssemblyÂ»HWSimBase::setMonitorÂ«x.getAltDependentNameÂ»Proxy(
     const std::vector< CAN::byte_t >& data)
 {
-    setMonitor«x.getAltDependentName»(data);
+    setMonitorÂ«x.getAltDependentNameÂ»(data);
 }
 
-void AMB::«Assembly»HWSimBase::setMonitor«x.getAltDependentName»(
+void AMB::Â«AssemblyÂ»HWSimBase::setMonitorÂ«x.getAltDependentNameÂ»(
     const std::vector< CAN::byte_t >& data)
 {
-    checkSize(data, «x.TotalBytesRawData»U, "monitorPoint_«x.MPName»");
-    if(state_m.find(monitorPoint_«x.MPName») != state_m.end())
+    checkSize(data, Â«x.TotalBytesRawDataÂ»U, "monitorPoint_Â«x.MPNameÂ»");
+    if(state_m.find(monitorPoint_Â«x.MPNameÂ») != state_m.end())
     {
-        *(state_m.find(monitorPoint_«x.MPName»)->second) = data;
-    «IF x.isFEStatus»
+        *(state_m.find(monitorPoint_Â«x.MPNameÂ»)->second) = data;
+    Â«IF x.isFEStatusÂ»
         //FE has an extra status byte. Push it into the Monitor point
         //every time its modified.
-        (*(state_m.find(monitorPoint_«x.MPName»)->second)).push_back(0);
-    «ENDIF»
+        (*(state_m.find(monitorPoint_Â«x.MPNameÂ»)->second)).push_back(0);
+    Â«ENDIFÂ»
     }
     else
     {
-        throw CAN::Error("Trying to set monitorPoint_«x.MPName». Member not found.");
+        throw CAN::Error("Trying to set monitorPoint_Â«x.MPNameÂ». Member not found.");
     }
 }
-    «ENDIF»
-«ENDFOREACH»
-«ENDFILE»
-«ENDDEFINE»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

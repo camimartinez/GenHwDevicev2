@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +18,23 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"Def.py"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/"+Assembly+"Def.py"Â»
 #! /usr/bin/env python
 #******************************************************************************
 #  ALMA - Atacama Large Millimiter Array
@@ -66,13 +66,13 @@ MA 02111-1307  USA
 #
 
 #
-# Monitor and Control points of the hardware assembly: «Assembly».
+# Monitor and Control points of the hardware assembly: Â«AssemblyÂ».
 #
 
 def load():
-    «Assembly» = {}«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»«IF !x.isDependent»
-    «Assembly»['«x.MPName»']=[«x.RCACell», '«x.RawDataType»', «x.NumberItemsRawData»]«ENDIF»«ENDFOREACH»«FOREACH (Set[ControlPoint]) ControlPoint AS x»«IF !x.isDependent»
-    «Assembly»['SET_«x.CPName»']=[«x.RCACell», '«x.RawDataType»', «x.NumberItemsRawData»]«ENDIF»«ENDFOREACH»
-    return «Assembly»
-«ENDFILE»
-«ENDDEFINE»
+    Â«AssemblyÂ» = {}Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»Â«IF !x.isDependentÂ»
+    Â«AssemblyÂ»['Â«x.MPNameÂ»']=[Â«x.RCACellÂ», 'Â«x.RawDataTypeÂ»', Â«x.NumberItemsRawDataÂ»]Â«ENDIFÂ»Â«ENDFOREACHÂ»Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»Â«IF !x.isDependentÂ»
+    Â«AssemblyÂ»['SET_Â«x.CPNameÂ»']=[Â«x.RCACellÂ», 'Â«x.RawDataTypeÂ»', Â«x.NumberItemsRawDataÂ»]Â«ENDIFÂ»Â«ENDFOREACHÂ»
+    return Â«AssemblyÂ»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

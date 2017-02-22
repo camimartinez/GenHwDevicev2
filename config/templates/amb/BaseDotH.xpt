@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,25 +18,25 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
-        «EXPAND SWModuleDef»
-    «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"Base.h"»
-#ifndef «Assembly»Base_h
-#define «Assembly»Base_h
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/include/"+Assembly+"Base.h"Â»
+#ifndef Â«AssemblyÂ»Base_h
+#define Â«AssemblyÂ»Base_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -96,7 +96,7 @@ MA 02111-1307  USA
 #include <acstimeC.h>
 
 // CORBA servant header generated from IDL.
-#include <«Assembly»BaseS.h>
+#include <Â«AssemblyÂ»BaseS.h>
 
 // Includes needed for data members.
 #include <baciSmartPropertyPointer.h>
@@ -109,34 +109,34 @@ MA 02111-1307  USA
 
 #include <Utils.h>
 
-«IF Extends != "none"»
-#include <«Extends»Impl.h>
-«ENDIF»
+Â«IF Extends != "none"Â»
+#include <Â«ExtendsÂ»Impl.h>
+Â«ENDIFÂ»
 
-/// The «Assembly»Base class is the base class for the «DeviceName».
+/// The Â«AssemblyÂ»Base class is the base class for the Â«DeviceNameÂ».
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
-/// <li> Parent:   «Parent»
-/// <li> Node:     «NodeAddress»
-/// <li> Channel:  «Channel»
+/// <li> Device:   Â«DeviceNameÂ»
+/// <li> Assembly: Â«AssemblyÂ»
+/// <li> Parent:   Â«ParentÂ»
+/// <li> Node:     Â«NodeAddressÂ»
+/// <li> Channel:  Â«ChannelÂ»
 /// </ul>
 /// <p>
-/// «Description»
-class «Assembly»Base
+/// Â«DescriptionÂ»
+class Â«AssemblyÂ»Base
     :
-    «IF Extends != "none"»
-    public «Extends»Impl,
-    «ELSE»
+    Â«IF Extends != "none"Â»
+    public Â«ExtendsÂ»Impl,
+    Â«ELSEÂ»
     public AmbDeviceImpl,
-    «ENDIF»
-    public virtual POA_Control::«Assembly»Base
+    Â«ENDIFÂ»
+    public virtual POA_Control::Â«AssemblyÂ»Base
 {
-    friend class «Assembly»SimBase;
+    friend class Â«AssemblyÂ»SimBase;
 
     public:
     /// Destructor
-    virtual ~«Assembly»Base();
+    virtual ~Â«AssemblyÂ»Base();
 
     /// Returns true if a device is in simulation mode, false if
     /// it works with real hardware.
@@ -150,14 +150,14 @@ class «Assembly»Base
     /// \exception acsErrTypeLifeCycle::LifeCycleExImpl
     virtual void cleanUp();
 
- «IF GenericMonitorPoints »
+ Â«IF GenericMonitorPoints Â»
     /// \return Internal slave error in a readable form.
     virtual char* GET_INTERNAL_SLAVE_CAN_ERROR_MSG();
 
     /// \return  Last can error in a readable form.
     virtual char* GET_LAST_CAN_ERROR_MSG();
 
- «ENDIF»
+ Â«ENDIFÂ»
 
     virtual CORBA::ULong GET_CHANNEL_NUMBER()
     {
@@ -190,11 +190,11 @@ class «Assembly»Base
     };
 
    
-«REM»
+Â«REMÂ»
 Monitor on Startup ("Only On Startup" column).
 Declaration of overloaded hwOperationalAction method.
-«ENDREM»
-«IF !ArchiveProperty.select(i | i.OnStartup).isEmpty»
+Â«ENDREMÂ»
+Â«IF !ArchiveProperty.select(i | i.OnStartup).isEmptyÂ»
 /**
   * Overload of hwOperationAction method in order to achieve
   * monitor and archive of monitor points. This can only be done
@@ -202,220 +202,220 @@ Declaration of overloaded hwOperationalAction method.
   * COLLECTOR component is set at the end of Initilize state.
   */
 	void hwOperationalAction();
-«ENDIF»
+Â«ENDIFÂ»
     
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «EXPAND PublicMonitorPoint FOR x»
-«ENDFOREACH»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «EXPAND PublicControlPoint FOR x»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«EXPAND PublicMonitorPoint FOR xÂ»
+Â«ENDFOREACHÂ»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«EXPAND PublicControlPoint FOR xÂ»
+Â«ENDFOREACHÂ»
 
     protected:
     /// Constructor. Never instanciate this class directly!
-    «Assembly»Base(const ACE_CString& name, maci::ContainerServices* cs);
+    Â«AssemblyÂ»Base(const ACE_CString& name, maci::ContainerServices* cs);
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «EXPAND ProtectedMonitorPoint FOR x»
-«ENDFOREACH»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «EXPAND ProtectedControlPoint FOR x»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«EXPAND ProtectedMonitorPoint FOR xÂ»
+Â«ENDFOREACHÂ»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«EXPAND ProtectedControlPoint FOR xÂ»
+Â«ENDFOREACHÂ»
 
     private:
     /// Default constructor. Never instanciate this class directly!
-    «Assembly»Base();
+    Â«AssemblyÂ»Base();
 
     /// ALMA coding standards: copy constructor is disabled.
-    «Assembly»Base(const «Assembly»Base&);
+    Â«AssemblyÂ»Base(const Â«AssemblyÂ»Base&);
 
     /// ALMA coding standards: assignment operator is disabled.
-    «Assembly»Base& operator=(const «Assembly»Base&);
+    Â«AssemblyÂ»Base& operator=(const Â«AssemblyÂ»Base&);
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent && x.hasDependents»
-        «IF x.isWorldDataArray»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF !x.isDependent && x.hasDependentsÂ»
+        Â«IF x.isWorldDataArrayÂ»
     boost::shared_ptr< AMB::Cache<
-        «x.Assembly»Base, std::vector<
-            «x.WorldDataToCPPType» > > > cache«x.AltMPName»;
-        «ELSE»
+        Â«x.AssemblyÂ»Base, std::vector<
+            Â«x.WorldDataToCPPTypeÂ» > > > cacheÂ«x.AltMPNameÂ»;
+        Â«ELSEÂ»
     boost::shared_ptr< AMB::Cache<
-        «x.Assembly»Base, «x.WorldDataToCPPType» > > cache«x.AltMPName»;
-        «ENDIF»
-    «ENDIF»
-«ENDFOREACH»
+        Â«x.AssemblyÂ»Base, Â«x.WorldDataToCPPTypeÂ» > > cacheÂ«x.AltMPNameÂ»;
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «EXPAND PrivateMonitorPoint FOR x»
-«ENDFOREACH»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «EXPAND PrivateControlPoint FOR x»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«EXPAND PrivateMonitorPoint FOR xÂ»
+Â«ENDFOREACHÂ»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«EXPAND PrivateControlPoint FOR xÂ»
+Â«ENDFOREACHÂ»
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE PublicMonitorPoint FOR MonitorPoint»
-  «IF isExternal»
-    /// MonitorPoint: «MPName»
-    /// «DescriptionFormattedL5»
-    «REM»
+Â«DEFINE PublicMonitorPoint FOR MonitorPointÂ»
+  Â«IF isExternalÂ»
+    /// MonitorPoint: Â«MPNameÂ»
+    /// Â«DescriptionFormattedL5Â»
+    Â«REMÂ»
     a. Major monitor method
-    «ENDREM»
-        «IF isWorldDataArray»
-            «IF WorldDataToCPPType != "void"»
+    Â«ENDREMÂ»
+        Â«IF isWorldDataArrayÂ»
+            Â«IF WorldDataToCPPType != "void"Â»
     /// \exception ControlExceptions::CAMBErrorEx 
     /// \exception ControlExceptions::INACTErrorEx
-    virtual «WorldDataToCORBASeqType»*
-        GET_«MPName»(ACS::Time& timestamp);
-            «ELSE»
-#error "MonitorPoint: «MPName» is of world-type void. Cannot create GET_«MPName»!"
-            «ENDIF»
-        «ELSE»
-            «IF WorldDataType == "string"»
+    virtual Â«WorldDataToCORBASeqTypeÂ»*
+        GET_Â«MPNameÂ»(ACS::Time& timestamp);
+            Â«ELSEÂ»
+#error "MonitorPoint: Â«MPNameÂ» is of world-type void. Cannot create GET_Â«MPNameÂ»!"
+            Â«ENDIFÂ»
+        Â«ELSEÂ»
+            Â«IF WorldDataType == "string"Â»
     /// \exception ControlExceptions::CAMBErrorEx 
     /// \exception ControlExceptions::INACTErrorEx
-    virtual «WorldDataToCORBAType» GET_«MPName»(ACS::Time& timestamp);
-            «ELSE»
+    virtual Â«WorldDataToCORBATypeÂ» GET_Â«MPNameÂ»(ACS::Time& timestamp);
+            Â«ELSEÂ»
     /// \exception ControlExceptions::CAMBErrorEx 
     /// \exception ControlExceptions::INACTErrorEx
-    virtual «WorldDataToCORBAType» GET_«MPName»(ACS::Time& timestamp);
-            «ENDIF»
-        «ENDIF»
-  «ENDIF»
-    «REM»
+    virtual Â«WorldDataToCORBATypeÂ» GET_Â«MPNameÂ»(ACS::Time& timestamp);
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+  Â«ENDIFÂ»
+    Â«REMÂ»
     c. Method for monitored property
-    «ENDREM»
-  «IF isMonitored»
-        «IF isPattern»
-    virtual ACS::ROpattern_ptr «MPName»();
-        «ELSE»
-            «IF isWorldDataArray»
-    virtual ACS::RO«WorldDataToBACIType»Seq_ptr «MPName»();
-            «ELSE»
-    virtual ACS::RO«WorldDataToBACIType»_ptr «MPName»();
-            «ENDIF»
-        «ENDIF»
-  «ENDIF»
-    «IF !isDependent && RCA != "none"»
-    /// Get the RCA for monitor point «MPName».
-    virtual unsigned long getMonitorRCA«AltMPName»() const;
-    «ENDIF»
-«ENDDEFINE»
+    Â«ENDREMÂ»
+  Â«IF isMonitoredÂ»
+        Â«IF isPatternÂ»
+    virtual ACS::ROpattern_ptr Â«MPNameÂ»();
+        Â«ELSEÂ»
+            Â«IF isWorldDataArrayÂ»
+    virtual ACS::ROÂ«WorldDataToBACITypeÂ»Seq_ptr Â«MPNameÂ»();
+            Â«ELSEÂ»
+    virtual ACS::ROÂ«WorldDataToBACITypeÂ»_ptr Â«MPNameÂ»();
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+  Â«ENDIFÂ»
+    Â«IF !isDependent && RCA != "none"Â»
+    /// Get the RCA for monitor point Â«MPNameÂ».
+    virtual unsigned long getMonitorRCAÂ«AltMPNameÂ»() const;
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
-    «IF isExternal»
-    /// MonitorPoint: «MPName»
-    «ELSE»
-    /// MonitorPoint: «MPName»
-    /// «DescriptionFormattedL5»
-    «ENDIF»
-    «REM»
+Â«DEFINE ProtectedMonitorPoint FOR MonitorPointÂ»
+    Â«IF isExternalÂ»
+    /// MonitorPoint: Â«MPNameÂ»
+    Â«ELSEÂ»
+    /// MonitorPoint: Â«MPNameÂ»
+    /// Â«DescriptionFormattedL5Â»
+    Â«ENDIFÂ»
+    Â«REMÂ»
     a. Major monitor method
-    «ENDREM»
-    «IF isImplemented»
-        «IF isDependent»
+    Â«ENDREMÂ»
+    Â«IF isImplementedÂ»
+        Â«IF isDependentÂ»
     /// \exception ControlExceptions::INACTErrorEx
-    virtual «WorldDataToCPPType» get«AltMPName»(ACS::Time& timestamp);
-        «ELSE»
+    virtual Â«WorldDataToCPPTypeÂ» getÂ«AltMPNameÂ»(ACS::Time& timestamp);
+        Â«ELSEÂ»
     /// \exception ControlExceptions::CAMBErrorEx 
     /// \exception ControlExceptions::INACTErrorEx
-            «IF isWorldDataArray»
-    virtual std::vector< «WorldDataToCPPType» > get«AltMPName»(
+            Â«IF isWorldDataArrayÂ»
+    virtual std::vector< Â«WorldDataToCPPTypeÂ» > getÂ«AltMPNameÂ»(
         ACS::Time& timestamp);
-            «ELSE»
-    virtual «WorldDataToCPPType» get«AltMPName»(ACS::Time& timestamp);
-            «ENDIF»
-        «ENDIF»
-    «ELSE»
+            Â«ELSEÂ»
+    virtual Â«WorldDataToCPPTypeÂ» getÂ«AltMPNameÂ»(ACS::Time& timestamp);
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+    Â«ELSEÂ»
     /// \exception ControlExceptions::CAMBErrorEx 
     /// \exception ControlExceptions::INACTErrorEx
-        «IF isWorldDataArray»
-    virtual std::vector< «WorldDataToCPPType» > get«AltMPName»(
+        Â«IF isWorldDataArrayÂ»
+    virtual std::vector< Â«WorldDataToCPPTypeÂ» > getÂ«AltMPNameÂ»(
         ACS::Time& timestamp) = 0;
-        «ELSE»
-    virtual «WorldDataToCPPType» get«AltMPName»(ACS::Time& timestamp) = 0;
-        «ENDIF»
-    «ENDIF»
-    «REM»
+        Â«ELSEÂ»
+    virtual Â«WorldDataToCPPTypeÂ» getÂ«AltMPNameÂ»(ACS::Time& timestamp) = 0;
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+    Â«REMÂ»
     a.2 Get proxy methods.
     This are the proxy method required since the DEVIO definition
     nuke the vtable and the BASE getter methods get called even
     if they have been overiden in the impl.
     All MP should get proxy method, expect the dependants points
     of a pattern parent MP.
-    «ENDREM»
-        «IF !isPartOfPattern »
+    Â«ENDREMÂ»
+        Â«IF !isPartOfPattern Â»
     /// \exception ControlExceptions::CAMBErrorEx 
     /// \exception ControlExceptions::INACTErrorEx
-            «IF isWorldDataArray»
-    virtual std::vector< «WorldDataToCPPType» > get«AltMPName»Proxy(
+            Â«IF isWorldDataArrayÂ»
+    virtual std::vector< Â«WorldDataToCPPTypeÂ» > getÂ«AltMPNameÂ»Proxy(
         ACS::Time& timestamp);
-            «ELSE»
-    virtual «WorldDataToCPPType» get«AltMPName»Proxy(ACS::Time& timestamp);
-            «ENDIF»
-        «ENDIF»
+            Â«ELSEÂ»
+    virtual Â«WorldDataToCPPTypeÂ» getÂ«AltMPNameÂ»Proxy(ACS::Time& timestamp);
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
 
-    «REM»
+    Â«REMÂ»
     b. Get and set methods for RCA
-    «ENDREM»
-    «IF !isDependent && RCA != "none"»
+    Â«ENDREMÂ»
+    Â«IF !isDependent && RCA != "none"Â»
     /// Set the RCA for this monitor point.
-    virtual void setMonitorRCA«AltMPName»(const unsigned long rca);
-    «ENDIF»
-    «REM»
+    virtual void setMonitorRCAÂ«AltMPNameÂ»(const unsigned long rca);
+    Â«ENDIFÂ»
+    Â«REMÂ»
     c. Conversion methods
-    «ENDREM»
-    «IF isConversion»
-    /// Convert the raw value of «MPName» to a world value.
-        «IF isRawDataArray»
-            «IF isWorldDataArray»
-            «REM» 
+    Â«ENDREMÂ»
+    Â«IF isConversionÂ»
+    /// Convert the raw value of Â«MPNameÂ» to a world value.
+        Â«IF isRawDataArrayÂ»
+            Â«IF isWorldDataArrayÂ»
+            Â«REMÂ» 
             Case 2: Raw and world data types are arrays of the same dimension
-            «ENDREM»
-    virtual std::vector< «WorldDataToCPPType» > rawToWorld«AltMPName»(
-        const std::vector< «RawDataToCPPType» >& raw) const«IF isSpecialConversion» = 0«ENDIF»;
-            «ELSE»
-            «REM» 
+            Â«ENDREMÂ»
+    virtual std::vector< Â«WorldDataToCPPTypeÂ» > rawToWorldÂ«AltMPNameÂ»(
+        const std::vector< Â«RawDataToCPPTypeÂ» >& raw) constÂ«IF isSpecialConversionÂ» = 0Â«ENDIFÂ»;
+            Â«ELSEÂ»
+            Â«REMÂ» 
             Case 3: Raw data type is an array but the world data type is a scalar
-            «ENDREM»
-                «IF MPName != "AMBIENT_TEMPERATURE"»
-    virtual «WorldDataToCPPType» rawToWorld«AltMPName»(
-        const std::vector< «RawDataToCPPType» >& raw) const = 0;
-                «ENDIF»
-            «ENDIF»
-        «ELSE»
-            «IF isWorldDataArray»
-            «REM» 
+            Â«ENDREMÂ»
+                Â«IF MPName != "AMBIENT_TEMPERATURE"Â»
+    virtual Â«WorldDataToCPPTypeÂ» rawToWorldÂ«AltMPNameÂ»(
+        const std::vector< Â«RawDataToCPPTypeÂ» >& raw) const = 0;
+                Â«ENDIFÂ»
+            Â«ENDIFÂ»
+        Â«ELSEÂ»
+            Â«IF isWorldDataArrayÂ»
+            Â«REMÂ» 
             Case 4: Not permitted (world data is an array but raw data is a scalar)
-            «ENDREM»
+            Â«ENDREMÂ»
     // --->>>error "Cannot convert a world data array into a raw data scalar."
-    virtual std::vector< «WorldDataToCPPType» > rawToWorld«AltMPName»(
-        const «RawDataToCPPType» raw) const= 0;
-            «ELSE»
-            «REM» 
+    virtual std::vector< Â«WorldDataToCPPTypeÂ» > rawToWorldÂ«AltMPNameÂ»(
+        const Â«RawDataToCPPTypeÂ» raw) const= 0;
+            Â«ELSEÂ»
+            Â«REMÂ» 
             Case 1: Raw data type and world data types are both scalar quantities
-            «ENDREM»
-    virtual «WorldDataToCPPType» rawToWorld«AltMPName»(
-        const «RawDataToCPPType» raw) const«IF isSpecialConversion» = 0«ENDIF»;
-            «ENDIF»
-        «ENDIF»
-        «IF !isSpecialConversion»
-    /// Get the scale conversion factor of «MPName».
-    virtual double getScale«AltMPName»() const;
+            Â«ENDREMÂ»
+    virtual Â«WorldDataToCPPTypeÂ» rawToWorldÂ«AltMPNameÂ»(
+        const Â«RawDataToCPPTypeÂ» raw) constÂ«IF isSpecialConversionÂ» = 0Â«ENDIFÂ»;
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+        Â«IF !isSpecialConversionÂ»
+    /// Get the scale conversion factor of Â«MPNameÂ».
+    virtual double getScaleÂ«AltMPNameÂ»() const;
 
-    /// Get the offset conversion factor of «MPName».
-    virtual double getOffset«AltMPName»() const;
+    /// Get the offset conversion factor of Â«MPNameÂ».
+    virtual double getOffsetÂ«AltMPNameÂ»() const;
 
-    /// Override the default conversion factors of «MPName»:
+    /// Override the default conversion factors of Â«MPNameÂ»:
     /// scale and offset.
-    virtual void setConversion«AltMPName»(const double scale,
+    virtual void setConversionÂ«AltMPNameÂ»(const double scale,
         const double offset);
-        «ENDIF»     
-    «ENDIF»
-    «REM»
+        Â«ENDIFÂ»     
+    Â«ENDIFÂ»
+    Â«REMÂ»
     ... Jeff's new addition goes here? ...
     TODO This is weird stuff below and needs to be corrected!  Thomas.
     if hasDependents
@@ -425,177 +425,177 @@ Declaration of overloaded hwOperationalAction method.
     virtual void updateDependent<MPName>(<RawDAtaToCPPType>& raw);
         endif
     endif
-    «ENDREM»
-«ENDDEFINE»
+    Â«ENDREMÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE PrivateMonitorPoint FOR  MonitorPoint»
-    /// MonitorPoint: «MPName»
-    «REM»
+Â«DEFINE PrivateMonitorPoint FOR  MonitorPointÂ»
+    /// MonitorPoint: Â«MPNameÂ»
+    Â«REMÂ»
     a. Field for RCA
-    «ENDREM»
-    «IF !isDependent && RCA != "none"»
+    Â«ENDREMÂ»
+    Â«IF !isDependent && RCA != "none"Â»
     /// The relative can address for this monitor point.
-    unsigned long rcaMonitor«AltMPName»;
-    «ENDIF»
-    «REM»
+    unsigned long rcaMonitorÂ«AltMPNameÂ»;
+    Â«ENDIFÂ»
+    Â«REMÂ»
     b. Fields for conversion
-    «ENDREM»
-    «IF isConversion && !isSpecialConversion»
+    Â«ENDREMÂ»
+    Â«IF isConversion && !isSpecialConversionÂ»
     /// The scaling factor for converting data from raw to world.
-    double scale«AltMPName»;
+    double scaleÂ«AltMPNameÂ»;
 
     /// The offset factor for converting data from raw to world.
-    double offset«AltMPName»;
-    «ENDIF»
+    double offsetÂ«AltMPNameÂ»;
+    Â«ENDIFÂ»
 
-    «REM»
+    Â«REMÂ»
     c. Fields needed for dependent monitor points.
-    «ENDREM»
-    «IF isDependent»
-    /// Data associated with «getDependentName».
-    «WorldDataToCPPType» value«getAltDependentName»;
-    ACS::Time time«getAltDependentName»;
-    «WorldDataToCPPType» previousValue«getAltDependentName»;
-    «ENDIF»
-    «REM»
+    Â«ENDREMÂ»
+    Â«IF isDependentÂ»
+    /// Data associated with Â«getDependentNameÂ».
+    Â«WorldDataToCPPTypeÂ» valueÂ«getAltDependentNameÂ»;
+    ACS::Time timeÂ«getAltDependentNameÂ»;
+    Â«WorldDataToCPPTypeÂ» previousValueÂ«getAltDependentNameÂ»;
+    Â«ENDIFÂ»
+    Â«REMÂ»
     d. Any other fields.
-    «ENDREM»
+    Â«ENDREMÂ»
     
-    «IF isMonitored»
+    Â«IF isMonitoredÂ»
     /// The ACS smart property pointer for getting the property.
-        «IF isPattern»
-    baci::SmartPropertyPointer< baci::ROpattern > spp«AltMPName»;
-        «ELSE»
-            «IF isWorldDataArray»
+        Â«IF isPatternÂ»
+    baci::SmartPropertyPointer< baci::ROpattern > sppÂ«AltMPNameÂ»;
+        Â«ELSEÂ»
+            Â«IF isWorldDataArrayÂ»
     baci::SmartPropertyPointer<
-        baci::RO«WorldDataToBACIType»Seq > spp«AltMPName»;
-            «ELSE»
+        baci::ROÂ«WorldDataToBACITypeÂ»Seq > sppÂ«AltMPNameÂ»;
+            Â«ELSEÂ»
     baci::SmartPropertyPointer<
-        baci::RO«WorldDataToBACIType» > spp«AltMPName»;
-            «ENDIF»
-        «ENDIF»
-    «ENDIF»
-«REM»Create BACI properties for the dependent monitor.
-    «IF isDependent»
-        «IF DisplayUnits == "pattern"»
-    baci::SmartPropertyPointer< baci::ROpattern > spp«AltMPName»;
-        «ELSE»
+        baci::ROÂ«WorldDataToBACITypeÂ» > sppÂ«AltMPNameÂ»;
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«REMÂ»Create BACI properties for the dependent monitor.
+    Â«IF isDependentÂ»
+        Â«IF DisplayUnits == "pattern"Â»
+    baci::SmartPropertyPointer< baci::ROpattern > sppÂ«AltMPNameÂ»;
+        Â«ELSEÂ»
     baci::SmartPropertyPointer<
-        baci::RO«WorldDataToBACIType» > spp«AltMPName»;
-        «ENDIF»
-    «ENDIF»
-«ENDREM»
-«ENDDEFINE»
+        baci::ROÂ«WorldDataToBACITypeÂ» > sppÂ«AltMPNameÂ»;
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDREMÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE PublicControlPoint FOR ControlPoint»
-    «IF isExternal»
-    «REM»
+Â«DEFINE PublicControlPoint FOR ControlPointÂ»
+    Â«IF isExternalÂ»
+    Â«REMÂ»
     a. Major control method
-    «ENDREM»
-    /// ControlPoint: «CPName»
-    /// «DescriptionFormattedL5»
-    «REM»
+    Â«ENDREMÂ»
+    /// ControlPoint: Â«CPNameÂ»
+    /// Â«DescriptionFormattedL5Â»
+    Â«REMÂ»
     The "if hasDependents" part of this is not yet implemented.
-    «ENDREM»
+    Â«ENDREMÂ»
     /// \exception ControlExceptions::CAMBErrorEx 
     /// \exception ControlExceptions::INACTErrorEx
-    virtual «corbaReturns» SET_«CPName»«corbaDeclaration»;
-    «ENDIF»
-    «IF !isDependent && RCA != "none"»
-    /// Get the RCA for control point «CPName».
-    virtual unsigned long getControlRCA«AltCPName»() const;
-    «ENDIF»
-«ENDDEFINE»
+    virtual Â«corbaReturnsÂ» SET_Â«CPNameÂ»Â«corbaDeclarationÂ»;
+    Â«ENDIFÂ»
+    Â«IF !isDependent && RCA != "none"Â»
+    /// Get the RCA for control point Â«CPNameÂ».
+    virtual unsigned long getControlRCAÂ«AltCPNameÂ»() const;
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ProtectedControlPoint FOR ControlPoint»
-    «IF !isDependent»
-    /// ControlPoint: «CPName»
-        «IF !isExternal»
-    /// «DescriptionFormattedL5»
-        «ENDIF»
-    «REM»
+Â«DEFINE ProtectedControlPoint FOR ControlPointÂ»
+    Â«IF !isDependentÂ»
+    /// ControlPoint: Â«CPNameÂ»
+        Â«IF !isExternalÂ»
+    /// Â«DescriptionFormattedL5Â»
+        Â«ENDIFÂ»
+    Â«REMÂ»
     a. Major control method
-    «ENDREM»
-    «REM»
+    Â«ENDREMÂ»
+    Â«REMÂ»
     The "if hasDependents" part of this is not yet implemented.
-    «ENDREM»
+    Â«ENDREMÂ»
     /// \exception ControlExceptions::CAMBErrorEx 
     /// \exception ControlExceptions::INACTErrorEx
-        «IF Implement»
-    virtual «cppReturns» set«AltCPName»«cppDeclaration»;
-        «ELSE»
-    virtual «cppReturns» set«AltCPName»«cppDeclaration» = 0;
-        «ENDIF»
-    «REM»
+        Â«IF ImplementÂ»
+    virtual Â«cppReturnsÂ» setÂ«AltCPNameÂ»Â«cppDeclarationÂ»;
+        Â«ELSEÂ»
+    virtual Â«cppReturnsÂ» setÂ«AltCPNameÂ»Â«cppDeclarationÂ» = 0;
+        Â«ENDIFÂ»
+    Â«REMÂ»
     b. Get and set methods for RCA
-    «ENDREM»
-        «IF RCA != "none"»
+    Â«ENDREMÂ»
+        Â«IF RCA != "none"Â»
     /// Set the RCA for this control point.
-    virtual void setControlRCA«AltCPName»(const unsigned long rca);
-        «ENDIF»
-    «REM»
+    virtual void setControlRCAÂ«AltCPNameÂ»(const unsigned long rca);
+        Â«ENDIFÂ»
+    Â«REMÂ»
     c. Conversion methods
-    «ENDREM»
-        «IF isConversion»
-    /// Convert the raw value of «CPName» to a world value.
-            «IF isRawDataArray»
-                «IF isWorldDataArray»
-             «REM» 
+    Â«ENDREMÂ»
+        Â«IF isConversionÂ»
+    /// Convert the raw value of Â«CPNameÂ» to a world value.
+            Â«IF isRawDataArrayÂ»
+                Â«IF isWorldDataArrayÂ»
+             Â«REMÂ» 
              Case 2: Raw and world data types are arrays of the same dimension
-             «ENDREM»
-    virtual std::vector< «RawDataToCPPType» > worldToRaw«AltCPName»(
-        const std::vector< «WorldDataToCPPType» >& world) const«IF isSpecialConversion» = 0«ENDIF»;
-                «ELSE»
-             «REM» 
+             Â«ENDREMÂ»
+    virtual std::vector< Â«RawDataToCPPTypeÂ» > worldToRawÂ«AltCPNameÂ»(
+        const std::vector< Â«WorldDataToCPPTypeÂ» >& world) constÂ«IF isSpecialConversionÂ» = 0Â«ENDIFÂ»;
+                Â«ELSEÂ»
+             Â«REMÂ» 
              Case 3: Raw data type is an array but the world data type is a scalar
-             «ENDREM»
+             Â«ENDREMÂ»
 #error "Cannot convert a world data scalar into a raw data array."
-                «ENDIF»
-            «ELSE»
-                «IF isWorldDataArray»
-             «REM» 
+                Â«ENDIFÂ»
+            Â«ELSEÂ»
+                Â«IF isWorldDataArrayÂ»
+             Â«REMÂ» 
              Case 4: Not permitted (world data is an array but raw data is a scalar)
-             «ENDREM»
+             Â«ENDREMÂ»
 #error "Cannot convert a world data array into a raw data scalar."
-                «ELSE»
-              «REM» 
+                Â«ELSEÂ»
+              Â«REMÂ» 
              Case 1: Raw data type and world data types are both scalar quantities
-             «ENDREM»
-    virtual «RawDataToCPPType» worldToRaw«AltCPName»(
-        const «WorldDataToCPPType» world) const«IF isSpecialConversion» = 0«ENDIF»;
-                «ENDIF»
-            «ENDIF»
-            «IF !isSpecialConversion»
-    /// Get the scale conversion factor of «CPName».
-    virtual double getScale«AltCPName»() const;
+             Â«ENDREMÂ»
+    virtual Â«RawDataToCPPTypeÂ» worldToRawÂ«AltCPNameÂ»(
+        const Â«WorldDataToCPPTypeÂ» world) constÂ«IF isSpecialConversionÂ» = 0Â«ENDIFÂ»;
+                Â«ENDIFÂ»
+            Â«ENDIFÂ»
+            Â«IF !isSpecialConversionÂ»
+    /// Get the scale conversion factor of Â«CPNameÂ».
+    virtual double getScaleÂ«AltCPNameÂ»() const;
 
-    /// Get the offset conversion factor of «CPName».
-    virtual double getOffset«AltCPName»() const;
+    /// Get the offset conversion factor of Â«CPNameÂ».
+    virtual double getOffsetÂ«AltCPNameÂ»() const;
 
-    /// Override the default conversion factors of «CPName»: scale and offset.
-    virtual void setConversion«AltCPName»(const double scale, const double offset);
-            «ENDIF»     
-        «ENDIF»
-    «ENDIF»
-«ENDDEFINE»
+    /// Override the default conversion factors of Â«CPNameÂ»: scale and offset.
+    virtual void setConversionÂ«AltCPNameÂ»(const double scale, const double offset);
+            Â«ENDIFÂ»     
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE PrivateControlPoint FOR ControlPoint»
-    /// Control point: «CPName»
-    «REM»
+Â«DEFINE PrivateControlPoint FOR ControlPointÂ»
+    /// Control point: Â«CPNameÂ»
+    Â«REMÂ»
     a. Field for RCA
-    «ENDREM»
-    «IF !isDependent && RCA != "none"»
+    Â«ENDREMÂ»
+    Â«IF !isDependent && RCA != "none"Â»
     /// The relative can address for this control point.
-    unsigned long rcaControl«AltCPName»;
-    «ENDIF»
-     «REM»
+    unsigned long rcaControlÂ«AltCPNameÂ»;
+    Â«ENDIFÂ»
+     Â«REMÂ»
     b. Fields for conversion
-    «ENDREM»
-    «IF isConversion && !isSpecialConversion»
+    Â«ENDREMÂ»
+    Â«IF isConversion && !isSpecialConversionÂ»
     /// The scaling factor for converting data from raw to world.
-    double scale«AltCPName»;
+    double scaleÂ«AltCPNameÂ»;
 
     /// The offset factor for converting data from raw to world.
-    double offset«AltCPName»;
-    «ENDIF»
-«ENDDEFINE»
+    double offsetÂ«AltCPNameÂ»;
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»

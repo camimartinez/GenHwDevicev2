@@ -1,4 +1,5 @@
-«REM»
+Â«REMÂ»
+
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,21 +19,22 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«ENDREMÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «EXPAND SWModuleDef»
-«ENDDEFINE»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE SWModuleDef FOR DeviceModel»
-«FILE DirPath+"/src/CCL/__init__.py"»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«EXPAND SWModuleDefÂ»
+Â«ENDDEFINEÂ»
+
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/CCL/__init__.py"Â»
 #! /usr/bin/env python
 #******************************************************************************
 #  ALMA - Atacama Large Millimiter Array
@@ -64,14 +66,14 @@ MA 02111-1307  USA
 
 """
 This package is part of the Control Command Language (CCL).
-It contains the code used for accessing «Assembly».
+It contains the code used for accessing Â«AssemblyÂ».
 """
 
 from pkgutil import extend_path
 __path__ = extend_path(__path__, __name__)
-«ENDFILE»
+Â«ENDFILEÂ»
 
-«FILE DirPath+"/src/CCL/"+Assembly+"Base.py"»
+Â«FILE DirPath+"/src/CCL/"+Assembly+"Base.py"Â»
 #! /usr/bin/env python
 #******************************************************************************
 #  ALMA - Atacama Large Millimiter Array
@@ -102,36 +104,36 @@ __path__ = extend_path(__path__, __name__)
 #
 
 """
-This module defines the «Assembly» Control Command Language (CCL)
+This module defines the Â«AssemblyÂ» Control Command Language (CCL)
 base class. It is automatically generated and provides access to
 all set monitor, control points and device methods.
 """
 
-«IF Extends != "none"»
-# This class extends «Extends»
-import CCL.«Extends»
-«ELSE»
+Â«IF Extends != "none"Â»
+# This class extends Â«ExtendsÂ»
+import CCL.Â«ExtendsÂ»
+Â«ELSEÂ»
 import CCL.HardwareDevice
 from CCL.Container import getComponent
 from CCL.Container import getDynamicComponent
 from CCL.logging import getLogger
 import math
-«ENDIF»
+Â«ENDIFÂ»
 
-«IF Extends != "none"»
-class «Assembly»Base(CCL.«Extends».«Extends»):
-«ELSE»
-class «Assembly»Base(CCL.HardwareDevice.HardwareDevice):
-«ENDIF»
+Â«IF Extends != "none"Â»
+class Â«AssemblyÂ»Base(CCL.Â«ExtendsÂ».Â«ExtendsÂ»):
+Â«ELSEÂ»
+class Â«AssemblyÂ»Base(CCL.HardwareDevice.HardwareDevice):
+Â«ENDIFÂ»
     '''
-«Description»
+Â«DescriptionÂ»
     '''
     def __init__(self, \
                  antennaName = None, \
                  componentName = None, \
                  stickyFlag = False):
         '''
-        The constructor creates a «Assembly» object or a group of «Assembly»
+        The constructor creates a Â«AssemblyÂ» object or a group of Â«AssemblyÂ»
         objects.
 
         If the antennaName is defined then this constructor references
@@ -139,9 +141,9 @@ class «Assembly»Base(CCL.HardwareDevice.HardwareDevice):
         componentName can be specified if desired.
 
         If antennaName or componentName are specified as list then a set of
-        «Assembly» components are created.
+        Â«AssemblyÂ» components are created.
 
-        The «Assembly»Base class is a python proxy to the «Assembly»
+        The Â«AssemblyÂ»Base class is a python proxy to the Â«AssemblyÂ»
         component. The component can be running before creating this
         proxy but if it is not it will be started. The object reference
         is obtained using a call to getComponent (stickyFlag=True)
@@ -153,18 +155,18 @@ class «Assembly»Base(CCL.HardwareDevice.HardwareDevice):
         both or neither antennaName and componentName are specified.
 
         EXAMPLE:
-        import CCL.«Assembly»Base
-        obj = CCL.«Assembly»Base.«Assembly»Base("DV01")
+        import CCL.Â«AssemblyÂ»Base
+        obj = CCL.Â«AssemblyÂ»Base.Â«AssemblyÂ»Base("DV01")
 
         or
 
-        import CCL.«Assembly»Base
-        obj = CCL.«Assembly»Base.«Assembly»Base(["DV01", "DA41"])
+        import CCL.Â«AssemblyÂ»Base
+        obj = CCL.Â«AssemblyÂ»Base.Â«AssemblyÂ»Base(["DV01", "DA41"])
         '''
-«IF Extends != "none"»
-        CCL.«Extends».«Extends».__init__(self, \
+Â«IF Extends != "none"Â»
+        CCL.Â«ExtendsÂ».Â«ExtendsÂ».__init__(self, \
             antennaName, componentName, stickyFlag)
-«ELSE»
+Â«ELSEÂ»
         # Dictionary of device instances
         self._devices = {}
 
@@ -176,7 +178,7 @@ class «Assembly»Base(CCL.HardwareDevice.HardwareDevice):
                 if len(antennaName) != 0:
                     for idx in range(0, len(antennaName)):
                         self._devices["CONTROL/" + antennaName[idx] \
-                            + "/«Assembly»"] = ""
+                            + "/Â«AssemblyÂ»"] = ""
             # Component names
             if isinstance(componentName, list) == True:
                 if len(componentName) != 0:
@@ -191,7 +193,7 @@ class «Assembly»Base(CCL.HardwareDevice.HardwareDevice):
                 raise NameError, "missing antennaName or componentName"
 
             if antennaName != None:
-                self._devices["CONTROL/"+antennaName+"/«Assembly»"] = ""
+                self._devices["CONTROL/"+antennaName+"/Â«AssemblyÂ»"] = ""
 
             if componentName != None:
                 self._devices[componentName] = ""
@@ -201,21 +203,21 @@ class «Assembly»Base(CCL.HardwareDevice.HardwareDevice):
             CCL.HardwareDevice.HardwareDevice.__init__(self, \
                 key, stickyFlag);
             self._devices[key] = self._HardwareDevice__hw
-«ENDIF»
+Â«ENDIFÂ»
         self.__logger = getLogger()
 
-    def __del__(self):«IF Extends != "none"»
-        CCL.«Extends».«Extends».__del__(self)«ELSE»
+    def __del__(self):Â«IF Extends != "none"Â»
+        CCL.Â«ExtendsÂ».Â«ExtendsÂ».__del__(self)Â«ELSEÂ»
         for key, val in self._devices.iteritems():
              instance = self._devices[key]
              del(instance)
-        CCL.HardwareDevice.HardwareDevice.__del__(self)«ENDIF»
+        CCL.HardwareDevice.HardwareDevice.__del__(self)Â«ENDIFÂ»
 
     #
     # --------------------- General Methods ---------------------
     #
 
-«IF Extends == "none"»
+Â«IF Extends == "none"Â»
     def isSimulated(self):
         '''
         Returns True if the device is simulated, False if
@@ -228,58 +230,58 @@ class «Assembly»Base(CCL.HardwareDevice.HardwareDevice):
         if len(self._devices) == 1:
             return result.values()[0]
         return result
-«ENDIF»
+Â«ENDIFÂ»
 
     #
     # --------------------- Monitor Points ---------------------
     #
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isExternal»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF x.isExternalÂ»
     #
-    # «x.MPName»
+    # Â«x.MPNameÂ»
     #
-    def GET_«x.MPName»(self):
+    def GET_Â«x.MPNameÂ»(self):
         '''
-«x.Description»
+Â«x.DescriptionÂ»
         '''
         result = {}
         for key, val in self._devices.iteritems():
             antName = key.rsplit("/")[1]
             result[antName] = \
-                self._devices[key].GET_«x.MPName»()
+                self._devices[key].GET_Â«x.MPNameÂ»()
         if len(self._devices) == 1:
             return result.values()[0]
         return result
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
     #
     # --------------------- Control Points ---------------------
     #
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF x.isExternal»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF x.isExternalÂ»
     #
-    # «x.CPName»
+    # Â«x.CPNameÂ»
     #
-        «IF x.DataType == "void"»
-    def  SET_«x.CPName»(self):
-        «ELSE»
-    def  SET_«x.CPName»(self, value):
-        «ENDIF»
+        Â«IF x.DataType == "void"Â»
+    def  SET_Â«x.CPNameÂ»(self):
+        Â«ELSEÂ»
+    def  SET_Â«x.CPNameÂ»(self, value):
+        Â«ENDIFÂ»
         '''
-«x.Description»
+Â«x.DescriptionÂ»
         '''
         result = {}
         for key, val in self._devices.iteritems():
             antName = key.rsplit("/")[1]
-            result[antName] = \«IF x.DataType == "void"»
-                self._devices[key].SET_«x.CPName»()«ELSE»
-                self._devices[key].SET_«x.CPName»(value)«ENDIF»
+            result[antName] = \Â«IF x.DataType == "void"Â»
+                self._devices[key].SET_Â«x.CPNameÂ»()Â«ELSEÂ»
+                self._devices[key].SET_Â«x.CPNameÂ»(value)Â«ENDIFÂ»
         if len(self._devices) == 1:
             return result.values()[0]
         return result
-«ENDIF»
-«ENDFOREACH»
+Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
     #
     # ----------------- List of Monitor Points ------------------
@@ -291,13 +293,13 @@ class «Assembly»Base(CCL.HardwareDevice.HardwareDevice):
         '''
         result = {}
         for key, val in self._devices.iteritems():
-            antName = key.rsplit("/")[1]«IF Extends != "none"»
+            antName = key.rsplit("/")[1]Â«IF Extends != "none"Â»
             monitorList = \
-                CCL.«Extends».«Extends».getMonitorList(self)«ELSE»
-            monitorList = []«ENDIF»
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-            «IF x.isExternal && x.isMonitored»monitorList.append("«x.MPName»")«ENDIF»
-«ENDFOREACH»
+                CCL.Â«ExtendsÂ».Â«ExtendsÂ».getMonitorList(self)Â«ELSEÂ»
+            monitorList = []Â«ENDIFÂ»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+            Â«IF x.isExternal && x.isMonitoredÂ»monitorList.append("Â«x.MPNameÂ»")Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
             result[antName] = monitorList
         if len(self._devices) == 1:
             return result.values()[0]
@@ -313,16 +315,16 @@ class «Assembly»Base(CCL.HardwareDevice.HardwareDevice):
         '''
         result = {}
         for key, val in self._devices.iteritems():
-            antName = key.rsplit("/")[1]«IF Extends != "none"»
+            antName = key.rsplit("/")[1]Â«IF Extends != "none"Â»
             controlList = \
-                CCL.«Extends».«Extends».getControlList(self)«ELSE»
-            controlList = []«ENDIF»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-            «IF x.isExternal»controlList.append("«x.CPName»")«ENDIF»
-«ENDFOREACH»
+                CCL.Â«ExtendsÂ».Â«ExtendsÂ».getControlList(self)Â«ELSEÂ»
+            controlList = []Â«ENDIFÂ»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+            Â«IF x.isExternalÂ»controlList.append("Â«x.CPNameÂ»")Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
             result[antName] = controlList
         if len(self._devices) == 1:
             return result.values()[0]
         return result
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

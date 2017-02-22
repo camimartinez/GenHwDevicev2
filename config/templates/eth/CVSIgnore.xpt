@@ -1,86 +1,83 @@
-«REM»
+Â«REMÂ»
 
-ALMA - Atacama Large Millimeter Array
-(c) European Southern Observatory, 2002
-(c) Associated Universities Inc., 2002
+ALMA - Atacama Large Millimiter Array
+(c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
-Copyright by AUI (in the framework of the ALMA collaboration),
-All rights reserved.
+All rights reserved
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
-License as published by the Free software Foundation; either
+License as published by the Free Software Foundation; either
 version 2.1 of the License, or (at your option) any later version.
 
 This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY, without even the implied warranty of
+but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
 
-$Id: CVSIgnore.xpt 199109 2013-12-18 18:37:52Z rmarson $
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::openarchitectureware::core::meta::core»
-«IMPORT org::openarchitectureware::meta::uml»
-«IMPORT org::openarchitectureware::meta::uml::classifier»
-«IMPORT alma::Control::datamodel::meta::base»
-«IMPORT alma::Control::datamodel::meta::eth»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE Root FOR DeviceModel»
-    «IF !checkIfCvsignoreFileExists("idl")»
-        «EXPAND SWModuleIdlDef»
-    «ENDIF»
-    «IF !checkIfCvsignoreFileExists("src")»
-        «EXPAND SWModuleSrcDef»
-    «ENDIF»
-    «IF !checkIfCvsignoreFileExists("src/CCL")»
-        «EXPAND SWModuleCCLDef»
-    «ENDIF»
-    «IF !checkIfCvsignoreFileExists("include")»
-        «EXPAND SWModuleIncludeDef»
-    «ENDIF»
-    «IF !checkIfCvsignoreFileExists("test")»
-        «EXPAND SWModuleTestDef»
-    «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !checkIfCvsignoreFileExists("idl")Â»
+        Â«EXPAND SWModuleIdlDefÂ»
+    Â«ENDIFÂ»
+    Â«IF !checkIfCvsignoreFileExists("src")Â»
+        Â«EXPAND SWModuleSrcDefÂ»
+    Â«ENDIFÂ»
+    Â«IF !checkIfCvsignoreFileExists("src/CCL")Â»
+        Â«EXPAND SWModuleCCLDefÂ»
+    Â«ENDIFÂ»
+    Â«IF !checkIfCvsignoreFileExists("include")Â»
+        Â«EXPAND SWModuleIncludeDefÂ»
+    Â«ENDIFÂ»
+    Â«IF !checkIfCvsignoreFileExists("test")Â»
+        Â«EXPAND SWModuleTestDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleIdlDef FOR DeviceModel»
-«FILE DirPath + "/idl/.cvsignore"»
-«Assembly»Base.idl
-«Assembly»CompSim.idl
-«Assembly»Add.sql
-«ENDFILE»
-«ENDDEFINE»
+Â«DEFINE SWModuleIdlDef FOR DeviceModelImplÂ»
+Â«FILE DirPath + "/idl/.cvsignore"Â»
+Â«AssemblyÂ»Base.idl
+Â«AssemblyÂ»CompSim.idl
+Â«AssemblyÂ»Add.sql
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleSrcDef FOR DeviceModel»
-«FILE DirPath + "/src/.cvsignore"»
-«Assembly»Base.cpp
-«Assembly»CompSim.cpp
-«Assembly»EthSimBase.cpp
-«ENDFILE»
-«ENDDEFINE»
+Â«DEFINE SWModuleSrcDef FOR DeviceModelImplÂ»
+Â«FILE DirPath + "/src/.cvsignore"Â»
+Â«AssemblyÂ»Base.cpp
+Â«AssemblyÂ»CompSim.cpp
+Â«AssemblyÂ»EthSimBase.cpp
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleCCLDef FOR DeviceModel»
-«FILE DirPath + "/src/CCL/.cvsignore"»
-«Assembly»Base.py
+Â«DEFINE SWModuleCCLDef FOR DeviceModelImplÂ»
+Â«FILE DirPath + "/src/CCL/.cvsignore"Â»
+Â«AssemblyÂ»Base.py
 __init__.py
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleIncludeDef FOR DeviceModel»
-«FILE DirPath + "/include/.cvsignore"»
-«Assembly»Base.h
-«Assembly»CompSim.h
-«Assembly»EthSimBase.h
-«ENDFILE»
-«ENDDEFINE»
+Â«DEFINE SWModuleIncludeDef FOR DeviceModelImplÂ»
+Â«FILE DirPath + "/include/.cvsignore"Â»
+Â«AssemblyÂ»Base.h
+Â«AssemblyÂ»CompSim.h
+Â«AssemblyÂ»EthSimBase.h
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleTestDef FOR DeviceModel»
-«FILE DirPath + "/test/.cvsignore"»
-«ENDFILE»
-«ENDDEFINE»
+Â«DEFINE SWModuleTestDef FOR DeviceModelImplÂ»
+Â«FILE DirPath + "/test/.cvsignore"Â»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

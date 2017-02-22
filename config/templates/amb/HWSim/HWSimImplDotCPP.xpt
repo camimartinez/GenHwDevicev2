@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +18,23 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"HWSimImpl.cpp"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/"+Assembly+"HWSimImpl.cpp"Â»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -65,7 +65,7 @@ MA 02111-1307  USA
  */
 
 
-#include <«Assembly»HWSimImpl.h>
+#include <Â«AssemblyÂ»HWSimImpl.h>
 #include <vector>
 // For AMB::node_t and CAN::byte_t
 #include <CANTypes.h>
@@ -73,14 +73,14 @@ MA 02111-1307  USA
 
 /**
  * Please use this class to implement complex functionality for the
- * «Assembly»HWSimBase helper functions. Use AMB::TypeConvertion
+ * Â«AssemblyÂ»HWSimBase helper functions. Use AMB::TypeConvertion
  * methods for convenient type convertions.
  */
 
-AMB::«Assembly»HWSimImpl::«Assembly»HWSimImpl(AMB::node_t node,
+AMB::Â«AssemblyÂ»HWSimImpl::Â«AssemblyÂ»HWSimImpl(AMB::node_t node,
     const std::vector< CAN::byte_t >& serialNumber):
-    «Assembly»HWSimBase::«Assembly»HWSimBase(node, serialNumber)
+    Â«AssemblyÂ»HWSimBase::Â«AssemblyÂ»HWSimBase(node, serialNumber)
 {
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

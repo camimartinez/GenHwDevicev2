@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,10 +18,10 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«DEFINE Root FOR Model»
-«FILE Acronym"/test/alma/Control/test/"Acronym"TestDB.java"»
+Â«DEFINE Root FOR ModelÂ»
+Â«FILE Acronym"/test/alma/Control/test/"Acronym"TestDB.java"Â»
 
 /**
  * ALMA - Atacama Large Millimiter Array
@@ -62,7 +62,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * The Fill«Acronym» class adds the LRU «Acronym» to the monitor
+ * The FillÂ«AcronymÂ»class adds the LRU Â«AcronymÂ»to the monitor
  * database as a new type of LRU.  It adds a new row to the LRUType
  * table and adds row to the AssemblyType and PropertyType tables
  * to describe its assemblies and its monitored properties.
@@ -70,9 +70,9 @@ import java.util.GregorianCalendar;
  * IMPORTTANT NOTE: This class is configured to use the XE Oracle 
  * database. To run in the STE, it must be re-generated.
  */
-public class Fill«Acronym» extends MonitorDB {
+public class FillÂ«AcronymÂ»extends MonitorDB {
 
-    public Fill«Acronym» (String[] s) throws SQLException {
+    public FillÂ«AcronymÂ»(String[] s) throws SQLException {
         super("XE");
         connectToMonitorDB();
         setReferenceMap(s);
@@ -130,9 +130,9 @@ public class Fill«Acronym» extends MonitorDB {
     
     public static void main(String[] arg) {
         try {
-            Fill«Acronym» x = new Fill«Acronym» (arg);
+            FillÂ«AcronymÂ»x = new FillÂ«AcronymÂ»(arg);
             System.out.println("Connection to the monitor database established.");
-            System.out.println("Filling «Acronym»");
+            System.out.println("Filling Â«AcronymÂ»");
             GregorianCalendar startTime = new GregorianCalendar (2006, 4, 21, 23, 0, 0);
             GregorianCalendar endTime = new GregorianCalendar (2006, 4, 23, 1, 0, 0);            
             long start = startTime.getTimeInMillis();
@@ -144,5 +144,5 @@ public class Fill«Acronym» extends MonitorDB {
         }
     }
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

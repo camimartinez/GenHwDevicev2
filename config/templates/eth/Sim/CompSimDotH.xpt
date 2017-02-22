@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
@@ -20,26 +20,26 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
 
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «EXPAND SWModuleDef»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«EXPAND SWModuleDefÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"CompSim.h"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/include/"+Assembly+"CompSim.h"Â»
 #ifndef __cplusplus
 #error This is a C++ include file and cannot be used from plain C.
 #endif
-#ifndef «Assembly»CompSim_h
-#define «Assembly»CompSim_h
+#ifndef Â«AssemblyÂ»CompSim_h
+#define Â«AssemblyÂ»CompSim_h
 //
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
@@ -69,26 +69,26 @@ MA 02111-1307  USA
 //
 
 
-#include <«Assembly»Impl.h>
-#include <«Assembly»EthSimImpl.h>
-#include <«Assembly»CompSimS.h>
+#include <Â«AssemblyÂ»Impl.h>
+#include <Â«AssemblyÂ»EthSimImpl.h>
+#include <Â«AssemblyÂ»CompSimS.h>
 
 
-/// The «Assembly»CompSim class is the local component for the
-/// «DeviceName» hardware simulator.
+/// The Â«AssemblyÂ»CompSim class is the local component for the
+/// Â«DeviceNameÂ» hardware simulator.
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
+/// <li> Device:   Â«DeviceNameÂ»
+/// <li> Assembly: Â«AssemblyÂ»
 /// </ul>
-class «Assembly»CompSim : public «Assembly»Impl,
-    public virtual POA_Control::«Assembly»CompSim
+class Â«AssemblyÂ»CompSim : public Â«AssemblyÂ»Impl,
+    public virtual POA_Control::Â«AssemblyÂ»CompSim
 {
     public:
     /// Constructor
-    «Assembly»CompSim(const ACE_CString& name, maci::ContainerServices* pCS);
+    Â«AssemblyÂ»CompSim(const ACE_CString& name, maci::ContainerServices* pCS);
 
     /// Destructor
-    virtual ~«Assembly»CompSim();
+    virtual ~Â«AssemblyÂ»CompSim();
 
     /// TODO: getSimValue and setSimValue methods
 
@@ -100,14 +100,14 @@ class «Assembly»CompSim : public «Assembly»Impl,
 
     private:
     /// No default ctor.
-    «Assembly»CompSim();
+    Â«AssemblyÂ»CompSim();
 
     /// No copy ctor.
-    «Assembly»CompSim(const «Assembly»CompSim&);
+    Â«AssemblyÂ»CompSim(const Â«AssemblyÂ»CompSim&);
 
     /// No assignment optor.
-    «Assembly»CompSim& operator=(const «Assembly»CompSim&);
+    Â«AssemblyÂ»CompSim& operator=(const Â«AssemblyÂ»CompSim&);
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

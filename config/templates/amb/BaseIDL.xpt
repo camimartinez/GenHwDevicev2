@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,25 +18,25 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/idl/"+Assembly+"Base.idl"»
-#ifndef «Assembly»Base_idl
-#define «Assembly»Base_idl
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/idl/"+Assembly+"Base.idl"Â»
+#ifndef Â«AssemblyÂ»Base_idl
+#define Â«AssemblyÂ»Base_idl
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -64,15 +64,15 @@ MA 02111-1307  USA
 //  ---------------------------------------------------------
 //
 
-/// External interface to the hardware assembly: Control::«Assembly».
+/// External interface to the hardware assembly: Control::Â«AssemblyÂ».
 
 
 #include <HardwareDevice.idl>
 #include <ControlExceptions.idl>
 #include <baci.idl>
-«IF Extends != "none"»
-#include <«Extends».idl>
-«ENDIF»
+Â«IF Extends != "none"Â»
+#include <Â«ExtendsÂ».idl>
+Â«ENDIFÂ»
 
 
 #pragma prefix "alma"
@@ -80,32 +80,32 @@ MA 02111-1307  USA
 
 module Control
 {
-    /// «Description»
-«IF Extends != "none"»
-    interface «Assembly»Base: «Extends»
-«ELSE»
-    interface «Assembly»Base: Control::HardwareDevice
-«ENDIF»
+    /// Â«DescriptionÂ»
+Â«IF Extends != "none"Â»
+    interface Â«AssemblyÂ»Base: Â«ExtendsÂ»
+Â«ELSEÂ»
+    interface Â«AssemblyÂ»Base: Control::HardwareDevice
+Â«ENDIFÂ»
     {
         /////////////////////
         // BACI Properties //
         /////////////////////
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isMonitored»
-        /// «x.DescriptionFormatted»
-        «IF x.isPattern»
-        readonly attribute ACS::ROpattern «x.MPName»;
-        «ELSE»
-            «IF x.isWorldDataArray»
-        readonly attribute ACS::RO«x.WorldDataToBACIType»Seq «x.MPName»;
-            «ELSE»
-        readonly attribute ACS::RO«x.WorldDataToBACIType» «x.MPName»;
-            «ENDIF»
-        «ENDIF»
-    «ENDIF»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF x.isMonitoredÂ»
+        /// Â«x.DescriptionFormattedÂ»
+        Â«IF x.isPatternÂ»
+        readonly attribute ACS::ROpattern Â«x.MPNameÂ»;
+        Â«ELSEÂ»
+            Â«IF x.isWorldDataArrayÂ»
+        readonly attribute ACS::ROÂ«x.WorldDataToBACITypeÂ»Seq Â«x.MPNameÂ»;
+            Â«ELSEÂ»
+        readonly attribute ACS::ROÂ«x.WorldDataToBACITypeÂ» Â«x.MPNameÂ»;
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-«IF GenericMonitorPoints »
+Â«IF GenericMonitorPoints Â»
         /////////////////////////////////////////
         // IDL Definition for                  //
         // Custom Generic Methods              //
@@ -116,9 +116,9 @@ module Control
         
         /// Get last CAN Error in a readable form
         string GET_LAST_CAN_ERROR_MSG();
-«ENDIF»
+Â«ENDIFÂ»
         
-«IF Extends == "none"»
+Â«IF Extends == "none"Â»
         /////////////////////////////////////////
         // IDL Definitions for General Methods //
         /////////////////////////////////////////
@@ -129,51 +129,51 @@ module Control
 
         /// Get the channel number for this device.
         unsigned long GET_CHANNEL_NUMBER();
-    «IF Channel == "parm"»
+    Â«IF Channel == "parm"Â»
         /// Set the channel number for this device.
         void SET_CHANNEL_NUMBER(in unsigned long channelNumber);
-    «ENDIF»
+    Â«ENDIFÂ»
         /// Get the node address for this device.
         unsigned long GET_NODE_ADDRESS();
-    «IF NodeAddress == "parm"»
+    Â«IF NodeAddress == "parm"Â»
         /// Set the node address for this device.
         void SET_NODE_ADDRESS(in unsigned long nodeAddress);
-    «ENDIF»
+    Â«ENDIFÂ»
         /// Get the base address for this device.
         unsigned long GET_BASE_ADDRESS();
-    «IF BaseAddress == "parm"»
+    Â«IF BaseAddress == "parm"Â»
         /// Set the base address for this device.
         void SET_BASE_ADDRESS(in unsigned long baseAddress);
-    «ENDIF»
-«ENDIF»
+    Â«ENDIFÂ»
+Â«ENDIFÂ»
         ////////////////////////////////////////
         // IDL Definitions for Monitor Points //
         ////////////////////////////////////////
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isExternal»
-        /// «x.DescriptionFormatted»
-        «IF x.isWorldDataArray»
-        «x.WorldDataToIDLSeqType» GET_«x.MPName»(out ACS::Time timestamp) raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx);
-        «ELSE»
-        «x.WorldDataToIDLType» GET_«x.MPName»(out ACS::Time timestamp) raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx);
-        «ENDIF»
-    «ENDIF»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF x.isExternalÂ»
+        /// Â«x.DescriptionFormattedÂ»
+        Â«IF x.isWorldDataArrayÂ»
+        Â«x.WorldDataToIDLSeqTypeÂ» GET_Â«x.MPNameÂ»(out ACS::Time timestamp) raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx);
+        Â«ELSEÂ»
+        Â«x.WorldDataToIDLTypeÂ» GET_Â«x.MPNameÂ»(out ACS::Time timestamp) raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx);
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
         ////////////////////////////////////////
         // IDL Definitions for Control Points //
         ////////////////////////////////////////
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «REM»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«REMÂ»
     The condition isTERelated is built into the idlDeclaration method for ControlPoint.
-    «ENDREM»
-    «IF x.isExternal»
-        /// «x.DescriptionFormatted»
-        «x.idlReturns» «x.idlDeclaration»;
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDREMÂ»
+    Â«IF x.isExternalÂ»
+        /// Â«x.DescriptionFormattedÂ»
+        Â«x.idlReturnsÂ» Â«x.idlDeclarationÂ»;
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
     };
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

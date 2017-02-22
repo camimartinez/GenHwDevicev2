@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +18,23 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/doc/"+Assembly+"Component.xml"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/doc/"+Assembly+"Component.xml"Â»
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!--
  * ALMA - Atacama Large Millimiter Array
@@ -67,17 +67,17 @@ MA 02111-1307  USA
 <!--
     Change the following entries!
     - Container: XY01 to your container.
-    - Name: CONTROL/XY01/«Assembly» to the name of the component.
+    - Name: CONTROL/XY01/Â«AssemblyÂ» to the name of the component.
 -->
 <Component
-    Code="«Assembly»Impl"
+    Code="Â«AssemblyÂ»Impl"
     Container="CONTROL/XY01/cppContainer"
     ImplLang="cpp"
-    Name="CONTROL/XY01/«Assembly»"
-    Type="IDL:alma/Control/«Assembly»Impl:1.0"
+    Name="CONTROL/XY01/Â«AssemblyÂ»"
+    Type="IDL:alma/Control/Â«AssemblyÂ»Impl:1.0"
     xmlns="urn:schemas-cosylab-com:Component:1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="urn:schemas-cosylab-com:Component:1.0 http://www.eso.org/schemas/ACS/Component.xsd">
 </Component>
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

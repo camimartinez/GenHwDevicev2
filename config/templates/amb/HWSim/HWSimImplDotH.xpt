@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,28 +18,28 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"HWSimImpl.h"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/include/"+Assembly+"HWSimImpl.h"Â»
 #ifndef __cplusplus
 #error This is a C++ include file and cannot be used from plain C.
 #endif
-#ifndef «Assembly»HWSimImpl_h
-#define «Assembly»HWSimImpl_h
+#ifndef Â«AssemblyÂ»HWSimImpl_h
+#define Â«AssemblyÂ»HWSimImpl_h
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -68,7 +68,7 @@ MA 02111-1307  USA
 //
 
 
-#include <«Assembly»HWSimBase.h>
+#include <Â«AssemblyÂ»HWSimBase.h>
 #include <vector>
 // For AMB::node_t and CAN::byte_t
 #include <CANTypes.h>
@@ -78,32 +78,32 @@ namespace AMB
 {
     /**
      * Please use this class to implement complex functionality for the
-     * «Assembly»HWSimBase helper functions. Use AMB::TypeConvertion methods
+     * Â«AssemblyÂ»HWSimBase helper functions. Use AMB::TypeConvertion methods
      * for convenient type convertions.
      */
-    class «Assembly»HWSimImpl: public «Assembly»HWSimBase
+    class Â«AssemblyÂ»HWSimImpl: public Â«AssemblyÂ»HWSimBase
     {
         public:
         /// Constructor.
-        «Assembly»HWSimImpl(AMB::node_t node,
+        Â«AssemblyÂ»HWSimImpl(AMB::node_t node,
             const std::vector< CAN::byte_t >& serialNumber);
 
         /// Destructor.
-        virtual ~«Assembly»HWSimImpl()
+        virtual ~Â«AssemblyÂ»HWSimImpl()
         {
         };
 
         private:
         /// No default ctor.
-        «Assembly»HWSimImpl();
+        Â«AssemblyÂ»HWSimImpl();
 
         /// No copy ctor.
-        «Assembly»HWSimImpl(const «Assembly»HWSimImpl&);
+        Â«AssemblyÂ»HWSimImpl(const Â«AssemblyÂ»HWSimImpl&);
 
         /// No assignment optor.
-        «Assembly»HWSimImpl& operator=(const «Assembly»HWSimImpl&);
+        Â«AssemblyÂ»HWSimImpl& operator=(const Â«AssemblyÂ»HWSimImpl&);
     };
 }
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

@@ -1,4 +1,5 @@
-«REM»
+Â«REMÂ»
+
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +19,24 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«ENDREMÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «EXPAND SWModuleDef»
-«ENDDEFINE»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"EthSimBase.h"»
-#ifndef «Assembly»EthSimBase_h
-#define «Assembly»EthSimBase_h
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«EXPAND SWModuleDefÂ»
+Â«ENDDEFINEÂ»
+
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/include/"+Assembly+"EthSimBase.h"Â»
+#ifndef Â«AssemblyÂ»EthSimBase_h
+#define Â«AssemblyÂ»EthSimBase_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -68,34 +70,34 @@ MA 02111-1307  USA
 #error This is a C++ include file and cannot be used from plain C.
 #endif
 
-«IF Extends == "none"»
+Â«IF Extends == "none"Â»
 #include <EthernetDeviceInterface.h>
-«ELSE»
-#include <«Extends»EthSimImpl.h>
-«ENDIF»
+Â«ELSEÂ»
+#include <Â«ExtendsÂ»EthSimImpl.h>
+Â«ENDIFÂ»
 #include <sstream>
 #include <acstime.h>
 
 
-/// The «Assembly»EthSimBase class is the base class for the
-/// «DeviceName» hardware simulator.
+/// The Â«AssemblyÂ»EthSimBase class is the base class for the
+/// Â«DeviceNameÂ» hardware simulator.
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
+/// <li> Device:   Â«DeviceNameÂ»
+/// <li> Assembly: Â«AssemblyÂ»
 /// </ul>
-class «Assembly»EthSimBase:
-«IF Extends == "none"»
+class Â«AssemblyÂ»EthSimBase:
+Â«IF Extends == "none"Â»
     public EthernetDeviceInterface
-«ELSE»
-    public «Extends»EthSimImpl
-«ENDIF»
+Â«ELSEÂ»
+    public Â«ExtendsÂ»EthSimImpl
+Â«ENDIFÂ»
 {
     public:
     /// Constructor
-    «Assembly»EthSimBase();
+    Â«AssemblyÂ»EthSimBase();
 
     /// Destructor
-    virtual ~«Assembly»EthSimBase();
+    virtual ~Â«AssemblyÂ»EthSimBase();
 
     /// Returns true if a device is in simulation mode, false if
     /// it works with real hardware.
@@ -244,5 +246,5 @@ class «Assembly»EthSimBase:
     std::string m_hostname;
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

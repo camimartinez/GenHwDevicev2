@@ -1,4 +1,5 @@
-«REM»
+Â«REMÂ»
+
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,21 +19,22 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«ENDREMÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «EXPAND SWModuleDef»
-«ENDDEFINE»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"EthSimBase.cpp"»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«EXPAND SWModuleDefÂ»
+Â«ENDDEFINEÂ»
+
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/"+Assembly+"EthSimBase.cpp"Â»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -63,32 +65,32 @@ MA 02111-1307  USA
  */
 
 
-#include <«Assembly»EthSimBase.h>
+#include <Â«AssemblyÂ»EthSimBase.h>
 
 
 // Constructor
-«Assembly»EthSimBase::«Assembly»EthSimBase():
-«IF Extends != "none"»
-    «Extends»EthSimImpl()
-«ELSE»
+Â«AssemblyÂ»EthSimBase::Â«AssemblyÂ»EthSimBase():
+Â«IF Extends != "none"Â»
+    Â«ExtendsÂ»EthSimImpl()
+Â«ELSEÂ»
     EthernetDeviceInterface()
-«ENDIF»
+Â«ENDIFÂ»
     , m_isOpen(false)
 {
 }
 
 // Destructor
-«Assembly»EthSimBase::~«Assembly»EthSimBase()
+Â«AssemblyÂ»EthSimBase::~Â«AssemblyÂ»EthSimBase()
 {
 }
 
-CORBA::Boolean «Assembly»EthSimBase::isSimulated()
+CORBA::Boolean Â«AssemblyÂ»EthSimBase::isSimulated()
 {
     return true;
 }
 
 // EthernetDeviceInterface Methods
-void «Assembly»EthSimBase::open(const string& hostname,
+void Â«AssemblyÂ»EthSimBase::open(const string& hostname,
     const std::vector< std::string >& parameters)
 {
     // parsing the parameters
@@ -128,7 +130,7 @@ void «Assembly»EthSimBase::open(const string& hostname,
             + std::string(": Error Opening the socket: Already open."));
 }
 
-void «Assembly»EthSimBase::close()
+void Â«AssemblyÂ»EthSimBase::close()
 {
     // Closing socket
     if(m_isOpen == true)
@@ -142,202 +144,202 @@ void «Assembly»EthSimBase::close()
     }
 }
 
-void «Assembly»EthSimBase::monitor(int address, int& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, int& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for int"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, short& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, short& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for short"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, long long& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, long long& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for long long"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, char& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, char& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for char"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, std::string& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, std::string& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for std::string"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, float& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, float& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for float"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, double& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, double& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for double"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, bool& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, bool& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for bool"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, std::vector< int >& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, std::vector< int >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for std::vector< int >"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, std::vector< short >& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, std::vector< short >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for std::vector< short >"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, std::vector< long long >& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, std::vector< long long >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for std::vector< long long >"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, std::vector< char >& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, std::vector< char >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for std::vector< char >"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, std::vector< string >& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, std::vector< string >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for std::vector< string >"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, std::vector< float >& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, std::vector< float >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for std::vector< float >"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, std::vector< double >& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, std::vector< double >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for std::vector< double >"));
 }
 
-void «Assembly»EthSimBase::monitor(int address, std::vector< bool >& value)
+void Â«AssemblyÂ»EthSimBase::monitor(int address, std::vector< bool >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No monitor points defined for std::vector< bool >"));
 }
 
-void «Assembly»EthSimBase::command(int address)
+void Â«AssemblyÂ»EthSimBase::command(int address)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for void"));
 }
 
-void «Assembly»EthSimBase::command(int address, const int& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const int& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for int"));
 }
 
-void «Assembly»EthSimBase::command(int address, const short& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const short& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for short"));
 }
 
-void «Assembly»EthSimBase::command(int address, const long long& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const long long& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for long long"));
 }
 
-void «Assembly»EthSimBase::command(int address, const char& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const char& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for char"));
 }
 
-void «Assembly»EthSimBase::command(int address, const string& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const string& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for string"));
 }
 
-void «Assembly»EthSimBase::command(int address, const float& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const float& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for float"));
 }
 
-void «Assembly»EthSimBase::command(int address, const double& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const double& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for double"));
 }
 
-void «Assembly»EthSimBase::command(int address, const bool& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const bool& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for bool"));
 }
 
-void «Assembly»EthSimBase::command(int address, const std::vector<int >& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const std::vector<int >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for std::vector< int >"));
 }
 
-void «Assembly»EthSimBase::command(int address, const std::vector<short >& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const std::vector<short >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for std::vector< short >"));
 }
 
-void «Assembly»EthSimBase::command(int address, const std::vector<long long >& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const std::vector<long long >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for std::vector< long long >"));
 }
 
-void «Assembly»EthSimBase::command(int address, const std::vector<char >& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const std::vector<char >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for std::vector< char >"));
 }
 
-void «Assembly»EthSimBase::command(int address, const std::vector<string >& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const std::vector<string >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for std::vector< string >"));
 }
 
-void «Assembly»EthSimBase::command(int address, const std::vector<float >& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const std::vector<float >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for std::vector< float >"));
 }
 
-void «Assembly»EthSimBase::command(int address, const std::vector<double >& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const std::vector<double >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for std::vector< double >"));
 }
 
-void «Assembly»EthSimBase::command(int address, const std::vector<bool >& value)
+void Â«AssemblyÂ»EthSimBase::command(int address, const std::vector<bool >& value)
 {
     throw SocketOperationFailedEx(std::string(__PRETTY_FUNCTION__)
          + std::string(": No command points defined for std::vector< bool >"));
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

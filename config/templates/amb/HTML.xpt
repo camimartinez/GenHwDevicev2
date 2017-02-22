@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,157 +18,157 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly+"/doc/"+Assembly+".html"»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+Â«FILE Assembly+"/doc/"+Assembly+".html"Â»
 <html>
   <body>
-  <h1>Device «DeviceName»</h1>
+  <h1>Device Â«DeviceNameÂ»</h1>
   <ul>
-    <li><em>Assembly</em>  «Assembly»
-    <li><em>Description</em>  «Description»
-    <li><em>DeviceName</em>  «DeviceName»
-    <li><em>Extends</em>  «Extends»
-    <li><em>Parent</em>  «Parent»
-    <li><em>Cardinality</em>  «Cardinality»
-    <li><em>NodeAddress</em>  «NodeAddress»
-    <li><em>Channel</em>  «Channel»
-    <li><em>BaseAddress</em>  «BaseAddress»
-    <li><em>ICD</em>  «ICD»
-    <li><em>ICDDate</em>  «ICDDate»
+    <li><em>Assembly</em>  Â«AssemblyÂ»
+    <li><em>Description</em>  Â«DescriptionÂ»
+    <li><em>DeviceName</em>  Â«DeviceNameÂ»
+    <li><em>Extends</em>  Â«ExtendsÂ»
+    <li><em>Parent</em>  Â«ParentÂ»
+    <li><em>Cardinality</em>  Â«CardinalityÂ»
+    <li><em>NodeAddress</em>  Â«NodeAddressÂ»
+    <li><em>Channel</em>  Â«ChannelÂ»
+    <li><em>BaseAddress</em>  Â«BaseAddressÂ»
+    <li><em>ICD</em>  Â«ICDÂ»
+    <li><em>ICDDate</em>  Â«ICDDateÂ»
   </ul>
       <h3>Notes</h3>
       <ul>
-«FOREACH (Set[Note]) Notes AS x»
-    <li><em>«x.Note»</em>
-«ENDFOREACH»
+Â«FOREACH (Set[Note]) Notes AS xÂ»
+    <li><em>Â«x.NoteÂ»</em>
+Â«ENDFOREACHÂ»
       </ul>
 
     <h2>Monitor Points</h2>
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-      <h3>«x.MPName»</h3>
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+      <h3>Â«x.MPNameÂ»</h3>
       <ul>
-      «EXPAND MonitorPointDisplay FOR x»
+      Â«EXPAND MonitorPointDisplay FOR xÂ»
       </ul>
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
 
     <h2>Control Points</h2>
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-      <h3>«x.CPName»</h3>
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+      <h3>Â«x.CPNameÂ»</h3>
       <ul>
-      «EXPAND ControlPointDisplay FOR x»
+      Â«EXPAND ControlPointDisplay FOR xÂ»
       </ul>
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
 
     <h2>Archive Property</h2>
-«FOREACH (Set[ArchiveProperty]) ArchiveProperty AS x»
-      <h3>«x.APName»</h3>
+Â«FOREACH (Set[ArchiveProperty]) ArchiveProperty AS xÂ»
+      <h3>Â«x.APNameÂ»</h3>
       <ul>
-    <li><em>Assembly</em> «x.Assembly»
-    <li><em>Name</em> «x.APName»
-    <li><em>RefersTo</em> «x.RefersTo»
-    <li><em>Interval</em> «x.IntervalFull» «IF x.isIntervalTE» Monitored every TE and dumped every «x.Interval» seconds «ENDIF»
-    <li><em>OnlyOnChange</em> «x.OnlyOnChange»
-    <li><em>DisplayUnits</em> «x.DisplayUnits»
-    <li><em>GraphMin</em> «x.GraphMin»
-    <li><em>GraphMax</em> «x.GraphMax»
-    <li><em>Format</em> «x.Format»
-    <li><em>Title</em> «x.Title»
-    «IF x.RefersTo != "none"»  
-        «IF x.isMonitorPoint»  
-            «EXPAND MonitorPointDisplay FOR x.getMonitorPoint »
-        «ENDIF»
-        «IF x.isControlPoint»  
-            «EXPAND ControlPointDisplay FOR x.getControlPoint »
-        «ENDIF»
-    «ENDIF»
+    <li><em>Assembly</em> Â«x.AssemblyÂ»
+    <li><em>Name</em> Â«x.APNameÂ»
+    <li><em>RefersTo</em> Â«x.RefersToÂ»
+    <li><em>Interval</em> Â«x.IntervalFullÂ» Â«IF x.isIntervalTEÂ» Monitored every TE and dumped every Â«x.IntervalÂ» seconds Â«ENDIFÂ»
+    <li><em>OnlyOnChange</em> Â«x.OnlyOnChangeÂ»
+    <li><em>DisplayUnits</em> Â«x.DisplayUnitsÂ»
+    <li><em>GraphMin</em> Â«x.GraphMinÂ»
+    <li><em>GraphMax</em> Â«x.GraphMaxÂ»
+    <li><em>Format</em> Â«x.FormatÂ»
+    <li><em>Title</em> Â«x.TitleÂ»
+    Â«IF x.RefersTo != "none"Â»  
+        Â«IF x.isMonitorPointÂ»  
+            Â«EXPAND MonitorPointDisplay FOR x.getMonitorPoint Â»
+        Â«ENDIFÂ»
+        Â«IF x.isControlPointÂ»  
+            Â«EXPAND ControlPointDisplay FOR x.getControlPoint Â»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
       </ul>
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
 
   </body>
 </html>
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE MonitorPointDisplay FOR MonitorPoint»
-    <li><em>Assembly</em> «Assembly»
-      «IF isDependent»
-      <li><em>Name</em> «getDependentName» depends on «getDependsOnName»
-      «ELSE»
-    <li><em>Name</em> «MPName»
-      «ENDIF»
-    <li><em>RCA</em> «RCA»
-      «IF isDependent»
-          «IF isDependentGroupBit»
-      <li><em>RawDataType</em> bits «IF isRawDataArray» «getGroupStart» through «getGroupEnd» «ELSE» «getFirstBit» through «getLastBit» «ENDIF»
-          «ELSEIF isDependentBit»
-      <li><em>RawDataType</em> bit «IF isSingleBit» «getBit» «ELSE» «getFirstBit» through «getLastBit» «ENDIF»
-          «ENDIF»
-          «IF isDependentElement»
-    <li><em>RawDataType</em> «RawDataType» Array Element «GetDimension» 
-        «ENDIF»
-      «ELSE»
-    <li><em>RawDataType</em> «RawDataType» «IF isRawDataArray» Array Of «NumberItemsRawData» Total «TotalBytesRawData» bytes «ENDIF» CPP type is «RawDataToCPPType»
-      «ENDIF»
-    <li><em>TeRelated</em> «TeRelated»
-    <li><em>WorldDataType</em> «WorldDataType» «IF isWorldDataArray» Array Of «NumberItemsWorldData» «ENDIF»
-    <li><em>DataUnits</em> «DataUnits»
-    <li><em>Scale</em> «Scale»
-    <li><em>Offset</em> «Offset»
-    <li><em>MinRange</em> «MinRange»
-    <li><em>MaxRange</em> «MaxRange»
-    <li><em>Default</em> «Default»
-    <li><em>ErrorCondition</em> «ErrorCondition»
-    <li><em>ErrorSeverity</em> «ErrorSeverity»
-    <li><em>ErrorAction</em> «ErrorAction»
-    <li><em>Mode</em> «Mode»
-    <li><em>Implement</em> «Implement»
-    <li><em>External</em> «External»
-    <li><em>CanBeInvalid</em> «CanBeInvalid»
-    <li><em>Description</em> «Description»
-      «IF hasDependents»
+Â«DEFINE MonitorPointDisplay FOR MonitorPointÂ»
+    <li><em>Assembly</em> Â«AssemblyÂ»
+      Â«IF isDependentÂ»
+      <li><em>Name</em> Â«getDependentNameÂ» depends on Â«getDependsOnNameÂ»
+      Â«ELSEÂ»
+    <li><em>Name</em> Â«MPNameÂ»
+      Â«ENDIFÂ»
+    <li><em>RCA</em> Â«RCAÂ»
+      Â«IF isDependentÂ»
+          Â«IF isDependentGroupBitÂ»
+      <li><em>RawDataType</em> bits Â«IF isRawDataArrayÂ» Â«getGroupStartÂ» through Â«getGroupEndÂ» Â«ELSEÂ» Â«getFirstBitÂ» through Â«getLastBitÂ» Â«ENDIFÂ»
+          Â«ELSEIF isDependentBitÂ»
+      <li><em>RawDataType</em> bit Â«IF isSingleBitÂ» Â«getBitÂ» Â«ELSEÂ» Â«getFirstBitÂ» through Â«getLastBitÂ» Â«ENDIFÂ»
+          Â«ENDIFÂ»
+          Â«IF isDependentElementÂ»
+    <li><em>RawDataType</em> Â«RawDataTypeÂ» Array Element Â«GetDimensionÂ» 
+        Â«ENDIFÂ»
+      Â«ELSEÂ»
+    <li><em>RawDataType</em> Â«RawDataTypeÂ» Â«IF isRawDataArrayÂ» Array Of Â«NumberItemsRawDataÂ» Total Â«TotalBytesRawDataÂ» bytes Â«ENDIFÂ» CPP type is Â«RawDataToCPPTypeÂ»
+      Â«ENDIFÂ»
+    <li><em>TeRelated</em> Â«TeRelatedÂ»
+    <li><em>WorldDataType</em> Â«WorldDataTypeÂ» Â«IF isWorldDataArrayÂ» Array Of Â«NumberItemsWorldDataÂ» Â«ENDIFÂ»
+    <li><em>DataUnits</em> Â«DataUnitsÂ»
+    <li><em>Scale</em> Â«ScaleÂ»
+    <li><em>Offset</em> Â«OffsetÂ»
+    <li><em>MinRange</em> Â«MinRangeÂ»
+    <li><em>MaxRange</em> Â«MaxRangeÂ»
+    <li><em>Default</em> Â«DefaultÂ»
+    <li><em>ErrorCondition</em> Â«ErrorConditionÂ»
+    <li><em>ErrorSeverity</em> Â«ErrorSeverityÂ»
+    <li><em>ErrorAction</em> Â«ErrorActionÂ»
+    <li><em>Mode</em> Â«ModeÂ»
+    <li><em>Implement</em> Â«ImplementÂ»
+    <li><em>External</em> Â«ExternalÂ»
+    <li><em>CanBeInvalid</em> Â«CanBeInvalidÂ»
+    <li><em>Description</em> Â«DescriptionÂ»
+      Â«IF hasDependentsÂ»
       <li><em>Has dependents</em>
-      «ELSE»
+      Â«ELSEÂ»
       <li><em>No dependents</em>
-      «ENDIF»
-      «IF isArchived»
+      Â«ENDIFÂ»
+      Â«IF isArchivedÂ»
       <li><em>Is archived</em>
-      «ELSE»
+      Â«ELSEÂ»
       <li><em>Not archived</em>
-      «ENDIF»
-«ENDDEFINE»
+      Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ControlPointDisplay FOR ControlPoint»
-    <li><em>Assembly</em> «Assembly»
-    <li><em>Name</em> «CPName»
-    <li><em>RCA</em> «RCA»
-    <li><em>RawDataType</em> «RawDataType»
-    <li><em>TeRelated</em> «TeRelated»
-    <li><em>WorldDataType</em> «WorldDataType»
-    <li><em>DataUnits</em> «DataUnits»
-    <li><em>Scale</em> «Scale»
-    <li><em>Offset</em> «Offset»
-    <li><em>MinRange</em> «MinRange»
-    <li><em>MaxRange</em> «MaxRange»
-    <li><em>Returns</em> «Returns»
-    <li><em>Parameter</em> «Parameter»
-    <li><em>Data</em> «Data»
-    <li><em>Value</em> «Value»
-    <li><em>Mode</em> «Mode»
-    <li><em>Implement</em> «Implement»
-    <li><em>External</em> «External»
-    <li><em>Description</em> «Description»
-      «IF isArchived»
+Â«DEFINE ControlPointDisplay FOR ControlPointÂ»
+    <li><em>Assembly</em> Â«AssemblyÂ»
+    <li><em>Name</em> Â«CPNameÂ»
+    <li><em>RCA</em> Â«RCAÂ»
+    <li><em>RawDataType</em> Â«RawDataTypeÂ»
+    <li><em>TeRelated</em> Â«TeRelatedÂ»
+    <li><em>WorldDataType</em> Â«WorldDataTypeÂ»
+    <li><em>DataUnits</em> Â«DataUnitsÂ»
+    <li><em>Scale</em> Â«ScaleÂ»
+    <li><em>Offset</em> Â«OffsetÂ»
+    <li><em>MinRange</em> Â«MinRangeÂ»s
+    <li><em>MaxRange</em> Â«MaxRangeÂ»
+    <li><em>Returns</em> Â«ReturnsÂ»
+    <li><em>Parameter</em> Â«ParameterÂ»
+    <li><em>Data</em> Â«DataÂ»
+    <li><em>Value</em> Â«ValueÂ»
+    <li><em>Mode</em> Â«ModeÂ»
+    <li><em>Implement</em> Â«ImplementÂ»
+    <li><em>External</em> Â«ExternalÂ»
+    <li><em>Description</em> Â«DescriptionÂ»
+      Â«IF isArchivedÂ»
       <li><em>Is archived</em>
-      «ELSE»
+      Â«ELSEÂ»
       <li><em>Not archived</em>
-      «ENDIF»
-«ENDDEFINE»
+      Â«ENDIFÂ»
+Â«ENDDEFINEÂ»

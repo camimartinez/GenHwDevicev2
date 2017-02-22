@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
@@ -20,56 +20,56 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
 
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly+"/config/TMCDB"+Assembly+"Add.xml"»<?xml version="1.0" ?>
+Â«DEFINE Root FOR DeviceModelImplÂ»
+Â«FILE Assembly+"/config/TMCDB"+Assembly+"Add.xml"Â»<?xml version="1.0" ?>
 <lru-type>
-    <name>«Assembly»</name>
-    <fullname>«DeviceName»</fullname>
-    <icd>«ICD»</icd>
-    <icd-date>«ICDDateAsArrayTime»</icd-date>
-    <description>«DescriptionAsString»</description>
+    <name>Â«AssemblyÂ»</name>
+    <fullname>Â«DeviceNameÂ»</fullname>
+    <icd>Â«ICDÂ»</icd>
+    <icd-date>Â«ICDDateAsArrayTimeÂ»</icd-date>
+    <description>Â«DescriptionAsStringÂ»</description>
     <assembly-type>
-        <name>«Assembly»</name>
-        <dev-name>«DeviceName»</dev-name>
-        <description>«DescriptionAsString»</description>
+        <name>Â«AssemblyÂ»</name>
+        <dev-name>Â«DeviceNameÂ»</dev-name>
+        <description>Â«DescriptionAsStringÂ»</description>
         <default-role>
             <node>none</node>
             <base-address>none</base-address>
             <channel>none</channel>
         </default-role>
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF x.isMonitored»
-            «REM»
+    Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+        Â«IF x.isMonitoredÂ»
+            Â«REMÂ»
               Ethernet devices have no dependent monitor points.
               However, we better check in case of spreadsheet typo.
-            «ENDREM»
-            «IF !x.isDependent»
-                «REM»Adding BACIProperty«ENDREM»
+            Â«ENDREMÂ»
+            Â«IF !x.isDependentÂ»
+                Â«REMÂ»Adding BACIPropertyÂ«ENDREMÂ»
         <baci-property>
-            <propertyname>«x.MPName»</propertyname>
-            <description>«x.Description»</description>
-            <format>«x.Format»</format>
-            <units>«x.DisplayUnits»</units>
+            <propertyname>Â«x.MPNameÂ»</propertyname>
+            <description>Â«x.DescriptionÂ»</description>
+            <format>Â«x.FormatÂ»</format>
+            <units>Â«x.DisplayUnitsÂ»</units>
             <resolution>0</resolution>
             <archive-priority>3</archive-priority>
             <archive-min-int>0</archive-min-int>
-            <archive-max-int>«IF x.Interval != "none"»«x.Interval»«ELSE»0«ENDIF»</archive-max-int>
+            <archive-max-int>Â«IF x.Interval != "none"Â»Â«x.IntervalÂ»Â«ELSEÂ»0Â«ENDIFÂ»</archive-max-int>
             <default-timer-trig>1</default-timer-trig>
             <min-timer-trig>0.048</min-timer-trig>
             <initialize-devio>0</initialize-devio>
             <min-delta-trig>0</min-delta-trig>
             <default-value>0</default-value>
-            <graph-min>«IF x.GraphMin == "na" || x.GraphMin == "none"»0«ELSE»«x.GraphMin»«ENDIF»</graph-min>
-            <graph-max>«IF x.GraphMax == "na" || x.GraphMax == "none"»0«ELSE»«x.GraphMax»«ENDIF»</graph-max>
+            <graph-min>Â«IF x.GraphMin == "na" || x.GraphMin == "none"Â»0Â«ELSEÂ»Â«x.GraphMinÂ»Â«ENDIFÂ»</graph-min>
+            <graph-max>Â«IF x.GraphMax == "na" || x.GraphMax == "none"Â»0Â«ELSEÂ»Â«x.GraphMaxÂ»Â«ENDIFÂ»</graph-max>
             <min-step>0</min-step>
             <archive-delta>0</archive-delta>
             <alarm-high-on>0</alarm-high-on>
@@ -90,33 +90,33 @@ MA 02111-1307  USA
             <alarm-fault-family>!</alarm-fault-family>
             <alarm-fault-member>!</alarm-fault-member>
             <alarm-level>0</alarm-level>
-            <archive-suppress>«IF x.Interval == "none" || x.Interval == "0"»1«ELSE»0«ENDIF»</archive-suppress>
+            <archive-suppress>Â«IF x.Interval == "none" || x.Interval == "0"Â»1Â«ELSEÂ»0Â«ENDIFÂ»</archive-suppress>
             <archive-mechanism>monitor_collector</archive-mechanism>
-                «REM»Adding MonitorPoint«ENDREM»
-                «EXPAND MonitorPointEntry FOR x»
+                Â«REMÂ»Adding MonitorPointÂ«ENDREMÂ»
+                Â«EXPAND MonitorPointEntry FOR xÂ»
         </baci-property>
-            «ENDIF»   «REM»IF !x.isDependent«ENDREM»
-        «ENDIF»   «REM»IF x.isMonitored«ENDREM»
-    «ENDFOREACH»   «REM»FOREACH (Set[MonitorPoint]) MonitorPoint AS x«ENDREM»
+            Â«ENDIFÂ»   Â«REMÂ»IF !x.isDependentÂ«ENDREMÂ»
+        Â«ENDIFÂ»   Â«REMÂ»IF x.isMonitoredÂ«ENDREMÂ»
+    Â«ENDFOREACHÂ»   Â«REMÂ»FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ«ENDREMÂ»
     </assembly-type>
 </lru-type>
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE MonitorPointEntry FOR MonitorPoint»
+Â«DEFINE MonitorPointEntry FOR MonitorPointÂ»
             <monitor-point>
-                <monitorpointname>«MPName»</monitorpointname>
-                <datatype>«DataToDatabaseType»</datatype>
+                <monitorpointname>Â«MPNameÂ»</monitorpointname>
+                <datatype>Â«DataToDatabaseTypeÂ»</datatype>
                 <rca>0x0</rca>
                 <terelated>0</terelated>
-                <rawdatatype>«DataType»</rawdatatype>
-                <worlddatatype>«DataToCPPType»</worlddatatype>
-                <units>«DataUnits»</units>
+                <rawdatatype>Â«DataTypeÂ»</rawdatatype>
+                <worlddatatype>Â«DataToCPPTypeÂ»</worlddatatype>
+                <units>Â«DataUnitsÂ»</units>
                 <scale>0</scale>
                 <offset>0</offset>
-                <minrange>«IF MinRange == "na" || MinRange == "none" || MinRange == "not specified"»0«ELSE»«MinRange»«ENDIF»</minrange>
-                <maxrange>«IF MaxRange == "na" || MaxRange == "none" || MaxRange == "not specified"»0«ELSE»«MaxRange»«ENDIF»</maxrange>
-                <description>«DescriptionAsString»</description>
+                <minrange>Â«IF MinRange == "na" || MinRange == "none" || MinRange == "not specified"Â»0Â«ELSEÂ»Â«MinRangeÂ»Â«ENDIFÂ»</minrange>
+                <maxrange>Â«IF MaxRange == "na" || MaxRange == "none" || MaxRange == "not specified"Â»0Â«ELSEÂ»Â«MaxRangeÂ»Â«ENDIFÂ»</maxrange>
+                <description>Â«DescriptionAsStringÂ»</description>
             </monitor-point>
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 

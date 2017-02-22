@@ -1,4 +1,5 @@
-«REM»
+Â«REMÂ»
+
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -19,23 +20,23 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
 
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «EXPAND SWModuleDef»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«EXPAND SWModuleDefÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"Base.h"»
-#ifndef «Assembly»Base_h
-#define «Assembly»Base_h
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/include/"+Assembly+"Base.h"Â»
+#ifndef Â«AssemblyÂ»Base_h
+#define Â«AssemblyÂ»Base_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -71,18 +72,18 @@ MA 02111-1307  USA
 
 
 // Ethernet vendor communication class.
-#include <«VendorClass».h>
+#include <Â«VendorClassÂ».h>
 
-«IF Extends != "none"»
+Â«IF Extends != "none"Â»
 // Extended device.
-#include <«Extends»Impl.h>
-«ELSE»
+#include <Â«ExtendsÂ»Impl.h>
+Â«ELSEÂ»
 // Base class.
 #include <EthernetDevice.h>
 #include <EthernetDevIO.i>
 
 // CORBA servant header generated from IDL.
-#include <«Assembly»BaseS.h>
+#include <Â«AssemblyÂ»BaseS.h>
 
 // ACS classes that might be needed.
 #include <acscommonC.h>
@@ -116,47 +117,47 @@ MA 02111-1307  USA
 #include <limits>
 #include <cerrno>
 #include <cmath>
-«ENDIF»
+Â«ENDIFÂ»
 
-/// The «Assembly»Base class is the base class for the «DeviceName».
+/// The Â«AssemblyÂ»Base class is the base class for the Â«DeviceNameÂ».
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
+/// <li> Device:   Â«DeviceNameÂ»
+/// <li> Assembly: Â«AssemblyÂ»
 /// </ul>
 /// <p>
-/// «Description»
-class «Assembly»Base:
-«IF Extends != "none"»
-    public «Extends»Impl,
-«ELSE»
+/// Â«DescriptionÂ»
+class Â«AssemblyÂ»Base:
+Â«IF Extends != "none"Â»
+    public Â«ExtendsÂ»Impl,
+Â«ELSEÂ»
     public EthernetDevice,
-«ENDIF»
-    public virtual POA_Control::«Assembly»Base
+Â«ENDIFÂ»
+    public virtual POA_Control::Â«AssemblyÂ»Base
 {
     public:
     /// Destructor
-    virtual ~«Assembly»Base();
+    virtual ~Â«AssemblyÂ»Base();
 
     /// Returns true if a device is in simulation mode, false if
     /// it works with real hardware.
     virtual CORBA::Boolean isSimulated();
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isExternal || x.isMonitored»
-        «EXPAND PublicMonitorPoint FOR x»
-    «ENDIF»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF x.isExternal || x.isMonitoredÂ»
+        Â«EXPAND PublicMonitorPoint FOR xÂ»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF x.isExternal»
-        «EXPAND PublicControlPoint FOR x»
-    «ENDIF»
-«ENDFOREACH»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF x.isExternalÂ»
+        Â«EXPAND PublicControlPoint FOR xÂ»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
 
     protected:
     /// Constructor. Never instanciate this class directly!
-    «Assembly»Base(const ACE_CString& name, maci::ContainerServices* cs);
+    Â«AssemblyÂ»Base(const ACE_CString& name, maci::ContainerServices* cs);
     
     /// Overriden from the component lifecycle interface.
     /// \exception acsErrTypeLifeCycle::LifeCycleExImpl
@@ -166,182 +167,182 @@ class «Assembly»Base:
     /// \exception acsErrTypeLifeCycle::LifeCycleExImpl
     virtual void cleanUp();
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «EXPAND ProtectedMonitorPoint FOR x»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«EXPAND ProtectedMonitorPoint FOR xÂ»
+Â«ENDFOREACHÂ»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «EXPAND ProtectedControlPoint FOR x»
-«ENDFOREACH»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«EXPAND ProtectedControlPoint FOR xÂ»
+Â«ENDFOREACHÂ»
 
 
     private:
     /// ALMA coding standards: copy constructor is disabled.
-    «Assembly»Base(const «Assembly»Base&);
+    Â«AssemblyÂ»Base(const Â«AssemblyÂ»Base&);
     
     /// ALMA coding standards: assignment operator is disabled.
-    «Assembly»Base& operator=(const «Assembly»Base&);
+    Â«AssemblyÂ»Base& operator=(const Â«AssemblyÂ»Base&);
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
 
-«DEFINE PublicMonitorPoint FOR MonitorPoint»
-    /// MonitorPoint: «MPName»
-    /// «Description»
+Â«DEFINE PublicMonitorPoint FOR MonitorPointÂ»
+    /// MonitorPoint: Â«MPNameÂ»
+    /// Â«DescriptionÂ»
     /// \exception EthernetDeviceExceptions::SocketOperationFailedEx
     /// \exception EthernetDeviceExceptions::IllegalParameterEx
     /// \exception ControlExceptions::INACTErrorEx
-    «REM»
+    Â«REMÂ»
     a. Major monitor method
-    «ENDREM»
-    «IF isDataArray»
-        «IF DataType != "void"»
-    virtual «DataToCORBASeqType»* GET_«MPName»(
+    Â«ENDREMÂ»
+    Â«IF isDataArrayÂ»
+        Â«IF DataType != "void"Â»
+    virtual Â«DataToCORBASeqTypeÂ»* GET_Â«MPNameÂ»(
         ACS::Time& timestamp);
-        «ELSE»
-#error "MonitorPoint: «MPName» is of type void. Cannot create GET_«MPName»!"
-        «ENDIF»
-    «ELSE»
-        «IF DataType == "string"»
-    virtual «DataToCORBAType» GET_«MPName»(ACS::Time& timestamp);
-        «ELSE»
-    virtual «DataToCORBAType» GET_«MPName»(ACS::Time& timestamp);
-        «ENDIF»
-    «ENDIF»
+        Â«ELSEÂ»
+#error "MonitorPoint: Â«MPNameÂ» is of type void. Cannot create GET_Â«MPNameÂ»!"
+        Â«ENDIFÂ»
+    Â«ELSEÂ»
+        Â«IF DataType == "string"Â»
+    virtual Â«DataToCORBATypeÂ» GET_Â«MPNameÂ»(ACS::Time& timestamp);
+        Â«ELSEÂ»
+    virtual Â«DataToCORBATypeÂ» GET_Â«MPNameÂ»(ACS::Time& timestamp);
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
 
-    «REM»
+    Â«REMÂ»
     b. Method for monitored property
-    «ENDREM»
-    «IF isMonitored»
-        «IF DisplayUnits == "pattern"»
-    virtual ACS::ROpattern_ptr «MPName»();
-        «ELSE»
-            «IF isDataArray»
-    virtual ACS::RO«DataToBACIType»Seq_ptr «MPName»();
-            «ELSE»
-    virtual ACS::RO«DataToBACIType»_ptr «MPName»();
-            «ENDIF»
-        «ENDIF»
-    «ENDIF»
-«ENDDEFINE»
+    Â«ENDREMÂ»
+    Â«IF isMonitoredÂ»
+        Â«IF DisplayUnits == "pattern"Â»
+    virtual ACS::ROpattern_ptr Â«MPNameÂ»();
+        Â«ELSEÂ»
+            Â«IF isDataArrayÂ»
+    virtual ACS::ROÂ«DataToBACITypeÂ»Seq_ptr Â«MPNameÂ»();
+            Â«ELSEÂ»
+    virtual ACS::ROÂ«DataToBACITypeÂ»_ptr Â«MPNameÂ»();
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
-    «IF isExternal»
-    /// MonitorPoint: «MPName»
-    «ELSE»
-    /// MonitorPoint: «MPName»
-    /// «Description»
-    «ENDIF»
-    «REM»
+Â«DEFINE ProtectedMonitorPoint FOR MonitorPointÂ»
+    Â«IF isExternalÂ»
+    /// MonitorPoint: Â«MPNameÂ»
+    Â«ELSEÂ»
+    /// MonitorPoint: Â«MPNameÂ»
+    /// Â«DescriptionÂ»
+    Â«ENDIFÂ»
+    Â«REMÂ»
     a. Major monitor method
-    «ENDREM»
-    «IF isImplemented»
-        «IF isDataArray»
-    virtual std::vector< «DataToCPPType» > get«AltMPName»(
+    Â«ENDREMÂ»
+    Â«IF isImplementedÂ»
+        Â«IF isDataArrayÂ»
+    virtual std::vector< Â«DataToCPPTypeÂ» > getÂ«AltMPNameÂ»(
         ACS::Time& timestamp);
-        «ELSEIF DataType == "string"»
-    virtual std::string get«AltMPName»(ACS::Time& timestamp);
-        «ELSE»
-    virtual «DataToCPPType» get«AltMPName»(ACS::Time& timestamp);
-        «ENDIF»
-    «ELSE»
-        «IF isDataArray»
-    virtual std::vector< «DataToCPPType» > get«AltMPName»(
+        Â«ELSEIF DataType == "string"Â»
+    virtual std::string getÂ«AltMPNameÂ»(ACS::Time& timestamp);
+        Â«ELSEÂ»
+    virtual Â«DataToCPPTypeÂ» getÂ«AltMPNameÂ»(ACS::Time& timestamp);
+        Â«ENDIFÂ»
+    Â«ELSEÂ»
+        Â«IF isDataArrayÂ»
+    virtual std::vector< Â«DataToCPPTypeÂ» > getÂ«AltMPNameÂ»(
         ACS::Time& timestamp) = 0;
-        «ELSEIF DataType == "string"»
-    virtual std::string get«AltMPName»(ACS::Time& timestamp) = 0;
-        «ELSE»
-    virtual «DataToCPPType» get«AltMPName»(ACS::Time& timestamp) = 0;
-        «ENDIF»
-    «ENDIF»
+        Â«ELSEIF DataType == "string"Â»
+    virtual std::string getÂ«AltMPNameÂ»(ACS::Time& timestamp) = 0;
+        Â«ELSEÂ»
+    virtual Â«DataToCPPTypeÂ» getÂ«AltMPNameÂ»(ACS::Time& timestamp) = 0;
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
 
-    «REM»
+    Â«REMÂ»
     b. Field for Address
-    «ENDREM»
-    «IF !isDependent && Address != "none"»
+    Â«ENDREMÂ»
+    Â«IF !isDependent && Address != "none"Â»
     /// The command address for this monitor point.
-    int address«AltMPName»;
-    «ENDIF»
+    int addressÂ«AltMPNameÂ»;
+    Â«ENDIFÂ»
 
-    «REM»
+    Â«REMÂ»
     c. Property pointers.
-    «ENDREM»
-    «IF isMonitored»
+    Â«ENDREMÂ»
+    Â«IF isMonitoredÂ»
     /// The ACS smart property pointer for getting the property.
-        «IF DisplayUnits == "pattern"»
-    baci::SmartPropertyPointer< baci::ROpattern > spp«AltMPName»;
-        «ELSE»
-            «IF isDataArray»
-    baci::SmartPropertyPointer< baci::RO«DataToBACIType»Seq > spp«AltMPName»;
-            «ELSE»
-    baci::SmartPropertyPointer< baci::RO«DataToBACIType» > spp«AltMPName»;
-            «ENDIF»
-        «ENDIF»
-    «ENDIF»
-«ENDDEFINE»
+        Â«IF DisplayUnits == "pattern"Â»
+    baci::SmartPropertyPointer< baci::ROpattern > sppÂ«AltMPNameÂ»;
+        Â«ELSEÂ»
+            Â«IF isDataArrayÂ»
+    baci::SmartPropertyPointer< baci::ROÂ«DataToBACITypeÂ»Seq > sppÂ«AltMPNameÂ»;
+            Â«ELSEÂ»
+    baci::SmartPropertyPointer< baci::ROÂ«DataToBACITypeÂ» > sppÂ«AltMPNameÂ»;
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE PublicControlPoint FOR ControlPoint»
-    /// ControlPoint: «CPName»
-    /// «Description»
+Â«DEFINE PublicControlPoint FOR ControlPointÂ»
+    /// ControlPoint: Â«CPNameÂ»
+    /// Â«DescriptionÂ»
     /// \exception EthernetDeviceExceptions::SocketOperationFailedEx
     /// \exception EthernetDeviceExceptions::IllegalParameterEx
     /// \exception ControlExceptions::INACTErrorEx
-    «REM»
+    Â«REMÂ»
     a. Major control method
-    «ENDREM»
-    «IF isDataArray»
-        «IF DataType != "void"»
-    virtual void SET_«CPName»(const «DataToCORBASeqType»&);
-        «ELSE»
-#error "ControlPoint: «CPName» is of type void. Cannot create SET_«CPName»!"
-        «ENDIF»
-    «ELSE»
-        «IF DataType == "string"»
-    virtual void SET_«CPName»(const «DataToCORBAType»);
-        «ELSEIF DataType == "void"»
-    virtual void SET_«CPName»();
-        «ELSE»
-    virtual void SET_«CPName»(«DataToCORBAType»);
-        «ENDIF»
-    «ENDIF»
-«ENDDEFINE»
+    Â«ENDREMÂ»
+    Â«IF isDataArrayÂ»
+        Â«IF DataType != "void"Â»
+    virtual void SET_Â«CPNameÂ»(const Â«DataToCORBASeqTypeÂ»&);
+        Â«ELSEÂ»
+#error "ControlPoint: Â«CPNameÂ» is of type void. Cannot create SET_Â«CPNameÂ»!"
+        Â«ENDIFÂ»
+    Â«ELSEÂ»
+        Â«IF DataType == "string"Â»
+    virtual void SET_Â«CPNameÂ»(const Â«DataToCORBATypeÂ»);
+        Â«ELSEIF DataType == "void"Â»
+    virtual void SET_Â«CPNameÂ»();
+        Â«ELSEÂ»
+    virtual void SET_Â«CPNameÂ»(Â«DataToCORBATypeÂ»);
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ProtectedControlPoint FOR ControlPoint»
-    «IF isExternal»
-    /// ControlPoint: «CPName»
-    «ELSE»
-    /// ControlPoint: «CPName»
-    /// «Description»
-    «ENDIF»
-    «IF isImplemented»
-        «IF isDataArray»
-    virtual void set«AltCPName»(const std::vector< «DataToCPPType» >&);
-        «ELSEIF DataType == "void"»
-    virtual void set«AltCPName»();
-        «ELSEIF DataType == "string"»
-    virtual void set«AltCPName»(const std::string&);
-        «ELSE»
-    virtual void set«AltCPName»(«DataToCPPType»);
-        «ENDIF»
-    «ELSE»
-        «IF isDataArray»
-    virtual void set«AltCPName»(const std::vector< «DataToCPPType» >&) = 0;
-        «ELSEIF DataType == "void"»
-    virtual void set«AltCPName»() = 0;
-        «ELSEIF DataType == "string"»
-    virtual void set«AltCPName»(const std::string&) = 0;
-        «ELSE»
-    virtual void set«AltCPName»(«DataToCPPType») = 0;
-        «ENDIF»
-    «ENDIF»
+Â«DEFINE ProtectedControlPoint FOR ControlPointÂ»
+    Â«IF isExternalÂ»
+    /// ControlPoint: Â«CPNameÂ»
+    Â«ELSEÂ»
+    /// ControlPoint: Â«CPNameÂ»
+    /// Â«DescriptionÂ»
+    Â«ENDIFÂ»
+    Â«IF isImplementedÂ»
+        Â«IF isDataArrayÂ»
+    virtual void setÂ«AltCPNameÂ»(const std::vector< Â«DataToCPPTypeÂ» >&);
+        Â«ELSEIF DataType == "void"Â»
+    virtual void setÂ«AltCPNameÂ»();
+        Â«ELSEIF DataType == "string"Â»
+    virtual void setÂ«AltCPNameÂ»(const std::string&);
+        Â«ELSEÂ»
+    virtual void setÂ«AltCPNameÂ»(Â«DataToCPPTypeÂ»);
+        Â«ENDIFÂ»
+    Â«ELSEÂ»
+        Â«IF isDataArrayÂ»
+    virtual void setÂ«AltCPNameÂ»(const std::vector< Â«DataToCPPTypeÂ» >&) = 0;
+        Â«ELSEIF DataType == "void"Â»
+    virtual void setÂ«AltCPNameÂ»() = 0;
+        Â«ELSEIF DataType == "string"Â»
+    virtual void setÂ«AltCPNameÂ»(const std::string&) = 0;
+        Â«ELSEÂ»
+    virtual void setÂ«AltCPNameÂ»(Â«DataToCPPTypeÂ») = 0;
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
 
-    «REM»
+    Â«REMÂ»
     b. Field for Address
-    «ENDREM»
-    «IF !isDependent && Address != "none"»
+    Â«ENDREMÂ»
+    Â«IF !isDependent && Address != "none"Â»
     /// The command address for this control point.
-    int address«AltCPName»;
-    «ENDIF»
-«ENDDEFINE»
+    int addressÂ«AltCPNameÂ»;
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»

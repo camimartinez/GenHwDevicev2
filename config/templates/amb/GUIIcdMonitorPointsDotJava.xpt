@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,24 +18,24 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
-        «EXPAND SWModuleDef»
-    «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/alma/Control/device/gui/"+Assembly+"/IcdMonitorPoints.java"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/alma/Control/device/gui/"+Assembly+"/IcdMonitorPoints.java"Â»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -65,10 +65,10 @@ MA 02111-1307  USA
  *
  */
 
-package alma.Control.device.gui.«Assembly»;
+package alma.Control.device.gui.Â«AssemblyÂ»;
 
 import alma.Control.device.gui.common.IMonitorPoint;
-import alma.Control.device.gui.«Assembly».presentationModels.MonitorPointPM;
+import alma.Control.device.gui.Â«AssemblyÂ».presentationModels.MonitorPointPM;
 
 /**
  * List all Monitor Points implemented in this device.
@@ -81,32 +81,32 @@ import alma.Control.device.gui.«Assembly».presentationModels.MonitorPointPM;
  
 public enum IcdMonitorPoints implements IMonitorPoint {
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-  «IF x.MPName != "PHASE_SEQ1" &&  x.MPName != "PHASE_SEQ2" »
-    «IF x.isExternal »
-    «x.MPName»(
-            «IF x.isWorldDataArray»
-        «x.WorldDataToJavaType»[].class, «x.NumberItemsWorldData»
-            «ELSE»
-        «x.WorldDataToJavaType».class 
-            «ENDIF»
-        , "«x.MPName»"
-        , "«x.Mode»"
-            «IF x.WorldDataToJavaType == "boolean"»
-                «IF x.ErrorCondition == "true"»
-        , «x.Default»
-                «ENDIF»  
-            «ELSEIF x.MinRange != "none" && x.MaxRange != "none"»
-        , «x.MinRange»
-        , «x.MaxRange»
-            «ENDIF»
-            «IF x.DataUnits != "none"»
-        , "«x.DataUnits»"
-            «ENDIF»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+  Â«IF x.MPName != "PHASE_SEQ1" &&  x.MPName != "PHASE_SEQ2" Â»
+    Â«IF x.isExternal Â»
+    Â«x.MPNameÂ»(
+            Â«IF x.isWorldDataArrayÂ»
+        Â«x.WorldDataToJavaTypeÂ»[].class, Â«x.NumberItemsWorldDataÂ»
+            Â«ELSEÂ»
+        Â«x.WorldDataToJavaTypeÂ».class 
+            Â«ENDIFÂ»
+        , "Â«x.MPNameÂ»"
+        , "Â«x.ModeÂ»"
+            Â«IF x.WorldDataToJavaType == "boolean"Â»
+                Â«IF x.ErrorCondition == "true"Â»
+        , Â«x.DefaultÂ»
+                Â«ENDIFÂ»  
+            Â«ELSEIF x.MinRange != "none" && x.MaxRange != "none"Â»
+        , Â«x.MinRangeÂ»
+        , Â«x.MaxRangeÂ»
+            Â«ENDIFÂ»
+            Â«IF x.DataUnits != "none"Â»
+        , "Â«x.DataUnitsÂ»"
+            Â«ENDIFÂ»
     ),
-    «ENDIF»
-  «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+  Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
     ;
 
     private IcdMonitorPoints (Class typeClass,
@@ -478,5 +478,5 @@ public enum IcdMonitorPoints implements IMonitorPoint {
 //
 // O_o
         
-«ENDFILE»
-«ENDDEFINE» 
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ» 

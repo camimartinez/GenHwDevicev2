@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,17 +18,17 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly+"/doc/"+Assembly+"ControlPoints.html"»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+Â«FILE Assembly+"/doc/"+Assembly+"ControlPoints.html"Â»
 <html>
     <body>
 
@@ -47,58 +47,58 @@ function showme(funcName){
 }
 </script>
 
-  <h1>Device «DeviceName»</h1>
+  <h1>Device Â«DeviceNameÂ»</h1>
     <h2>Control Points</h2>
 <table>
 <tr><td>Function Name</td><td>RCA</td></tr>
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
 <tr>
 <td VALIGN=top>
-SET_«x.CPName»
+SET_Â«x.CPNameÂ»
 </td>
 <td VALIGN=top>
-«x.RCA»
+Â«x.RCAÂ»
 </td>
 <td>
-        <a href="javascript:showme('SET_«x.CPName»')">details</a> <div id="SET_«x.CPName»Cont" style="visibility:hidden">
-      «EXPAND ControlPointDisplay FOR x»
+        <a href="javascript:showme('SET_Â«x.CPNameÂ»')">details</a> <div id="SET_Â«x.CPNameÂ»Cont" style="visibility:hidden">
+      Â«EXPAND ControlPointDisplay FOR xÂ»
         </div>
 <script language="javascript">
-   var SET_«x.CPName»Text = document.getElementById("SET_«x.CPName»Cont").innerHTML;
-   document.getElementById("SET_«x.CPName»Cont").innerHTML = "";
+   var SET_Â«x.CPNameÂ»Text = document.getElementById("SET_Â«x.CPNameÂ»Cont").innerHTML;
+   document.getElementById("SET_Â«x.CPNameÂ»Cont").innerHTML = "";
 </script>
 </td>
 </tr>
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
 </table>
   </body>
 </html>
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ControlPointDisplay FOR ControlPoint»
-    <li><em>Assembly</em> «Assembly»
-    <li><em>Name</em> «CPName»
-    <li><em>RCA</em> «RCA»
-    <li><em>RawDataType</em> «RawDataType»
-    <li><em>TeRelated</em> «TeRelated»
-    <li><em>WorldDataType</em> «WorldDataType»
-    <li><em>DataUnits</em> «DataUnits»
-    <li><em>Scale</em> «Scale»
-    <li><em>Offset</em> «Offset»
-    <li><em>MinRange</em> «MinRange»
-    <li><em>MaxRange</em> «MaxRange»
-    <li><em>Returns</em> «Returns»
-    <li><em>Parameter</em> «Parameter»
-    <li><em>Data</em> «Data»
-    <li><em>Value</em> «Value»
-    <li><em>Mode</em> «Mode»
-    <li><em>Implement</em> «Implement»
-    <li><em>External</em> «External»
-    <li><em>Description</em> «Description»
-      «IF isArchived»
+Â«DEFINE ControlPointDisplay FOR ControlPointÂ»
+    <li><em>Assembly</em> Â«AssemblyÂ»
+    <li><em>Name</em> Â«CPNameÂ»
+    <li><em>RCA</em> Â«RCAÂ»
+    <li><em>RawDataType</em> Â«RawDataTypeÂ»
+    <li><em>TeRelated</em> Â«TeRelatedÂ»
+    <li><em>WorldDataType</em> Â«WorldDataTypeÂ»
+    <li><em>DataUnits</em> Â«DataUnitsÂ»
+    <li><em>Scale</em> Â«ScaleÂ»
+    <li><em>Offset</em> Â«OffsetÂ»
+    <li><em>MinRange</em> Â«MinRangeÂ»
+    <li><em>MaxRange</em> Â«MaxRangeÂ»
+    <li><em>Returns</em> Â«ReturnsÂ»
+    <li><em>Parameter</em> Â«ParameterÂ»
+    <li><em>Data</em> Â«DataÂ»
+    <li><em>Value</em> Â«ValueÂ»
+    <li><em>Mode</em> Â«ModeÂ»
+    <li><em>Implement</em> Â«ImplementÂ»
+    <li><em>External</em> Â«ExternalÂ»
+    <li><em>Description</em> Â«DescriptionÂ»
+      Â«IF isArchivedÂ»
       <li><em>Is archived</em>
-      «ELSE»
+      Â«ELSEÂ»
       <li><em>Not archived</em>
-      «ENDIF»
-«ENDDEFINE»
+      Â«ENDIFÂ»
+Â«ENDDEFINEÂ»

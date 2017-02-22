@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
@@ -20,21 +20,21 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
 
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «EXPAND SWModuleDef»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«EXPAND SWModuleDefÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/config/CDB/schemas/"+Assembly+"Base.xsd"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/config/CDB/schemas/"+Assembly+"Base.xsd"Â»
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
  * 
@@ -69,15 +69,15 @@ MA 02111-1307  USA
 <xs:schema
     attributeFormDefault="unqualified"
     elementFormDefault="qualified"
-    targetNamespace="urn:schemas-cosylab-com:«Assembly»Base:1.0"
-    xmlns="urn:schemas-cosylab-com:«Assembly»Base:1.0"
+    targetNamespace="urn:schemas-cosylab-com:Â«AssemblyÂ»Base:1.0"
+    xmlns="urn:schemas-cosylab-com:Â«AssemblyÂ»Base:1.0"
     xmlns:baci="urn:schemas-cosylab-com:BACI:1.0"
     xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
-«IF Extends != "none"»
-    xmlns:exteth="urn:schemas-cosylab-com:«Extends»:1.0" 
-«ELSE»
+Â«IF Extends != "none"Â»
+    xmlns:exteth="urn:schemas-cosylab-com:Â«ExtendsÂ»:1.0" 
+Â«ELSEÂ»
     xmlns:eth="urn:schemas-cosylab-com:EthernetDevice:1.0"
-«ENDIF»
+Â«ENDIFÂ»
     xmlns:extcontrol="urn:schemas-cosylab-com:ControlDevice:1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:import
@@ -86,43 +86,43 @@ MA 02111-1307  USA
     <xs:import
         namespace="urn:schemas-cosylab-com:BACI:1.0"
         schemaLocation="http://www.eso.org/schemas/ACS/BACI.xsd"></xs:import>
-«IF Extends != "none"»
+Â«IF Extends != "none"Â»
     <xs:import
-        namespace="urn:schemas-cosylab-com:«Extends»:1.0"
-        schemaLocation="http://www.nrao.edu/schemas/CONTROL/«Extends».xsd"></xs:import>
-«ELSE»
+        namespace="urn:schemas-cosylab-com:Â«ExtendsÂ»:1.0"
+        schemaLocation="http://www.nrao.edu/schemas/CONTROL/Â«ExtendsÂ».xsd"></xs:import>
+Â«ELSEÂ»
     <xs:import
         namespace="urn:schemas-cosylab-com:EthernetDevice:1.0"
         schemaLocation="http://www.nrao.edu/schemas/CONTROL/EthernetDevice.xsd"></xs:import>
-«ENDIF»
+Â«ENDIFÂ»
     <xs:import
         namespace="urn:schemas-cosylab-com:ControlDevice:1.0"
         schemaLocation="http://www.nrao.edu/schemas/CONTROL/ControlDevice.xsd"></xs:import>
     <xs:complexType
-        name="«Assembly»Base">
+        name="Â«AssemblyÂ»Base">
         <xs:complexContent>
             <xs:extension
                 base="extcontrol:ControlDevice">
                 <xs:sequence>
-    «FOREACH MonitorPoint AS x»
-        «IF x.isMonitored»
-          «IF x.DisplayUnits == "pattern"»
+    Â«FOREACH MonitorPoint AS xÂ»
+        Â«IF x.isMonitoredÂ»
+          Â«IF x.DisplayUnits == "pattern"Â»
                     <xs:element
-                        name="«x.MPName»"
+                        name="Â«x.MPNameÂ»"
                         type ="baci:ROpattern"></xs:element>
-          «ELSE»
-            «IF x.isDataArray»
+          Â«ELSEÂ»
+            Â«IF x.isDataArrayÂ»
                     <xs:element
-                        name="«x.MPName»"
-                        type ="baci:RO«x.DataToBACIType»Seq"></xs:element>
-            «ELSE»
+                        name="Â«x.MPNameÂ»"
+                        type ="baci:ROÂ«x.DataToBACITypeÂ»Seq"></xs:element>
+            Â«ELSEÂ»
                     <xs:element
-                        name="«x.MPName»"
-                        type ="baci:RO«x.DataToBACIType»"></xs:element>
-            «ENDIF»
-          «ENDIF»
-        «ENDIF»
-    «ENDFOREACH»
+                        name="Â«x.MPNameÂ»"
+                        type ="baci:ROÂ«x.DataToBACITypeÂ»"></xs:element>
+            Â«ENDIFÂ»
+          Â«ENDIFÂ»
+        Â«ENDIFÂ»
+    Â«ENDFOREACHÂ»
                     <xs:element
                        name="EthernetConfig">
                         <xs:complexType>   
@@ -197,8 +197,8 @@ MA 02111-1307  USA
         </xs:complexContent>
     </xs:complexType>
     <xs:element
-        name="«Assembly»Base"
-        type="«Assembly»Base"></xs:element>
+        name="Â«AssemblyÂ»Base"
+        type="Â«AssemblyÂ»Base"></xs:element>
 </xs:schema>
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
@@ -20,23 +20,23 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
 
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «EXPAND SWModuleDef»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«EXPAND SWModuleDefÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/idl/"+Assembly+"Base.idl"»
-#ifndef «Assembly»Base_idl
-#define «Assembly»Base_idl
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/idl/"+Assembly+"Base.idl"Â»
+#ifndef Â«AssemblyÂ»Base_idl
+#define Â«AssemblyÂ»Base_idl
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -67,14 +67,14 @@ MA 02111-1307  USA
  */
 
 
-/// External interface to the hardware assembly: Control::«Assembly».
+/// External interface to the hardware assembly: Control::Â«AssemblyÂ».
 
 
-«IF Extends != "none"»
-#include <«Extends».idl>
-«ELSE»
+Â«IF Extends != "none"Â»
+#include <Â«ExtendsÂ».idl>
+Â«ELSEÂ»
 #include <HardwareDevice.idl>
-«ENDIF»
+Â«ENDIFÂ»
 #include <ControlExceptions.idl>
 #include <EthernetDeviceExceptions.idl>
 #include <baci.idl>
@@ -85,13 +85,13 @@ MA 02111-1307  USA
 
 module Control
 {
-    /// «Description»
-    interface «Assembly»Base:
-«IF Extends != "none"»
-    «Extends»
-«ELSE»
+    /// Â«DescriptionÂ»
+    interface Â«AssemblyÂ»Base:
+Â«IF Extends != "none"Â»
+    Â«ExtendsÂ»
+Â«ELSEÂ»
     Control::HardwareDevice
-«ENDIF»
+Â«ENDIFÂ»
     {
         /// Returns true if the device is simulated, false
         /// if real hardware is accessed.
@@ -100,61 +100,61 @@ module Control
         /////////////////////
         // BACI Properties //
         /////////////////////
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isMonitored»
-        /// «x.Description»
-        «IF x.DisplayUnits == "pattern"»
-        readonly attribute ACS::ROpattern «x.MPName»;
-        «ELSE»
-            «IF x.isDataArray»
-        readonly attribute ACS::RO«x.DataToBACIType»Seq «x.MPName»;
-            «ELSE»
-        readonly attribute ACS::RO«x.DataToBACIType» «x.MPName»;
-            «ENDIF»
-        «ENDIF»
-    «ENDIF»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF x.isMonitoredÂ»
+        /// Â«x.DescriptionÂ»
+        Â«IF x.DisplayUnits == "pattern"Â»
+        readonly attribute ACS::ROpattern Â«x.MPNameÂ»;
+        Â«ELSEÂ»
+            Â«IF x.isDataArrayÂ»
+        readonly attribute ACS::ROÂ«x.DataToBACITypeÂ»Seq Â«x.MPNameÂ»;
+            Â«ELSEÂ»
+        readonly attribute ACS::ROÂ«x.DataToBACITypeÂ» Â«x.MPNameÂ»;
+            Â«ENDIFÂ»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
         ////////////////////////////////////////
         // IDL Definitions for Monitor Points //
         ////////////////////////////////////////
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-«IF x.isExternal»
-        /// «x.Description»
-        «IF x.isDataArray»
-        «x.DataToIDLSeqType» GET_«x.MPName»(out ACS::Time timestamp) raises
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+Â«IF x.isExternalÂ»
+        /// Â«x.DescriptionÂ»
+        Â«IF x.isDataArrayÂ»
+        Â«x.DataToIDLSeqTypeÂ» GET_Â«x.MPNameÂ»(out ACS::Time timestamp) raises
             (EthernetDeviceExceptions::SocketOperationFailedEx,
             EthernetDeviceExceptions::IllegalParameterEx,
             ControlExceptions::INACTErrorEx);
-        «ELSE»
-        «x.DataToIDLType» GET_«x.MPName»(out ACS::Time timestamp) raises
+        Â«ELSEÂ»
+        Â«x.DataToIDLTypeÂ» GET_Â«x.MPNameÂ»(out ACS::Time timestamp) raises
             (EthernetDeviceExceptions::SocketOperationFailedEx,
             EthernetDeviceExceptions::IllegalParameterEx,
             ControlExceptions::INACTErrorEx);
-        «ENDIF»
-    «ENDIF»
-«ENDFOREACH»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 
         ////////////////////////////////////////
         // IDL Definitions for Control Points //
         ////////////////////////////////////////
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF x.isExternal»
-        /// «x.Description»
-        «IF x.isDataArray»
-        void SET_«x.CPName»(in «x.DataToIDLSeqType» param) raises
-        «ELSEIF x.DataType == "void"»
-        void SET_«x.CPName»() raises
-        «ELSE»
-        void SET_«x.CPName»(in «x.DataToIDLType» param) raises
-        «ENDIF»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«IF x.isExternalÂ»
+        /// Â«x.DescriptionÂ»
+        Â«IF x.isDataArrayÂ»
+        void SET_Â«x.CPNameÂ»(in Â«x.DataToIDLSeqTypeÂ» param) raises
+        Â«ELSEIF x.DataType == "void"Â»
+        void SET_Â«x.CPNameÂ»() raises
+        Â«ELSEÂ»
+        void SET_Â«x.CPNameÂ»(in Â«x.DataToIDLTypeÂ» param) raises
+        Â«ENDIFÂ»
             (EthernetDeviceExceptions::SocketOperationFailedEx,
             EthernetDeviceExceptions::IllegalParameterEx,
             ControlExceptions::INACTErrorEx);
-    «ENDIF»
-«ENDFOREACH»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
     };
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

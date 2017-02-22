@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,17 +18,17 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly+"/idl/"+Assembly+"Add.sql"»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+Â«FILE Assembly+"/idl/"+Assembly+"Add.sql"Â»
 SET SERVEROUTPUT ON;
 
 DECLARE
@@ -47,18 +47,18 @@ DECLARE
 BEGIN
 dbms_output.put_line('Transaction BEGIN');
 
-«REM»
+Â«REMÂ»
   First we find out wether LRUType Assembly has already been inserted. 
-«ENDREM»
-SELECT COUNT(lruName) INTO lruNameCount FROM lruType WHERE lruName='«Assembly»';
+Â«ENDREMÂ»
+SELECT COUNT(lruName) INTO lruNameCount FROM lruType WHERE lruName='Â«AssemblyÂ»';
 IF lruNameCount=0 THEN
 dbms_output.put_line('Inserting LRU');
 INSERT INTO LRUType VALUES (
-    '«Assembly»',
-    '«DeviceName»',
-    '«ICD»',
-    '«ICDDateAsArrayTime»',
-    '«DescriptionAsString»',
+    'Â«AssemblyÂ»',
+    'Â«DeviceNameÂ»',
+    'Â«ICDÂ»',
+    'Â«ICDDateAsArrayTimeÂ»',
+    'Â«DescriptionAsStringÂ»',
     ''
 );
 ELSE
@@ -66,32 +66,32 @@ ELSE
 END IF;
 
 
-«REM»
+Â«REMÂ»
   NOW  We find out wether ComponentType has already been inserted.
   A special case is considered for CCC_Monitor component, since its interface is defined in Correlator.
-«ENDREM»
-SELECT COUNT(componentTypeId) INTO componentTypeIdCount FROM componentType WHERE idl='IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0';
+Â«ENDREMÂ»
+SELECT COUNT(componentTypeId) INTO componentTypeIdCount FROM componentType WHERE idl='IDL:alma/Â«IF Assembly == "CCC_Monitor"Â»CorrelatorÂ«ELSEÂ»ControlÂ«ENDIFÂ»/Â«AssemblyÂ»:1.0';
 IF componentTypeIdCount=0 THEN
-    dbms_output.put_line('Inserting component type IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0');
+    dbms_output.put_line('Inserting component type IDL:alma/Â«IF Assembly == "CCC_Monitor"Â»CorrelatorÂ«ELSEÂ»ControlÂ«ENDIFÂ»/Â«AssemblyÂ»:1.0');
     INSERT INTO componentType VALUES (
         ComponT_seq.NextVal,
-        'IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0'
+        'IDL:alma/Â«IF Assembly == "CCC_Monitor"Â»CorrelatorÂ«ELSEÂ»ControlÂ«ENDIFÂ»/Â«AssemblyÂ»:1.0'
     );
-    «REM»
+    Â«REMÂ»
       Next line was added since Oracle sequences are implemented such that we cannot be sure that next element is current+1
-    «ENDREM»
+    Â«ENDREMÂ»
 ELSE 
-    dbms_output.put_line('Component type IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0 already exists... continue');
+    dbms_output.put_line('Component type IDL:alma/Â«IF Assembly == "CCC_Monitor"Â»CorrelatorÂ«ELSEÂ»ControlÂ«ENDIFÂ»/Â«AssemblyÂ»:1.0 already exists... continue');
 END IF;
-SELECT componenttypeid INTO compTypeId FROM componentType WHERE idl='IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0';
+SELECT componenttypeid INTO compTypeId FROM componentType WHERE idl='IDL:alma/Â«IF Assembly == "CCC_Monitor"Â»CorrelatorÂ«ELSEÂ»ControlÂ«ENDIFÂ»/Â«AssemblyÂ»:1.0';
 
 
-«REM»
+Â«REMÂ»
   NOW  We find out wether AssemblyType has already been inserted. 
-«ENDREM»
-SELECT count(assemblytypename) INTO assemblyNameCount FROM assemblytype WHERE assemblytypename='«Assembly»';
+Â«ENDREMÂ»
+SELECT count(assemblytypename) INTO assemblyNameCount FROM assemblytype WHERE assemblytypename='Â«AssemblyÂ»';
 IF assemblyNameCount=0 THEN
-    dbms_output.put_line('Inserting assembly type «Assembly»');
+    dbms_output.put_line('Inserting assembly type Â«AssemblyÂ»');
     INSERT INTO AssemblyType (
         ASSEMBLYTYPENAME,
         BASEELEMENTTYPE,
@@ -103,37 +103,37 @@ IF assemblyNameCount=0 THEN
 	PRODUCTIONCODE,
 	SIMULATEDCODE)
     VALUES (
-        '«Assembly»', 
+        'Â«AssemblyÂ»', 
         'Antenna',
-        '«Assembly»', 
-        '«DeviceName»', 
-        '«DescriptionAsString»', 
+        'Â«AssemblyÂ»', 
+        'Â«DeviceNameÂ»', 
+        'Â«DescriptionAsStringÂ»', 
         '',
         compTypeId,
-        '«Assembly»Impl',
-        '«Assembly»CompSimImpl'
+        'Â«AssemblyÂ»Impl',
+        'Â«AssemblyÂ»CompSimImpl'
     );
 ELSE
-    dbms_output.put_line('Assembly type «Assembly» already exists... continue');
+    dbms_output.put_line('Assembly type Â«AssemblyÂ» already exists... continue');
 END IF;
 
 
-«REM»
+Â«REMÂ»
   NOW  We find out wether DefaultComponent has already been inserted. 
-«ENDREM»
-SELECT count(defaultcomponentid) INTO defaultComponentCount FROM defaultComponent WHERE assemblytypename='«Assembly»';
+Â«ENDREMÂ»
+SELECT count(defaultcomponentid) INTO defaultComponentCount FROM defaultComponent WHERE assemblytypename='Â«AssemblyÂ»';
 IF defaultComponentCount=0 THEN
-    dbms_output.put_line('Inserting default component «Assembly»');
+    dbms_output.put_line('Inserting default component Â«AssemblyÂ»');
     SELECT MAX(defaultcomponentid) INTO defCompId FROM defaultComponent;
     defCompId:=COALESCE(defCompId,0)+1;
     INSERT INTO DefaultComponent VALUES (
         defCompId,
         compTypeId, 
-        '«Assembly»', 
+        'Â«AssemblyÂ»', 
         'cpp', 
         '1',
-        '«Assembly»Impl.cpp',
-        '«Assembly»Impl.cpp',
+        'Â«AssemblyÂ»Impl.cpp',
+        'Â«AssemblyÂ»Impl.cpp',
         '0',
         '0',
         '0',
@@ -143,11 +143,11 @@ IF defaultComponentCount=0 THEN
         ''
     );
 ELSE
-    SELECT defaultcomponentid INTO defCompId FROM defaultcomponent WHERE assemblytypename='«Assembly»';
-«IF Extends != "none"»
-    dbms_output.put_line('Default component «Assembly» already exists... continue');
-«ELSE»
-    dbms_output.put_line('Default component «Assembly» already exists. Deleting associated baciprops and monpoints...');
+    SELECT defaultcomponentid INTO defCompId FROM defaultcomponent WHERE assemblytypename='Â«AssemblyÂ»';
+Â«IF Extends != "none"Â»
+    dbms_output.put_line('Default component Â«AssemblyÂ» already exists... continue');
+Â«ELSEÂ»
+    dbms_output.put_line('Default component Â«AssemblyÂ» already exists. Deleting associated baciprops and monpoints...');
     FOR propCur in (select defaultbacipropid from defaultbaciproperty where defaultcomponentid = defCompId)
     LOOP
         FOR monCur in (select defaultmonitorpointid from defaultmonitorpoint where defaultbacipropertyid = propCur.defaultbacipropid)
@@ -156,39 +156,39 @@ ELSE
         END LOOP;
         delete from defaultbaciproperty where defaultbacipropid = propCur.defaultbacipropid;
     END LOOP;
-«ENDIF»
+Â«ENDIFÂ»
 END IF;
 
 
-«REM»
+Â«REMÂ»
   NOW  We find out wether defaultBACIPropertyType has already been inserted. 
-«ENDREM»
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF x.isMonitored»
-            «IF !x.isDependent && x.hasDependents»
-                «LET x.MPName AS parentBACIProperty»
-                «ENDLET»
-            «ENDIF»
+Â«ENDREMÂ»
+    Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+        Â«IF x.isMonitoredÂ»
+            Â«IF !x.isDependent && x.hasDependentsÂ»
+                Â«LET x.MPName AS parentBACIPropertyÂ»
+                Â«ENDLETÂ»
+            Â«ENDIFÂ»
 
-            «REM»
+            Â«REMÂ»
               The MP can be a parent or a simple property.
-            «ENDREM»
-            «IF !x.isPartOfHomogeneous || !x.isPartOfPattern»
-                «REM»
+            Â«ENDREMÂ»
+            Â«IF !x.isPartOfHomogeneous || !x.isPartOfPatternÂ»
+                Â«REMÂ»
                   The MP is a parent MP. We store MP in BACIProperty Table.
-                «ENDREM»
+                Â«ENDREMÂ»
 
-                «REM»Adding BACIProperty«ENDREM»
-                SELECT COUNT(propertyname) INTO defaultBACIPropertyCount FROM defaultbaciProperty WHERE propertyname='«x.MPName»' and defaultComponentId=defCompId;
+                Â«REMÂ»Adding BACIPropertyÂ«ENDREMÂ»
+                SELECT COUNT(propertyname) INTO defaultBACIPropertyCount FROM defaultbaciProperty WHERE propertyname='Â«x.MPNameÂ»' and defaultComponentId=defCompId;
                 IF defaultBACIPropertyCount=0 THEN
-                    «REM»NO default property found. It will be added...«ENDREM»
-                    dbms_output.put_line('Inserting default BACI Property «x.MPName»');
+                    Â«REMÂ»NO default property found. It will be added...Â«ENDREMÂ»
+                    dbms_output.put_line('Inserting default BACI Property Â«x.MPNameÂ»');
                     SELECT MAX(defaultBACIPropId) INTO defaultBACIPropId FROM defaultbaciProperty;
                     defaultBACIPropId:=COALESCE(defaultBACIPropId,0)+1;
                     INSERT INTO DefaultBACIProperty (
                         DEFAULTBACIPROPID,
                         DEFAULTCOMPONENTID,
-                        PROPERTYNAME,
+                        PROPERTYNAME,FOREACH
                         DESCRIPTION,
                         FORMAT,
                         UNITS,
@@ -228,21 +228,21 @@ END IF;
                     VALUES (
                         defaultBACIPropId,
                         defCompId,
-                        '«x.MPName»',
-                        '«x.DescriptionAsString»',
-                        '«x.Format»',
-                        '«x.DisplayUnits»',
+                        'Â«x.MPNameÂ»',
+                        'Â«x.DescriptionAsStringÂ»',
+                        'Â«x.FormatÂ»',
+                        'Â«x.DisplayUnitsÂ»',
                         '0',
                         '3',
                         '0',
-                        «IF x.Interval != "none"»'«x.Interval»', «ELSE»'0', «ENDIF»
+                        Â«IF x.Interval != "none"Â»'Â«x.IntervalÂ»', Â«ELSEÂ»'0', Â«ENDIFÂ»
                         '1',
                         '0.048',
                         '0',
                         '0',
                         '0',
-                        «IF x.GraphMin == "na" || x.GraphMin == "none"»'0',  «ELSE»'«x.GraphMin»',  «ENDIF» 
-                        «IF x.GraphMax == "na" || x.GraphMax == "none"»'0',  «ELSE»'«x.GraphMax»',  «ENDIF» 
+                        Â«IF x.GraphMin == "na" || x.GraphMin == "none"Â»'0',  Â«ELSEÂ»'Â«x.GraphMinÂ»',  Â«ENDIFÂ» 
+                        Â«IF x.GraphMax == "na" || x.GraphMax == "none"Â»'0',  Â«ELSEÂ»'Â«x.GraphMaxÂ»',  Â«ENDIFÂ» 
                         '0',
                         '0',
                         '0',
@@ -263,23 +263,23 @@ END IF;
                         '!',
                         '!',
                         '0',
-                        «IF x.Interval == "none" || x.Interval == "0"»'1', «ELSE»'0', «ENDIF»
+                        Â«IF x.Interval == "none" || x.Interval == "0"Â»'1', Â«ELSEÂ»'0', Â«ENDIFÂ»
                         'monitor_collector'
                     );
                 ELSE 
-                    dbms_output.put_line('Default BACI Property «x.MPName» already exists... continue');
-                    SELECT defaultBACIPropId INTO defaultBACIPropId FROM defaultbaciProperty WHERE propertyname='«x.MPName»' and defaultComponentId=defCompId;
+                    dbms_output.put_line('Default BACI Property Â«x.MPNameÂ» already exists... continue');
+                    SELECT defaultBACIPropId INTO defaultBACIPropId FROM defaultbaciProperty WHERE propertyname='Â«x.MPNameÂ»' and defaultComponentId=defCompId;
                 END IF;
 
-                «IF x.hasDependents && !x.isHomogeneous && !x.isPattern »
-                    «REM»
+                Â«IF x.hasDependents && !x.isHomogeneous && !x.isPattern Â»
+                    Â«REMÂ»
                       The MP is a parent point. Adding dependent monitor points.
-                    «ENDREM»
-                    «FOREACH (Set[MonitorPoint]) x.getDependents AS y»
-                        «REM»
+                    Â«ENDREMÂ»
+                    Â«FOREACH (Set[MonitorPoint]) x.getDependents AS yÂ»
+                        Â«REMÂ»
                           This case handles a Kid monitorpoints. We must insert Kid MP, but only if no other Kid MP with the same name has been associated with the same property.
-                        «ENDREM»
-                    SELECT COUNT(monitorPointName) INTO monitorPropCount FROM defaultMonitorPoint WHERE defaultBaciPropertyId=defaultBACIPropId and MonitorPointName='«y.MPName»';
+                        Â«ENDREMÂ»
+                    SELECT COUNT(monitorPointName) INTO monitorPropCount FROM defaultMonitorPoint WHERE defaultBaciPropertyId=defaultBACIPropId and MonitorPointName='Â«y.MPNameÂ»';
                     IF monitorPropCount=0 THEN
                         SELECT COUNT(indice) INTO indice FROM defaultMonitorPoint WHERE defaultBaciPropertyId=defaultBACIPropId;
                         SELECT MAX(defaultMonitorPointId) INTO defaultMonPointId FROM defaultMonitorPoint;
@@ -303,30 +303,30 @@ END IF;
                         VALUES(
                             defaultMonPointId,
                             defaultBACIPropId,
-                            '«y.MPName»',
+                            'Â«y.MPNameÂ»',
                             indice,
-                            '«y.WorldDataToDatabaseType»',
-                            '«y.RCA»',
-                            «IF y.TeRelatedCell == "yes"»'1',  «ELSE»'0',  «ENDIF»
-                            '«y.RawDataType»',
-                            '«y.WorldDataToCPPType»',
-                            '«y.DataUnits»',
-                            «IF y.Scale == "na" || y.Scale == "none" || y.Scale == "not specified" || y.Scale == "special"»'0',  «ELSE»'«y.Scale»',  «ENDIF» 
-                            «IF y.Offset == "na" || y.Offset == "none" || y.Offset == "not specified" || y.Offset == "special"»'0',  «ELSE»'«y.Offset»',  «ENDIF» 
-                            «IF y.MinRange == "na" || y.MinRange == "none" || y.MinRange == "not specified"»'0',  «ELSE»'«y.MinRange»',  «ENDIF» 
-                            «IF y.MaxRange == "na" || y.MaxRange == "none" || y.MaxRange == "not specified"»'0',  «ELSE»'«y.MaxRange»',  «ENDIF» 
-                            '«y.DescriptionAsString»'
+                            'Â«y.WorldDataToDatabaseTypeÂ»',
+                            'Â«y.RCAÂ»',
+                            Â«IF y.TeRelatedCell == "yes"Â»'1',  Â«ELSEÂ»'0',  Â«ENDIFÂ»
+                            'Â«y.RawDataTypeÂ»',
+                            'Â«y.WorldDataToCPPTypeÂ»',
+                            'Â«y.DataUnitsÂ»',
+                            Â«IF y.Scale == "na" || y.Scale == "none" || y.Scale == "not specified" || y.Scale == "special"Â»'0',  Â«ELSEÂ»'Â«y.ScaleÂ»',  Â«ENDIFÂ» 
+                            Â«IF y.Offset == "na" || y.Offset == "none" || y.Offset == "not specified" || y.Offset == "special"Â»'0',  Â«ELSEÂ»'Â«y.OffsetÂ»',  Â«ENDIFÂ» 
+                            Â«IF y.MinRange == "na" || y.MinRange == "none" || y.MinRange == "not specified"Â»'0',  Â«ELSEÂ»'Â«y.MinRangeÂ»',  Â«ENDIFÂ» 
+                            Â«IF y.MaxRange == "na" || y.MaxRange == "none" || y.MaxRange == "not specified"Â»'0',  Â«ELSEÂ»'Â«y.MaxRangeÂ»',  Â«ENDIFÂ» 
+                            'Â«y.DescriptionAsStringÂ»'
                         );
                     ELSE 
-                        dbms_output.put_line('WARNING: Monitor Point «y.MPName» was already inserted. Skipping.');
+                        dbms_output.put_line('WARNING: Monitor Point Â«y.MPNameÂ» was already inserted. Skipping.');
                     END IF;
-                    «ENDFOREACH»
-                «ELSE»
-                    «REM»    
+                    Â«ENDFOREACHÂ»
+                Â«ELSEÂ»
+                    Â«REMÂ»    
                       The MP is a Simple Property. We store the corresponding MonitorPoint, but only if no other Monitor Points are associated to it.
-                    «ENDREM»
+                    Â«ENDREMÂ»
 
-                    «REM»Adding MonitorPoint«ENDREM»
+                    Â«REMÂ»Adding MonitorPointÂ«ENDREMÂ»
                     SELECT COUNT(monitorPointName) INTO monitorPropCount FROM defaultMonitorPoint WHERE defaultbacipropertyId=defaultBACIPropId;
                     IF monitorPropCount=0 THEN
                         SELECT MAX(defaultMonitorPointId) INTO defaultMonPointId FROM defaultMonitorPoint;
@@ -350,27 +350,27 @@ END IF;
                         VALUES(
                             defaultMonPointId,
                             defaultBACIPropId,
-                            '«x.MPName»',
+                            'Â«x.MPNameÂ»',
                             '0',
-                            '«x.WorldDataToDatabaseType»',
-                            '«x.RCA»',
-                            «IF x.TeRelatedCell == "yes"»'1',  «ELSE»'0',  «ENDIF»
-                            '«x.RawDataType»',
-                            '«x.WorldDataToCPPType»',
-                            '«x.DataUnits»',
-                            «IF x.Scale == "na" || x.Scale == "none" || x.Scale == "not specified" || x.Scale == "special"»'0',  «ELSE»'«x.Scale»',  «ENDIF» 
-                            «IF x.Offset == "na" || x.Offset == "none" || x.Offset == "not specified" || x.Offset == "special"»'0',  «ELSE»'«x.Offset»',  «ENDIF» 
-                            «IF x.MinRange == "na" || x.MinRange == "none" || x.MinRange == "not specified"»'0',  «ELSE»'«x.MinRange»',  «ENDIF» 
-                            «IF x.MaxRange == "na" || x.MaxRange == "none" || x.MaxRange == "not specified"»'0',  «ELSE»'«x.MaxRange»',  «ENDIF» 
-                            '«x.DescriptionAsString»'
+                            'Â«x.WorldDataToDatabaseTypeÂ»',
+                            'Â«x.RCAÂ»',
+                            Â«IF x.TeRelatedCell == "yes"Â»'1',  Â«ELSEÂ»'0',  Â«ENDIFÂ»
+                            'Â«x.RawDataTypeÂ»',
+                            'Â«x.WorldDataToCPPTypeÂ»',
+                            'Â«x.DataUnitsÂ»',
+                            Â«IF x.Scale == "na" || x.Scale == "none" || x.Scale == "not specified" || x.Scale == "special"Â»'0',  Â«ELSEÂ»'Â«x.ScaleÂ»',  Â«ENDIFÂ» 
+                            Â«IF x.Offset == "na" || x.Offset == "none" || x.Offset == "not specified" || x.Offset == "special"Â»'0',  Â«ELSEÂ»'Â«x.OffsetÂ»',  Â«ENDIFÂ» 
+                            Â«IF x.MinRange == "na" || x.MinRange == "none" || x.MinRange == "not specified"Â»'0',  Â«ELSEÂ»'Â«x.MinRangeÂ»',  Â«ENDIFÂ» 
+                            Â«IF x.MaxRange == "na" || x.MaxRange == "none" || x.MaxRange == "not specified"Â»'0',  Â«ELSEÂ»'Â«x.MaxRangeÂ»',  Â«ENDIFÂ» 
+                            'Â«x.DescriptionAsStringÂ»'
                         );
                     ELSE 
-                        dbms_output.put_line('WARNING: Found other Monitor Points associated with property «x.MPName». Skipping unique monitor point insertion.');
+                        dbms_output.put_line('WARNING: Found other Monitor Points associated with property Â«x.MPNameÂ». Skipping unique monitor point insertion.');
                     END IF;
-                «ENDIF»   «REM»IF x.hasDependents«ENDREM»
-            «ENDIF»   «REM»IF !x.isDependent«ENDREM»
-        «ENDIF»   «REM»IF x.isMonitored«ENDREM»
-    «ENDFOREACH»   «REM»FOREACH (Set[MonitorPoint]) MonitorPoint AS x«ENDREM»
+                Â«ENDIFÂ»   Â«REMÂ»IF x.hasDependentsÂ«ENDREMÂ»
+            Â«ENDIFÂ»   Â«REMÂ»IF !x.isDependentÂ«ENDREMÂ»
+        Â«ENDIFÂ»   Â«REMÂ»IF x.isMonitoredÂ«ENDREMÂ»
+    Â«ENDFOREACHÂ»   Â«REMÂ»FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ«ENDREMÂ»
 COMMIT;
 
 EXCEPTION 
@@ -382,5 +382,5 @@ END;
 
 .
 /
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

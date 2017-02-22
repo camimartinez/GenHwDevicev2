@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +18,23 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+  Â«IF !IsMonitorDBOnlyÂ»
+    Â«EXPAND SWModuleDefÂ»
+  Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"SimBase.cpp"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/"+Assembly+"SimBase.cpp"Â»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -65,65 +65,65 @@ MA 02111-1307  USA
  */
 
 
-#include <«Assembly»SimBase.h>
+#include <Â«AssemblyÂ»SimBase.h>
 
 
-«Assembly»SimBase::«Assembly»SimBase(const ACE_CString& name,
+Â«AssemblyÂ»SimBase::Â«AssemblyÂ»SimBase(const ACE_CString& name,
     maci::ContainerServices* cs):
-    «Assembly»Impl(name, cs),
+    Â«AssemblyÂ»Impl(name, cs),
     simulationModeEnabled(true)
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isDependent && x.Default != "none"»
-        «IF x.Default == "mid"»
-            «IF x.WorldDataToCPPType != "double" && x.WorldDataToCPPType != "float"»
-    value«x.getAltDependentName» = static_cast< «x.WorldDataToCPPType» >(
-        («x.MinRange» + «x.MaxRange») / 2.0);
-            «ELSE»
-    value«x.getAltDependentName»= («x.MinRange» + «x.MaxRange») / 2.0;
-            «ENDIF»
-        «ELSE»
-    value«x.getAltDependentName» = «x.Default»;
-        «ENDIF»
-    «ENDIF»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«IF x.isDependent && x.Default != "none"Â»
+        Â«IF x.Default == "mid"Â»
+            Â«IF x.WorldDataToCPPType != "double" && x.WorldDataToCPPType != "float"Â»
+    valueÂ«x.getAltDependentNameÂ» = static_cast< Â«x.WorldDataToCPPTypeÂ» >(
+        (Â«x.MinRangeÂ» + Â«x.MaxRangeÂ») / 2.0);
+            Â«ELSEÂ»
+    valueÂ«x.getAltDependentNameÂ»= (Â«x.MinRangeÂ» + Â«x.MaxRangeÂ») / 2.0;
+            Â«ENDIFÂ»
+        Â«ELSEÂ»
+    valueÂ«x.getAltDependentNameÂ» = Â«x.DefaultÂ»;
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDFOREACHÂ»
 }
 
-«Assembly»SimBase::~«Assembly»SimBase()
+Â«AssemblyÂ»SimBase::~Â«AssemblyÂ»SimBase()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «EXPAND ProtectedMonitorPoint FOR x»
-«ENDFOREACH»
+Â«FOREACH (Set[MonitorPoint]) MonitorPoint AS xÂ»
+    Â«EXPAND ProtectedMonitorPoint FOR xÂ»
+Â«ENDFOREACHÂ»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «EXPAND ProtectedControlPoint FOR x»
-«ENDFOREACH»
-«ENDFILE»
-«ENDDEFINE»
+Â«FOREACH (Set[ControlPoint]) ControlPoint AS xÂ»
+    Â«EXPAND ProtectedControlPoint FOR xÂ»
+Â«ENDFOREACHÂ»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
-/// MonitorPoint: «MPName»
-    «IF !isExternal || !isMonitored»
-/// «DescriptionFormattedL5»
-    «ENDIF»
-    «REM»
+Â«DEFINE ProtectedMonitorPoint FOR MonitorPointÂ»
+/// MonitorPoint: Â«MPNameÂ»
+    Â«IF !isExternal || !isMonitoredÂ»
+/// Â«DescriptionFormattedL5Â»
+    Â«ENDIFÂ»
+    Â«REMÂ»
     a. Major monitor method
-    «ENDREM»
-    «IF isImplemented»
-/// Get the current value of «MPName» from the device.
-        «IF !isDependent»
-            «IF isWorldDataArray»
-std::vector< «WorldDataToCPPType» > «Assembly»SimBase::get«AltMPName»(
+    Â«ENDREMÂ»
+    Â«IF isImplementedÂ»
+/// Get the current value of Â«MPNameÂ» from the device.
+        Â«IF !isDependentÂ»
+            Â«IF isWorldDataArrayÂ»
+std::vector< Â«WorldDataToCPPTypeÂ» > Â«AssemblyÂ»SimBase::getÂ«AltMPNameÂ»(
     ACS::Time& timestamp)
-            «ELSE»
-«WorldDataToCPPType» «Assembly»SimBase::get«AltMPName»(
+            Â«ELSEÂ»
+Â«WorldDataToCPPTypeÂ» Â«AssemblyÂ»SimBase::getÂ«AltMPNameÂ»(
     ACS::Time& timestamp)
-            «ENDIF»
+            Â«ENDIFÂ»
 {
     if((isReady() == false)
     || (inErrorState() == true))
@@ -140,23 +140,23 @@ std::vector< «WorldDataToCPPType» > «Assembly»SimBase::get«AltMPName»(
     }
     else if(getHwState() != Control::HardwareDevice::Simulation)
     {
-        return «Assembly»Base::get«AltMPName»(timestamp);
+        return Â«AssemblyÂ»Base::getÂ«AltMPNameÂ»(timestamp);
     }
 
-            «IF isWorldDataArray»
-    return std::vector< «WorldDataToCPPType» >(«NumberItemsRawData»);
-            «ELSE»
+            Â«IF isWorldDataArrayÂ»
+    return std::vector< Â«WorldDataToCPPTypeÂ» >(Â«NumberItemsRawDataÂ»);
+            Â«ELSEÂ»
     return 0;
-            «ENDIF»
+            Â«ENDIFÂ»
 }
-        «ENDIF»
-    «ENDIF»
-«ENDDEFINE»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ProtectedControlPoint FOR ControlPoint»
-    «IF !isDependent»
-        «IF Implement»
-«cppReturns» «Assembly»SimBase::set«AltCPName»«cppDeclaration»
+Â«DEFINE ProtectedControlPoint FOR ControlPointÂ»
+    Â«IF !isDependentÂ»
+        Â«IF ImplementÂ»
+Â«cppReturnsÂ» Â«AssemblyÂ»SimBase::setÂ«AltCPNameÂ»Â«cppDeclarationÂ»
 {
     if((isReady() == false)
     || (inErrorState() == true))
@@ -172,11 +172,11 @@ std::vector< «WorldDataToCPPType» > «Assembly»SimBase::get«AltMPName»(
         throw ex;
     }
 }
-        «ENDIF»
+        Â«ENDIFÂ»
 
-/// ControlPoint: «CPName»
-        «IF !isExternal»
-/// «DescriptionFormattedL5»
-        «ENDIF»
-    «ENDIF»
-«ENDDEFINE»
+/// ControlPoint: Â«CPNameÂ»
+        Â«IF !isExternalÂ»
+/// Â«DescriptionFormattedL5Â»
+        Â«ENDIFÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»

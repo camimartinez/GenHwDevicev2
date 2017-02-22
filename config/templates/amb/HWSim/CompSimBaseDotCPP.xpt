@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +18,23 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"CompSimBase.cpp"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/"+Assembly+"CompSimBase.cpp"Â»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -64,33 +64,33 @@ MA 02111-1307  USA
  *
  */
 
-#include <«Assembly»CompSimBase.h>
+#include <Â«AssemblyÂ»CompSimBase.h>
 #include <sstream>
 #include <iomanip>
 #include <string>
 
 
 //------------------------------------------------------------------------------
-«Assembly»CompSimBase::«Assembly»CompSimBase(const ACE_CString& name,
+Â«AssemblyÂ»CompSimBase::Â«AssemblyÂ»CompSimBase(const ACE_CString& name,
     maci::ContainerServices* pCS):
-    «Assembly»Impl(name, pCS)
+    Â«AssemblyÂ»Impl(name, pCS)
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
 //------------------------------------------------------------------------------
-«Assembly»CompSimBase::~«Assembly»CompSimBase()
+Â«AssemblyÂ»CompSimBase::~Â«AssemblyÂ»CompSimBase()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
-CORBA::Boolean «Assembly»CompSimBase::isSimulated()
+CORBA::Boolean Â«AssemblyÂ»CompSimBase::isSimulated()
 {
     return true;
 }
 
 //------------------------------------------------------------------------------
-void «Assembly»CompSimBase::getDeviceUniqueId(std::string& deviceID)
+void Â«AssemblyÂ»CompSimBase::getDeviceUniqueId(std::string& deviceID)
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
@@ -150,7 +150,7 @@ void «Assembly»CompSimBase::getDeviceUniqueId(std::string& deviceID)
 }
 
 //------------------------------------------------------------------------------
-void «Assembly»CompSimBase::setSimValue(const CORBA::Long rca,
+void Â«AssemblyÂ»CompSimBase::setSimValue(const CORBA::Long rca,
     const Control::LongSeq& data)
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
@@ -230,7 +230,7 @@ void «Assembly»CompSimBase::setSimValue(const CORBA::Long rca,
 }
 
 //------------------------------------------------------------------------------
-Control::LongSeq* «Assembly»CompSimBase::getSimValue(
+Control::LongSeq* Â«AssemblyÂ»CompSimBase::getSimValue(
     const CORBA::Long rca)
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
@@ -307,7 +307,7 @@ Control::LongSeq* «Assembly»CompSimBase::getSimValue(
 }
 
 //------------------------------------------------------------------------------
-void «Assembly»CompSimBase::monitor(
+void Â«AssemblyÂ»CompSimBase::monitor(
     AmbRelativeAddr RCA,
     AmbDataLength_t& dataLength,
     AmbDataMem_t* data,
@@ -318,7 +318,7 @@ void «Assembly»CompSimBase::monitor(
     simulationIf_m.monitor(RCA, dataLength, data, synchLock, timestamp, status);
 }
 
-void «Assembly»CompSimBase::command(
+void Â«AssemblyÂ»CompSimBase::command(
     AmbRelativeAddr RCA,
     AmbDataLength_t dataLength,
     const AmbDataMem_t* data,
@@ -329,7 +329,7 @@ void «Assembly»CompSimBase::command(
     simulationIf_m.command(RCA, dataLength, data, synchLock, timestamp, status);
 }
 
-void «Assembly»CompSimBase::monitorTE(
+void Â«AssemblyÂ»CompSimBase::monitorTE(
     ACS::Time TimeEvent,
     AmbRelativeAddr RCA,
     AmbDataLength_t& dataLength,
@@ -342,7 +342,7 @@ void «Assembly»CompSimBase::monitorTE(
         timestamp, status);
 }
 
-void «Assembly»CompSimBase::commandTE(
+void Â«AssemblyÂ»CompSimBase::commandTE(
     ACS::Time TimeEvent,
     AmbRelativeAddr RCA,
     AmbDataLength_t dataLength,
@@ -355,7 +355,7 @@ void «Assembly»CompSimBase::commandTE(
         timestamp, status);
 }
 
-void «Assembly»CompSimBase::monitorNextTE(
+void Â«AssemblyÂ»CompSimBase::monitorNextTE(
     AmbRelativeAddr RCA,
     AmbDataLength_t& dataLength,
     AmbDataMem_t* data,
@@ -367,7 +367,7 @@ void «Assembly»CompSimBase::monitorNextTE(
         status);
 }
 
-void «Assembly»CompSimBase::commandNextTE(AMBSystem::AmbRelativeAddr RCA,
+void Â«AssemblyÂ»CompSimBase::commandNextTE(AMBSystem::AmbRelativeAddr RCA,
     AmbDataLength_t dataLength,
     const AmbDataMem_t* data,
     sem_t* synchLock,
@@ -378,7 +378,7 @@ void «Assembly»CompSimBase::commandNextTE(AMBSystem::AmbRelativeAddr RCA,
         status);
 }
 
-void «Assembly»CompSimBase::flushNode(
+void Â«AssemblyÂ»CompSimBase::flushNode(
     ACS::Time TimeEvent,
     ACS::Time* timestamp,
     AmbErrorCode_t* status)
@@ -386,7 +386,7 @@ void «Assembly»CompSimBase::flushNode(
     simulationIf_m.flushNode(TimeEvent, timestamp, status);
 }
 
-void «Assembly»CompSimBase::flushRCA(
+void Â«AssemblyÂ»CompSimBase::flushRCA(
     ACS::Time TimeEvent,
     AmbRelativeAddr RCA,
     ACS::Time* timestamp,
@@ -394,5 +394,5 @@ void «Assembly»CompSimBase::flushRCA(
 {
     simulationIf_m.flushRCA(TimeEvent, RCA,  timestamp, status);
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

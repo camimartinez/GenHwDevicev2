@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,24 +18,25 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
-
-«DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
-        «EXPAND SWModuleDef»
-    «ENDIF»
-«ENDDEFINE»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/alma/Control/device/gui/"+Assembly+"/panels/MainPanel.java"»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
+
+
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/alma/Control/device/gui/"+Assembly+"/panels/MainPanel.java"Â»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -65,7 +66,7 @@ MA 02111-1307  USA
  *
  */
 
-package alma.Control.device.gui.«Assembly».panels;
+package alma.Control.device.gui.Â«AssemblyÂ».panels;
 
 /**
  * An Superclass for GUI panels used in OMC panels for this devices.
@@ -76,7 +77,7 @@ package alma.Control.device.gui.«Assembly».panels;
  */
 
 import alma.Control.device.gui.common.panels.DevicePanel;
-import alma.Control.device.gui.«Assembly».presentationModels.DevicePM;
+import alma.Control.device.gui.Â«AssemblyÂ».presentationModels.DevicePM;
 
 import java.util.logging.Logger;
 
@@ -98,5 +99,5 @@ public abstract class MainPanel extends DevicePanel {
     protected abstract void buildPanel();    
 }
 
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

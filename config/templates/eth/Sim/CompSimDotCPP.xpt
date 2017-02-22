@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
@@ -20,22 +20,22 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
 
+Â«ENDREMÂ»
 
-«ENDREM»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«EXPAND SWModuleDefÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «EXPAND SWModuleDef»
-«ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"CompSim.cpp"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/"+Assembly+"CompSim.cpp"Â»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -66,37 +66,37 @@ MA 02111-1307  USA
  */
 
 
-#include <«Assembly»CompSim.h>
+#include <Â«AssemblyÂ»CompSim.h>
 
 
-«Assembly»CompSim::«Assembly»CompSim(const ACE_CString& name,
+Â«AssemblyÂ»CompSim::Â«AssemblyÂ»CompSim(const ACE_CString& name,
     maci::ContainerServices* pCS):
-    «Assembly»Impl(name,pCS)
+    Â«AssemblyÂ»Impl(name,pCS)
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
-«Assembly»CompSim::~«Assembly»CompSim()
+Â«AssemblyÂ»CompSim::~Â«AssemblyÂ»CompSim()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
 //------------------------------------------------------------------------------
-void «Assembly»CompSim::initialize()
+void Â«AssemblyÂ»CompSim::initialize()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
     // Create simulated Vendor Class instance
     if(m_ethDeviceIF_p == 0)
     {
-        m_ethDeviceIF_p.reset(new «Assembly»EthSimImpl);
+        m_ethDeviceIF_p.reset(new Â«AssemblyÂ»EthSimImpl);
     }
 
-    «Assembly»Impl::initialize();
+    Â«AssemblyÂ»Impl::initialize();
 }
 
 
 #include <maciACSComponentDefines.h>
-MACI_DLL_SUPPORT_FUNCTIONS(«Assembly»CompSim)
-«ENDFILE»
-«ENDDEFINE»
+MACI_DLL_SUPPORT_FUNCTIONS(Â«AssemblyÂ»CompSim)
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

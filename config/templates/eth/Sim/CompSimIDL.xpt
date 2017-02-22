@@ -1,4 +1,5 @@
-«REM»
+Â«REMÂ»
+
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +19,24 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+Â«ENDREMÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-    «EXPAND SWModuleDef»
-«ENDDEFINE»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::eth::implÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/idl/"+Assembly+"CompSim.idl"»
-#ifndef «Assembly»CompSim_idl
-#define «Assembly»CompSim_idl
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«EXPAND SWModuleDefÂ»
+Â«ENDDEFINEÂ»
+
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/idl/"+Assembly+"CompSim.idl"Â»
+#ifndef Â«AssemblyÂ»CompSim_idl
+#define Â«AssemblyÂ»CompSim_idl
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -65,7 +67,7 @@ MA 02111-1307  USA
  */
 
 
-#include <«Assembly».idl>
+#include <Â«AssemblyÂ».idl>
 
 
 #pragma prefix "alma"
@@ -73,12 +75,12 @@ MA 02111-1307  USA
 
 module Control
 {
-    /// This interfaces define data specific to the Control::«Assembly» device.
-    interface «Assembly»CompSim: Control::«Assembly»
+    /// This interfaces define data specific to the Control::Â«AssemblyÂ» device.
+    interface Â«AssemblyÂ»CompSim: Control::Â«AssemblyÂ»
     {
         /// TODO: getSimValue and setSimValue methods
     };
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,25 +18,25 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-«EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"CompSimImpl.h"»
-#ifndef «Assembly»CompSimImpl_h
-#define «Assembly»CompSimImpl_h
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/include/"+Assembly+"CompSimImpl.h"Â»
+#ifndef Â«AssemblyÂ»CompSimImpl_h
+#define Â«AssemblyÂ»CompSimImpl_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -71,7 +71,7 @@ MA 02111-1307  USA
 #endif
 
 
-#include <«Assembly»CompSimBase.h>
+#include <Â«AssemblyÂ»CompSimBase.h>
 #include <boost/shared_ptr.hpp>
 
 
@@ -82,32 +82,32 @@ namespace maci
 
 namespace AMB
 {
-    class «Assembly»HWSimImpl;
+    class Â«AssemblyÂ»HWSimImpl;
 };
 
 /**
  * Please use this class to implement alternative components, extending
- * the «Assembly»CompSimBase class.
+ * the Â«AssemblyÂ»CompSimBase class.
  */
 
-class «Assembly»CompSimImpl: public «Assembly»CompSimBase
+class Â«AssemblyÂ»CompSimImpl: public Â«AssemblyÂ»CompSimBase
 {
     public:
-    «Assembly»CompSimImpl(const ACE_CString& name, maci::ContainerServices* cs);
+    Â«AssemblyÂ»CompSimImpl(const ACE_CString& name, maci::ContainerServices* cs);
 
-    virtual ~«Assembly»CompSimImpl()
+    virtual ~Â«AssemblyÂ»CompSimImpl()
     {
     };
 
 
     private:
-    «Assembly»CompSimImpl();
-    «Assembly»CompSimImpl(const «Assembly»CompSimImpl&);
-    «Assembly»CompSimImpl& operator=(const «Assembly»CompSimImpl&);
+    Â«AssemblyÂ»CompSimImpl();
+    Â«AssemblyÂ»CompSimImpl(const Â«AssemblyÂ»CompSimImpl&);
+    Â«AssemblyÂ»CompSimImpl& operator=(const Â«AssemblyÂ»CompSimImpl&);
 
     /// boost::share_ptr to the simulated object.
-    boost::shared_ptr< AMB::«Assembly»HWSimImpl > simulationObject;
+    boost::shared_ptr< AMB::Â«AssemblyÂ»HWSimImpl > simulationObject;
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

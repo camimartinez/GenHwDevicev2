@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,28 +18,28 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"CompSimBase.h"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/include/"+Assembly+"CompSimBase.h"Â»
 #ifndef __cplusplus
 #error This is a C++ include file and cannot be used from plain C.
 #endif
-#ifndef «Assembly»CompSimBase_h
-#define «Assembly»CompSimBase_h
+#ifndef Â«AssemblyÂ»CompSimBase_h
+#define Â«AssemblyÂ»CompSimBase_h
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -70,27 +70,27 @@ MA 02111-1307  USA
 
 
 #include <AmbSimulationInt.h>
-#include <«Assembly»CompSimBaseS.h>
-#include <«Assembly»Impl.h>
+#include <Â«AssemblyÂ»CompSimBaseS.h>
+#include <Â«AssemblyÂ»Impl.h>
 
 
-/// The «Assembly»CompSimBase class is the local component for the
-/// «DeviceName» hardware simulator.
+/// The Â«AssemblyÂ»CompSimBase class is the local component for the
+/// Â«DeviceNameÂ» hardware simulator.
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
-/// <li> Parent:   «Parent»
-/// <li> Node:     «NodeAddress»
-/// <li> Channel:  «Channel»
+/// <li> Device:   Â«DeviceNameÂ»
+/// <li> Assembly: Â«AssemblyÂ»
+/// <li> Parent:   Â«ParentÂ»
+/// <li> Node:     Â«NodeAddressÂ»
+/// <li> Channel:  Â«ChannelÂ»
 /// </ul>
-class «Assembly»CompSimBase: public «Assembly»Impl,
-    public virtual POA_Control::«Assembly»CompSimBase
+class Â«AssemblyÂ»CompSimBase: public Â«AssemblyÂ»Impl,
+    public virtual POA_Control::Â«AssemblyÂ»CompSimBase
 {
     public:
-    «Assembly»CompSimBase(const ACE_CString& name,
+    Â«AssemblyÂ»CompSimBase(const ACE_CString& name,
        maci::ContainerServices* pCS);
 
-    virtual ~«Assembly»CompSimBase();
+    virtual ~Â«AssemblyÂ»CompSimBase();
 
     /// Returns true if a device is in simulation mode, false if
     /// it works with real hardware.
@@ -147,14 +147,14 @@ class «Assembly»CompSimBase: public «Assembly»Impl,
 
     private:
     /// No default ctor.
-    «Assembly»CompSimBase();
+    Â«AssemblyÂ»CompSimBase();
 
     /// Copy constructor is not allowed.
-    «Assembly»CompSimBase(const «Assembly»CompSimBase&);
+    Â«AssemblyÂ»CompSimBase(const Â«AssemblyÂ»CompSimBase&);
 
     /// Assignment operator is not allowed. 
-    «Assembly»CompSimBase& operator=(const «Assembly»CompSimBase&);
+    Â«AssemblyÂ»CompSimBase& operator=(const Â«AssemblyÂ»CompSimBase&);
 };
 #endif
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

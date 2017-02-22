@@ -1,4 +1,4 @@
-«REM»
+Â«REMÂ»
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -18,23 +18,23 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-«ENDREM»
+Â«ENDREMÂ»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::amb::impl»
+Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
+Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
+Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
+Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
+Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+Â«IMPORT alma::Control::datamodel::meta::amb::implÂ»
 
-«DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
-    «EXPAND SWModuleDef»
-  «ENDIF»
-«ENDDEFINE»
+Â«DEFINE Root FOR DeviceModelImplÂ»
+    Â«IF !IsMonitorDBOnlyÂ»
+        Â«EXPAND SWModuleDefÂ»
+    Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"CompSimImpl.cpp"»
+Â«DEFINE SWModuleDef FOR DeviceModelImplÂ»
+Â«FILE DirPath+"/src/"+Assembly+"CompSimImpl.cpp"Â»
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -62,8 +62,8 @@ MA 02111-1307  USA
 //  ---------------------------------------------------------
 //
 
-#include <«Assembly»CompSimImpl.h>
-#include <«Assembly»HWSimImpl.h>
+#include <Â«AssemblyÂ»CompSimImpl.h>
+#include <Â«AssemblyÂ»HWSimImpl.h>
 #include <string>
 #include <sstream>
 // For audience logs.
@@ -72,35 +72,35 @@ MA 02111-1307  USA
 #include <TypeConversion.h>
 #include <Utils.h>
 #include <SimulatedSerialNumber.h>
-«IF Parent != "root"»
+Â«IF Parent != "root"Â»
 #include <boost/lexical_cast.hpp>
-«ENDIF»
+Â«ENDIF
 
 
 // Please use this class to implement alternative component, extending
-// the «Assembly»CompSimBase class.
+// the Â«AssemblyÂ»CompSimBase class.
 
 
-«Assembly»CompSimImpl::«Assembly»CompSimImpl(const ACE_CString& name,
+Â«AssemblyÂ»CompSimImpl::Â«AssemblyÂ»CompSimImpl(const ACE_CString& name,
     maci::ContainerServices* cs):
-    «Assembly»CompSimBase(name, cs)
+    Â«AssemblyÂ»CompSimBase(name, cs)
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
     const std::string componentName(name.c_str());
-    «IF Parent != "root"»
+    Â«IF Parent != "root"Â»
     const std::string subComponentName(
         componentName.substr(0, componentName.find_last_of('/')));
     const unsigned long long hashed_sn(AMB::Utils::getSimSerialNumber(
         subComponentName, boost::lexical_cast< std::string >(8)));
-    «ELSE»
+    Â«ELSEÂ»
     const unsigned long long hashed_sn(AMB::Utils::getSimSerialNumber(
-        componentName, "«Assembly»"));
-    «ENDIF»
+        componentName, "Â«AssemblyÂ»"));
+    Â«ENDIF
     std::ostringstream msg;
     msg << "simSerialNumber for \""
         << componentName
-        << "\" with assembly name \"«Assembly»\" is 0x"
+        << "\" with assembly name \"Â«AssemblyÂ»\" is 0x"
         << std::hex
         << hashed_sn;
     LOG_TO_DEVELOPER(LM_DEBUG, msg.str());
@@ -108,17 +108,17 @@ MA 02111-1307  USA
     std::vector< CAN::byte_t > sn;
     AMB::TypeConversion::valueToData(sn, hashed_sn, 8U);
 
-    «IF (NodeAddress != "none") && (NodeAddress != "parm")»
-    const AMB::node_t node(«NodeAddress»U);
-    «ELSE»
+    Â«IF (NodeAddress != "none") && (NodeAddress != "parm")Â»
+    const AMB::node_t node(Â«NodeAddressÂ»U);
+    Â«ELSEÂ»
     const AMB::node_t node(0U);
-    «ENDIF»
+    Â«ENDIF
 
-    simulationObject.reset(new AMB::«Assembly»HWSimImpl(node, sn));
+    simulationObject.reset(new AMB::Â«AssemblyÂ»HWSimImpl(node, sn));
     simulationIf_m.setSimObj(simulationObject.get());
 }
 
 #include <maciACSComponentDefines.h>
-MACI_DLL_SUPPORT_FUNCTIONS(«Assembly»CompSimImpl)
-«ENDFILE»
-«ENDDEFINE»
+MACI_DLL_SUPPORT_FUNCTIONS(Â«AssemblyÂ»CompSimImpl)
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
