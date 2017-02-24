@@ -21,10 +21,7 @@
  */
 package alma.Control.datamodel.meta.base.impl;
 
-import alma.Control.datamodel.meta.base.ArchiveProperty;
-import alma.Control.datamodel.meta.base.BasePackage;
-import alma.Control.datamodel.meta.base.MandCBase;
-import alma.Control.datamodel.meta.base.MonitorPoint;
+import alma.Control.datamodel.meta.base.*;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -32,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
-public abstract class MyMandCBaseImpl extends MandCBaseImpl implements MandCBase, Resource {
+public abstract class MyMandCBaseImpl extends alma.Control.datamodel.meta.base.impl.MandCBaseImpl implements MyMandCBase, Resource {
 	
 	@Override	
 	public void setArchive(Resource newArchive) {

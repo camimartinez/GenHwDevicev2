@@ -21,32 +21,10 @@
  */
 package alma.Control.datamodel.meta.eth;
 
-import org.eclipse.emf.ecore.EFactory;
 
-
-public interface MyEthFactory extends EFactory {
+public interface MyEthFactory extends alma.Control.datamodel.meta.eth.EthFactory {
 	
-	EthFactory eINSTANCE = alma.Control.datamodel.meta.eth.impl.EthFactoryImpl.init();
+	MyDeviceModel createDeviceModel();
 
-	
-	Archive createArchiveETH();
 
-	
-	Control createControlETH();
-
-	
-	DeviceModel createDeviceModel();
-
-	
-	Main createMainETH();
-
-	
-	MandC createMandCETH();
-
-	
-	Monitor createMonitorETH();
-
-	
-	EthPackage getEthPackage();
-
-} //EthFactory
+} //MyEthFactory

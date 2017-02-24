@@ -9,7 +9,7 @@ import org.eclipse.emf.mwe.core.WorkflowEngine;
 import org.eclipse.emf.mwe.core.monitor.NullProgressMonitor;
 import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 
-import alma.Control.datamodel.meta.base.BaseFactory;
+import alma.Control.datamodel.meta.base.*;
 
 public class LinuxGen {
 
@@ -24,7 +24,7 @@ public class LinuxGen {
 		System.out.println(">>>>>GenHwDevice.main Starting code generation for device " + arg[0]);
 		System.setProperty("DEVICE_NAME", arg[0]);
 		System.setProperty("DEVICE_TYPE", devType);
-		String wfFile = BaseFactory.eINSTANCE.createUtil().getInstallDir() + "/config/workflow/generator.mwe";
+		String wfFile=BaseFactory.eINSTANCE.createUtil().getInstallDir() + "/config/workflow/generator.mwe";
 		Log log = LogFactory.getLog(WorkflowEngine.class);
 		Map properties = new HashMap ();
 		Map slotContents = new HashMap ();

@@ -21,15 +21,12 @@
  */
 package alma.Control.datamodel.meta.base.impl;
 
-import alma.Control.datamodel.meta.base.ArchiveProperty;
-import alma.Control.datamodel.meta.base.BaseFactory;
-
-import alma.Control.datamodel.meta.base.MyDeviceModel;
+import alma.Control.datamodel.meta.base.*;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
 
-public abstract class MyDeviceModelImpl extends DeviceModelImpl implements MyDeviceModel {
+public abstract class MyDeviceModelImpl extends alma.Control.datamodel.meta.base.impl.DeviceModelImpl implements MyDeviceModel {
 
 	@Override
 	public abstract String CreateModel();

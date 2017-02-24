@@ -7,7 +7,7 @@ import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 
 import org.eclipse.emf.mwe.core.lib.WorkflowComponentWithModelSlot;
 
-import alma.Control.datamodel.meta.base.BaseFactory;
+import alma.Control.datamodel.meta.base.*;
 
 
 public class HwDeviceWorkflowInitializer extends WorkflowComponentWithModelSlot{
@@ -33,9 +33,9 @@ public class HwDeviceWorkflowInitializer extends WorkflowComponentWithModelSlot{
 		alma.Control.datamodel.meta.base.impl.DeviceModelImpl devType = null;
 		
 		if(System.getProperty(deviceType).equals(deviceAMB)){
-			devType = new alma.Control.datamodel.meta.amb.impl.DeviceModelImpl();
+			devType = new alma.Control.datamodel.meta.amb.impl.MyDeviceModelImpl();
 		}else if (System.getProperty(deviceType).equals(deviceETH)){
-			devType = new alma.Control.datamodel.meta.eth.impl.DeviceModelImpl();
+			devType = new alma.Control.datamodel.meta.eth.impl.MyDeviceModelImpl();
 		}else{ 
 			System.out.println("The device type: "+System.getProperty(deviceType)+ "is not supported.");
 			return;

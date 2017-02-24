@@ -22,73 +22,10 @@
 
 package alma.Control.datamodel.meta.eth;
 
-import alma.Control.datamodel.meta.base.MainBase;
-import alma.Control.datamodel.meta.base.Note;
-import alma.Control.datamodel.meta.base.SpreadsheetParser;
-import alma.Control.datamodel.meta.base.SpreadsheetValidator;
-import alma.Control.datamodel.meta.base.Table;
-import alma.Control.datamodel.meta.base.Util;
 
-
-public interface MyDeviceModel extends alma.Control.datamodel.meta.base.DeviceModel {
+public interface MyDeviceModel extends alma.Control.datamodel.meta.base.DeviceModel,alma.Control.datamodel.meta.eth.DeviceModel {
 	
-	MainBase getInfoDevMain();
-
-	
-	void setInfoDevMain(MainBase value);
-
-	
-	Control getInfoControl();
-
-	
-	void setInfoControl(Control value);
-
-	
-	Monitor getInfoMonitor();
-
-	
-	void setInfoMonitor(Monitor value);
-
-	
-	Util getToEndEth();
-
-	
-	void setToEndEth(Util value);
-
-	
-	Archive getInfoArch();
-
-	
-	void setInfoArch(Archive value);
-
-	
-	Table getDataSpreadsheet();
-
-	
-	void setDataSpreadsheet(Table value);
-
-	
-	Note getNotesTo();
-
-	
-	void setNotesTo(Note value);
-
-	
-	SpreadsheetValidator getValidateSpreadEth();
-
-	
-	void setValidateSpreadEth(SpreadsheetValidator value);
-
-	
-	SpreadsheetParser getFromSpreadEth();
-
-	
-	void setFromSpreadEth(SpreadsheetParser value);
-
 	
 	String CreateModel();
-
-	
-	String VendorClass();
 
 } // MyDeviceModel

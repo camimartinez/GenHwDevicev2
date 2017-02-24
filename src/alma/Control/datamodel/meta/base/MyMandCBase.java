@@ -23,10 +23,10 @@ package alma.Control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
-public interface MyMandCBase extends MandCBase {
+public interface MyMandCBase extends alma.Control.datamodel.meta.base.MandCBase {
 	
 	void setArchive(Resource value);
-
+	
 	boolean isMonitored();
 
 } // MyMandCBase

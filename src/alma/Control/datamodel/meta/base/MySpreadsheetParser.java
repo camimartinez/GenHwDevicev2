@@ -22,52 +22,7 @@
 package alma.Control.datamodel.meta.base;
 
 
-public interface MySpreadsheetParser extends SpreadsheetParser {
-	
-	
-	String getRefPath();
-
-	
-	void setRefPath(String value);
-
-	
-	boolean isRefStatus();
-
-	
-	void setRefStatus(boolean value);
-
-	
-	String getXml();
-
-	
-	void setXml(String value);
-
-	
-	String getXsdFile();
-
-	
-	void setXsdFile(String value);
-
-	
-	String getNewline();
-
-	
-	void setNewline(String value);
-
-	
-	Pair getToNewContent();
-
-	
-	void setToNewContent(Pair value);
-
-	
-	SpreadsheetValidator getTovalidateSpreads();
-
-	
-	void setTovalidateSpreads(SpreadsheetValidator value);
-
-	
-	String getSpreadsheet(String dirName, String fileName);
+public interface MySpreadsheetParser extends alma.Control.datamodel.meta.base.SpreadsheetParser {
 
 	
 	Pair getBoundedContent(String s, String beginPart1, String beginPart2, String end);
@@ -78,23 +33,8 @@ public interface MySpreadsheetParser extends SpreadsheetParser {
 	
 	String[][][] getWorksheets();
 
-	
-	boolean isReference();
-
-	
-	String getReference();
-
-	
-	void setXSD(String xsd);
-
-	
+			
 	String[][][] filter(String doc);
 
 	
-	void deleteRow(String[][] worksheet, String name);
-
-	
-	void modifyRow(String[][] worksheet, int lineNumber, String rowName, String s);
-
-
 } // MySpreadsheetParser

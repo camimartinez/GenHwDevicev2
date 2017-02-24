@@ -23,7 +23,7 @@ package alma.Control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
-public interface MyDeviceModel extends DeviceModel {
+public interface MyDeviceModel extends alma.Control.datamodel.meta.base.DeviceModel {
 	
 	String CreateModel();
 	

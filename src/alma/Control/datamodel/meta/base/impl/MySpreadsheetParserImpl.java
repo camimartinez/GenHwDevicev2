@@ -27,24 +27,10 @@ import java.io.LineNumberReader;
 import java.io.StringReader;
 import java.util.ArrayList;
 
-import alma.Control.datamodel.meta.base.BaseFactory;
-import alma.Control.datamodel.meta.base.BasePackage;
-import alma.Control.datamodel.meta.base.MySpreadsheetParser;
-import alma.Control.datamodel.meta.base.Pair;
-import alma.Control.datamodel.meta.base.SpreadsheetParser;
-import alma.Control.datamodel.meta.base.SpreadsheetValidator;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import alma.Control.datamodel.meta.base.*;
 
 
-public class MySpreadsheetParserImpl extends SpreadsheetParserImpl implements MySpreadsheetParser {
+public class MySpreadsheetParserImpl extends alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl implements MySpreadsheetParser {
 	
 	
 	public MySpreadsheetParserImpl(String xml){
