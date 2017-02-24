@@ -23,7 +23,7 @@ package alma.Control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
-public interface MyMandCBase extends alma.Control.datamodel.meta.base.MandCBase {
+public interface MyMandCBase extends alma.control.datamodel.meta.base.MandCBase {
 	
 	void setArchive(Resource value);
 	

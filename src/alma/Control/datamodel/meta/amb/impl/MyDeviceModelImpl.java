@@ -24,15 +24,18 @@ package alma.Control.datamodel.meta.amb.impl;
 
 import java.util.List;
 
-import alma.Control.datamodel.meta.amb.*;
 
-import alma.Control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.amb.*;
+import alma.control.datamodel.meta.amb.impl.ArchiveImpl;
+import alma.control.datamodel.meta.amb.impl.ControlImpl;
+import alma.control.datamodel.meta.amb.impl.MonitorImpl;
+import alma.control.datamodel.meta.base.*;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 
-public class MyDeviceModelImpl extends alma.Control.datamodel.meta.amb.impl.DeviceModelImpl implements alma.Control.datamodel.meta.amb.MyDeviceModel {
+public class MyDeviceModelImpl extends alma.control.datamodel.meta.amb.impl.DeviceModelImpl implements alma.Control.datamodel.meta.amb.MyDeviceModel {
 	
 	public MyDeviceModelImpl() {
 		super();

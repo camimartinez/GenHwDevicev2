@@ -22,7 +22,7 @@
 package alma.Control.datamodel.meta.amb;
 
 
-public interface MyAmbFactory extends alma.Control.datamodel.meta.amb.AmbFactory {
+public interface MyAmbFactory extends alma.control.datamodel.meta.amb.AmbFactory {
 	
 	MyDeviceModel createDeviceModel();
 

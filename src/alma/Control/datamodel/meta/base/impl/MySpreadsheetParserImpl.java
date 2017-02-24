@@ -27,10 +27,12 @@ import java.io.LineNumberReader;
 import java.io.StringReader;
 import java.util.ArrayList;
 
-import alma.Control.datamodel.meta.base.*;
+import alma.Control.datamodel.meta.base.MySpreadsheetParser;
+import alma.control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.base.impl.PairImpl;
 
 
-public class MySpreadsheetParserImpl extends alma.Control.datamodel.meta.base.impl.SpreadsheetParserImpl implements MySpreadsheetParser {
+public class MySpreadsheetParserImpl extends alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl implements MySpreadsheetParser {
 	
 	
 	public MySpreadsheetParserImpl(String xml){

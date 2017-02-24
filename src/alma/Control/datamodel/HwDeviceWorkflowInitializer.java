@@ -7,7 +7,7 @@ import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 
 import org.eclipse.emf.mwe.core.lib.WorkflowComponentWithModelSlot;
 
-import alma.Control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.base.*;
 
 
 public class HwDeviceWorkflowInitializer extends WorkflowComponentWithModelSlot{
@@ -30,7 +30,7 @@ public class HwDeviceWorkflowInitializer extends WorkflowComponentWithModelSlot{
 	protected void invokeInternal(WorkflowContext ctx, ProgressMonitor monitor, Issues issues) {
 		System.out.println("HwDeviceWorkflowInitializer.invoke started.");
 		
-		alma.Control.datamodel.meta.base.impl.DeviceModelImpl devType = null;
+		alma.control.datamodel.meta.base.impl.DeviceModelImpl devType = null;
 		
 		if(System.getProperty(deviceType).equals(deviceAMB)){
 			devType = new alma.Control.datamodel.meta.amb.impl.MyDeviceModelImpl();

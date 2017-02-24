@@ -6,20 +6,22 @@ Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Vendor: ALMA
 Bundle-Localization: plugin
-Export-Package: alma.Control.datamodel.meta.amb,
- alma.Control.datamodel.meta.amb.impl,
- alma.Control.datamodel.meta.amb.util,
- alma.Control.datamodel.meta.base,
- alma.Control.datamodel.meta.base.impl,
- alma.Control.datamodel.meta.base.util,
- alma.Control.datamodel.meta.eth,
- alma.Control.datamodel.meta.eth.impl,
- alma.Control.datamodel.meta.eth.util
+Export-Package: alma.control.datamodel.meta.amb,
+ alma.control.datamodel.meta.amb.impl,
+ alma.control.datamodel.meta.amb.util,
+ alma.control.datamodel.meta.base,
+ alma.control.datamodel.meta.base.impl,
+ alma.control.datamodel.meta.base.util,
+ alma.control.datamodel.meta.eth,
+ alma.control.datamodel.meta.eth.impl,
+ alma.control.datamodel.meta.eth.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.antlr.runtime;bundle-version="3.2.0",
  com.ibm.icu.source;bundle-version="4.4.2",
- org.eclipse.jdt.core;bundle-version="3.8.3"
+ org.eclipse.jdt.core;bundle-version="3.8.3",
+ org.eclipse.emf.ant;bundle-version="2.8.0",
+ org.eclipse.ant.core;bundle-version="3.2.401"
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

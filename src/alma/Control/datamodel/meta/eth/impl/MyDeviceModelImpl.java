@@ -22,15 +22,18 @@
  */
 package alma.Control.datamodel.meta.eth.impl;
 
-import alma.Control.datamodel.meta.base.*;
 
-import alma.Control.datamodel.meta.eth.*;
+import alma.control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.eth.*;
+import alma.control.datamodel.meta.eth.impl.ArchiveImpl;
+import alma.control.datamodel.meta.eth.impl.ControlImpl;
+import alma.control.datamodel.meta.eth.impl.MonitorImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 
-public class MyDeviceModelImpl extends alma.Control.datamodel.meta.eth.impl.DeviceModelImpl implements alma.Control.datamodel.meta.eth.MyDeviceModel {
+public class MyDeviceModelImpl extends alma.control.datamodel.meta.eth.impl.DeviceModelImpl implements alma.Control.datamodel.meta.eth.MyDeviceModel {
 	
 		
 	@Override

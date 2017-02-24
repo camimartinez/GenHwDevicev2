@@ -21,14 +21,16 @@
  */
 package alma.Control.datamodel.meta.amb.impl;
 
-import alma.Control.datamodel.meta.amb.*;
+import alma.Control.datamodel.meta.amb.MyAmbFactory;
+import alma.Control.datamodel.meta.amb.MyDeviceModel;
+import alma.control.datamodel.meta.amb.*;
 
 /**
  * This is the new Factory class to be used, to create base instances. It inherits from 
  * the generated factory and this factory is bound in the factory_override extension.
  * All overriden code should be defined in this package and instanciated by this factory.
 */
-public class MyAmbFactoryImpl extends alma.Control.datamodel.meta.amb.impl.AmbFactoryImpl implements MyAmbFactory {
+public class MyAmbFactoryImpl extends alma.control.datamodel.meta.amb.impl.AmbFactoryImpl implements MyAmbFactory {
 	
 
 	public MyAmbFactoryImpl(){

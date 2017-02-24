@@ -21,10 +21,12 @@
  */
 package alma.Control.datamodel.meta.eth.impl;
 
-import alma.Control.datamodel.meta.eth.*;
+import alma.Control.datamodel.meta.eth.MyDeviceModel;
+import alma.Control.datamodel.meta.eth.MyEthFactory;
+import alma.control.datamodel.meta.eth.*;
 
 
-public class MyEthFactoryImpl extends alma.Control.datamodel.meta.eth.impl.EthFactoryImpl implements MyEthFactory {
+public class MyEthFactoryImpl extends alma.control.datamodel.meta.eth.impl.EthFactoryImpl implements MyEthFactory {
 	
 	public MyEthFactoryImpl() {
 		super();

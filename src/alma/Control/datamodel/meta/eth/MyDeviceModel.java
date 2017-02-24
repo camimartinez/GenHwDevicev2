@@ -23,7 +23,7 @@
 package alma.Control.datamodel.meta.eth;
 
 
-public interface MyDeviceModel extends alma.Control.datamodel.meta.base.DeviceModel,alma.Control.datamodel.meta.eth.DeviceModel {
+public interface MyDeviceModel extends alma.control.datamodel.meta.base.DeviceModel,alma.control.datamodel.meta.eth.DeviceModel {
 	
 	
 	String CreateModel();

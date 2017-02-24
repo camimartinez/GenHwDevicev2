@@ -9,7 +9,7 @@ import org.eclipse.emf.mwe.core.WorkflowEngine;
 import org.eclipse.emf.mwe.core.monitor.NullProgressMonitor;
 import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 
-import alma.Control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.base.*;
 
 public class LinuxGen {
 

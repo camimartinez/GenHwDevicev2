@@ -21,8 +21,10 @@
  */
 package alma.Control.datamodel.meta.base;
 
+import alma.control.datamodel.meta.base.Pair;
 
-public interface MySpreadsheetParser extends alma.Control.datamodel.meta.base.SpreadsheetParser {
+
+public interface MySpreadsheetParser extends alma.control.datamodel.meta.base.SpreadsheetParser {
 
 	
 	Pair getBoundedContent(String s, String beginPart1, String beginPart2, String end);

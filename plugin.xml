@@ -12,7 +12,7 @@
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
-            class="alma.Control.datamodel.meta.base.BasePackage"
+            class="alma.control.datamodel.meta.base.BasePackage"
             genModel="config/model/genHwDevicev2Gen.genmodel"
             uri="http://alma/Control/datamodel/meta/base/1.0">
       </package>
@@ -20,7 +20,7 @@
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
-            class="alma.Control.datamodel.meta.eth.EthPackage"
+            class="alma.control.datamodel.meta.eth.EthPackage"
             genModel="config/model/genHwDevicev2Gen.genmodel"
             uri="http://alma/Control/datamodel/meta/eth/1.0">
       </package>
@@ -31,7 +31,7 @@
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
-            class="alma.Control.datamodel.meta.amb.AmbPackage"
+            class="alma.control.datamodel.meta.amb.AmbPackage"
             genModel="config/model/genHwDevicev2Gen.genmodel"
             uri="http://alma/Control/datamodel/meta/amb/1.0">
       </package>
@@ -39,23 +39,25 @@
    <extension
          point="org.eclipse.emf.ecore.factory_override">
       <factory
-            class="alma.Control.datamodel.meta.amb.impl.MyAmbFactoryImpl"
-            uri="http://alma.Control.datamodel.meta.amb/1.0">
+            class="alma.control.datamodel.meta.base.impl.MyBaseFactoryImpl"
+            uri="http://alma/Control/datamodel/meta/base/1.0">
       </factory>
    </extension>
    <extension
          point="org.eclipse.emf.ecore.factory_override">
       <factory
-            class="alma.Control.datamodel.meta.base.impl.MyBaseFactoryImpl"
-            uri="http://alma.Control.datamodel.meta.base/1.0">
-      </factory>
-   </extension>
-   <extension
-         point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            class="alma.Control.datamodel.meta.eth.impl.MyEthFactoryImpl"
+            class="alma.control.datamodel.meta.eth.impl.MyEthFactoryImpl"
             uri="http://alma/Control/datamodel/meta/eth/1.0">
       </factory>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="alma.control.datamodel.meta.amb.impl.MyAmbFactoryImpl"
+            uri="http://alma/Control/datamodel/meta/amb/1.0">
+      </factory>
+   </extension>
 
-</plugin>
+null
+null
+null</plugin>

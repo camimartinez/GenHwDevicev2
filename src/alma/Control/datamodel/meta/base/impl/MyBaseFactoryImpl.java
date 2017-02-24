@@ -23,7 +23,9 @@ package alma.Control.datamodel.meta.base.impl;
 
 import org.eclipse.emf.ecore.EDataType;
 
-import alma.Control.datamodel.meta.base.*;
+import alma.Control.datamodel.meta.base.MyBaseFactory;
+import alma.Control.datamodel.meta.base.MySpreadsheetParser;
+import alma.control.datamodel.meta.base.*;
 
 
 /**
@@ -32,7 +34,7 @@ import alma.Control.datamodel.meta.base.*;
  * All overriden code should be defined in this package and instanciated by this factory.
 */
 
-public class MyBaseFactoryImpl extends alma.Control.datamodel.meta.base.impl.BaseFactoryImpl implements MyBaseFactory {
+public class MyBaseFactoryImpl extends alma.control.datamodel.meta.base.impl.BaseFactoryImpl implements MyBaseFactory {
 	
 	
 	@Override

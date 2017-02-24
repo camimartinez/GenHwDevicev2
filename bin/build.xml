@@ -4,7 +4,8 @@ A simple build file that just calls the Makefiles.
   </description>
 
   <!-- ACS part -->
-
+  
+  <property name="src-gen" location="."/>
   <property name="src" location="."/>
   <property name="test" location="../test"/>
   <target name="acs-compile" description="compiles and installs the sources">

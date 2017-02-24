@@ -22,7 +22,7 @@
 package alma.Control.datamodel.meta.amb;
 
 
-public interface MyDeviceModel extends alma.Control.datamodel.meta.base.DeviceModel,alma.Control.datamodel.meta.amb.DeviceModel {
+public interface MyDeviceModel extends alma.control.datamodel.meta.base.DeviceModel,alma.control.datamodel.meta.amb.DeviceModel {
 	
 	@Override
 	String CreateModel();

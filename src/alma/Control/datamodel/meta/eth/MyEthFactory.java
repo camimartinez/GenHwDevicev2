@@ -22,7 +22,7 @@
 package alma.Control.datamodel.meta.eth;
 
 
-public interface MyEthFactory extends alma.Control.datamodel.meta.eth.EthFactory {
+public interface MyEthFactory extends alma.control.datamodel.meta.eth.EthFactory {
 	
 	MyDeviceModel createDeviceModel();
 

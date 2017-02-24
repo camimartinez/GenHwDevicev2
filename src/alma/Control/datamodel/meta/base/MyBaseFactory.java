@@ -22,7 +22,7 @@
 package alma.Control.datamodel.meta.base;
 
 
-public interface MyBaseFactory extends alma.Control.datamodel.meta.base.BaseFactory {
+public interface MyBaseFactory extends alma.control.datamodel.meta.base.BaseFactory {
 
 
 	MySpreadsheetParser createSpreadsheetParser(String xml);
