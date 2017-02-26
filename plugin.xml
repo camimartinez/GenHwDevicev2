@@ -36,28 +36,5 @@
             uri="http://alma/Control/datamodel/meta/amb/1.0">
       </package>
    </extension>
-   <extension
-         point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            class="alma.control.datamodel.meta.base.impl.MyBaseFactoryImpl"
-            uri="http://alma/Control/datamodel/meta/base/1.0">
-      </factory>
-   </extension>
-   <extension
-         point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            class="alma.control.datamodel.meta.eth.impl.MyEthFactoryImpl"
-            uri="http://alma/Control/datamodel/meta/eth/1.0">
-      </factory>
-   </extension>
-   <extension
-         point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            class="alma.control.datamodel.meta.amb.impl.MyAmbFactoryImpl"
-            uri="http://alma/Control/datamodel/meta/amb/1.0">
-      </factory>
-   </extension>
 
-null
-null
-null</plugin>
+</plugin>
