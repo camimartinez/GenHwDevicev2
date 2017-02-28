@@ -22,18 +22,19 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
-
 import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
+
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -54,17 +55,16 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getMcp <em>Mcp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getAmask <em>Amask</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getToInfoSheet <em>To Info Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getToDataFromMain <em>To Data From Main</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getToMPDataType <em>To MP Data Type</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getToCPDataType <em>To CP Data Type</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getToUtilsToData <em>To Utils To Data</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getMandCb <em>Mand Cb</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getMonitorPoints <em>Monitor Points</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getControlPoints <em>Control Points</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getUtilss <em>Utilss</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MandCImpl extends EObjectImpl implements MandC {
-
 	/**
 	 * The default value of the '{@link #getTable() <em>Table</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,176 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "BaseFactory.eINSTANCE;");
+	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "");
+
+	/**
+	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTable()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table table = TABLE_EDEFAULT;
+	
+	/**
+	 * The default value of the '{@link #getUtil() <em>Util</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtil()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Util UTIL_EDEFAULT = (Util)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getUtilDT(), "");
+
+	/**
+	 * The cached value of the '{@link #getUtil() <em>Util</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtil()
+	 * @generated
+	 * @ordered
+	 */
+	protected Util util = UTIL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRow()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String[] ROW_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRow()
+	 * @generated
+	 * @ordered
+	 */
+	protected String[] row = ROW_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSheet() <em>Sheet</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSheet()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SHEET_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getSheet() <em>Sheet</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSheet()
+	 * @generated
+	 * @ordered
+	 */
+	protected int sheet = SHEET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMcp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MandCBase MCP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMcp()
+	 * @generated
+	 * @ordered
+	 */
+	protected MandCBase mcp = MCP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAmask() <em>Amask</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmask()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String[] AMASK_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAmask() <em>Amask</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmask()
+	 * @generated
+	 * @ordered
+	 */
+	protected String[] amask = AMASK_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMandCb() <em>Mand Cb</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMandCb()
+	 * @generated
+	 * @ordered
+	 */
+	protected MandCBase mandCb;
+
+	/**
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTables()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table tables;
+
+	/**
+	 * The cached value of the '{@link #getMonitorPoints() <em>Monitor Points</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMonitorPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected Monitor monitorPoints;
+
+	/**
+	 * The cached value of the '{@link #getControlPoints() <em>Control Points</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getControlPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected Control controlPoints;
+
+	/**
+	 * The cached value of the '{@link #getUtilss() <em>Utilss</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtilss()
+	 * @generated
+	 * @ordered
+	 */
+	protected Util utilss;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandCImpl() {
+		super();
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,16 +254,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		this.sheet = sheet;
 		this.mcp = mcp;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandCImpl() {
-		super();
-	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,16 +396,59 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCBase getToInfoSheet() {
-		if (toInfoSheet != null && toInfoSheet.eIsProxy()) {
-			InternalEObject oldToInfoSheet = (InternalEObject)toInfoSheet;
-			toInfoSheet = (MandCBase)eResolveProxy(oldToInfoSheet);
-			if (toInfoSheet != oldToInfoSheet) {
+	public MandCBase getMandCb() {
+		return mandCb;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMandCb(MandCBase newMandCb, NotificationChain msgs) {
+		MandCBase oldMandCb = mandCb;
+		mandCb = newMandCb;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__MAND_CB, oldMandCb, newMandCb);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMandCb(MandCBase newMandCb) {
+		if (newMandCb != mandCb) {
+			NotificationChain msgs = null;
+			if (mandCb != null)
+				msgs = ((InternalEObject)mandCb).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AmbPackage.MAND_C__MAND_CB, null, msgs);
+			if (newMandCb != null)
+				msgs = ((InternalEObject)newMandCb).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AmbPackage.MAND_C__MAND_CB, null, msgs);
+			msgs = basicSetMandCb(newMandCb, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__MAND_CB, newMandCb, newMandCb));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__TO_INFO_SHEET, oldToInfoSheet, toInfoSheet));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__TABLES, oldTables, tables));
 			}
 		}
-		return toInfoSheet;
+		return tables;
 	}
 
 	/**
@@ -253,8 +456,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCBase basicGetToInfoSheet() {
-		return toInfoSheet;
+	public Table basicGetTables() {
+		return tables;
 	}
 
 	/**
@@ -262,11 +465,11 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToInfoSheet(MandCBase newToInfoSheet) {
-		MandCBase oldToInfoSheet = toInfoSheet;
-		toInfoSheet = newToInfoSheet;
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__TO_INFO_SHEET, oldToInfoSheet, toInfoSheet));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__TABLES, oldTables, tables));
 	}
 
 	/**
@@ -274,16 +477,16 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getToDataFromMain() {
-		if (toDataFromMain != null && toDataFromMain.eIsProxy()) {
-			InternalEObject oldToDataFromMain = (InternalEObject)toDataFromMain;
-			toDataFromMain = (Table)eResolveProxy(oldToDataFromMain);
-			if (toDataFromMain != oldToDataFromMain) {
+	public Monitor getMonitorPoints() {
+		if (monitorPoints != null && monitorPoints.eIsProxy()) {
+			InternalEObject oldMonitorPoints = (InternalEObject)monitorPoints;
+			monitorPoints = (Monitor)eResolveProxy(oldMonitorPoints);
+			if (monitorPoints != oldMonitorPoints) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__TO_DATA_FROM_MAIN, oldToDataFromMain, toDataFromMain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__MONITOR_POINTS, oldMonitorPoints, monitorPoints));
 			}
 		}
-		return toDataFromMain;
+		return monitorPoints;
 	}
 
 	/**
@@ -291,8 +494,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetToDataFromMain() {
-		return toDataFromMain;
+	public Monitor basicGetMonitorPoints() {
+		return monitorPoints;
 	}
 
 	/**
@@ -300,11 +503,11 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToDataFromMain(Table newToDataFromMain) {
-		Table oldToDataFromMain = toDataFromMain;
-		toDataFromMain = newToDataFromMain;
+	public void setMonitorPoints(Monitor newMonitorPoints) {
+		Monitor oldMonitorPoints = monitorPoints;
+		monitorPoints = newMonitorPoints;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__TO_DATA_FROM_MAIN, oldToDataFromMain, toDataFromMain));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__MONITOR_POINTS, oldMonitorPoints, monitorPoints));
 	}
 
 	/**
@@ -312,16 +515,16 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Monitor getToMPDataType() {
-		if (toMPDataType != null && toMPDataType.eIsProxy()) {
-			InternalEObject oldToMPDataType = (InternalEObject)toMPDataType;
-			toMPDataType = (Monitor)eResolveProxy(oldToMPDataType);
-			if (toMPDataType != oldToMPDataType) {
+	public Control getControlPoints() {
+		if (controlPoints != null && controlPoints.eIsProxy()) {
+			InternalEObject oldControlPoints = (InternalEObject)controlPoints;
+			controlPoints = (Control)eResolveProxy(oldControlPoints);
+			if (controlPoints != oldControlPoints) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__TO_MP_DATA_TYPE, oldToMPDataType, toMPDataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__CONTROL_POINTS, oldControlPoints, controlPoints));
 			}
 		}
-		return toMPDataType;
+		return controlPoints;
 	}
 
 	/**
@@ -329,8 +532,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Monitor basicGetToMPDataType() {
-		return toMPDataType;
+	public Control basicGetControlPoints() {
+		return controlPoints;
 	}
 
 	/**
@@ -338,11 +541,11 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToMPDataType(Monitor newToMPDataType) {
-		Monitor oldToMPDataType = toMPDataType;
-		toMPDataType = newToMPDataType;
+	public void setControlPoints(Control newControlPoints) {
+		Control oldControlPoints = controlPoints;
+		controlPoints = newControlPoints;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__TO_MP_DATA_TYPE, oldToMPDataType, toMPDataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__CONTROL_POINTS, oldControlPoints, controlPoints));
 	}
 
 	/**
@@ -350,16 +553,16 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Control getToCPDataType() {
-		if (toCPDataType != null && toCPDataType.eIsProxy()) {
-			InternalEObject oldToCPDataType = (InternalEObject)toCPDataType;
-			toCPDataType = (Control)eResolveProxy(oldToCPDataType);
-			if (toCPDataType != oldToCPDataType) {
+	public Util getUtilss() {
+		if (utilss != null && utilss.eIsProxy()) {
+			InternalEObject oldUtilss = (InternalEObject)utilss;
+			utilss = (Util)eResolveProxy(oldUtilss);
+			if (utilss != oldUtilss) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__TO_CP_DATA_TYPE, oldToCPDataType, toCPDataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__UTILSS, oldUtilss, utilss));
 			}
 		}
-		return toCPDataType;
+		return utilss;
 	}
 
 	/**
@@ -367,8 +570,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Control basicGetToCPDataType() {
-		return toCPDataType;
+	public Util basicGetUtilss() {
+		return utilss;
 	}
 
 	/**
@@ -376,11 +579,11 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToCPDataType(Control newToCPDataType) {
-		Control oldToCPDataType = toCPDataType;
-		toCPDataType = newToCPDataType;
+	public void setUtilss(Util newUtilss) {
+		Util oldUtilss = utilss;
+		utilss = newUtilss;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__TO_CP_DATA_TYPE, oldToCPDataType, toCPDataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__UTILSS, oldUtilss, utilss));
 	}
 
 	/**
@@ -388,61 +591,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getToUtilsToData() {
-		if (toUtilsToData != null && toUtilsToData.eIsProxy()) {
-			InternalEObject oldToUtilsToData = (InternalEObject)toUtilsToData;
-			toUtilsToData = (Util)eResolveProxy(oldToUtilsToData);
-			if (toUtilsToData != oldToUtilsToData) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__TO_UTILS_TO_DATA, oldToUtilsToData, toUtilsToData));
-			}
-		}
-		return toUtilsToData;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util basicGetToUtilsToData() {
-		return toUtilsToData;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToUtilsToData(Util newToUtilsToData) {
-		Util oldToUtilsToData = toUtilsToData;
-		toUtilsToData = newToUtilsToData;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__TO_UTILS_TO_DATA, oldToUtilsToData, toUtilsToData));
-	}
-
-	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-
-	protected Table table = TABLE_EDEFAULT;
-
-
-	/**
-	 * The default value of the '{@link #getUtil() <em>Util</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtil()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Util UTIL_EDEFAULT = (Util)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getUtilDT(), "BaseFactory.eINSTANCE;");
-
 	public String Assembly() {
 		return row[table.getColNum(sheet, "Assembly")];
 	}
@@ -541,148 +689,12 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	}
 
 	/**
-	 * The cached value of the '{@link #getUtil() <em>Util</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUtil()
 	 * @generated
-	 * @ordered
 	 */
-	protected Util util = UTIL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRow()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String[] ROW_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRow()
-	 * @generated
-	 * @ordered
-	 */
-	protected String[] row = ROW_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSheet() <em>Sheet</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSheet()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int SHEET_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getSheet() <em>Sheet</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSheet()
-	 * @generated
-	 * @ordered
-	 */
-	protected int sheet = SHEET_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMcp()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final MandCBase MCP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMcp()
-	 * @generated
-	 * @ordered
-	 */
-	protected MandCBase mcp = MCP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAmask() <em>Amask</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmask()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String[] AMASK_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAmask() <em>Amask</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmask()
-	 * @generated
-	 * @ordered
-	 */
-	protected String[] amask = AMASK_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getToInfoSheet() <em>To Info Sheet</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToInfoSheet()
-	 * @generated
-	 * @ordered
-	 */
-	protected MandCBase toInfoSheet;
-
-	/**
-	 * The cached value of the '{@link #getToDataFromMain() <em>To Data From Main</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToDataFromMain()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table toDataFromMain;
-
-	/**
-	 * The cached value of the '{@link #getToMPDataType() <em>To MP Data Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToMPDataType()
-	 * @generated
-	 * @ordered
-	 */
-	protected Monitor toMPDataType;
-
-	/**
-	 * The cached value of the '{@link #getToCPDataType() <em>To CP Data Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToCPDataType()
-	 * @generated
-	 * @ordered
-	 */
-	protected Control toCPDataType;
-
-	/**
-	 * The cached value of the '{@link #getToUtilsToData() <em>To Utils To Data</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToUtilsToData()
-	 * @generated
-	 * @ordered
-	 */
-	protected Util toUtilsToData;
-	
 	public String ScaleCell() {
 		return util.normalizeNumber(WorldDataType(), row[table.getColNum(sheet, "Scale")]);
-
 	}
 
 	/**
@@ -1228,6 +1240,20 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AmbPackage.MAND_C__MAND_CB:
+				return basicSetMandCb(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AmbPackage.MAND_C__TABLE:
@@ -1242,21 +1268,20 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return getMcp();
 			case AmbPackage.MAND_C__AMASK:
 				return getAmask();
-			case AmbPackage.MAND_C__TO_INFO_SHEET:
-				if (resolve) return getToInfoSheet();
-				return basicGetToInfoSheet();
-			case AmbPackage.MAND_C__TO_DATA_FROM_MAIN:
-				if (resolve) return getToDataFromMain();
-				return basicGetToDataFromMain();
-			case AmbPackage.MAND_C__TO_MP_DATA_TYPE:
-				if (resolve) return getToMPDataType();
-				return basicGetToMPDataType();
-			case AmbPackage.MAND_C__TO_CP_DATA_TYPE:
-				if (resolve) return getToCPDataType();
-				return basicGetToCPDataType();
-			case AmbPackage.MAND_C__TO_UTILS_TO_DATA:
-				if (resolve) return getToUtilsToData();
-				return basicGetToUtilsToData();
+			case AmbPackage.MAND_C__MAND_CB:
+				return getMandCb();
+			case AmbPackage.MAND_C__TABLES:
+				if (resolve) return getTables();
+				return basicGetTables();
+			case AmbPackage.MAND_C__MONITOR_POINTS:
+				if (resolve) return getMonitorPoints();
+				return basicGetMonitorPoints();
+			case AmbPackage.MAND_C__CONTROL_POINTS:
+				if (resolve) return getControlPoints();
+				return basicGetControlPoints();
+			case AmbPackage.MAND_C__UTILSS:
+				if (resolve) return getUtilss();
+				return basicGetUtilss();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1287,20 +1312,20 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case AmbPackage.MAND_C__AMASK:
 				setAmask((String[])newValue);
 				return;
-			case AmbPackage.MAND_C__TO_INFO_SHEET:
-				setToInfoSheet((MandCBase)newValue);
+			case AmbPackage.MAND_C__MAND_CB:
+				setMandCb((MandCBase)newValue);
 				return;
-			case AmbPackage.MAND_C__TO_DATA_FROM_MAIN:
-				setToDataFromMain((Table)newValue);
+			case AmbPackage.MAND_C__TABLES:
+				setTables((Table)newValue);
 				return;
-			case AmbPackage.MAND_C__TO_MP_DATA_TYPE:
-				setToMPDataType((Monitor)newValue);
+			case AmbPackage.MAND_C__MONITOR_POINTS:
+				setMonitorPoints((Monitor)newValue);
 				return;
-			case AmbPackage.MAND_C__TO_CP_DATA_TYPE:
-				setToCPDataType((Control)newValue);
+			case AmbPackage.MAND_C__CONTROL_POINTS:
+				setControlPoints((Control)newValue);
 				return;
-			case AmbPackage.MAND_C__TO_UTILS_TO_DATA:
-				setToUtilsToData((Util)newValue);
+			case AmbPackage.MAND_C__UTILSS:
+				setUtilss((Util)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1332,20 +1357,20 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case AmbPackage.MAND_C__AMASK:
 				setAmask(AMASK_EDEFAULT);
 				return;
-			case AmbPackage.MAND_C__TO_INFO_SHEET:
-				setToInfoSheet((MandCBase)null);
+			case AmbPackage.MAND_C__MAND_CB:
+				setMandCb((MandCBase)null);
 				return;
-			case AmbPackage.MAND_C__TO_DATA_FROM_MAIN:
-				setToDataFromMain((Table)null);
+			case AmbPackage.MAND_C__TABLES:
+				setTables((Table)null);
 				return;
-			case AmbPackage.MAND_C__TO_MP_DATA_TYPE:
-				setToMPDataType((Monitor)null);
+			case AmbPackage.MAND_C__MONITOR_POINTS:
+				setMonitorPoints((Monitor)null);
 				return;
-			case AmbPackage.MAND_C__TO_CP_DATA_TYPE:
-				setToCPDataType((Control)null);
+			case AmbPackage.MAND_C__CONTROL_POINTS:
+				setControlPoints((Control)null);
 				return;
-			case AmbPackage.MAND_C__TO_UTILS_TO_DATA:
-				setToUtilsToData((Util)null);
+			case AmbPackage.MAND_C__UTILSS:
+				setUtilss((Util)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1371,16 +1396,16 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return MCP_EDEFAULT == null ? mcp != null : !MCP_EDEFAULT.equals(mcp);
 			case AmbPackage.MAND_C__AMASK:
 				return AMASK_EDEFAULT == null ? amask != null : !AMASK_EDEFAULT.equals(amask);
-			case AmbPackage.MAND_C__TO_INFO_SHEET:
-				return toInfoSheet != null;
-			case AmbPackage.MAND_C__TO_DATA_FROM_MAIN:
-				return toDataFromMain != null;
-			case AmbPackage.MAND_C__TO_MP_DATA_TYPE:
-				return toMPDataType != null;
-			case AmbPackage.MAND_C__TO_CP_DATA_TYPE:
-				return toCPDataType != null;
-			case AmbPackage.MAND_C__TO_UTILS_TO_DATA:
-				return toUtilsToData != null;
+			case AmbPackage.MAND_C__MAND_CB:
+				return mandCb != null;
+			case AmbPackage.MAND_C__TABLES:
+				return tables != null;
+			case AmbPackage.MAND_C__MONITOR_POINTS:
+				return monitorPoints != null;
+			case AmbPackage.MAND_C__CONTROL_POINTS:
+				return controlPoints != null;
+			case AmbPackage.MAND_C__UTILSS:
+				return utilss != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1410,5 +1435,4 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		result.append(')');
 		return result.toString();
 	}
-
 } //MandCImpl

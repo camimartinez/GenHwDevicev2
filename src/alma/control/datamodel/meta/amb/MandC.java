@@ -43,11 +43,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.amb.MandC#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.MandC#getAmask <em>Amask</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getToInfoSheet <em>To Info Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getToDataFromMain <em>To Data From Main</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getToMPDataType <em>To MP Data Type</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getToCPDataType <em>To CP Data Type</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getToUtilsToData <em>To Utils To Data</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMandCb <em>Mand Cb</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.MandC#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMonitorPoints <em>Monitor Points</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.MandC#getControlPoints <em>Control Points</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.MandC#getUtilss <em>Utilss</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC()
@@ -57,7 +57,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface MandC extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
@@ -67,7 +67,7 @@ public interface MandC extends EObject {
 	 * @return the value of the '<em>Table</em>' attribute.
 	 * @see #setTable(Table)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Table()
-	 * @model default="BaseFactory.eINSTANCE;" dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @model default="" dataType="alma.control.datamodel.meta.amb.TableDT"
 	 * @generated
 	 */
 	Table getTable();
@@ -84,7 +84,7 @@ public interface MandC extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Util</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Util</em>' attribute isn't clear,
@@ -94,7 +94,7 @@ public interface MandC extends EObject {
 	 * @return the value of the '<em>Util</em>' attribute.
 	 * @see #setUtil(Util)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Util()
-	 * @model default="BaseFactory.eINSTANCE;" dataType="alma.control.datamodel.meta.amb.UtilDT"
+	 * @model default="" dataType="alma.control.datamodel.meta.amb.UtilDT"
 	 * @generated
 	 */
 	Util getUtil();
@@ -214,134 +214,134 @@ public interface MandC extends EObject {
 	void setAmask(String[] value);
 
 	/**
-	 * Returns the value of the '<em><b>To Info Sheet</b></em>' reference.
+	 * Returns the value of the '<em><b>Mand Cb</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Info Sheet</em>' reference isn't clear,
+	 * If the meaning of the '<em>Mand Cb</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info Sheet</em>' reference.
-	 * @see #setToInfoSheet(MandCBase)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_ToInfoSheet()
-	 * @model
+	 * @return the value of the '<em>Mand Cb</em>' containment reference.
+	 * @see #setMandCb(MandCBase)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_MandCb()
+	 * @model containment="true"
 	 * @generated
 	 */
-	MandCBase getToInfoSheet();
+	MandCBase getMandCb();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getToInfoSheet <em>To Info Sheet</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMandCb <em>Mand Cb</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info Sheet</em>' reference.
-	 * @see #getToInfoSheet()
+	 * @param value the new value of the '<em>Mand Cb</em>' containment reference.
+	 * @see #getMandCb()
 	 * @generated
 	 */
-	void setToInfoSheet(MandCBase value);
+	void setMandCb(MandCBase value);
 
 	/**
-	 * Returns the value of the '<em><b>To Data From Main</b></em>' reference.
+	 * Returns the value of the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Data From Main</em>' reference isn't clear,
+	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Data From Main</em>' reference.
-	 * @see #setToDataFromMain(Table)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_ToDataFromMain()
+	 * @return the value of the '<em>Tables</em>' reference.
+	 * @see #setTables(Table)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Tables()
 	 * @model
 	 * @generated
 	 */
-	Table getToDataFromMain();
+	Table getTables();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getToDataFromMain <em>To Data From Main</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getTables <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Data From Main</em>' reference.
-	 * @see #getToDataFromMain()
+	 * @param value the new value of the '<em>Tables</em>' reference.
+	 * @see #getTables()
 	 * @generated
 	 */
-	void setToDataFromMain(Table value);
+	void setTables(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>To MP Data Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Monitor Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To MP Data Type</em>' reference isn't clear,
+	 * If the meaning of the '<em>Monitor Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To MP Data Type</em>' reference.
-	 * @see #setToMPDataType(Monitor)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_ToMPDataType()
+	 * @return the value of the '<em>Monitor Points</em>' reference.
+	 * @see #setMonitorPoints(Monitor)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_MonitorPoints()
 	 * @model
 	 * @generated
 	 */
-	Monitor getToMPDataType();
+	Monitor getMonitorPoints();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getToMPDataType <em>To MP Data Type</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMonitorPoints <em>Monitor Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To MP Data Type</em>' reference.
-	 * @see #getToMPDataType()
+	 * @param value the new value of the '<em>Monitor Points</em>' reference.
+	 * @see #getMonitorPoints()
 	 * @generated
 	 */
-	void setToMPDataType(Monitor value);
+	void setMonitorPoints(Monitor value);
 
 	/**
-	 * Returns the value of the '<em><b>To CP Data Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Control Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To CP Data Type</em>' reference isn't clear,
+	 * If the meaning of the '<em>Control Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To CP Data Type</em>' reference.
-	 * @see #setToCPDataType(Control)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_ToCPDataType()
+	 * @return the value of the '<em>Control Points</em>' reference.
+	 * @see #setControlPoints(Control)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_ControlPoints()
 	 * @model
 	 * @generated
 	 */
-	Control getToCPDataType();
+	Control getControlPoints();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getToCPDataType <em>To CP Data Type</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getControlPoints <em>Control Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To CP Data Type</em>' reference.
-	 * @see #getToCPDataType()
+	 * @param value the new value of the '<em>Control Points</em>' reference.
+	 * @see #getControlPoints()
 	 * @generated
 	 */
-	void setToCPDataType(Control value);
+	void setControlPoints(Control value);
 
 	/**
-	 * Returns the value of the '<em><b>To Utils To Data</b></em>' reference.
+	 * Returns the value of the '<em><b>Utilss</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Utils To Data</em>' reference isn't clear,
+	 * If the meaning of the '<em>Utilss</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Utils To Data</em>' reference.
-	 * @see #setToUtilsToData(Util)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_ToUtilsToData()
+	 * @return the value of the '<em>Utilss</em>' reference.
+	 * @see #setUtilss(Util)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Utilss()
 	 * @model
 	 * @generated
 	 */
-	Util getToUtilsToData();
+	Util getUtilss();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getToUtilsToData <em>To Utils To Data</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getUtilss <em>Utilss</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Utils To Data</em>' reference.
-	 * @see #getToUtilsToData()
+	 * @param value the new value of the '<em>Utilss</em>' reference.
+	 * @see #getUtilss()
 	 * @generated
 	 */
-	void setToUtilsToData(Util value);
+	void setUtilss(Util value);
 
 	/**
 	 * <!-- begin-user-doc -->

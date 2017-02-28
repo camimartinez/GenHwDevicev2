@@ -22,14 +22,11 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
-
-
 import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
+
 import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
 
 import java.io.IOException;
@@ -45,7 +42,6 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -61,26 +57,14 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getAux2 <em>Aux2</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getToNormalizeData <em>To Normalize Data</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getToColumnsCanBeInv <em>To Columns Can Be Inv</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getToInfoMPSheet <em>To Info MP Sheet</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getAuxIterator <em>Aux Iterator</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getAuxResource <em>Aux Resource</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MonitorImpl extends MonitorPointImpl implements Monitor {
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MonitorImpl(String[] row, Resource parent) {
-		super(row, parent);
-		mac = new MandCImpl(row, sheet, this);
-	}
-	
+
 	/**
 	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -102,54 +86,44 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	protected MandC mac = MAC_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAux2() <em>Aux2</em>}' attribute.
+	 * The default value of the '{@link #getAuxIterator() <em>Aux Iterator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAux2()
+	 * @see #getAuxIterator()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Iterator AUX2_EDEFAULT = null;
+	protected static final Iterator AUX_ITERATOR_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAux2() <em>Aux2</em>}' attribute.
+	 * The cached value of the '{@link #getAuxIterator() <em>Aux Iterator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAux2()
+	 * @see #getAuxIterator()
 	 * @generated
 	 * @ordered
 	 */
-	protected Iterator aux2 = AUX2_EDEFAULT;
+	protected Iterator auxIterator = AUX_ITERATOR_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getToNormalizeData() <em>To Normalize Data</em>}' reference.
+	 * The default value of the '{@link #getAuxResource() <em>Aux Resource</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToNormalizeData()
+	 * @see #getAuxResource()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util toNormalizeData;
+	protected static final Resource AUX_RESOURCE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getToColumnsCanBeInv() <em>To Columns Can Be Inv</em>}' reference.
+	 * The cached value of the '{@link #getAuxResource() <em>Aux Resource</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToColumnsCanBeInv()
+	 * @see #getAuxResource()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table toColumnsCanBeInv;
-
-	/**
-	 * The cached value of the '{@link #getToInfoMPSheet() <em>To Info MP Sheet</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToInfoMPSheet()
-	 * @generated
-	 * @ordered
-	 */
-	protected MandC toInfoMPSheet;
+	protected Resource auxResource = AUX_RESOURCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,6 +134,16 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MonitorImpl(String[] row, Resource parent) {
+		super(row, parent);
+		mac = new MandCImpl(row, sheet, this);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,8 +180,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Iterator getAux2() {
-		return aux2;
+	public Iterator getAuxIterator() {
+		return auxIterator;
 	}
 
 	/**
@@ -205,11 +189,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAux2(Iterator newAux2) {
-		Iterator oldAux2 = aux2;
-		aux2 = newAux2;
+	public void setAuxIterator(Iterator newAuxIterator) {
+		Iterator oldAuxIterator = auxIterator;
+		auxIterator = newAuxIterator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__AUX2, oldAux2, aux2));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__AUX_ITERATOR, oldAuxIterator, auxIterator));
 	}
 
 	/**
@@ -217,16 +201,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getToNormalizeData() {
-		if (toNormalizeData != null && toNormalizeData.eIsProxy()) {
-			InternalEObject oldToNormalizeData = (InternalEObject)toNormalizeData;
-			toNormalizeData = (Util)eResolveProxy(oldToNormalizeData);
-			if (toNormalizeData != oldToNormalizeData) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR__TO_NORMALIZE_DATA, oldToNormalizeData, toNormalizeData));
-			}
-		}
-		return toNormalizeData;
+	public Resource getAuxResource() {
+		return auxResource;
 	}
 
 	/**
@@ -234,20 +210,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetToNormalizeData() {
-		return toNormalizeData;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToNormalizeData(Util newToNormalizeData) {
-		Util oldToNormalizeData = toNormalizeData;
-		toNormalizeData = newToNormalizeData;
+	public void setAuxResource(Resource newAuxResource) {
+		Resource oldAuxResource = auxResource;
+		auxResource = newAuxResource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__TO_NORMALIZE_DATA, oldToNormalizeData, toNormalizeData));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__AUX_RESOURCE, oldAuxResource, auxResource));
 	}
 
 	/**
@@ -255,77 +222,6 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getToColumnsCanBeInv() {
-		if (toColumnsCanBeInv != null && toColumnsCanBeInv.eIsProxy()) {
-			InternalEObject oldToColumnsCanBeInv = (InternalEObject)toColumnsCanBeInv;
-			toColumnsCanBeInv = (Table)eResolveProxy(oldToColumnsCanBeInv);
-			if (toColumnsCanBeInv != oldToColumnsCanBeInv) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV, oldToColumnsCanBeInv, toColumnsCanBeInv));
-			}
-		}
-		return toColumnsCanBeInv;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetToColumnsCanBeInv() {
-		return toColumnsCanBeInv;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToColumnsCanBeInv(Table newToColumnsCanBeInv) {
-		Table oldToColumnsCanBeInv = toColumnsCanBeInv;
-		toColumnsCanBeInv = newToColumnsCanBeInv;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV, oldToColumnsCanBeInv, toColumnsCanBeInv));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandC getToInfoMPSheet() {
-		if (toInfoMPSheet != null && toInfoMPSheet.eIsProxy()) {
-			InternalEObject oldToInfoMPSheet = (InternalEObject)toInfoMPSheet;
-			toInfoMPSheet = (MandC)eResolveProxy(oldToInfoMPSheet);
-			if (toInfoMPSheet != oldToInfoMPSheet) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR__TO_INFO_MP_SHEET, oldToInfoMPSheet, toInfoMPSheet));
-			}
-		}
-		return toInfoMPSheet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandC basicGetToInfoMPSheet() {
-		return toInfoMPSheet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToInfoMPSheet(MandC newToInfoMPSheet) {
-		MandC oldToInfoMPSheet = toInfoMPSheet;
-		toInfoMPSheet = newToInfoMPSheet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__TO_INFO_MP_SHEET, oldToInfoMPSheet, toInfoMPSheet));
-	}
-
 	public String CanBeInvalid() {
 		return row[table.getColNum(sheet, "Can Be Invalid")];
 	}
@@ -762,9 +658,13 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		return mac.WorldDataTypeUpper1();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String minRange() {
 		return util.normalizeNumber(WorldDataType(), super.MinRange());
-		
 	}
 
 	/**
@@ -864,17 +764,10 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		switch (featureID) {
 			case AmbPackage.MONITOR__MAC:
 				return getMac();
-			case AmbPackage.MONITOR__AUX2:
-				return getAux2();
-			case AmbPackage.MONITOR__TO_NORMALIZE_DATA:
-				if (resolve) return getToNormalizeData();
-				return basicGetToNormalizeData();
-			case AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV:
-				if (resolve) return getToColumnsCanBeInv();
-				return basicGetToColumnsCanBeInv();
-			case AmbPackage.MONITOR__TO_INFO_MP_SHEET:
-				if (resolve) return getToInfoMPSheet();
-				return basicGetToInfoMPSheet();
+			case AmbPackage.MONITOR__AUX_ITERATOR:
+				return getAuxIterator();
+			case AmbPackage.MONITOR__AUX_RESOURCE:
+				return getAuxResource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -890,17 +783,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			case AmbPackage.MONITOR__MAC:
 				setMac((MandC)newValue);
 				return;
-			case AmbPackage.MONITOR__AUX2:
-				setAux2((Iterator)newValue);
+			case AmbPackage.MONITOR__AUX_ITERATOR:
+				setAuxIterator((Iterator)newValue);
 				return;
-			case AmbPackage.MONITOR__TO_NORMALIZE_DATA:
-				setToNormalizeData((Util)newValue);
-				return;
-			case AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV:
-				setToColumnsCanBeInv((Table)newValue);
-				return;
-			case AmbPackage.MONITOR__TO_INFO_MP_SHEET:
-				setToInfoMPSheet((MandC)newValue);
+			case AmbPackage.MONITOR__AUX_RESOURCE:
+				setAuxResource((Resource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -917,17 +804,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			case AmbPackage.MONITOR__MAC:
 				setMac(MAC_EDEFAULT);
 				return;
-			case AmbPackage.MONITOR__AUX2:
-				setAux2(AUX2_EDEFAULT);
+			case AmbPackage.MONITOR__AUX_ITERATOR:
+				setAuxIterator(AUX_ITERATOR_EDEFAULT);
 				return;
-			case AmbPackage.MONITOR__TO_NORMALIZE_DATA:
-				setToNormalizeData((Util)null);
-				return;
-			case AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV:
-				setToColumnsCanBeInv((Table)null);
-				return;
-			case AmbPackage.MONITOR__TO_INFO_MP_SHEET:
-				setToInfoMPSheet((MandC)null);
+			case AmbPackage.MONITOR__AUX_RESOURCE:
+				setAuxResource(AUX_RESOURCE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -943,14 +824,10 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		switch (featureID) {
 			case AmbPackage.MONITOR__MAC:
 				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
-			case AmbPackage.MONITOR__AUX2:
-				return AUX2_EDEFAULT == null ? aux2 != null : !AUX2_EDEFAULT.equals(aux2);
-			case AmbPackage.MONITOR__TO_NORMALIZE_DATA:
-				return toNormalizeData != null;
-			case AmbPackage.MONITOR__TO_COLUMNS_CAN_BE_INV:
-				return toColumnsCanBeInv != null;
-			case AmbPackage.MONITOR__TO_INFO_MP_SHEET:
-				return toInfoMPSheet != null;
+			case AmbPackage.MONITOR__AUX_ITERATOR:
+				return AUX_ITERATOR_EDEFAULT == null ? auxIterator != null : !AUX_ITERATOR_EDEFAULT.equals(auxIterator);
+			case AmbPackage.MONITOR__AUX_RESOURCE:
+				return AUX_RESOURCE_EDEFAULT == null ? auxResource != null : !AUX_RESOURCE_EDEFAULT.equals(auxResource);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -967,238 +844,146 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mac: ");
 		result.append(mac);
-		result.append(", aux2: ");
-		result.append(aux2);
+		result.append(", auxIterator: ");
+		result.append(auxIterator);
+		result.append(", auxResource: ");
+		result.append(auxResource);
 		result.append(')');
 		return result.toString();
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public ResourceSet getResourceSet() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public URI getURI() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setURI(URI uri) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public long getTimeStamp() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setTimeStamp(long timeStamp) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<EObject> getContents() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public TreeIterator<EObject> getAllContents() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public String getURIFragment(EObject eObject) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EObject getEObject(String uriFragment) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void save(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void load(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void save(OutputStream outputStream, Map<?, ?> options)
 			throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void load(InputStream inputStream, Map<?, ?> options)
 			throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isTrackingModification() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setTrackingModification(boolean isTrackingModification) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isModified() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setModified(boolean isModified) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isLoaded() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void unload() {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void delete(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<Diagnostic> getErrors() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<Diagnostic> getWarnings() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public boolean isMonitored() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 } //MonitorImpl

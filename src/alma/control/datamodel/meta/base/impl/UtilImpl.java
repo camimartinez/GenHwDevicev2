@@ -24,6 +24,7 @@ package alma.control.datamodel.meta.base.impl;
 
 import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
+
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
@@ -49,7 +50,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMONTHalt <em>MONT Halt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getToRawBytes <em>To Raw Bytes</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,6 +85,86 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @ordered
 	 */
 	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "BaseFactory.eINSTANCE;");
+
+	/**
+	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTable()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table table = TABLE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaxLength() <em>Max Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAX_LENGTH_EDEFAULT = 54;
+
+	/**
+	 * The cached value of the '{@link #getMaxLength() <em>Max Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maxLength = MAX_LENGTH_EDEFAULT;
+
+   /**
+	 * The default value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMONTH()
+	 * @!generated
+	 * @ordered
+	 */
+	protected static final String[] MONTH_EDEFAULT = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
+	
+    /**
+	 * The cached value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMONTH()
+	 * @generated
+	 * @ordered
+	 */
+	protected String[] month = MONTH_EDEFAULT;
+
+    /**
+	 * The default value of the '{@link #getMONTHalt() <em>MONT Halt</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMONTHalt()
+	 * @!generated
+	 * @ordered
+	 */
+	protected static final String[] MONT_HALT_EDEFAULT = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
+
+	/**
+	 * The cached value of the '{@link #getMONTHalt() <em>MONT Halt</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMONTHalt()
+	 * @generated
+	 * @ordered
+	 */
+	protected String[] montHalt = MONT_HALT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTables()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table tables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,16 +295,16 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getToRawBytes() {
-		if (toRawBytes != null && toRawBytes.eIsProxy()) {
-			InternalEObject oldToRawBytes = (InternalEObject)toRawBytes;
-			toRawBytes = (Table)eResolveProxy(oldToRawBytes);
-			if (toRawBytes != oldToRawBytes) {
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__TO_RAW_BYTES, oldToRawBytes, toRawBytes));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__TABLES, oldTables, tables));
 			}
 		}
-		return toRawBytes;
+		return tables;
 	}
 
 	/**
@@ -231,8 +312,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetToRawBytes() {
-		return toRawBytes;
+	public Table basicGetTables() {
+		return tables;
 	}
 
 	/**
@@ -240,11 +321,11 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToRawBytes(Table newToRawBytes) {
-		Table oldToRawBytes = toRawBytes;
-		toRawBytes = newToRawBytes;
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__TO_RAW_BYTES, oldToRawBytes, toRawBytes));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__TABLES, oldTables, tables));
 	}
 
 	/**
@@ -524,101 +605,25 @@ public class UtilImpl extends EObjectImpl implements Util {
 	}
 
 	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTable()
 	 * @generated
-	 * @ordered
 	 */
-	
-	protected Table table = TABLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaxLength() <em>Max Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxLength()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int MAX_LENGTH_EDEFAULT = 54;
-
-	/**
-	 * The cached value of the '{@link #getMaxLength() <em>Max Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxLength()
-	 * @generated
-	 * @ordered
-	 */
-	protected int maxLength = MAX_LENGTH_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMONTH()
-	 * @!generated
-	 * @ordered
-	 */
-	protected static final String[] MONTH_EDEFAULT = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
-
-	/**
-	 * The cached value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMONTH()
-	 * @generated
-	 * @ordered
-	 */
-	protected String[] month = MONTH_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMONTHalt() <em>MONT Halt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMONTHalt()
-	 * @!generated
-	 * @ordered
-	 */
-	protected static final String[] MONT_HALT_EDEFAULT = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
-
-	/**
-	 * The cached value of the '{@link #getMONTHalt() <em>MONT Halt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMONTHalt()
-	 * @generated
-	 * @ordered
-	 */
-	protected String[] montHalt = MONT_HALT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getToRawBytes() <em>To Raw Bytes</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToRawBytes()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table toRawBytes;
-	
 	public String RawDataTypeTotalBytes(final String s) {
-		if (isArray(s)) {
-			int b;
-			int n = Integer.parseInt(NumberOfItems(s));
-			if(s.startsWith("&lt;"))
-				return "0";
-			if(s.startsWith("["))
-				return "0";
-			int i = s.indexOf("[");
-			b = Integer.parseInt((String)table.getRawBytes().get(s.substring(0,1)));
-
-			String x = Integer.toString(n * b);
-			return x;
-		}
-		return (String)table.getRawBytes().get(s);
+				if (isArray(s)) {
+					int b;
+					int n = Integer.parseInt(NumberOfItems(s));
+					if(s.startsWith("&lt;"))
+						return "0";
+					if(s.startsWith("["))
+						return "0";
+					int i = s.indexOf("[");
+					b = Integer.parseInt((String)table.getRawBytes().get(s.substring(0,1)));
+		
+					String x = Integer.toString(n * b);
+					return x;
+				}
+				return (String)table.getRawBytes().get(s);
 	}
 
 	/**
@@ -833,9 +838,9 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return getMONTH();
 			case BasePackage.UTIL__MONT_HALT:
 				return getMONTHalt();
-			case BasePackage.UTIL__TO_RAW_BYTES:
-				if (resolve) return getToRawBytes();
-				return basicGetToRawBytes();
+			case BasePackage.UTIL__TABLES:
+				if (resolve) return getTables();
+				return basicGetTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -863,8 +868,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt((String[])newValue);
 				return;
-			case BasePackage.UTIL__TO_RAW_BYTES:
-				setToRawBytes((Table)newValue);
+			case BasePackage.UTIL__TABLES:
+				setTables((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -893,8 +898,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt(MONT_HALT_EDEFAULT);
 				return;
-			case BasePackage.UTIL__TO_RAW_BYTES:
-				setToRawBytes((Table)null);
+			case BasePackage.UTIL__TABLES:
+				setTables((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -918,8 +923,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return MONTH_EDEFAULT == null ? month != null : !MONTH_EDEFAULT.equals(month);
 			case BasePackage.UTIL__MONT_HALT:
 				return MONT_HALT_EDEFAULT == null ? montHalt != null : !MONT_HALT_EDEFAULT.equals(montHalt);
-			case BasePackage.UTIL__TO_RAW_BYTES:
-				return toRawBytes != null;
+			case BasePackage.UTIL__TABLES:
+				return tables != null;
 		}
 		return super.eIsSet(featureID);
 	}

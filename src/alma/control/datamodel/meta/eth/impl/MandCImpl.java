@@ -22,11 +22,10 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
-
-
 import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.base.Table;
+
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
 
@@ -50,14 +49,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getAssembly <em>Assembly</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getToInfoFromCol <em>To Info From Col</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MandCImpl extends EObjectImpl implements MandC {
 	
-	/**
+		/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -128,14 +126,14 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	protected String assembly = ASSEMBLY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTable() <em>Table</em>}' attribute.
+	 * The cached value of the '{@link #getTable() <em>Table</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTable()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "BaseFactory.eINSTANCE;");
+	protected Table table;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,6 +223,23 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public Table getTable() {
+		if (table != null && table.eIsProxy()) {
+			InternalEObject oldTable = (InternalEObject)table;
+			table = (Table)eResolveProxy(oldTable);
+			if (table != oldTable) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MAND_C__TABLE, oldTable, table));
+			}
+		}
+		return table;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table basicGetTable() {
 		return table;
 	}
 
@@ -238,44 +253,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		table = newTable;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MAND_C__TABLE, oldTable, table));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getToInfoFromCol() {
-		if (toInfoFromCol != null && toInfoFromCol.eIsProxy()) {
-			InternalEObject oldToInfoFromCol = (InternalEObject)toInfoFromCol;
-			toInfoFromCol = (Table)eResolveProxy(oldToInfoFromCol);
-			if (toInfoFromCol != oldToInfoFromCol) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MAND_C__TO_INFO_FROM_COL, oldToInfoFromCol, toInfoFromCol));
-			}
-		}
-		return toInfoFromCol;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetToInfoFromCol() {
-		return toInfoFromCol;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToInfoFromCol(Table newToInfoFromCol) {
-		Table oldToInfoFromCol = toInfoFromCol;
-		toInfoFromCol = newToInfoFromCol;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MAND_C__TO_INFO_FROM_COL, oldToInfoFromCol, toInfoFromCol));
 	}
 
 	/**
@@ -297,26 +274,10 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	}
 
 	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTable()
 	 * @generated
-	 * @ordered
 	 */
-	
-	protected Table table = TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getToInfoFromCol() <em>To Info From Col</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToInfoFromCol()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table toInfoFromCol;
-	
 	public String Address() {
 		return row[table.getColNum(sheet, "Address")];
 	}
@@ -449,10 +410,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case EthPackage.MAND_C__ASSEMBLY:
 				return getAssembly();
 			case EthPackage.MAND_C__TABLE:
-				return getTable();
-			case EthPackage.MAND_C__TO_INFO_FROM_COL:
-				if (resolve) return getToInfoFromCol();
-				return basicGetToInfoFromCol();
+				if (resolve) return getTable();
+				return basicGetTable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -477,9 +436,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case EthPackage.MAND_C__TABLE:
 				setTable((Table)newValue);
 				return;
-			case EthPackage.MAND_C__TO_INFO_FROM_COL:
-				setToInfoFromCol((Table)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -502,10 +458,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				setAssembly(ASSEMBLY_EDEFAULT);
 				return;
 			case EthPackage.MAND_C__TABLE:
-				setTable(TABLE_EDEFAULT);
-				return;
-			case EthPackage.MAND_C__TO_INFO_FROM_COL:
-				setToInfoFromCol((Table)null);
+				setTable((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -526,9 +479,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case EthPackage.MAND_C__ASSEMBLY:
 				return ASSEMBLY_EDEFAULT == null ? assembly != null : !ASSEMBLY_EDEFAULT.equals(assembly);
 			case EthPackage.MAND_C__TABLE:
-				return TABLE_EDEFAULT == null ? table != null : !TABLE_EDEFAULT.equals(table);
-			case EthPackage.MAND_C__TO_INFO_FROM_COL:
-				return toInfoFromCol != null;
+				return table != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -549,8 +500,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		result.append(sheet);
 		result.append(", assembly: ");
 		result.append(assembly);
-		result.append(", table: ");
-		result.append(table);
 		result.append(')');
 		return result.toString();
 	}

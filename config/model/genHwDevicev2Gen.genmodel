@@ -22,20 +22,14 @@
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/amb/IteratorDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/amb/ResourceDT"/>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive">
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/toAssemblyColumn"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/Assembly"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/isIntervalTE"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/Interval"/>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/mac"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/toWorldToDataColumns"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/toInfoControlSheet"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/toNormalizeNumber"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/mandCb"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/auxResource"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/Data"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/Value"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/Returns"/>
@@ -104,28 +98,18 @@
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel">
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toAddCP"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/obtainMain"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toNoteFromMain"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/obtainMonitorPoints"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/obtainArchiveProperties"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toAddMP"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/obtainControlPoints"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/parserSpreadsheet"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/validateSpreadsheet"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toInfoMain"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/genericMonitorPoints"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toInfoFromMainSheet"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toMPfromMonitor"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toDataFromSpread"/>
-              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toarchiveProperties"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toInstallEndGeneration"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toSpreadsheetFrom"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toValidateSpreadsheet"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/toGenericMP"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/notess"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/isMonitorDBOnly"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/IsGeneratedAlt"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/Parent"/>
@@ -142,8 +126,6 @@
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/Main">
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Main/toInfoFromMain"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Main/Parent"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Main/NodeAddress"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Main/Cardinality"/>
@@ -159,15 +141,15 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/mcp"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/Amask"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/toInfoSheet"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/mandCb"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/toDataFromMain"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/tables"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/toMPDataType"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/monitorPoints"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/toCPDataType"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/controlPoints"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/toUtilsToData"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/utilss"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/Assembly"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/RCA"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/RCACell"/>
@@ -226,13 +208,8 @@
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/mac"/>
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/aux2"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/toNormalizeData"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/toColumnsCanBeInv"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/toInfoMPSheet"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/auxIterator"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/auxResource"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/CanBeInvalid"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isFEStatus"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/Assembly"/>
@@ -306,13 +283,9 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/table"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/util"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/toAddAllMP"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/addMonitorPoints"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/toAddAllCP"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/toFormatDescriptions"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/toSheetColumns"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/addControlPoints"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/addMP">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule/addMP/mp"/>
               </genOperations>
@@ -351,12 +324,11 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/newSpreadsheet"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/deviceName"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/dirLocation"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/base"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/parserSpreadsheet"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/toGetSpreadsheet"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/toValidateTheSpreadsheet"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/toInstallDir"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/util"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/validateSpreadsheet"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/getParsedGenericSpreadsheet"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/getDeviceWorksheetWithGenericPointsAdded">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/GenericMonitorPoints/getDeviceWorksheetWithGenericPointsAdded/spreadsheet"/>
@@ -393,17 +365,11 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/monitorDBOnly"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/generateAlt"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/toArchiveIndex"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/tables"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/toContPoints"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/utils"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/toMoniPoints"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/toEndOfGeneration"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/toArchivProp"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/toInfFromSpread"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/archivesProperties"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/CreateModel"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/CheckConstraints"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/initializeModelDependencies"/>
@@ -452,9 +418,7 @@
             </genClasses>
             <genClasses image="false" ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint">
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/toInfoFromAPSpread"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/toInfoFromMPSpread"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/archiveProper"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/Default"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/ErrorCondition"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/ErrorSeverity"/>
@@ -476,8 +440,6 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/isPartOfHomogeneous"/>
             </genClasses>
             <genClasses image="false" ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint">
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/toArchOnUseControl"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/CPName"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/AltCPName"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/ArchiveOnUse"/>
@@ -537,15 +499,11 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/archive"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/dependents"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/table"/>
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/util"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/setInfFromSpread"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/tables"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/toCommonInf"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/toMPorCP"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/toSheetMP"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/archivesProperties"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/util"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/addDependent">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/addDependent/son"/>
               </genOperations>
@@ -585,7 +543,7 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/cp"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/table"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/toColumnsInfoOfArchi"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/tables"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/isRefersTo"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/isMonitorPoint"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/isControlPoint"/>
@@ -612,6 +570,7 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetValidator/seh"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetValidator/errorList"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetValidator/sehTmp"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetValidator/baseFac"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetValidator/errorHandler"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetValidator/validate">
@@ -625,9 +584,8 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/xml"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/xsdFile"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/newline"/>
-              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/toNewContent"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/tovalidateSpreads"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/pairSpread"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/validateSpread"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/getSpreadsheet">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/getSpreadsheet/dirName"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/SpreadsheetParser/getSpreadsheet/fileName"/>
@@ -668,7 +626,7 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/Util/MONTH"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/Util/MONTHalt"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/Util/toRawBytes"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/Util/tables"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/Util/error">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/Util/error/msg"/>
               </genOperations>
@@ -765,11 +723,9 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/table"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/util"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/toImplement"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/utilss"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/toConvertInfo"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/toInfoFromSpread"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/tables"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/Assembly"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/Description"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/DescriptionAsString"/>
@@ -787,8 +743,6 @@
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/eth/Archive"/>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/mac"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/toInfoControlEth"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/setAssemblyName">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/setAssemblyName/assembly"/>
               </genOperations>
@@ -812,36 +766,26 @@
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/infoDevMain"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/infoControl"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/obtainControlPoints"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/infoMonitor"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/obtainMonitorPoints"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/toEndEth"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/obtainArchiveProperties"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/validateSpreadsheet"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/parserSpreadsheet"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/infoArch"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/dataSpreadsheet"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/toNotes"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/toValidateSpreadEth"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/toSpreadEth"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/notess"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/CreateModel"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel/VendorClass"/>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/eth/Main">
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/Main/toInfoMain"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Main/VendorClass"/>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/row"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/sheet"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/assembly"/>
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/table"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/toInfoFromCol"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/table"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/setAssemblyName">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/setAssemblyName/assembly"/>
               </genOperations>
@@ -863,7 +807,7 @@
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/mac"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/toInfoMPEth"/>
+                  ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/mandCb"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/setAssemblyName">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/setAssemblyName/assembly"/>
               </genOperations>

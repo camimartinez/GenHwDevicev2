@@ -22,8 +22,8 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
-
 import alma.control.datamodel.meta.base.impl.ArchivePropertyImpl;
+
 import alma.control.datamodel.meta.eth.Archive;
 import alma.control.datamodel.meta.eth.EthPackage;
 

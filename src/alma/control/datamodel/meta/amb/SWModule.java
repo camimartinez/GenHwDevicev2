@@ -22,7 +22,6 @@
  */
 package alma.control.datamodel.meta.amb;
 
-
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
 
@@ -54,10 +53,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getSimControlPoints <em>Sim Control Points</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getTable <em>Table</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getUtil <em>Util</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getToAddAllMP <em>To Add All MP</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getToAddAllCP <em>To Add All CP</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getToFormatDescriptions <em>To Format Descriptions</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getToSheetColumns <em>To Sheet Columns</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getAddMonitorPoints <em>Add Monitor Points</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getAddControlPoints <em>Add Control Points</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule()
@@ -380,7 +377,7 @@ public interface SWModule extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
@@ -390,7 +387,7 @@ public interface SWModule extends EObject {
 	 * @return the value of the '<em>Table</em>' attribute.
 	 * @see #setTable(Table)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_Table()
-	 * @model default="BaseFactory.eINSTANCE;" dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @model default="" dataType="alma.control.datamodel.meta.amb.TableDT"
 	 * @generated
 	 */
 	Table getTable();
@@ -407,7 +404,7 @@ public interface SWModule extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Util</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Util</em>' attribute isn't clear,
@@ -417,7 +414,7 @@ public interface SWModule extends EObject {
 	 * @return the value of the '<em>Util</em>' attribute.
 	 * @see #setUtil(Util)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_Util()
-	 * @model default="BaseFactory.eINSTANCE;" dataType="alma.control.datamodel.meta.amb.UtilDT"
+	 * @model default="" dataType="alma.control.datamodel.meta.amb.UtilDT"
 	 * @generated
 	 */
 	Util getUtil();
@@ -433,108 +430,56 @@ public interface SWModule extends EObject {
 	void setUtil(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>To Add All MP</b></em>' reference.
+	 * Returns the value of the '<em><b>Add Monitor Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Add All MP</em>' reference isn't clear,
+	 * If the meaning of the '<em>Add Monitor Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Add All MP</em>' reference.
-	 * @see #setToAddAllMP(Monitor)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_ToAddAllMP()
+	 * @return the value of the '<em>Add Monitor Points</em>' reference.
+	 * @see #setAddMonitorPoints(Monitor)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_AddMonitorPoints()
 	 * @model
 	 * @generated
 	 */
-	Monitor getToAddAllMP();
+	Monitor getAddMonitorPoints();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getToAddAllMP <em>To Add All MP</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getAddMonitorPoints <em>Add Monitor Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Add All MP</em>' reference.
-	 * @see #getToAddAllMP()
+	 * @param value the new value of the '<em>Add Monitor Points</em>' reference.
+	 * @see #getAddMonitorPoints()
 	 * @generated
 	 */
-	void setToAddAllMP(Monitor value);
+	void setAddMonitorPoints(Monitor value);
 
 	/**
-	 * Returns the value of the '<em><b>To Add All CP</b></em>' reference.
+	 * Returns the value of the '<em><b>Add Control Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Add All CP</em>' reference isn't clear,
+	 * If the meaning of the '<em>Add Control Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Add All CP</em>' reference.
-	 * @see #setToAddAllCP(Control)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_ToAddAllCP()
+	 * @return the value of the '<em>Add Control Points</em>' reference.
+	 * @see #setAddControlPoints(Control)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_AddControlPoints()
 	 * @model
 	 * @generated
 	 */
-	Control getToAddAllCP();
+	Control getAddControlPoints();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getToAddAllCP <em>To Add All CP</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getAddControlPoints <em>Add Control Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Add All CP</em>' reference.
-	 * @see #getToAddAllCP()
+	 * @param value the new value of the '<em>Add Control Points</em>' reference.
+	 * @see #getAddControlPoints()
 	 * @generated
 	 */
-	void setToAddAllCP(Control value);
-
-	/**
-	 * Returns the value of the '<em><b>To Format Descriptions</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Format Descriptions</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Format Descriptions</em>' reference.
-	 * @see #setToFormatDescriptions(Util)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_ToFormatDescriptions()
-	 * @model
-	 * @generated
-	 */
-	Util getToFormatDescriptions();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getToFormatDescriptions <em>To Format Descriptions</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Format Descriptions</em>' reference.
-	 * @see #getToFormatDescriptions()
-	 * @generated
-	 */
-	void setToFormatDescriptions(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>To Sheet Columns</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Sheet Columns</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Sheet Columns</em>' reference.
-	 * @see #setToSheetColumns(Table)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_ToSheetColumns()
-	 * @model
-	 * @generated
-	 */
-	Table getToSheetColumns();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getToSheetColumns <em>To Sheet Columns</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Sheet Columns</em>' reference.
-	 * @see #getToSheetColumns()
-	 * @generated
-	 */
-	void setToSheetColumns(Table value);
+	void setAddControlPoints(Control value);
 
 	/**
 	 * <!-- begin-user-doc -->

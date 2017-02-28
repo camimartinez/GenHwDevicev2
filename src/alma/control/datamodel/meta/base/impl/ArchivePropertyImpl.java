@@ -24,29 +24,20 @@ package alma.control.datamodel.meta.base.impl;
 
 import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Map;
 
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.Table;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,23 +52,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getCp <em>Cp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getToColumnsInfoOfArchi <em>To Columns Info Of Archi</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty {
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchivePropertyImpl(String[] row) {
-		this.row = row;
-		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Archive Property");
-	}
-	
 	/**
 	 * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,6 +68,16 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 */
 	protected static final String[] ROW_EDEFAULT = null;
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArchivePropertyImpl(String[] row) {
+		this.row = row;
+		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Archive Property");
+	}
+	
 	/**
 	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -166,7 +156,27 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "BaseFactory.eINSTANCE;");
+	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "");
+
+	/**
+	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTable()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table table = TABLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTables()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table tables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,16 +307,16 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getToColumnsInfoOfArchi() {
-		if (toColumnsInfoOfArchi != null && toColumnsInfoOfArchi.eIsProxy()) {
-			InternalEObject oldToColumnsInfoOfArchi = (InternalEObject)toColumnsInfoOfArchi;
-			toColumnsInfoOfArchi = (Table)eResolveProxy(oldToColumnsInfoOfArchi);
-			if (toColumnsInfoOfArchi != oldToColumnsInfoOfArchi) {
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI, oldToColumnsInfoOfArchi, toColumnsInfoOfArchi));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
 			}
 		}
-		return toColumnsInfoOfArchi;
+		return tables;
 	}
 
 	/**
@@ -314,8 +324,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetToColumnsInfoOfArchi() {
-		return toColumnsInfoOfArchi;
+	public Table basicGetTables() {
+		return tables;
 	}
 
 	/**
@@ -323,11 +333,11 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToColumnsInfoOfArchi(Table newToColumnsInfoOfArchi) {
-		Table oldToColumnsInfoOfArchi = toColumnsInfoOfArchi;
-		toColumnsInfoOfArchi = newToColumnsInfoOfArchi;
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI, oldToColumnsInfoOfArchi, toColumnsInfoOfArchi));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
 	}
 
 	/**
@@ -389,29 +399,12 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	}
 
 	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTable()
 	 * @generated
-	 * @ordered
 	 */
-	
-	protected Table table = TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getToColumnsInfoOfArchi() <em>To Columns Info Of Archi</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToColumnsInfoOfArchi()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table toColumnsInfoOfArchi;
-	
 	public String Name() {
 		return row[table.getColNum(sheet, "Name")];
-		
 	}
 
 	/**
@@ -522,9 +515,9 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return getCp();
 			case BasePackage.ARCHIVE_PROPERTY__TABLE:
 				return getTable();
-			case BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI:
-				if (resolve) return getToColumnsInfoOfArchi();
-				return basicGetToColumnsInfoOfArchi();
+			case BasePackage.ARCHIVE_PROPERTY__TABLES:
+				if (resolve) return getTables();
+				return basicGetTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -552,8 +545,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__TABLE:
 				setTable((Table)newValue);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI:
-				setToColumnsInfoOfArchi((Table)newValue);
+			case BasePackage.ARCHIVE_PROPERTY__TABLES:
+				setTables((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -582,8 +575,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__TABLE:
 				setTable(TABLE_EDEFAULT);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI:
-				setToColumnsInfoOfArchi((Table)null);
+			case BasePackage.ARCHIVE_PROPERTY__TABLES:
+				setTables((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -607,8 +600,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return CP_EDEFAULT == null ? cp != null : !CP_EDEFAULT.equals(cp);
 			case BasePackage.ARCHIVE_PROPERTY__TABLE:
 				return TABLE_EDEFAULT == null ? table != null : !TABLE_EDEFAULT.equals(table);
-			case BasePackage.ARCHIVE_PROPERTY__TO_COLUMNS_INFO_OF_ARCHI:
-				return toColumnsInfoOfArchi != null;
+			case BasePackage.ARCHIVE_PROPERTY__TABLES:
+				return tables != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -635,228 +628,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 		result.append(table);
 		result.append(')');
 		return result.toString();
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public ResourceSet getResourceSet() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public URI getURI() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void setURI(URI uri) {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public long getTimeStamp() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void setTimeStamp(long timeStamp) {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public EList<EObject> getContents() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public TreeIterator<EObject> getAllContents() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public String getURIFragment(EObject eObject) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public EObject getEObject(String uriFragment) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void save(Map<?, ?> options) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void load(Map<?, ?> options) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void save(OutputStream outputStream, Map<?, ?> options)
-			throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void load(InputStream inputStream, Map<?, ?> options)
-			throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public boolean isTrackingModification() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void setTrackingModification(boolean isTrackingModification) {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public boolean isModified() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void setModified(boolean isModified) {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public boolean isLoaded() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void unload() {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public void delete(Map<?, ?> options) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public EList<Diagnostic> getErrors() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public EList<Diagnostic> getWarnings() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 } //ArchivePropertyImpl

@@ -22,6 +22,7 @@
  */
 package alma.control.datamodel.meta.base;
 
+import alma.control.datamodel.meta.amb.MandC;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -45,11 +46,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getTable <em>Table</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getArchivesProperties <em>Archives Properties</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getUtil <em>Util</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getSetInfFromSpread <em>Set Inf From Spread</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getToCommonInf <em>To Common Inf</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getToMPorCP <em>To MPor CP</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getToSheetMP <em>To Sheet MP</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase()
@@ -268,7 +267,7 @@ public interface MandCBase extends EObject, Resource {
 
 	/**
 	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
@@ -278,7 +277,7 @@ public interface MandCBase extends EObject, Resource {
 	 * @return the value of the '<em>Table</em>' attribute.
 	 * @see #setTable(Table)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Table()
-	 * @model default="BaseFactory.eINSTANCE;" unique="false" dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @model default="" unique="false" dataType="alma.control.datamodel.meta.amb.TableDT"
 	 * @generated
 	 */
 	Table getTable();
@@ -294,135 +293,82 @@ public interface MandCBase extends EObject, Resource {
 	void setTable(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Util</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * Returns the value of the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Util</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Util</em>' attribute.
+	 * @return the value of the '<em>Tables</em>' reference.
+	 * @see #setTables(Table)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Tables()
+	 * @model
+	 * @generated
+	 */
+	Table getTables();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tables</em>' reference.
+	 * @see #getTables()
+	 * @generated
+	 */
+	void setTables(Table value);
+
+	/**
+	 * Returns the value of the '<em><b>Archives Properties</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Archives Properties</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Archives Properties</em>' reference.
+	 * @see #setArchivesProperties(ArchiveProperty)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_ArchivesProperties()
+	 * @model
+	 * @generated
+	 */
+	ArchiveProperty getArchivesProperties();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getArchivesProperties <em>Archives Properties</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Archives Properties</em>' reference.
+	 * @see #getArchivesProperties()
+	 * @generated
+	 */
+	void setArchivesProperties(ArchiveProperty value);
+
+	/**
+	 * Returns the value of the '<em><b>Util</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Util</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Util</em>' containment reference.
 	 * @see #setUtil(Util)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Util()
-	 * @model default="BaseFactory.eINSTANCE;" dataType="alma.control.datamodel.meta.amb.UtilDT"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Util getUtil();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getUtil <em>Util</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getUtil <em>Util</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Util</em>' attribute.
+	 * @param value the new value of the '<em>Util</em>' containment reference.
 	 * @see #getUtil()
 	 * @generated
 	 */
 	void setUtil(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>Set Inf From Spread</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Set Inf From Spread</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Set Inf From Spread</em>' reference.
-	 * @see #setSetInfFromSpread(Util)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_SetInfFromSpread()
-	 * @model
-	 * @generated
-	 */
-	Util getSetInfFromSpread();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getSetInfFromSpread <em>Set Inf From Spread</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Set Inf From Spread</em>' reference.
-	 * @see #getSetInfFromSpread()
-	 * @generated
-	 */
-	void setSetInfFromSpread(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>To Common Inf</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Common Inf</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Common Inf</em>' reference.
-	 * @see #setToCommonInf(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_ToCommonInf()
-	 * @model
-	 * @generated
-	 */
-	Table getToCommonInf();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getToCommonInf <em>To Common Inf</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Common Inf</em>' reference.
-	 * @see #getToCommonInf()
-	 * @generated
-	 */
-	void setToCommonInf(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>To MPor CP</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To MPor CP</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To MPor CP</em>' reference.
-	 * @see #setToMPorCP(ArchiveProperty)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_ToMPorCP()
-	 * @model
-	 * @generated
-	 */
-	ArchiveProperty getToMPorCP();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getToMPorCP <em>To MPor CP</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To MPor CP</em>' reference.
-	 * @see #getToMPorCP()
-	 * @generated
-	 */
-	void setToMPorCP(ArchiveProperty value);
-
-	/**
-	 * Returns the value of the '<em><b>To Sheet MP</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Sheet MP</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Sheet MP</em>' reference.
-	 * @see #setToSheetMP(MonitorPoint)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_ToSheetMP()
-	 * @model
-	 * @generated
-	 */
-	MonitorPoint getToSheetMP();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getToSheetMP <em>To Sheet MP</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Sheet MP</em>' reference.
-	 * @see #getToSheetMP()
-	 * @generated
-	 */
-	void setToSheetMP(MonitorPoint value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -30,6 +30,7 @@ import alma.control.datamodel.meta.base.SpreadsheetValidator;
 import java.util.ArrayList;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -50,6 +51,7 @@ import org.xml.sax.ErrorHandler;
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl#getSeh <em>Seh</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl#getErrorList <em>Error List</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl#getSehTmp <em>Seh Tmp</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl#getBaseFac <em>Base Fac</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl#getErrorHandler <em>Error Handler</em>}</li>
  * </ul>
  *
@@ -117,7 +119,27 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	protected ErrorHandler sehTmp = SEH_TMP_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getErrorHandler() <em>Error Handler</em>}' reference.
+	 * The default value of the '{@link #getBaseFac() <em>Base Fac</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBaseFac()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BaseFactory BASE_FAC_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getBaseFac() <em>Base Fac</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBaseFac()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseFactory baseFac = BASE_FAC_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getErrorHandler() <em>Error Handler</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getErrorHandler()
@@ -213,15 +235,28 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BaseFactory getBaseFac() {
+		return baseFac;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBaseFac(BaseFactory newBaseFac) {
+		BaseFactory oldBaseFac = baseFac;
+		baseFac = newBaseFac;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_VALIDATOR__BASE_FAC, oldBaseFac, baseFac));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SimpleErrorHandler getErrorHandler() {
-		if (errorHandler != null && errorHandler.eIsProxy()) {
-			InternalEObject oldErrorHandler = (InternalEObject)errorHandler;
-			errorHandler = (SimpleErrorHandler)eResolveProxy(oldErrorHandler);
-			if (errorHandler != oldErrorHandler) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, oldErrorHandler, errorHandler));
-			}
-		}
 		return errorHandler;
 	}
 
@@ -230,8 +265,14 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SimpleErrorHandler basicGetErrorHandler() {
-		return errorHandler;
+	public NotificationChain basicSetErrorHandler(SimpleErrorHandler newErrorHandler, NotificationChain msgs) {
+		SimpleErrorHandler oldErrorHandler = errorHandler;
+		errorHandler = newErrorHandler;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, oldErrorHandler, newErrorHandler);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -240,10 +281,17 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * @generated
 	 */
 	public void setErrorHandler(SimpleErrorHandler newErrorHandler) {
-		SimpleErrorHandler oldErrorHandler = errorHandler;
-		errorHandler = newErrorHandler;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, oldErrorHandler, errorHandler));
+		if (newErrorHandler != errorHandler) {
+			NotificationChain msgs = null;
+			if (errorHandler != null)
+				msgs = ((InternalEObject)errorHandler).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, null, msgs);
+			if (newErrorHandler != null)
+				msgs = ((InternalEObject)newErrorHandler).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, null, msgs);
+			msgs = basicSetErrorHandler(newErrorHandler, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, newErrorHandler, newErrorHandler));
 	}
 
 	/**
@@ -292,6 +340,20 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
+				return basicSetErrorHandler(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.SPREADSHEET_VALIDATOR__SEH:
@@ -300,9 +362,10 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 				return getErrorList();
 			case BasePackage.SPREADSHEET_VALIDATOR__SEH_TMP:
 				return getSehTmp();
+			case BasePackage.SPREADSHEET_VALIDATOR__BASE_FAC:
+				return getBaseFac();
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
-				if (resolve) return getErrorHandler();
-				return basicGetErrorHandler();
+				return getErrorHandler();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -323,6 +386,9 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 				return;
 			case BasePackage.SPREADSHEET_VALIDATOR__SEH_TMP:
 				setSehTmp((ErrorHandler)newValue);
+				return;
+			case BasePackage.SPREADSHEET_VALIDATOR__BASE_FAC:
+				setBaseFac((BaseFactory)newValue);
 				return;
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
 				setErrorHandler((SimpleErrorHandler)newValue);
@@ -348,6 +414,9 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 			case BasePackage.SPREADSHEET_VALIDATOR__SEH_TMP:
 				setSehTmp(SEH_TMP_EDEFAULT);
 				return;
+			case BasePackage.SPREADSHEET_VALIDATOR__BASE_FAC:
+				setBaseFac(BASE_FAC_EDEFAULT);
+				return;
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
 				setErrorHandler((SimpleErrorHandler)null);
 				return;
@@ -369,6 +438,8 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 				return ERROR_LIST_EDEFAULT == null ? errorList != null : !ERROR_LIST_EDEFAULT.equals(errorList);
 			case BasePackage.SPREADSHEET_VALIDATOR__SEH_TMP:
 				return SEH_TMP_EDEFAULT == null ? sehTmp != null : !SEH_TMP_EDEFAULT.equals(sehTmp);
+			case BasePackage.SPREADSHEET_VALIDATOR__BASE_FAC:
+				return BASE_FAC_EDEFAULT == null ? baseFac != null : !BASE_FAC_EDEFAULT.equals(baseFac);
 			case BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER:
 				return errorHandler != null;
 		}
@@ -391,6 +462,8 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 		result.append(errorList);
 		result.append(", sehTmp: ");
 		result.append(sehTmp);
+		result.append(", baseFac: ");
+		result.append(baseFac);
 		result.append(')');
 		return result.toString();
 	}

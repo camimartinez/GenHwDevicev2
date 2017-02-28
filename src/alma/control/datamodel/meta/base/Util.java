@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.base.Util#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Util#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Util#getMONTHalt <em>MONT Halt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.Util#getToRawBytes <em>To Raw Bytes</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.Util#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getUtil()
@@ -179,30 +179,30 @@ public interface Util extends EObject {
 	void setMONTHalt(String[] value);
 
 	/**
-	 * Returns the value of the '<em><b>To Raw Bytes</b></em>' reference.
+	 * Returns the value of the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Raw Bytes</em>' reference isn't clear,
+	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Raw Bytes</em>' reference.
-	 * @see #setToRawBytes(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getUtil_ToRawBytes()
+	 * @return the value of the '<em>Tables</em>' reference.
+	 * @see #setTables(Table)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getUtil_Tables()
 	 * @model
 	 * @generated
 	 */
-	Table getToRawBytes();
+	Table getTables();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.Util#getToRawBytes <em>To Raw Bytes</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.Util#getTables <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Raw Bytes</em>' reference.
-	 * @see #getToRawBytes()
+	 * @param value the new value of the '<em>Tables</em>' reference.
+	 * @see #getTables()
 	 * @generated
 	 */
-	void setToRawBytes(Table value);
+	void setTables(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -27,11 +27,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Map;
 
-
 import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
+
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
 import alma.control.datamodel.meta.eth.Monitor;
+import alma.control.datamodel.meta.eth.impl.MandCImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -43,7 +44,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
@@ -56,13 +56,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MonitorImpl#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.impl.MonitorImpl#getToInfoMPEth <em>To Info MP Eth</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.impl.MonitorImpl#getMandCb <em>Mand Cb</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MonitorImpl extends MonitorPointImpl implements Monitor {
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,14 +94,14 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	protected MandC mac = MAC_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getToInfoMPEth() <em>To Info MP Eth</em>}' reference.
+	 * The cached value of the '{@link #getMandCb() <em>Mand Cb</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToInfoMPEth()
+	 * @see #getMandCb()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandC toInfoMPEth;
+	protected MandC mandCb;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,16 +148,16 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC getToInfoMPEth() {
-		if (toInfoMPEth != null && toInfoMPEth.eIsProxy()) {
-			InternalEObject oldToInfoMPEth = (InternalEObject)toInfoMPEth;
-			toInfoMPEth = (MandC)eResolveProxy(oldToInfoMPEth);
-			if (toInfoMPEth != oldToInfoMPEth) {
+	public MandC getMandCb() {
+		if (mandCb != null && mandCb.eIsProxy()) {
+			InternalEObject oldMandCb = (InternalEObject)mandCb;
+			mandCb = (MandC)eResolveProxy(oldMandCb);
+			if (mandCb != oldMandCb) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MONITOR__TO_INFO_MP_ETH, oldToInfoMPEth, toInfoMPEth));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MONITOR__MAND_CB, oldMandCb, mandCb));
 			}
 		}
-		return toInfoMPEth;
+		return mandCb;
 	}
 
 	/**
@@ -165,8 +165,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC basicGetToInfoMPEth() {
-		return toInfoMPEth;
+	public MandC basicGetMandCb() {
+		return mandCb;
 	}
 
 	/**
@@ -174,11 +174,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToInfoMPEth(MandC newToInfoMPEth) {
-		MandC oldToInfoMPEth = toInfoMPEth;
-		toInfoMPEth = newToInfoMPEth;
+	public void setMandCb(MandC newMandCb) {
+		MandC oldMandCb = mandCb;
+		mandCb = newMandCb;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MONITOR__TO_INFO_MP_ETH, oldToInfoMPEth, toInfoMPEth));
+			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MONITOR__MAND_CB, oldMandCb, mandCb));
 	}
 
 	/**
@@ -355,7 +355,6 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean isPartOfPattern() {
 		return false;
 	}
@@ -365,7 +364,6 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean isHomogeneous() {
 		return true;
 	}
@@ -380,9 +378,9 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		switch (featureID) {
 			case EthPackage.MONITOR__MAC:
 				return getMac();
-			case EthPackage.MONITOR__TO_INFO_MP_ETH:
-				if (resolve) return getToInfoMPEth();
-				return basicGetToInfoMPEth();
+			case EthPackage.MONITOR__MAND_CB:
+				if (resolve) return getMandCb();
+				return basicGetMandCb();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -398,8 +396,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			case EthPackage.MONITOR__MAC:
 				setMac((MandC)newValue);
 				return;
-			case EthPackage.MONITOR__TO_INFO_MP_ETH:
-				setToInfoMPEth((MandC)newValue);
+			case EthPackage.MONITOR__MAND_CB:
+				setMandCb((MandC)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -416,8 +414,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			case EthPackage.MONITOR__MAC:
 				setMac(MAC_EDEFAULT);
 				return;
-			case EthPackage.MONITOR__TO_INFO_MP_ETH:
-				setToInfoMPEth((MandC)null);
+			case EthPackage.MONITOR__MAND_CB:
+				setMandCb((MandC)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -433,8 +431,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		switch (featureID) {
 			case EthPackage.MONITOR__MAC:
 				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
-			case EthPackage.MONITOR__TO_INFO_MP_ETH:
-				return toInfoMPEth != null;
+			case EthPackage.MONITOR__MAND_CB:
+				return mandCb != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -455,223 +453,134 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		return result.toString();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
 	@Override
 	public ResourceSet getResourceSet() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public URI getURI() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setURI(URI uri) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public long getTimeStamp() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setTimeStamp(long timeStamp) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<EObject> getContents() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public TreeIterator<EObject> getAllContents() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public String getURIFragment(EObject eObject) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EObject getEObject(String uriFragment) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void save(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void load(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void save(OutputStream outputStream, Map<?, ?> options)
 			throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void load(InputStream inputStream, Map<?, ?> options)
 			throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isTrackingModification() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setTrackingModification(boolean isTrackingModification) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isModified() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setModified(boolean isModified) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isLoaded() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void unload() {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void delete(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<Diagnostic> getErrors() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<Diagnostic> getWarnings() {
 		// TODO Auto-generated method stub

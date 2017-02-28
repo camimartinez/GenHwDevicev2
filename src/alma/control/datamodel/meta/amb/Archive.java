@@ -22,53 +22,20 @@
  */
 package alma.control.datamodel.meta.amb;
 
-
 import alma.control.datamodel.meta.base.ArchiveProperty;
-import alma.control.datamodel.meta.base.Table;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Archive</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link alma.control.datamodel.meta.amb.Archive#getToAssemblyColumn <em>To Assembly Column</em>}</li>
- * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getArchive()
  * @model
  * @generated
  */
 public interface Archive extends ArchiveProperty {
-	/**
-	 * Returns the value of the '<em><b>To Assembly Column</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Assembly Column</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Assembly Column</em>' reference.
-	 * @see #setToAssemblyColumn(Table)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getArchive_ToAssemblyColumn()
-	 * @model
-	 * @generated
-	 */
-	Table getToAssemblyColumn();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Archive#getToAssemblyColumn <em>To Assembly Column</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Assembly Column</em>' reference.
-	 * @see #getToAssemblyColumn()
-	 * @generated
-	 */
-	void setToAssemblyColumn(Table value);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

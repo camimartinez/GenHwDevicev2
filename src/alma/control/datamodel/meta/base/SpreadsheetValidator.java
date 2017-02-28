@@ -22,7 +22,6 @@
  */
 package alma.control.datamodel.meta.base;
 
-import alma.control.datamodel.meta.base.SimpleErrorHandler;
 import java.util.ArrayList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -41,6 +40,7 @@ import org.xml.sax.ErrorHandler;
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getSeh <em>Seh</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorList <em>Error List</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getSehTmp <em>Seh Tmp</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getBaseFac <em>Base Fac</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}</li>
  * </ul>
  *
@@ -128,26 +128,52 @@ public interface SpreadsheetValidator extends EObject {
 	void setSehTmp(ErrorHandler value);
 
 	/**
-	 * Returns the value of the '<em><b>Error Handler</b></em>' reference.
+	 * Returns the value of the '<em><b>Base Fac</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Error Handler</em>' reference isn't clear,
+	 * If the meaning of the '<em>Base Fac</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Error Handler</em>' reference.
+	 * @return the value of the '<em>Base Fac</em>' attribute.
+	 * @see #setBaseFac(BaseFactory)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetValidator_BaseFac()
+	 * @model dataType="alma.control.datamodel.meta.amb.BaseFactoryDT"
+	 * @generated
+	 */
+	BaseFactory getBaseFac();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getBaseFac <em>Base Fac</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Base Fac</em>' attribute.
+	 * @see #getBaseFac()
+	 * @generated
+	 */
+	void setBaseFac(BaseFactory value);
+
+	/**
+	 * Returns the value of the '<em><b>Error Handler</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Error Handler</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Error Handler</em>' containment reference.
 	 * @see #setErrorHandler(SimpleErrorHandler)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetValidator_ErrorHandler()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	SimpleErrorHandler getErrorHandler();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Error Handler</em>' reference.
+	 * @param value the new value of the '<em>Error Handler</em>' containment reference.
 	 * @see #getErrorHandler()
 	 * @generated
 	 */

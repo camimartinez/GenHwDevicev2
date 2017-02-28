@@ -22,11 +22,7 @@
  */
 package alma.control.datamodel.meta.amb;
 
-
-import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.base.MonitorPoint;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
 
 import java.util.Iterator;
 
@@ -42,10 +38,8 @@ import org.eclipse.emf.ecore.resource.Resource;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getAux2 <em>Aux2</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getToNormalizeData <em>To Normalize Data</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getToColumnsCanBeInv <em>To Columns Can Be Inv</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getToInfoMPSheet <em>To Info MP Sheet</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getAuxIterator <em>Aux Iterator</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getAuxResource <em>Aux Resource</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor()
@@ -81,108 +75,56 @@ public interface Monitor extends MonitorPoint {
 	void setMac(MandC value);
 
 	/**
-	 * Returns the value of the '<em><b>Aux2</b></em>' attribute.
+	 * Returns the value of the '<em><b>Aux Iterator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Aux2</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Aux Iterator</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Aux2</em>' attribute.
-	 * @see #setAux2(Iterator)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_Aux2()
+	 * @return the value of the '<em>Aux Iterator</em>' attribute.
+	 * @see #setAuxIterator(Iterator)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_AuxIterator()
 	 * @model dataType="alma.control.datamodel.meta.amb.IteratorDT"
 	 * @generated
 	 */
-	Iterator getAux2();
+	Iterator getAuxIterator();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getAux2 <em>Aux2</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getAuxIterator <em>Aux Iterator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Aux2</em>' attribute.
-	 * @see #getAux2()
+	 * @param value the new value of the '<em>Aux Iterator</em>' attribute.
+	 * @see #getAuxIterator()
 	 * @generated
 	 */
-	void setAux2(Iterator value);
+	void setAuxIterator(Iterator value);
 
 	/**
-	 * Returns the value of the '<em><b>To Normalize Data</b></em>' reference.
+	 * Returns the value of the '<em><b>Aux Resource</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Normalize Data</em>' reference isn't clear,
+	 * If the meaning of the '<em>Aux Resource</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Normalize Data</em>' reference.
-	 * @see #setToNormalizeData(Util)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_ToNormalizeData()
-	 * @model
+	 * @return the value of the '<em>Aux Resource</em>' attribute.
+	 * @see #setAuxResource(Resource)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_AuxResource()
+	 * @model dataType="alma.control.datamodel.meta.amb.ResourceDT"
 	 * @generated
 	 */
-	Util getToNormalizeData();
+	Resource getAuxResource();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getToNormalizeData <em>To Normalize Data</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getAuxResource <em>Aux Resource</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Normalize Data</em>' reference.
-	 * @see #getToNormalizeData()
+	 * @param value the new value of the '<em>Aux Resource</em>' attribute.
+	 * @see #getAuxResource()
 	 * @generated
 	 */
-	void setToNormalizeData(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>To Columns Can Be Inv</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Columns Can Be Inv</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Columns Can Be Inv</em>' reference.
-	 * @see #setToColumnsCanBeInv(Table)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_ToColumnsCanBeInv()
-	 * @model
-	 * @generated
-	 */
-	Table getToColumnsCanBeInv();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getToColumnsCanBeInv <em>To Columns Can Be Inv</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Columns Can Be Inv</em>' reference.
-	 * @see #getToColumnsCanBeInv()
-	 * @generated
-	 */
-	void setToColumnsCanBeInv(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>To Info MP Sheet</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Info MP Sheet</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info MP Sheet</em>' reference.
-	 * @see #setToInfoMPSheet(MandC)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_ToInfoMPSheet()
-	 * @model
-	 * @generated
-	 */
-	MandC getToInfoMPSheet();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getToInfoMPSheet <em>To Info MP Sheet</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info MP Sheet</em>' reference.
-	 * @see #getToInfoMPSheet()
-	 * @generated
-	 */
-	void setToInfoMPSheet(MandC value);
+	void setAuxResource(Resource value);
 
 	/**
 	 * <!-- begin-user-doc -->

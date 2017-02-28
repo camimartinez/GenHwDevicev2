@@ -66,6 +66,16 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	}
 
 	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseFactoryImpl() {
+		super();
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -96,16 +106,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 		return mainBase;
 	}
 	
-	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BaseFactoryImpl() {
-		super();
-	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

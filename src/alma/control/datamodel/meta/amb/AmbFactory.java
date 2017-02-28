@@ -23,9 +23,11 @@
 package alma.control.datamodel.meta.amb;
 
 import org.eclipse.emf.ecore.EFactory;
-import org.eclipse.emf.ecore.resource.Resource;
 
 import alma.control.datamodel.meta.base.MandCBase;
+
+import org.eclipse.emf.ecore.resource.Resource;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +55,7 @@ public interface AmbFactory extends EFactory {
 	 */
 	Main createMain(String[] row);
 	
-		/**
+	/**
 	 * Returns a new object of class '<em>Mand CAMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,7 +64,7 @@ public interface AmbFactory extends EFactory {
 	 */
 	MandC createMandC(String[] row, int sheet, MandCBase mcp);
 	
-		/**
+	/**
 	 * Returns a new object of class '<em>Monitor AMB</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,7 +72,6 @@ public interface AmbFactory extends EFactory {
 	 * @!generated
 	 */
 	Monitor createMonitor(String[] row, Resource parent);
-	
 	/**
 	 * Returns a new object of class '<em>Archive</em>'.
 	 * <!-- begin-user-doc -->
@@ -79,6 +80,15 @@ public interface AmbFactory extends EFactory {
 	 * @generated
 	 */
 	Archive createArchive();
+
+	/**
+	 * Returns a new object of class '<em>Control</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Control</em>'.
+	 * @generated
+	 */
+	Control createControl();
 
 	/**
 	 * Returns a new object of class '<em>Archive</em>'.
@@ -98,15 +108,6 @@ public interface AmbFactory extends EFactory {
 	 */
 	Control createControl(String[] row, Resource parent);
 
-	/**
-	 * Returns a new object of class '<em>Control</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Control</em>'.
-	 * @generated
-	 */
-	Control createControl();
-	
 	/**
 	 * Returns a new object of class '<em>Device Model</em>'.
 	 * <!-- begin-user-doc -->

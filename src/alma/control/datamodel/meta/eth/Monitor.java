@@ -22,9 +22,7 @@
  */
 package alma.control.datamodel.meta.eth;
 
-import alma.control.datamodel.meta.eth.MandC;
 import alma.control.datamodel.meta.base.MonitorPoint;
-
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -37,7 +35,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.eth.Monitor#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.Monitor#getToInfoMPEth <em>To Info MP Eth</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.Monitor#getMandCb <em>Mand Cb</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.eth.EthPackage#getMonitor()
@@ -72,30 +70,30 @@ public interface Monitor extends MonitorPoint {
 	void setMac(MandC value);
 
 	/**
-	 * Returns the value of the '<em><b>To Info MP Eth</b></em>' reference.
+	 * Returns the value of the '<em><b>Mand Cb</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Info MP Eth</em>' reference isn't clear,
+	 * If the meaning of the '<em>Mand Cb</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info MP Eth</em>' reference.
-	 * @see #setToInfoMPEth(MandC)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getMonitor_ToInfoMPEth()
+	 * @return the value of the '<em>Mand Cb</em>' reference.
+	 * @see #setMandCb(MandC)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getMonitor_MandCb()
 	 * @model
 	 * @generated
 	 */
-	MandC getToInfoMPEth();
+	MandC getMandCb();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.Monitor#getToInfoMPEth <em>To Info MP Eth</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.Monitor#getMandCb <em>Mand Cb</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info MP Eth</em>' reference.
-	 * @see #getToInfoMPEth()
+	 * @param value the new value of the '<em>Mand Cb</em>' reference.
+	 * @see #getMandCb()
 	 * @generated
 	 */
-	void setToInfoMPEth(MandC value);
+	void setMandCb(MandC value);
 
 	/**
 	 * <!-- begin-user-doc -->

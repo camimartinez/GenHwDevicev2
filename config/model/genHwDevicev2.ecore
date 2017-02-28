@@ -22,8 +22,6 @@
                 <details key="body" value="if(isIntervalTE())&#xD;&#xA;&#x9;return IntervalFull().substring(3);&#xD;&#xA;return IntervalFull();"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toAssemblyColumn"
-                eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//control/datamodel/meta/base/ControlPoint">
             <eOperations name="Data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -352,12 +350,9 @@
               </eAnnotations>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/amb/MandCAMBDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toWorldToDataColumns"
-                eType="#//control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoControlSheet"
-                eType="#//control/datamodel/meta/amb/MandC"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toNormalizeNumber"
-                eType="#//control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mandCb" eType="#//control/datamodel/meta/amb/MandC"
+                containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="auxResource" eType="#//control/datamodel/meta/amb/ResourceDT"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//control/datamodel/meta/base/DeviceModel">
             <eOperations name="isMonitorDBOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -407,7 +402,7 @@
             </eOperations>
             <eOperations name="TheEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;String dir = generatedDir + &quot;/&quot; + Assembly();&#xA;&#x9;&#x9;Util utils = baseFac.createUtil();&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.html&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;HWSimBase.h&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;HWSimBase.cpp&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;CompSimBase.h&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;CompSimBase.cpp&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;CompSimBase.idl&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/test&quot;, &quot;Test&quot; + Assembly() + &quot;HWSimImpl.cpp&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/test&quot;, &quot;Test&quot; + Assembly() + &quot;AmbDeviceInt.cpp&quot;, 1);&#xA;&#x9;&#x9;if (!isMonitorDBOnly()) {&#xA;&#x9;&#x9;&#x9;if (isGenerateAlt()) {&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;.makefile&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;Impl.idl&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;Impl.h&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;Impl.cpp&quot;, 1);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;super.TheEnd();&#xA;&#x9;&#x9;} else &#xA;&#x9;&#x9;&#x9;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xA;&#x9;&#x9;return &quot;&quot;;"/>
+                <details key="body" value="&#x9;&#x9;String dir = generatedDir + &quot;/&quot; + Assembly();&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.html&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;HWSimBase.h&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;HWSimBase.cpp&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;CompSimBase.h&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;CompSimBase.cpp&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;CompSimBase.idl&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/test&quot;, &quot;Test&quot; + Assembly() + &quot;HWSimImpl.cpp&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/test&quot;, &quot;Test&quot; + Assembly() + &quot;AmbDeviceInt.cpp&quot;, 1);&#xA;&#x9;&#x9;if (!isMonitorDBOnly()) {&#xA;&#x9;&#x9;&#x9;if (isGenerateAlt()) {&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;.makefile&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;Impl.idl&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;Impl.h&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/../ALT/&quot;, Assembly() + &quot;Impl.cpp&quot;, 1);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;super.TheEnd();&#xA;&#x9;&#x9;} else &#xA;&#x9;&#x9;&#x9;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xA;&#x9;&#x9;return &quot;&quot;;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="NodeAddressInDecimal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -421,26 +416,20 @@
               </eAnnotations>
               <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toAddCP" eType="#//control/datamodel/meta/base/ControlPoint"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toNoteFromMain"
-                eType="#//control/datamodel/meta/base/Note"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toAddMP" eType="#//control/datamodel/meta/base/MonitorPoint"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoMain" eType="#//control/datamodel/meta/base/MainBase"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromMainSheet"
-                eType="#//control/datamodel/meta/amb/Main"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toMPfromMonitor"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="obtainMain" eType="#//control/datamodel/meta/amb/Main"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="obtainMonitorPoints"
                 eType="#//control/datamodel/meta/amb/Monitor"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toDataFromSpread"
-                eType="#//control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toarchiveProperties"
-                eType="#//control/datamodel/meta/amb/Archive" containment="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInstallEndGeneration"
-                eType="#//control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toSpreadsheetFrom"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="obtainArchiveProperties"
+                eType="#//control/datamodel/meta/amb/Archive"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="obtainControlPoints"
+                eType="#//control/datamodel/meta/amb/Control"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="parserSpreadsheet"
                 eType="#//control/datamodel/meta/base/SpreadsheetParser"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toValidateSpreadsheet"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="validateSpreadsheet"
                 eType="#//control/datamodel/meta/base/SpreadsheetValidator"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toGenericMP" eType="#//control/datamodel/meta/amb/GenericMonitorPoints"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="genericMonitorPoints"
+                eType="#//control/datamodel/meta/amb/GenericMonitorPoints"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="notess" eType="#//control/datamodel/meta/base/Note"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Main" eSuperTypes="#//control/datamodel/meta/base/MainBase">
             <eOperations name="Parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -473,8 +462,6 @@
                 <details key="body" value="return row[table.getColNum(sheet, &quot;Base Address&quot;)];"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromMain"
-                eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MandC">
             <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -740,21 +727,22 @@
               </eAnnotations>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"
-                defaultValueLiteral="BaseFactory.eINSTANCE;"/>
+                defaultValueLiteral=""/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"
-                defaultValueLiteral="BaseFactory.eINSTANCE;"/>
+                defaultValueLiteral=""/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//control/datamodel/meta/base/MandCBaseDT"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="Amask" eType="#//control/datamodel/meta/base/EStringArray"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoSheet" eType="#//control/datamodel/meta/base/MandCBase"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toDataFromMain"
-                eType="#//control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toMPDataType" eType="#//control/datamodel/meta/amb/Monitor"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toCPDataType" eType="#//control/datamodel/meta/amb/Control"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toUtilsToData"
-                eType="#//control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mandCb" eType="#//control/datamodel/meta/base/MandCBase"
+                containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="monitorPoints"
+                eType="#//control/datamodel/meta/amb/Monitor"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="controlPoints"
+                eType="#//control/datamodel/meta/amb/Control"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="utilss" eType="#//control/datamodel/meta/base/Util"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Monitor" eSuperTypes="#//control/datamodel/meta/base/MonitorPoint">
             <eOperations name="CanBeInvalid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1039,13 +1027,8 @@
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/amb/MandCAMBDT"
                 defaultValueLiteral=""/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="aux2" eType="#//control/datamodel/meta/amb/IteratorDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toNormalizeData"
-                eType="#//control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toColumnsCanBeInv"
-                eType="#//control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoMPSheet"
-                eType="#//control/datamodel/meta/amb/MandC"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="auxIterator" eType="#//control/datamodel/meta/amb/IteratorDT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="auxResource" eType="#//control/datamodel/meta/amb/ResourceDT"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="SWModule">
             <eOperations name="addMP">
@@ -1201,18 +1184,20 @@
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"
-                defaultValueLiteral="BaseFactory.eINSTANCE;"/>
+                defaultValueLiteral=""/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"
-                defaultValueLiteral="BaseFactory.eINSTANCE;"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toAddAllMP" eType="#//control/datamodel/meta/amb/Monitor"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toAddAllCP" eType="#//control/datamodel/meta/amb/Control"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toFormatDescriptions"
-                eType="#//control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toSheetColumns"
-                eType="#//control/datamodel/meta/base/Table"/>
+                defaultValueLiteral=""/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="addMonitorPoints"
+                eType="#//control/datamodel/meta/amb/Monitor"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="addControlPoints"
+                eType="#//control/datamodel/meta/amb/Control"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="GenericMonitorPoints">
-            <eOperations name="getParsedGenericSpreadsheet" eType="#//control/datamodel/meta/base/EStringArray3"/>
+            <eOperations name="getParsedGenericSpreadsheet" eType="#//control/datamodel/meta/base/EStringArray3">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="body" value="&#x9;&#x9;dirLocation = util.getInstallDir();&#xA;&#x9;&#x9;if (!(new java.io.File(dirLocation + &quot;/idl/GENERIC_spreadsheet.xml&quot;).exists())){&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;Spreadsheet GENERIC_spreadsheet not found. Exiting....&quot;);&#xA;&#x9;&#x9;&#x9;System.exit(1);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;String xml = parserSpreadsheet.getSpreadsheet(dirLocation + &quot;/idl&quot;, &quot;GENERIC_spreadsheet.xml&quot;);&#xA;&#x9;&#x9;String xmlFile = dirLocation + &quot;/idl/GENERIC_spreadsheet.xml&quot;;&#xA;&#x9;&#x9;String xsdFile = dirLocation + &quot;/config/schemas/amb/Workbook.xsd&quot;;&#xA;&#x9;&#x9;BaseFactory baseFac = BaseFactory.eINSTANCE;&#xA;&#x9;&#x9;SpreadsheetParser p = baseFac.createSpreadsheetParser(xml);&#xA;&#x9;&#x9;String [][][] spreadsheet = p.getWorksheets();&#xA;&#x9;&#x9;SpreadsheetValidator v = baseFac.createSpreadsheetValidator();&#xA;&#x9;&#x9;if (!v.validate(xmlFile,xsdFile)) {&#xA;&#x9;&#x9;&#x9;String s = &quot;Spreadsheet GENERIC_spreadsheet.xml is not a valid spreadsheet.&quot;;&#xA;&#x9;&#x9;&#x9;throw new RuntimeException(s);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;System.out.println(&quot;Spreadsheet GENERIC has been validated.&quot;);&#xA;&#xA;&#x9;&#x9;return spreadsheet;"/>
+              </eAnnotations>
+            </eOperations>
             <eOperations name="getDeviceWorksheetWithGenericPointsAdded" eType="#//control/datamodel/meta/base/EStringArray3">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value=" // Create the SP class&#xD;&#xA;        setDeviceName(spreadsheet[0][2][0]);&#xD;&#xA;        String [][][] genericSpreadsheet = getParsedGenericSpreadsheet();&#xD;&#xA;        // Now we iterate through spreadsheet adding monitor, control and archive generic points.&#xD;&#xA;        &#xD;&#xA;        // I coded this way to make the things clear&#xD;&#xA;        int[] Rows = null;&#xD;&#xA;        int[] Columns = null;&#xD;&#xA;        int[] GenericRows = null;&#xD;&#xA;        &#xD;&#xA;        Rows = new int[4];&#xD;&#xA;        Columns = new int[4];&#xD;&#xA;        GenericRows = new int[4];&#xD;&#xA;        &#xD;&#xA;        String deviceName=spreadsheet[0][2][0];&#xD;&#xA;        &#xD;&#xA;        int mainRows = spreadsheet[0].length;&#xD;&#xA;        int monitorRows = spreadsheet[1].length;&#xD;&#xA;        int controlRows = spreadsheet[2].length;&#xD;&#xA;        int archiveRows = spreadsheet[3].length;&#xD;&#xA;        &#xD;&#xA;        int mainColumns = spreadsheet[0][1].length;&#xD;&#xA;        int monitorColumns = spreadsheet[1][1].length;&#xD;&#xA;        int controlColumns = spreadsheet[2][1].length;&#xD;&#xA;        int archiveColumns = spreadsheet[3][1].length;&#xD;&#xA;        &#xD;&#xA;        int genericMonitorRows = genericSpreadsheet[1].length;&#xD;&#xA;        int genericControlRows = genericSpreadsheet[2].length;&#xD;&#xA;        int genericArchiveRows = genericSpreadsheet[3].length;&#xD;&#xA;        &#xD;&#xA;        // Well, first the newSpreadsheet is created. Arrays are static structures....&#xD;&#xA;        newSpreadsheet = new String[4][][];&#xD;&#xA;        newSpreadsheet[0] = new String[mainRows][mainColumns];&#xD;&#xA;        newSpreadsheet[1] = new String[monitorRows+genericMonitorRows-2][monitorColumns];&#xD;&#xA;        newSpreadsheet[2] = new String[controlRows+genericControlRows-2][controlColumns];&#xD;&#xA;        newSpreadsheet[3] = new String[archiveRows+genericArchiveRows-2][archiveColumns];&#xD;&#xA;        &#xD;&#xA;&#x9;// Hardware Device&#xD;&#xA;        newSpreadsheet[0][0] = new String[1];&#xD;&#xA;        newSpreadsheet[0][0][0] = spreadsheet[0][0][0];&#xD;&#xA;&#x9;// Monitor Point&#xD;&#xA;        newSpreadsheet[1][0] = new String[1];&#xD;&#xA;        newSpreadsheet[1][0][0] = spreadsheet[1][0][0];&#xD;&#xA;&#x9;// Control Point&#xD;&#xA;        newSpreadsheet[2][0] = new String[1];&#xD;&#xA;        newSpreadsheet[2][0][0] = spreadsheet[2][0][0];&#xD;&#xA;&#x9;// Archive Property&#xD;&#xA;        newSpreadsheet[3][0] = new String[1];&#xD;&#xA;        newSpreadsheet[3][0][0] = spreadsheet[3][0][0];&#xD;&#xA;        &#xD;&#xA;        Rows[0] = mainRows; // Yes here I ignore Notes on Main spreadsheet&#xD;&#xA;        Rows[1] = monitorRows;&#xD;&#xA;        Rows[2] = controlRows;&#xD;&#xA;        Rows[3] = archiveRows;&#xD;&#xA;        &#xD;&#xA;        Columns[0] = mainColumns;&#xD;&#xA;        Columns[1] = monitorColumns;&#xD;&#xA;        Columns[2] = controlColumns;&#xD;&#xA;        Columns[3] = archiveColumns;&#xD;&#xA;        &#xD;&#xA;        // Then I copy elements from spreadsheet to newSpreadsheet&#xD;&#xA;        for (int i = 0; i &lt; Rows.length; i++ ) {&#xD;&#xA;            for (int j = 1; j &lt; Rows[i]; j++) {&#xD;&#xA;                for (int k = 0; k &lt; Columns[i]; k++) {&#xD;&#xA;                    if (spreadsheet[i][j][k].equals(&quot;Notes&quot;)){&#xD;&#xA;                        newSpreadsheet[i][j] = new String[2];&#xD;&#xA;                        newSpreadsheet[i][j][k] = spreadsheet[i][j][k];&#xD;&#xA;                        newSpreadsheet[i][j][k+1] = spreadsheet[i][j][k+1];&#xD;&#xA;                        break; &#xD;&#xA;                    }&#xD;&#xA;                    newSpreadsheet[i][j][k] = spreadsheet[i][j][k];&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;            }&#xD;&#xA;        }        &#xD;&#xA;        &#xD;&#xA;        // Here we start the copy process from generic spreadsheet&#xD;&#xA;        GenericRows[0] = 0;&#xD;&#xA;        GenericRows[1] = genericMonitorRows;&#xD;&#xA;        GenericRows[2] = genericControlRows;&#xD;&#xA;        GenericRows[3] = genericArchiveRows;&#xD;&#xA;&#xD;&#xA;        for (int i = 1; i &lt; Rows.length ; i++ ) {&#xD;&#xA;            for (int j = Rows[i];j &lt; (Rows[i] + GenericRows[i] - 2); j++) {&#xD;&#xA;                for (int k = 0; k &lt; Columns[i]; k++) {&#xD;&#xA;                    if ( (genericSpreadsheet[i][j-Rows[i]+2][k]).equals(&quot;GENERIC&quot;)){&#xD;&#xA;                        newSpreadsheet[i][j][k] = deviceName;&#xD;&#xA;                    } else {&#xD;&#xA;                        newSpreadsheet[i][j][k] = genericSpreadsheet[i][j-Rows[i]+2][k];&#xD;&#xA;                    }&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;        return newSpreadsheet;"/>
@@ -1223,11 +1208,13 @@
                 eType="#//control/datamodel/meta/base/EStringArray3"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirLocation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toGetSpreadsheet"
-                eType="#//control/datamodel/meta/base/SpreadsheetParser"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toValidateTheSpreadsheet"
-                eType="#//control/datamodel/meta/base/SpreadsheetValidator"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInstallDir" eType="#//control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="base" eType="#//control/datamodel/meta/amb/BaseFactoryDT"
+                defaultValueLiteral=""/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="parserSpreadsheet"
+                eType="#//control/datamodel/meta/base/SpreadsheetParser" containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="util" eType="#//control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="validateSpreadsheet"
+                eType="#//control/datamodel/meta/base/SpreadsheetValidator" containment="true"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EDataType" name="MandCAMBDT" instanceClassName="alma.control.datamodel.meta.amb.MandC"/>
           <eClassifiers xsi:type="ecore:EDataType" name="BaseFactoryImpDT" instanceClassName="alma.control.datamodel.meta.base.impl.BaseFactoryImpl"/>
@@ -1256,7 +1243,7 @@
             </eOperations>
             <eOperations name="TheEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="String dir = generatedDir + &quot;/&quot; + Assembly();&#xD;&#xA;Util utils = BaseFactoryImpl.eINSTANCE.createUtil();&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;Base.cpp&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;Base.h&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Base.idl&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.xml&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;Component.xml&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/config/CDB/schemas&quot;, Assembly() + &quot;Base.xsd&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/config&quot;, &quot;TMCDB&quot; + Assembly() + &quot;Add.xml&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, Assembly() + &quot;Base.py&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, &quot;__init__.py&quot;, 1);&#xD;&#xA;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xD;&#xA;return &quot;&quot;;"/>
+                <details key="body" value="String dir = generatedDir + &quot;/&quot; + Assembly();&#xD;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;Base.cpp&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;Base.h&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Base.idl&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.xml&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;Component.xml&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/config/CDB/schemas&quot;, Assembly() + &quot;Base.xsd&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/config&quot;, &quot;TMCDB&quot; + Assembly() + &quot;Add.xml&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, Assembly() + &quot;Base.py&quot;, 1);&#xD;&#xA;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, &quot;__init__.py&quot;, 1);&#xD;&#xA;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xD;&#xA;return &quot;&quot;;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="checkIfFileExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1399,18 +1386,13 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorDBOnly"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateAlt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toArchiveIndex"
-                eType="#//control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toContPoints" eType="#//control/datamodel/meta/base/ControlPoint"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toMoniPoints" eType="#//control/datamodel/meta/base/MonitorPoint"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toEndOfGeneration"
-                eType="#//control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toArchivProp" eType="#//control/datamodel/meta/base/ArchiveProperty"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfFromSpread"
-                eType="#//control/datamodel/meta/base/MainBase"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="utils" eType="#//control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="archivesProperties"
+                eType="#//control/datamodel/meta/base/ArchiveProperty"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MonitorPoint" abstract="true"
-              eSuperTypes="#//control/datamodel/meta/base/MandCBase #//control/datamodel/meta/amb/ResourceAuxClass">
+              eSuperTypes="#//control/datamodel/meta/base/MandCBase">
             <eOperations name="Default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="return row[table.getColNum(sheet, &quot;Default&quot;)];"/>
@@ -1490,13 +1472,11 @@
             <eOperations name="isPartOfPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eOperations name="isHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eOperations name="isPartOfHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromAPSpread"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="archiveProper"
                 eType="#//control/datamodel/meta/base/ArchiveProperty"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromMPSpread"
-                eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="ControlPoint" abstract="true"
-              eSuperTypes="#//control/datamodel/meta/base/MandCBase #//control/datamodel/meta/amb/ResourceAuxClass">
+              eSuperTypes="#//control/datamodel/meta/base/MandCBase">
             <eOperations name="CPName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="return PName();"/>
@@ -1517,8 +1497,6 @@
                 <details key="body" value="return false;&#xD;&#xA;"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toArchOnUseControl"
-                eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Table">
             <eOperations name="getSheetNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
@@ -1753,16 +1731,14 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" unique="false"
-                eType="#//control/datamodel/meta/amb/TableDT" defaultValueLiteral="BaseFactory.eINSTANCE;"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"
-                defaultValueLiteral="BaseFactory.eINSTANCE;"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="setInfFromSpread"
-                eType="#//control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toCommonInf" eType="#//control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toMPorCP" eType="#//control/datamodel/meta/base/ArchiveProperty"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toSheetMP" eType="#//control/datamodel/meta/base/MonitorPoint"/>
+                eType="#//control/datamodel/meta/amb/TableDT" defaultValueLiteral=""/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="archivesProperties"
+                eType="#//control/datamodel/meta/base/ArchiveProperty"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="util" eType="#//control/datamodel/meta/base/Util"
+                containment="true"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="ArchiveProperty" eSuperTypes="#//control/datamodel/meta/amb/ResourceAuxClass">
+          <eClassifiers xsi:type="ecore:EClass" name="ArchiveProperty">
             <eOperations name="isRefersTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="return mp != null || cp != null;&#xD;&#xA;"/>
@@ -1855,9 +1831,8 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="cp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"
-                defaultValueLiteral="BaseFactory.eINSTANCE;"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toColumnsInfoOfArchi"
-                eType="#//control/datamodel/meta/base/Table"/>
+                defaultValueLiteral=""/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Note">
             <eOperations name="Note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1879,7 +1854,9 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="seh" eType="#//control/datamodel/meta/base/SimpleErrorHandlerDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorList" eType="#//control/datamodel/meta/base/ArrayList"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sehTmp" eType="#//control/datamodel/meta/base/ErrorHandlerDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="errorHandler" eType="#//control/datamodel/meta/base/SimpleErrorHandler"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseFac" eType="#//control/datamodel/meta/amb/BaseFactoryDT"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="errorHandler" eType="#//control/datamodel/meta/base/SimpleErrorHandler"
+                containment="true"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="SpreadsheetParser">
             <eOperations name="getSpreadsheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1941,10 +1918,10 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="xsdFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="newline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
                 defaultValueLiteral=""/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toNewContent" eType="#//control/datamodel/meta/base/Pair"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="pairSpread" eType="#//control/datamodel/meta/base/Pair"
                 containment="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="tovalidateSpreads"
-                eType="#//control/datamodel/meta/base/SpreadsheetValidator"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="validateSpread"
+                eType="#//control/datamodel/meta/base/SpreadsheetValidator" containment="true"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Util">
             <eOperations name="error">
@@ -2096,7 +2073,7 @@
                 defaultValueLiteral="54"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTH" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTHalt" eType="#//control/datamodel/meta/base/EStringArray"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toRawBytes" eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Pair" abstract="true" eSuperTypes="#//control/datamodel/meta/base/SpreadsheetParser">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -2178,14 +2155,11 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" unique="false"
-                eType="#//control/datamodel/meta/amb/TableDT" defaultValueLiteral="BaseFactory.eINSTANCE;"/>
+                eType="#//control/datamodel/meta/amb/TableDT" defaultValueLiteral=""/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"
-                defaultValueLiteral="BaseFactory.eINSTANCE;"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toImplement" eType="#//control/datamodel/meta/base/DeviceModel"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toConvertInfo"
-                eType="#//control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromSpread"
-                eType="#//control/datamodel/meta/base/Table"/>
+                defaultValueLiteral=""/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="utilss" eType="#//control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandlerDT" instanceClassName="alma.control.datamodel.meta.base.SimpleErrorHandler"/>
           <eClassifiers xsi:type="ecore:EDataType" name="MandCBaseDT" instanceClassName="alma.control.datamodel.meta.base.MandCBase"
@@ -2286,8 +2260,6 @@
               </eAnnotations>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/eth/MandCETHDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoControlEth"
-                eType="#//control/datamodel/meta/eth/MandC"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//control/datamodel/meta/base/DeviceModel">
             <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -2301,16 +2273,17 @@
               </eAnnotations>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EReference" name="infoDevMain" eType="#//control/datamodel/meta/base/MainBase"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="infoControl" eType="#//control/datamodel/meta/eth/Control"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="infoMonitor" eType="#//control/datamodel/meta/eth/Monitor"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toEndEth" eType="#//control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="infoArch" eType="#//control/datamodel/meta/eth/Archive"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="dataSpreadsheet"
-                eType="#//control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toNotes" eType="#//control/datamodel/meta/base/Note"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toValidateSpreadEth"
+            <eStructuralFeatures xsi:type="ecore:EReference" name="obtainControlPoints"
+                eType="#//control/datamodel/meta/eth/Control"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="obtainMonitorPoints"
+                eType="#//control/datamodel/meta/eth/Monitor"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="obtainArchiveProperties"
+                eType="#//control/datamodel/meta/eth/Archive"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="validateSpreadsheet"
                 eType="#//control/datamodel/meta/base/SpreadsheetValidator"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toSpreadEth" eType="#//control/datamodel/meta/base/SpreadsheetParser"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="parserSpreadsheet"
+                eType="#//control/datamodel/meta/base/SpreadsheetParser"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="notess" eType="#//control/datamodel/meta/base/Note"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Main" eSuperTypes="#//control/datamodel/meta/base/MainBase">
             <eOperations name="VendorClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -2318,7 +2291,6 @@
                 <details key="body" value="return row[table.getColNum(sheet, &quot;Vendor Class&quot;)];"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoMain" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MandC">
             <eOperations name="setAssemblyName">
@@ -2400,10 +2372,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"
-                defaultValueLiteral="BaseFactory.eINSTANCE;"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoFromCol"
-                eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="table" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Monitor" eSuperTypes="#//control/datamodel/meta/base/MonitorPoint">
             <eOperations name="setAssemblyName">
@@ -2508,7 +2477,7 @@
               </eAnnotations>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/eth/MandCETHDT"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="toInfoMPEth" eType="#//control/datamodel/meta/eth/MandC"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mandCb" eType="#//control/datamodel/meta/eth/MandC"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EDataType" name="MandCETHDT" instanceClassName="alma.control.datamodel.meta.eth.MandC"/>
         </eSubpackages>

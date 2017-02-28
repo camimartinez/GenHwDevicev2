@@ -24,6 +24,7 @@ package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Monitor Point</b></em>'.
@@ -33,66 +34,39 @@ import org.eclipse.emf.ecore.resource.Resource;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link alma.control.datamodel.meta.base.MonitorPoint#getToInfoFromAPSpread <em>To Info From AP Spread</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MonitorPoint#getToInfoFromMPSpread <em>To Info From MP Spread</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MonitorPoint#getArchiveProper <em>Archive Proper</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint()
- * @model abstract="true" superTypes="alma.control.datamodel.meta.base.MandCBase alma.control.datamodel.meta.amb.ResourceAuxClass"
+ * @model abstract="true"
  * @generated
  */
-public interface MonitorPoint extends MandCBase, Resource {
+public interface MonitorPoint extends MandCBase {
 	/**
-	 * Returns the value of the '<em><b>To Info From AP Spread</b></em>' reference.
+	 * Returns the value of the '<em><b>Archive Proper</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Info From AP Spread</em>' reference isn't clear,
+	 * If the meaning of the '<em>Archive Proper</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info From AP Spread</em>' reference.
-	 * @see #setToInfoFromAPSpread(ArchiveProperty)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint_ToInfoFromAPSpread()
+	 * @return the value of the '<em>Archive Proper</em>' reference.
+	 * @see #setArchiveProper(ArchiveProperty)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint_ArchiveProper()
 	 * @model
 	 * @generated
 	 */
-	ArchiveProperty getToInfoFromAPSpread();
+	ArchiveProperty getArchiveProper();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MonitorPoint#getToInfoFromAPSpread <em>To Info From AP Spread</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MonitorPoint#getArchiveProper <em>Archive Proper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info From AP Spread</em>' reference.
-	 * @see #getToInfoFromAPSpread()
+	 * @param value the new value of the '<em>Archive Proper</em>' reference.
+	 * @see #getArchiveProper()
 	 * @generated
 	 */
-	void setToInfoFromAPSpread(ArchiveProperty value);
-
-	/**
-	 * Returns the value of the '<em><b>To Info From MP Spread</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Info From MP Spread</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info From MP Spread</em>' reference.
-	 * @see #setToInfoFromMPSpread(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint_ToInfoFromMPSpread()
-	 * @model
-	 * @generated
-	 */
-	Table getToInfoFromMPSpread();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MonitorPoint#getToInfoFromMPSpread <em>To Info From MP Spread</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info From MP Spread</em>' reference.
-	 * @see #getToInfoFromMPSpread()
-	 * @generated
-	 */
-	void setToInfoFromMPSpread(Table value);
+	void setArchiveProper(ArchiveProperty value);
 
 	/**
 	 * <!-- begin-user-doc -->

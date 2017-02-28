@@ -22,14 +22,17 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
-
+import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.GenericMonitorPoints;
+
+import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
 import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -48,9 +51,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getNewSpreadsheet <em>New Spreadsheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getDirLocation <em>Dir Location</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getToGetSpreadsheet <em>To Get Spreadsheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getToValidateTheSpreadsheet <em>To Validate The Spreadsheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getToInstallDir <em>To Install Dir</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getBase <em>Base</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getParserSpreadsheet <em>Parser Spreadsheet</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getUtil <em>Util</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl#getValidateSpreadsheet <em>Validate Spreadsheet</em>}</li>
  * </ul>
  *
  * @generated
@@ -117,34 +121,54 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	protected String dirLocation = DIR_LOCATION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getToGetSpreadsheet() <em>To Get Spreadsheet</em>}' reference.
+	 * The default value of the '{@link #getBase() <em>Base</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToGetSpreadsheet()
+	 * @see #getBase()
 	 * @generated
 	 * @ordered
 	 */
-	protected SpreadsheetParser toGetSpreadsheet;
+	protected static final BaseFactory BASE_EDEFAULT = (BaseFactory)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getBaseFactoryDT(), "");
 
 	/**
-	 * The cached value of the '{@link #getToValidateTheSpreadsheet() <em>To Validate The Spreadsheet</em>}' reference.
+	 * The cached value of the '{@link #getBase() <em>Base</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToValidateTheSpreadsheet()
+	 * @see #getBase()
 	 * @generated
 	 * @ordered
 	 */
-	protected SpreadsheetValidator toValidateTheSpreadsheet;
+	protected BaseFactory base = BASE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getToInstallDir() <em>To Install Dir</em>}' reference.
+	 * The cached value of the '{@link #getParserSpreadsheet() <em>Parser Spreadsheet</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToInstallDir()
+	 * @see #getParserSpreadsheet()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util toInstallDir;
+	protected SpreadsheetParser parserSpreadsheet;
+
+	/**
+	 * The cached value of the '{@link #getUtil() <em>Util</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtil()
+	 * @generated
+	 * @ordered
+	 */
+	protected Util util;
+
+	/**
+	 * The cached value of the '{@link #getValidateSpreadsheet() <em>Validate Spreadsheet</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValidateSpreadsheet()
+	 * @generated
+	 * @ordered
+	 */
+	protected SpreadsheetValidator validateSpreadsheet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,16 +257,80 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetParser getToGetSpreadsheet() {
-		if (toGetSpreadsheet != null && toGetSpreadsheet.eIsProxy()) {
-			InternalEObject oldToGetSpreadsheet = (InternalEObject)toGetSpreadsheet;
-			toGetSpreadsheet = (SpreadsheetParser)eResolveProxy(oldToGetSpreadsheet);
-			if (toGetSpreadsheet != oldToGetSpreadsheet) {
+	public BaseFactory getBase() {
+		return base;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBase(BaseFactory newBase) {
+		BaseFactory oldBase = base;
+		base = newBase;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__BASE, oldBase, base));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SpreadsheetParser getParserSpreadsheet() {
+		return parserSpreadsheet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParserSpreadsheet(SpreadsheetParser newParserSpreadsheet, NotificationChain msgs) {
+		SpreadsheetParser oldParserSpreadsheet = parserSpreadsheet;
+		parserSpreadsheet = newParserSpreadsheet;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__PARSER_SPREADSHEET, oldParserSpreadsheet, newParserSpreadsheet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParserSpreadsheet(SpreadsheetParser newParserSpreadsheet) {
+		if (newParserSpreadsheet != parserSpreadsheet) {
+			NotificationChain msgs = null;
+			if (parserSpreadsheet != null)
+				msgs = ((InternalEObject)parserSpreadsheet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AmbPackage.GENERIC_MONITOR_POINTS__PARSER_SPREADSHEET, null, msgs);
+			if (newParserSpreadsheet != null)
+				msgs = ((InternalEObject)newParserSpreadsheet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AmbPackage.GENERIC_MONITOR_POINTS__PARSER_SPREADSHEET, null, msgs);
+			msgs = basicSetParserSpreadsheet(newParserSpreadsheet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__PARSER_SPREADSHEET, newParserSpreadsheet, newParserSpreadsheet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Util getUtil() {
+		if (util != null && util.eIsProxy()) {
+			InternalEObject oldUtil = (InternalEObject)util;
+			util = (Util)eResolveProxy(oldUtil);
+			if (util != oldUtil) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET, oldToGetSpreadsheet, toGetSpreadsheet));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.GENERIC_MONITOR_POINTS__UTIL, oldUtil, util));
 			}
 		}
-		return toGetSpreadsheet;
+		return util;
 	}
 
 	/**
@@ -250,8 +338,8 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetParser basicGetToGetSpreadsheet() {
-		return toGetSpreadsheet;
+	public Util basicGetUtil() {
+		return util;
 	}
 
 	/**
@@ -259,11 +347,11 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToGetSpreadsheet(SpreadsheetParser newToGetSpreadsheet) {
-		SpreadsheetParser oldToGetSpreadsheet = toGetSpreadsheet;
-		toGetSpreadsheet = newToGetSpreadsheet;
+	public void setUtil(Util newUtil) {
+		Util oldUtil = util;
+		util = newUtil;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET, oldToGetSpreadsheet, toGetSpreadsheet));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__UTIL, oldUtil, util));
 	}
 
 	/**
@@ -271,16 +359,23 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetValidator getToValidateTheSpreadsheet() {
-		if (toValidateTheSpreadsheet != null && toValidateTheSpreadsheet.eIsProxy()) {
-			InternalEObject oldToValidateTheSpreadsheet = (InternalEObject)toValidateTheSpreadsheet;
-			toValidateTheSpreadsheet = (SpreadsheetValidator)eResolveProxy(oldToValidateTheSpreadsheet);
-			if (toValidateTheSpreadsheet != oldToValidateTheSpreadsheet) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET, oldToValidateTheSpreadsheet, toValidateTheSpreadsheet));
-			}
+	public SpreadsheetValidator getValidateSpreadsheet() {
+		return validateSpreadsheet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValidateSpreadsheet(SpreadsheetValidator newValidateSpreadsheet, NotificationChain msgs) {
+		SpreadsheetValidator oldValidateSpreadsheet = validateSpreadsheet;
+		validateSpreadsheet = newValidateSpreadsheet;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__VALIDATE_SPREADSHEET, oldValidateSpreadsheet, newValidateSpreadsheet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return toValidateTheSpreadsheet;
+		return msgs;
 	}
 
 	/**
@@ -288,58 +383,18 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetValidator basicGetToValidateTheSpreadsheet() {
-		return toValidateTheSpreadsheet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToValidateTheSpreadsheet(SpreadsheetValidator newToValidateTheSpreadsheet) {
-		SpreadsheetValidator oldToValidateTheSpreadsheet = toValidateTheSpreadsheet;
-		toValidateTheSpreadsheet = newToValidateTheSpreadsheet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET, oldToValidateTheSpreadsheet, toValidateTheSpreadsheet));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util getToInstallDir() {
-		if (toInstallDir != null && toInstallDir.eIsProxy()) {
-			InternalEObject oldToInstallDir = (InternalEObject)toInstallDir;
-			toInstallDir = (Util)eResolveProxy(oldToInstallDir);
-			if (toInstallDir != oldToInstallDir) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.GENERIC_MONITOR_POINTS__TO_INSTALL_DIR, oldToInstallDir, toInstallDir));
-			}
+	public void setValidateSpreadsheet(SpreadsheetValidator newValidateSpreadsheet) {
+		if (newValidateSpreadsheet != validateSpreadsheet) {
+			NotificationChain msgs = null;
+			if (validateSpreadsheet != null)
+				msgs = ((InternalEObject)validateSpreadsheet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AmbPackage.GENERIC_MONITOR_POINTS__VALIDATE_SPREADSHEET, null, msgs);
+			if (newValidateSpreadsheet != null)
+				msgs = ((InternalEObject)newValidateSpreadsheet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AmbPackage.GENERIC_MONITOR_POINTS__VALIDATE_SPREADSHEET, null, msgs);
+			msgs = basicSetValidateSpreadsheet(newValidateSpreadsheet, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return toInstallDir;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util basicGetToInstallDir() {
-		return toInstallDir;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToInstallDir(Util newToInstallDir) {
-		Util oldToInstallDir = toInstallDir;
-		toInstallDir = newToInstallDir;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__TO_INSTALL_DIR, oldToInstallDir, toInstallDir));
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__VALIDATE_SPREADSHEET, newValidateSpreadsheet, newValidateSpreadsheet));
 	}
 
 	/**
@@ -348,9 +403,27 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * @generated
 	 */
 	public String[][][] getParsedGenericSpreadsheet() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				dirLocation = util.getInstallDir();
+				if (!(new java.io.File(dirLocation + "/idl/GENERIC_spreadsheet.xml").exists())){
+					System.out.println("Spreadsheet GENERIC_spreadsheet not found. Exiting....");
+					System.exit(1);
+				}
+		
+				String xml = parserSpreadsheet.getSpreadsheet(dirLocation + "/idl", "GENERIC_spreadsheet.xml");
+				String xmlFile = dirLocation + "/idl/GENERIC_spreadsheet.xml";
+				String xsdFile = dirLocation + "/config/schemas/amb/Workbook.xsd";
+				BaseFactory baseFac = BaseFactory.eINSTANCE;
+				SpreadsheetParser p = baseFac.createSpreadsheetParser(xml);
+				String [][][] spreadsheet = p.getWorksheets();
+				SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
+				if (!v.validate(xmlFile,xsdFile)) {
+					String s = "Spreadsheet GENERIC_spreadsheet.xml is not a valid spreadsheet.";
+					throw new RuntimeException(s);
+				}
+		
+				System.out.println("Spreadsheet GENERIC has been validated.");
+		
+				return spreadsheet;
 	}
 
 	/**
@@ -461,6 +534,22 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AmbPackage.GENERIC_MONITOR_POINTS__PARSER_SPREADSHEET:
+				return basicSetParserSpreadsheet(null, msgs);
+			case AmbPackage.GENERIC_MONITOR_POINTS__VALIDATE_SPREADSHEET:
+				return basicSetValidateSpreadsheet(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AmbPackage.GENERIC_MONITOR_POINTS__NEW_SPREADSHEET:
@@ -469,15 +558,15 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 				return getDeviceName();
 			case AmbPackage.GENERIC_MONITOR_POINTS__DIR_LOCATION:
 				return getDirLocation();
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET:
-				if (resolve) return getToGetSpreadsheet();
-				return basicGetToGetSpreadsheet();
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET:
-				if (resolve) return getToValidateTheSpreadsheet();
-				return basicGetToValidateTheSpreadsheet();
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_INSTALL_DIR:
-				if (resolve) return getToInstallDir();
-				return basicGetToInstallDir();
+			case AmbPackage.GENERIC_MONITOR_POINTS__BASE:
+				return getBase();
+			case AmbPackage.GENERIC_MONITOR_POINTS__PARSER_SPREADSHEET:
+				return getParserSpreadsheet();
+			case AmbPackage.GENERIC_MONITOR_POINTS__UTIL:
+				if (resolve) return getUtil();
+				return basicGetUtil();
+			case AmbPackage.GENERIC_MONITOR_POINTS__VALIDATE_SPREADSHEET:
+				return getValidateSpreadsheet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -499,14 +588,17 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 			case AmbPackage.GENERIC_MONITOR_POINTS__DIR_LOCATION:
 				setDirLocation((String)newValue);
 				return;
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET:
-				setToGetSpreadsheet((SpreadsheetParser)newValue);
+			case AmbPackage.GENERIC_MONITOR_POINTS__BASE:
+				setBase((BaseFactory)newValue);
 				return;
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET:
-				setToValidateTheSpreadsheet((SpreadsheetValidator)newValue);
+			case AmbPackage.GENERIC_MONITOR_POINTS__PARSER_SPREADSHEET:
+				setParserSpreadsheet((SpreadsheetParser)newValue);
 				return;
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_INSTALL_DIR:
-				setToInstallDir((Util)newValue);
+			case AmbPackage.GENERIC_MONITOR_POINTS__UTIL:
+				setUtil((Util)newValue);
+				return;
+			case AmbPackage.GENERIC_MONITOR_POINTS__VALIDATE_SPREADSHEET:
+				setValidateSpreadsheet((SpreadsheetValidator)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -529,14 +621,17 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 			case AmbPackage.GENERIC_MONITOR_POINTS__DIR_LOCATION:
 				setDirLocation(DIR_LOCATION_EDEFAULT);
 				return;
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET:
-				setToGetSpreadsheet((SpreadsheetParser)null);
+			case AmbPackage.GENERIC_MONITOR_POINTS__BASE:
+				setBase(BASE_EDEFAULT);
 				return;
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET:
-				setToValidateTheSpreadsheet((SpreadsheetValidator)null);
+			case AmbPackage.GENERIC_MONITOR_POINTS__PARSER_SPREADSHEET:
+				setParserSpreadsheet((SpreadsheetParser)null);
 				return;
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_INSTALL_DIR:
-				setToInstallDir((Util)null);
+			case AmbPackage.GENERIC_MONITOR_POINTS__UTIL:
+				setUtil((Util)null);
+				return;
+			case AmbPackage.GENERIC_MONITOR_POINTS__VALIDATE_SPREADSHEET:
+				setValidateSpreadsheet((SpreadsheetValidator)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -556,12 +651,14 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 				return DEVICE_NAME_EDEFAULT == null ? deviceName != null : !DEVICE_NAME_EDEFAULT.equals(deviceName);
 			case AmbPackage.GENERIC_MONITOR_POINTS__DIR_LOCATION:
 				return DIR_LOCATION_EDEFAULT == null ? dirLocation != null : !DIR_LOCATION_EDEFAULT.equals(dirLocation);
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_GET_SPREADSHEET:
-				return toGetSpreadsheet != null;
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_VALIDATE_THE_SPREADSHEET:
-				return toValidateTheSpreadsheet != null;
-			case AmbPackage.GENERIC_MONITOR_POINTS__TO_INSTALL_DIR:
-				return toInstallDir != null;
+			case AmbPackage.GENERIC_MONITOR_POINTS__BASE:
+				return BASE_EDEFAULT == null ? base != null : !BASE_EDEFAULT.equals(base);
+			case AmbPackage.GENERIC_MONITOR_POINTS__PARSER_SPREADSHEET:
+				return parserSpreadsheet != null;
+			case AmbPackage.GENERIC_MONITOR_POINTS__UTIL:
+				return util != null;
+			case AmbPackage.GENERIC_MONITOR_POINTS__VALIDATE_SPREADSHEET:
+				return validateSpreadsheet != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -582,6 +679,8 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 		result.append(deviceName);
 		result.append(", dirLocation: ");
 		result.append(dirLocation);
+		result.append(", base: ");
+		result.append(base);
 		result.append(')');
 		return result.toString();
 	}

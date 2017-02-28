@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.eth;
 
 import alma.control.datamodel.meta.base.ArchiveProperty;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->

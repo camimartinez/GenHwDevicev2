@@ -24,12 +24,9 @@ package alma.control.datamodel.meta.base.util;
 
 import alma.control.datamodel.meta.base.*;
 
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.Switch;
 
@@ -128,7 +125,6 @@ public class BaseSwitch<T> extends Switch<T> {
 			case BasePackage.ARCHIVE_PROPERTY: {
 				ArchiveProperty archiveProperty = (ArchiveProperty)theEObject;
 				T result = caseArchiveProperty(archiveProperty);
-				if (result == null) result = caseResourceAuxClass(archiveProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

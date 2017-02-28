@@ -22,9 +22,7 @@
  */
 package alma.control.datamodel.meta.eth;
 
-import alma.control.datamodel.meta.eth.MandC;
 import alma.control.datamodel.meta.base.ControlPoint;
-
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -37,7 +35,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.eth.Control#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.Control#getToInfoControlEth <em>To Info Control Eth</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.eth.EthPackage#getControl()
@@ -70,32 +67,6 @@ public interface Control extends ControlPoint {
 	 * @generated
 	 */
 	void setMac(MandC value);
-
-	/**
-	 * Returns the value of the '<em><b>To Info Control Eth</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Info Control Eth</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info Control Eth</em>' reference.
-	 * @see #setToInfoControlEth(MandC)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getControl_ToInfoControlEth()
-	 * @model
-	 * @generated
-	 */
-	MandC getToInfoControlEth();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.Control#getToInfoControlEth <em>To Info Control Eth</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info Control Eth</em>' reference.
-	 * @see #getToInfoControlEth()
-	 * @generated
-	 */
-	void setToInfoControlEth(MandC value);
 
 	/**
 	 * <!-- begin-user-doc -->

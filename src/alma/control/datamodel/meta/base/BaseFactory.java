@@ -33,7 +33,14 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface BaseFactory extends EFactory {
-	
+	/**
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	BaseFactory eINSTANCE = alma.control.datamodel.meta.base.impl.BaseFactoryImpl.init();
+
 	/**
 	 * Returns a new object of class '<em>Archive Property</em>'.
 	 * <!-- begin-user-doc -->
@@ -61,14 +68,6 @@ public interface BaseFactory extends EFactory {
 	 */
 	MainBase createMainBase(String[] row);
 	
-	/**
-	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	BaseFactory eINSTANCE = alma.control.datamodel.meta.base.impl.BaseFactoryImpl.init();
-
 	/**
 	 * Returns a new object of class '<em>Table</em>'.
 	 * <!-- begin-user-doc -->

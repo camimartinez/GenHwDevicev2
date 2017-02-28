@@ -22,13 +22,8 @@
  */
 package alma.control.datamodel.meta.amb;
 
-
-import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.base.ControlPoint;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
-
-
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,9 +35,8 @@ import alma.control.datamodel.meta.base.Util;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.Control#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Control#getToWorldToDataColumns <em>To World To Data Columns</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Control#getToInfoControlSheet <em>To Info Control Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Control#getToNormalizeNumber <em>To Normalize Number</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.Control#getMandCb <em>Mand Cb</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.Control#getAuxResource <em>Aux Resource</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getControl()
@@ -77,82 +71,56 @@ public interface Control extends ControlPoint {
 	void setMac(MandC value);
 
 	/**
-	 * Returns the value of the '<em><b>To World To Data Columns</b></em>' reference.
+	 * Returns the value of the '<em><b>Mand Cb</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To World To Data Columns</em>' reference isn't clear,
+	 * If the meaning of the '<em>Mand Cb</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To World To Data Columns</em>' reference.
-	 * @see #setToWorldToDataColumns(Table)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getControl_ToWorldToDataColumns()
-	 * @model
+	 * @return the value of the '<em>Mand Cb</em>' containment reference.
+	 * @see #setMandCb(MandC)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getControl_MandCb()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Table getToWorldToDataColumns();
+	MandC getMandCb();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Control#getToWorldToDataColumns <em>To World To Data Columns</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Control#getMandCb <em>Mand Cb</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To World To Data Columns</em>' reference.
-	 * @see #getToWorldToDataColumns()
+	 * @param value the new value of the '<em>Mand Cb</em>' containment reference.
+	 * @see #getMandCb()
 	 * @generated
 	 */
-	void setToWorldToDataColumns(Table value);
+	void setMandCb(MandC value);
 
 	/**
-	 * Returns the value of the '<em><b>To Info Control Sheet</b></em>' reference.
+	 * Returns the value of the '<em><b>Aux Resource</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Info Control Sheet</em>' reference isn't clear,
+	 * If the meaning of the '<em>Aux Resource</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info Control Sheet</em>' reference.
-	 * @see #setToInfoControlSheet(MandC)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getControl_ToInfoControlSheet()
-	 * @model
+	 * @return the value of the '<em>Aux Resource</em>' attribute.
+	 * @see #setAuxResource(Resource)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getControl_AuxResource()
+	 * @model dataType="alma.control.datamodel.meta.amb.ResourceDT"
 	 * @generated
 	 */
-	MandC getToInfoControlSheet();
+	Resource getAuxResource();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Control#getToInfoControlSheet <em>To Info Control Sheet</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Control#getAuxResource <em>Aux Resource</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info Control Sheet</em>' reference.
-	 * @see #getToInfoControlSheet()
+	 * @param value the new value of the '<em>Aux Resource</em>' attribute.
+	 * @see #getAuxResource()
 	 * @generated
 	 */
-	void setToInfoControlSheet(MandC value);
-
-	/**
-	 * Returns the value of the '<em><b>To Normalize Number</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Normalize Number</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Normalize Number</em>' reference.
-	 * @see #setToNormalizeNumber(Util)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getControl_ToNormalizeNumber()
-	 * @model
-	 * @generated
-	 */
-	Util getToNormalizeNumber();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Control#getToNormalizeNumber <em>To Normalize Number</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Normalize Number</em>' reference.
-	 * @see #getToNormalizeNumber()
-	 * @generated
-	 */
-	void setToNormalizeNumber(Util value);
+	void setAuxResource(Resource value);
 
 	/**
 	 * <!-- begin-user-doc -->

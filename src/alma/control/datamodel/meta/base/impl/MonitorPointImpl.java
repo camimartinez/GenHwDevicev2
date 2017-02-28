@@ -25,7 +25,6 @@ package alma.control.datamodel.meta.base.impl;
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.MonitorPoint;
-import alma.control.datamodel.meta.base.Table;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -33,7 +32,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -44,14 +42,23 @@ import org.eclipse.emf.ecore.resource.Resource;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MonitorPointImpl#getToInfoFromAPSpread <em>To Info From AP Spread</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MonitorPointImpl#getToInfoFromMPSpread <em>To Info From MP Spread</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MonitorPointImpl#getArchiveProper <em>Archive Proper</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorPoint {
 	
+	/**
+	 * The cached value of the '{@link #getArchiveProper() <em>Archive Proper</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getArchiveProper()
+	 * @generated
+	 * @ordered
+	 */
+	protected ArchiveProperty archiveProper;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,26 +68,6 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 		super(row, parent);
 	}	
 	
-	/**
-	 * The cached value of the '{@link #getToInfoFromAPSpread() <em>To Info From AP Spread</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToInfoFromAPSpread()
-	 * @generated
-	 * @ordered
-	 */
-	protected ArchiveProperty toInfoFromAPSpread;
-
-	/**
-	 * The cached value of the '{@link #getToInfoFromMPSpread() <em>To Info From MP Spread</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToInfoFromMPSpread()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table toInfoFromMPSpread;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,16 +92,16 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveProperty getToInfoFromAPSpread() {
-		if (toInfoFromAPSpread != null && toInfoFromAPSpread.eIsProxy()) {
-			InternalEObject oldToInfoFromAPSpread = (InternalEObject)toInfoFromAPSpread;
-			toInfoFromAPSpread = (ArchiveProperty)eResolveProxy(oldToInfoFromAPSpread);
-			if (toInfoFromAPSpread != oldToInfoFromAPSpread) {
+	public ArchiveProperty getArchiveProper() {
+		if (archiveProper != null && archiveProper.eIsProxy()) {
+			InternalEObject oldArchiveProper = (InternalEObject)archiveProper;
+			archiveProper = (ArchiveProperty)eResolveProxy(oldArchiveProper);
+			if (archiveProper != oldArchiveProper) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MONITOR_POINT__TO_INFO_FROM_AP_SPREAD, oldToInfoFromAPSpread, toInfoFromAPSpread));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MONITOR_POINT__ARCHIVE_PROPER, oldArchiveProper, archiveProper));
 			}
 		}
-		return toInfoFromAPSpread;
+		return archiveProper;
 	}
 
 	/**
@@ -122,8 +109,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveProperty basicGetToInfoFromAPSpread() {
-		return toInfoFromAPSpread;
+	public ArchiveProperty basicGetArchiveProper() {
+		return archiveProper;
 	}
 
 	/**
@@ -131,11 +118,11 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToInfoFromAPSpread(ArchiveProperty newToInfoFromAPSpread) {
-		ArchiveProperty oldToInfoFromAPSpread = toInfoFromAPSpread;
-		toInfoFromAPSpread = newToInfoFromAPSpread;
+	public void setArchiveProper(ArchiveProperty newArchiveProper) {
+		ArchiveProperty oldArchiveProper = archiveProper;
+		archiveProper = newArchiveProper;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MONITOR_POINT__TO_INFO_FROM_AP_SPREAD, oldToInfoFromAPSpread, toInfoFromAPSpread));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MONITOR_POINT__ARCHIVE_PROPER, oldArchiveProper, archiveProper));
 	}
 
 	/**
@@ -143,42 +130,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getToInfoFromMPSpread() {
-		if (toInfoFromMPSpread != null && toInfoFromMPSpread.eIsProxy()) {
-			InternalEObject oldToInfoFromMPSpread = (InternalEObject)toInfoFromMPSpread;
-			toInfoFromMPSpread = (Table)eResolveProxy(oldToInfoFromMPSpread);
-			if (toInfoFromMPSpread != oldToInfoFromMPSpread) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MONITOR_POINT__TO_INFO_FROM_MP_SPREAD, oldToInfoFromMPSpread, toInfoFromMPSpread));
-			}
-		}
-		return toInfoFromMPSpread;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetToInfoFromMPSpread() {
-		return toInfoFromMPSpread;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToInfoFromMPSpread(Table newToInfoFromMPSpread) {
-		Table oldToInfoFromMPSpread = toInfoFromMPSpread;
-		toInfoFromMPSpread = newToInfoFromMPSpread;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MONITOR_POINT__TO_INFO_FROM_MP_SPREAD, oldToInfoFromMPSpread, toInfoFromMPSpread));
-	}
-
 	public String Default() {
 		return row[table.getColNum(sheet, "Default")];
-		
 	}
 
 	/**
@@ -360,30 +313,14 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
-	public boolean isMonitored(){
-		if(isExternal() && isArchived() && !isPartOfPattern() && !isPartOfHomogeneous())
-			return true;
-		return false;
-	}
-	
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.MONITOR_POINT__TO_INFO_FROM_AP_SPREAD:
-				if (resolve) return getToInfoFromAPSpread();
-				return basicGetToInfoFromAPSpread();
-			case BasePackage.MONITOR_POINT__TO_INFO_FROM_MP_SPREAD:
-				if (resolve) return getToInfoFromMPSpread();
-				return basicGetToInfoFromMPSpread();
+			case BasePackage.MONITOR_POINT__ARCHIVE_PROPER:
+				if (resolve) return getArchiveProper();
+				return basicGetArchiveProper();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -396,11 +333,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.MONITOR_POINT__TO_INFO_FROM_AP_SPREAD:
-				setToInfoFromAPSpread((ArchiveProperty)newValue);
-				return;
-			case BasePackage.MONITOR_POINT__TO_INFO_FROM_MP_SPREAD:
-				setToInfoFromMPSpread((Table)newValue);
+			case BasePackage.MONITOR_POINT__ARCHIVE_PROPER:
+				setArchiveProper((ArchiveProperty)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -414,11 +348,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.MONITOR_POINT__TO_INFO_FROM_AP_SPREAD:
-				setToInfoFromAPSpread((ArchiveProperty)null);
-				return;
-			case BasePackage.MONITOR_POINT__TO_INFO_FROM_MP_SPREAD:
-				setToInfoFromMPSpread((Table)null);
+			case BasePackage.MONITOR_POINT__ARCHIVE_PROPER:
+				setArchiveProper((ArchiveProperty)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -432,12 +363,22 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.MONITOR_POINT__TO_INFO_FROM_AP_SPREAD:
-				return toInfoFromAPSpread != null;
-			case BasePackage.MONITOR_POINT__TO_INFO_FROM_MP_SPREAD:
-				return toInfoFromMPSpread != null;
+			case BasePackage.MONITOR_POINT__ARCHIVE_PROPER:
+				return archiveProper != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	@Override
+	public boolean isMonitored(){
+		if(isExternal() && isArchived() && !isPartOfPattern() && !isPartOfHomogeneous())
+			return true;
+		return false;
 	}
 
 } //MonitorPointImpl

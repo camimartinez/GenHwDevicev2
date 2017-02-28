@@ -27,17 +27,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Map;
 
-
-
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.MandC;
-import alma.control.datamodel.meta.base.BaseFactory;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
+
 import alma.control.datamodel.meta.base.impl.ControlPointImpl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -47,7 +44,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
@@ -60,25 +56,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getToWorldToDataColumns <em>To World To Data Columns</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getToInfoControlSheet <em>To Info Control Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getToNormalizeNumber <em>To Normalize Number</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getMandCb <em>Mand Cb</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getAuxResource <em>Aux Resource</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ControlImpl extends ControlPointImpl implements Control {
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ControlImpl(String[] row, Resource parent) {
-		super(row, parent);
-		mac = new MandCImpl(row,sheet,this);
-	}
-	
 	/**
 	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -100,34 +84,34 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	protected MandC mac = MAC_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getToWorldToDataColumns() <em>To World To Data Columns</em>}' reference.
+	 * The cached value of the '{@link #getMandCb() <em>Mand Cb</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToWorldToDataColumns()
+	 * @see #getMandCb()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table toWorldToDataColumns;
+	protected MandC mandCb;
 
 	/**
-	 * The cached value of the '{@link #getToInfoControlSheet() <em>To Info Control Sheet</em>}' reference.
+	 * The default value of the '{@link #getAuxResource() <em>Aux Resource</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToInfoControlSheet()
+	 * @see #getAuxResource()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandC toInfoControlSheet;
+	protected static final Resource AUX_RESOURCE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getToNormalizeNumber() <em>To Normalize Number</em>}' reference.
+	 * The cached value of the '{@link #getAuxResource() <em>Aux Resource</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToNormalizeNumber()
+	 * @see #getAuxResource()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util toNormalizeNumber;
+	protected Resource auxResource = AUX_RESOURCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,6 +122,16 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ControlImpl(String[] row, Resource parent) {
+		super(row, parent);
+		mac = new MandCImpl(row,sheet,this);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,16 +168,23 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getToWorldToDataColumns() {
-		if (toWorldToDataColumns != null && toWorldToDataColumns.eIsProxy()) {
-			InternalEObject oldToWorldToDataColumns = (InternalEObject)toWorldToDataColumns;
-			toWorldToDataColumns = (Table)eResolveProxy(oldToWorldToDataColumns);
-			if (toWorldToDataColumns != oldToWorldToDataColumns) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS, oldToWorldToDataColumns, toWorldToDataColumns));
-			}
+	public MandC getMandCb() {
+		return mandCb;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMandCb(MandC newMandCb, NotificationChain msgs) {
+		MandC oldMandCb = mandCb;
+		mandCb = newMandCb;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__MAND_CB, oldMandCb, newMandCb);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return toWorldToDataColumns;
+		return msgs;
 	}
 
 	/**
@@ -191,37 +192,18 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetToWorldToDataColumns() {
-		return toWorldToDataColumns;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToWorldToDataColumns(Table newToWorldToDataColumns) {
-		Table oldToWorldToDataColumns = toWorldToDataColumns;
-		toWorldToDataColumns = newToWorldToDataColumns;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS, oldToWorldToDataColumns, toWorldToDataColumns));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandC getToInfoControlSheet() {
-		if (toInfoControlSheet != null && toInfoControlSheet.eIsProxy()) {
-			InternalEObject oldToInfoControlSheet = (InternalEObject)toInfoControlSheet;
-			toInfoControlSheet = (MandC)eResolveProxy(oldToInfoControlSheet);
-			if (toInfoControlSheet != oldToInfoControlSheet) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET, oldToInfoControlSheet, toInfoControlSheet));
-			}
+	public void setMandCb(MandC newMandCb) {
+		if (newMandCb != mandCb) {
+			NotificationChain msgs = null;
+			if (mandCb != null)
+				msgs = ((InternalEObject)mandCb).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AmbPackage.CONTROL__MAND_CB, null, msgs);
+			if (newMandCb != null)
+				msgs = ((InternalEObject)newMandCb).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AmbPackage.CONTROL__MAND_CB, null, msgs);
+			msgs = basicSetMandCb(newMandCb, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return toInfoControlSheet;
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__MAND_CB, newMandCb, newMandCb));
 	}
 
 	/**
@@ -229,8 +211,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandC basicGetToInfoControlSheet() {
-		return toInfoControlSheet;
+	public Resource getAuxResource() {
+		return auxResource;
 	}
 
 	/**
@@ -238,53 +220,13 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToInfoControlSheet(MandC newToInfoControlSheet) {
-		MandC oldToInfoControlSheet = toInfoControlSheet;
-		toInfoControlSheet = newToInfoControlSheet;
+	public void setAuxResource(Resource newAuxResource) {
+		Resource oldAuxResource = auxResource;
+		auxResource = newAuxResource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET, oldToInfoControlSheet, toInfoControlSheet));
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__AUX_RESOURCE, oldAuxResource, auxResource));
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util getToNormalizeNumber() {
-		if (toNormalizeNumber != null && toNormalizeNumber.eIsProxy()) {
-			InternalEObject oldToNormalizeNumber = (InternalEObject)toNormalizeNumber;
-			toNormalizeNumber = (Util)eResolveProxy(oldToNormalizeNumber);
-			if (toNormalizeNumber != oldToNormalizeNumber) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.CONTROL__TO_NORMALIZE_NUMBER, oldToNormalizeNumber, toNormalizeNumber));
-			}
-		}
-		return toNormalizeNumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util basicGetToNormalizeNumber() {
-		return toNormalizeNumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToNormalizeNumber(Util newToNormalizeNumber) {
-		Util oldToNormalizeNumber = toNormalizeNumber;
-		toNormalizeNumber = newToNormalizeNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__TO_NORMALIZE_NUMBER, oldToNormalizeNumber, toNormalizeNumber));
-	}
-
-	Table table = BaseFactory.eINSTANCE.createTable();
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -492,9 +434,13 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		return mac.isWorldDataArray();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String MinRange() {
 		return util.normalizeNumber(WorldDataType(),super.MinRange());
-		
 	}
 
 	/**
@@ -1099,19 +1045,28 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AmbPackage.CONTROL__MAND_CB:
+				return basicSetMandCb(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AmbPackage.CONTROL__MAC:
 				return getMac();
-			case AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS:
-				if (resolve) return getToWorldToDataColumns();
-				return basicGetToWorldToDataColumns();
-			case AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET:
-				if (resolve) return getToInfoControlSheet();
-				return basicGetToInfoControlSheet();
-			case AmbPackage.CONTROL__TO_NORMALIZE_NUMBER:
-				if (resolve) return getToNormalizeNumber();
-				return basicGetToNormalizeNumber();
+			case AmbPackage.CONTROL__MAND_CB:
+				return getMandCb();
+			case AmbPackage.CONTROL__AUX_RESOURCE:
+				return getAuxResource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1127,14 +1082,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 			case AmbPackage.CONTROL__MAC:
 				setMac((MandC)newValue);
 				return;
-			case AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS:
-				setToWorldToDataColumns((Table)newValue);
+			case AmbPackage.CONTROL__MAND_CB:
+				setMandCb((MandC)newValue);
 				return;
-			case AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET:
-				setToInfoControlSheet((MandC)newValue);
-				return;
-			case AmbPackage.CONTROL__TO_NORMALIZE_NUMBER:
-				setToNormalizeNumber((Util)newValue);
+			case AmbPackage.CONTROL__AUX_RESOURCE:
+				setAuxResource((Resource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1151,14 +1103,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 			case AmbPackage.CONTROL__MAC:
 				setMac(MAC_EDEFAULT);
 				return;
-			case AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS:
-				setToWorldToDataColumns((Table)null);
+			case AmbPackage.CONTROL__MAND_CB:
+				setMandCb((MandC)null);
 				return;
-			case AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET:
-				setToInfoControlSheet((MandC)null);
-				return;
-			case AmbPackage.CONTROL__TO_NORMALIZE_NUMBER:
-				setToNormalizeNumber((Util)null);
+			case AmbPackage.CONTROL__AUX_RESOURCE:
+				setAuxResource(AUX_RESOURCE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1174,12 +1123,10 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		switch (featureID) {
 			case AmbPackage.CONTROL__MAC:
 				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
-			case AmbPackage.CONTROL__TO_WORLD_TO_DATA_COLUMNS:
-				return toWorldToDataColumns != null;
-			case AmbPackage.CONTROL__TO_INFO_CONTROL_SHEET:
-				return toInfoControlSheet != null;
-			case AmbPackage.CONTROL__TO_NORMALIZE_NUMBER:
-				return toNormalizeNumber != null;
+			case AmbPackage.CONTROL__MAND_CB:
+				return mandCb != null;
+			case AmbPackage.CONTROL__AUX_RESOURCE:
+				return AUX_RESOURCE_EDEFAULT == null ? auxResource != null : !AUX_RESOURCE_EDEFAULT.equals(auxResource);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1196,227 +1143,140 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mac: ");
 		result.append(mac);
+		result.append(", auxResource: ");
+		result.append(auxResource);
 		result.append(')');
 		return result.toString();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
 	@Override
 	public ResourceSet getResourceSet() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public URI getURI() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setURI(URI uri) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public long getTimeStamp() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setTimeStamp(long timeStamp) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<EObject> getContents() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public TreeIterator<EObject> getAllContents() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public String getURIFragment(EObject eObject) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EObject getEObject(String uriFragment) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void save(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void load(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void save(OutputStream outputStream, Map<?, ?> options)
 			throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void load(InputStream inputStream, Map<?, ?> options)
 			throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isTrackingModification() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setTrackingModification(boolean isTrackingModification) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isModified() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setModified(boolean isModified) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isLoaded() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void unload() {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void delete(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<Diagnostic> getErrors() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<Diagnostic> getWarnings() {
 		// TODO Auto-generated method stub

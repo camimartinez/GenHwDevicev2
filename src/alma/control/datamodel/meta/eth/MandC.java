@@ -22,7 +22,6 @@
  */
 package alma.control.datamodel.meta.eth;
 
-
 import alma.control.datamodel.meta.base.Table;
 
 import org.eclipse.emf.ecore.EObject;
@@ -40,7 +39,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getAssembly <em>Assembly</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.MandC#getToInfoFromCol <em>To Info From Col</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.eth.EthPackage#getMandC()
@@ -127,57 +125,30 @@ public interface MandC extends EObject {
 	void setAssembly(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * Returns the value of the '<em><b>Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Table</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table</em>' attribute.
+	 * @return the value of the '<em>Table</em>' reference.
 	 * @see #setTable(Table)
 	 * @see alma.control.datamodel.meta.eth.EthPackage#getMandC_Table()
-	 * @model default="BaseFactory.eINSTANCE;" dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @model
 	 * @generated
 	 */
 	Table getTable();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.MandC#getTable <em>Table</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.MandC#getTable <em>Table</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' attribute.
+	 * @param value the new value of the '<em>Table</em>' reference.
 	 * @see #getTable()
 	 * @generated
 	 */
 	void setTable(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>To Info From Col</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Info From Col</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info From Col</em>' reference.
-	 * @see #setToInfoFromCol(Table)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getMandC_ToInfoFromCol()
-	 * @model
-	 * @generated
-	 */
-	Table getToInfoFromCol();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.MandC#getToInfoFromCol <em>To Info From Col</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info From Col</em>' reference.
-	 * @see #getToInfoFromCol()
-	 * @generated
-	 */
-	void setToInfoFromCol(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -146,8 +146,8 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	 * @!generated
 	 */
 	public Archive createArchive(String[] row) {
-		ArchiveImpl archive = new ArchiveImpl(row);
-		return archive;
+		ArchiveImpl archiveETH = new ArchiveImpl(row);
+		return archiveETH;
 	}
 	
 	/**
@@ -156,20 +156,20 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	 * @!generated
 	 */
 	public Control createControl(String[] row, Resource parent) {
-		ControlImpl control = new ControlImpl(row,parent);
-		return control;
+		ControlImpl controlETH = new ControlImpl(row,parent);
+		return controlETH;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
 	public Control createControl() {
-		ControlImpl control = new ControlImpl();
-		return control;
+		ControlImpl controlETH = new ControlImpl();
+		return controlETH;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,17 +209,17 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 		MonitorImpl monitor = new MonitorImpl();
 		return monitor;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
 	public Monitor createMonitor(String[] row, Resource parent) {
-		MonitorImpl monitor = new MonitorImpl(row,parent);
-		return monitor;
+		MonitorImpl monitorETH = new MonitorImpl(row,parent);
+		return monitorETH;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -47,7 +47,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public abstract class PairImpl extends SpreadsheetParserImpl implements Pair {
 	
-	/**
+		/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -56,6 +56,7 @@ public abstract class PairImpl extends SpreadsheetParserImpl implements Pair {
 		content = c;
 		newString = n;
 	}
+	
 	/**
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -50,7 +50,7 @@ public interface EthFactory extends EFactory {
 	 * @generated
 	 */
 	Archive createArchive();
-	
+
 	/**
 	 * Returns a new object of class '<em>Archive</em>'.
 	 * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public interface EthFactory extends EFactory {
 	 * @!generated
 	 */
 	Archive createArchive(String[] row);
-
+	
 	/**
 	 * Returns a new object of class '<em>Control</em>'.
 	 * <!-- begin-user-doc -->
@@ -76,8 +76,7 @@ public interface EthFactory extends EFactory {
 	 * @return a new object of class '<em>Control</em>'.
 	 * @!generated
 	 */
-	Control createControl(String[] row, Resource parent);
-	
+	Control createControl(String[] row,Resource parent);
 
 	/**
 	 * Returns a new object of class '<em>Device Model</em>'.

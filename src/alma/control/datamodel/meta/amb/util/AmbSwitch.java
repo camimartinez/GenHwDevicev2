@@ -22,21 +22,19 @@
  */
 package alma.control.datamodel.meta.amb.util;
 
-
 import alma.control.datamodel.meta.amb.*;
+
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
 
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.resource.Resource;
+
 import org.eclipse.emf.ecore.util.Switch;
 
 /**
@@ -100,7 +98,6 @@ public class AmbSwitch<T> extends Switch<T> {
 				Archive archive = (Archive)theEObject;
 				T result = caseArchive(archive);
 				if (result == null) result = caseArchiveProperty(archive);
-				if (result == null) result = caseResourceAuxClass(archive);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

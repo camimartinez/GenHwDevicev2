@@ -38,8 +38,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetParser#getXml <em>Xml</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetParser#getXsdFile <em>Xsd File</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetParser#getNewline <em>Newline</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetParser#getToNewContent <em>To New Content</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetParser#getTovalidateSpreads <em>Tovalidate Spreads</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetParser#getPairSpread <em>Pair Spread</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetParser#getValidateSpread <em>Validate Spread</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetParser()
@@ -180,56 +180,56 @@ public interface SpreadsheetParser extends EObject {
 	void setNewline(String value);
 
 	/**
-	 * Returns the value of the '<em><b>To New Content</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Pair Spread</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To New Content</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Pair Spread</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To New Content</em>' containment reference.
-	 * @see #setToNewContent(Pair)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetParser_ToNewContent()
+	 * @return the value of the '<em>Pair Spread</em>' containment reference.
+	 * @see #setPairSpread(Pair)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetParser_PairSpread()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Pair getToNewContent();
+	Pair getPairSpread();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getToNewContent <em>To New Content</em>}' containment reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getPairSpread <em>Pair Spread</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To New Content</em>' containment reference.
-	 * @see #getToNewContent()
+	 * @param value the new value of the '<em>Pair Spread</em>' containment reference.
+	 * @see #getPairSpread()
 	 * @generated
 	 */
-	void setToNewContent(Pair value);
+	void setPairSpread(Pair value);
 
 	/**
-	 * Returns the value of the '<em><b>Tovalidate Spreads</b></em>' reference.
+	 * Returns the value of the '<em><b>Validate Spread</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Tovalidate Spreads</em>' reference isn't clear,
+	 * If the meaning of the '<em>Validate Spread</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tovalidate Spreads</em>' reference.
-	 * @see #setTovalidateSpreads(SpreadsheetValidator)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetParser_TovalidateSpreads()
-	 * @model
+	 * @return the value of the '<em>Validate Spread</em>' containment reference.
+	 * @see #setValidateSpread(SpreadsheetValidator)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetParser_ValidateSpread()
+	 * @model containment="true"
 	 * @generated
 	 */
-	SpreadsheetValidator getTovalidateSpreads();
+	SpreadsheetValidator getValidateSpread();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getTovalidateSpreads <em>Tovalidate Spreads</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getValidateSpread <em>Validate Spread</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tovalidate Spreads</em>' reference.
-	 * @see #getTovalidateSpreads()
+	 * @param value the new value of the '<em>Validate Spread</em>' containment reference.
+	 * @see #getValidateSpread()
 	 * @generated
 	 */
-	void setTovalidateSpreads(SpreadsheetValidator value);
+	void setValidateSpread(SpreadsheetValidator value);
 
 	/**
 	 * <!-- begin-user-doc -->

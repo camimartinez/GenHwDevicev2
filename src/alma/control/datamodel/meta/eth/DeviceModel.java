@@ -26,8 +26,6 @@ import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.Note;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,14 +37,12 @@ import alma.control.datamodel.meta.base.Util;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getInfoDevMain <em>Info Dev Main</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getInfoControl <em>Info Control</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getInfoMonitor <em>Info Monitor</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getToEndEth <em>To End Eth</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getInfoArch <em>Info Arch</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getDataSpreadsheet <em>Data Spreadsheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getToNotes <em>To Notes</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getToValidateSpreadEth <em>To Validate Spread Eth</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getToSpreadEth <em>To Spread Eth</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getObtainControlPoints <em>Obtain Control Points</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getObtainMonitorPoints <em>Obtain Monitor Points</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getObtainArchiveProperties <em>Obtain Archive Properties</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getValidateSpreadsheet <em>Validate Spreadsheet</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getParserSpreadsheet <em>Parser Spreadsheet</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getNotess <em>Notess</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel()
@@ -81,212 +77,160 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	void setInfoDevMain(MainBase value);
 
 	/**
-	 * Returns the value of the '<em><b>Info Control</b></em>' reference.
+	 * Returns the value of the '<em><b>Obtain Control Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Info Control</em>' reference isn't clear,
+	 * If the meaning of the '<em>Obtain Control Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Info Control</em>' reference.
-	 * @see #setInfoControl(Control)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_InfoControl()
+	 * @return the value of the '<em>Obtain Control Points</em>' reference.
+	 * @see #setObtainControlPoints(Control)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_ObtainControlPoints()
 	 * @model
 	 * @generated
 	 */
-	Control getInfoControl();
+	Control getObtainControlPoints();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getInfoControl <em>Info Control</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getObtainControlPoints <em>Obtain Control Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Info Control</em>' reference.
-	 * @see #getInfoControl()
+	 * @param value the new value of the '<em>Obtain Control Points</em>' reference.
+	 * @see #getObtainControlPoints()
 	 * @generated
 	 */
-	void setInfoControl(Control value);
+	void setObtainControlPoints(Control value);
 
 	/**
-	 * Returns the value of the '<em><b>Info Monitor</b></em>' reference.
+	 * Returns the value of the '<em><b>Obtain Monitor Points</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Info Monitor</em>' reference isn't clear,
+	 * If the meaning of the '<em>Obtain Monitor Points</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Info Monitor</em>' reference.
-	 * @see #setInfoMonitor(Monitor)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_InfoMonitor()
+	 * @return the value of the '<em>Obtain Monitor Points</em>' reference.
+	 * @see #setObtainMonitorPoints(Monitor)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_ObtainMonitorPoints()
 	 * @model
 	 * @generated
 	 */
-	Monitor getInfoMonitor();
+	Monitor getObtainMonitorPoints();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getInfoMonitor <em>Info Monitor</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getObtainMonitorPoints <em>Obtain Monitor Points</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Info Monitor</em>' reference.
-	 * @see #getInfoMonitor()
+	 * @param value the new value of the '<em>Obtain Monitor Points</em>' reference.
+	 * @see #getObtainMonitorPoints()
 	 * @generated
 	 */
-	void setInfoMonitor(Monitor value);
+	void setObtainMonitorPoints(Monitor value);
 
 	/**
-	 * Returns the value of the '<em><b>To End Eth</b></em>' reference.
+	 * Returns the value of the '<em><b>Obtain Archive Properties</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To End Eth</em>' reference isn't clear,
+	 * If the meaning of the '<em>Obtain Archive Properties</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To End Eth</em>' reference.
-	 * @see #setToEndEth(Util)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_ToEndEth()
+	 * @return the value of the '<em>Obtain Archive Properties</em>' reference.
+	 * @see #setObtainArchiveProperties(Archive)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_ObtainArchiveProperties()
 	 * @model
 	 * @generated
 	 */
-	Util getToEndEth();
+	Archive getObtainArchiveProperties();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getToEndEth <em>To End Eth</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getObtainArchiveProperties <em>Obtain Archive Properties</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To End Eth</em>' reference.
-	 * @see #getToEndEth()
+	 * @param value the new value of the '<em>Obtain Archive Properties</em>' reference.
+	 * @see #getObtainArchiveProperties()
 	 * @generated
 	 */
-	void setToEndEth(Util value);
+	void setObtainArchiveProperties(Archive value);
 
 	/**
-	 * Returns the value of the '<em><b>Info Arch</b></em>' reference.
+	 * Returns the value of the '<em><b>Validate Spreadsheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Info Arch</em>' reference isn't clear,
+	 * If the meaning of the '<em>Validate Spreadsheet</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Info Arch</em>' reference.
-	 * @see #setInfoArch(Archive)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_InfoArch()
+	 * @return the value of the '<em>Validate Spreadsheet</em>' reference.
+	 * @see #setValidateSpreadsheet(SpreadsheetValidator)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_ValidateSpreadsheet()
 	 * @model
 	 * @generated
 	 */
-	Archive getInfoArch();
+	SpreadsheetValidator getValidateSpreadsheet();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getInfoArch <em>Info Arch</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getValidateSpreadsheet <em>Validate Spreadsheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Info Arch</em>' reference.
-	 * @see #getInfoArch()
+	 * @param value the new value of the '<em>Validate Spreadsheet</em>' reference.
+	 * @see #getValidateSpreadsheet()
 	 * @generated
 	 */
-	void setInfoArch(Archive value);
+	void setValidateSpreadsheet(SpreadsheetValidator value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Spreadsheet</b></em>' reference.
+	 * Returns the value of the '<em><b>Parser Spreadsheet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data Spreadsheet</em>' reference isn't clear,
+	 * If the meaning of the '<em>Parser Spreadsheet</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Spreadsheet</em>' reference.
-	 * @see #setDataSpreadsheet(Table)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_DataSpreadsheet()
+	 * @return the value of the '<em>Parser Spreadsheet</em>' reference.
+	 * @see #setParserSpreadsheet(SpreadsheetParser)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_ParserSpreadsheet()
 	 * @model
 	 * @generated
 	 */
-	Table getDataSpreadsheet();
+	SpreadsheetParser getParserSpreadsheet();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getDataSpreadsheet <em>Data Spreadsheet</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getParserSpreadsheet <em>Parser Spreadsheet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Spreadsheet</em>' reference.
-	 * @see #getDataSpreadsheet()
+	 * @param value the new value of the '<em>Parser Spreadsheet</em>' reference.
+	 * @see #getParserSpreadsheet()
 	 * @generated
 	 */
-	void setDataSpreadsheet(Table value);
+	void setParserSpreadsheet(SpreadsheetParser value);
 
 	/**
-	 * Returns the value of the '<em><b>To Notes</b></em>' reference.
+	 * Returns the value of the '<em><b>Notess</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Notes</em>' reference isn't clear,
+	 * If the meaning of the '<em>Notess</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Notes</em>' reference.
-	 * @see #setToNotes(Note)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_ToNotes()
+	 * @return the value of the '<em>Notess</em>' reference.
+	 * @see #setNotess(Note)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_Notess()
 	 * @model
 	 * @generated
 	 */
-	Note getToNotes();
+	Note getNotess();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getToNotes <em>To Notes</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getNotess <em>Notess</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Notes</em>' reference.
-	 * @see #getToNotes()
+	 * @param value the new value of the '<em>Notess</em>' reference.
+	 * @see #getNotess()
 	 * @generated
 	 */
-	void setToNotes(Note value);
-
-	/**
-	 * Returns the value of the '<em><b>To Validate Spread Eth</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Validate Spread Eth</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Validate Spread Eth</em>' reference.
-	 * @see #setToValidateSpreadEth(SpreadsheetValidator)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_ToValidateSpreadEth()
-	 * @model
-	 * @generated
-	 */
-	SpreadsheetValidator getToValidateSpreadEth();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getToValidateSpreadEth <em>To Validate Spread Eth</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Validate Spread Eth</em>' reference.
-	 * @see #getToValidateSpreadEth()
-	 * @generated
-	 */
-	void setToValidateSpreadEth(SpreadsheetValidator value);
-
-	/**
-	 * Returns the value of the '<em><b>To Spread Eth</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Spread Eth</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Spread Eth</em>' reference.
-	 * @see #setToSpreadEth(SpreadsheetParser)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_ToSpreadEth()
-	 * @model
-	 * @generated
-	 */
-	SpreadsheetParser getToSpreadEth();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getToSpreadEth <em>To Spread Eth</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Spread Eth</em>' reference.
-	 * @see #getToSpreadEth()
-	 * @generated
-	 */
-	void setToSpreadEth(SpreadsheetParser value);
+	void setNotess(Note value);
 
 	/**
 	 * <!-- begin-user-doc -->

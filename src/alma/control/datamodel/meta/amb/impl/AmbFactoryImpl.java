@@ -22,13 +22,13 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
-
-
 import alma.control.datamodel.meta.amb.*;
+
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+
 import alma.control.datamodel.meta.base.impl.BaseFactoryImpl;
 
 import java.util.Iterator;
@@ -71,46 +71,6 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Control createControl(String[] row, Resource parent) {
-		ControlImpl controlAMB = new ControlImpl(row,parent);
-		return controlAMB;
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Main createMain(String[] row) {
-		MainImpl mainAMB = new MainImpl(row);
-		return mainAMB;
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MandC createMandC(String[] row, int sheet, MandCBase mcp) {
-		MandCImpl mandCAMB = new MandCImpl(row,sheet,mcp);
-		return mandCAMB;
-	}
-	
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Monitor createMonitor(String[] row, Resource parent) {
-		MonitorImpl monitorAMB = new MonitorImpl();
-		return monitorAMB;
-	}
-	
-	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,6 +80,46 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Control createControl(String[] row, Resource parent) {
+		ControlImpl controlAMB = new ControlImpl(row,parent);
+		return controlAMB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Main createMain(String[] row) {
+		MainImpl mainAMB = new MainImpl(row);
+		return mainAMB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MandC createMandC(String[] row, int sheet, MandCBase mcp) {
+		MandCImpl mandCAMB = new MandCImpl(row,sheet,mcp);
+		return mandCAMB;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Monitor createMonitor(String[] row, Resource parent) {
+		MonitorImpl monitorAMB = new MonitorImpl();
+		return monitorAMB;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,16 +208,6 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Archive createArchive(String[] row) {
-		ArchiveImpl archive = new ArchiveImpl(row);
-		return archive;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Control createControl() {
@@ -225,6 +215,16 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 		return control;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Archive createArchive(String[] row) {
+		ArchiveImpl archive = new ArchiveImpl(row);
+		return archive;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

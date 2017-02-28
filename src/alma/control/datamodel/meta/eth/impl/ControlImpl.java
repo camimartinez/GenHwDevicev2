@@ -27,8 +27,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Map;
 
-
 import alma.control.datamodel.meta.base.impl.ControlPointImpl;
+
 import alma.control.datamodel.meta.eth.Control;
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
@@ -43,7 +43,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
@@ -56,23 +55,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.ControlImpl#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.impl.ControlImpl#getToInfoControlEth <em>To Info Control Eth</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ControlImpl extends ControlPointImpl implements Control {
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ControlImpl(String[] row, Resource parent) {
-		super(row, parent);
-		mac = new MandCImpl(row, sheet);
-	}
-	
 	/**
 	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,6 +71,15 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	protected static final MandC MAC_EDEFAULT = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ControlImpl(String[] row, Resource parent) {
+		super(row, parent);
+		mac = new MandCImpl(row, sheet);
+	}
+	/**
 	 * The cached value of the '{@link #getMac() <em>Mac</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,16 +88,6 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @ordered
 	 */
 	protected MandC mac = MAC_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getToInfoControlEth() <em>To Info Control Eth</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToInfoControlEth()
-	 * @generated
-	 * @ordered
-	 */
-	protected MandC toInfoControlEth;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,44 +127,6 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		mac = newMac;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.CONTROL__MAC, oldMac, mac));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandC getToInfoControlEth() {
-		if (toInfoControlEth != null && toInfoControlEth.eIsProxy()) {
-			InternalEObject oldToInfoControlEth = (InternalEObject)toInfoControlEth;
-			toInfoControlEth = (MandC)eResolveProxy(oldToInfoControlEth);
-			if (toInfoControlEth != oldToInfoControlEth) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.CONTROL__TO_INFO_CONTROL_ETH, oldToInfoControlEth, toInfoControlEth));
-			}
-		}
-		return toInfoControlEth;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandC basicGetToInfoControlEth() {
-		return toInfoControlEth;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToInfoControlEth(MandC newToInfoControlEth) {
-		MandC oldToInfoControlEth = toInfoControlEth;
-		toInfoControlEth = newToInfoControlEth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.CONTROL__TO_INFO_CONTROL_ETH, oldToInfoControlEth, toInfoControlEth));
 	}
 
 	/**
@@ -342,9 +290,6 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		switch (featureID) {
 			case EthPackage.CONTROL__MAC:
 				return getMac();
-			case EthPackage.CONTROL__TO_INFO_CONTROL_ETH:
-				if (resolve) return getToInfoControlEth();
-				return basicGetToInfoControlEth();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -359,9 +304,6 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		switch (featureID) {
 			case EthPackage.CONTROL__MAC:
 				setMac((MandC)newValue);
-				return;
-			case EthPackage.CONTROL__TO_INFO_CONTROL_ETH:
-				setToInfoControlEth((MandC)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -378,9 +320,6 @@ public class ControlImpl extends ControlPointImpl implements Control {
 			case EthPackage.CONTROL__MAC:
 				setMac(MAC_EDEFAULT);
 				return;
-			case EthPackage.CONTROL__TO_INFO_CONTROL_ETH:
-				setToInfoControlEth((MandC)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -395,8 +334,6 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		switch (featureID) {
 			case EthPackage.CONTROL__MAC:
 				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
-			case EthPackage.CONTROL__TO_INFO_CONTROL_ETH:
-				return toInfoControlEth != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -417,223 +354,134 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		return result.toString();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
 	@Override
 	public ResourceSet getResourceSet() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public URI getURI() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setURI(URI uri) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public long getTimeStamp() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setTimeStamp(long timeStamp) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<EObject> getContents() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public TreeIterator<EObject> getAllContents() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public String getURIFragment(EObject eObject) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EObject getEObject(String uriFragment) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void save(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void load(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void save(OutputStream outputStream, Map<?, ?> options)
 			throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void load(InputStream inputStream, Map<?, ?> options)
 			throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isTrackingModification() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setTrackingModification(boolean isTrackingModification) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isModified() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void setModified(boolean isModified) {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public boolean isLoaded() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void unload() {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public void delete(Map<?, ?> options) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<Diagnostic> getErrors() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
+
 	@Override
 	public EList<Diagnostic> getWarnings() {
 		// TODO Auto-generated method stub

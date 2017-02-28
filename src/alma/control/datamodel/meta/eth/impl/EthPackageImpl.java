@@ -22,14 +22,14 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
-
-
-
-
 import alma.control.datamodel.meta.amb.AmbPackage;
+
 import alma.control.datamodel.meta.amb.impl.AmbPackageImpl;
+
 import alma.control.datamodel.meta.base.BasePackage;
+
 import alma.control.datamodel.meta.base.impl.BasePackageImpl;
+
 import alma.control.datamodel.meta.eth.Archive;
 import alma.control.datamodel.meta.eth.Control;
 import alma.control.datamodel.meta.eth.DeviceModel;
@@ -205,15 +205,6 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControl_ToInfoControlEth() {
-		return (EReference)controlEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDeviceModel() {
 		return deviceModelEClass;
 	}
@@ -232,7 +223,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_InfoControl() {
+	public EReference getDeviceModel_ObtainControlPoints() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -241,7 +232,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_InfoMonitor() {
+	public EReference getDeviceModel_ObtainMonitorPoints() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -250,7 +241,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_ToEndEth() {
+	public EReference getDeviceModel_ObtainArchiveProperties() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -259,7 +250,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_InfoArch() {
+	public EReference getDeviceModel_ValidateSpreadsheet() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -268,7 +259,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_DataSpreadsheet() {
+	public EReference getDeviceModel_ParserSpreadsheet() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -277,26 +268,8 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceModel_ToNotes() {
+	public EReference getDeviceModel_Notess() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDeviceModel_ToValidateSpreadEth() {
-		return (EReference)deviceModelEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDeviceModel_ToSpreadEth() {
-		return (EReference)deviceModelEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -306,15 +279,6 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 */
 	public EClass getMain() {
 		return mainEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMain_ToInfoMain() {
-		return (EReference)mainEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -358,17 +322,8 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMandC_Table() {
-		return (EAttribute)mandCEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMandC_ToInfoFromCol() {
-		return (EReference)mandCEClass.getEStructuralFeatures().get(4);
+	public EReference getMandC_Table() {
+		return (EReference)mandCEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -394,7 +349,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMonitor_ToInfoMPEth() {
+	public EReference getMonitor_MandCb() {
 		return (EReference)monitorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -439,32 +394,27 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		controlEClass = createEClass(CONTROL);
 		createEAttribute(controlEClass, CONTROL__MAC);
-		createEReference(controlEClass, CONTROL__TO_INFO_CONTROL_ETH);
 
 		deviceModelEClass = createEClass(DEVICE_MODEL);
 		createEReference(deviceModelEClass, DEVICE_MODEL__INFO_DEV_MAIN);
-		createEReference(deviceModelEClass, DEVICE_MODEL__INFO_CONTROL);
-		createEReference(deviceModelEClass, DEVICE_MODEL__INFO_MONITOR);
-		createEReference(deviceModelEClass, DEVICE_MODEL__TO_END_ETH);
-		createEReference(deviceModelEClass, DEVICE_MODEL__INFO_ARCH);
-		createEReference(deviceModelEClass, DEVICE_MODEL__DATA_SPREADSHEET);
-		createEReference(deviceModelEClass, DEVICE_MODEL__TO_NOTES);
-		createEReference(deviceModelEClass, DEVICE_MODEL__TO_VALIDATE_SPREAD_ETH);
-		createEReference(deviceModelEClass, DEVICE_MODEL__TO_SPREAD_ETH);
+		createEReference(deviceModelEClass, DEVICE_MODEL__OBTAIN_CONTROL_POINTS);
+		createEReference(deviceModelEClass, DEVICE_MODEL__OBTAIN_MONITOR_POINTS);
+		createEReference(deviceModelEClass, DEVICE_MODEL__OBTAIN_ARCHIVE_PROPERTIES);
+		createEReference(deviceModelEClass, DEVICE_MODEL__VALIDATE_SPREADSHEET);
+		createEReference(deviceModelEClass, DEVICE_MODEL__PARSER_SPREADSHEET);
+		createEReference(deviceModelEClass, DEVICE_MODEL__NOTESS);
 
 		mainEClass = createEClass(MAIN);
-		createEReference(mainEClass, MAIN__TO_INFO_MAIN);
 
 		mandCEClass = createEClass(MAND_C);
 		createEAttribute(mandCEClass, MAND_C__ROW);
 		createEAttribute(mandCEClass, MAND_C__SHEET);
 		createEAttribute(mandCEClass, MAND_C__ASSEMBLY);
-		createEAttribute(mandCEClass, MAND_C__TABLE);
-		createEReference(mandCEClass, MAND_C__TO_INFO_FROM_COL);
+		createEReference(mandCEClass, MAND_C__TABLE);
 
 		monitorEClass = createEClass(MONITOR);
 		createEAttribute(monitorEClass, MONITOR__MAC);
-		createEReference(monitorEClass, MONITOR__TO_INFO_MP_ETH);
+		createEReference(monitorEClass, MONITOR__MAND_CB);
 
 		// Create data types
 		mandCETHDTEDataType = createEDataType(MAND_CETHDT);
@@ -495,7 +445,6 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		// Obtain other dependent packages
 		BasePackage theBasePackage = (BasePackage)EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
-		AmbPackage theAmbPackage = (AmbPackage)EPackage.Registry.INSTANCE.getEPackage(AmbPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -513,7 +462,6 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		initEClass(controlEClass, Control.class, "Control", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getControl_Mac(), this.getMandCETHDT(), "mac", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControl_ToInfoControlEth(), this.getMandC(), null, "toInfoControlEth", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(controlEClass, null, "setAssemblyName", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -550,21 +498,18 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeviceModel_InfoDevMain(), theBasePackage.getMainBase(), null, "infoDevMain", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_InfoControl(), this.getControl(), null, "infoControl", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_InfoMonitor(), this.getMonitor(), null, "infoMonitor", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_ToEndEth(), theBasePackage.getUtil(), null, "toEndEth", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_InfoArch(), this.getArchive(), null, "infoArch", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_DataSpreadsheet(), theBasePackage.getTable(), null, "dataSpreadsheet", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_ToNotes(), theBasePackage.getNote(), null, "toNotes", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_ToValidateSpreadEth(), theBasePackage.getSpreadsheetValidator(), null, "toValidateSpreadEth", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceModel_ToSpreadEth(), theBasePackage.getSpreadsheetParser(), null, "toSpreadEth", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_ObtainControlPoints(), this.getControl(), null, "obtainControlPoints", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_ObtainMonitorPoints(), this.getMonitor(), null, "obtainMonitorPoints", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_ObtainArchiveProperties(), this.getArchive(), null, "obtainArchiveProperties", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_ValidateSpreadsheet(), theBasePackage.getSpreadsheetValidator(), null, "validateSpreadsheet", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_ParserSpreadsheet(), theBasePackage.getSpreadsheetParser(), null, "parserSpreadsheet", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceModel_Notess(), theBasePackage.getNote(), null, "notess", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(deviceModelEClass, ecorePackage.getEString(), "CreateModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(deviceModelEClass, ecorePackage.getEString(), "VendorClass", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mainEClass, Main.class, "Main", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMain_ToInfoMain(), theBasePackage.getTable(), null, "toInfoMain", null, 0, 1, Main.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(mainEClass, ecorePackage.getEString(), "VendorClass", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -572,8 +517,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 		initEAttribute(getMandC_Row(), theBasePackage.getEStringArray(), "row", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Assembly(), ecorePackage.getEString(), "assembly", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMandC_Table(), theAmbPackage.getTableDT(), "table", "BaseFactory.eINSTANCE;", 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMandC_ToInfoFromCol(), theBasePackage.getTable(), null, "toInfoFromCol", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandC_Table(), theBasePackage.getTable(), null, "table", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(mandCEClass, null, "setAssemblyName", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -608,7 +552,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		initEClass(monitorEClass, Monitor.class, "Monitor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMonitor_Mac(), this.getMandCETHDT(), "mac", null, 0, 1, Monitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMonitor_ToInfoMPEth(), this.getMandC(), null, "toInfoMPEth", null, 0, 1, Monitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMonitor_MandCb(), this.getMandC(), null, "mandCb", null, 0, 1, Monitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(monitorEClass, null, "setAssemblyName", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "assembly", 0, 1, IS_UNIQUE, IS_ORDERED);

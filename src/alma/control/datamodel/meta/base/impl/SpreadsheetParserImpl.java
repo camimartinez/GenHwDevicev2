@@ -55,14 +55,14 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getXml <em>Xml</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getXsdFile <em>Xsd File</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getNewline <em>Newline</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getToNewContent <em>To New Content</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getTovalidateSpreads <em>Tovalidate Spreads</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getPairSpread <em>Pair Spread</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getValidateSpread <em>Validate Spread</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetParser {
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,7 +152,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 */
 	protected String xsdFile = XSD_FILE_EDEFAULT;
 
-	/**
+/**
 	 * The default value of the '{@link #getNewline() <em>Newline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,24 +173,24 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	protected String newline = NEWLINE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getToNewContent() <em>To New Content</em>}' containment reference.
+	 * The cached value of the '{@link #getPairSpread() <em>Pair Spread</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToNewContent()
+	 * @see #getPairSpread()
 	 * @generated
 	 * @ordered
 	 */
-	protected Pair toNewContent;
+	protected Pair pairSpread;
 
 	/**
-	 * The cached value of the '{@link #getTovalidateSpreads() <em>Tovalidate Spreads</em>}' reference.
+	 * The cached value of the '{@link #getValidateSpread() <em>Validate Spread</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTovalidateSpreads()
+	 * @see #getValidateSpread()
 	 * @generated
 	 * @ordered
 	 */
-	protected SpreadsheetValidator tovalidateSpreads;
+	protected SpreadsheetValidator validateSpread;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -321,8 +321,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pair getToNewContent() {
-		return toNewContent;
+	public Pair getPairSpread() {
+		return pairSpread;
 	}
 
 	/**
@@ -330,11 +330,11 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetToNewContent(Pair newToNewContent, NotificationChain msgs) {
-		Pair oldToNewContent = toNewContent;
-		toNewContent = newToNewContent;
+	public NotificationChain basicSetPairSpread(Pair newPairSpread, NotificationChain msgs) {
+		Pair oldPairSpread = pairSpread;
+		pairSpread = newPairSpread;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT, oldToNewContent, newToNewContent);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD, oldPairSpread, newPairSpread);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -345,18 +345,18 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToNewContent(Pair newToNewContent) {
-		if (newToNewContent != toNewContent) {
+	public void setPairSpread(Pair newPairSpread) {
+		if (newPairSpread != pairSpread) {
 			NotificationChain msgs = null;
-			if (toNewContent != null)
-				msgs = ((InternalEObject)toNewContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT, null, msgs);
-			if (newToNewContent != null)
-				msgs = ((InternalEObject)newToNewContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT, null, msgs);
-			msgs = basicSetToNewContent(newToNewContent, msgs);
+			if (pairSpread != null)
+				msgs = ((InternalEObject)pairSpread).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD, null, msgs);
+			if (newPairSpread != null)
+				msgs = ((InternalEObject)newPairSpread).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD, null, msgs);
+			msgs = basicSetPairSpread(newPairSpread, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT, newToNewContent, newToNewContent));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD, newPairSpread, newPairSpread));
 	}
 
 	/**
@@ -364,16 +364,23 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetValidator getTovalidateSpreads() {
-		if (tovalidateSpreads != null && tovalidateSpreads.eIsProxy()) {
-			InternalEObject oldTovalidateSpreads = (InternalEObject)tovalidateSpreads;
-			tovalidateSpreads = (SpreadsheetValidator)eResolveProxy(oldTovalidateSpreads);
-			if (tovalidateSpreads != oldTovalidateSpreads) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS, oldTovalidateSpreads, tovalidateSpreads));
-			}
+	public SpreadsheetValidator getValidateSpread() {
+		return validateSpread;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValidateSpread(SpreadsheetValidator newValidateSpread, NotificationChain msgs) {
+		SpreadsheetValidator oldValidateSpread = validateSpread;
+		validateSpread = newValidateSpread;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD, oldValidateSpread, newValidateSpread);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return tovalidateSpreads;
+		return msgs;
 	}
 
 	/**
@@ -381,20 +388,18 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetValidator basicGetTovalidateSpreads() {
-		return tovalidateSpreads;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTovalidateSpreads(SpreadsheetValidator newTovalidateSpreads) {
-		SpreadsheetValidator oldTovalidateSpreads = tovalidateSpreads;
-		tovalidateSpreads = newTovalidateSpreads;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS, oldTovalidateSpreads, tovalidateSpreads));
+	public void setValidateSpread(SpreadsheetValidator newValidateSpread) {
+		if (newValidateSpread != validateSpread) {
+			NotificationChain msgs = null;
+			if (validateSpread != null)
+				msgs = ((InternalEObject)validateSpread).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD, null, msgs);
+			if (newValidateSpread != null)
+				msgs = ((InternalEObject)newValidateSpread).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD, null, msgs);
+			msgs = basicSetValidateSpread(newValidateSpread, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD, newValidateSpread, newValidateSpread));
 	}
 
 	/**
@@ -431,7 +436,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return xml;
 	}
 
-	/**
+/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -455,7 +460,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 		return pp;
 	}
 
-	/**
+
+    /**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -482,7 +488,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 		return (String[])list.toArray(x);
 	}
 
-	/**
+/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -594,7 +600,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	public String[][][] filter(String doc) {
 		// A. Get the directory that is referenced, and the old and new assembly names.
 				// Syntax: @reference = <base-directory-path-name> <base-assembly-name> = <new-assembly-name>
-				LineNumberReader text = new LineNumberReader(new StringReader(doc));
+				LineNumberReader text = new LineNumberReader(new java.io.StringReader(doc));
 				String line = null;
 				try {
 					line = text.readLine();
@@ -698,7 +704,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				// F. Return the new spreadsheet. 
 				return result;
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -802,8 +807,10 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
-				return basicSetToNewContent(null, msgs);
+			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
+				return basicSetPairSpread(null, msgs);
+			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
+				return basicSetValidateSpread(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -826,11 +833,10 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return getXsdFile();
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				return getNewline();
-			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
-				return getToNewContent();
-			case BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS:
-				if (resolve) return getTovalidateSpreads();
-				return basicGetTovalidateSpreads();
+			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
+				return getPairSpread();
+			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
+				return getValidateSpread();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -858,11 +864,11 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				setNewline((String)newValue);
 				return;
-			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
-				setToNewContent((Pair)newValue);
+			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
+				setPairSpread((Pair)newValue);
 				return;
-			case BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS:
-				setTovalidateSpreads((SpreadsheetValidator)newValue);
+			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
+				setValidateSpread((SpreadsheetValidator)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -891,11 +897,11 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				setNewline(NEWLINE_EDEFAULT);
 				return;
-			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
-				setToNewContent((Pair)null);
+			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
+				setPairSpread((Pair)null);
 				return;
-			case BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS:
-				setTovalidateSpreads((SpreadsheetValidator)null);
+			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
+				setValidateSpread((SpreadsheetValidator)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -919,10 +925,10 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return XSD_FILE_EDEFAULT == null ? xsdFile != null : !XSD_FILE_EDEFAULT.equals(xsdFile);
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				return NEWLINE_EDEFAULT == null ? newline != null : !NEWLINE_EDEFAULT.equals(newline);
-			case BasePackage.SPREADSHEET_PARSER__TO_NEW_CONTENT:
-				return toNewContent != null;
-			case BasePackage.SPREADSHEET_PARSER__TOVALIDATE_SPREADS:
-				return tovalidateSpreads != null;
+			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
+				return pairSpread != null;
+			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
+				return validateSpread != null;
 		}
 		return super.eIsSet(featureID);
 	}

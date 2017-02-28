@@ -37,9 +37,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getTable <em>Table</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getUtil <em>Util</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MainBase#getToImplement <em>To Implement</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MainBase#getToConvertInfo <em>To Convert Info</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MainBase#getToInfoFromSpread <em>To Info From Spread</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MainBase#getUtilss <em>Utilss</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MainBase#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMainBase()
@@ -101,7 +100,7 @@ public interface MainBase extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
@@ -111,7 +110,7 @@ public interface MainBase extends EObject {
 	 * @return the value of the '<em>Table</em>' attribute.
 	 * @see #setTable(Table)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Table()
-	 * @model default="BaseFactory.eINSTANCE;" unique="false" dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @model default="" unique="false" dataType="alma.control.datamodel.meta.amb.TableDT"
 	 * @generated
 	 */
 	Table getTable();
@@ -128,7 +127,7 @@ public interface MainBase extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Util</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Util</em>' attribute isn't clear,
@@ -138,7 +137,7 @@ public interface MainBase extends EObject {
 	 * @return the value of the '<em>Util</em>' attribute.
 	 * @see #setUtil(Util)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Util()
-	 * @model default="BaseFactory.eINSTANCE;" dataType="alma.control.datamodel.meta.amb.UtilDT"
+	 * @model default="" dataType="alma.control.datamodel.meta.amb.UtilDT"
 	 * @generated
 	 */
 	Util getUtil();
@@ -154,82 +153,56 @@ public interface MainBase extends EObject {
 	void setUtil(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>To Implement</b></em>' reference.
+	 * Returns the value of the '<em><b>Utilss</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Implement</em>' reference isn't clear,
+	 * If the meaning of the '<em>Utilss</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Implement</em>' reference.
-	 * @see #setToImplement(DeviceModel)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_ToImplement()
+	 * @return the value of the '<em>Utilss</em>' reference.
+	 * @see #setUtilss(Util)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Utilss()
 	 * @model
 	 * @generated
 	 */
-	DeviceModel getToImplement();
+	Util getUtilss();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getToImplement <em>To Implement</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getUtilss <em>Utilss</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Implement</em>' reference.
-	 * @see #getToImplement()
+	 * @param value the new value of the '<em>Utilss</em>' reference.
+	 * @see #getUtilss()
 	 * @generated
 	 */
-	void setToImplement(DeviceModel value);
+	void setUtilss(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>To Convert Info</b></em>' reference.
+	 * Returns the value of the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Convert Info</em>' reference isn't clear,
+	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Convert Info</em>' reference.
-	 * @see #setToConvertInfo(Util)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_ToConvertInfo()
+	 * @return the value of the '<em>Tables</em>' reference.
+	 * @see #setTables(Table)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Tables()
 	 * @model
 	 * @generated
 	 */
-	Util getToConvertInfo();
+	Table getTables();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getToConvertInfo <em>To Convert Info</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getTables <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Convert Info</em>' reference.
-	 * @see #getToConvertInfo()
+	 * @param value the new value of the '<em>Tables</em>' reference.
+	 * @see #getTables()
 	 * @generated
 	 */
-	void setToConvertInfo(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>To Info From Spread</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Info From Spread</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info From Spread</em>' reference.
-	 * @see #setToInfoFromSpread(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_ToInfoFromSpread()
-	 * @model
-	 * @generated
-	 */
-	Table getToInfoFromSpread();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getToInfoFromSpread <em>To Info From Spread</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info From Spread</em>' reference.
-	 * @see #getToInfoFromSpread()
-	 * @generated
-	 */
-	void setToInfoFromSpread(Table value);
+	void setTables(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

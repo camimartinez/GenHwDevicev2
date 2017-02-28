@@ -22,8 +22,8 @@
  */
 package alma.control.datamodel.meta.amb.util;
 
-
 import alma.control.datamodel.meta.amb.*;
+
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.MainBase;

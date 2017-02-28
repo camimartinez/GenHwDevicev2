@@ -22,7 +22,6 @@
  */
 package alma.control.datamodel.meta.base;
 
-import alma.control.datamodel.meta.base.MainBase;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -52,12 +51,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isGenerateAlt <em>Generate Alt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getToArchiveIndex <em>To Archive Index</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getToContPoints <em>To Cont Points</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getToMoniPoints <em>To Moni Points</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getToEndOfGeneration <em>To End Of Generation</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getToArchivProp <em>To Archiv Prop</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getToInfFromSpread <em>To Inf From Spread</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getArchivesProperties <em>Archives Properties</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel()
@@ -457,160 +453,82 @@ public interface DeviceModel extends EObject {
 	void setGenerateAlt(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>To Archive Index</b></em>' reference.
+	 * Returns the value of the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Archive Index</em>' reference isn't clear,
+	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Archive Index</em>' reference.
-	 * @see #setToArchiveIndex(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ToArchiveIndex()
+	 * @return the value of the '<em>Tables</em>' reference.
+	 * @see #setTables(Table)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Tables()
 	 * @model
 	 * @generated
 	 */
-	Table getToArchiveIndex();
+	Table getTables();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getToArchiveIndex <em>To Archive Index</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Archive Index</em>' reference.
-	 * @see #getToArchiveIndex()
+	 * @param value the new value of the '<em>Tables</em>' reference.
+	 * @see #getTables()
 	 * @generated
 	 */
-	void setToArchiveIndex(Table value);
+	void setTables(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>To Cont Points</b></em>' reference.
+	 * Returns the value of the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Cont Points</em>' reference isn't clear,
+	 * If the meaning of the '<em>Utils</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Cont Points</em>' reference.
-	 * @see #setToContPoints(ControlPoint)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ToContPoints()
+	 * @return the value of the '<em>Utils</em>' reference.
+	 * @see #setUtils(Util)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Utils()
 	 * @model
 	 * @generated
 	 */
-	ControlPoint getToContPoints();
+	Util getUtils();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getToContPoints <em>To Cont Points</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Cont Points</em>' reference.
-	 * @see #getToContPoints()
+	 * @param value the new value of the '<em>Utils</em>' reference.
+	 * @see #getUtils()
 	 * @generated
 	 */
-	void setToContPoints(ControlPoint value);
+	void setUtils(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>To Moni Points</b></em>' reference.
+	 * Returns the value of the '<em><b>Archives Properties</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Moni Points</em>' reference isn't clear,
+	 * If the meaning of the '<em>Archives Properties</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Moni Points</em>' reference.
-	 * @see #setToMoniPoints(MonitorPoint)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ToMoniPoints()
+	 * @return the value of the '<em>Archives Properties</em>' reference.
+	 * @see #setArchivesProperties(ArchiveProperty)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ArchivesProperties()
 	 * @model
 	 * @generated
 	 */
-	MonitorPoint getToMoniPoints();
+	ArchiveProperty getArchivesProperties();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getToMoniPoints <em>To Moni Points</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getArchivesProperties <em>Archives Properties</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Moni Points</em>' reference.
-	 * @see #getToMoniPoints()
+	 * @param value the new value of the '<em>Archives Properties</em>' reference.
+	 * @see #getArchivesProperties()
 	 * @generated
 	 */
-	void setToMoniPoints(MonitorPoint value);
-
-	/**
-	 * Returns the value of the '<em><b>To End Of Generation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To End Of Generation</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To End Of Generation</em>' reference.
-	 * @see #setToEndOfGeneration(Util)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ToEndOfGeneration()
-	 * @model
-	 * @generated
-	 */
-	Util getToEndOfGeneration();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getToEndOfGeneration <em>To End Of Generation</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To End Of Generation</em>' reference.
-	 * @see #getToEndOfGeneration()
-	 * @generated
-	 */
-	void setToEndOfGeneration(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>To Archiv Prop</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Archiv Prop</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Archiv Prop</em>' reference.
-	 * @see #setToArchivProp(ArchiveProperty)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ToArchivProp()
-	 * @model
-	 * @generated
-	 */
-	ArchiveProperty getToArchivProp();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getToArchivProp <em>To Archiv Prop</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Archiv Prop</em>' reference.
-	 * @see #getToArchivProp()
-	 * @generated
-	 */
-	void setToArchivProp(ArchiveProperty value);
-
-	/**
-	 * Returns the value of the '<em><b>To Inf From Spread</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Inf From Spread</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Inf From Spread</em>' reference.
-	 * @see #setToInfFromSpread(MainBase)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ToInfFromSpread()
-	 * @model
-	 * @generated
-	 */
-	MainBase getToInfFromSpread();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getToInfFromSpread <em>To Inf From Spread</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Inf From Spread</em>' reference.
-	 * @see #getToInfFromSpread()
-	 * @generated
-	 */
-	void setToInfFromSpread(MainBase value);
+	void setArchivesProperties(ArchiveProperty value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -647,7 +565,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String dir = generatedDir + \"/\" + Assembly();\r\nUtil utils = BaseFactoryImpl.eINSTANCE.createUtil();\r\nutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"Base.cpp\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"Base.h\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Base.idl\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".xml\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \"Component.xml\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/config/CDB/schemas\", Assembly() + \"Base.xsd\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/config\", \"TMCDB\" + Assembly() + \"Add.xml\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/src/CCL\", Assembly() + \"Base.py\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/src/CCL\", \"__init__.py\", 1);\r\nSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\r\nreturn \"\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String dir = generatedDir + \"/\" + Assembly();\rutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"Base.cpp\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"Base.h\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Base.idl\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".xml\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \"Component.xml\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/config/CDB/schemas\", Assembly() + \"Base.xsd\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/config\", \"TMCDB\" + Assembly() + \"Add.xml\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/src/CCL\", Assembly() + \"Base.py\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/src/CCL\", \"__init__.py\", 1);\r\nSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\r\nreturn \"\";'"
 	 * @generated
 	 */
 	String TheEnd();

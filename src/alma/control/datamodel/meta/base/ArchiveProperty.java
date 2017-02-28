@@ -40,14 +40,14 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getCp <em>Cp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getToColumnsInfoOfArchi <em>To Columns Info Of Archi</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty()
- * @model superTypes="alma.control.datamodel.meta.amb.ResourceAuxClass"
+ * @model
  * @generated
  */
-public interface ArchiveProperty extends EObject, Resource {
+public interface ArchiveProperty extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Row</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -154,7 +154,7 @@ public interface ArchiveProperty extends EObject, Resource {
 
 	/**
 	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * The default value is <code>"BaseFactory.eINSTANCE;"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
@@ -164,7 +164,7 @@ public interface ArchiveProperty extends EObject, Resource {
 	 * @return the value of the '<em>Table</em>' attribute.
 	 * @see #setTable(Table)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty_Table()
-	 * @model default="BaseFactory.eINSTANCE;" dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @model default="" dataType="alma.control.datamodel.meta.amb.TableDT"
 	 * @generated
 	 */
 	Table getTable();
@@ -180,30 +180,30 @@ public interface ArchiveProperty extends EObject, Resource {
 	void setTable(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>To Columns Info Of Archi</b></em>' reference.
+	 * Returns the value of the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Columns Info Of Archi</em>' reference isn't clear,
+	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Columns Info Of Archi</em>' reference.
-	 * @see #setToColumnsInfoOfArchi(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty_ToColumnsInfoOfArchi()
+	 * @return the value of the '<em>Tables</em>' reference.
+	 * @see #setTables(Table)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty_Tables()
 	 * @model
 	 * @generated
 	 */
-	Table getToColumnsInfoOfArchi();
+	Table getTables();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.ArchiveProperty#getToColumnsInfoOfArchi <em>To Columns Info Of Archi</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.ArchiveProperty#getTables <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Columns Info Of Archi</em>' reference.
-	 * @see #getToColumnsInfoOfArchi()
+	 * @param value the new value of the '<em>Tables</em>' reference.
+	 * @see #getTables()
 	 * @generated
 	 */
-	void setToColumnsInfoOfArchi(Table value);
+	void setTables(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -24,9 +24,8 @@ package alma.control.datamodel.meta.base.impl;
 
 import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
-import alma.control.datamodel.meta.base.BaseFactory;
+
 import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.DeviceModel;
 import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
@@ -51,24 +50,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getTable <em>Table</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getUtil <em>Util</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getToImplement <em>To Implement</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getToConvertInfo <em>To Convert Info</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getToInfoFromSpread <em>To Info From Spread</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getUtilss <em>Utilss</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MainBaseImpl extends EObjectImpl implements MainBase {
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MainBaseImpl(String[] row) {
-		this.row = row;
-		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Hardware Device");
-	}
 	/**
 	 * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,6 +67,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 */
 	protected static final String[] ROW_EDEFAULT = null;
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MainBaseImpl(String[] row) {
+		this.row = row;
+		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Hardware Device");
+	}
+	
 	/**
 	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,8 +115,18 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "BaseFactory.eINSTANCE;");
-	protected Table table = BaseFactory.eINSTANCE.createTable();
+	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "");
+
+	/**
+	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTable()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table table = TABLE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getUtil() <em>Util</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -127,7 +135,38 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Util UTIL_EDEFAULT = (Util)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getUtilDT(), "BaseFactory.eINSTANCE;");
+	protected static final Util UTIL_EDEFAULT = (Util)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getUtilDT(), "");
+
+	/**
+	 * The cached value of the '{@link #getUtil() <em>Util</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtil()
+	 * @generated
+	 * @ordered
+	 */
+	protected Util util = UTIL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUtilss() <em>Utilss</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtilss()
+	 * @generated
+	 * @ordered
+	 */
+	protected Util utilss;
+
+	/**
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTables()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table tables;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,16 +275,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeviceModel getToImplement() {
-		if (toImplement != null && toImplement.eIsProxy()) {
-			InternalEObject oldToImplement = (InternalEObject)toImplement;
-			toImplement = (DeviceModel)eResolveProxy(oldToImplement);
-			if (toImplement != oldToImplement) {
+	public Util getUtilss() {
+		if (utilss != null && utilss.eIsProxy()) {
+			InternalEObject oldUtilss = (InternalEObject)utilss;
+			utilss = (Util)eResolveProxy(oldUtilss);
+			if (utilss != oldUtilss) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TO_IMPLEMENT, oldToImplement, toImplement));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__UTILSS, oldUtilss, utilss));
 			}
 		}
-		return toImplement;
+		return utilss;
 	}
 
 	/**
@@ -253,8 +292,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeviceModel basicGetToImplement() {
-		return toImplement;
+	public Util basicGetUtilss() {
+		return utilss;
 	}
 
 	/**
@@ -262,11 +301,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToImplement(DeviceModel newToImplement) {
-		DeviceModel oldToImplement = toImplement;
-		toImplement = newToImplement;
+	public void setUtilss(Util newUtilss) {
+		Util oldUtilss = utilss;
+		utilss = newUtilss;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TO_IMPLEMENT, oldToImplement, toImplement));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__UTILSS, oldUtilss, utilss));
 	}
 
 	/**
@@ -274,16 +313,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getToConvertInfo() {
-		if (toConvertInfo != null && toConvertInfo.eIsProxy()) {
-			InternalEObject oldToConvertInfo = (InternalEObject)toConvertInfo;
-			toConvertInfo = (Util)eResolveProxy(oldToConvertInfo);
-			if (toConvertInfo != oldToConvertInfo) {
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TO_CONVERT_INFO, oldToConvertInfo, toConvertInfo));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TABLES, oldTables, tables));
 			}
 		}
-		return toConvertInfo;
+		return tables;
 	}
 
 	/**
@@ -291,8 +330,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetToConvertInfo() {
-		return toConvertInfo;
+	public Table basicGetTables() {
+		return tables;
 	}
 
 	/**
@@ -300,49 +339,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToConvertInfo(Util newToConvertInfo) {
-		Util oldToConvertInfo = toConvertInfo;
-		toConvertInfo = newToConvertInfo;
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TO_CONVERT_INFO, oldToConvertInfo, toConvertInfo));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getToInfoFromSpread() {
-		if (toInfoFromSpread != null && toInfoFromSpread.eIsProxy()) {
-			InternalEObject oldToInfoFromSpread = (InternalEObject)toInfoFromSpread;
-			toInfoFromSpread = (Table)eResolveProxy(oldToInfoFromSpread);
-			if (toInfoFromSpread != oldToInfoFromSpread) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD, oldToInfoFromSpread, toInfoFromSpread));
-			}
-		}
-		return toInfoFromSpread;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetToInfoFromSpread() {
-		return toInfoFromSpread;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToInfoFromSpread(Table newToInfoFromSpread) {
-		Table oldToInfoFromSpread = toInfoFromSpread;
-		toInfoFromSpread = newToInfoFromSpread;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD, oldToInfoFromSpread, toInfoFromSpread));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TABLES, oldTables, tables));
 	}
 
 	/**
@@ -364,45 +365,12 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	}
 
 	/**
-	 * The cached value of the '{@link #getUtil() <em>Util</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUtil()
 	 * @generated
-	 * @ordered
 	 */
-	protected Util util = UTIL_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getToImplement() <em>To Implement</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToImplement()
-	 * @generated
-	 * @ordered
-	 */
-	protected DeviceModel toImplement;
-	/**
-	 * The cached value of the '{@link #getToConvertInfo() <em>To Convert Info</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToConvertInfo()
-	 * @generated
-	 * @ordered
-	 */
-	protected Util toConvertInfo;
-	/**
-	 * The cached value of the '{@link #getToInfoFromSpread() <em>To Info From Spread</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToInfoFromSpread()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table toInfoFromSpread;
-	
 	public String DescriptionAsString() {
 		return util.descriptionAsString(Description());
-		
 	}
 
 	/**
@@ -475,15 +443,12 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return getTable();
 			case BasePackage.MAIN_BASE__UTIL:
 				return getUtil();
-			case BasePackage.MAIN_BASE__TO_IMPLEMENT:
-				if (resolve) return getToImplement();
-				return basicGetToImplement();
-			case BasePackage.MAIN_BASE__TO_CONVERT_INFO:
-				if (resolve) return getToConvertInfo();
-				return basicGetToConvertInfo();
-			case BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD:
-				if (resolve) return getToInfoFromSpread();
-				return basicGetToInfoFromSpread();
+			case BasePackage.MAIN_BASE__UTILSS:
+				if (resolve) return getUtilss();
+				return basicGetUtilss();
+			case BasePackage.MAIN_BASE__TABLES:
+				if (resolve) return getTables();
+				return basicGetTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -508,14 +473,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__UTIL:
 				setUtil((Util)newValue);
 				return;
-			case BasePackage.MAIN_BASE__TO_IMPLEMENT:
-				setToImplement((DeviceModel)newValue);
+			case BasePackage.MAIN_BASE__UTILSS:
+				setUtilss((Util)newValue);
 				return;
-			case BasePackage.MAIN_BASE__TO_CONVERT_INFO:
-				setToConvertInfo((Util)newValue);
-				return;
-			case BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD:
-				setToInfoFromSpread((Table)newValue);
+			case BasePackage.MAIN_BASE__TABLES:
+				setTables((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -541,14 +503,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__UTIL:
 				setUtil(UTIL_EDEFAULT);
 				return;
-			case BasePackage.MAIN_BASE__TO_IMPLEMENT:
-				setToImplement((DeviceModel)null);
+			case BasePackage.MAIN_BASE__UTILSS:
+				setUtilss((Util)null);
 				return;
-			case BasePackage.MAIN_BASE__TO_CONVERT_INFO:
-				setToConvertInfo((Util)null);
-				return;
-			case BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD:
-				setToInfoFromSpread((Table)null);
+			case BasePackage.MAIN_BASE__TABLES:
+				setTables((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -570,12 +529,10 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return TABLE_EDEFAULT == null ? table != null : !TABLE_EDEFAULT.equals(table);
 			case BasePackage.MAIN_BASE__UTIL:
 				return UTIL_EDEFAULT == null ? util != null : !UTIL_EDEFAULT.equals(util);
-			case BasePackage.MAIN_BASE__TO_IMPLEMENT:
-				return toImplement != null;
-			case BasePackage.MAIN_BASE__TO_CONVERT_INFO:
-				return toConvertInfo != null;
-			case BasePackage.MAIN_BASE__TO_INFO_FROM_SPREAD:
-				return toInfoFromSpread != null;
+			case BasePackage.MAIN_BASE__UTILSS:
+				return utilss != null;
+			case BasePackage.MAIN_BASE__TABLES:
+				return tables != null;
 		}
 		return super.eIsSet(featureID);
 	}

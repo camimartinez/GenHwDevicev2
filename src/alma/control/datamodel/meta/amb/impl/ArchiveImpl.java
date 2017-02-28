@@ -22,54 +22,21 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
-
-
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Archive;
-import alma.control.datamodel.meta.base.Table;
+
 import alma.control.datamodel.meta.base.impl.ArchivePropertyImpl;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Archive</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.ArchiveImpl#getToAssemblyColumn <em>To Assembly Column</em>}</li>
- * </ul>
  *
  * @generated
  */
 public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchiveImpl(String[] row) {
-		super(row);
-	}
-
-	/**
-	 * The cached value of the '{@link #getToAssemblyColumn() <em>To Assembly Column</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToAssemblyColumn()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table toAssemblyColumn;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -79,6 +46,15 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArchiveImpl(String[] row) {
+		super();
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,39 +70,6 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getToAssemblyColumn() {
-		if (toAssemblyColumn != null && toAssemblyColumn.eIsProxy()) {
-			InternalEObject oldToAssemblyColumn = (InternalEObject)toAssemblyColumn;
-			toAssemblyColumn = (Table)eResolveProxy(oldToAssemblyColumn);
-			if (toAssemblyColumn != oldToAssemblyColumn) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN, oldToAssemblyColumn, toAssemblyColumn));
-			}
-		}
-		return toAssemblyColumn;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetToAssemblyColumn() {
-		return toAssemblyColumn;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setToAssemblyColumn(Table newToAssemblyColumn) {
-		Table oldToAssemblyColumn = toAssemblyColumn;
-		toAssemblyColumn = newToAssemblyColumn;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN, oldToAssemblyColumn, toAssemblyColumn));
-	}
-
 	public String Assembly() {
 		return row[table.getColNum(sheet, "Assembly")];
 	}
@@ -152,65 +95,6 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 		if(isIntervalTE())
 			return IntervalFull().substring(3);
 		return IntervalFull();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN:
-				if (resolve) return getToAssemblyColumn();
-				return basicGetToAssemblyColumn();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN:
-				setToAssemblyColumn((Table)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN:
-				setToAssemblyColumn((Table)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case AmbPackage.ARCHIVE__TO_ASSEMBLY_COLUMN:
-				return toAssemblyColumn != null;
-		}
-		return super.eIsSet(featureID);
 	}
 
 } //ArchiveImpl

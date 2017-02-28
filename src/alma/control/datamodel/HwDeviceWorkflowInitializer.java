@@ -1,13 +1,11 @@
 package alma.control.datamodel;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.mwe.core.WorkflowComponentHelper;
 import org.eclipse.emf.mwe.core.WorkflowContext;
 import org.eclipse.emf.mwe.core.issues.Issues;
 import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 
 import org.eclipse.emf.mwe.core.lib.WorkflowComponentWithModelSlot;
-import org.eclipse.emf.mwe.utils.GenModelHelper;
 
 
 import alma.control.datamodel.meta.base.*;
@@ -43,7 +41,7 @@ public class HwDeviceWorkflowInitializer extends WorkflowComponentWithModelSlot{
 			return;
 		}
 		
-	
+		
 		devType.setCodegenDir(BaseFactory.eINSTANCE.createUtil().getInstallDir());
 		devType.setDeviceDir(deviceDir);
 		devType.setDeviceName(System.getProperty("DEVICE_NAME"));

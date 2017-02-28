@@ -23,51 +23,18 @@
 package alma.control.datamodel.meta.amb;
 
 import alma.control.datamodel.meta.base.MainBase;
-import alma.control.datamodel.meta.base.Table;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Main</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link alma.control.datamodel.meta.amb.Main#getToInfoFromMain <em>To Info From Main</em>}</li>
- * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getMain()
  * @model
  * @generated
  */
 public interface Main extends MainBase {
-	/**
-	 * Returns the value of the '<em><b>To Info From Main</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Info From Main</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Info From Main</em>' reference.
-	 * @see #setToInfoFromMain(Table)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMain_ToInfoFromMain()
-	 * @model
-	 * @generated
-	 */
-	Table getToInfoFromMain();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Main#getToInfoFromMain <em>To Info From Main</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Info From Main</em>' reference.
-	 * @see #getToInfoFromMain()
-	 * @generated
-	 */
-	void setToInfoFromMain(Table value);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

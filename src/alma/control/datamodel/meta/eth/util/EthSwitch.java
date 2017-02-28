@@ -22,20 +22,17 @@
  */
 package alma.control.datamodel.meta.eth.util;
 
-
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
+
 import alma.control.datamodel.meta.eth.*;
 
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.Switch;
 
@@ -100,7 +97,6 @@ public class EthSwitch<T> extends Switch<T> {
 				Archive archive = (Archive)theEObject;
 				T result = caseArchive(archive);
 				if (result == null) result = caseArchiveProperty(archive);
-				if (result == null) result = caseResourceAuxClass(archive);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -237,21 +233,6 @@ public class EthSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResourceAuxClass(Resource object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Archive Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -263,6 +244,21 @@ public class EthSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseArchiveProperty(ArchiveProperty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResourceAuxClass(Resource object) {
 		return null;
 	}
 
