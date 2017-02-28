@@ -2,13 +2,16 @@
 <workflow>
 	<property file="config/workflow/generator.properties"/>
 	
-	<!- Set up EMF for Standalone Execution ->
-	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >
-		<platformUri value="../"/>
+	<property name="project" value="../../${projectName}"/>
+	
+	<!-- Set up EMF for Standalone Execution -->
+	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup">
+		<platformUri value="../../"/>
+		<RegisterEcoreFile value="platform:/resource/GenHwDevicev2/config/model/genHwDevicev2.ecore"/>
 	</bean>
 
-	<!- Load model and store it in slot model ->
-	<component class="alma.Control.datamodel.HwDeviceWorkflowInitializer">
+	<!-- Load model and store it in slot model -->
+	<component class="alma.control.datamodel.HwDeviceWorkflowInitializer">
         <deviceDir value="${deviceDir}"/>
         <spreadsheetDir value="${spreadsheetDir}"/>
         <generatedDir value="${generatedDir}"/>
@@ -17,7 +20,7 @@
         <modelSlot value="model"/>
     </component>
     
-    <!- Generate Code ->
+    <!-- Generate Code -->
 	<component id="generator" class="org.eclipse.xpand2.Generator">
 		<fileEncoding value="ISO-8859-1"/>
 		<metaModel class="org.eclipse.internal.xtend.type.impl.java.JavaMetaModel"/>

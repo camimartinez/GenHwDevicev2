@@ -7,9 +7,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.eclipse.emf.mwe.core.WorkflowEngine;
 import org.eclipse.emf.mwe.core.monitor.NullProgressMonitor;
-import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 
 import alma.control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.base.impl.BaseFactoryImpl;
+import alma.control.datamodel.meta.base.impl.UtilImpl;
 
 public class LinuxGen {
 
@@ -24,12 +25,12 @@ public class LinuxGen {
 		System.out.println(">>>>>GenHwDevice.main Starting code generation for device " + arg[0]);
 		System.setProperty("DEVICE_NAME", arg[0]);
 		System.setProperty("DEVICE_TYPE", devType);
-		String wfFile=BaseFactory.eINSTANCE.createUtil().getInstallDir() + "/config/workflow/generator.mwe";
+		String wfFile = BaseFactoryImpl.init().createUtil().getInstallDir() + "/config/workflow/generator.mwe";
 		Log log = LogFactory.getLog(WorkflowEngine.class);
 		Map properties = new HashMap ();
 		Map slotContents = new HashMap ();
 		
 		System.out.println(">>>>>GenHwDevice.main Starting WorkflowEngineRunner");
-		new WorkflowEngine().run(wfFile, (ProgressMonitor) new NullProgressMonitor(), properties, slotContents);
+		new WorkflowEngine().run(wfFile, new NullProgressMonitor(), properties, slotContents);
 	}
 }

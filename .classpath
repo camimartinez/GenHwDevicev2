@@ -14,5 +14,6 @@
 	<classpathentry kind="lib" path="lib/maciSchemaBindings.jar"/>
 	<classpathentry kind="lib" path="lib/mwe_v2.8.3.jar"/>
 	<classpathentry kind="lib" path="lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="lib/xpand_v2.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
