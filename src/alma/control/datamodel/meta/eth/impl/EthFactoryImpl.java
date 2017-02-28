@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,13 +143,33 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
+	 */
+	public Archive createArchive(String[] row) {
+		ArchiveImpl archive = new ArchiveImpl(row);
+		return archive;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Control createControl(String[] row, Resource parent) {
+		ControlImpl control = new ControlImpl(row,parent);
+		return control;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
 	 */
 	public Control createControl() {
 		ControlImpl control = new ControlImpl();
 		return control;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,6 +207,16 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	 */
 	public Monitor createMonitor() {
 		MonitorImpl monitor = new MonitorImpl();
+		return monitor;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Monitor createMonitor(String[] row, Resource parent) {
+		MonitorImpl monitor = new MonitorImpl(row,parent);
 		return monitor;
 	}
 

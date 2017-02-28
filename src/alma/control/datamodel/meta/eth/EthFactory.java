@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.eth;
 
 import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,6 +50,15 @@ public interface EthFactory extends EFactory {
 	 * @generated
 	 */
 	Archive createArchive();
+	
+	/**
+	 * Returns a new object of class '<em>Archive</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Archive</em>'.
+	 * @!generated
+	 */
+	Archive createArchive(String[] row);
 
 	/**
 	 * Returns a new object of class '<em>Control</em>'.
@@ -58,6 +68,16 @@ public interface EthFactory extends EFactory {
 	 * @generated
 	 */
 	Control createControl();
+	
+	/**
+	 * Returns a new object of class '<em>Control</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Control</em>'.
+	 * @!generated
+	 */
+	Control createControl(String[] row, Resource parent);
+	
 
 	/**
 	 * Returns a new object of class '<em>Device Model</em>'.
@@ -104,6 +124,15 @@ public interface EthFactory extends EFactory {
 	 */
 	Monitor createMonitor();
 
+	/**
+	 * Returns a new object of class '<em>Monitor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Monitor</em>'.
+	 * @!generated
+	 */
+	Monitor createMonitor(String[] row, Resource parent);
+	
 	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->

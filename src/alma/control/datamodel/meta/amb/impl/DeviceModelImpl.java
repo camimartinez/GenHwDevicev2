@@ -818,8 +818,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		// Get the Notes
 		notes = new ResourceSetImpl();
 		for (i = 3; i < spreadsheet[mainIndex].length; i++) {
-			Note note = baseFac.createNote();
-			
+			Note note = baseFac.createNote();		
 			//note.setMetaEnvironment(this.getMetaEnvironment());
 			note.setNote(spreadsheet[mainIndex][i][descriptionIndex]);
 			notes.getResources().add((Resource)note);
