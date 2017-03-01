@@ -115,7 +115,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "");
+	protected static final Table TABLE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
@@ -135,7 +135,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Util UTIL_EDEFAULT = (Util)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getUtilDT(), "");
+	protected static final Util UTIL_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getUtil() <em>Util</em>}' attribute.

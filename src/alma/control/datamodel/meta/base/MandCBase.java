@@ -267,7 +267,6 @@ public interface MandCBase extends EObject, Resource {
 
 	/**
 	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
@@ -277,7 +276,7 @@ public interface MandCBase extends EObject, Resource {
 	 * @return the value of the '<em>Table</em>' attribute.
 	 * @see #setTable(Table)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Table()
-	 * @model default="" unique="false" dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @model unique="false" dataType="alma.control.datamodel.meta.amb.TableDT"
 	 * @generated
 	 */
 	Table getTable();

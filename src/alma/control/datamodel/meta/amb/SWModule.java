@@ -377,7 +377,6 @@ public interface SWModule extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
@@ -387,7 +386,7 @@ public interface SWModule extends EObject {
 	 * @return the value of the '<em>Table</em>' attribute.
 	 * @see #setTable(Table)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_Table()
-	 * @model default="" dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @model dataType="alma.control.datamodel.meta.amb.TableDT"
 	 * @generated
 	 */
 	Table getTable();
@@ -404,7 +403,6 @@ public interface SWModule extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Util</b></em>' attribute.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Util</em>' attribute isn't clear,
@@ -414,7 +412,7 @@ public interface SWModule extends EObject {
 	 * @return the value of the '<em>Util</em>' attribute.
 	 * @see #setUtil(Util)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_Util()
-	 * @model default="" dataType="alma.control.datamodel.meta.amb.UtilDT"
+	 * @model dataType="alma.control.datamodel.meta.amb.UtilDT"
 	 * @generated
 	 */
 	Util getUtil();

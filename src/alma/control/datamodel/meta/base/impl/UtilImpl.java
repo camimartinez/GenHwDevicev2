@@ -84,7 +84,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "BaseFactory.eINSTANCE;");
+	protected static final Table TABLE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
@@ -116,7 +116,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 */
 	protected int maxLength = MAX_LENGTH_EDEFAULT;
 
-   /**
+	/**
 	 * The default value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -125,8 +125,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @ordered
 	 */
 	protected static final String[] MONTH_EDEFAULT = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
-	
-    /**
+
+	/**
 	 * The cached value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -136,7 +136,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 */
 	protected String[] month = MONTH_EDEFAULT;
 
-    /**
+	/**
 	 * The default value of the '{@link #getMONTHalt() <em>MONT Halt</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

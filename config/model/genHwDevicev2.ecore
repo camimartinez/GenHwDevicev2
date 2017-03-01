@@ -726,10 +726,8 @@
                 <details key="body" value="if(!isSingleBit())&#xD;&#xA;&#x9;&#x9;&#x9;return &quot;&quot;;&#xD;&#xA;&#x9;&#x9;String s = null;&#xD;&#xA;&#x9;&#x9;if(isRawDataArray())&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;s = RawDataTypeCell().substring(4);&#xD;&#xA;&#x9;&#x9;&#x9;int n = s.indexOf(&quot;&amp;lt;&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;int m = s.substring(n + 4).indexOf(&quot;&amp;gt;&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;s = s.substring(n + 4, m + n + 4);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;s = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;int n = Integer.parseInt(s);&#xD;&#xA;&#x9;&#x9;return amask[n];"/>
               </eAnnotations>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"
-                defaultValueLiteral=""/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"
-                defaultValueLiteral=""/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//control/datamodel/meta/base/MandCBaseDT"
@@ -1183,10 +1181,8 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="simControlPoints"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"
-                defaultValueLiteral=""/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"
-                defaultValueLiteral=""/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="addMonitorPoints"
                 eType="#//control/datamodel/meta/amb/Monitor"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="addControlPoints"
@@ -1208,8 +1204,7 @@
                 eType="#//control/datamodel/meta/base/EStringArray3"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirLocation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="base" eType="#//control/datamodel/meta/amb/BaseFactoryDT"
-                defaultValueLiteral=""/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="base" eType="#//control/datamodel/meta/amb/BaseFactoryDT"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="parserSpreadsheet"
                 eType="#//control/datamodel/meta/base/SpreadsheetParser" containment="true"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="util" eType="#//control/datamodel/meta/base/Util"/>
@@ -1731,7 +1726,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" unique="false"
-                eType="#//control/datamodel/meta/amb/TableDT" defaultValueLiteral=""/>
+                eType="#//control/datamodel/meta/amb/TableDT"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="archivesProperties"
                 eType="#//control/datamodel/meta/base/ArchiveProperty"/>
@@ -1830,8 +1825,7 @@
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="cp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"
-                defaultValueLiteral=""/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Note">
@@ -2067,8 +2061,7 @@
               <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="newline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"
-                defaultValueLiteral="BaseFactory.eINSTANCE;"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" eType="#//control/datamodel/meta/amb/TableDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
                 defaultValueLiteral="54"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTH" eType="#//control/datamodel/meta/base/EStringArray"/>
@@ -2155,9 +2148,8 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="table" unique="false"
-                eType="#//control/datamodel/meta/amb/TableDT" defaultValueLiteral=""/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"
-                defaultValueLiteral=""/>
+                eType="#//control/datamodel/meta/amb/TableDT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="utilss" eType="#//control/datamodel/meta/base/Util"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>

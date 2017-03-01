@@ -132,7 +132,6 @@ public interface GenericMonitorPoints extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Base</b></em>' attribute.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Base</em>' attribute isn't clear,
@@ -142,7 +141,7 @@ public interface GenericMonitorPoints extends EObject {
 	 * @return the value of the '<em>Base</em>' attribute.
 	 * @see #setBase(BaseFactory)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getGenericMonitorPoints_Base()
-	 * @model default="" dataType="alma.control.datamodel.meta.amb.BaseFactoryDT"
+	 * @model dataType="alma.control.datamodel.meta.amb.BaseFactoryDT"
 	 * @generated
 	 */
 	BaseFactory getBase();

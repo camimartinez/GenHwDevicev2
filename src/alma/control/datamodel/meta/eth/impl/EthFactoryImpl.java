@@ -166,8 +166,8 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	 * @generated
 	 */
 	public Control createControl() {
-		ControlImpl controlETH = new ControlImpl();
-		return controlETH;
+		ControlImpl control = new ControlImpl();
+		return control;
 	}
 
 	/**

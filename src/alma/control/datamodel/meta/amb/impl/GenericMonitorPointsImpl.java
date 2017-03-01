@@ -128,7 +128,7 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BaseFactory BASE_EDEFAULT = (BaseFactory)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getBaseFactoryDT(), "");
+	protected static final BaseFactory BASE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getBase() <em>Base</em>}' attribute.

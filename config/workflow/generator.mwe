@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <workflow>
-	<property file="config/workflow/generator.properties"/>
+	<property file="generator.properties"/>
 	
-	<property name="project" value="../../${projectName}"/>
+	<property name="runtimeProject" value="../../${projectName}"/>
 	
 	<!-- Set up EMF for Standalone Execution -->
-	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup">
-		<platformUri value="../../"/>
-		<RegisterEcoreFile value="platform:/resource/GenHwDevicev2/config/model/genHwDevicev2.ecore"/>
+	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" platformUri="${runtimeProject}">
+		 <RegisterEcoreFile value="platform:/resource/GenHwDevicev2/config/model/genHwDevicev2.ecore"/>
 	</bean>
 
 	<!-- Load model and store it in slot model -->
@@ -19,14 +18,14 @@
         <generateAlt value="${generateAlt}"/>
         <modelSlot value="model"/>
     </component>
-    
+       
     <!-- Generate Code -->
 	<component id="generator" class="org.eclipse.xpand2.Generator">
 		<fileEncoding value="ISO-8859-1"/>
-		<metaModel class="org.eclipse.internal.xtend.type.impl.java.JavaMetaModel"/>
-		<metaModel class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel">
-		<metaModelFile value="config/model/genHwDevicev2.ecore"/>
-		</metaModel>
+		<metaModel class="org.eclipse.xtend.type.impl.java.JavaMetaModel"/>
+		<!-- <metaModel class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel">
+			<metaModelFile value="platform:/resource/GenHwDevicev2/config/model/genHwDevicev2.ecore"/>
+		</metaModel> -->
 		<expand value="Root::Root FOR model"/>
         <genPath value="${generatedDir}"/>
 	</component>

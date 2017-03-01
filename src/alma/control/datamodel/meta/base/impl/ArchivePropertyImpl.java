@@ -156,7 +156,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Table TABLE_EDEFAULT = (Table)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getTableDT(), "");
+	protected static final Table TABLE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.

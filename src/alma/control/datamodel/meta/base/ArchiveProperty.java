@@ -154,7 +154,6 @@ public interface ArchiveProperty extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
@@ -164,7 +163,7 @@ public interface ArchiveProperty extends EObject {
 	 * @return the value of the '<em>Table</em>' attribute.
 	 * @see #setTable(Table)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty_Table()
-	 * @model default="" dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @model dataType="alma.control.datamodel.meta.amb.TableDT"
 	 * @generated
 	 */
 	Table getTable();
