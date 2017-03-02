@@ -37,6 +37,8 @@ import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.Note;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -64,6 +66,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getValidateSpreadsheet <em>Validate Spreadsheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getGenericMonitorPoints <em>Generic Monitor Points</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getNotess <em>Notess</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getUtilDT <em>Util DT</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getTableDT <em>Table DT</em>}</li>
  * </ul>
  *
  * @generated
@@ -148,6 +152,46 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @ordered
 	 */
 	protected Note notess;
+
+	/**
+	 * The default value of the '{@link #getUtilDT() <em>Util DT</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtilDT()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Util UTIL_DT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUtilDT() <em>Util DT</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtilDT()
+	 * @generated
+	 * @ordered
+	 */
+	protected Util utilDT = UTIL_DT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTableDT() <em>Table DT</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTableDT()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Table TABLE_DT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTableDT() <em>Table DT</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTableDT()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table tableDT = TABLE_DT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -477,6 +521,48 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Util getUtilDT() {
+		return utilDT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUtilDT(Util newUtilDT) {
+		Util oldUtilDT = utilDT;
+		utilDT = newUtilDT;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__UTIL_DT, oldUtilDT, utilDT));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table getTableDT() {
+		return tableDT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTableDT(Table newTableDT) {
+		Table oldTableDT = tableDT;
+		tableDT = newTableDT;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__TABLE_DT, oldTableDT, tableDT));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isMonitorDBOnly() {
 		return monitorDBOnly;
 	}
@@ -549,165 +635,176 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
+	
 	public String CreateModel() {
 		// Parse and validate the spreadsheet.
-				int i;
-				int mainIndex;
-				int monitorIndex;
-				int controlIndex;
-				int archiveIndex;
+		System.out.println("Entra a CreateModel() de AMB");
+		int i;
+		int mainIndex;
+		int monitorIndex;
+		int controlIndex;
+		int archiveIndex;
 
-				// Check if the spreadsheet file is an actual spreadsheet or a
-				// "filter" file which is some kind of a filter for a real
-				// spreadsheet but inherits from it.
-				String xmlFile = spreadsheetDir + "/" + deviceName + "_spreadsheet.";
-				String suffix = "filter";
-				java.io.File fileExists = new java.io.File(xmlFile + suffix);
-				if(fileExists.exists() == false){
-					// The blah.filter file does not exist, so assume that the file
-					// is an XML file.
-					suffix = "xml";
-				}	
-			
-				xmlFile += suffix;
-				String xml = parserSpreadsheet.getSpreadsheet(spreadsheetDir, deviceName + "_spreadsheet." + suffix);
-				String xsdFile = utils.getInstallDir()+ "/config/schemas/" + busType.toLowerCase() + "/Workbook.xsd";
-				
-				SpreadsheetParser p = BaseFactory.eINSTANCE.createSpreadsheetParser(xml);
-				p.setXSD(xsdFile);
-				spreadsheet = p.getWorksheets();
-				if (!p.isReference() && !validateSpreadsheet.validate(xmlFile, xsdFile)) {
-					String s = "Spreadsheet " + deviceName + "_spreadsheet." + suffix + " is not a valid spreadsheet.";
-					throw new RuntimeException(s);
+		// Check if the spreadsheet file is an actual spreadsheet or a
+		// "filter" file which is some kind of a filter for a real
+		// spreadsheet but inherits from it.
+		String xmlFile = spreadsheetDir + "/" + deviceName + "_spreadsheet.";
+		String suffix = "filter";
+		java.io.File fileExists = new java.io.File(xmlFile + suffix);
+		if(fileExists.exists() == false){
+			// The blah.filter file does not exist, so assume that the file
+			// is an XML file.
+			suffix = "xml";
+		}
+	
+		BaseFactory baseFac = BaseFactory.eINSTANCE;
+		
+		Util util = baseFac.createUtil();
+		
+		xmlFile += suffix;		
+		String xml = baseFac.createSpreadsheetParser().getSpreadsheet(spreadsheetDir, deviceName + "_spreadsheet." + suffix);		
+		String xsdFile = util.getInstallDir()+ "/config/schemas/" + busType.toLowerCase() + "/Workbook.xsd";
+
+		SpreadsheetParser p = baseFac.createSpreadsheetParser(xml);
+		p.setXSD(xsdFile);
+		spreadsheet = p.getWorksheets();
+		if (!p.isReference() && !baseFac.createSpreadsheetValidator().validate(xmlFile, xsdFile)) {
+			String s = "Spreadsheet: " + deviceName + "_spreadsheet." + suffix + " is not a valid spreadsheet.";
+			throw new RuntimeException(s);
+		}
+		System.out.println("Spreadsheet " + deviceName + "_spreadsheet." + " has been validated.");
+
+		Table tab = baseFac.createTable();
+		
+		tab.initialize(spreadsheet);
+		mainIndex = tab.getSheetNum("Hardware Device");
+		monitorIndex = tab.getSheetNum("Monitor Point");
+		controlIndex = tab.getSheetNum("Control Point");
+		archiveIndex = tab.getSheetNum("Archive Property");
+
+		AmbFactory ambFac = AmbFactory.eINSTANCE;
+		
+		if(spreadsheet[mainIndex][2][tab.getColNum(mainIndex,"Generic Monitor Points")].equals("yes")){
+			String[][][] spreadsheetWithGenericPointsAdded;
+			spreadsheetWithGenericPointsAdded = ambFac.createGenericMonitorPoints().getDeviceWorksheetWithGenericPointsAdded(spreadsheet);
+			spreadsheet = spreadsheetWithGenericPointsAdded;
+		}
+
+		
+		// Get the Main
+		main = ambFac.createMain(spreadsheet[mainIndex][2]);
+		//main.eAdapters().notify();
+		//main.setMetaEnvironment(this.getMetaEnvironment());
+
+		// Get the Notes
+		notes = new ResourceSetImpl();
+		for (i = 3; i < spreadsheet[mainIndex].length; i++) {
+			//note.setMetaEnvironment(this.getMetaEnvironment());
+			notess.setNote(spreadsheet[mainIndex][i][descriptionIndex]);
+			notes.getResources().add((Resource) notess);
+		}
+
+		// Get the monitor points
+		Monitor mparent = ambFac.createMonitor();
+		mparent = null;
+		monitorPoints = new ResourceSetImpl();
+		for (i = 2; i < spreadsheet[monitorIndex].length; i++) {
+			if(spreadsheet[monitorIndex][i].length == 0)
+				break;
+			Monitor mp = ambFac.createMonitor();
+			String[] row = spreadsheet[monitorIndex][i];
+			if(!spreadsheet[monitorIndex][i][1].startsWith(tab.getDepChar())){
+				mp = ambFac.createMonitor(row, null);
+				mparent = mp;
+			}
+			else{
+				mp = ambFac.createMonitor(row, mparent);
+				mparent.addDependent(mp);
+			}
+			mp.setArchive(getArchive(mp.FullName()));
+			//mp.setMetaEnvironment(this.getMetaEnvironment());
+			monitorPoints.getResources().add(mp);
+		}
+
+		// Define undefined dependent monitor points for sequence properties
+		List<Resource> list2 = (List<Resource>) monitorPoints;
+		Monitor[] list = (Monitor[])list2.toArray(new Monitor[0]);
+		for (Monitor mp : list) {
+			if (mp.isWorldDataArray() && !mp.hasDependents())
+				for (i=0; i < Integer.parseInt(mp.NumberItemsWorldData()); i++) {
+					String[] row = {
+							mp.Assembly(),
+							"^" + mp.MPName() + "_" + Integer.toString(i),
+							mp.RCA(),
+							mp.RawDataType(),
+							mp.TeRelatedCell(),
+							mp.WorldDataType(),
+							mp.DataUnits(),
+							"none",
+							"none",
+							"none",
+							"none",
+							"none",
+							mp.ErrorCondition(),
+							mp.ErrorSeverity(),
+							mp.ErrorAction(),
+							mp.Mode(),
+							"yes",
+							"no",
+							mp.CanBeInvalid(),
+							mp.Description() + " (dependent monitor point)"
+					};
+					Monitor dep = ambFac.createMonitor(row, (Resource) mp);
+					mp.addDependent(dep);
+
+					dep.setArchive(getArchive(dep.FullName()));
+					//dep.setMetaEnvironment(this.getMetaEnvironment());
+					monitorPoints.getResources().add((Resource) dep);
 				}
-				System.out.println("Spreadsheet " + deviceName + "_spreadsheet." + " has been validated.");
+		}
 
-				tables.initialize(spreadsheet);
-				mainIndex = tables.getSheetNum("Hardware Device");
-				monitorIndex = tables.getSheetNum("Monitor Point");
-				controlIndex = tables.getSheetNum("Control Point");
-				archiveIndex = tables.getSheetNum("Archive Property");
-				
-				if(spreadsheet[mainIndex][2][tables.getColNum(mainIndex,"Generic Monitor Points")].equals("yes")){
-					String[][][] spreadsheetWithGenericPointsAdded;
-					spreadsheetWithGenericPointsAdded = genericMonitorPoints.getDeviceWorksheetWithGenericPointsAdded(spreadsheet);
-					spreadsheet = spreadsheetWithGenericPointsAdded;
-				}
+		// Get the control points
+		Control cparent = ambFac.createControl();
+		cparent = null;
+		controlPoints = new ResourceSetImpl();
+		for (i = 2; i < spreadsheet[controlIndex].length; ++i) {
+			if(spreadsheet[controlIndex][i].length == 0)
+				break;
+			Control cp;
+			String[] row = spreadsheet[controlIndex][i];
+			if(!spreadsheet[controlIndex][i][1].startsWith(tab.getDepChar()))
+			{
+				cp = ambFac.createControl(row, null);
+				cparent = cp;
+			}
+			else{
+				cp = ambFac.createControl(row, cparent);
+				cparent.addDependent(cp);
+			}
+			cp.setArchive(getArchive(cp.FullName()));
+			//cp.setMetaEnvironment(this.getMetaEnvironment());
+			controlPoints.getResources().add(cp);
+		}
 
-				AmbFactory ambFac = AmbFactory.eINSTANCE;
-				// Get the Main
-				main = ambFac.createMain(spreadsheet[mainIndex][2]);
-				//main.setMetaEnvironment(this.getMetaEnvironment());
+		//Get the Archive Properties
+		archiveProperties = new ResourceSetImpl();
+		for(i = 2; i < spreadsheet[archiveIndex].length; i++) {
+			if(spreadsheet[archiveIndex][i].length == 0)
+				break;
+			Archive ap;
+			String[] row = spreadsheet[archiveIndex][i];
+			ap = ambFac.createArchive(row);
+			alma.control.datamodel.meta.base.MonitorPoint mp = getMonitorPoint(ap.RefersTo());
+			if (mp != null)
+				ap.setMp(mp);
+			alma.control.datamodel.meta.base.ControlPoint cp = getControlPoint(ap.RefersTo());
+			if (cp != null)
+				ap.setCp(cp);
+			archiveProperties.getResources().add((Resource) ap);
+		}
 
-				// Get the Notes
-				notes = new ResourceSetImpl();
-				for (i = 3; i < spreadsheet[mainIndex].length; i++) {
-					//note.setMetaEnvironment(this.getMetaEnvironment());
-					notess.setNote(spreadsheet[mainIndex][i][descriptionIndex]);
-					notes.getResources().add((Resource) notess);
-				}
-				
-				// Get the monitor points
-				Monitor mparent = ambFac.createMonitor();
-				mparent = null;
-				monitorPoints = new ResourceSetImpl();
-				for (i = 2; i < spreadsheet[monitorIndex].length; i++) {
-					if(spreadsheet[monitorIndex][i].length == 0)
-						break;
-					Monitor mp = ambFac.createMonitor();
-					String[] row = spreadsheet[monitorIndex][i];
-					if(!spreadsheet[monitorIndex][i][1].startsWith(tables.getDepChar())){
-						mp = ambFac.createMonitor(row, null);
-						mparent = mp;
-					}
-					else{
-						mp = ambFac.createMonitor(row, mparent);
-						mparent.addDependent(mp);
-					}
-					mp.setArchive(getArchive(mp.FullName()));
-					//mp.setMetaEnvironment(this.getMetaEnvironment());
-					monitorPoints.getResources().add(mp);
-				}
-
-				// Define undefined dependent monitor points for sequence properties
-				List<Resource> list2 = (List<Resource>) monitorPoints;
-				Monitor[] list = (Monitor[])list2.toArray(new Monitor[0]);
-				for (Monitor mp : list) {
-					if (mp.isWorldDataArray() && !mp.hasDependents())
-						for (i=0; i < Integer.parseInt(mp.NumberItemsWorldData()); i++) {
-							String[] row = {
-									mp.Assembly(),
-									"^" + mp.MPName() + "_" + Integer.toString(i),
-									mp.RCA(),
-									mp.RawDataType(),
-									mp.TeRelatedCell(),
-									mp.WorldDataType(),
-									mp.DataUnits(),
-									"none",
-									"none",
-									"none",
-									"none",
-									"none",
-									mp.ErrorCondition(),
-									mp.ErrorSeverity(),
-									mp.ErrorAction(),
-									mp.Mode(),
-									"yes",
-									"no",
-									mp.CanBeInvalid(),
-									mp.Description() + " (dependent monitor point)"
-							};
-							Monitor dep = ambFac.createMonitor(row, (Resource) mp);
-							mp.addDependent(dep);
-
-							dep.setArchive(getArchive(dep.FullName()));
-							//dep.setMetaEnvironment(this.getMetaEnvironment());
-							monitorPoints.getResources().add((Resource) dep);
-						}
-				}
-
-				// Get the control points
-				Control cparent = ambFac.createControl();
-				cparent = null;
-				controlPoints = new ResourceSetImpl();
-				for (i = 2; i < spreadsheet[controlIndex].length; ++i) {
-					if(spreadsheet[controlIndex][i].length == 0)
-						break;
-					Control cp;
-					String[] row = spreadsheet[controlIndex][i];
-					if(!spreadsheet[controlIndex][i][1].startsWith(tables.getDepChar()))
-					{
-						cp = ambFac.createControl(row, null);
-						cparent = cp;
-					}
-					else{
-						cp = ambFac.createControl(row, cparent);
-						cparent.addDependent(cp);
-					}
-					cp.setArchive(getArchive(cp.FullName()));
-					//cp.setMetaEnvironment(this.getMetaEnvironment());
-					controlPoints.getResources().add(cp);
-				}
-
-				//Get the Archive Properties
-				archiveProperties = new ResourceSetImpl();
-				for(i = 2; i < spreadsheet[archiveIndex].length; i++) {
-					if(spreadsheet[archiveIndex][i].length == 0)
-						break;
-					Archive ap;
-					String[] row = spreadsheet[archiveIndex][i];
-					ap = ambFac.createArchive(row);
-					alma.control.datamodel.meta.base.MonitorPoint mp = getMonitorPoint(ap.RefersTo());
-					if (mp != null)
-						ap.setMp(mp);
-					alma.control.datamodel.meta.base.ControlPoint cp = getControlPoint(ap.RefersTo());
-					if (cp != null)
-						ap.setCp(cp);
-					archiveProperties.getResources().add((Resource) ap);
-				}
-
-				System.out.println("DeviceModel: Initialization complete.");
-				return "";
+		System.out.println("DeviceModel: Initialization complete.");
+		return "";
 	}
 
 	/**
@@ -716,27 +813,28 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String TheEnd() {
-				String dir = generatedDir + "/" + Assembly();
-				utils.RemoveLinesFromFile(dir + "/doc", Assembly() + ".html", 1);
-				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
-				utils.RemoveLinesFromFile(dir + "/include", Assembly() + "HWSimBase.h", 1);
-				utils.RemoveLinesFromFile(dir + "/src", Assembly() + "HWSimBase.cpp", 1);
-				utils.RemoveLinesFromFile(dir + "/include", Assembly() + "CompSimBase.h", 1);
-				utils.RemoveLinesFromFile(dir + "/src", Assembly() + "CompSimBase.cpp", 1);
-				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "CompSimBase.idl", 1);
-				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "HWSimImpl.cpp", 1);
-				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "AmbDeviceInt.cpp", 1);
-				if (!isMonitorDBOnly()) {
-					if (isGenerateAlt()) {
-						utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + ".makefile", 1);
-						utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.idl", 1);
-						utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.h", 1);
-						utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.cpp", 1);
-					}
-					super.TheEnd();
-				} else 
-					System.out.println("Code generation for " + deviceName + " done.");
-				return "";
+		Util util = BaseFactory.eINSTANCE.createUtil();
+		String dir = generatedDir + "/" + Assembly();
+		util.RemoveLinesFromFile(dir + "/doc", Assembly() + ".html", 1);
+		util.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
+		util.RemoveLinesFromFile(dir + "/include", Assembly() + "HWSimBase.h", 1);
+		util.RemoveLinesFromFile(dir + "/src", Assembly() + "HWSimBase.cpp", 1);
+		util.RemoveLinesFromFile(dir + "/include", Assembly() + "CompSimBase.h", 1);
+		util.RemoveLinesFromFile(dir + "/src", Assembly() + "CompSimBase.cpp", 1);
+		util.RemoveLinesFromFile(dir + "/idl", Assembly() + "CompSimBase.idl", 1);
+		util.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "HWSimImpl.cpp", 1);
+		util.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "AmbDeviceInt.cpp", 1);
+			if (!isMonitorDBOnly()) {
+				if (isGenerateAlt()) {
+					util.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + ".makefile", 1);
+					util.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.idl", 1);
+					util.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.h", 1);
+					util.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.cpp", 1);
+				}
+				super.TheEnd();
+			} else 
+				System.out.println("Code generation for " + deviceName + " done.");
+			return "";
 	}
 
 	/**
@@ -798,6 +896,10 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			case AmbPackage.DEVICE_MODEL__NOTESS:
 				if (resolve) return getNotess();
 				return basicGetNotess();
+			case AmbPackage.DEVICE_MODEL__UTIL_DT:
+				return getUtilDT();
+			case AmbPackage.DEVICE_MODEL__TABLE_DT:
+				return getTableDT();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -833,6 +935,12 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 				return;
 			case AmbPackage.DEVICE_MODEL__NOTESS:
 				setNotess((Note)newValue);
+				return;
+			case AmbPackage.DEVICE_MODEL__UTIL_DT:
+				setUtilDT((Util)newValue);
+				return;
+			case AmbPackage.DEVICE_MODEL__TABLE_DT:
+				setTableDT((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -870,6 +978,12 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			case AmbPackage.DEVICE_MODEL__NOTESS:
 				setNotess((Note)null);
 				return;
+			case AmbPackage.DEVICE_MODEL__UTIL_DT:
+				setUtilDT(UTIL_DT_EDEFAULT);
+				return;
+			case AmbPackage.DEVICE_MODEL__TABLE_DT:
+				setTableDT(TABLE_DT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -898,8 +1012,30 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 				return genericMonitorPoints != null;
 			case AmbPackage.DEVICE_MODEL__NOTESS:
 				return notess != null;
+			case AmbPackage.DEVICE_MODEL__UTIL_DT:
+				return UTIL_DT_EDEFAULT == null ? utilDT != null : !UTIL_DT_EDEFAULT.equals(utilDT);
+			case AmbPackage.DEVICE_MODEL__TABLE_DT:
+				return TABLE_DT_EDEFAULT == null ? tableDT != null : !TABLE_DT_EDEFAULT.equals(tableDT);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (UtilDT: ");
+		result.append(utilDT);
+		result.append(", TableDT: ");
+		result.append(tableDT);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DeviceModelImpl

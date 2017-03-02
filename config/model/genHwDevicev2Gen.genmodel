@@ -110,6 +110,8 @@
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/genericMonitorPoints"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/notess"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/UtilDT"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/TableDT"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/isMonitorDBOnly"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/IsGeneratedAlt"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/Parent"/>

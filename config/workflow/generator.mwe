@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <workflow>
+	<!-- Add properties files -->
 	<property file="generator.properties"/>
+	<property file="log4j.properties"/>
 	
-	<property name="runtimeProject" value="../../${projectName}"/>
+	<!-- Set up EMF for Standalone Execution 
+	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" platformUri="../../../../../Common/GenHwDevicev2/">
+		<RegisterEcoreFile value="platform:/resource/GenHwDevicev2/config/model/genHwDevicev2.ecore"/>
+	</bean> -->
 	
-	<!-- Set up EMF for Standalone Execution -->
-	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" platformUri="${runtimeProject}">
-		 <RegisterEcoreFile value="platform:/resource/GenHwDevicev2/config/model/genHwDevicev2.ecore"/>
-	</bean>
-
-	<!-- Load model and store it in slot model -->
+	<!-- Load model and store it in slot model -->	
 	<component class="alma.control.datamodel.HwDeviceWorkflowInitializer">
         <deviceDir value="${deviceDir}"/>
         <spreadsheetDir value="${spreadsheetDir}"/>
@@ -17,17 +17,6 @@
         <monitorDBOnly value="${monitorDBOnly}"/>
         <generateAlt value="${generateAlt}"/>
         <modelSlot value="model"/>
-    </component>
-       
-    <!-- Generate Code -->
-	<component id="generator" class="org.eclipse.xpand2.Generator">
-		<fileEncoding value="ISO-8859-1"/>
-		<metaModel class="org.eclipse.xtend.type.impl.java.JavaMetaModel"/>
-		<!-- <metaModel class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel">
-			<metaModelFile value="platform:/resource/GenHwDevicev2/config/model/genHwDevicev2.ecore"/>
-		</metaModel> -->
-		<expand value="Root::Root FOR model"/>
-        <genPath value="${generatedDir}"/>
-	</component>
-	
+     </component>
+
 </workflow>

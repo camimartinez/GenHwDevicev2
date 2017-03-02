@@ -28,7 +28,7 @@ import java.util.Map;
 import org.eclipse.emf.mwe.core.WorkflowEngine;
 import org.eclipse.emf.mwe.core.monitor.NullProgressMonitor;
 
-import alma.control.datamodel.meta.base.BaseFactory;
+import alma.control.datamodel.meta.base.BasePackage;
 
 public class LinuxGen {
 
@@ -38,16 +38,16 @@ public class LinuxGen {
 			System.out.println("The name of the device must be specified.");
 			return;
 		}
-		if (arg.length < 2) System.out.println("The type of the device was not specified. Default to AMB Device.");
+		if (arg.length < 2) System.out.println("The type of the device was not specified... Default to AMB Device.");
 		else devType = arg[1];
-		System.out.println(">>>>>GenHwDevice.main Starting code generation for device " + arg[0]);
+		System.out.println("- ----- GenHwDevice Module: Starting code generation for device: " + arg[0]);
 		System.setProperty("DEVICE_NAME", arg[0]);
 		System.setProperty("DEVICE_TYPE", devType);
-		String wfFile = BaseFactory.eINSTANCE.createUtil().getInstallDir() + "/config/workflow/generator.mwe";
-		Map properties = new HashMap ();
+		String wfFile = BasePackage.eINSTANCE.getBaseFactory().createUtil().getInstallDir() + "/config/workflow/generator.mwe";
+		Map properties = new HashMap();
 		Map slotContents = new HashMap ();
 		
-		System.out.println(">>>>>GenHwDevice.main Starting WorkflowEngineRunner");
+		System.out.println("- ----- GenHwDevice Module: Starting WorkflowEngine");
 		new WorkflowEngine().run(wfFile, new NullProgressMonitor(), properties, slotContents);
 	}
 }

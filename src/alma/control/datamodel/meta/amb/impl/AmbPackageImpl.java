@@ -377,6 +377,24 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDeviceModel_UtilDT() {
+		return (EAttribute)deviceModelEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDeviceModel_TableDT() {
+		return (EAttribute)deviceModelEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMain() {
 		return mainEClass;
 	}
@@ -866,6 +884,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		createEReference(deviceModelEClass, DEVICE_MODEL__VALIDATE_SPREADSHEET);
 		createEReference(deviceModelEClass, DEVICE_MODEL__GENERIC_MONITOR_POINTS);
 		createEReference(deviceModelEClass, DEVICE_MODEL__NOTESS);
+		createEAttribute(deviceModelEClass, DEVICE_MODEL__UTIL_DT);
+		createEAttribute(deviceModelEClass, DEVICE_MODEL__TABLE_DT);
 
 		mainEClass = createEClass(MAIN);
 
@@ -1116,6 +1136,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		initEReference(getDeviceModel_ValidateSpreadsheet(), theBasePackage.getSpreadsheetValidator(), null, "validateSpreadsheet", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_GenericMonitorPoints(), this.getGenericMonitorPoints(), null, "genericMonitorPoints", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_Notess(), theBasePackage.getNote(), null, "notess", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeviceModel_UtilDT(), this.getUtilDT(), "UtilDT", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeviceModel_TableDT(), this.getTableDT(), "TableDT", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "isMonitorDBOnly", 0, 1, IS_UNIQUE, IS_ORDERED);
 

@@ -619,13 +619,31 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL__NOTESS = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Util DT</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__UTIL_DT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Table DT</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__TABLE_DT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 8;
+	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
@@ -1399,6 +1417,28 @@ public interface AmbPackage extends EPackage {
 	EReference getDeviceModel_Notess();
 
 	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.DeviceModel#getUtilDT <em>Util DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Util DT</em>'.
+	 * @see alma.control.datamodel.meta.amb.DeviceModel#getUtilDT()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EAttribute getDeviceModel_UtilDT();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.DeviceModel#getTableDT <em>Table DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Table DT</em>'.
+	 * @see alma.control.datamodel.meta.amb.DeviceModel#getTableDT()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EAttribute getDeviceModel_TableDT();
+
+	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.amb.Main <em>Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2082,6 +2122,22 @@ public interface AmbPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEVICE_MODEL__NOTESS = eINSTANCE.getDeviceModel_Notess();
+
+		/**
+		 * The meta object literal for the '<em><b>Util DT</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE_MODEL__UTIL_DT = eINSTANCE.getDeviceModel_UtilDT();
+
+		/**
+		 * The meta object literal for the '<em><b>Table DT</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE_MODEL__TABLE_DT = eINSTANCE.getDeviceModel_TableDT();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.amb.impl.MainImpl <em>Main</em>}' class.

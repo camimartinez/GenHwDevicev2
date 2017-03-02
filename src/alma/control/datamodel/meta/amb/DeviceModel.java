@@ -26,6 +26,8 @@ import alma.control.datamodel.meta.base.Note;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
 
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 import alma.control.datamodel.meta.eth.Control;
 
 /**
@@ -45,6 +47,8 @@ import alma.control.datamodel.meta.eth.Control;
  *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getValidateSpreadsheet <em>Validate Spreadsheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getGenericMonitorPoints <em>Generic Monitor Points</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getNotess <em>Notess</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getUtilDT <em>Util DT</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getTableDT <em>Table DT</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getDeviceModel()
@@ -261,6 +265,58 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	void setNotess(Note value);
 
 	/**
+	 * Returns the value of the '<em><b>Util DT</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Util DT</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Util DT</em>' attribute.
+	 * @see #setUtilDT(Util)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getDeviceModel_UtilDT()
+	 * @model dataType="alma.control.datamodel.meta.amb.UtilDT"
+	 * @generated
+	 */
+	Util getUtilDT();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.DeviceModel#getUtilDT <em>Util DT</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Util DT</em>' attribute.
+	 * @see #getUtilDT()
+	 * @generated
+	 */
+	void setUtilDT(Util value);
+
+	/**
+	 * Returns the value of the '<em><b>Table DT</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Table DT</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Table DT</em>' attribute.
+	 * @see #setTableDT(Table)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getDeviceModel_TableDT()
+	 * @model dataType="alma.control.datamodel.meta.amb.TableDT"
+	 * @generated
+	 */
+	Table getTableDT();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.DeviceModel#getTableDT <em>Table DT</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Table DT</em>' attribute.
+	 * @see #getTableDT()
+	 * @generated
+	 */
+	void setTableDT(Table value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
@@ -336,7 +392,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString dir = generatedDir + \"/\" + Assembly();\n\t\tutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".html\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"HWSimBase.h\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"HWSimBase.cpp\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"CompSimBase.h\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"CompSimBase.cpp\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"CompSimBase.idl\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"HWSimImpl.cpp\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"AmbDeviceInt.cpp\", 1);\n\t\tif (!isMonitorDBOnly()) {\n\t\t\tif (isGenerateAlt()) {\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \".makefile\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.idl\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.h\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.cpp\", 1);\n\t\t\t}\n\t\t\tsuper.TheEnd();\n\t\t} else \n\t\t\tSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\n\t\treturn \"\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='Util util = BaseFactory.eINSTANCE.createUtil();\nString dir = generatedDir + \"/\" + Assembly();\nutil.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".html\", 1);\nutil.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\nutil.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"HWSimBase.h\", 1);\nutil.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"HWSimBase.cpp\", 1);\nutil.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"CompSimBase.h\", 1);\nutil.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"CompSimBase.cpp\", 1);\nutil.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"CompSimBase.idl\", 1);\nutil.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"HWSimImpl.cpp\", 1);\nutil.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"AmbDeviceInt.cpp\", 1);\n\tif (!isMonitorDBOnly()) {\n\t\tif (isGenerateAlt()) {\n\t\t\tutil.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \".makefile\", 1);\n\t\t\tutil.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.idl\", 1);\n\t\t\tutil.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.h\", 1);\n\t\t\tutil.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.cpp\", 1);\n\t\t}\n\t\tsuper.TheEnd();\n\t} else \n\t\tSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\n\treturn \"\";'"
 	 * @generated
 	 */
 	String TheEnd();
