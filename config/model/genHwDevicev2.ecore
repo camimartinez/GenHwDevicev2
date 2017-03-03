@@ -350,9 +350,9 @@
               </eAnnotations>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/amb/MandCAMBDT"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="auxResource" eType="#//control/datamodel/meta/amb/ResourceDT"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="mandCb" eType="#//control/datamodel/meta/amb/MandC"
                 containment="true"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="auxResource" eType="#//control/datamodel/meta/amb/ResourceDT"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//control/datamodel/meta/base/DeviceModel">
             <eOperations name="isMonitorDBOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -732,8 +732,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="util" eType="#//control/datamodel/meta/amb/UtilDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//control/datamodel/meta/base/MandCBaseDT"
-                transient="true"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//control/datamodel/meta/base/MandCBaseDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="Amask" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="mandCb" eType="#//control/datamodel/meta/base/MandCBase"
                 containment="true"/>
@@ -1360,8 +1359,7 @@
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
                 defaultValueLiteral="1"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet" eType="#//control/datamodel/meta/base/EStringArray3"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="#//control/datamodel/meta/base/MainBaseDT"
-                transient="true"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="#//control/datamodel/meta/base/MainBaseDT"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints"
@@ -2156,10 +2154,8 @@
             <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandlerDT" instanceClassName="alma.control.datamodel.meta.base.SimpleErrorHandler"/>
-          <eClassifiers xsi:type="ecore:EDataType" name="MandCBaseDT" instanceClassName="alma.control.datamodel.meta.base.MandCBase"
-              serializable="false"/>
-          <eClassifiers xsi:type="ecore:EDataType" name="MainBaseDT" instanceClassName="alma.control.datamodel.meta.base.MainBase"
-              serializable="false"/>
+          <eClassifiers xsi:type="ecore:EDataType" name="MandCBaseDT" instanceClassName="alma.control.datamodel.meta.base.MandCBase"/>
+          <eClassifiers xsi:type="ecore:EDataType" name="MainBaseDT" instanceClassName="alma.control.datamodel.meta.base.MainBase"/>
           <eClassifiers xsi:type="ecore:EDataType" name="ArrayList" instanceClassName="java.util.ArrayList"/>
           <eClassifiers xsi:type="ecore:EDataType" name="Hashtable" instanceClassName="java.util.Hashtable"/>
           <eClassifiers xsi:type="ecore:EDataType" name="ErrorHandlerDT" instanceClassName="org.xml.sax.ErrorHandler"/>

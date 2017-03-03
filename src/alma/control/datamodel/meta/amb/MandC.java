@@ -170,7 +170,7 @@ public interface MandC extends EObject {
 	 * @return the value of the '<em>Mcp</em>' attribute.
 	 * @see #setMcp(MandCBase)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Mcp()
-	 * @model dataType="alma.control.datamodel.meta.base.MandCBaseDT" transient="true"
+	 * @model dataType="alma.control.datamodel.meta.base.MandCBaseDT"
 	 * @generated
 	 */
 	MandCBase getMcp();

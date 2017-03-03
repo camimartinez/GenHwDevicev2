@@ -638,7 +638,6 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	
 	public String CreateModel() {
 		// Parse and validate the spreadsheet.
-		System.out.println("Entra a CreateModel() de AMB");
 		int i;
 		int mainIndex;
 		int monitorIndex;

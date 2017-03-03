@@ -2648,7 +2648,7 @@ public interface BasePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Mand CBase DT</em>'.
 	 * @see alma.control.datamodel.meta.base.MandCBase
-	 * @model instanceClass="alma.control.datamodel.meta.base.MandCBase" serializeable="false"
+	 * @model instanceClass="alma.control.datamodel.meta.base.MandCBase"
 	 * @generated
 	 */
 	EDataType getMandCBaseDT();
@@ -2659,7 +2659,7 @@ public interface BasePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Main Base DT</em>'.
 	 * @see alma.control.datamodel.meta.base.MainBase
-	 * @model instanceClass="alma.control.datamodel.meta.base.MainBase" serializeable="false"
+	 * @model instanceClass="alma.control.datamodel.meta.base.MainBase"
 	 * @generated
 	 */
 	EDataType getMainBaseDT();

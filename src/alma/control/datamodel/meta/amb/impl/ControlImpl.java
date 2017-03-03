@@ -56,8 +56,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getMandCb <em>Mand Cb</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getAuxResource <em>Aux Resource</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.ControlImpl#getMandCb <em>Mand Cb</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,16 +84,6 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	protected MandC mac = MAC_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMandCb() <em>Mand Cb</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMandCb()
-	 * @generated
-	 * @ordered
-	 */
-	protected MandC mandCb;
-
-	/**
 	 * The default value of the '{@link #getAuxResource() <em>Aux Resource</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,6 +102,16 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @ordered
 	 */
 	protected Resource auxResource = AUX_RESOURCE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMandCb() <em>Mand Cb</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMandCb()
+	 * @generated
+	 * @ordered
+	 */
+	protected MandC mandCb;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1063,10 +1063,10 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		switch (featureID) {
 			case AmbPackage.CONTROL__MAC:
 				return getMac();
-			case AmbPackage.CONTROL__MAND_CB:
-				return getMandCb();
 			case AmbPackage.CONTROL__AUX_RESOURCE:
 				return getAuxResource();
+			case AmbPackage.CONTROL__MAND_CB:
+				return getMandCb();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1082,11 +1082,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 			case AmbPackage.CONTROL__MAC:
 				setMac((MandC)newValue);
 				return;
-			case AmbPackage.CONTROL__MAND_CB:
-				setMandCb((MandC)newValue);
-				return;
 			case AmbPackage.CONTROL__AUX_RESOURCE:
 				setAuxResource((Resource)newValue);
+				return;
+			case AmbPackage.CONTROL__MAND_CB:
+				setMandCb((MandC)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1103,11 +1103,11 @@ public class ControlImpl extends ControlPointImpl implements Control {
 			case AmbPackage.CONTROL__MAC:
 				setMac(MAC_EDEFAULT);
 				return;
-			case AmbPackage.CONTROL__MAND_CB:
-				setMandCb((MandC)null);
-				return;
 			case AmbPackage.CONTROL__AUX_RESOURCE:
 				setAuxResource(AUX_RESOURCE_EDEFAULT);
+				return;
+			case AmbPackage.CONTROL__MAND_CB:
+				setMandCb((MandC)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1123,10 +1123,10 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		switch (featureID) {
 			case AmbPackage.CONTROL__MAC:
 				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
-			case AmbPackage.CONTROL__MAND_CB:
-				return mandCb != null;
 			case AmbPackage.CONTROL__AUX_RESOURCE:
 				return AUX_RESOURCE_EDEFAULT == null ? auxResource != null : !AUX_RESOURCE_EDEFAULT.equals(auxResource);
+			case AmbPackage.CONTROL__MAND_CB:
+				return mandCb != null;
 		}
 		return super.eIsSet(featureID);
 	}

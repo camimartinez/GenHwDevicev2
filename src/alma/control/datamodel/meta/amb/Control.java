@@ -35,8 +35,8 @@ import org.eclipse.emf.ecore.resource.Resource;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.Control#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Control#getMandCb <em>Mand Cb</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.Control#getAuxResource <em>Aux Resource</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.Control#getMandCb <em>Mand Cb</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getControl()

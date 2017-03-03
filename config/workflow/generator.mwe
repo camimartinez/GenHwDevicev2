@@ -4,11 +4,6 @@
 	<property file="generator.properties"/>
 	<property file="log4j.properties"/>
 	
-	<!-- Set up EMF for Standalone Execution 
-	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" platformUri="../../../../../Common/GenHwDevicev2/">
-		<RegisterEcoreFile value="platform:/resource/GenHwDevicev2/config/model/genHwDevicev2.ecore"/>
-	</bean> -->
-	
 	<!-- Load model and store it in slot model -->	
 	<component class="alma.control.datamodel.HwDeviceWorkflowInitializer">
         <deviceDir value="${deviceDir}"/>

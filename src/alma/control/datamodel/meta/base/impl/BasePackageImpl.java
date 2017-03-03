@@ -1512,7 +1512,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeviceModel_DescriptionIndex(), ecorePackage.getEInt(), "DescriptionIndex", "1", 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeviceModel_Spreadsheet(), this.getEStringArray3(), "spreadsheet", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDeviceModel_Main(), this.getMainBaseDT(), "main", null, 0, 1, DeviceModel.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeviceModel_Main(), this.getMainBaseDT(), "main", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeviceModel_Notes(), ecorePackage.getEResourceSet(), "notes", null, 0, 1, DeviceModel.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeviceModel_MonitorPoints(), ecorePackage.getEResourceSet(), "monitorPoints", null, 0, 1, DeviceModel.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeviceModel_ControlPoints(), ecorePackage.getEResourceSet(), "controlPoints", null, 0, 1, DeviceModel.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1986,8 +1986,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		// Initialize data types
 		initEDataType(simpleErrorHandlerDTEDataType, SimpleErrorHandler.class, "SimpleErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(mandCBaseDTEDataType, MandCBase.class, "MandCBaseDT", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(mainBaseDTEDataType, MainBase.class, "MainBaseDT", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(mandCBaseDTEDataType, MandCBase.class, "MandCBaseDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(mainBaseDTEDataType, MainBase.class, "MainBaseDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(arrayListEDataType, ArrayList.class, "ArrayList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(hashtableEDataType, Hashtable.class, "Hashtable", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(errorHandlerDTEDataType, ErrorHandler.class, "ErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

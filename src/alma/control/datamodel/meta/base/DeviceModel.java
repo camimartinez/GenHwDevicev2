@@ -125,7 +125,7 @@ public interface DeviceModel extends EObject {
 	 * @return the value of the '<em>Main</em>' attribute.
 	 * @see #setMain(MainBase)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Main()
-	 * @model dataType="alma.control.datamodel.meta.base.MainBaseDT" transient="true"
+	 * @model dataType="alma.control.datamodel.meta.base.MainBaseDT"
 	 * @generated
 	 */
 	MainBase getMain();

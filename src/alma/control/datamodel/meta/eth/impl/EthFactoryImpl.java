@@ -213,16 +213,6 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Monitor createMonitor(String[] row, Resource parent) {
-		MonitorImpl monitorETH = new MonitorImpl(row,parent);
-		return monitorETH;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public MandC createMandCETHDTFromString(EDataType eDataType, String initialValue) {
@@ -238,6 +228,16 @@ public class EthFactoryImpl extends EFactoryImpl implements EthFactory {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Monitor createMonitor(String[] row, Resource parent) {
+		MonitorImpl monitorETH = new MonitorImpl(row,parent);
+		return monitorETH;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

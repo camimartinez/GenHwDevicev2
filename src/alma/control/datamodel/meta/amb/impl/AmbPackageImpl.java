@@ -279,7 +279,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * @generated
 	 */
 	public EReference getControl_MandCb() {
-		return (EReference)controlEClass.getEStructuralFeatures().get(1);
+		return (EReference)controlEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -288,7 +288,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * @generated
 	 */
 	public EAttribute getControl_AuxResource() {
-		return (EAttribute)controlEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)controlEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -872,8 +872,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		controlEClass = createEClass(CONTROL);
 		createEAttribute(controlEClass, CONTROL__MAC);
-		createEReference(controlEClass, CONTROL__MAND_CB);
 		createEAttribute(controlEClass, CONTROL__AUX_RESOURCE);
+		createEReference(controlEClass, CONTROL__MAND_CB);
 
 		deviceModelEClass = createEClass(DEVICE_MODEL);
 		createEReference(deviceModelEClass, DEVICE_MODEL__OBTAIN_MAIN);
@@ -994,8 +994,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		initEClass(controlEClass, Control.class, "Control", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getControl_Mac(), this.getMandCAMBDT(), "mac", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControl_MandCb(), this.getMandC(), null, "mandCb", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getControl_AuxResource(), this.getResourceDT(), "auxResource", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControl_MandCb(), this.getMandC(), null, "mandCb", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(controlEClass, ecorePackage.getEString(), "Data", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1183,7 +1183,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		initEAttribute(getMandC_Util(), this.getUtilDT(), "util", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Row(), theBasePackage.getEStringArray(), "row", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMandC_Mcp(), theBasePackage.getMandCBaseDT(), "mcp", null, 0, 1, MandC.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMandC_Mcp(), theBasePackage.getMandCBaseDT(), "mcp", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Amask(), theBasePackage.getEStringArray(), "Amask", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandC_MandCb(), theBasePackage.getMandCBase(), null, "mandCb", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandC_Tables(), theBasePackage.getTable(), null, "tables", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

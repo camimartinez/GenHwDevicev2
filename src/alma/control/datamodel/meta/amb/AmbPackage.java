@@ -358,22 +358,22 @@ public interface AmbPackage extends EPackage {
 	int CONTROL__MAC = BasePackage.CONTROL_POINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Mand Cb</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__MAND_CB = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Aux Resource</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__AUX_RESOURCE = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
+	int CONTROL__AUX_RESOURCE = BasePackage.CONTROL_POINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mand Cb</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__MAND_CB = BasePackage.CONTROL_POINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Control</em>' class.

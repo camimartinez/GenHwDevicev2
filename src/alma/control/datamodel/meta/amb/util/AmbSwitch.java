@@ -30,6 +30,8 @@ import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
 
+import java.util.List;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 

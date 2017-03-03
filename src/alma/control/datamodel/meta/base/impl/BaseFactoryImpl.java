@@ -137,6 +137,10 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 		switch (eDataType.getClassifierID()) {
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return createSimpleErrorHandlerDTFromString(eDataType, initialValue);
+			case BasePackage.MAND_CBASE_DT:
+				return createMandCBaseDTFromString(eDataType, initialValue);
+			case BasePackage.MAIN_BASE_DT:
+				return createMainBaseDTFromString(eDataType, initialValue);
 			case BasePackage.ARRAY_LIST:
 				return createArrayListFromString(eDataType, initialValue);
 			case BasePackage.HASHTABLE:
@@ -166,6 +170,10 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 		switch (eDataType.getClassifierID()) {
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return convertSimpleErrorHandlerDTToString(eDataType, instanceValue);
+			case BasePackage.MAND_CBASE_DT:
+				return convertMandCBaseDTToString(eDataType, instanceValue);
+			case BasePackage.MAIN_BASE_DT:
+				return convertMainBaseDTToString(eDataType, instanceValue);
 			case BasePackage.ARRAY_LIST:
 				return convertArrayListToString(eDataType, instanceValue);
 			case BasePackage.HASHTABLE:
@@ -280,6 +288,42 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertSimpleErrorHandlerDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandCBase createMandCBaseDTFromString(EDataType eDataType, String initialValue) {
+		return (MandCBase)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMandCBaseDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MainBase createMainBaseDTFromString(EDataType eDataType, String initialValue) {
+		return (MainBase)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMainBaseDTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
