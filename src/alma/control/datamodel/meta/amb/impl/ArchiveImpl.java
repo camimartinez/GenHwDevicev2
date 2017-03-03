@@ -49,15 +49,6 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchiveImpl(String[] row) {
-		super();
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -65,6 +56,15 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 		return AmbPackage.Literals.ARCHIVE;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArchiveImpl(String[] row) {
+		super();
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

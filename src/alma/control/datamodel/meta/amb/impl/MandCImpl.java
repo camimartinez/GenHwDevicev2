@@ -36,6 +36,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -84,7 +85,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @ordered
 	 */
 	protected Table table = TABLE_EDEFAULT;
-	
+
 	/**
 	 * The default value of the '{@link #getUtil() <em>Util</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -247,22 +248,22 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return AmbPackage.Literals.MAND_C;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
 	public MandCImpl(String[] row, int sheet, MandCBase mcp) {
 		this.row = row;
 		this.sheet = sheet;
 		this.mcp = mcp;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return AmbPackage.Literals.MAND_C;
 	}
 
 	/**
@@ -1435,4 +1436,5 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		result.append(')');
 		return result.toString();
 	}
+
 } //MandCImpl

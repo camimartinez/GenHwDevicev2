@@ -50,20 +50,20 @@ public class MainImpl extends MainBaseImpl implements Main {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MainImpl(String[] row){
-		super(row);
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.MAIN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MainImpl(String[] row){
+		super(row);
 	}
 
 	/**

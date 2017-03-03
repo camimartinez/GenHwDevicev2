@@ -293,7 +293,7 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, newErrorHandler, newErrorHandler));
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

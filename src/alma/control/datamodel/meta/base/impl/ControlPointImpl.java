@@ -48,15 +48,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ControlPointImpl(String[] row, Resource parent) {
-		super(row, parent);
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -64,6 +55,15 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 		return BasePackage.Literals.CONTROL_POINT;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ControlPointImpl(String[] row, Resource parent) {
+		super(row, parent);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

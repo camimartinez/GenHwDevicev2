@@ -38,6 +38,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -456,16 +457,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 */
 	public void setArchive(Resource newArchive) {
 		this.archive = newArchive;
-		if(newArchive != null){
-			if (this instanceof MonitorPoint)
-				((ArchiveProperty)newArchive).setMp(this);
-			else
-				((ArchiveProperty)newArchive).setCp(this);
-		}
-		Resource oldArchive = archive;
-		archive = newArchive;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__ARCHIVE, oldArchive, archive));
 	}
 
 	/**

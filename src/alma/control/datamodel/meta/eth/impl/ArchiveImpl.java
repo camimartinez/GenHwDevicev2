@@ -49,20 +49,20 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchiveImpl(String[] row){
-		super(row);
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.ARCHIVE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArchiveImpl(String[] row){
+		super(row);
 	}
 
 } //ArchiveImpl

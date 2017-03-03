@@ -1769,15 +1769,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isMonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		addEOperation(archivePropertyEClass, ecorePackage.getEResource(), "getMonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(archivePropertyEClass, ecorePackage.getEResource(), "getControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "APName", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Name", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "APName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "RefersTo", 0, 1, IS_UNIQUE, IS_ORDERED);
 

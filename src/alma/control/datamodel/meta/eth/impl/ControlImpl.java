@@ -27,12 +27,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Map;
 
+import alma.control.datamodel.meta.base.Util;
 import alma.control.datamodel.meta.base.impl.ControlPointImpl;
 
 import alma.control.datamodel.meta.eth.Control;
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -486,6 +488,36 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	public EList<Diagnostic> getWarnings() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void setUtil(Util value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public EList<Adapter> eAdapters() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean eDeliver() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void eSetDeliver(boolean deliver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eNotify(Notification notification) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //ControlImpl

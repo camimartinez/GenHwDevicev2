@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This file allows to automated the code generation from the model.
+EMF provides an ant task to generated code from a genmodel (emf.Ecore2Java), 
+the code can be generated in two ways:
+ 
+But before that, in both ways, the launch enviroment needs to be set up, as follows:
+
+export LAUNCHER={pathToPluginsFolderEclipse}/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar
+
+1. Build with antRunner:
+
+java -jar $LAUNCHER -application org.eclipse.ant.core.antRunner -nosplash -buildfile {pathToFile}/ecore2java.xml
+
+2. Build with ecore.Generator:
+
+export PROJECT_HOME={pathToProject}
+
+java -jar $LAUNCHER -application org.eclipse.emf.codegen.ecore.Generator -projects $PROJECT_HOME -model -nosplash
+$PROJECT_HOME/config/model/genHwDevicev2Gen.genmodel $PROJECT_HOME
+ -->
+
+<project name="GenHwDevicev2" default="generateCode">
+	<description> Build the javacode from ecore model </description>
+	
+	<target name="generateCode" description="description">
+	<emf.Ecore2Java genModel="../config/model/genHwDevicev2Gen.genmodel"
+					model="../config/model/genHwDevicev2.ecore"
+					generatemodelproject="true"
+					generateeditorproject="false"
+					generateeditproject="false"
+					reconcilegenmodel="reload"/>
+	</target>
+</project>

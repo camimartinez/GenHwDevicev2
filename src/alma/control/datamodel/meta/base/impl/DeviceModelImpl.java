@@ -407,10 +407,14 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
 	public DeviceModelImpl() {
-		super();
+		this.setDeviceName(System.getProperty("deviceName"));
+		this.setDeviceDir(System.getProperty("deviceDir"));
+		this.setCodegenDir(System.getProperty("codegenDir"));
+		this.setSpreadsheetDir(System.getProperty("spreadsheetDir"));
+		this.setGeneratedDir(System.getProperty("generatedDir"));
 	}
 
 	/**

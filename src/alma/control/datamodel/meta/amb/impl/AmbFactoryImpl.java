@@ -83,46 +83,6 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Control createControl(String[] row, Resource parent) {
-		ControlImpl controlAMB = new ControlImpl(row,parent);
-		return controlAMB;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Main createMain(String[] row) {
-		MainImpl mainAMB = new MainImpl(row);
-		return mainAMB;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MandC createMandC(String[] row, int sheet, MandCBase mcp) {
-		MandCImpl mandCAMB = new MandCImpl(row,sheet,mcp);
-		return mandCAMB;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Monitor createMonitor(String[] row, Resource parent) {
-		MonitorImpl monitorAMB = new MonitorImpl();
-		return monitorAMB;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -195,6 +155,46 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 		}
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Control createControl(String[] row, Resource parent) {
+		ControlImpl controlAMB = new ControlImpl(row,parent);
+		return controlAMB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Main createMain(String[] row) {
+		MainImpl mainAMB = new MainImpl(row);
+		return mainAMB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MandC createMandC(String[] row, int sheet, MandCBase mcp) {
+		MandCImpl mandCAMB = new MandCImpl(row,sheet,mcp);
+		return mandCAMB;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Monitor createMonitor(String[] row, Resource parent) {
+		MonitorImpl monitorAMB = new MonitorImpl();
+		return monitorAMB;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

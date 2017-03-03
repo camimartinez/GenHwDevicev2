@@ -22,8 +22,6 @@
  */
 package alma.control.datamodel.meta.base;
 
-import org.eclipse.emf.ecore.resource.Resource;
-
 
 /**
  * <!-- begin-user-doc -->

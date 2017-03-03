@@ -78,37 +78,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchiveProperty createArchiveProperty(String[] row) {
-		ArchivePropertyImpl archiveProperty = new ArchivePropertyImpl(row);
-		return archiveProperty;
-	}
-	
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public SpreadsheetParser createSpreadsheetParser(String xml) {
-		SpreadsheetParserImpl spreadsheetParser = new SpreadsheetParserImpl(xml);
-		return spreadsheetParser;
-	}	
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MainBase createMainBase(String[] row) {
-		MainBaseImpl mainBase = new MainBaseImpl(row);
-		return mainBase;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -191,6 +160,37 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArchiveProperty createArchiveProperty(String[] row) {
+		ArchivePropertyImpl archiveProperty = new ArchivePropertyImpl(row);
+		return archiveProperty;
+	}
+	
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public SpreadsheetParser createSpreadsheetParser(String xml) {
+		SpreadsheetParserImpl spreadsheetParser = new SpreadsheetParserImpl(xml);
+		return spreadsheetParser;
+	}	
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MainBase createMainBase(String[] row) {
+		MainBaseImpl mainBase = new MainBaseImpl(row);
+		return mainBase;
 	}
 
 	/**

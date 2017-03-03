@@ -64,7 +64,6 @@ public class MainImpl extends MainBaseImpl implements Main {
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.MAIN;
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

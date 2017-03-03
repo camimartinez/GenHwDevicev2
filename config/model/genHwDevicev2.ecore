@@ -1744,14 +1744,14 @@
                 <details key="body" value="return mp != null;"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="isControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return cp != null;"/>
-              </eAnnotations>
-            </eOperations>
             <eOperations name="getMonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="return mp;"/>
+              </eAnnotations>
+            </eOperations>
+            <eOperations name="isControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="body" value="return cp != null;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="getControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
@@ -1759,14 +1759,14 @@
                 <details key="body" value="return cp;"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="APName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value=" String name = Name();&#xD;&#xA;if (name.startsWith(TableImpl.DEP_CHAR_EDEFAULT))&#xD;&#xA;&#x9;name = name.substring(1);&#xD;&#xA;return name;"/>
-              </eAnnotations>
-            </eOperations>
             <eOperations name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="return row[table.getColNum(sheet, &quot;Name&quot;)];"/>
+              </eAnnotations>
+            </eOperations>
+            <eOperations name="APName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="body" value="String name = Name();&#xA;&#x9;if (name.startsWith(table.getDepChar()))&#xA;&#x9;name = name.substring(1);&#xA;return name;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="RefersTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">

@@ -26,12 +26,14 @@ import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
 
 import alma.control.datamodel.meta.base.ArchiveProperty;
+import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.Table;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -75,7 +77,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 */
 	public ArchivePropertyImpl(String[] row) {
 		this.row = row;
-		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Archive Property");
+		this.sheet = BaseFactory.eINSTANCE.createTable().getSheetNum("Archive Property");
 	}
 	
 	/**
@@ -392,8 +394,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String APName() {
-		 String name = Name();
-		if (name.startsWith(TableImpl.DEP_CHAR_EDEFAULT))
+		String name = Name();
+			if (name.startsWith(table.getDepChar()))
 			name = name.substring(1);
 		return name;
 	}

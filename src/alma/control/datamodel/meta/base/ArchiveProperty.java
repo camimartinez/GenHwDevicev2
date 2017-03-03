@@ -252,7 +252,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body=' String name = Name();\r\nif (name.startsWith(TableImpl.DEP_CHAR_EDEFAULT))\r\n\tname = name.substring(1);\r\nreturn name;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String name = Name();\n\tif (name.startsWith(table.getDepChar()))\n\tname = name.substring(1);\nreturn name;'"
 	 * @generated
 	 */
 	String APName();

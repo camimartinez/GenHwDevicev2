@@ -27,6 +27,7 @@ import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
 
+import alma.control.datamodel.meta.base.Util;
 import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
 
 import java.io.IOException;
@@ -35,6 +36,7 @@ import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -137,21 +139,21 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MonitorImpl(String[] row, Resource parent) {
-		super(row, parent);
-		mac = new MandCImpl(row, sheet, this);
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.MONITOR;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public MonitorImpl(String[] row, Resource parent) {
+		super(row, parent);
+		mac = new MandCImpl(row, sheet, this);
 	}
 
 	/**
@@ -984,6 +986,36 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	public EList<Diagnostic> getWarnings() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void setUtil(Util value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public EList<Adapter> eAdapters() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean eDeliver() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void eSetDeliver(boolean deliver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eNotify(Notification notification) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //MonitorImpl

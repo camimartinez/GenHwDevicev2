@@ -71,7 +71,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	public SpreadsheetParserImpl(String xml){
 		this.xml = xml;
 	}	
-	
+
 	/**
 	 * The default value of the '{@link #getRefPath() <em>Ref Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -152,7 +152,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 */
 	protected String xsdFile = XSD_FILE_EDEFAULT;
 
-/**
+	/**
 	 * The default value of the '{@link #getNewline() <em>Newline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -436,7 +436,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return xml;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -461,7 +461,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	}
 
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -488,7 +488,7 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 		return (String[])list.toArray(x);
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
@@ -599,110 +599,110 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 */
 	public String[][][] filter(String doc) {
 		// A. Get the directory that is referenced, and the old and new assembly names.
-				// Syntax: @reference = <base-directory-path-name> <base-assembly-name> = <new-assembly-name>
-				LineNumberReader text = new LineNumberReader(new java.io.StringReader(doc));
-				String line = null;
-				try {
-					line = text.readLine();
-				} catch (IOException err) {
-					throw new RuntimeException("Cannot read file: " + err.toString());
+		// Syntax: @reference = <base-directory-path-name> <base-assembly-name> = <new-assembly-name>
+		LineNumberReader text = new LineNumberReader(new java.io.StringReader(doc));
+		String line = null;
+		try {
+			line = text.readLine();
+		} catch (IOException err) {
+			throw new RuntimeException("Cannot read file: " + err.toString());
+		}
+		String[] tmp = line.split("[ |\t]+");
+		if (!tmp[0].equals("@reference") || !tmp[1].equals("=") || !tmp[4].equals("=")) {
+			throw new RuntimeException("Invalid syntax at line number " + text.getLineNumber() + " in file filter.");
+		}
+		String baseDirectory = tmp[2];
+		String baseAssemblyName = tmp[3];
+		String newAssemblyName = tmp[5];
+		System.out.println("Applying filter in directory " + baseDirectory + 
+				" to assembly " + baseAssemblyName + ".  New assembly is " + newAssemblyName + ".");
+
+		// B. Get the contents of this base spreadsheet.
+		BaseFactory baseFac = BaseFactory.eINSTANCE;
+		String referenceXml = baseFac.createSpreadsheetParser().getSpreadsheet(baseDirectory, baseAssemblyName + "_spreadsheet.xml");
+		refPath = baseDirectory + "/" + baseAssemblyName + "_spreadsheet.xml";
+		SpreadsheetParser p = baseFac.createSpreadsheetParser(referenceXml);
+		SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
+		if (!v.validate(refPath,xsdFile)) {
+			String s = "Spreadsheet " + baseAssemblyName + "_spreadsheet.xml is not a valid spreadsheet.";
+			throw new RuntimeException(s);
+		}
+		System.out.println("Base spreadsheet " + baseAssemblyName + " has been validated.");
+		String[][][] base = p.getWorksheets();
+
+		// C. Change the assembly name in the base spreadsheet.
+		for (int i = 0; i < base.length; ++i) {
+			for (int j = 0; j < base[i].length; ++j) {
+				if (base[i][j][0].equals(baseAssemblyName)) {
+					base[i][j][0] = newAssemblyName;
 				}
-				String[] tmp = line.split("[ |\t]+");
-				if (!tmp[0].equals("@reference") || !tmp[1].equals("=") || !tmp[4].equals("=")) {
-					throw new RuntimeException("Invalid syntax at line number " + text.getLineNumber() + " in file filter.");
+			}
+		}
+
+		// D. Apply the filter to the base.
+		//    Any deleted rows we will simply make null.
+		String[][] worksheet = null;
+		while (true) {
+			try {
+				line = text.readLine();
+			} catch (IOException err) {
+				throw new RuntimeException("Cannot read file: " + err.toString());
+			}
+			if (line == null)
+				break;
+			if (line.trim().length() == 0)
+				continue;
+			if (line.startsWith("Main"))
+				worksheet = base[0];
+			else if (line.startsWith("EndMain"))
+				worksheet = null;
+			else if (line.startsWith("Monitor"))
+				worksheet = base[1];
+			else if (line.startsWith("EndMonitor"))
+				worksheet = null;
+			else if (line.startsWith("Control"))
+				worksheet = base[2];
+			else if (line.startsWith("EndControl"))
+				worksheet = null;
+			else if (line.startsWith("Archive"))
+				worksheet = base[3];
+			else if (line.startsWith("EndArchive"))
+				worksheet = null;
+			else {
+				if (worksheet == null)
+					throw new RuntimeException("Invalid syntax at line number " + text.getLineNumber() + " in file filter. (Missing statement)");
+				tmp = line.split("[ |\t]+");
+				if (line.startsWith("~")) {
+					deleteRow(worksheet,tmp[0].substring(1));
+				} else {
+					String s = line.substring(tmp[0].length());
+					modifyRow(worksheet,text.getLineNumber(),tmp[0],s);
 				}
-				String baseDirectory = tmp[2];
-				String baseAssemblyName = tmp[3];
-				String newAssemblyName = tmp[5];
-				System.out.println("Applying filter in directory " + baseDirectory + 
-						" to assembly " + baseAssemblyName + ".  New assembly is " + newAssemblyName + ".");
-				
-				// B. Get the contents of this base spreadsheet.
-				BaseFactory baseFac = BaseFactory.eINSTANCE;
-				String referenceXml = baseFac.createSpreadsheetParser().getSpreadsheet(baseDirectory, baseAssemblyName + "_spreadsheet.xml");
-				refPath = baseDirectory + "/" + baseAssemblyName + "_spreadsheet.xml";
-				SpreadsheetParser p = baseFac.createSpreadsheetParser(referenceXml);
-				SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
-				if (!v.validate(refPath,xsdFile)) {
-					String s = "Spreadsheet " + baseAssemblyName + "_spreadsheet.xml is not a valid spreadsheet.";
-					throw new RuntimeException(s);
+			}
+		}
+
+		// E. Assign the non-null array.
+		String[][][] result = new String [base.length] [] [];
+		for (int i = 0; i < result.length; ++i) {
+			int nrow = 0;
+			for (int j = 0; j < base[i].length; ++j) {
+				if (base[i][j] != null)
+					++nrow;
+			}
+			result[i] = new String [nrow] [];
+			int jj = 0;
+			for (int j = 0; j < base[i].length; ++j) {
+				if (base[i][j] != null) {
+					result[i][jj] = new String [base[i][j].length];
+					for (int k = 0; k < base[i][j].length; ++k)
+						result[i][jj][k] = base[i][j][k];
+					++jj;
 				}
-				System.out.println("Base spreadsheet " + baseAssemblyName + " has been validated.");
-				String[][][] base = p.getWorksheets();
-				
-				// C. Change the assembly name in the base spreadsheet.
-				for (int i = 0; i < base.length; ++i) {
-					for (int j = 0; j < base[i].length; ++j) {
-						if (base[i][j][0].equals(baseAssemblyName)) {
-							base[i][j][0] = newAssemblyName;
-						}
-					}
-				}
-					
-				// D. Apply the filter to the base.
-				//    Any deleted rows we will simply make null.
-				String[][] worksheet = null;
-				while (true) {
-					try {
-				 		line = text.readLine();
-					} catch (IOException err) {
-						throw new RuntimeException("Cannot read file: " + err.toString());
-					}
-					if (line == null)
-						break;
-					if (line.trim().length() == 0)
-						continue;
-					if (line.startsWith("Main"))
-						worksheet = base[0];
-					else if (line.startsWith("EndMain"))
-						worksheet = null;
-					else if (line.startsWith("Monitor"))
-						worksheet = base[1];
-					else if (line.startsWith("EndMonitor"))
-						worksheet = null;
-					else if (line.startsWith("Control"))
-						worksheet = base[2];
-					else if (line.startsWith("EndControl"))
-						worksheet = null;
-					else if (line.startsWith("Archive"))
-						worksheet = base[3];
-					else if (line.startsWith("EndArchive"))
-						worksheet = null;
-					else {
-						if (worksheet == null)
-							throw new RuntimeException("Invalid syntax at line number " + text.getLineNumber() + " in file filter. (Missing statement)");
-						tmp = line.split("[ |\t]+");
-						if (line.startsWith("~")) {
-							deleteRow(worksheet,tmp[0].substring(1));
-						} else {
-							String s = line.substring(tmp[0].length());
-							modifyRow(worksheet,text.getLineNumber(),tmp[0],s);
-						}
-					}
-				}
-				
-				// E. Assign the non-null array.
-				String[][][] result = new String [base.length] [] [];
-				for (int i = 0; i < result.length; ++i) {
-					int nrow = 0;
-					for (int j = 0; j < base[i].length; ++j) {
-						if (base[i][j] != null)
-							++nrow;
-					}
-					result[i] = new String [nrow] [];
-					int jj = 0;
-					for (int j = 0; j < base[i].length; ++j) {
-						if (base[i][j] != null) {
-							result[i][jj] = new String [base[i][j].length];
-							for (int k = 0; k < base[i][j].length; ++k)
-								result[i][jj][k] = base[i][j][k];
-							++jj;
-						}
-					}
-				}
-				
-				// F. Return the new spreadsheet. 
-				return result;
+			}
+		}
+
+		// F. Return the new spreadsheet. 
+		return result;
 	}
 	/**
 	 * <!-- begin-user-doc -->
@@ -738,65 +738,65 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * @!generated
 	 */
 	public void modifyRow(String[][] worksheet, int lineNumber, String rowName, String s) {
-				// Find the row.
-				int row = 0;
-				if (worksheet[0][0].equals("Hardware Device")) {
-					int i = 2;
-					for (; i < worksheet.length; ++i) {
-						if (worksheet[i] == null)
-							continue;
-						if (worksheet[i][0].equals(rowName)) {
-							row = i;
-							break;
-						}
-					}
-					if (i == worksheet.length)
-						throw new RuntimeException("The name " + rowName + " is not the name of a row in the Main worksheet.");
-				} else {
-					int i = 2;
-					for (; i < worksheet.length; ++i) {
-						if (worksheet[i] == null)
-							continue;
-						if (worksheet[i][1].equals(rowName)) {
-							row = i;
-							break;
-						}
-					}
-					if (i == worksheet.length)
-						throw new RuntimeException("The name " + rowName + " is not the name of a row in the " + worksheet[0][0] + " worksheet.");
+		// Find the row.
+		int row = 0;
+		if (worksheet[0][0].equals("Hardware Device")) {
+			int i = 2;
+			for (; i < worksheet.length; ++i) {
+				if (worksheet[i] == null)
+					continue;
+				if (worksheet[i][0].equals(rowName)) {
+					row = i;
+					break;
 				}
-				String name;
-				String value;
-				int b;
-				int m;
-				int e;        				
-				while(true) {
-					b = s.indexOf('<');
-					m = s.indexOf('=');
-					e = s.indexOf('>');
-					if (b == -1 || m == -1 || e == -1 || m < b || e < m) {
-						throw new RuntimeException("Invalid syntax at line number " + lineNumber + " in file filter.");
-					}
-					name = s.substring(b + 1, m).trim();
-					value = s.substring(m + 1, e).trim();
-					// Apply the change.
-					int j = 0;
-					for (; j < worksheet[row].length; ++j) {
-						if (worksheet[1][j].equals(name)) {
-							worksheet[row][j] = value;
-							break;
-						}
-					}
-					if (j == worksheet[row].length)
-						throw new RuntimeException("The name " + name + " is not the name of a column in the " + worksheet[0][0] + " worksheet.");
-					// Get the next change.
-					++e;
-					while (e < s.length() && (s.charAt(e) == ' ' || s.charAt(e) == '\t'))
-						++e;
-					if (e == s.length())
-						break;
-					s = s.substring(e);
+			}
+			if (i == worksheet.length)
+				throw new RuntimeException("The name " + rowName + " is not the name of a row in the Main worksheet.");
+		} else {
+			int i = 2;
+			for (; i < worksheet.length; ++i) {
+				if (worksheet[i] == null)
+					continue;
+				if (worksheet[i][1].equals(rowName)) {
+					row = i;
+					break;
 				}
+			}
+			if (i == worksheet.length)
+				throw new RuntimeException("The name " + rowName + " is not the name of a row in the " + worksheet[0][0] + " worksheet.");
+		}
+		String name;
+		String value;
+		int b;
+		int m;
+		int e;        				
+		while(true) {
+			b = s.indexOf('<');
+			m = s.indexOf('=');
+			e = s.indexOf('>');
+			if (b == -1 || m == -1 || e == -1 || m < b || e < m) {
+				throw new RuntimeException("Invalid syntax at line number " + lineNumber + " in file filter.");
+			}
+			name = s.substring(b + 1, m).trim();
+			value = s.substring(m + 1, e).trim();
+			// Apply the change.
+			int j = 0;
+			for (; j < worksheet[row].length; ++j) {
+				if (worksheet[1][j].equals(name)) {
+					worksheet[row][j] = value;
+					break;
+				}
+			}
+			if (j == worksheet[row].length)
+				throw new RuntimeException("The name " + name + " is not the name of a column in the " + worksheet[0][0] + " worksheet.");
+			// Get the next change.
+			++e;
+			while (e < s.length() && (s.charAt(e) == ' ' || s.charAt(e) == '\t'))
+				++e;
+			if (e == s.length())
+				break;
+			s = s.substring(e);
+		}
 	}
 
 	/**
