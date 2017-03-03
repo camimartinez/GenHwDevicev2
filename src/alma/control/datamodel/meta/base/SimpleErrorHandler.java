@@ -24,6 +24,7 @@ package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
 
 /**
@@ -39,10 +40,10 @@ import org.xml.sax.SAXParseException;
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getSimpleErrorHandler()
- * @model
+ * @model superTypes="alma.control.datamodel.meta.base.ErrorHandlerAuxClass"
  * @generated
  */
-public interface SimpleErrorHandler extends EObject {
+public interface SimpleErrorHandler extends EObject, ErrorHandler {
 	/**
 	 * Returns the value of the '<em><b>Errors</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

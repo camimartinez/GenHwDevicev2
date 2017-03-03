@@ -739,6 +739,7 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/ICDDateAsDatabaseDate"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/ICDDateAsArrayTime"/>
             </genClasses>
+            <genClasses image="false" ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/ErrorHandlerAuxClass"/>
           </nestedGenPackages>
           <nestedGenPackages prefix="Eth" basePackage="alma.control.datamodel.meta"
               disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//control/datamodel/meta/eth">

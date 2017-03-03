@@ -6,7 +6,7 @@ the code can be generated in two ways:
  
 But before that, in both ways, the launch enviroment needs to be set up, as follows:
 
-export LAUNCHER={pathToPluginsFolderEclipse}/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar
+export LAUNCHER={pathToPluginsFolderEclipse}/org.eclipse.equinox.launcher_{version}.jar
 
 1. Build with antRunner:
 

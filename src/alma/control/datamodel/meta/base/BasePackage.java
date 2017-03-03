@@ -259,6 +259,16 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL_FEATURE_COUNT = 18;
 
 	/**
+	 * The meta object id for the '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.xml.sax.ErrorHandler
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerAuxClass()
+	 * @generated
+	 */
+	int ERROR_HANDLER_AUX_CLASS = 13;
+
+	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl <em>Mand CBase</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1313,6 +1323,15 @@ public interface BasePackage extends EPackage {
 	int PAIR_FEATURE_COUNT = SPREADSHEET_PARSER_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of structural features of the '<em>Error Handler Aux Class</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ERROR_HANDLER_AUX_CLASS_FEATURE_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.SimpleErrorHandlerImpl <em>Simple Error Handler</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1329,7 +1348,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_ERROR_HANDLER__ERRORS = 0;
+	int SIMPLE_ERROR_HANDLER__ERRORS = ERROR_HANDLER_AUX_CLASS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Simple Error Handler</em>' class.
@@ -1338,7 +1357,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_ERROR_HANDLER_FEATURE_COUNT = 1;
+	int SIMPLE_ERROR_HANDLER_FEATURE_COUNT = ERROR_HANDLER_AUX_CLASS_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
@@ -1421,7 +1440,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSimpleErrorHandlerDT()
 	 * @generated
 	 */
-	int SIMPLE_ERROR_HANDLER_DT = 13;
+	int SIMPLE_ERROR_HANDLER_DT = 14;
 
 	/**
 	 * The meta object id for the '<em>Mand CBase DT</em>' data type.
@@ -1431,7 +1450,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBaseDT()
 	 * @generated
 	 */
-	int MAND_CBASE_DT = 14;
+	int MAND_CBASE_DT = 15;
 
 	/**
 	 * The meta object id for the '<em>Main Base DT</em>' data type.
@@ -1441,7 +1460,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBaseDT()
 	 * @generated
 	 */
-	int MAIN_BASE_DT = 15;
+	int MAIN_BASE_DT = 16;
 
 	/**
 	 * The meta object id for the '<em>Array List</em>' data type.
@@ -1451,7 +1470,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArrayList()
 	 * @generated
 	 */
-	int ARRAY_LIST = 16;
+	int ARRAY_LIST = 17;
 
 	/**
 	 * The meta object id for the '<em>Hashtable</em>' data type.
@@ -1461,7 +1480,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getHashtable()
 	 * @generated
 	 */
-	int HASHTABLE = 17;
+	int HASHTABLE = 18;
 
 	/**
 	 * The meta object id for the '<em>Error Handler DT</em>' data type.
@@ -1471,7 +1490,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerDT()
 	 * @generated
 	 */
-	int ERROR_HANDLER_DT = 18;
+	int ERROR_HANDLER_DT = 19;
 
 	/**
 	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
@@ -1481,7 +1500,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION_DT = 19;
+	int SAX_PARSE_EXCEPTION_DT = 20;
 
 	/**
 	 * The meta object id for the '<em>EString Array3</em>' data type.
@@ -1490,7 +1509,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray3()
 	 * @generated
 	 */
-	int ESTRING_ARRAY3 = 20;
+	int ESTRING_ARRAY3 = 21;
 
 	/**
 	 * The meta object id for the '<em>EString Array2</em>' data type.
@@ -1499,7 +1518,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray2()
 	 * @generated
 	 */
-	int ESTRING_ARRAY2 = 21;
+	int ESTRING_ARRAY2 = 22;
 
 	/**
 	 * The meta object id for the '<em>EString Array</em>' data type.
@@ -1508,7 +1527,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray()
 	 * @generated
 	 */
-	int ESTRING_ARRAY = 22;
+	int ESTRING_ARRAY = 23;
 
 
 	/**
@@ -1718,6 +1737,17 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDeviceModel_ArchivesProperties();
+
+	/**
+	 * Returns the meta object for class '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Error Handler Aux Class</em>'.
+	 * @see org.xml.sax.ErrorHandler
+	 * @model instanceClass="org.xml.sax.ErrorHandler"
+	 * @generated
+	 */
+	EClass getErrorHandlerAuxClass();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MonitorPoint <em>Monitor Point</em>}'.
@@ -2913,6 +2943,16 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEVICE_MODEL__ARCHIVES_PROPERTIES = eINSTANCE.getDeviceModel_ArchivesProperties();
+
+		/**
+		 * The meta object literal for the '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.xml.sax.ErrorHandler
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerAuxClass()
+		 * @generated
+		 */
+		EClass ERROR_HANDLER_AUX_CLASS = eINSTANCE.getErrorHandlerAuxClass();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MonitorPointImpl <em>Monitor Point</em>}' class.

@@ -80,6 +80,13 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass errorHandlerAuxClassEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass monitorPointEClass = null;
 
 	/**
@@ -467,6 +474,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 */
 	public EReference getDeviceModel_ArchivesProperties() {
 		return (EReference)deviceModelEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getErrorHandlerAuxClass() {
+		return errorHandlerAuxClassEClass;
 	}
 
 	/**
@@ -1459,6 +1475,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEReference(mainBaseEClass, MAIN_BASE__UTILSS);
 		createEReference(mainBaseEClass, MAIN_BASE__TABLES);
 
+		errorHandlerAuxClassEClass = createEClass(ERROR_HANDLER_AUX_CLASS);
+
 		// Create data types
 		simpleErrorHandlerDTEDataType = createEDataType(SIMPLE_ERROR_HANDLER_DT);
 		mandCBaseDTEDataType = createEDataType(MAND_CBASE_DT);
@@ -1507,6 +1525,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		controlPointEClass.getESuperTypes().add(this.getMandCBase());
 		mandCBaseEClass.getESuperTypes().add(theAmbPackage.getResourceAuxClass());
 		pairEClass.getESuperTypes().add(this.getSpreadsheetParser());
+		simpleErrorHandlerEClass.getESuperTypes().add(this.getErrorHandlerAuxClass());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1646,7 +1665,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTable_DepChar(), ecorePackage.getEString(), "DepChar", "^", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_CelsiusToKelvin(), ecorePackage.getEString(), "CelsiusToKelvin", "CelsiusToKelvin", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTable_SheetNames(), this.getArrayList(), "sheetNames", "null", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTable_SheetNames(), this.getArrayList(), "sheetNames", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_ColNames(), this.getArrayList(), "colNames", "null", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_TagNames(), this.getArrayList(), "tagNames", "null", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_ToCPP(), this.getHashtable(), "toCPP", "null", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1983,6 +2002,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICDDateAsDatabaseDate", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(mainBaseEClass, ecorePackage.getEString(), "ICDDateAsArrayTime", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(errorHandlerAuxClassEClass, ErrorHandler.class, "ErrorHandlerAuxClass", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
 		initEDataType(simpleErrorHandlerDTEDataType, SimpleErrorHandler.class, "SimpleErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

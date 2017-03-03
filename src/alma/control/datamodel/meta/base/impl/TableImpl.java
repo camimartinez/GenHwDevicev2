@@ -122,7 +122,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ArrayList SHEET_NAMES_EDEFAULT = (ArrayList)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getArrayList(), "null");
+	protected static final ArrayList SHEET_NAMES_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getSheetNames() <em>Sheet Names</em>}' attribute.

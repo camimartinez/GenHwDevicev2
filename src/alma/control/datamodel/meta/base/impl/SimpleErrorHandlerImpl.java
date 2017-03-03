@@ -34,6 +34,9 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.xml.sax.SAXParseException;
 
+import org.xml.sax.ErrorHandler;
+
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Simple Error Handler</b></em>'.

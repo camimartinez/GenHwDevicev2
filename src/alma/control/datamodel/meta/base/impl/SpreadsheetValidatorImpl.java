@@ -38,7 +38,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.w3c.dom.Document;
 import org.xml.sax.ErrorHandler;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -293,45 +297,45 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_VALIDATOR__ERROR_HANDLER, newErrorHandler, newErrorHandler));
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validate(final String xmlFile, final String xsdFile) {
-				javax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();
-				factory.setNamespaceAware(true);
-				factory.setValidating(true);
-				factory.setAttribute(
-						"http://java.sun.com/xml/jaxp/properties/schemaLanguage",
-						"http://www.w3.org/2001/XMLSchema");
-				// Specify our own schema - this overrides the schemaLocation in the xml
-				// file
-				factory.setAttribute(
-						"http://java.sun.com/xml/jaxp/properties/schemaSource",
-						"file://" + xsdFile);
-				seh = BaseFactory.eINSTANCE.createSimpleErrorHandler();
-		
-				try {
-					javax.xml.parsers.DocumentBuilder builder = factory.newDocumentBuilder();
-					builder.setErrorHandler((ErrorHandler)seh);
-					org.w3c.dom.Document document = builder.parse(xmlFile);
-				}
-				catch(Exception e) {
-					System.out.println("Validating error file " + xmlFile
-							+ " with schema file " + xsdFile + " failed!");
-					return false;
-				}
-		
-				if(seh.areErrors()) {
-					System.out.println("Validating error file " + xmlFile
-							+ " with schema file " + xsdFile + " failed!");
-					return false;
-				}
-				else {
-					return true;
-				}
+						javax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();
+						factory.setNamespaceAware(true);
+						factory.setValidating(true);
+						factory.setAttribute(
+								"http://java.sun.com/xml/jaxp/properties/schemaLanguage",
+								"http://www.w3.org/2001/XMLSchema");
+						// Specify our own schema - this overrides the schemaLocation in the xml
+						// file
+						factory.setAttribute(
+								"http://java.sun.com/xml/jaxp/properties/schemaSource",
+								"file://" + xsdFile);
+						seh = BaseFactory.eINSTANCE.createSimpleErrorHandler();
+				
+						try {
+							javax.xml.parsers.DocumentBuilder builder = factory.newDocumentBuilder();
+							builder.setErrorHandler(seh);
+							org.w3c.dom.Document document = builder.parse(xmlFile);
+						}
+						catch(Exception e) {
+							System.out.println("Validating error file " + xmlFile
+									+ " with schema file " + xsdFile + " failed!");
+							return false;
+						}
+				
+						if(seh.areErrors()) {
+							System.out.println("Validating error file " + xmlFile
+									+ " with schema file " + xsdFile + " failed!");
+							return false;
+						}
+						else {
+							return true;
+						}
 	}
 
 	/**

@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.Switch;
+import org.xml.sax.ErrorHandler;
 
 /**
  * <!-- begin-user-doc -->
@@ -164,12 +165,19 @@ public class BaseSwitch<T> extends Switch<T> {
 			case BasePackage.SIMPLE_ERROR_HANDLER: {
 				SimpleErrorHandler simpleErrorHandler = (SimpleErrorHandler)theEObject;
 				T result = caseSimpleErrorHandler(simpleErrorHandler);
+				if (result == null) result = caseErrorHandlerAuxClass(simpleErrorHandler);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.MAIN_BASE: {
 				MainBase mainBase = (MainBase)theEObject;
 				T result = caseMainBase(mainBase);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasePackage.ERROR_HANDLER_AUX_CLASS: {
+				ErrorHandler errorHandlerAuxClass = (ErrorHandler)theEObject;
+				T result = caseErrorHandlerAuxClass(errorHandlerAuxClass);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -189,6 +197,21 @@ public class BaseSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDeviceModel(DeviceModel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Error Handler Aux Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Error Handler Aux Class</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseErrorHandlerAuxClass(ErrorHandler object) {
 		return null;
 	}
 

@@ -31,6 +31,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.xml.sax.ErrorHandler;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,6 +142,10 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 				return createMainBaseAdapter();
 			}
 			@Override
+			public Adapter caseErrorHandlerAuxClass(ErrorHandler object) {
+				return createErrorHandlerAuxClassAdapter();
+			}
+			@Override
 			public Adapter caseResourceAuxClass(Resource object) {
 				return createResourceAuxClassAdapter();
 			}
@@ -175,6 +180,20 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDeviceModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xml.sax.ErrorHandler
+	 * @generated
+	 */
+	public Adapter createErrorHandlerAuxClassAdapter() {
 		return null;
 	}
 

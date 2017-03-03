@@ -1531,52 +1531,34 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="CelsiusToKelvin"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
                 defaultValueLiteral="CelsiusToKelvin"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheetNames" eType="#//control/datamodel/meta/base/ArrayList"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="colNames" eType="#//control/datamodel/meta/base/ArrayList"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagNames" eType="#//control/datamodel/meta/base/ArrayList"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCPP" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toIDL" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toIDLSeq" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBA" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBASeq" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBADevIO" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBACI" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toDatabase" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawToCPP" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheetNames" eType="#//control/datamodel/meta/base/ArrayList"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="colNames" eType="#//control/datamodel/meta/base/ArrayList"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagNames" eType="#//control/datamodel/meta/base/ArrayList"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCPP" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toIDL" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toIDLSeq" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBA" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBASeq" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toCORBADevIO" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBACI" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="toDatabase" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawToCPP" eType="#//control/datamodel/meta/base/Hashtable"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawToByteSwapped"
-                eType="#//control/datamodel/meta/base/Hashtable" defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawBytes" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCPP" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToIDL" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
+                eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawBytes" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCPP" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToIDL" eType="#//control/datamodel/meta/base/Hashtable"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToIDLSeq"
-                eType="#//control/datamodel/meta/base/Hashtable" defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBA" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
+                eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBA" eType="#//control/datamodel/meta/base/Hashtable"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBASeq"
-                eType="#//control/datamodel/meta/base/Hashtable" defaultValueLiteral="null"/>
+                eType="#//control/datamodel/meta/base/Hashtable"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToCORBADevIO"
-                eType="#//control/datamodel/meta/base/Hashtable" defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToBACI" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToJava" eType="#//control/datamodel/meta/base/Hashtable"
-                defaultValueLiteral="null"/>
+                eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToBACI" eType="#//control/datamodel/meta/base/Hashtable"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToJava" eType="#//control/datamodel/meta/base/Hashtable"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToDatabase"
-                eType="#//control/datamodel/meta/base/Hashtable" defaultValueLiteral="null"/>
+                eType="#//control/datamodel/meta/base/Hashtable"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MandCBase" abstract="true" eSuperTypes="#//control/datamodel/meta/amb/ResourceAuxClass">
             <eOperations name="addDependent">
@@ -1840,7 +1822,7 @@
           <eClassifiers xsi:type="ecore:EClass" name="SpreadsheetValidator">
             <eOperations name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;javax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();&#xA;&#x9;&#x9;factory.setNamespaceAware(true);&#xA;&#x9;&#x9;factory.setValidating(true);&#xA;&#x9;&#x9;factory.setAttribute(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;http://java.sun.com/xml/jaxp/properties/schemaLanguage&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&quot;http://www.w3.org/2001/XMLSchema&quot;);&#xA;&#x9;&#x9;// Specify our own schema - this overrides the schemaLocation in the xml&#xA;&#x9;&#x9;// file&#xA;&#x9;&#x9;factory.setAttribute(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;http://java.sun.com/xml/jaxp/properties/schemaSource&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&quot;file://&quot; + xsdFile);&#xA;&#x9;&#x9;seh = BaseFactory.eINSTANCE.createSimpleErrorHandler();&#xA;&#xA;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;javax.xml.parsers.DocumentBuilder builder = factory.newDocumentBuilder();&#xA;&#x9;&#x9;&#x9;builder.setErrorHandler((ErrorHandler)seh);&#xA;&#x9;&#x9;&#x9;org.w3c.dom.Document document = builder.parse(xmlFile);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;catch(Exception e) {&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;Validating error file &quot; + xmlFile&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ &quot; with schema file &quot; + xsdFile + &quot; failed!&quot;);&#xA;&#x9;&#x9;&#x9;return false;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;if(seh.areErrors()) {&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;Validating error file &quot; + xmlFile&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ &quot; with schema file &quot; + xsdFile + &quot; failed!&quot;);&#xA;&#x9;&#x9;&#x9;return false;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else {&#xA;&#x9;&#x9;&#x9;return true;&#xA;&#x9;&#x9;}"/>
+                <details key="body" value="&#x9;&#x9;&#x9;&#x9;javax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();&#xA;&#x9;&#x9;&#x9;&#x9;factory.setNamespaceAware(true);&#xA;&#x9;&#x9;&#x9;&#x9;factory.setValidating(true);&#xA;&#x9;&#x9;&#x9;&#x9;factory.setAttribute(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;http://java.sun.com/xml/jaxp/properties/schemaLanguage&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;http://www.w3.org/2001/XMLSchema&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;// Specify our own schema - this overrides the schemaLocation in the xml&#xA;&#x9;&#x9;&#x9;&#x9;// file&#xA;&#x9;&#x9;&#x9;&#x9;factory.setAttribute(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;http://java.sun.com/xml/jaxp/properties/schemaSource&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;file://&quot; + xsdFile);&#xA;&#x9;&#x9;&#x9;&#x9;seh = BaseFactory.eINSTANCE.createSimpleErrorHandler();&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;javax.xml.parsers.DocumentBuilder builder = factory.newDocumentBuilder();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;builder.setErrorHandler(seh);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;org.w3c.dom.Document document = builder.parse(xmlFile);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;catch(Exception e) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Validating error file &quot; + xmlFile&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;+ &quot; with schema file &quot; + xsdFile + &quot; failed!&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return false;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;if(seh.areErrors()) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Validating error file &quot; + xmlFile&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;+ &quot; with schema file &quot; + xsdFile + &quot; failed!&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return false;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;else {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return true;&#xA;&#x9;&#x9;&#x9;&#x9;}"/>
               </eAnnotations>
               <eParameters name="xmlFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eParameters name="xsdFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -2072,7 +2054,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="newString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="SimpleErrorHandler">
+          <eClassifiers xsi:type="ecore:EClass" name="SimpleErrorHandler" eSuperTypes="#//control/datamodel/meta/base/ErrorHandlerAuxClass">
             <eOperations name="error">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="System.out.println(&quot;error: line &quot;+ exception.getLineNumber() + &quot;: &quot; + exception.getMessage());&#xD;&#xA;errors = true;"/>
@@ -2163,6 +2145,8 @@
           <eClassifiers xsi:type="ecore:EDataType" name="EStringArray3" instanceClassName="java.lang.String[][][]"/>
           <eClassifiers xsi:type="ecore:EDataType" name="EStringArray2" instanceClassName="java.lang.String[][]"/>
           <eClassifiers xsi:type="ecore:EDataType" name="EStringArray" instanceClassName="java.lang.String[]"/>
+          <eClassifiers xsi:type="ecore:EClass" name="ErrorHandlerAuxClass" instanceClassName="org.xml.sax.ErrorHandler"
+              abstract="true" interface="true"/>
         </eSubpackages>
         <eSubpackages name="eth" nsURI="http://alma/Control/datamodel/meta/eth/1.0"
             nsPrefix="alma.Control.datamodel.meta.eth">

@@ -124,7 +124,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Sheet Names</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sheet Names</em>' attribute isn't clear,
@@ -134,7 +133,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>Sheet Names</em>' attribute.
 	 * @see #setSheetNames(ArrayList)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_SheetNames()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.ArrayList"
+	 * @model dataType="alma.control.datamodel.meta.base.ArrayList"
 	 * @generated
 	 */
 	ArrayList getSheetNames();

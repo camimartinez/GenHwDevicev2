@@ -672,7 +672,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			String s = "Spreadsheet: " + deviceName + "_spreadsheet." + suffix + " is not a valid spreadsheet.";
 			throw new RuntimeException(s);
 		}
-		System.out.println("Spreadsheet " + deviceName + "_spreadsheet." + " has been validated.");
+		System.out.println("Spreadsheet: " + deviceName + "_spreadsheet." + " has been validated.");
 
 		Table tab = baseFac.createTable();
 		
