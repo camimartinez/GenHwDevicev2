@@ -22,19 +22,12 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.amb.AmbFactory;
-import alma.control.datamodel.meta.amb.AmbPackage;
-
 import alma.control.datamodel.meta.base.ArchiveProperty;
-import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.Table;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -53,8 +46,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getCp <em>Cp</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,16 +61,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 */
 	protected static final String[] ROW_EDEFAULT = null;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchivePropertyImpl(String[] row) {
-		this.row = row;
-		this.sheet = BaseFactory.eINSTANCE.createTable().getSheetNum("Archive Property");
-	}
-	
 	/**
 	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -151,41 +132,11 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	protected Resource cp = CP_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTable() <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Table TABLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table table = TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTables()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table tables;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchivePropertyImpl() {
+	protected ArchivePropertyImpl() {
 		super();
 	}
 
@@ -253,6 +204,24 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public void setMP(Resource mp){
+		this.mp = mp;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public void setCP(Resource cp){
+		this.cp = cp;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setMp(Resource newMp) {
@@ -288,86 +257,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getTable() {
-		return table;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTable(Table newTable) {
-		Table oldTable = table;
-		table = newTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TABLE, oldTable, table));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getTables() {
-		if (tables != null && tables.eIsProxy()) {
-			InternalEObject oldTables = (InternalEObject)tables;
-			tables = (Table)eResolveProxy(oldTables);
-			if (tables != oldTables) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
-			}
-		}
-		return tables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetTables() {
-		return tables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTables(Table newTables) {
-		Table oldTables = tables;
-		tables = newTables;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isRefersTo() {
-		return mp != null || cp != null;
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isMonitorPoint() {
 		return mp != null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isControlPoint() {
-		return cp != null;
 	}
 
 	/**
@@ -384,8 +275,26 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isControlPoint() {
+		return cp != null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Resource getControlPoint() {
 		return cp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String Name() {
+		return row[table.getColNum(sheet, "Name")];
 	}
 
 	/**
@@ -405,17 +314,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String Name() {
-		return row[table.getColNum(sheet, "Name")];
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String RefersTo() {
-		return row[table.getColNum(sheet, "Refers To")];
+		return row[table.getColNum(sheet,  "Refers To")];
 	}
 
 	/**
@@ -424,7 +324,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String IntervalFull() {
-		return row[table.getColNum(sheet, "Interval (secs)")];
+		return row[table.getColNum(sheet,  "Interval (secs)")];
 	}
 
 	/**
@@ -504,6 +404,16 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setInitializeAP(final String[] row) {
+		this.row = row;
+		this.sheet = table.getSheetNum("Archive Property");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -515,11 +425,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return getMp();
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				return getCp();
-			case BasePackage.ARCHIVE_PROPERTY__TABLE:
-				return getTable();
-			case BasePackage.ARCHIVE_PROPERTY__TABLES:
-				if (resolve) return getTables();
-				return basicGetTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -543,12 +448,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				setCp((Resource)newValue);
-				return;
-			case BasePackage.ARCHIVE_PROPERTY__TABLE:
-				setTable((Table)newValue);
-				return;
-			case BasePackage.ARCHIVE_PROPERTY__TABLES:
-				setTables((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -574,12 +473,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				setCp(CP_EDEFAULT);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__TABLE:
-				setTable(TABLE_EDEFAULT);
-				return;
-			case BasePackage.ARCHIVE_PROPERTY__TABLES:
-				setTables((Table)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -600,10 +493,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return MP_EDEFAULT == null ? mp != null : !MP_EDEFAULT.equals(mp);
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				return CP_EDEFAULT == null ? cp != null : !CP_EDEFAULT.equals(cp);
-			case BasePackage.ARCHIVE_PROPERTY__TABLE:
-				return TABLE_EDEFAULT == null ? table != null : !TABLE_EDEFAULT.equals(table);
-			case BasePackage.ARCHIVE_PROPERTY__TABLES:
-				return tables != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -626,8 +515,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 		result.append(mp);
 		result.append(", cp: ");
 		result.append(cp);
-		result.append(", table: ");
-		result.append(table);
 		result.append(')');
 		return result.toString();
 	}

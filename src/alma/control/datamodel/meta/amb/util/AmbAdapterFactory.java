@@ -37,8 +37,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.emf.ecore.resource.Resource;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
@@ -108,6 +106,10 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 				return createDeviceModelAdapter();
 			}
 			@Override
+			public Adapter caseGenericMonitorPoints(GenericMonitorPoints object) {
+				return createGenericMonitorPointsAdapter();
+			}
+			@Override
 			public Adapter caseMain(Main object) {
 				return createMainAdapter();
 			}
@@ -122,14 +124,6 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSWModule(SWModule object) {
 				return createSWModuleAdapter();
-			}
-			@Override
-			public Adapter caseGenericMonitorPoints(GenericMonitorPoints object) {
-				return createGenericMonitorPointsAdapter();
-			}
-			@Override
-			public Adapter caseResourceAuxClass(Resource object) {
-				return createResourceAuxClassAdapter();
 			}
 			@Override
 			public Adapter caseArchiveProperty(ArchiveProperty object) {
@@ -218,6 +212,20 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.GenericMonitorPoints <em>Generic Monitor Points</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.amb.GenericMonitorPoints
+	 * @generated
+	 */
+	public Adapter createGenericMonitorPointsAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.Main <em>Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -270,34 +278,6 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSWModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.GenericMonitorPoints <em>Generic Monitor Points</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.amb.GenericMonitorPoints
-	 * @generated
-	 */
-	public Adapter createGenericMonitorPointsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.resource.Resource <em>Resource Aux Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.resource.Resource
-	 * @generated
-	 */
-	public Adapter createResourceAuxClassAdapter() {
 		return null;
 	}
 

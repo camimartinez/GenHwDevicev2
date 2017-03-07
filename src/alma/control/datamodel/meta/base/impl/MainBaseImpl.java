@@ -22,19 +22,12 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.amb.AmbFactory;
-import alma.control.datamodel.meta.amb.AmbPackage;
-
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.MainBase;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -49,10 +42,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getUtil <em>Util</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getUtilss <em>Utilss</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,16 +57,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 */
 	protected static final String[] ROW_EDEFAULT = null;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MainBaseImpl(String[] row) {
-		this.row = row;
-		this.sheet = BaseFactoryImpl.eINSTANCE.createTable().getSheetNum("Hardware Device");
-	}
-	
 	/**
 	 * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -109,71 +88,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	protected int sheet = SHEET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTable() <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Table TABLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table table = TABLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUtil() <em>Util</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtil()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Util UTIL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUtil() <em>Util</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtil()
-	 * @generated
-	 * @ordered
-	 */
-	protected Util util = UTIL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getUtilss() <em>Utilss</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtilss()
-	 * @generated
-	 * @ordered
-	 */
-	protected Util utilss;
-
-	/**
-	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTables()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table tables;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainBaseImpl() {
+	protected MainBaseImpl() {
 		super();
 	}
 
@@ -227,124 +146,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 		sheet = newSheet;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__SHEET, oldSheet, sheet));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getTable() {
-		return table;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTable(Table newTable) {
-		Table oldTable = table;
-		table = newTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TABLE, oldTable, table));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util getUtil() {
-		return util;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUtil(Util newUtil) {
-		Util oldUtil = util;
-		util = newUtil;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__UTIL, oldUtil, util));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util getUtilss() {
-		if (utilss != null && utilss.eIsProxy()) {
-			InternalEObject oldUtilss = (InternalEObject)utilss;
-			utilss = (Util)eResolveProxy(oldUtilss);
-			if (utilss != oldUtilss) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__UTILSS, oldUtilss, utilss));
-			}
-		}
-		return utilss;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util basicGetUtilss() {
-		return utilss;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUtilss(Util newUtilss) {
-		Util oldUtilss = utilss;
-		utilss = newUtilss;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__UTILSS, oldUtilss, utilss));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getTables() {
-		if (tables != null && tables.eIsProxy()) {
-			InternalEObject oldTables = (InternalEObject)tables;
-			tables = (Table)eResolveProxy(oldTables);
-			if (tables != oldTables) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TABLES, oldTables, tables));
-			}
-		}
-		return tables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetTables() {
-		return tables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTables(Table newTables) {
-		Table oldTables = tables;
-		tables = newTables;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TABLES, oldTables, tables));
 	}
 
 	/**
@@ -433,6 +234,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setInitializeMB(final String[] row) {
+		this.row = row;
+		this.sheet = Table.getSheetNum("Hardware Device");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -440,16 +251,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return getRow();
 			case BasePackage.MAIN_BASE__SHEET:
 				return getSheet();
-			case BasePackage.MAIN_BASE__TABLE:
-				return getTable();
-			case BasePackage.MAIN_BASE__UTIL:
-				return getUtil();
-			case BasePackage.MAIN_BASE__UTILSS:
-				if (resolve) return getUtilss();
-				return basicGetUtilss();
-			case BasePackage.MAIN_BASE__TABLES:
-				if (resolve) return getTables();
-				return basicGetTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -467,18 +268,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return;
 			case BasePackage.MAIN_BASE__SHEET:
 				setSheet((Integer)newValue);
-				return;
-			case BasePackage.MAIN_BASE__TABLE:
-				setTable((Table)newValue);
-				return;
-			case BasePackage.MAIN_BASE__UTIL:
-				setUtil((Util)newValue);
-				return;
-			case BasePackage.MAIN_BASE__UTILSS:
-				setUtilss((Util)newValue);
-				return;
-			case BasePackage.MAIN_BASE__TABLES:
-				setTables((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -498,18 +287,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__SHEET:
 				setSheet(SHEET_EDEFAULT);
 				return;
-			case BasePackage.MAIN_BASE__TABLE:
-				setTable(TABLE_EDEFAULT);
-				return;
-			case BasePackage.MAIN_BASE__UTIL:
-				setUtil(UTIL_EDEFAULT);
-				return;
-			case BasePackage.MAIN_BASE__UTILSS:
-				setUtilss((Util)null);
-				return;
-			case BasePackage.MAIN_BASE__TABLES:
-				setTables((Table)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -526,14 +303,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return ROW_EDEFAULT == null ? row != null : !ROW_EDEFAULT.equals(row);
 			case BasePackage.MAIN_BASE__SHEET:
 				return sheet != SHEET_EDEFAULT;
-			case BasePackage.MAIN_BASE__TABLE:
-				return TABLE_EDEFAULT == null ? table != null : !TABLE_EDEFAULT.equals(table);
-			case BasePackage.MAIN_BASE__UTIL:
-				return UTIL_EDEFAULT == null ? util != null : !UTIL_EDEFAULT.equals(util);
-			case BasePackage.MAIN_BASE__UTILSS:
-				return utilss != null;
-			case BasePackage.MAIN_BASE__TABLES:
-				return tables != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -552,10 +321,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 		result.append(row);
 		result.append(", sheet: ");
 		result.append(sheet);
-		result.append(", table: ");
-		result.append(table);
-		result.append(", util: ");
-		result.append(util);
 		result.append(')');
 		return result.toString();
 	}

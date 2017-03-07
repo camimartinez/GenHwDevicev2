@@ -24,13 +24,11 @@ package alma.control.datamodel.meta.base.util;
 
 import alma.control.datamodel.meta.base.*;
 
-import java.util.List;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.Switch;
+
 import org.xml.sax.ErrorHandler;
 
 /**
@@ -90,17 +88,9 @@ public class BaseSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case BasePackage.DEVICE_MODEL: {
-				DeviceModel deviceModel = (DeviceModel)theEObject;
-				T result = caseDeviceModel(deviceModel);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.MONITOR_POINT: {
-				MonitorPoint monitorPoint = (MonitorPoint)theEObject;
-				T result = caseMonitorPoint(monitorPoint);
-				if (result == null) result = caseMandCBase(monitorPoint);
-				if (result == null) result = caseResourceAuxClass(monitorPoint);
+			case BasePackage.ARCHIVE_PROPERTY: {
+				ArchiveProperty archiveProperty = (ArchiveProperty)theEObject;
+				T result = caseArchiveProperty(archiveProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -108,50 +98,37 @@ public class BaseSwitch<T> extends Switch<T> {
 				ControlPoint controlPoint = (ControlPoint)theEObject;
 				T result = caseControlPoint(controlPoint);
 				if (result == null) result = caseMandCBase(controlPoint);
-				if (result == null) result = caseResourceAuxClass(controlPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BasePackage.TABLE: {
-				Table table = (Table)theEObject;
-				T result = caseTable(table);
+			case BasePackage.DEVICE_MODEL: {
+				DeviceModel deviceModel = (DeviceModel)theEObject;
+				T result = caseDeviceModel(deviceModel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasePackage.MAIN_BASE: {
+				MainBase mainBase = (MainBase)theEObject;
+				T result = caseMainBase(mainBase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.MAND_CBASE: {
 				MandCBase mandCBase = (MandCBase)theEObject;
 				T result = caseMandCBase(mandCBase);
-				if (result == null) result = caseResourceAuxClass(mandCBase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BasePackage.ARCHIVE_PROPERTY: {
-				ArchiveProperty archiveProperty = (ArchiveProperty)theEObject;
-				T result = caseArchiveProperty(archiveProperty);
+			case BasePackage.MONITOR_POINT: {
+				MonitorPoint monitorPoint = (MonitorPoint)theEObject;
+				T result = caseMonitorPoint(monitorPoint);
+				if (result == null) result = caseMandCBase(monitorPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BasePackage.NOTE: {
 				Note note = (Note)theEObject;
 				T result = caseNote(note);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.SPREADSHEET_VALIDATOR: {
-				SpreadsheetValidator spreadsheetValidator = (SpreadsheetValidator)theEObject;
-				T result = caseSpreadsheetValidator(spreadsheetValidator);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.SPREADSHEET_PARSER: {
-				SpreadsheetParser spreadsheetParser = (SpreadsheetParser)theEObject;
-				T result = caseSpreadsheetParser(spreadsheetParser);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.UTIL: {
-				Util util = (Util)theEObject;
-				T result = caseUtil(util);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -169,9 +146,27 @@ public class BaseSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BasePackage.MAIN_BASE: {
-				MainBase mainBase = (MainBase)theEObject;
-				T result = caseMainBase(mainBase);
+			case BasePackage.SPREADSHEET_PARSER: {
+				SpreadsheetParser spreadsheetParser = (SpreadsheetParser)theEObject;
+				T result = caseSpreadsheetParser(spreadsheetParser);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasePackage.SPREADSHEET_VALIDATOR: {
+				SpreadsheetValidator spreadsheetValidator = (SpreadsheetValidator)theEObject;
+				T result = caseSpreadsheetValidator(spreadsheetValidator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasePackage.TABLE: {
+				Table table = (Table)theEObject;
+				T result = caseTable(table);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasePackage.UTIL: {
+				Util util = (Util)theEObject;
+				T result = caseUtil(util);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -186,47 +181,17 @@ public class BaseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Device Model</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Archive Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Device Model</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Archive Property</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDeviceModel(DeviceModel object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Error Handler Aux Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Error Handler Aux Class</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseErrorHandlerAuxClass(ErrorHandler object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Monitor Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Monitor Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMonitorPoint(MonitorPoint object) {
+	public T caseArchiveProperty(ArchiveProperty object) {
 		return null;
 	}
 
@@ -246,17 +211,32 @@ public class BaseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Device Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Device Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTable(Table object) {
+	public T caseDeviceModel(DeviceModel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Main Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Main Base</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMainBase(MainBase object) {
 		return null;
 	}
 
@@ -276,17 +256,17 @@ public class BaseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Archive Property</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Monitor Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Archive Property</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Monitor Point</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseArchiveProperty(ArchiveProperty object) {
+	public T caseMonitorPoint(MonitorPoint object) {
 		return null;
 	}
 
@@ -302,51 +282,6 @@ public class BaseSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNote(Note object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Spreadsheet Validator</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Spreadsheet Validator</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSpreadsheetValidator(SpreadsheetValidator object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Spreadsheet Parser</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Spreadsheet Parser</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSpreadsheetParser(SpreadsheetParser object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Util</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Util</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUtil(Util object) {
 		return null;
 	}
 
@@ -381,32 +316,77 @@ public class BaseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Main Base</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Spreadsheet Parser</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Main Base</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Spreadsheet Parser</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMainBase(MainBase object) {
+	public T caseSpreadsheetParser(SpreadsheetParser object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Spreadsheet Validator</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Spreadsheet Validator</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseResourceAuxClass(Resource object) {
+	public T caseSpreadsheetValidator(SpreadsheetValidator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTable(Table object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Util</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Util</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUtil(Util object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Error Handler Aux Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Error Handler Aux Class</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseErrorHandlerAuxClass(ErrorHandler object) {
 		return null;
 	}
 

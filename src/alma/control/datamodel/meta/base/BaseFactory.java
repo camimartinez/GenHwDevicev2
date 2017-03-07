@@ -46,45 +46,18 @@ public interface BaseFactory extends EFactory {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Archive Property</em>'.
-	 * @!generated
+	 * @generated
 	 */
-	ArchiveProperty createArchiveProperty(String[] row);
-
-	/**
-	 * Returns a new object of class '<em>Spreadsheet Parser</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Spreadsheet Parser</em>'.
-	 * @!generated
-	 */
-	SpreadsheetParser createSpreadsheetParser(String xml);
+	ArchiveProperty createArchiveProperty();
 
 	/**
 	 * Returns a new object of class '<em>Main Base</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Main Base</em>'.
-	 * @!generated
-	 */
-	MainBase createMainBase(String[] row);
-	
-	/**
-	 * Returns a new object of class '<em>Table</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Table</em>'.
 	 * @generated
 	 */
-	Table createTable();
-
-	/**
-	 * Returns a new object of class '<em>Archive Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Archive Property</em>'.
-	 * @generated
-	 */
-	ArchiveProperty createArchiveProperty();
+	MainBase createMainBase();
 
 	/**
 	 * Returns a new object of class '<em>Note</em>'.
@@ -96,13 +69,13 @@ public interface BaseFactory extends EFactory {
 	Note createNote();
 
 	/**
-	 * Returns a new object of class '<em>Spreadsheet Validator</em>'.
+	 * Returns a new object of class '<em>Simple Error Handler</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Spreadsheet Validator</em>'.
+	 * @return a new object of class '<em>Simple Error Handler</em>'.
 	 * @generated
 	 */
-	SpreadsheetValidator createSpreadsheetValidator();
+	SimpleErrorHandler createSimpleErrorHandler();
 
 	/**
 	 * Returns a new object of class '<em>Spreadsheet Parser</em>'.
@@ -114,6 +87,24 @@ public interface BaseFactory extends EFactory {
 	SpreadsheetParser createSpreadsheetParser();
 
 	/**
+	 * Returns a new object of class '<em>Spreadsheet Validator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Spreadsheet Validator</em>'.
+	 * @generated
+	 */
+	SpreadsheetValidator createSpreadsheetValidator();
+
+	/**
+	 * Returns a new object of class '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Table</em>'.
+	 * @generated
+	 */
+	Table createTable();
+
+	/**
 	 * Returns a new object of class '<em>Util</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,24 +112,6 @@ public interface BaseFactory extends EFactory {
 	 * @generated
 	 */
 	Util createUtil();
-
-	/**
-	 * Returns a new object of class '<em>Simple Error Handler</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Simple Error Handler</em>'.
-	 * @generated
-	 */
-	SimpleErrorHandler createSimpleErrorHandler();
-
-	/**
-	 * Returns a new object of class '<em>Main Base</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Main Base</em>'.
-	 * @generated
-	 */
-	MainBase createMainBase();
 
 	/**
 	 * Returns the package supported by this factory.

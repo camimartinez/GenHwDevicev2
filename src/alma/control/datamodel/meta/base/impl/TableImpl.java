@@ -22,7 +22,6 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.Table;
 
@@ -142,7 +141,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ArrayList COL_NAMES_EDEFAULT = (ArrayList)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getArrayList(), "null");
+	protected static final ArrayList COL_NAMES_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getColNames() <em>Col Names</em>}' attribute.
@@ -162,7 +161,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ArrayList TAG_NAMES_EDEFAULT = (ArrayList)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getArrayList(), "null");
+	protected static final ArrayList TAG_NAMES_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getTagNames() <em>Tag Names</em>}' attribute.
@@ -182,7 +181,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable TO_CPP_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable TO_CPP_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getToCPP() <em>To CPP</em>}' attribute.
@@ -202,7 +201,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable TO_IDL_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable TO_IDL_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getToIDL() <em>To IDL</em>}' attribute.
@@ -222,7 +221,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable TO_IDL_SEQ_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable TO_IDL_SEQ_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getToIDLSeq() <em>To IDL Seq</em>}' attribute.
@@ -242,7 +241,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable TO_CORBA_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable TO_CORBA_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getToCORBA() <em>To CORBA</em>}' attribute.
@@ -262,7 +261,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable TO_CORBA_SEQ_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable TO_CORBA_SEQ_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getToCORBASeq() <em>To CORBA Seq</em>}' attribute.
@@ -282,7 +281,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable TO_CORBA_DEV_IO_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable TO_CORBA_DEV_IO_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getToCORBADevIO() <em>To CORBA Dev IO</em>}' attribute.
@@ -302,7 +301,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable TO_BACI_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable TO_BACI_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getToBACI() <em>To BACI</em>}' attribute.
@@ -322,7 +321,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable TO_DATABASE_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable TO_DATABASE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getToDatabase() <em>To Database</em>}' attribute.
@@ -342,7 +341,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable RAW_TO_CPP_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable RAW_TO_CPP_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRawToCPP() <em>Raw To CPP</em>}' attribute.
@@ -362,7 +361,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable RAW_TO_BYTE_SWAPPED_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable RAW_TO_BYTE_SWAPPED_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRawToByteSwapped() <em>Raw To Byte Swapped</em>}' attribute.
@@ -382,7 +381,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable RAW_BYTES_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable RAW_BYTES_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRawBytes() <em>Raw Bytes</em>}' attribute.
@@ -402,7 +401,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable WORLD_TO_CPP_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable WORLD_TO_CPP_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getWorldToCPP() <em>World To CPP</em>}' attribute.
@@ -422,7 +421,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable WORLD_TO_IDL_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable WORLD_TO_IDL_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getWorldToIDL() <em>World To IDL</em>}' attribute.
@@ -442,7 +441,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable WORLD_TO_IDL_SEQ_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable WORLD_TO_IDL_SEQ_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getWorldToIDLSeq() <em>World To IDL Seq</em>}' attribute.
@@ -462,7 +461,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable WORLD_TO_CORBA_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable WORLD_TO_CORBA_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getWorldToCORBA() <em>World To CORBA</em>}' attribute.
@@ -482,7 +481,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable WORLD_TO_CORBA_SEQ_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable WORLD_TO_CORBA_SEQ_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getWorldToCORBASeq() <em>World To CORBA Seq</em>}' attribute.
@@ -502,7 +501,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable WORLD_TO_CORBA_DEV_IO_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable WORLD_TO_CORBA_DEV_IO_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getWorldToCORBADevIO() <em>World To CORBA Dev IO</em>}' attribute.
@@ -522,7 +521,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable WORLD_TO_BACI_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable WORLD_TO_BACI_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getWorldToBACI() <em>World To BACI</em>}' attribute.
@@ -542,7 +541,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable WORLD_TO_JAVA_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable WORLD_TO_JAVA_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getWorldToJava() <em>World To Java</em>}' attribute.
@@ -562,7 +561,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Hashtable WORLD_TO_DATABASE_EDEFAULT = (Hashtable)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getHashtable(), "null");
+	protected static final Hashtable WORLD_TO_DATABASE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getWorldToDatabase() <em>World To Database</em>}' attribute.
@@ -579,7 +578,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableImpl() {
+	protected TableImpl() {
 		super();
 	}
 

@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.eth;
 
 import alma.control.datamodel.meta.base.ControlPoint;
+
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -53,7 +54,7 @@ public interface Control extends ControlPoint {
 	 * @return the value of the '<em>Mac</em>' attribute.
 	 * @see #setMac(MandC)
 	 * @see alma.control.datamodel.meta.eth.EthPackage#getControl_Mac()
-	 * @model dataType="alma.control.datamodel.meta.eth.MandCETHDT"
+	 * @model dataType="alma.control.datamodel.meta.base.MandCETHDT"
 	 * @generated
 	 */
 	MandC getMac();
@@ -199,5 +200,14 @@ public interface Control extends ControlPoint {
 	 * @generated
 	 */
 	String DataToDatabaseType();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeCP(row, parent);\nmac = new MandCImpl();\nmac.setInitializeMandCImpl(row, sheet);'"
+	 * @generated
+	 */
+	void setInitializeCImpl(String[] row, Resource parent);
 
 } // Control

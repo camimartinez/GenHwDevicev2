@@ -40,8 +40,6 @@ import org.xml.sax.ErrorHandler;
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getSeh <em>Seh</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorList <em>Error List</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getSehTmp <em>Seh Tmp</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getBaseFac <em>Base Fac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetValidator()
@@ -128,63 +126,19 @@ public interface SpreadsheetValidator extends EObject {
 	void setSehTmp(ErrorHandler value);
 
 	/**
-	 * Returns the value of the '<em><b>Base Fac</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Base Fac</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Fac</em>' attribute.
-	 * @see #setBaseFac(BaseFactory)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetValidator_BaseFac()
-	 * @model dataType="alma.control.datamodel.meta.amb.BaseFactoryDT"
-	 * @generated
-	 */
-	BaseFactory getBaseFac();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getBaseFac <em>Base Fac</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Fac</em>' attribute.
-	 * @see #getBaseFac()
-	 * @generated
-	 */
-	void setBaseFac(BaseFactory value);
-
-	/**
-	 * Returns the value of the '<em><b>Error Handler</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Error Handler</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Error Handler</em>' containment reference.
-	 * @see #setErrorHandler(SimpleErrorHandler)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetValidator_ErrorHandler()
-	 * @model containment="true"
-	 * @generated
-	 */
-	SimpleErrorHandler getErrorHandler();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Error Handler</em>' containment reference.
-	 * @see #getErrorHandler()
-	 * @generated
-	 */
-	void setErrorHandler(SimpleErrorHandler value);
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tjavax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();\n\t\t\t\tfactory.setNamespaceAware(true);\n\t\t\t\tfactory.setValidating(true);\n\t\t\t\tfactory.setAttribute(\n\t\t\t\t\t\t\"http://java.sun.com/xml/jaxp/properties/schemaLanguage\",\n\t\t\t\t\t\t\"http://www.w3.org/2001/XMLSchema\");\n\t\t\t\t// Specify our own schema - this overrides the schemaLocation in the xml\n\t\t\t\t// file\n\t\t\t\tfactory.setAttribute(\n\t\t\t\t\t\t\"http://java.sun.com/xml/jaxp/properties/schemaSource\",\n\t\t\t\t\t\t\"file://\" + xsdFile);\n\t\t\t\tseh = BaseFactory.eINSTANCE.createSimpleErrorHandler();\n\t\t\n\t\t\t\ttry {\n\t\t\t\t\tjavax.xml.parsers.DocumentBuilder builder = factory.newDocumentBuilder();\n\t\t\t\t\tbuilder.setErrorHandler(seh);\n\t\t\t\t\torg.w3c.dom.Document document = builder.parse(xmlFile);\n\t\t\t\t}\n\t\t\t\tcatch(Exception e) {\n\t\t\t\t\tSystem.out.println(\"Validating error file \" + xmlFile\n\t\t\t\t\t\t\t+ \" with schema file \" + xsdFile + \" failed!\");\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\n\t\t\t\tif(seh.areErrors()) {\n\t\t\t\t\tSystem.out.println(\"Validating error file \" + xmlFile\n\t\t\t\t\t\t\t+ \" with schema file \" + xsdFile + \" failed!\");\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\treturn true;\n\t\t\t\t}'"
 	 * @generated
 	 */
 	boolean validate(String xmlFile, String xsdFile);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.errorList = new ArrayList&lt; String &gt;();\n'"
+	 * @generated
+	 */
+	void setInitializeSV();
 
 } // SpreadsheetValidator

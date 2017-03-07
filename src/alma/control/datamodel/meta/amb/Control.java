@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.amb;
 
 import alma.control.datamodel.meta.base.ControlPoint;
+
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -35,8 +36,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.Control#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Control#getAuxResource <em>Aux Resource</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Control#getMandCb <em>Mand Cb</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getControl()
@@ -55,7 +54,7 @@ public interface Control extends ControlPoint {
 	 * @return the value of the '<em>Mac</em>' attribute.
 	 * @see #setMac(MandC)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getControl_Mac()
-	 * @model dataType="alma.control.datamodel.meta.amb.MandCAMBDT"
+	 * @model dataType="alma.control.datamodel.meta.base.MandCAMBDT"
 	 * @generated
 	 */
 	MandC getMac();
@@ -69,58 +68,6 @@ public interface Control extends ControlPoint {
 	 * @generated
 	 */
 	void setMac(MandC value);
-
-	/**
-	 * Returns the value of the '<em><b>Mand Cb</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mand Cb</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mand Cb</em>' containment reference.
-	 * @see #setMandCb(MandC)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getControl_MandCb()
-	 * @model containment="true"
-	 * @generated
-	 */
-	MandC getMandCb();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Control#getMandCb <em>Mand Cb</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mand Cb</em>' containment reference.
-	 * @see #getMandCb()
-	 * @generated
-	 */
-	void setMandCb(MandC value);
-
-	/**
-	 * Returns the value of the '<em><b>Aux Resource</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Aux Resource</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Aux Resource</em>' attribute.
-	 * @see #setAuxResource(Resource)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getControl_AuxResource()
-	 * @model dataType="alma.control.datamodel.meta.amb.ResourceDT"
-	 * @generated
-	 */
-	Resource getAuxResource();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Control#getAuxResource <em>Aux Resource</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Aux Resource</em>' attribute.
-	 * @see #getAuxResource()
-	 * @generated
-	 */
-	void setAuxResource(Resource value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,7 +258,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.normalizeNumber(WorldDataType(),super.MinRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(),super.MinRange());'"
 	 * @generated
 	 */
 	String MinRange();
@@ -319,7 +266,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.normalizeNumber(WorldDataType(),super.MaxRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(),super.MaxRange());'"
 	 * @generated
 	 */
 	String MaxRange();
@@ -359,7 +306,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\n\t\tint pos = 0;\n\t\tint n = s.indexOf(\' \');\n\t\tif (n == -1)\n\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\tString word = s.substring(pos,n);\n\t\tString out = \"\";\n\t\tboolean isArray = isWorldDataArray();\n\t\tif (isArray) {\n\t\t\tout += \"in \" + (String)table.getWorldToIDLSeq().get(word) + \" \";\n\t\t}\n\t\telse\n\t\t\tout = \"in \" + (String)table.getWorldToIDL().get(word) + \" \";\n\t\tpos = n + 1;\n\t\twhile (true) {\n\t\t\tn = s.indexOf(\',\',pos);\n\t\t\tif (n == -1)\n\t\t\t\tbreak;\n\t\t\tword = s.substring(pos,n);\n\t\t\tout += word + \", \";\n\t\t\tpos = n + 1;\n\t\t\twhile (true) {\n\t\t\t\tif (s.charAt(pos) == \' \')\n\t\t\t\t\tpos++;\n\t\t\t\telse\n\t\t\t\t\tbreak;\n\t\t\t}\n\t\t\tn = s.indexOf(\' \',pos);\n\t\t\tif (n == -1)\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\tword = s.substring(pos,n);\n\t\t\tif (isArray) {\n\t\t\t\tString type = (String)table.getWorldToIDL().get(word);\n\t\t\t\ttype = type.replace(\"unsigned long\", \"uLong\");\n\t\t\t\tout += \"in \" + type;\n\t\t\t}\n\t\t\telse\n\t\t\t\tout = \"in \" + (String)table.getWorldToIDL().get(word) + \" \";\n\t\t\tpos = n + 1;\n\t\t}\n\t\tword = s.substring(pos);\n\t\tout += word;\n\t\treturn out;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = Parameter();\nint pos = 0;\nint n = s.indexOf(\' \');\nif (n == -1)\nthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\nString word = s.substring(pos,n);\nString out = \"\";\nboolean isArray = isWorldDataArray();\nif (isArray) {\nout += \"in \" + (String)table.getWorldToIDLSeq().get(word) + \" \";\n}\nelse\nout = \"in \" + (String)table.getWorldToIDL().get(word) + \" \";\npos = n + 1;\nwhile (true) {\nn = s.indexOf(\',\',pos);\nif (n == -1)\nbreak;\nword = s.substring(pos,n);\nout += word + \", \";\npos = n + 1;\nwhile (true) {\nif (s.charAt(pos) == \' \')\npos++;\nelse\nbreak;\n}\nn = s.indexOf(\' \',pos);\nif (n == -1)\nthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\nword = s.substring(pos,n);\nif (isArray) {\nString type = (String)table.getWorldToIDL().get(word);\ntype = type.replace(\"unsigned long\", \"uLong\");\nout += \"in \" + type;\n}\nelse\nout = \"in \" + (String)table.getWorldToIDL().get(word) + \" \";\npos = n + 1;\n}\nword = s.substring(pos);\nout += word;\nreturn out;'"
 	 * @generated
 	 */
 	String idlParameters();
@@ -375,7 +322,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\n\t\tint pos = 0;\n\t\tint n = s.indexOf(\' \');\n\t\tif (n == -1)\n\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\tString word = s.substring(pos,n);\n\t\tString out = (String)table.getWorldToCORBA().get(word) + \" \";\n\t\tpos = n + 1;\n\t\twhile (true) {\n\t\t\tn = s.indexOf(\',\',pos);\n\t\t\tif (n == -1)\n\t\t\t\tbreak;\n\t\t\tword = s.substring(pos,n);\n\t\t\tout += word + \", \";\n\t\t\tpos = n + 1;\n\t\t\twhile (true) {\n\t\t\t\tif (s.charAt(pos) == \' \')\n\t\t\t\t\tpos++;\n\t\t\t\telse\n\t\t\t\t\tbreak;\n\t\t\t}\n\t\t\tn = s.indexOf(\' \',pos);\n\t\t\tif (n == -1)\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\tword = s.substring(pos,n);\n\t\t\tout += (String)table.getWorldToCORBA().get(word);\n\t\t\tpos = n + 1;\n\t\t}\n\t\tword = s.substring(pos);\n\t\tout += word;\n\t\treturn out;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = Parameter();\nint pos = 0;\nint n = s.indexOf(\' \');\nif (n == -1)\nthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\nString word = s.substring(pos,n);\nString out = (String)table.getWorldToCORBA().get(word) + \" \";\npos = n + 1;\nwhile (true) {\nn = s.indexOf(\',\',pos);\nif (n == -1)\nbreak;\nword = s.substring(pos,n);\nout += word + \", \";\npos = n + 1;\nwhile (true) {\nif (s.charAt(pos) == \' \')\npos++;\nelse\nbreak;\n}\nn = s.indexOf(\' \',pos);\nif (n == -1)\nthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\nword = s.substring(pos,n);\nout += (String)table.getWorldToCORBA().get(word);\npos = n + 1;\n}\nword = s.substring(pos);\nout += word;\nreturn out;'"
 	 * @generated
 	 */
 	String corbaParameters();
@@ -399,7 +346,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\n\t\tint pos = 0;\n\t\tint n = s.indexOf(\' \');\n\t\tif (n == -1)\n\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\tString word = s.substring(pos,n);\n\t\tString out = (String)table.getWorldToCPP().get(word) + \" \";\n\t\tpos = n + 1;\n\t\twhile (true) {\n\t\t\tn = s.indexOf(\',\',pos);\n\t\t\tif (n == -1)\n\t\t\t\tbreak;\n\t\t\tword = s.substring(pos,n);\n\t\t\tout += word + \", \";\n\t\t\tpos = n + 1;\n\t\t\twhile (true) {\n\t\t\t\tif (s.charAt(pos) == \' \')\n\t\t\t\t\tpos++;\n\t\t\t\telse\n\t\t\t\t\tbreak;\n\t\t\t}\n\t\t\tn = s.indexOf(\' \',pos);\n\t\t\tif (n == -1)\n\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\tword = s.substring(pos,n);\n\t\t\tout += (String)table.getWorldToCPP().get(word) + \" \";\n\t\t\tpos = n + 1;\n\t\t}\n\t\tword = s.substring(pos);\n\t\tout += word;\n\t\treturn out;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = Parameter();\nint pos = 0;\nint n = s.indexOf(\' \');\nif (n == -1)\nthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\nString word = s.substring(pos,n);\nString out = (String)table.getWorldToCPP().get(word) + \" \";\npos = n + 1;\nwhile (true) {\nn = s.indexOf(\',\',pos);\nif (n == -1)\nbreak;\nword = s.substring(pos,n);\nout += word + \", \";\npos = n + 1;\nwhile (true) {\nif (s.charAt(pos) == \' \')\npos++;\nelse\nbreak;\n}\t\t\t\t\nn = s.indexOf(\' \',pos);\nif (n == -1)\nthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\nword = s.substring(pos,n);\nout += (String)table.getWorldToCPP().get(word) + \" \";\npos = n + 1;\n}\nword = s.substring(pos);\nout += word;\nreturn out;'"
 	 * @generated
 	 */
 	String cppParameters();
@@ -660,5 +607,14 @@ public interface Control extends ControlPoint {
 	 * @generated
 	 */
 	String WorldDataTypeUpper1();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeCP(row, parent);\nmac = new MandCImpl();\nmac.setInitializeMandCImpl(row, sheet, this);'"
+	 * @generated
+	 */
+	void setInitializeCImpl(String[] row, Resource parent);
 
 } // Control

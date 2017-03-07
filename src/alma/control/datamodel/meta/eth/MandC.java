@@ -22,8 +22,6 @@
  */
 package alma.control.datamodel.meta.eth;
 
-import alma.control.datamodel.meta.base.Table;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -38,7 +36,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getAssembly <em>Assembly</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.MandC#getTable <em>Table</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.eth.EthPackage#getMandC()
@@ -123,32 +120,6 @@ public interface MandC extends EObject {
 	 * @generated
 	 */
 	void setAssembly(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Table</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Table</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table</em>' reference.
-	 * @see #setTable(Table)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getMandC_Table()
-	 * @model
-	 * @generated
-	 */
-	Table getTable();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.MandC#getTable <em>Table</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' reference.
-	 * @see #getTable()
-	 * @generated
-	 */
-	void setTable(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,5 +243,14 @@ public interface MandC extends EObject {
 	 * @generated
 	 */
 	String DataToDatabaseType();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = sheet;'"
+	 * @generated
+	 */
+	void setInitializeMandCImpl(String[] row, int sheet);
 
 } // MandC

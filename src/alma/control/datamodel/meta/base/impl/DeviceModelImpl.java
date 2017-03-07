@@ -22,20 +22,15 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.base.ArchiveProperty;
-import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.DeviceModel;
 import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -66,9 +61,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#isGenerateAlt <em>Generate Alt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getTables <em>Tables</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getUtils <em>Utils</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getArchivesProperties <em>Archives Properties</em>}</li>
  * </ul>
  *
  * @generated
@@ -375,46 +367,12 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	protected boolean generateAlt = GENERATE_ALT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTables()
 	 * @generated
-	 * @ordered
 	 */
-	protected Table tables;
-
-	/**
-	 * The cached value of the '{@link #getUtils() <em>Utils</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtils()
-	 * @generated
-	 * @ordered
-	 */
-	protected Util utils;
-
-	/**
-	 * The cached value of the '{@link #getArchivesProperties() <em>Archives Properties</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getArchivesProperties()
-	 * @generated
-	 * @ordered
-	 */
-	protected ArchiveProperty archivesProperties;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public DeviceModelImpl() {
-		this.setDeviceName(System.getProperty("deviceName"));
-		this.setDeviceDir(System.getProperty("deviceDir"));
-		this.setCodegenDir(System.getProperty("codegenDir"));
-		this.setSpreadsheetDir(System.getProperty("spreadsheetDir"));
-		this.setGeneratedDir(System.getProperty("generatedDir"));
+	protected DeviceModelImpl() {
+		super();
 	}
 
 	/**
@@ -745,123 +703,9 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getTables() {
-		if (tables != null && tables.eIsProxy()) {
-			InternalEObject oldTables = (InternalEObject)tables;
-			tables = (Table)eResolveProxy(oldTables);
-			if (tables != oldTables) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__TABLES, oldTables, tables));
-			}
-		}
-		return tables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetTables() {
-		return tables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTables(Table newTables) {
-		Table oldTables = tables;
-		tables = newTables;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__TABLES, oldTables, tables));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util getUtils() {
-		if (utils != null && utils.eIsProxy()) {
-			InternalEObject oldUtils = (InternalEObject)utils;
-			utils = (Util)eResolveProxy(oldUtils);
-			if (utils != oldUtils) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__UTILS, oldUtils, utils));
-			}
-		}
-		return utils;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util basicGetUtils() {
-		return utils;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUtils(Util newUtils) {
-		Util oldUtils = utils;
-		utils = newUtils;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__UTILS, oldUtils, utils));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ArchiveProperty getArchivesProperties() {
-		if (archivesProperties != null && archivesProperties.eIsProxy()) {
-			InternalEObject oldArchivesProperties = (InternalEObject)archivesProperties;
-			archivesProperties = (ArchiveProperty)eResolveProxy(oldArchivesProperties);
-			if (archivesProperties != oldArchivesProperties) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__ARCHIVES_PROPERTIES, oldArchivesProperties, archivesProperties));
-			}
-		}
-		return archivesProperties;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ArchiveProperty basicGetArchivesProperties() {
-		return archivesProperties;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setArchivesProperties(ArchiveProperty newArchivesProperties) {
-		ArchiveProperty oldArchivesProperties = archivesProperties;
-		archivesProperties = newArchivesProperties;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__ARCHIVES_PROPERTIES, oldArchivesProperties, archivesProperties));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	public abstract String CreateModel();
+	public abstract String CreateModel() ;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -870,15 +714,97 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public String CheckConstraints() {
 		return "";
-		
+
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public void initializeModelDependencies() {
+	public String Assembly() {
+		return main.Assembly();
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String Extends() {
+		return main.Extends();
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String DeviceName() {
+		return main.DeviceName();
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String Description() {
+		return main.Description();
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String DescriptionAsString() {
+		return main.DescriptionAsString();
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String ICD() {
+		return main.ICD();
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String ICDDate() {
+		return main.ICDDate();
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String ICDDateAsDatabaseDate() {
+		return main.ICDDateAsDatabaseDate();
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String ICDDateAsArrayTime() {
+		return main.ICDDateAsArrayTime();
+
 	}
 
 	/**
@@ -888,7 +814,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public String DirPath() {
 		return Assembly();
-		
+
 	}
 
 	/**
@@ -898,16 +824,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public String TheEnd() {
 		String dir = generatedDir + "/" + Assembly();
-		utils.RemoveLinesFromFile(dir + "/src", Assembly() + "Base.cpp", 1);
-		utils.RemoveLinesFromFile(dir + "/include", Assembly() + "Base.h", 1);
-		utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Base.idl", 1);
-		utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
-		utils.RemoveLinesFromFile(dir + "/doc", Assembly() + ".xml", 1);
-		utils.RemoveLinesFromFile(dir + "/doc", Assembly() + "Component.xml", 1);
-		utils.RemoveLinesFromFile(dir + "/config/CDB/schemas", Assembly() + "Base.xsd", 1);
-		utils.RemoveLinesFromFile(dir + "/config", "TMCDB" + Assembly() + "Add.xml", 1);
-		utils.RemoveLinesFromFile(dir + "/src/CCL", Assembly() + "Base.py", 1);
-		utils.RemoveLinesFromFile(dir + "/src/CCL", "__init__.py", 1);
+		util.RemoveLinesFromFile(dir + "/src", Assembly() + "Base.cpp", 1);
+		util.RemoveLinesFromFile(dir + "/include", Assembly() + "Base.h", 1);
+		util.RemoveLinesFromFile(dir + "/idl", Assembly() + "Base.idl", 1);
+		util.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
+		util.RemoveLinesFromFile(dir + "/doc", Assembly() + ".xml", 1);
+		util.RemoveLinesFromFile(dir + "/doc", Assembly() + "Component.xml", 1);
+		util.RemoveLinesFromFile(dir + "/config/CDB/schemas", Assembly() + "Base.xsd", 1);
+		util.RemoveLinesFromFile(dir + "/config", "TMCDB" + Assembly() + "Add.xml", 1);
+		util.RemoveLinesFromFile(dir + "/src/CCL", Assembly() + "Base.py", 1);
+		util.RemoveLinesFromFile(dir + "/src/CCL", "__init__.py", 1);
 		System.out.println("Code generation for " + deviceName + " done.");
 		return "";
 	}
@@ -920,10 +846,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	public boolean checkIfFileExists(final String fileName) {
 		java.io.File f = new java.io.File(fileName);
 		if(f.exists() == true){
-		            return true;
-		  }else{
-		            return false;
-		          }
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	/**
@@ -933,10 +859,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public boolean checkIfFileExists(final String directory, final String fileName) {
 		if(directory.isEmpty() == false){
-		            return checkIfFileExists(directory + "/" + fileName);
-		        } else{
-		            return checkIfFileExists(fileName);
-		                }
+			return checkIfFileExists(directory + "/" + fileName);
+		} else{
+			return checkIfFileExists(fileName);
+		}
 	}
 
 	/**
@@ -946,7 +872,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public boolean checkIfDeviceFileExists(final String directory, final String localFileName) {
 		String fileName = getDeviceDir() + "/" + directory + "/" + Assembly() + localFileName;
-		        return checkIfFileExists(fileName);
+		return checkIfFileExists(fileName);
 	}
 
 	/**
@@ -956,7 +882,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public boolean checkIfTestFileExists(final String directory, final String localFileName) {
 		String fileName = getDeviceDir() + "/" + directory + "/Test" + Assembly() + localFileName;
-		        return checkIfFileExists(fileName);
+		return checkIfFileExists(fileName);
 	}
 
 	/**
@@ -966,25 +892,26 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public boolean checkIfCvsignoreFileExists(final String directory) {
 		String fileName = getDeviceDir() + "/" + directory + "/.cvsignore";
-		        return checkIfFileExists(fileName);
+		return checkIfFileExists(fileName);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public Resource getArchive(String name) {
-		BaseFactory baseFact = BaseFactory.eINSTANCE;
-		int archiveIndex = baseFact.createTable().getSheetNum("ArchiveProperty");
-		for(int i = 2; i < spreadsheet[archiveIndex].length; i++)  {
+	public Resource getArchive(final String name) {
+		// Get the Archive Properties
+		int archiveIndex = table.getSheetNum("Archive Property");
+		for(int i = 2; i < spreadsheet[archiveIndex].length; i++){
 			if(spreadsheet[archiveIndex][i].length == 0)
 				break;
-			ArchiveProperty ap;
+			ArchivePropertyImpl ap;
 			String[] row = spreadsheet[archiveIndex][i];
-			ap = baseFact.createArchiveProperty(row);
+			ap = new ArchivePropertyImpl();
+			ap.setInitializeAP(row);
 			if(name.equals(ap.RefersTo()))
-				return (Resource) ap;
+				return ap.eResource();
 		}
 		return null;
 	}
@@ -997,10 +924,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	public MonitorPoint getMonitorPoint(final String fullName) {
 		for(int i = 0; i < monitorPoints.getResources().size(); i++){
 			MonitorPoint mp = (MonitorPoint) monitorPoints.getResources().get(i);
-		      if(mp.FullName().equals(fullName))
-				      return mp;
-			}
-				return null;
+			if(mp.FullName().equals(fullName))
+				return mp;
+		}
+		return null;
 	}
 
 	/**
@@ -1010,11 +937,11 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public ControlPoint getControlPoint(final String fullName) {
 		for (int i = 0; i < controlPoints.getResources().size(); i++) {
-			 ControlPoint cp = (ControlPoint) controlPoints.getResources().get(i);
-			 if (cp.FullName().equals(fullName))
-				         return cp;
-			 }
-				  return null;
+			ControlPoint cp = (ControlPoint) controlPoints.getResources().get(i);
+			if (cp.FullName().equals(fullName))
+				return cp;
+		}
+		return null;
 	}
 
 	/**
@@ -1022,128 +949,12 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String Assembly() {
-		return main.Assembly();
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String Extends() {
-		return main.Extends();
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String DeviceName() {
-		return main.DeviceName();
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String Description() {
-		return main.Description();
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String DescriptionAsString() {
-		return main.DescriptionAsString();
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String ICD() {
-		return main.ICD();
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String ICDDate() {
-		return main.ICDDate();
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String ICDDateAsDatabaseDate() {
-		return main.ICDDateAsDatabaseDate();
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String ICDDateAsArrayTime() {
-		return main.ICDDateAsArrayTime();
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceSet Notes() {
-		return notes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceSet MonitorPoint() {
-		return monitorPoints;
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceSet ControlPoint() {
-		return controlPoints;
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceSet ArchiveProperty() {
-		return archiveProperties;
-		
+	public void setInitializeDM() {
+		this.setDeviceName(System.getProperty("deviceName"));
+		this.setDeviceDir(System.getProperty("deviceDir"));
+		this.setCodegenDir(System.getProperty("codegenDir"));
+		this.setSpreadsheetDir(System.getProperty("spreadsheetDir"));
+		this.setGeneratedDir(System.getProperty("generatedDir"));
 	}
 
 	/**
@@ -1154,45 +965,36 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
-				return getDescriptionIndex();
-			case BasePackage.DEVICE_MODEL__SPREADSHEET:
-				return getSpreadsheet();
-			case BasePackage.DEVICE_MODEL__MAIN:
-				return getMain();
-			case BasePackage.DEVICE_MODEL__NOTES:
-				return getNotes();
-			case BasePackage.DEVICE_MODEL__MONITOR_POINTS:
-				return getMonitorPoints();
-			case BasePackage.DEVICE_MODEL__CONTROL_POINTS:
-				return getControlPoints();
-			case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
-				return getArchiveProperties();
-			case BasePackage.DEVICE_MODEL__DEVICE_NAME:
-				return getDeviceName();
-			case BasePackage.DEVICE_MODEL__BUS_TYPE:
-				return getBusType();
-			case BasePackage.DEVICE_MODEL__DEVICE_DIR:
-				return getDeviceDir();
-			case BasePackage.DEVICE_MODEL__CODEGEN_DIR:
-				return getCodegenDir();
-			case BasePackage.DEVICE_MODEL__SPREADSHEET_DIR:
-				return getSpreadsheetDir();
-			case BasePackage.DEVICE_MODEL__GENERATED_DIR:
-				return getGeneratedDir();
-			case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
-				return isMonitorDBOnly();
-			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
-				return isGenerateAlt();
-			case BasePackage.DEVICE_MODEL__TABLES:
-				if (resolve) return getTables();
-				return basicGetTables();
-			case BasePackage.DEVICE_MODEL__UTILS:
-				if (resolve) return getUtils();
-				return basicGetUtils();
-			case BasePackage.DEVICE_MODEL__ARCHIVES_PROPERTIES:
-				if (resolve) return getArchivesProperties();
-				return basicGetArchivesProperties();
+		case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
+			return getDescriptionIndex();
+		case BasePackage.DEVICE_MODEL__SPREADSHEET:
+			return getSpreadsheet();
+		case BasePackage.DEVICE_MODEL__MAIN:
+			return getMain();
+		case BasePackage.DEVICE_MODEL__NOTES:
+			return getNotes();
+		case BasePackage.DEVICE_MODEL__MONITOR_POINTS:
+			return getMonitorPoints();
+		case BasePackage.DEVICE_MODEL__CONTROL_POINTS:
+			return getControlPoints();
+		case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
+			return getArchiveProperties();
+		case BasePackage.DEVICE_MODEL__DEVICE_NAME:
+			return getDeviceName();
+		case BasePackage.DEVICE_MODEL__BUS_TYPE:
+			return getBusType();
+		case BasePackage.DEVICE_MODEL__DEVICE_DIR:
+			return getDeviceDir();
+		case BasePackage.DEVICE_MODEL__CODEGEN_DIR:
+			return getCodegenDir();
+		case BasePackage.DEVICE_MODEL__SPREADSHEET_DIR:
+			return getSpreadsheetDir();
+		case BasePackage.DEVICE_MODEL__GENERATED_DIR:
+			return getGeneratedDir();
+		case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
+			return isMonitorDBOnly();
+		case BasePackage.DEVICE_MODEL__GENERATE_ALT:
+			return isGenerateAlt();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1205,60 +1007,51 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
-				setDescriptionIndex((Integer)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__SPREADSHEET:
-				setSpreadsheet((String[][][])newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__MAIN:
-				setMain((MainBase)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__NOTES:
-				setNotes((ResourceSet)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__MONITOR_POINTS:
-				setMonitorPoints((ResourceSet)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__CONTROL_POINTS:
-				setControlPoints((ResourceSet)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
-				setArchiveProperties((ResourceSet)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__DEVICE_NAME:
-				setDeviceName((String)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__BUS_TYPE:
-				setBusType((String)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__DEVICE_DIR:
-				setDeviceDir((String)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__CODEGEN_DIR:
-				setCodegenDir((String)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__SPREADSHEET_DIR:
-				setSpreadsheetDir((String)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__GENERATED_DIR:
-				setGeneratedDir((String)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
-				setMonitorDBOnly((Boolean)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
-				setGenerateAlt((Boolean)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__TABLES:
-				setTables((Table)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__UTILS:
-				setUtils((Util)newValue);
-				return;
-			case BasePackage.DEVICE_MODEL__ARCHIVES_PROPERTIES:
-				setArchivesProperties((ArchiveProperty)newValue);
-				return;
+		case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
+			setDescriptionIndex((Integer)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__SPREADSHEET:
+			setSpreadsheet((String[][][])newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__MAIN:
+			setMain((MainBase)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__NOTES:
+			setNotes((ResourceSet)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__MONITOR_POINTS:
+			setMonitorPoints((ResourceSet)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__CONTROL_POINTS:
+			setControlPoints((ResourceSet)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
+			setArchiveProperties((ResourceSet)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__DEVICE_NAME:
+			setDeviceName((String)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__BUS_TYPE:
+			setBusType((String)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__DEVICE_DIR:
+			setDeviceDir((String)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__CODEGEN_DIR:
+			setCodegenDir((String)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__SPREADSHEET_DIR:
+			setSpreadsheetDir((String)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__GENERATED_DIR:
+			setGeneratedDir((String)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
+			setMonitorDBOnly((Boolean)newValue);
+			return;
+		case BasePackage.DEVICE_MODEL__GENERATE_ALT:
+			setGenerateAlt((Boolean)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1271,60 +1064,51 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
-				setDescriptionIndex(DESCRIPTION_INDEX_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__SPREADSHEET:
-				setSpreadsheet(SPREADSHEET_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__MAIN:
-				setMain(MAIN_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__NOTES:
-				setNotes(NOTES_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__MONITOR_POINTS:
-				setMonitorPoints(MONITOR_POINTS_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__CONTROL_POINTS:
-				setControlPoints(CONTROL_POINTS_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
-				setArchiveProperties(ARCHIVE_PROPERTIES_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__DEVICE_NAME:
-				setDeviceName(DEVICE_NAME_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__BUS_TYPE:
-				setBusType(BUS_TYPE_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__DEVICE_DIR:
-				setDeviceDir(DEVICE_DIR_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__CODEGEN_DIR:
-				setCodegenDir(CODEGEN_DIR_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__SPREADSHEET_DIR:
-				setSpreadsheetDir(SPREADSHEET_DIR_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__GENERATED_DIR:
-				setGeneratedDir(GENERATED_DIR_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
-				setMonitorDBOnly(MONITOR_DB_ONLY_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
-				setGenerateAlt(GENERATE_ALT_EDEFAULT);
-				return;
-			case BasePackage.DEVICE_MODEL__TABLES:
-				setTables((Table)null);
-				return;
-			case BasePackage.DEVICE_MODEL__UTILS:
-				setUtils((Util)null);
-				return;
-			case BasePackage.DEVICE_MODEL__ARCHIVES_PROPERTIES:
-				setArchivesProperties((ArchiveProperty)null);
-				return;
+		case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
+			setDescriptionIndex(DESCRIPTION_INDEX_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__SPREADSHEET:
+			setSpreadsheet(SPREADSHEET_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__MAIN:
+			setMain(MAIN_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__NOTES:
+			setNotes(NOTES_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__MONITOR_POINTS:
+			setMonitorPoints(MONITOR_POINTS_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__CONTROL_POINTS:
+			setControlPoints(CONTROL_POINTS_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
+			setArchiveProperties(ARCHIVE_PROPERTIES_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__DEVICE_NAME:
+			setDeviceName(DEVICE_NAME_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__BUS_TYPE:
+			setBusType(BUS_TYPE_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__DEVICE_DIR:
+			setDeviceDir(DEVICE_DIR_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__CODEGEN_DIR:
+			setCodegenDir(CODEGEN_DIR_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__SPREADSHEET_DIR:
+			setSpreadsheetDir(SPREADSHEET_DIR_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__GENERATED_DIR:
+			setGeneratedDir(GENERATED_DIR_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
+			setMonitorDBOnly(MONITOR_DB_ONLY_EDEFAULT);
+			return;
+		case BasePackage.DEVICE_MODEL__GENERATE_ALT:
+			setGenerateAlt(GENERATE_ALT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1337,42 +1121,36 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
-				return descriptionIndex != DESCRIPTION_INDEX_EDEFAULT;
-			case BasePackage.DEVICE_MODEL__SPREADSHEET:
-				return SPREADSHEET_EDEFAULT == null ? spreadsheet != null : !SPREADSHEET_EDEFAULT.equals(spreadsheet);
-			case BasePackage.DEVICE_MODEL__MAIN:
-				return MAIN_EDEFAULT == null ? main != null : !MAIN_EDEFAULT.equals(main);
-			case BasePackage.DEVICE_MODEL__NOTES:
-				return NOTES_EDEFAULT == null ? notes != null : !NOTES_EDEFAULT.equals(notes);
-			case BasePackage.DEVICE_MODEL__MONITOR_POINTS:
-				return MONITOR_POINTS_EDEFAULT == null ? monitorPoints != null : !MONITOR_POINTS_EDEFAULT.equals(monitorPoints);
-			case BasePackage.DEVICE_MODEL__CONTROL_POINTS:
-				return CONTROL_POINTS_EDEFAULT == null ? controlPoints != null : !CONTROL_POINTS_EDEFAULT.equals(controlPoints);
-			case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
-				return ARCHIVE_PROPERTIES_EDEFAULT == null ? archiveProperties != null : !ARCHIVE_PROPERTIES_EDEFAULT.equals(archiveProperties);
-			case BasePackage.DEVICE_MODEL__DEVICE_NAME:
-				return DEVICE_NAME_EDEFAULT == null ? deviceName != null : !DEVICE_NAME_EDEFAULT.equals(deviceName);
-			case BasePackage.DEVICE_MODEL__BUS_TYPE:
-				return BUS_TYPE_EDEFAULT == null ? busType != null : !BUS_TYPE_EDEFAULT.equals(busType);
-			case BasePackage.DEVICE_MODEL__DEVICE_DIR:
-				return DEVICE_DIR_EDEFAULT == null ? deviceDir != null : !DEVICE_DIR_EDEFAULT.equals(deviceDir);
-			case BasePackage.DEVICE_MODEL__CODEGEN_DIR:
-				return CODEGEN_DIR_EDEFAULT == null ? codegenDir != null : !CODEGEN_DIR_EDEFAULT.equals(codegenDir);
-			case BasePackage.DEVICE_MODEL__SPREADSHEET_DIR:
-				return SPREADSHEET_DIR_EDEFAULT == null ? spreadsheetDir != null : !SPREADSHEET_DIR_EDEFAULT.equals(spreadsheetDir);
-			case BasePackage.DEVICE_MODEL__GENERATED_DIR:
-				return GENERATED_DIR_EDEFAULT == null ? generatedDir != null : !GENERATED_DIR_EDEFAULT.equals(generatedDir);
-			case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
-				return monitorDBOnly != MONITOR_DB_ONLY_EDEFAULT;
-			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
-				return generateAlt != GENERATE_ALT_EDEFAULT;
-			case BasePackage.DEVICE_MODEL__TABLES:
-				return tables != null;
-			case BasePackage.DEVICE_MODEL__UTILS:
-				return utils != null;
-			case BasePackage.DEVICE_MODEL__ARCHIVES_PROPERTIES:
-				return archivesProperties != null;
+		case BasePackage.DEVICE_MODEL__DESCRIPTION_INDEX:
+			return descriptionIndex != DESCRIPTION_INDEX_EDEFAULT;
+		case BasePackage.DEVICE_MODEL__SPREADSHEET:
+			return SPREADSHEET_EDEFAULT == null ? spreadsheet != null : !SPREADSHEET_EDEFAULT.equals(spreadsheet);
+		case BasePackage.DEVICE_MODEL__MAIN:
+			return MAIN_EDEFAULT == null ? main != null : !MAIN_EDEFAULT.equals(main);
+		case BasePackage.DEVICE_MODEL__NOTES:
+			return NOTES_EDEFAULT == null ? notes != null : !NOTES_EDEFAULT.equals(notes);
+		case BasePackage.DEVICE_MODEL__MONITOR_POINTS:
+			return MONITOR_POINTS_EDEFAULT == null ? monitorPoints != null : !MONITOR_POINTS_EDEFAULT.equals(monitorPoints);
+		case BasePackage.DEVICE_MODEL__CONTROL_POINTS:
+			return CONTROL_POINTS_EDEFAULT == null ? controlPoints != null : !CONTROL_POINTS_EDEFAULT.equals(controlPoints);
+		case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
+			return ARCHIVE_PROPERTIES_EDEFAULT == null ? archiveProperties != null : !ARCHIVE_PROPERTIES_EDEFAULT.equals(archiveProperties);
+		case BasePackage.DEVICE_MODEL__DEVICE_NAME:
+			return DEVICE_NAME_EDEFAULT == null ? deviceName != null : !DEVICE_NAME_EDEFAULT.equals(deviceName);
+		case BasePackage.DEVICE_MODEL__BUS_TYPE:
+			return BUS_TYPE_EDEFAULT == null ? busType != null : !BUS_TYPE_EDEFAULT.equals(busType);
+		case BasePackage.DEVICE_MODEL__DEVICE_DIR:
+			return DEVICE_DIR_EDEFAULT == null ? deviceDir != null : !DEVICE_DIR_EDEFAULT.equals(deviceDir);
+		case BasePackage.DEVICE_MODEL__CODEGEN_DIR:
+			return CODEGEN_DIR_EDEFAULT == null ? codegenDir != null : !CODEGEN_DIR_EDEFAULT.equals(codegenDir);
+		case BasePackage.DEVICE_MODEL__SPREADSHEET_DIR:
+			return SPREADSHEET_DIR_EDEFAULT == null ? spreadsheetDir != null : !SPREADSHEET_DIR_EDEFAULT.equals(spreadsheetDir);
+		case BasePackage.DEVICE_MODEL__GENERATED_DIR:
+			return GENERATED_DIR_EDEFAULT == null ? generatedDir != null : !GENERATED_DIR_EDEFAULT.equals(generatedDir);
+		case BasePackage.DEVICE_MODEL__MONITOR_DB_ONLY:
+			return monitorDBOnly != MONITOR_DB_ONLY_EDEFAULT;
+		case BasePackage.DEVICE_MODEL__GENERATE_ALT:
+			return generateAlt != GENERATE_ALT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

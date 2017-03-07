@@ -22,10 +22,13 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
+import alma.control.datamodel.meta.amb.MandC;
+
 import alma.control.datamodel.meta.base.*;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -35,6 +38,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import org.eclipse.emf.ecore.resource.Resource;
 
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
@@ -83,14 +88,14 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case BasePackage.TABLE: return createTable();
 			case BasePackage.ARCHIVE_PROPERTY: return createArchiveProperty();
-			case BasePackage.NOTE: return createNote();
-			case BasePackage.SPREADSHEET_VALIDATOR: return createSpreadsheetValidator();
-			case BasePackage.SPREADSHEET_PARSER: return createSpreadsheetParser();
-			case BasePackage.UTIL: return createUtil();
-			case BasePackage.SIMPLE_ERROR_HANDLER: return createSimpleErrorHandler();
 			case BasePackage.MAIN_BASE: return createMainBase();
+			case BasePackage.NOTE: return createNote();
+			case BasePackage.SIMPLE_ERROR_HANDLER: return createSimpleErrorHandler();
+			case BasePackage.SPREADSHEET_PARSER: return createSpreadsheetParser();
+			case BasePackage.SPREADSHEET_VALIDATOR: return createSpreadsheetValidator();
+			case BasePackage.TABLE: return createTable();
+			case BasePackage.UTIL: return createUtil();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -106,14 +111,22 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 		switch (eDataType.getClassifierID()) {
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return createSimpleErrorHandlerDTFromString(eDataType, initialValue);
+			case BasePackage.MAND_CAMBDT:
+				return createMandCAMBDTFromString(eDataType, initialValue);
 			case BasePackage.MAND_CBASE_DT:
 				return createMandCBaseDTFromString(eDataType, initialValue);
 			case BasePackage.MAIN_BASE_DT:
 				return createMainBaseDTFromString(eDataType, initialValue);
+			case BasePackage.RESOURCE_DT:
+				return createResourceDTFromString(eDataType, initialValue);
+			case BasePackage.ITERATOR_DT:
+				return createIteratorDTFromString(eDataType, initialValue);
 			case BasePackage.ARRAY_LIST:
 				return createArrayListFromString(eDataType, initialValue);
 			case BasePackage.HASHTABLE:
 				return createHashtableFromString(eDataType, initialValue);
+			case BasePackage.RUNTIME_EXCEPTION_DT:
+				return createRuntimeExceptionDTFromString(eDataType, initialValue);
 			case BasePackage.ERROR_HANDLER_DT:
 				return createErrorHandlerDTFromString(eDataType, initialValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
@@ -124,6 +137,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createEStringArray2FromString(eDataType, initialValue);
 			case BasePackage.ESTRING_ARRAY:
 				return createEStringArrayFromString(eDataType, initialValue);
+			case BasePackage.MAND_CETHDT:
+				return createMandCETHDTFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -139,14 +154,22 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 		switch (eDataType.getClassifierID()) {
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return convertSimpleErrorHandlerDTToString(eDataType, instanceValue);
+			case BasePackage.MAND_CAMBDT:
+				return convertMandCAMBDTToString(eDataType, instanceValue);
 			case BasePackage.MAND_CBASE_DT:
 				return convertMandCBaseDTToString(eDataType, instanceValue);
 			case BasePackage.MAIN_BASE_DT:
 				return convertMainBaseDTToString(eDataType, instanceValue);
+			case BasePackage.RESOURCE_DT:
+				return convertResourceDTToString(eDataType, instanceValue);
+			case BasePackage.ITERATOR_DT:
+				return convertIteratorDTToString(eDataType, instanceValue);
 			case BasePackage.ARRAY_LIST:
 				return convertArrayListToString(eDataType, instanceValue);
 			case BasePackage.HASHTABLE:
 				return convertHashtableToString(eDataType, instanceValue);
+			case BasePackage.RUNTIME_EXCEPTION_DT:
+				return convertRuntimeExceptionDTToString(eDataType, instanceValue);
 			case BasePackage.ERROR_HANDLER_DT:
 				return convertErrorHandlerDTToString(eDataType, instanceValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
@@ -157,50 +180,11 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertEStringArray2ToString(eDataType, instanceValue);
 			case BasePackage.ESTRING_ARRAY:
 				return convertEStringArrayToString(eDataType, instanceValue);
+			case BasePackage.MAND_CETHDT:
+				return convertMandCETHDTToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchiveProperty createArchiveProperty(String[] row) {
-		ArchivePropertyImpl archiveProperty = new ArchivePropertyImpl(row);
-		return archiveProperty;
-	}
-	
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public SpreadsheetParser createSpreadsheetParser(String xml) {
-		SpreadsheetParserImpl spreadsheetParser = new SpreadsheetParserImpl(xml);
-		return spreadsheetParser;
-	}	
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MainBase createMainBase(String[] row) {
-		MainBaseImpl mainBase = new MainBaseImpl(row);
-		return mainBase;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table createTable() {
-		TableImpl table = new TableImpl();
-		return table;
 	}
 
 	/**
@@ -218,39 +202,19 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MainBase createMainBase() {
+		MainBaseImpl mainBase = new MainBaseImpl();
+		return mainBase;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Note createNote() {
 		NoteImpl note = new NoteImpl();
 		return note;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SpreadsheetValidator createSpreadsheetValidator() {
-		SpreadsheetValidatorImpl spreadsheetValidator = new SpreadsheetValidatorImpl();
-		return spreadsheetValidator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SpreadsheetParser createSpreadsheetParser() {
-		SpreadsheetParserImpl spreadsheetParser = new SpreadsheetParserImpl();
-		return spreadsheetParser;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util createUtil() {
-		UtilImpl util = new UtilImpl();
-		return util;
 	}
 
 	/**
@@ -268,9 +232,39 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainBase createMainBase() {
-		MainBaseImpl mainBase = new MainBaseImpl();
-		return mainBase;
+	public SpreadsheetParser createSpreadsheetParser() {
+		SpreadsheetParserImpl spreadsheetParser = new SpreadsheetParserImpl();
+		return spreadsheetParser;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SpreadsheetValidator createSpreadsheetValidator() {
+		SpreadsheetValidatorImpl spreadsheetValidator = new SpreadsheetValidatorImpl();
+		return spreadsheetValidator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table createTable() {
+		TableImpl table = new TableImpl();
+		return table;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Util createUtil() {
+		UtilImpl util = new UtilImpl();
+		return util;
 	}
 
 	/**
@@ -288,6 +282,24 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertSimpleErrorHandlerDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandC createMandCAMBDTFromString(EDataType eDataType, String initialValue) {
+		return (MandC)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMandCAMBDTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
@@ -332,6 +344,42 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Resource createResourceDTFromString(EDataType eDataType, String initialValue) {
+		return (Resource)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertResourceDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iterator createIteratorDTFromString(EDataType eDataType, String initialValue) {
+		return (Iterator)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIteratorDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ArrayList createArrayListFromString(EDataType eDataType, String initialValue) {
 		return (ArrayList)super.createFromString(eDataType, initialValue);
 	}
@@ -360,6 +408,24 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertHashtableToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeException createRuntimeExceptionDTFromString(EDataType eDataType, String initialValue) {
+		return (RuntimeException)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRuntimeExceptionDTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
@@ -451,6 +517,24 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 */
 	public String convertEStringArrayToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public alma.control.datamodel.meta.eth.MandC createMandCETHDTFromString(EDataType eDataType, String initialValue) {
+		return (alma.control.datamodel.meta.eth.MandC)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMandCETHDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

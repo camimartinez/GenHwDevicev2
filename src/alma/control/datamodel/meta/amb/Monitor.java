@@ -24,8 +24,6 @@ package alma.control.datamodel.meta.amb;
 
 import alma.control.datamodel.meta.base.MonitorPoint;
 
-import java.util.Iterator;
-
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -38,8 +36,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getAuxIterator <em>Aux Iterator</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.Monitor#getAuxResource <em>Aux Resource</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor()
@@ -59,7 +55,7 @@ public interface Monitor extends MonitorPoint {
 	 * @return the value of the '<em>Mac</em>' attribute.
 	 * @see #setMac(MandC)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_Mac()
-	 * @model default="" dataType="alma.control.datamodel.meta.amb.MandCAMBDT"
+	 * @model default="" dataType="alma.control.datamodel.meta.base.MandCAMBDT"
 	 * @generated
 	 */
 	MandC getMac();
@@ -73,58 +69,6 @@ public interface Monitor extends MonitorPoint {
 	 * @generated
 	 */
 	void setMac(MandC value);
-
-	/**
-	 * Returns the value of the '<em><b>Aux Iterator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Aux Iterator</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Aux Iterator</em>' attribute.
-	 * @see #setAuxIterator(Iterator)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_AuxIterator()
-	 * @model dataType="alma.control.datamodel.meta.amb.IteratorDT"
-	 * @generated
-	 */
-	Iterator getAuxIterator();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getAuxIterator <em>Aux Iterator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Aux Iterator</em>' attribute.
-	 * @see #getAuxIterator()
-	 * @generated
-	 */
-	void setAuxIterator(Iterator value);
-
-	/**
-	 * Returns the value of the '<em><b>Aux Resource</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Aux Resource</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Aux Resource</em>' attribute.
-	 * @see #setAuxResource(Resource)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_AuxResource()
-	 * @model dataType="alma.control.datamodel.meta.amb.ResourceDT"
-	 * @generated
-	 */
-	Resource getAuxResource();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getAuxResource <em>Aux Resource</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Aux Resource</em>' attribute.
-	 * @see #getAuxResource()
-	 * @generated
-	 */
-	void setAuxResource(Resource value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -420,11 +364,10 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetDimension();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetDimension();'"
 	 * @generated
 	 */
-	String getDimension();
+	String GetDimension();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -542,23 +485,23 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.normalizeNumber(WorldDataType(), super.MinRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(), super.MinRange());'"
 	 * @generated
 	 */
-	String minRange();
+	String MinRange();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.normalizeNumber(WorldDataType(), super.MaxRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(), super.MaxRange());'"
 	 * @generated
 	 */
-	String maxRange();
+	String MaxRange();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.normalizeNumber(WorldDataType(), super.Default());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(), super.Default());'"
 	 * @generated
 	 */
 	String Default();
@@ -598,5 +541,14 @@ public interface Monitor extends MonitorPoint {
 	 * @generated
 	 */
 	boolean isPartOfHomogeneous();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeMP(row, parent);\nmac = new MandCImpl();\nmac.setInitializeMandCImpl(row, sheet, this);'"
+	 * @generated
+	 */
+	void setInitializeMImpl(String[] row, Resource parent);
 
 } // Monitor

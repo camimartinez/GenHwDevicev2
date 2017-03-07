@@ -42,7 +42,7 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveImpl() {
+	protected ArchiveImpl() {
 		super();
 	}
 
@@ -56,15 +56,6 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 		return AmbPackage.Literals.ARCHIVE;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ArchiveImpl(String[] row) {
-		super();
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,6 +86,15 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 		if(isIntervalTE())
 			return IntervalFull().substring(3);
 		return IntervalFull();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitializeAImpl(final String[] row) {
+		setInitializeAP(row);
 	}
 
 } //ArchiveImpl

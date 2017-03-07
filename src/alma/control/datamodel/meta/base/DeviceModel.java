@@ -51,9 +51,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isGenerateAlt <em>Generate Alt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getArchivesProperties <em>Archives Properties</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel()
@@ -453,84 +450,6 @@ public interface DeviceModel extends EObject {
 	void setGenerateAlt(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tables</em>' reference.
-	 * @see #setTables(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Tables()
-	 * @model
-	 * @generated
-	 */
-	Table getTables();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tables</em>' reference.
-	 * @see #getTables()
-	 * @generated
-	 */
-	void setTables(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>Utils</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Utils</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Utils</em>' reference.
-	 * @see #setUtils(Util)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Utils()
-	 * @model
-	 * @generated
-	 */
-	Util getUtils();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Utils</em>' reference.
-	 * @see #getUtils()
-	 * @generated
-	 */
-	void setUtils(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>Archives Properties</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Archives Properties</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Archives Properties</em>' reference.
-	 * @see #setArchivesProperties(ArchiveProperty)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ArchivesProperties()
-	 * @model
-	 * @generated
-	 */
-	ArchiveProperty getArchivesProperties();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getArchivesProperties <em>Archives Properties</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Archives Properties</em>' reference.
-	 * @see #getArchivesProperties()
-	 * @generated
-	 */
-	void setArchivesProperties(ArchiveProperty value);
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
@@ -545,94 +464,6 @@ public interface DeviceModel extends EObject {
 	 * @generated
 	 */
 	String CheckConstraints();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void initializeModelDependencies();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return Assembly();\r\n'"
-	 * @generated
-	 */
-	String DirPath();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String dir = generatedDir + \"/\" + Assembly();\rutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"Base.cpp\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"Base.h\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Base.idl\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".xml\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \"Component.xml\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/config/CDB/schemas\", Assembly() + \"Base.xsd\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/config\", \"TMCDB\" + Assembly() + \"Add.xml\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/src/CCL\", Assembly() + \"Base.py\", 1);\r\nutils.RemoveLinesFromFile(dir + \"/src/CCL\", \"__init__.py\", 1);\r\nSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\r\nreturn \"\";'"
-	 * @generated
-	 */
-	String TheEnd();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='java.io.File f = new java.io.File(fileName);\r\nif(f.exists() == true){\r\n            return true;\r\n  }else{\r\n            return false;\r\n          }'"
-	 * @generated
-	 */
-	boolean checkIfFileExists(String fileName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(directory.isEmpty() == false){\r\n            return checkIfFileExists(directory + \"/\" + fileName);\r\n        } else{\r\n            return checkIfFileExists(fileName);\r\n                }'"
-	 * @generated
-	 */
-	boolean checkIfFileExists(String directory, String fileName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String fileName = getDeviceDir() + \"/\" + directory + \"/\" + Assembly() + localFileName;\r\n        return checkIfFileExists(fileName);'"
-	 * @generated
-	 */
-	boolean checkIfDeviceFileExists(String directory, String localFileName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String fileName = getDeviceDir() + \"/\" + directory + \"/Test\" + Assembly() + localFileName;\r\n        return checkIfFileExists(fileName);'"
-	 * @generated
-	 */
-	boolean checkIfTestFileExists(String directory, String localFileName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String fileName = getDeviceDir() + \"/\" + directory + \"/.cvsignore\";\r\n        return checkIfFileExists(fileName);'"
-	 * @generated
-	 */
-	boolean checkIfCvsignoreFileExists(String directory);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	Resource getArchive(String name);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(int i = 0; i &lt; monitorPoints.getResources().size(); i++){\r\n\tMonitorPoint mp = (MonitorPoint) monitorPoints.getResources().get(i);\r\n      if(mp.FullName().equals(fullName))\r\n\t\t      return mp;\r\n\t}\r\n\t\treturn null;'"
-	 * @generated
-	 */
-	MonitorPoint getMonitorPoint(String fullName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (int i = 0; i &lt; controlPoints.getResources().size(); i++) {\r\n\t ControlPoint cp = (ControlPoint) controlPoints.getResources().get(i);\r\n\t if (cp.FullName().equals(fullName))\r\n\t\t         return cp;\r\n\t }\r\n\t\t  return null;'"
-	 * @generated
-	 */
-	ControlPoint getControlPoint(String fullName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -709,33 +540,89 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return notes;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return Assembly();\r\n'"
 	 * @generated
 	 */
-	ResourceSet Notes();
+	String DirPath();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return monitorPoints;\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String dir = generatedDir + \"/\" + Assembly();\nutil.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"Base.cpp\", 1);\nutil.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"Base.h\", 1);\nutil.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Base.idl\", 1);\nutil.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\nutil.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".xml\", 1);\nutil.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \"Component.xml\", 1);\nutil.RemoveLinesFromFile(dir + \"/config/CDB/schemas\", Assembly() + \"Base.xsd\", 1);\nutil.RemoveLinesFromFile(dir + \"/config\", \"TMCDB\" + Assembly() + \"Add.xml\", 1);\nutil.RemoveLinesFromFile(dir + \"/src/CCL\", Assembly() + \"Base.py\", 1);\nutil.RemoveLinesFromFile(dir + \"/src/CCL\", \"__init__.py\", 1);\nSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\nreturn \"\";'"
 	 * @generated
 	 */
-	ResourceSet MonitorPoint();
+	String TheEnd();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return controlPoints;\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='java.io.File f = new java.io.File(fileName);\r\nif(f.exists() == true){\r\treturn true;\r\n }else{\r\n\treturn false;\r\n          }'"
 	 * @generated
 	 */
-	ResourceSet ControlPoint();
+	boolean checkIfFileExists(String fileName);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return archiveProperties;\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(directory.isEmpty() == false){\n\treturn checkIfFileExists(directory + \"/\" + fileName);\r\n} else{\r\n        return checkIfFileExists(fileName);\r\n          }'"
 	 * @generated
 	 */
-	ResourceSet ArchiveProperty();
+	boolean checkIfFileExists(String directory, String fileName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String fileName = getDeviceDir() + \"/\" + directory + \"/\" + Assembly() + localFileName;\nreturn checkIfFileExists(fileName);'"
+	 * @generated
+	 */
+	boolean checkIfDeviceFileExists(String directory, String localFileName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String fileName = getDeviceDir() + \"/\" + directory + \"/Test\" + Assembly() + localFileName;\r\nreturn checkIfFileExists(fileName);'"
+	 * @generated
+	 */
+	boolean checkIfTestFileExists(String directory, String localFileName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String fileName = getDeviceDir() + \"/\" + directory + \"/.cvsignore\";\r\nreturn checkIfFileExists(fileName);'"
+	 * @generated
+	 */
+	boolean checkIfCvsignoreFileExists(String directory);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body=' // Get the Archive Properties\nint archiveIndex = table.getSheetNum(\"Archive Property\");\nfor(int i = 2; i &lt; spreadsheet[archiveIndex].length; i++){\n       if(spreadsheet[archiveIndex][i].length == 0)\n        break;\n        ArchivePropertyImpl ap;\n        String[] row = spreadsheet[archiveIndex][i];\n        ap = new ArchivePropertyImpl(row);\n        if(name.equals(ap.RefersTo()))\n             return ap;\n        }\nreturn null;'"
+	 * @generated
+	 */
+	Resource getArchive(String name);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(int i = 0; i &lt; monitorPoints.getResources().size(); i++){\r\n\tMonitorPoint mp = (MonitorPoint) monitorPoints.getResources().get(i);\r\n      if(mp.FullName().equals(fullName))\r\n\t\t      return mp;\r\n\t}\r\n\t\treturn null;'"
+	 * @generated
+	 */
+	MonitorPoint getMonitorPoint(String fullName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (int i = 0; i &lt; controlPoints.getResources().size(); i++) {\r\n\t ControlPoint cp = (ControlPoint) controlPoints.getResources().get(i);\r\n\t if (cp.FullName().equals(fullName))\r\n\t\t         return cp;\r\n\t }\r\n\t\t  return null;'"
+	 * @generated
+	 */
+	ControlPoint getControlPoint(String fullName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.setDeviceName(System.getProperty(\"deviceName\"));\nthis.setDeviceDir(System.getProperty(\"deviceDir\"));\nthis.setCodegenDir(System.getProperty(\"codegenDir\"));\nthis.setSpreadsheetDir(System.getProperty(\"spreadsheetDir\"));\nthis.setGeneratedDir(System.getProperty(\"generatedDir\"));'"
+	 * @generated
+	 */
+	void setInitializeDM();
 
 } // DeviceModel

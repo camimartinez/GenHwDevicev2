@@ -22,33 +22,24 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
-import alma.control.datamodel.meta.amb.AmbFactory;
+import java.util.Iterator;
+
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
 
-import alma.control.datamodel.meta.base.Util;
+import alma.control.datamodel.meta.base.BaseFactory;
+import alma.control.datamodel.meta.base.BasePackage;
+
 import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Iterator;
-import java.util.Map;
-
-import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,14 +50,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getAuxIterator <em>Aux Iterator</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getAuxResource <em>Aux Resource</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MonitorImpl extends MonitorPointImpl implements Monitor {
-
 	/**
 	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,7 +63,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MandC MAC_EDEFAULT = (MandC)AmbFactory.eINSTANCE.createFromString(AmbPackage.eINSTANCE.getMandCAMBDT(), "");
+	protected static final MandC MAC_EDEFAULT = (MandC)BaseFactory.eINSTANCE.createFromString(BasePackage.eINSTANCE.getMandCAMBDT(), "");
 
 	/**
 	 * The cached value of the '{@link #getMac() <em>Mac</em>}' attribute.
@@ -88,51 +76,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	protected MandC mac = MAC_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAuxIterator() <em>Aux Iterator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuxIterator()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Iterator AUX_ITERATOR_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAuxIterator() <em>Aux Iterator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuxIterator()
-	 * @generated
-	 * @ordered
-	 */
-	protected Iterator auxIterator = AUX_ITERATOR_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAuxResource() <em>Aux Resource</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuxResource()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Resource AUX_RESOURCE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAuxResource() <em>Aux Resource</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuxResource()
-	 * @generated
-	 * @ordered
-	 */
-	protected Resource auxResource = AUX_RESOURCE_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorImpl() {
+	protected MonitorImpl() {
 		super();
 	}
 
@@ -144,16 +92,6 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.MONITOR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MonitorImpl(String[] row, Resource parent) {
-		super(row, parent);
-		mac = new MandCImpl(row, sheet, this);
 	}
 
 	/**
@@ -175,48 +113,6 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		mac = newMac;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__MAC, oldMac, mac));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Iterator getAuxIterator() {
-		return auxIterator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuxIterator(Iterator newAuxIterator) {
-		Iterator oldAuxIterator = auxIterator;
-		auxIterator = newAuxIterator;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__AUX_ITERATOR, oldAuxIterator, auxIterator));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Resource getAuxResource() {
-		return auxResource;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuxResource(Resource newAuxResource) {
-		Resource oldAuxResource = auxResource;
-		auxResource = newAuxResource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__AUX_RESOURCE, oldAuxResource, auxResource));
 	}
 
 	/**
@@ -539,7 +435,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDimension() {
+	public String GetDimension() {
 		return mac.GetDimension();
 	}
 
@@ -665,8 +561,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String minRange() {
-		return util.normalizeNumber(WorldDataType(), super.MinRange());
+	public String MinRange() {
+		return utils.normalizeNumber(WorldDataType(), super.MinRange());
 	}
 
 	/**
@@ -674,8 +570,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String maxRange() {
-		return util.normalizeNumber(WorldDataType(), super.MaxRange());
+	public String MaxRange() {
+		return utils.normalizeNumber(WorldDataType(), super.MaxRange());
 	}
 
 	/**
@@ -684,7 +580,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public String Default() {
-		return util.normalizeNumber(WorldDataType(), super.Default());
+		return utils.normalizeNumber(WorldDataType(), super.Default());
 	}
 
 	/**
@@ -693,52 +589,70 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public boolean isPattern() {
-				boolean ret = true;
-				if( this.isDependent()) ret = false;
-				if( this.getDependents().getResources().isEmpty()) ret = false;
-				for (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {
-					MonitorImpl var = (MonitorImpl) iter.next();
-					if( var.WorldDataType().compareTo("boolean") != 0 ) ret = false;
-				}
-				return ret;
+		boolean ret = true;
+		if( this.isDependent()) ret = false;
+		if( this.getDependents().getResources().isEmpty()) ret = false;
+		for (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {
+			MonitorImpl var = (MonitorImpl) iter.next();
+			if( var.WorldDataType().compareTo("boolean") != 0 ) ret = false;
+		}
+		return ret;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
+	@Override
 	public boolean isPartOfPattern() {
-				boolean ret = false;
-				if( isDependent() ){
-					MonitorImpl parent = ((MonitorImpl)this.getParent());
-					if( parent.isPattern() )
-						ret = true;
-				}
-				return ret;
+		boolean ret = false;
+		if( isDependent() ){
+			MonitorImpl parent = ((MonitorImpl)this.getParent());
+			if( parent.isPattern() )
+				ret = true;
+		}
+		return ret;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
+	@Override
 	public boolean isHomogeneous() {
-				boolean ret = true;
-				String firsttype = null;
-				if( hasDependents() ){
-					for (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {
-						MonitorImpl var = (MonitorImpl) iter.next();
-						if( firsttype == null){
-							firsttype = new String(var.WorldDataType());
-							continue;
-						}
-						if( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;
-					}
-				}else{
-					ret = false;
+		boolean ret = true;
+		String firsttype = null;
+		if( hasDependents() ){
+			for (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {
+				MonitorImpl var = (MonitorImpl) iter.next();
+				if( firsttype == null){
+					firsttype = new String(var.WorldDataType());
+					continue;
 				}
-				return ret;
+				if( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;
+			}
+		}else{
+			ret = false;
+		}
+		return ret;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	@Override
+	public boolean isPartOfHomogeneous() {
+		boolean ret = false;
+		if( isDependent() ){
+			MonitorImpl parent = ((MonitorImpl)this.getParent());
+			if( parent.isHomogeneous() )
+				ret = true;
+		}
+		return ret;
 	}
 
 	/**
@@ -746,14 +660,10 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isPartOfHomogeneous() {
-				boolean ret = false;
-				if( isDependent() ){
-					MonitorImpl parent = ((MonitorImpl)this.getParent());
-					if( parent.isHomogeneous() )
-						ret = true;
-				}
-				return ret;
+	public void setInitializeMImpl(final String[] row, final Resource parent) {
+		setInitializeMP(row, parent);
+		mac = new MandCImpl();
+		mac.setInitializeMandCImpl(row, sheet, this);
 	}
 
 	/**
@@ -764,12 +674,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AmbPackage.MONITOR__MAC:
-				return getMac();
-			case AmbPackage.MONITOR__AUX_ITERATOR:
-				return getAuxIterator();
-			case AmbPackage.MONITOR__AUX_RESOURCE:
-				return getAuxResource();
+		case AmbPackage.MONITOR__MAC:
+			return getMac();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -782,15 +688,9 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AmbPackage.MONITOR__MAC:
-				setMac((MandC)newValue);
-				return;
-			case AmbPackage.MONITOR__AUX_ITERATOR:
-				setAuxIterator((Iterator)newValue);
-				return;
-			case AmbPackage.MONITOR__AUX_RESOURCE:
-				setAuxResource((Resource)newValue);
-				return;
+		case AmbPackage.MONITOR__MAC:
+			setMac((MandC)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -803,15 +703,9 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AmbPackage.MONITOR__MAC:
-				setMac(MAC_EDEFAULT);
-				return;
-			case AmbPackage.MONITOR__AUX_ITERATOR:
-				setAuxIterator(AUX_ITERATOR_EDEFAULT);
-				return;
-			case AmbPackage.MONITOR__AUX_RESOURCE:
-				setAuxResource(AUX_RESOURCE_EDEFAULT);
-				return;
+		case AmbPackage.MONITOR__MAC:
+			setMac(MAC_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -824,12 +718,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AmbPackage.MONITOR__MAC:
-				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
-			case AmbPackage.MONITOR__AUX_ITERATOR:
-				return AUX_ITERATOR_EDEFAULT == null ? auxIterator != null : !AUX_ITERATOR_EDEFAULT.equals(auxIterator);
-			case AmbPackage.MONITOR__AUX_RESOURCE:
-				return AUX_RESOURCE_EDEFAULT == null ? auxResource != null : !AUX_RESOURCE_EDEFAULT.equals(auxResource);
+		case AmbPackage.MONITOR__MAC:
+			return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -846,176 +736,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mac: ");
 		result.append(mac);
-		result.append(", auxIterator: ");
-		result.append(auxIterator);
-		result.append(", auxResource: ");
-		result.append(auxResource);
 		result.append(')');
 		return result.toString();
-	}
-
-	@Override
-	public ResourceSet getResourceSet() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public URI getURI() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setURI(URI uri) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public long getTimeStamp() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setTimeStamp(long timeStamp) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public EList<EObject> getContents() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TreeIterator<EObject> getAllContents() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getURIFragment(EObject eObject) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public EObject getEObject(String uriFragment) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void save(Map<?, ?> options) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void load(Map<?, ?> options) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void save(OutputStream outputStream, Map<?, ?> options)
-			throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void load(InputStream inputStream, Map<?, ?> options)
-			throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean isTrackingModification() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void setTrackingModification(boolean isTrackingModification) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean isModified() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void setModified(boolean isModified) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean isLoaded() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void unload() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(Map<?, ?> options) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public EList<Diagnostic> getErrors() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public EList<Diagnostic> getWarnings() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setUtil(Util value) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public EList<Adapter> eAdapters() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean eDeliver() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void eSetDeliver(boolean deliver) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void eNotify(Notification notification) {
-		// TODO Auto-generated method stub
-		
 	}
 
 } //MonitorImpl

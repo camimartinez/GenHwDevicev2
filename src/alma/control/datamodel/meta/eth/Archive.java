@@ -23,7 +23,6 @@
 package alma.control.datamodel.meta.eth;
 
 import alma.control.datamodel.meta.base.ArchiveProperty;
-import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,4 +35,13 @@ import org.eclipse.emf.ecore.resource.Resource;
  * @generated
  */
 public interface Archive extends ArchiveProperty {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeAP(row);'"
+	 * @generated
+	 */
+	void setInitializeAImpl(String[] row);
+
 } // Archive

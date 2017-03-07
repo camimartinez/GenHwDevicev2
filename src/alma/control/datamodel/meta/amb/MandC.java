@@ -23,8 +23,6 @@
 package alma.control.datamodel.meta.amb;
 
 import alma.control.datamodel.meta.base.MandCBase;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -37,17 +35,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getUtil <em>Util</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.MandC#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.MandC#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getAmask <em>Amask</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMandCb <em>Mand Cb</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getTables <em>Tables</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMonitorPoints <em>Monitor Points</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getControlPoints <em>Control Points</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getUtilss <em>Utilss</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMask <em>Mask</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC()
@@ -55,58 +46,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface MandC extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table</em>' attribute.
-	 * @see #setTable(Table)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Table()
-	 * @model dataType="alma.control.datamodel.meta.amb.TableDT"
-	 * @generated
-	 */
-	Table getTable();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getTable <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' attribute.
-	 * @see #getTable()
-	 * @generated
-	 */
-	void setTable(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>Util</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Util</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Util</em>' attribute.
-	 * @see #setUtil(Util)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Util()
-	 * @model dataType="alma.control.datamodel.meta.amb.UtilDT"
-	 * @generated
-	 */
-	Util getUtil();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getUtil <em>Util</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Util</em>' attribute.
-	 * @see #getUtil()
-	 * @generated
-	 */
-	void setUtil(Util value);
-
 	/**
 	 * Returns the value of the '<em><b>Row</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -186,160 +125,21 @@ public interface MandC extends EObject {
 	void setMcp(MandCBase value);
 
 	/**
-	 * Returns the value of the '<em><b>Amask</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Amask</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Amask</em>' attribute.
-	 * @see #setAmask(String[])
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Amask()
-	 * @model dataType="alma.control.datamodel.meta.base.EStringArray"
-	 * @generated
+	 * @!generated
 	 */
-	String[] getAmask();
+	String getMask();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getAmask <em>Amask</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMask <em>Mask</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Amask</em>' attribute.
-	 * @see #getAmask()
+	 * @param value the new value of the '<em>Mask</em>' attribute.
+	 * @see #getMask()
 	 * @generated
 	 */
-	void setAmask(String[] value);
-
-	/**
-	 * Returns the value of the '<em><b>Mand Cb</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mand Cb</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mand Cb</em>' containment reference.
-	 * @see #setMandCb(MandCBase)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_MandCb()
-	 * @model containment="true"
-	 * @generated
-	 */
-	MandCBase getMandCb();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMandCb <em>Mand Cb</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mand Cb</em>' containment reference.
-	 * @see #getMandCb()
-	 * @generated
-	 */
-	void setMandCb(MandCBase value);
-
-	/**
-	 * Returns the value of the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tables</em>' reference.
-	 * @see #setTables(Table)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Tables()
-	 * @model
-	 * @generated
-	 */
-	Table getTables();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getTables <em>Tables</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tables</em>' reference.
-	 * @see #getTables()
-	 * @generated
-	 */
-	void setTables(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>Monitor Points</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Monitor Points</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Monitor Points</em>' reference.
-	 * @see #setMonitorPoints(Monitor)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_MonitorPoints()
-	 * @model
-	 * @generated
-	 */
-	Monitor getMonitorPoints();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMonitorPoints <em>Monitor Points</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Monitor Points</em>' reference.
-	 * @see #getMonitorPoints()
-	 * @generated
-	 */
-	void setMonitorPoints(Monitor value);
-
-	/**
-	 * Returns the value of the '<em><b>Control Points</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Control Points</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Control Points</em>' reference.
-	 * @see #setControlPoints(Control)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_ControlPoints()
-	 * @model
-	 * @generated
-	 */
-	Control getControlPoints();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getControlPoints <em>Control Points</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Control Points</em>' reference.
-	 * @see #getControlPoints()
-	 * @generated
-	 */
-	void setControlPoints(Control value);
-
-	/**
-	 * Returns the value of the '<em><b>Utilss</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Utilss</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Utilss</em>' reference.
-	 * @see #setUtilss(Util)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Utilss()
-	 * @model
-	 * @generated
-	 */
-	Util getUtilss();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getUtilss <em>Utilss</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Utilss</em>' reference.
-	 * @see #getUtilss()
-	 * @generated
-	 */
-	void setUtilss(Util value);
+	void setMask(String[] value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -368,7 +168,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = row[table.getColNum(sheet, \"Raw Data Type\")];\n\t\tif(!mcp.isDependent())\n\t\t\treturn isRawDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;\n\t\t\tif(mcp instanceof Monitor)\n\t\t\t\treturn ((Monitor) mcp.getParent()).RawDataType();\n\t\t\tif(mcp instanceof Control)\n\t\t\t\treturn ((Control) mcp.getParent()).RawDataType();\n\t\t\treturn \"ERROR\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"Raw Data Type\")];\nif(!mcp.isDependent())\nreturn isRawDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;\nif(mcp instanceof Monitor)\nreturn ((Monitor) mcp.getParent()).RawDataType();\nif(mcp instanceof Control)\nreturn ((Control) mcp.getParent()).RawDataType();\nreturn \"ERROR\";'"
 	 * @generated
 	 */
 	String RawDataType();
@@ -416,7 +216,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = ScaleCell();\n\t\tif((s.equals(\"none\") == true) || (s.equals(\"extended\") == true)\n\t\t\t\t|| (s.equals(table.getCelsiusToKelvin()) == true))\n\t\t\ts = \"1.0\";\n\t\treturn s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = ScaleCell();\nif((s.equals(\"none\") == true) || (s.equals(\"extended\") == true) || (s.equals(table.getCelsiusToKelvin()) == true))\ns = \"1.0\";\nreturn s;'"
 	 * @generated
 	 */
 	String Scale();
@@ -432,7 +232,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = ScaleCell();\n\t\tif(s.equals(table.getCelsiusToKelvin()))\n\t\t\treturn \"273.15\";\n\t\tString o = OffsetCell();\n\t\tif((o.equals(\"0\") == true) || (o.equals(\"none\") == true)\n\t\t\t\t|| (o.equals(\"extended\") == true))\n\t\t\to = \"0.0\";\n\t\treturn o;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = ScaleCell();\n\tif(s.equals(table.getCelsiusToKelvin()))\n\treturn \"273.15\";\nString o = OffsetCell();\n\tif((o.equals(\"0\") == true) || (o.equals(\"none\") == true)\t|| (o.equals(\"extended\") == true))\n\to = \"0.0\";\n\treturn o;'"
 	 * @generated
 	 */
 	String Offset();
@@ -556,7 +356,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = row[table.getColNum(sheet, \"Raw Data Type\")];\n\t\tif(!mcp.isDependent())\n\t\t\treturn s.endsWith(\"]\") ? true : false;\n\t\tif(s.startsWith(\"&amp;lt;\") &amp;&amp; s.substring(1).indexOf(\"&amp;lt;\") != -1)\n\t\t\treturn true;\n\t\treturn false;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"Raw Data Type\")];\n\tif(!mcp.isDependent())\n\treturn s.endsWith(\"]\") ? true : false;\n\tif(s.startsWith(\"&amp;lt;\") &amp;&amp; s.substring(1).indexOf(\"&amp;lt;\") != -1)\n\treturn true;\nreturn false;'"
 	 * @generated
 	 */
 	boolean isRawDataArray();
@@ -770,10 +570,10 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!isSingleBit())\r\n\t\t\treturn \"\";\r\n\t\tString s = null;\r\n\t\tif(isRawDataArray())\r\n\t\t{\r\n\t\t\ts = RawDataTypeCell().substring(4);\r\n\t\t\tint n = s.indexOf(\"&amp;lt;\");\r\n\t\t\tint m = s.substring(n + 4).indexOf(\"&amp;gt;\");\r\n\t\t\ts = s.substring(n + 4, m + n + 4);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\ts = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);\r\n\t\t}\r\n\t\tint n = Integer.parseInt(s);\r\n\t\treturn amask[n];'"
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = sheet;\nthis.mcp = mcp;'"
 	 * @generated
 	 */
-	String getMask();
+	void setInitializeMandCImpl(String[] row, int sheet, MandCBase mcp);
 
 } // MandC

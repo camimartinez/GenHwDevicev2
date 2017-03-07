@@ -22,18 +22,12 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
-import alma.control.datamodel.meta.amb.AmbFactory;
-import alma.control.datamodel.meta.amb.AmbPackage;
-import alma.control.datamodel.meta.base.Table;
-
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -49,23 +43,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getAssembly <em>Assembly</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getTable <em>Table</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MandCImpl extends EObjectImpl implements MandC {
-	
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MandCImpl(String[] row, int sheet){
-		this.row = row;
-		this.sheet = sheet;
-	}	
-	
 	/**
 	 * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -127,21 +109,11 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	protected String assembly = ASSEMBLY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table table;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCImpl() {
+	protected MandCImpl() {
 		super();
 	}
 
@@ -216,44 +188,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		assembly = newAssembly;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MAND_C__ASSEMBLY, oldAssembly, assembly));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getTable() {
-		if (table != null && table.eIsProxy()) {
-			InternalEObject oldTable = (InternalEObject)table;
-			table = (Table)eResolveProxy(oldTable);
-			if (table != oldTable) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MAND_C__TABLE, oldTable, table));
-			}
-		}
-		return table;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetTable() {
-		return table;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTable(Table newTable) {
-		Table oldTable = table;
-		table = newTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MAND_C__TABLE, oldTable, table));
 	}
 
 	/**
@@ -401,6 +335,16 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setInitializeMandCImpl(final String[] row, final int sheet) {
+		this.row = row;
+		this.sheet = sheet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -410,9 +354,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return getSheet();
 			case EthPackage.MAND_C__ASSEMBLY:
 				return getAssembly();
-			case EthPackage.MAND_C__TABLE:
-				if (resolve) return getTable();
-				return basicGetTable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -433,9 +374,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return;
 			case EthPackage.MAND_C__ASSEMBLY:
 				setAssembly((String)newValue);
-				return;
-			case EthPackage.MAND_C__TABLE:
-				setTable((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -458,9 +396,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case EthPackage.MAND_C__ASSEMBLY:
 				setAssembly(ASSEMBLY_EDEFAULT);
 				return;
-			case EthPackage.MAND_C__TABLE:
-				setTable((Table)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -479,8 +414,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return sheet != SHEET_EDEFAULT;
 			case EthPackage.MAND_C__ASSEMBLY:
 				return ASSEMBLY_EDEFAULT == null ? assembly != null : !ASSEMBLY_EDEFAULT.equals(assembly);
-			case EthPackage.MAND_C__TABLE:
-				return table != null;
 		}
 		return super.eIsSet(featureID);
 	}

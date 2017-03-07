@@ -37,21 +37,12 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class MainImpl extends MainBaseImpl implements Main {
-	
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MainImpl(String[] row){
-		super(row);
-	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainImpl() {
+	protected MainImpl() {
 		super();
 	}
 
@@ -64,6 +55,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.MAIN;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,6 +63,15 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 */
 	public String VendorClass() {
 		return row[table.getColNum(sheet, "Vendor Class")];
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitializeMainImpl(final String[] row) {
+		setInitializeMB(row);
 	}
 
 } //MainImpl

@@ -22,18 +22,12 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.amb.AmbFactory;
-import alma.control.datamodel.meta.amb.AmbPackage;
-
 import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -47,11 +41,9 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getNewline <em>Newline</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getTable <em>Table</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMONTHalt <em>MONT Halt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,10 +54,10 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNewline()
-	 * @!generated
+	 * @generated
 	 * @ordered
 	 */
-	protected static final String NEWLINE_EDEFAULT = System.getProperty("line.separator");
+	protected static final String NEWLINE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getNewline() <em>Newline</em>}' attribute.
@@ -76,26 +68,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @ordered
 	 */
 	protected String newline = NEWLINE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTable() <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Table TABLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table table = TABLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaxLength() <em>Max Length</em>}' attribute.
@@ -125,6 +97,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @!generated
 	 * @ordered
 	 */
+	
 	protected static final String[] MONTH_EDEFAULT = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
 
 	/**
@@ -158,21 +131,11 @@ public class UtilImpl extends EObjectImpl implements Util {
 	protected String[] montHalt = MONT_HALT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTables()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table tables;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UtilImpl() {
+	protected UtilImpl() {
 		super();
 	}
 
@@ -205,27 +168,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 		newline = newNewline;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__NEWLINE, oldNewline, newline));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getTable() {
-		return table;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTable(Table newTable) {
-		Table oldTable = table;
-		table = newTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__TABLE, oldTable, table));
 	}
 
 	/**
@@ -289,44 +231,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 		montHalt = newMONTHalt;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__MONT_HALT, oldMONTHalt, montHalt));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getTables() {
-		if (tables != null && tables.eIsProxy()) {
-			InternalEObject oldTables = (InternalEObject)tables;
-			tables = (Table)eResolveProxy(oldTables);
-			if (tables != oldTables) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__TABLES, oldTables, tables));
-			}
-		}
-		return tables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetTables() {
-		return tables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTables(Table newTables) {
-		Table oldTables = tables;
-		tables = newTables;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__TABLES, oldTables, tables));
 	}
 
 	/**
@@ -611,20 +515,20 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	public String RawDataTypeTotalBytes(final String s) {
-				if (isArray(s)) {
-					int b;
-					int n = Integer.parseInt(NumberOfItems(s));
-					if(s.startsWith("&lt;"))
-						return "0";
-					if(s.startsWith("["))
-						return "0";
-					int i = s.indexOf("[");
-					b = Integer.parseInt((String)table.getRawBytes().get(s.substring(0,1)));
+		if (isArray(s)) {
+		int b;
+		int n = Integer.parseInt(NumberOfItems(s));
+		if(s.startsWith("&lt;"))
+		return "0";
+		if(s.startsWith("["))
+		return "0";
+		int i = s.indexOf("[");
+		b = Integer.parseInt((String)table.getRawBytes().get(s.substring(0,1)));
 		
-					String x = Integer.toString(n * b);
-					return x;
-				}
-				return (String)table.getRawBytes().get(s);
+		String x = Integer.toString(n * b);
+		return x;
+		}
+		return (String)table.getRawBytes().get(s);
 	}
 
 	/**
@@ -680,6 +584,15 @@ public class UtilImpl extends EObjectImpl implements Util {
 				    	alma.hla.runtime.asdm.types.ArrayTime t = new alma.hla.runtime.asdm.types.ArrayTime ("20" + parseDateString(s,true) + "T00:00:00.0");
 				    	long l = t.get();
 				    	return Long.toString(l);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String toDatabaseDate(final String s) {
+		return parseDateString(s,false);
 	}
 
 	/**
@@ -817,31 +730,17 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toDatabaseDate(final String s) {
-		return parseDateString(s,false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
 				return getNewline();
-			case BasePackage.UTIL__TABLE:
-				return getTable();
 			case BasePackage.UTIL__MAX_LENGTH:
 				return getMaxLength();
 			case BasePackage.UTIL__MONTH:
 				return getMONTH();
 			case BasePackage.UTIL__MONT_HALT:
 				return getMONTHalt();
-			case BasePackage.UTIL__TABLES:
-				if (resolve) return getTables();
-				return basicGetTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -857,9 +756,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__NEWLINE:
 				setNewline((String)newValue);
 				return;
-			case BasePackage.UTIL__TABLE:
-				setTable((Table)newValue);
-				return;
 			case BasePackage.UTIL__MAX_LENGTH:
 				setMaxLength((Integer)newValue);
 				return;
@@ -868,9 +764,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return;
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt((String[])newValue);
-				return;
-			case BasePackage.UTIL__TABLES:
-				setTables((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -887,9 +780,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__NEWLINE:
 				setNewline(NEWLINE_EDEFAULT);
 				return;
-			case BasePackage.UTIL__TABLE:
-				setTable(TABLE_EDEFAULT);
-				return;
 			case BasePackage.UTIL__MAX_LENGTH:
 				setMaxLength(MAX_LENGTH_EDEFAULT);
 				return;
@@ -898,9 +788,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return;
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt(MONT_HALT_EDEFAULT);
-				return;
-			case BasePackage.UTIL__TABLES:
-				setTables((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -916,16 +803,12 @@ public class UtilImpl extends EObjectImpl implements Util {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
 				return NEWLINE_EDEFAULT == null ? newline != null : !NEWLINE_EDEFAULT.equals(newline);
-			case BasePackage.UTIL__TABLE:
-				return TABLE_EDEFAULT == null ? table != null : !TABLE_EDEFAULT.equals(table);
 			case BasePackage.UTIL__MAX_LENGTH:
 				return maxLength != MAX_LENGTH_EDEFAULT;
 			case BasePackage.UTIL__MONTH:
 				return MONTH_EDEFAULT == null ? month != null : !MONTH_EDEFAULT.equals(month);
 			case BasePackage.UTIL__MONT_HALT:
 				return MONT_HALT_EDEFAULT == null ? montHalt != null : !MONT_HALT_EDEFAULT.equals(montHalt);
-			case BasePackage.UTIL__TABLES:
-				return tables != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -942,8 +825,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (newline: ");
 		result.append(newline);
-		result.append(", table: ");
-		result.append(table);
 		result.append(", maxLength: ");
 		result.append(maxLength);
 		result.append(", MONTH: ");

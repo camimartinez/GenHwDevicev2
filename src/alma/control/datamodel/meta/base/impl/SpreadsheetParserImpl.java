@@ -22,9 +22,6 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
-import java.io.IOException;
-import java.io.LineNumberReader;
-import java.io.StringReader;
 import java.util.ArrayList;
 
 import alma.control.datamodel.meta.base.BaseFactory;
@@ -34,10 +31,8 @@ import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -55,23 +50,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getXml <em>Xml</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getXsdFile <em>Xsd File</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getNewline <em>Newline</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getPairSpread <em>Pair Spread</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl#getValidateSpread <em>Validate Spread</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetParser {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public SpreadsheetParserImpl(String xml){
-		this.xml = xml;
-	}	
-
 	/**
 	 * The default value of the '{@link #getRefPath() <em>Ref Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -157,10 +140,10 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNewline()
-	 * @!generated
+	 * @generated
 	 * @ordered
 	 */
-	protected static final String NEWLINE_EDEFAULT = System.getProperty("line.separator");
+	protected static final String NEWLINE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getNewline() <em>Newline</em>}' attribute.
@@ -173,31 +156,11 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	protected String newline = NEWLINE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPairSpread() <em>Pair Spread</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPairSpread()
-	 * @generated
-	 * @ordered
-	 */
-	protected Pair pairSpread;
-
-	/**
-	 * The cached value of the '{@link #getValidateSpread() <em>Validate Spread</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValidateSpread()
-	 * @generated
-	 * @ordered
-	 */
-	protected SpreadsheetValidator validateSpread;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpreadsheetParserImpl() {
+	protected SpreadsheetParserImpl() {
 		super();
 	}
 
@@ -321,92 +284,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pair getPairSpread() {
-		return pairSpread;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPairSpread(Pair newPairSpread, NotificationChain msgs) {
-		Pair oldPairSpread = pairSpread;
-		pairSpread = newPairSpread;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD, oldPairSpread, newPairSpread);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPairSpread(Pair newPairSpread) {
-		if (newPairSpread != pairSpread) {
-			NotificationChain msgs = null;
-			if (pairSpread != null)
-				msgs = ((InternalEObject)pairSpread).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD, null, msgs);
-			if (newPairSpread != null)
-				msgs = ((InternalEObject)newPairSpread).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD, null, msgs);
-			msgs = basicSetPairSpread(newPairSpread, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD, newPairSpread, newPairSpread));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SpreadsheetValidator getValidateSpread() {
-		return validateSpread;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetValidateSpread(SpreadsheetValidator newValidateSpread, NotificationChain msgs) {
-		SpreadsheetValidator oldValidateSpread = validateSpread;
-		validateSpread = newValidateSpread;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD, oldValidateSpread, newValidateSpread);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValidateSpread(SpreadsheetValidator newValidateSpread) {
-		if (newValidateSpread != validateSpread) {
-			NotificationChain msgs = null;
-			if (validateSpread != null)
-				msgs = ((InternalEObject)validateSpread).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD, null, msgs);
-			if (newValidateSpread != null)
-				msgs = ((InternalEObject)newValidateSpread).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD, null, msgs);
-			msgs = basicSetValidateSpread(newValidateSpread, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD, newValidateSpread, newValidateSpread));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getSpreadsheet(final String dirName, final String fileName) {
 				java.io.File dir = new java.io.File(dirName);
 				if (!dir.isDirectory())
@@ -439,27 +316,27 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public Pair getBoundedContent(String s, String beginPart1, String beginPart2, String end) {
-		int b1 = s.indexOf(beginPart1);
-		if (b1 == -1)
-			return null;
-		int b2 = s.indexOf(beginPart2,b1);
-		if (b2 == -1)
-			return null;
-		int e = s.indexOf(end,b2);
-		if (e == -1)
-			return null;
-		String content = s.substring(b2 + 1,e).trim();
-		int n = e + end.length();
-		String newS = null;
-		if (n < s.length())
-			newS = s.substring(n);
-		PairImpl pp = new PairImpl(content,newS) {};
-		return pp;
+	public Pair getBoundedContent(final String s, final String beginPart1, final String beginPart2, final String end) {
+				int b1 = s.indexOf(beginPart1);
+				if (b1 == -1)
+					return null;
+				int b2 = s.indexOf(beginPart2,b1);
+				if (b2 == -1)
+					return null;
+				int e = s.indexOf(end,b2);
+				if (e == -1)
+					return null;
+				String content = s.substring(b2 + 1,e).trim();
+				int n = e + end.length();
+				String newS = null;
+				if (n < s.length())
+					newS = s.substring(n);
+				PairImpl pp = new PairImpl() {};
+				pp.setInitializePair(content,newS);
+				return pp;
 	}
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -467,101 +344,101 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * @!generated
 	 */
 	public String[] getDataCells(String row) {
-		ArrayList list = new ArrayList ();
-		String data = null;
-		String content = null;
-		while (row != null && row.length() > 0) {
-			Pair p = getBoundedContent(row,"<Cell",">","</Cell>");
-			if (p == null)
-				break;
-			data = p.getContent();
-			row = p.getNewString();
-			p = getBoundedContent(data,"<Data",">","</Data>");
-			if (p == null)
-				continue;
-			content = p.getContent();
-			list.add(content);
-		}
-		if(list.size() == 0)
-			return null;
-		String[] x = new String [list.size()];
-		return (String[])list.toArray(x);
+				ArrayList list = new ArrayList ();
+				String data = null;
+				String content = null;
+				while (row != null && row.length() > 0) {
+					Pair p = getBoundedContent(row,"<Cell",">","</Cell>");
+					if (p == null)
+						break;
+					data = p.getContent();
+					row = p.getNewString();
+					p = getBoundedContent(data,"<Data",">","</Data>");
+					if (p == null)
+						continue;
+					content = p.getContent();
+					list.add(content);
+				}
+				if(list.size() == 0)
+					return null;
+				String[] x = new String [list.size()];
+				return (String[])list.toArray(x);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
 	public String[][][] getWorksheets() {
 		ArrayList rowList = null;
-		ArrayList sheetList = null;
-		String sheet = null;
-		String row = null;
-		String[] data = null;
-		sheetList = new ArrayList ();
-		String doc = new String (xml);
-		if (doc.startsWith("@reference")) {
-			refStatus = true;
-			return filter(doc);
-		}
-		Pair p = null;
-		while (doc != null && doc.length() > 0) {
-			p = getBoundedContent(doc,"<Worksheet",">","</Worksheet>");
-			if (p == null)
-				break;
-			sheet = p.getContent();
-			doc = p.getNewString();
-			rowList = new ArrayList ();
-			while (sheet != null && sheet.length() > 0) {
-				Pair p2 = getBoundedContent(sheet,"<Row",">","</Row>");
-				if (p2 == null)
-					break;
-				row = p2.getContent();
-				sheet = p2.getNewString();
-				data = getDataCells(row);
-				if (data != null)
-					rowList.add(data);
-			}
-			sheetList.add(rowList);
-		}
-
-		if(p == null){
-			doc = new String(xml);
-			while (doc != null && doc.length() > 0) {
-				p = getBoundedContent(doc,"<ss:Worksheet",">","</ss:Worksheet>");
-				if(p == null)
-					break;
-				sheet = p.getContent();
-				doc = p.getNewString();
-				rowList = new ArrayList ();
-				while (sheet != null && sheet.length() > 0) {
-					Pair p2 = getBoundedContent(sheet,"<Row",">","</Row>");
-					if (p2 == null)
-						break;
-					row = p2.getContent();
-					sheet = p2.getNewString();
-					data = getDataCells(row);
-					if (data != null)
-						rowList.add(data);
+				ArrayList sheetList = null;
+				String sheet = null;
+				String row = null;
+				String[] data = null;
+				sheetList = new ArrayList ();
+				String doc = new String (xml);
+				if (doc.startsWith("@reference")) {
+					refStatus = true;
+					return filter(doc);
 				}
-				sheetList.add(rowList);
-			}
-		}
-
-
-		String[][][] result = new String [sheetList.size()][][];
-		for (int i = 0; i < result.length; ++i) {
-			ArrayList x = (ArrayList)sheetList.get(i);
-			result[i] = new String [x.size()][];
-			for (int j = 0; j < result[i].length; ++j) {
-				String[] y = (String[])x.get(j);
-				result[i][j] = new String [y.length];
-				for (int k = 0; k < y.length; ++k)
-					result[i][j][k] = y[k];
-			}
-		}
-		return result;
+				Pair p = null;
+				while (doc != null && doc.length() > 0) {
+					p = getBoundedContent(doc,"<Worksheet",">","</Worksheet>");
+					if (p == null)
+						break;
+					sheet = p.getContent();
+					doc = p.getNewString();
+					rowList = new ArrayList ();
+					while (sheet != null && sheet.length() > 0) {
+						Pair p2 = getBoundedContent(sheet,"<Row",">","</Row>");
+						if (p2 == null)
+							break;
+						row = p2.getContent();
+						sheet = p2.getNewString();
+						data = getDataCells(row);
+						if (data != null)
+							rowList.add(data);
+					}
+					sheetList.add(rowList);
+				}
+		
+				if(p == null){
+					doc = new String(xml);
+					while (doc != null && doc.length() > 0) {
+						p = getBoundedContent(doc,"<ss:Worksheet",">","</ss:Worksheet>");
+						if(p == null)
+							break;
+						sheet = p.getContent();
+						doc = p.getNewString();
+						rowList = new ArrayList ();
+						while (sheet != null && sheet.length() > 0) {
+							Pair p2 = getBoundedContent(sheet,"<Row",">","</Row>");
+							if (p2 == null)
+								break;
+							row = p2.getContent();
+							sheet = p2.getNewString();
+							data = getDataCells(row);
+							if (data != null)
+								rowList.add(data);
+						}
+						sheetList.add(rowList);
+					}
+				}
+		
+		
+				String[][][] result = new String [sheetList.size()][][];
+				for (int i = 0; i < result.length; ++i) {
+					ArrayList x = (ArrayList)sheetList.get(i);
+					result[i] = new String [x.size()][];
+					for (int j = 0; j < result[i].length; ++j) {
+						String[] y = (String[])x.get(j);
+						result[i][j] = new String [y.length];
+						for (int k = 0; k < y.length; ++k)
+							result[i][j][k] = y[k];
+					}
+				}
+				return result;
 	}
 
 	/**
@@ -595,115 +472,117 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public String[][][] filter(String doc) {
-		// A. Get the directory that is referenced, and the old and new assembly names.
-		// Syntax: @reference = <base-directory-path-name> <base-assembly-name> = <new-assembly-name>
-		LineNumberReader text = new LineNumberReader(new java.io.StringReader(doc));
-		String line = null;
-		try {
-			line = text.readLine();
-		} catch (IOException err) {
-			throw new RuntimeException("Cannot read file: " + err.toString());
-		}
-		String[] tmp = line.split("[ |\t]+");
-		if (!tmp[0].equals("@reference") || !tmp[1].equals("=") || !tmp[4].equals("=")) {
-			throw new RuntimeException("Invalid syntax at line number " + text.getLineNumber() + " in file filter.");
-		}
-		String baseDirectory = tmp[2];
-		String baseAssemblyName = tmp[3];
-		String newAssemblyName = tmp[5];
-		System.out.println("Applying filter in directory " + baseDirectory + 
-				" to assembly " + baseAssemblyName + ".  New assembly is " + newAssemblyName + ".");
-
-		// B. Get the contents of this base spreadsheet.
-		BaseFactory baseFac = BaseFactory.eINSTANCE;
-		String referenceXml = baseFac.createSpreadsheetParser().getSpreadsheet(baseDirectory, baseAssemblyName + "_spreadsheet.xml");
-		refPath = baseDirectory + "/" + baseAssemblyName + "_spreadsheet.xml";
-		SpreadsheetParser p = baseFac.createSpreadsheetParser(referenceXml);
-		SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
-		if (!v.validate(refPath,xsdFile)) {
-			String s = "Spreadsheet " + baseAssemblyName + "_spreadsheet.xml is not a valid spreadsheet.";
-			throw new RuntimeException(s);
-		}
-		System.out.println("Base spreadsheet " + baseAssemblyName + " has been validated.");
-		String[][][] base = p.getWorksheets();
-
-		// C. Change the assembly name in the base spreadsheet.
-		for (int i = 0; i < base.length; ++i) {
-			for (int j = 0; j < base[i].length; ++j) {
-				if (base[i][j][0].equals(baseAssemblyName)) {
-					base[i][j][0] = newAssemblyName;
+	public String[][][] filter(final String doc) {
+			// A. Get the directory that is referenced, and the old and new assembly names.
+				// Syntax: @reference = <base-directory-path-name> <base-assembly-name> = <new-assembly-name>
+				java.io.LineNumberReader text = new java.io.LineNumberReader(new java.io.StringReader(doc));
+				String line = null;
+				try {
+					line = text.readLine();
+				} catch (java.io.IOException err) {
+					throw new RuntimeException("Cannot read file: " + err.toString());
 				}
-			}
-		}
-
-		// D. Apply the filter to the base.
-		//    Any deleted rows we will simply make null.
-		String[][] worksheet = null;
-		while (true) {
-			try {
-				line = text.readLine();
-			} catch (IOException err) {
-				throw new RuntimeException("Cannot read file: " + err.toString());
-			}
-			if (line == null)
-				break;
-			if (line.trim().length() == 0)
-				continue;
-			if (line.startsWith("Main"))
-				worksheet = base[0];
-			else if (line.startsWith("EndMain"))
-				worksheet = null;
-			else if (line.startsWith("Monitor"))
-				worksheet = base[1];
-			else if (line.startsWith("EndMonitor"))
-				worksheet = null;
-			else if (line.startsWith("Control"))
-				worksheet = base[2];
-			else if (line.startsWith("EndControl"))
-				worksheet = null;
-			else if (line.startsWith("Archive"))
-				worksheet = base[3];
-			else if (line.startsWith("EndArchive"))
-				worksheet = null;
-			else {
-				if (worksheet == null)
-					throw new RuntimeException("Invalid syntax at line number " + text.getLineNumber() + " in file filter. (Missing statement)");
-				tmp = line.split("[ |\t]+");
-				if (line.startsWith("~")) {
-					deleteRow(worksheet,tmp[0].substring(1));
-				} else {
-					String s = line.substring(tmp[0].length());
-					modifyRow(worksheet,text.getLineNumber(),tmp[0],s);
+				String[] tmp = line.split("[ |\t]+");
+				if (!tmp[0].equals("@reference") || !tmp[1].equals("=") || !tmp[4].equals("=")) {
+					throw new RuntimeException("Invalid syntax at line number " + text.getLineNumber() + " in file filter.");
 				}
-			}
-		}
-
-		// E. Assign the non-null array.
-		String[][][] result = new String [base.length] [] [];
-		for (int i = 0; i < result.length; ++i) {
-			int nrow = 0;
-			for (int j = 0; j < base[i].length; ++j) {
-				if (base[i][j] != null)
-					++nrow;
-			}
-			result[i] = new String [nrow] [];
-			int jj = 0;
-			for (int j = 0; j < base[i].length; ++j) {
-				if (base[i][j] != null) {
-					result[i][jj] = new String [base[i][j].length];
-					for (int k = 0; k < base[i][j].length; ++k)
-						result[i][jj][k] = base[i][j][k];
-					++jj;
+				String baseDirectory = tmp[2];
+				String baseAssemblyName = tmp[3];
+				String newAssemblyName = tmp[5];
+				System.out.println("Applying filter in directory " + baseDirectory + 
+						" to assembly " + baseAssemblyName + ".  New assembly is " + newAssemblyName + ".");
+		
+				// B. Get the contents of this base spreadsheet.
+				BaseFactory baseFac = BaseFactory.eINSTANCE;
+				String referenceXml = baseFac.createSpreadsheetParser().getSpreadsheet(baseDirectory, baseAssemblyName + "_spreadsheet.xml");
+				refPath = baseDirectory + "/" + baseAssemblyName + "_spreadsheet.xml";
+				SpreadsheetParser p = baseFac.createSpreadsheetParser();
+				p.setInitializeSP(referenceXml);
+				SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
+				if (!v.validate(refPath,xsdFile)) {
+					String s = "Spreadsheet " + baseAssemblyName + "_spreadsheet.xml is not a valid spreadsheet.";
+					throw new RuntimeException(s);
 				}
-			}
-		}
-
-		// F. Return the new spreadsheet. 
-		return result;
+				System.out.println("Base spreadsheet " + baseAssemblyName + " has been validated.");
+				String[][][] base = p.getWorksheets();
+		
+				// C. Change the assembly name in the base spreadsheet.
+				for (int i = 0; i < base.length; ++i) {
+					for (int j = 0; j < base[i].length; ++j) {
+						if (base[i][j][0].equals(baseAssemblyName)) {
+							base[i][j][0] = newAssemblyName;
+						}
+					}
+				}
+		
+				// D. Apply the filter to the base.
+				//    Any deleted rows we will simply make null.
+				String[][] worksheet = null;
+				while (true) {
+					try {
+						line = text.readLine();
+					} catch (java.io.IOException err) {
+						throw new RuntimeException("Cannot read file: " + err.toString());
+					}
+					if (line == null)
+						break;
+					if (line.trim().length() == 0)
+						continue;
+					if (line.startsWith("Main"))
+						worksheet = base[0];
+					else if (line.startsWith("EndMain"))
+						worksheet = null;
+					else if (line.startsWith("Monitor"))
+						worksheet = base[1];
+					else if (line.startsWith("EndMonitor"))
+						worksheet = null;
+					else if (line.startsWith("Control"))
+						worksheet = base[2];
+					else if (line.startsWith("EndControl"))
+						worksheet = null;
+					else if (line.startsWith("Archive"))
+						worksheet = base[3];
+					else if (line.startsWith("EndArchive"))
+						worksheet = null;
+					else {
+						if (worksheet == null)
+							throw new RuntimeException("Invalid syntax at line number " + text.getLineNumber() + " in file filter. (Missing statement)");
+						tmp = line.split("[ |\t]+");
+						if (line.startsWith("~")) {
+							deleteRow(worksheet,tmp[0].substring(1));
+						} else {
+							String s = line.substring(tmp[0].length());
+							modifyRow(worksheet,text.getLineNumber(),tmp[0],s);
+						}
+					}
+				}
+		
+				// E. Assign the non-null array.
+				String[][][] result = new String [base.length] [] [];
+				for (int i = 0; i < result.length; ++i) {
+					int nrow = 0;
+					for (int j = 0; j < base[i].length; ++j) {
+						if (base[i][j] != null)
+							++nrow;
+					}
+					result[i] = new String [nrow] [];
+					int jj = 0;
+					for (int j = 0; j < base[i].length; ++j) {
+						if (base[i][j] != null) {
+							result[i][jj] = new String [base[i][j].length];
+							for (int k = 0; k < base[i][j].length; ++k)
+								result[i][jj][k] = base[i][j][k];
+							++jj;
+						}
+					}
+				}
+		
+				// F. Return the new spreadsheet. 
+				return result;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -738,65 +617,65 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * @!generated
 	 */
 	public void modifyRow(String[][] worksheet, int lineNumber, String rowName, String s) {
-		// Find the row.
-		int row = 0;
-		if (worksheet[0][0].equals("Hardware Device")) {
-			int i = 2;
-			for (; i < worksheet.length; ++i) {
-				if (worksheet[i] == null)
-					continue;
-				if (worksheet[i][0].equals(rowName)) {
-					row = i;
-					break;
+				// Find the row.
+				int row = 0;
+				if (worksheet[0][0].equals("Hardware Device")) {
+					int i = 2;
+					for (; i < worksheet.length; ++i) {
+						if (worksheet[i] == null)
+							continue;
+						if (worksheet[i][0].equals(rowName)) {
+							row = i;
+							break;
+						}
+					}
+					if (i == worksheet.length)
+						throw new RuntimeException("The name " + rowName + " is not the name of a row in the Main worksheet.");
+				} else {
+					int i = 2;
+					for (; i < worksheet.length; ++i) {
+						if (worksheet[i] == null)
+							continue;
+						if (worksheet[i][1].equals(rowName)) {
+							row = i;
+							break;
+						}
+					}
+					if (i == worksheet.length)
+						throw new RuntimeException("The name " + rowName + " is not the name of a row in the " + worksheet[0][0] + " worksheet.");
 				}
-			}
-			if (i == worksheet.length)
-				throw new RuntimeException("The name " + rowName + " is not the name of a row in the Main worksheet.");
-		} else {
-			int i = 2;
-			for (; i < worksheet.length; ++i) {
-				if (worksheet[i] == null)
-					continue;
-				if (worksheet[i][1].equals(rowName)) {
-					row = i;
-					break;
+				String name;
+				String value;
+				int b;
+				int m;
+				int e;        				
+				while(true) {
+					b = s.indexOf('<');
+					m = s.indexOf('=');
+					e = s.indexOf('>');
+					if (b == -1 || m == -1 || e == -1 || m < b || e < m) {
+						throw new RuntimeException("Invalid syntax at line number " + lineNumber + " in file filter.");
+					}
+					name = s.substring(b + 1, m).trim();
+					value = s.substring(m + 1, e).trim();
+					// Apply the change.
+					int j = 0;
+					for (; j < worksheet[row].length; ++j) {
+						if (worksheet[1][j].equals(name)) {
+							worksheet[row][j] = value;
+							break;
+						}
+					}
+					if (j == worksheet[row].length)
+						throw new RuntimeException("The name " + name + " is not the name of a column in the " + worksheet[0][0] + " worksheet.");
+					// Get the next change.
+					++e;
+					while (e < s.length() && (s.charAt(e) == ' ' || s.charAt(e) == '\t'))
+						++e;
+					if (e == s.length())
+						break;
+					s = s.substring(e);
 				}
-			}
-			if (i == worksheet.length)
-				throw new RuntimeException("The name " + rowName + " is not the name of a row in the " + worksheet[0][0] + " worksheet.");
-		}
-		String name;
-		String value;
-		int b;
-		int m;
-		int e;        				
-		while(true) {
-			b = s.indexOf('<');
-			m = s.indexOf('=');
-			e = s.indexOf('>');
-			if (b == -1 || m == -1 || e == -1 || m < b || e < m) {
-				throw new RuntimeException("Invalid syntax at line number " + lineNumber + " in file filter.");
-			}
-			name = s.substring(b + 1, m).trim();
-			value = s.substring(m + 1, e).trim();
-			// Apply the change.
-			int j = 0;
-			for (; j < worksheet[row].length; ++j) {
-				if (worksheet[1][j].equals(name)) {
-					worksheet[row][j] = value;
-					break;
-				}
-			}
-			if (j == worksheet[row].length)
-				throw new RuntimeException("The name " + name + " is not the name of a column in the " + worksheet[0][0] + " worksheet.");
-			// Get the next change.
-			++e;
-			while (e < s.length() && (s.charAt(e) == ' ' || s.charAt(e) == '\t'))
-				++e;
-			if (e == s.length())
-				break;
-			s = s.substring(e);
-		}
 	}
 
 	/**
@@ -804,15 +683,8 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
-				return basicSetPairSpread(null, msgs);
-			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
-				return basicSetValidateSpread(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setInitializeSP(final String xml) {
+		this.xml = xml;
 	}
 
 	/**
@@ -833,10 +705,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return getXsdFile();
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				return getNewline();
-			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
-				return getPairSpread();
-			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
-				return getValidateSpread();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -863,12 +731,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return;
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				setNewline((String)newValue);
-				return;
-			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
-				setPairSpread((Pair)newValue);
-				return;
-			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
-				setValidateSpread((SpreadsheetValidator)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -897,12 +759,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				setNewline(NEWLINE_EDEFAULT);
 				return;
-			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
-				setPairSpread((Pair)null);
-				return;
-			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
-				setValidateSpread((SpreadsheetValidator)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -925,10 +781,6 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 				return XSD_FILE_EDEFAULT == null ? xsdFile != null : !XSD_FILE_EDEFAULT.equals(xsdFile);
 			case BasePackage.SPREADSHEET_PARSER__NEWLINE:
 				return NEWLINE_EDEFAULT == null ? newline != null : !NEWLINE_EDEFAULT.equals(newline);
-			case BasePackage.SPREADSHEET_PARSER__PAIR_SPREAD:
-				return pairSpread != null;
-			case BasePackage.SPREADSHEET_PARSER__VALIDATE_SPREAD:
-				return validateSpread != null;
 		}
 		return super.eIsSet(featureID);
 	}

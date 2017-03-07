@@ -24,50 +24,17 @@ package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Monitor Point</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link alma.control.datamodel.meta.base.MonitorPoint#getArchiveProper <em>Archive Proper</em>}</li>
- * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint()
  * @model abstract="true"
  * @generated
  */
 public interface MonitorPoint extends MandCBase {
-	/**
-	 * Returns the value of the '<em><b>Archive Proper</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Archive Proper</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Archive Proper</em>' reference.
-	 * @see #setArchiveProper(ArchiveProperty)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint_ArchiveProper()
-	 * @model
-	 * @generated
-	 */
-	ArchiveProperty getArchiveProper();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MonitorPoint#getArchiveProper <em>Archive Proper</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Archive Proper</em>' reference.
-	 * @see #getArchiveProper()
-	 * @generated
-	 */
-	void setArchiveProper(ArchiveProperty value);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,14 +161,6 @@ public interface MonitorPoint extends MandCBase {
 	 * @model kind="operation"
 	 * @generated
 	 */
-	boolean isMonitored();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
 	boolean isPartOfPattern();
 
 	/**
@@ -219,5 +178,22 @@ public interface MonitorPoint extends MandCBase {
 	 * @generated
 	 */
 	boolean isPartOfHomogeneous();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	boolean isMonitored();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.parent = parent;\ndependents = new ResourceSetImpl();\nsheet = (this instanceof MonitorPoint) ? Table.getSheetNum(\"Monitor Point\") : Table.getSheetNum(\"Control Point\");'"
+	 * @generated
+	 */
+	void setInitializeMP(String[] row, Resource parent);
 
 } // MonitorPoint

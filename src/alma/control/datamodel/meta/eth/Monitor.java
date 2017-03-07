@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.eth;
 
 import alma.control.datamodel.meta.base.MonitorPoint;
+
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -35,7 +36,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.eth.Monitor#getMac <em>Mac</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.Monitor#getMandCb <em>Mand Cb</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.eth.EthPackage#getMonitor()
@@ -54,7 +54,7 @@ public interface Monitor extends MonitorPoint {
 	 * @return the value of the '<em>Mac</em>' attribute.
 	 * @see #setMac(MandC)
 	 * @see alma.control.datamodel.meta.eth.EthPackage#getMonitor_Mac()
-	 * @model dataType="alma.control.datamodel.meta.eth.MandCETHDT"
+	 * @model dataType="alma.control.datamodel.meta.base.MandCETHDT"
 	 * @generated
 	 */
 	MandC getMac();
@@ -68,32 +68,6 @@ public interface Monitor extends MonitorPoint {
 	 * @generated
 	 */
 	void setMac(MandC value);
-
-	/**
-	 * Returns the value of the '<em><b>Mand Cb</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mand Cb</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mand Cb</em>' reference.
-	 * @see #setMandCb(MandC)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getMonitor_MandCb()
-	 * @model
-	 * @generated
-	 */
-	MandC getMandCb();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.Monitor#getMandCb <em>Mand Cb</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mand Cb</em>' reference.
-	 * @see #getMandCb()
-	 * @generated
-	 */
-	void setMandCb(MandC value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,5 +236,14 @@ public interface Monitor extends MonitorPoint {
 	 * @generated
 	 */
 	boolean isPartOfHomogeneous();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeMP(row, parent);\nmac = new MandCImpl();\nmac.setInitializeMandCImpl(row, sheet);'"
+	 * @generated
+	 */
+	void setInitializeMImpl(String[] row, Resource parent);
 
 } // Monitor

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 This file allows to automated the code generation from the model.
-EMF provides an ant task to generated code from a genmodel (emf.Ecore2Java), 
+EMF provides an ant task to generate code from a genmodel (emf.Ecore2Java), 
 the code can be generated in two ways:
  
 But before that, in both ways, the launch enviroment needs to be set up, as follows:

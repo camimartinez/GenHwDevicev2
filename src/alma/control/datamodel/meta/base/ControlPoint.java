@@ -22,6 +22,7 @@
  */
 package alma.control.datamodel.meta.base;
 
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +54,7 @@ public interface ControlPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Archive On Use\")].equals(\"yes\");'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[Table.getColNum(sheet, \"Archive On Use\")].equals(\"yes\");'"
 	 * @generated
 	 */
 	boolean ArchiveOnUse();
@@ -66,5 +67,14 @@ public interface ControlPoint extends MandCBase {
 	 * @generated
 	 */
 	boolean isMonitored();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeMCB(row, parent);'"
+	 * @generated
+	 */
+	void setInitializeCP(String[] row, Resource parent);
 
 } // ControlPoint

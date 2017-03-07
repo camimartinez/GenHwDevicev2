@@ -30,12 +30,9 @@ import alma.control.datamodel.meta.base.MonitorPoint;
 
 import alma.control.datamodel.meta.eth.*;
 
-import java.util.List;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.Switch;
 
 /**
@@ -107,7 +104,6 @@ public class EthSwitch<T> extends Switch<T> {
 				T result = caseControl(control);
 				if (result == null) result = caseControlPoint(control);
 				if (result == null) result = caseMandCBase(control);
-				if (result == null) result = caseResourceAuxClass(control);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -136,7 +132,6 @@ public class EthSwitch<T> extends Switch<T> {
 				T result = caseMonitor(monitor);
 				if (result == null) result = caseMonitorPoint(monitor);
 				if (result == null) result = caseMandCBase(monitor);
-				if (result == null) result = caseResourceAuxClass(monitor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -246,21 +241,6 @@ public class EthSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseArchiveProperty(ArchiveProperty object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resource Aux Class</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResourceAuxClass(Resource object) {
 		return null;
 	}
 

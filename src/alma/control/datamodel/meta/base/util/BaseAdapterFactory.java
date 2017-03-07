@@ -30,7 +30,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
+
 import org.xml.sax.ErrorHandler;
 
 /**
@@ -90,44 +90,32 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	protected BaseSwitch<Adapter> modelSwitch =
 		new BaseSwitch<Adapter>() {
 			@Override
-			public Adapter caseDeviceModel(DeviceModel object) {
-				return createDeviceModelAdapter();
-			}
-			@Override
-			public Adapter caseMonitorPoint(MonitorPoint object) {
-				return createMonitorPointAdapter();
+			public Adapter caseArchiveProperty(ArchiveProperty object) {
+				return createArchivePropertyAdapter();
 			}
 			@Override
 			public Adapter caseControlPoint(ControlPoint object) {
 				return createControlPointAdapter();
 			}
 			@Override
-			public Adapter caseTable(Table object) {
-				return createTableAdapter();
+			public Adapter caseDeviceModel(DeviceModel object) {
+				return createDeviceModelAdapter();
+			}
+			@Override
+			public Adapter caseMainBase(MainBase object) {
+				return createMainBaseAdapter();
 			}
 			@Override
 			public Adapter caseMandCBase(MandCBase object) {
 				return createMandCBaseAdapter();
 			}
 			@Override
-			public Adapter caseArchiveProperty(ArchiveProperty object) {
-				return createArchivePropertyAdapter();
+			public Adapter caseMonitorPoint(MonitorPoint object) {
+				return createMonitorPointAdapter();
 			}
 			@Override
 			public Adapter caseNote(Note object) {
 				return createNoteAdapter();
-			}
-			@Override
-			public Adapter caseSpreadsheetValidator(SpreadsheetValidator object) {
-				return createSpreadsheetValidatorAdapter();
-			}
-			@Override
-			public Adapter caseSpreadsheetParser(SpreadsheetParser object) {
-				return createSpreadsheetParserAdapter();
-			}
-			@Override
-			public Adapter caseUtil(Util object) {
-				return createUtilAdapter();
 			}
 			@Override
 			public Adapter casePair(Pair object) {
@@ -138,16 +126,24 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 				return createSimpleErrorHandlerAdapter();
 			}
 			@Override
-			public Adapter caseMainBase(MainBase object) {
-				return createMainBaseAdapter();
+			public Adapter caseSpreadsheetParser(SpreadsheetParser object) {
+				return createSpreadsheetParserAdapter();
+			}
+			@Override
+			public Adapter caseSpreadsheetValidator(SpreadsheetValidator object) {
+				return createSpreadsheetValidatorAdapter();
+			}
+			@Override
+			public Adapter caseTable(Table object) {
+				return createTableAdapter();
+			}
+			@Override
+			public Adapter caseUtil(Util object) {
+				return createUtilAdapter();
 			}
 			@Override
 			public Adapter caseErrorHandlerAuxClass(ErrorHandler object) {
 				return createErrorHandlerAuxClassAdapter();
-			}
-			@Override
-			public Adapter caseResourceAuxClass(Resource object) {
-				return createResourceAuxClassAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -170,44 +166,16 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.DeviceModel <em>Device Model</em>}'.
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.ArchiveProperty <em>Archive Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.base.DeviceModel
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty
 	 * @generated
 	 */
-	public Adapter createDeviceModelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xml.sax.ErrorHandler
-	 * @generated
-	 */
-	public Adapter createErrorHandlerAuxClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.MonitorPoint <em>Monitor Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.base.MonitorPoint
-	 * @generated
-	 */
-	public Adapter createMonitorPointAdapter() {
+	public Adapter createArchivePropertyAdapter() {
 		return null;
 	}
 
@@ -226,16 +194,30 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.Table <em>Table</em>}'.
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.DeviceModel <em>Device Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.base.Table
+	 * @see alma.control.datamodel.meta.base.DeviceModel
 	 * @generated
 	 */
-	public Adapter createTableAdapter() {
+	public Adapter createDeviceModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.MainBase <em>Main Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.MainBase
+	 * @generated
+	 */
+	public Adapter createMainBaseAdapter() {
 		return null;
 	}
 
@@ -254,16 +236,16 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.ArchiveProperty <em>Archive Property</em>}'.
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.MonitorPoint <em>Monitor Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty
+	 * @see alma.control.datamodel.meta.base.MonitorPoint
 	 * @generated
 	 */
-	public Adapter createArchivePropertyAdapter() {
+	public Adapter createMonitorPointAdapter() {
 		return null;
 	}
 
@@ -278,48 +260,6 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNoteAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.SpreadsheetValidator <em>Spreadsheet Validator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator
-	 * @generated
-	 */
-	public Adapter createSpreadsheetValidatorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.SpreadsheetParser <em>Spreadsheet Parser</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetParser
-	 * @generated
-	 */
-	public Adapter createSpreadsheetParserAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.Util <em>Util</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.base.Util
-	 * @generated
-	 */
-	public Adapter createUtilAdapter() {
 		return null;
 	}
 
@@ -352,30 +292,72 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.MainBase <em>Main Base</em>}'.
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.SpreadsheetParser <em>Spreadsheet Parser</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.base.MainBase
+	 * @see alma.control.datamodel.meta.base.SpreadsheetParser
 	 * @generated
 	 */
-	public Adapter createMainBaseAdapter() {
+	public Adapter createSpreadsheetParserAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.resource.Resource <em>Resource Aux Class</em>}'.
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.SpreadsheetValidator <em>Spreadsheet Validator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.resource.Resource
+	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator
 	 * @generated
 	 */
-	public Adapter createResourceAuxClassAdapter() {
+	public Adapter createSpreadsheetValidatorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.Table <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.Table
+	 * @generated
+	 */
+	public Adapter createTableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.Util <em>Util</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.Util
+	 * @generated
+	 */
+	public Adapter createUtilAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xml.sax.ErrorHandler
+	 * @generated
+	 */
+	public Adapter createErrorHandlerAuxClassAdapter() {
 		return null;
 	}
 

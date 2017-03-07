@@ -22,9 +22,6 @@
  */
 package alma.control.datamodel.meta.amb;
 
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
-
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -51,10 +48,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getArchiveProperties <em>Archive Properties</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getSimMonitorPoints <em>Sim Monitor Points</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getSimControlPoints <em>Sim Control Points</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getUtil <em>Util</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getAddMonitorPoints <em>Add Monitor Points</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.SWModule#getAddControlPoints <em>Add Control Points</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule()
@@ -64,7 +57,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 public interface SWModule extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Assembly Name</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Assembly Name</em>' attribute isn't clear,
@@ -74,7 +66,7 @@ public interface SWModule extends EObject {
 	 * @return the value of the '<em>Assembly Name</em>' attribute.
 	 * @see #setAssemblyName(String)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_AssemblyName()
-	 * @model default="null"
+	 * @model
 	 * @generated
 	 */
 	String getAssemblyName();
@@ -376,110 +368,6 @@ public interface SWModule extends EObject {
 	void setSimControlPoints(ResourceSet value);
 
 	/**
-	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table</em>' attribute.
-	 * @see #setTable(Table)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_Table()
-	 * @model dataType="alma.control.datamodel.meta.amb.TableDT"
-	 * @generated
-	 */
-	Table getTable();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getTable <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' attribute.
-	 * @see #getTable()
-	 * @generated
-	 */
-	void setTable(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>Util</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Util</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Util</em>' attribute.
-	 * @see #setUtil(Util)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_Util()
-	 * @model dataType="alma.control.datamodel.meta.amb.UtilDT"
-	 * @generated
-	 */
-	Util getUtil();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getUtil <em>Util</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Util</em>' attribute.
-	 * @see #getUtil()
-	 * @generated
-	 */
-	void setUtil(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>Add Monitor Points</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Add Monitor Points</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Add Monitor Points</em>' reference.
-	 * @see #setAddMonitorPoints(Monitor)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_AddMonitorPoints()
-	 * @model
-	 * @generated
-	 */
-	Monitor getAddMonitorPoints();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getAddMonitorPoints <em>Add Monitor Points</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Add Monitor Points</em>' reference.
-	 * @see #getAddMonitorPoints()
-	 * @generated
-	 */
-	void setAddMonitorPoints(Monitor value);
-
-	/**
-	 * Returns the value of the '<em><b>Add Control Points</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Add Control Points</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Add Control Points</em>' reference.
-	 * @see #setAddControlPoints(Control)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getSWModule_AddControlPoints()
-	 * @model
-	 * @generated
-	 */
-	Control getAddControlPoints();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.SWModule#getAddControlPoints <em>Add Control Points</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Add Control Points</em>' reference.
-	 * @see #getAddControlPoints()
-	 * @generated
-	 */
-	void setAddControlPoints(Control value);
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tmonitorPoints.getResources().add(mp);\r\n\t\tif (!(((MonitorImpl)mp).RCA().equals(\"none\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x00000\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30000\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30001\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30002\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30003\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30004\") ||\r\n\t\t\t\t((MonitorImpl)mp).RCA().equals(\"0x30005\")\r\n\t\t\t\t)){\r\n\t\t\tfor(int i=0;i&lt; simMonitorPoints.getResources().size();i++)\r\n\t\t\t\tif(((MonitorImpl)mp).RCA().equals(((MonitorImpl)simMonitorPoints.getResources().get(i)).RCA()))\r\n\t\t\t\t\treturn;\r\n\t\t\tsimMonitorPoints.getResources().add(mp);\r\n\t\t}'"
@@ -510,54 +398,6 @@ public interface SWModule extends EObject {
 	 * @generated
 	 */
 	String Initialize();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return dirPath;'"
-	 * @generated
-	 */
-	String DirPath();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return monitorPoints;'"
-	 * @generated
-	 */
-	ResourceSet MonitorPoint();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return controlPoints;'"
-	 * @generated
-	 */
-	ResourceSet ControlPoint();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return archiveProperties;'"
-	 * @generated
-	 */
-	ResourceSet ArchiveProperty();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return simMonitorPoints;'"
-	 * @generated
-	 */
-	ResourceSet SimMonitorPoint();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return simControlPoints;'"
-	 * @generated
-	 */
-	ResourceSet SimControlPoint();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -678,5 +518,14 @@ public interface SWModule extends EObject {
 	 * @generated
 	 */
 	String SimSerialNumber();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = Table.getSheetNum(\"Hardware Device\");\nthis.oneSwModule = oneSwModule;\nint assemblyIndex = Table.getColNum(sheet, \"Assembly\");\nthis.assemblyName = row[assemblyIndex];\nthis.mainAssembly = mainAssembly;\nif(oneSwModule){\n\tsetDirPath(row[assemblyIndex]);\n}\nelse{\n\tsetDirPath(mainAssembly + \"/\" + row[assemblyIndex]);\n}\nmonitorPoints = new ResourceSetImpl();\ncontrolPoints = new ResourceSetImpl();\narchiveProperties = new ResourceSetImpl();\nsimMonitorPoints = new ResourceSetImpl();\nsimControlPoints = new ResourceSetImpl();'"
+	 * @generated
+	 */
+	void setInitializeSW(String[] row, Resource parent);
 
 } // SWModule

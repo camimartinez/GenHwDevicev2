@@ -53,7 +53,7 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 		System.out.println("- ----- HwDeviceWorkflowInitializer: invokeInternal started.");
 					
 		alma.control.datamodel.meta.base.DeviceModel deviceType = null;
-				
+		
 		if(System.getProperty(deviceTypes).equals(deviceAMB)){
 			deviceType= AmbPackage.eINSTANCE.getAmbFactory().createDeviceModel();
 		}else if (System.getProperty(deviceTypes).equals(deviceETH)){
@@ -62,7 +62,7 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 			System.out.println("The device type: "+ System.getProperty(deviceTypes) + "is not supported.");
 			return;
 		}
-	 	
+	
 		deviceType.setCodegenDir(BaseFactory.eINSTANCE.createUtil().getInstallDir());
 		deviceType.setDeviceDir(deviceDir);
 		deviceType.setDeviceName(System.getProperty("DEVICE_NAME"));

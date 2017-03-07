@@ -22,7 +22,6 @@
  */
 package alma.control.datamodel.meta.base;
 
-import alma.control.datamodel.meta.amb.MandC;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -45,17 +44,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getArchivesProperties <em>Archives Properties</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getUtil <em>Util</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase()
- * @model abstract="true" superTypes="alma.control.datamodel.meta.amb.ResourceAuxClass"
+ * @model abstract="true"
  * @generated
  */
-public interface MandCBase extends EObject, Resource {
+public interface MandCBase extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Spreadsheet Name</b></em>' attribute.
 	 * The default value is <code>"Not needed"</code>.
@@ -266,110 +261,6 @@ public interface MandCBase extends EObject, Resource {
 	void setDependents(ResourceSet value);
 
 	/**
-	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table</em>' attribute.
-	 * @see #setTable(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Table()
-	 * @model unique="false" dataType="alma.control.datamodel.meta.amb.TableDT"
-	 * @generated
-	 */
-	Table getTable();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getTable <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' attribute.
-	 * @see #getTable()
-	 * @generated
-	 */
-	void setTable(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tables</em>' reference.
-	 * @see #setTables(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Tables()
-	 * @model
-	 * @generated
-	 */
-	Table getTables();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tables</em>' reference.
-	 * @see #getTables()
-	 * @generated
-	 */
-	void setTables(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>Archives Properties</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Archives Properties</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Archives Properties</em>' reference.
-	 * @see #setArchivesProperties(ArchiveProperty)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_ArchivesProperties()
-	 * @model
-	 * @generated
-	 */
-	ArchiveProperty getArchivesProperties();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getArchivesProperties <em>Archives Properties</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Archives Properties</em>' reference.
-	 * @see #getArchivesProperties()
-	 * @generated
-	 */
-	void setArchivesProperties(ArchiveProperty value);
-
-	/**
-	 * Returns the value of the '<em><b>Util</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Util</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Util</em>' containment reference.
-	 * @see #setUtil(Util)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Util()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Util getUtil();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getUtil <em>Util</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Util</em>' containment reference.
-	 * @see #getUtil()
-	 * @generated
-	 */
-	void setUtil(Util value);
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='dependents.getResources().add(son);\r\n'"
@@ -405,7 +296,7 @@ public interface MandCBase extends EObject, Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(isDependent())\n\t\t\treturn row[table.getColNum(sheet, \"Name\")].substring(1);\n\t\telse\n\t\t\treturn row[table.getColNum(sheet, \"Name\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(isDependent())\n\treturn row[table.getColNum(sheet, \"Name\")].substring(1);\nelse\n\treturn row[table.getColNum(sheet, \"Name\")];'"
 	 * @generated
 	 */
 	String Name();
@@ -423,7 +314,7 @@ public interface MandCBase extends EObject, Resource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.AltName(getDependentName());'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.AltName(getDependentName());'"
 	 * @generated
 	 */
 	String getAltDependentName();
@@ -441,7 +332,7 @@ public interface MandCBase extends EObject, Resource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.AltName(((MandCBase)getParent()).Name());'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.AltName(((MandCBase)getParent()).Name());'"
 	 * @generated
 	 */
 	String getAltDependsOnName();
@@ -532,6 +423,24 @@ public interface MandCBase extends EObject, Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model dataType="alma.control.datamodel.meta.base.RuntimeExceptionDT" errDataType="alma.control.datamodel.meta.base.RuntimeExceptionDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return new RuntimeException(spreadsheetName +\":\"+ sheetName +\":\"+ cell +\":\"+ err.toString());'"
+	 * @generated
+	 */
+	RuntimeException dErr(RuntimeException err, String cell);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="alma.control.datamodel.meta.base.RuntimeExceptionDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return new RuntimeException(spreadsheetName +\":\"+ sheetName +\":\"+ cell +\":\"+ err);'"
+	 * @generated
+	 */
+	RuntimeException dErr(String err, String cell);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (s.startsWith(\"GET_\") || s.startsWith(\"SET_\"))\r\n\treturn s.substring(4);\r\nreturn s;'"
 	 * @generated
 	 */
@@ -548,7 +457,7 @@ public interface MandCBase extends EObject, Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (Name().startsWith(\"SET_\"))\n\treturn \"Cntl\" + util.AltName(PName()); \nreturn util.AltName(PName());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (Name().startsWith(\"SET_\"))\n\treturn \"Cntl\" + utils.AltName(PName()); \nreturn utils.AltName(PName());'"
 	 * @generated
 	 */
 	String AltPName();
@@ -556,7 +465,7 @@ public interface MandCBase extends EObject, Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.descriptionAsString(Description());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.descriptionAsString(Description());'"
 	 * @generated
 	 */
 	String DescriptionAsString();
@@ -564,7 +473,7 @@ public interface MandCBase extends EObject, Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.formatDescriptionL2(Description());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.formatDescriptionL2(Description());'"
 	 * @generated
 	 */
 	String DescriptionFormatted();
@@ -572,7 +481,7 @@ public interface MandCBase extends EObject, Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.formatDescriptionL4(Description());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.formatDescriptionL4(Description());'"
 	 * @generated
 	 */
 	String DescriptionFormattedL4();
@@ -580,7 +489,7 @@ public interface MandCBase extends EObject, Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.formatDescriptionL5(Description());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.formatDescriptionL5(Description());'"
 	 * @generated
 	 */
 	String DescriptionFormattedL5();
@@ -592,5 +501,14 @@ public interface MandCBase extends EObject, Resource {
 	 * @generated
 	 */
 	boolean isMonitored();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.parent = parent;\ndependents = new ResourceSetImpl();\nsheet = (this instanceof MonitorPoint) ? Table.getSheetNum(\"Monitor Point\") : Table.getSheetNum(\"Control Point\");'"
+	 * @generated
+	 */
+	void setInitializeMCB(String[] row, Resource parent);
 
 } // MandCBase

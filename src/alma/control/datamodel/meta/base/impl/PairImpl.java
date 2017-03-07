@@ -46,17 +46,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public abstract class PairImpl extends SpreadsheetParserImpl implements Pair {
-	
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public PairImpl(String c, String n) {
-		content = c;
-		newString = n;
-	}
-	
 	/**
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -102,7 +91,7 @@ public abstract class PairImpl extends SpreadsheetParserImpl implements Pair {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PairImpl() {
+	protected PairImpl() {
 		super();
 	}
 
@@ -156,6 +145,16 @@ public abstract class PairImpl extends SpreadsheetParserImpl implements Pair {
 		newString = newNewString;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.PAIR__NEW_STRING, oldNewString, newString));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitializePair(final String c, final String n) {
+		content = c;
+		newString = n;
 	}
 
 	/**

@@ -93,4 +93,12 @@ public interface Pair extends SpreadsheetParser {
 	 */
 	void setNewString(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='content = c;\nnewString = n;'"
+	 * @generated
+	 */
+	void setInitializePair(String c, String n);
+
 } // Pair

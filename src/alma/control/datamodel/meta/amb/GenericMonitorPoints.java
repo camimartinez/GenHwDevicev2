@@ -22,11 +22,6 @@
  */
 package alma.control.datamodel.meta.amb;
 
-import alma.control.datamodel.meta.base.BaseFactory;
-import alma.control.datamodel.meta.base.SpreadsheetParser;
-import alma.control.datamodel.meta.base.SpreadsheetValidator;
-import alma.control.datamodel.meta.base.Util;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -41,10 +36,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getNewSpreadsheet <em>New Spreadsheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getDirLocation <em>Dir Location</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getBase <em>Base</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getParserSpreadsheet <em>Parser Spreadsheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getUtil <em>Util</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getValidateSpreadsheet <em>Validate Spreadsheet</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getGenericMonitorPoints()
@@ -129,110 +120,6 @@ public interface GenericMonitorPoints extends EObject {
 	 * @generated
 	 */
 	void setDirLocation(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Base</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Base</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base</em>' attribute.
-	 * @see #setBase(BaseFactory)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getGenericMonitorPoints_Base()
-	 * @model dataType="alma.control.datamodel.meta.amb.BaseFactoryDT"
-	 * @generated
-	 */
-	BaseFactory getBase();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getBase <em>Base</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base</em>' attribute.
-	 * @see #getBase()
-	 * @generated
-	 */
-	void setBase(BaseFactory value);
-
-	/**
-	 * Returns the value of the '<em><b>Parser Spreadsheet</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parser Spreadsheet</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parser Spreadsheet</em>' containment reference.
-	 * @see #setParserSpreadsheet(SpreadsheetParser)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getGenericMonitorPoints_ParserSpreadsheet()
-	 * @model containment="true"
-	 * @generated
-	 */
-	SpreadsheetParser getParserSpreadsheet();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getParserSpreadsheet <em>Parser Spreadsheet</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parser Spreadsheet</em>' containment reference.
-	 * @see #getParserSpreadsheet()
-	 * @generated
-	 */
-	void setParserSpreadsheet(SpreadsheetParser value);
-
-	/**
-	 * Returns the value of the '<em><b>Util</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Util</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Util</em>' reference.
-	 * @see #setUtil(Util)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getGenericMonitorPoints_Util()
-	 * @model
-	 * @generated
-	 */
-	Util getUtil();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getUtil <em>Util</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Util</em>' reference.
-	 * @see #getUtil()
-	 * @generated
-	 */
-	void setUtil(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>Validate Spreadsheet</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Validate Spreadsheet</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Validate Spreadsheet</em>' containment reference.
-	 * @see #setValidateSpreadsheet(SpreadsheetValidator)
-	 * @see alma.control.datamodel.meta.amb.AmbPackage#getGenericMonitorPoints_ValidateSpreadsheet()
-	 * @model containment="true"
-	 * @generated
-	 */
-	SpreadsheetValidator getValidateSpreadsheet();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.GenericMonitorPoints#getValidateSpreadsheet <em>Validate Spreadsheet</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Validate Spreadsheet</em>' containment reference.
-	 * @see #getValidateSpreadsheet()
-	 * @generated
-	 */
-	void setValidateSpreadsheet(SpreadsheetValidator value);
 
 	/**
 	 * <!-- begin-user-doc -->

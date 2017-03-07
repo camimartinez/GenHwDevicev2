@@ -150,7 +150,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Col Names</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Col Names</em>' attribute isn't clear,
@@ -160,7 +159,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>Col Names</em>' attribute.
 	 * @see #setColNames(ArrayList)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_ColNames()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.ArrayList"
+	 * @model dataType="alma.control.datamodel.meta.base.ArrayList"
 	 * @generated
 	 */
 	ArrayList getColNames();
@@ -177,7 +176,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Tag Names</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tag Names</em>' attribute isn't clear,
@@ -187,7 +185,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>Tag Names</em>' attribute.
 	 * @see #setTagNames(ArrayList)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_TagNames()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.ArrayList"
+	 * @model dataType="alma.control.datamodel.meta.base.ArrayList"
 	 * @generated
 	 */
 	ArrayList getTagNames();
@@ -204,7 +202,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>To CPP</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To CPP</em>' attribute isn't clear,
@@ -214,7 +211,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>To CPP</em>' attribute.
 	 * @see #setToCPP(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_ToCPP()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getToCPP();
@@ -231,7 +228,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>To IDL</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To IDL</em>' attribute isn't clear,
@@ -241,7 +237,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>To IDL</em>' attribute.
 	 * @see #setToIDL(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_ToIDL()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getToIDL();
@@ -258,7 +254,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>To IDL Seq</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To IDL Seq</em>' attribute isn't clear,
@@ -268,7 +263,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>To IDL Seq</em>' attribute.
 	 * @see #setToIDLSeq(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_ToIDLSeq()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getToIDLSeq();
@@ -285,7 +280,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>To CORBA</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To CORBA</em>' attribute isn't clear,
@@ -295,7 +289,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>To CORBA</em>' attribute.
 	 * @see #setToCORBA(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_ToCORBA()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getToCORBA();
@@ -312,7 +306,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>To CORBA Seq</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To CORBA Seq</em>' attribute isn't clear,
@@ -322,7 +315,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>To CORBA Seq</em>' attribute.
 	 * @see #setToCORBASeq(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_ToCORBASeq()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getToCORBASeq();
@@ -339,7 +332,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>To CORBA Dev IO</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To CORBA Dev IO</em>' attribute isn't clear,
@@ -349,7 +341,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>To CORBA Dev IO</em>' attribute.
 	 * @see #setToCORBADevIO(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_ToCORBADevIO()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getToCORBADevIO();
@@ -366,7 +358,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>To BACI</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To BACI</em>' attribute isn't clear,
@@ -376,7 +367,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>To BACI</em>' attribute.
 	 * @see #setToBACI(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_ToBACI()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getToBACI();
@@ -393,7 +384,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>To Database</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To Database</em>' attribute isn't clear,
@@ -403,7 +393,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>To Database</em>' attribute.
 	 * @see #setToDatabase(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_ToDatabase()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getToDatabase();
@@ -420,7 +410,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Raw To CPP</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Raw To CPP</em>' attribute isn't clear,
@@ -430,7 +419,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>Raw To CPP</em>' attribute.
 	 * @see #setRawToCPP(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_RawToCPP()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getRawToCPP();
@@ -447,7 +436,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Raw To Byte Swapped</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Raw To Byte Swapped</em>' attribute isn't clear,
@@ -457,7 +445,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>Raw To Byte Swapped</em>' attribute.
 	 * @see #setRawToByteSwapped(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_RawToByteSwapped()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getRawToByteSwapped();
@@ -474,7 +462,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Raw Bytes</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Raw Bytes</em>' attribute isn't clear,
@@ -484,7 +471,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>Raw Bytes</em>' attribute.
 	 * @see #setRawBytes(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_RawBytes()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getRawBytes();
@@ -501,7 +488,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World To CPP</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>World To CPP</em>' attribute isn't clear,
@@ -511,7 +497,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>World To CPP</em>' attribute.
 	 * @see #setWorldToCPP(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_WorldToCPP()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getWorldToCPP();
@@ -528,7 +514,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World To IDL</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>World To IDL</em>' attribute isn't clear,
@@ -538,7 +523,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>World To IDL</em>' attribute.
 	 * @see #setWorldToIDL(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_WorldToIDL()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getWorldToIDL();
@@ -555,7 +540,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World To IDL Seq</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>World To IDL Seq</em>' attribute isn't clear,
@@ -565,7 +549,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>World To IDL Seq</em>' attribute.
 	 * @see #setWorldToIDLSeq(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_WorldToIDLSeq()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getWorldToIDLSeq();
@@ -582,7 +566,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World To CORBA</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>World To CORBA</em>' attribute isn't clear,
@@ -592,7 +575,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>World To CORBA</em>' attribute.
 	 * @see #setWorldToCORBA(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_WorldToCORBA()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getWorldToCORBA();
@@ -609,7 +592,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World To CORBA Seq</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>World To CORBA Seq</em>' attribute isn't clear,
@@ -619,7 +601,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>World To CORBA Seq</em>' attribute.
 	 * @see #setWorldToCORBASeq(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_WorldToCORBASeq()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getWorldToCORBASeq();
@@ -636,7 +618,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World To CORBA Dev IO</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>World To CORBA Dev IO</em>' attribute isn't clear,
@@ -646,7 +627,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>World To CORBA Dev IO</em>' attribute.
 	 * @see #setWorldToCORBADevIO(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_WorldToCORBADevIO()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getWorldToCORBADevIO();
@@ -663,7 +644,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World To BACI</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>World To BACI</em>' attribute isn't clear,
@@ -673,7 +653,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>World To BACI</em>' attribute.
 	 * @see #setWorldToBACI(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_WorldToBACI()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getWorldToBACI();
@@ -690,7 +670,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World To Java</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>World To Java</em>' attribute isn't clear,
@@ -700,7 +679,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>World To Java</em>' attribute.
 	 * @see #setWorldToJava(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_WorldToJava()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getWorldToJava();
@@ -717,7 +696,6 @@ public interface Table extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World To Database</b></em>' attribute.
-	 * The default value is <code>"null"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>World To Database</em>' attribute isn't clear,
@@ -727,7 +705,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>World To Database</em>' attribute.
 	 * @see #setWorldToDatabase(Hashtable)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_WorldToDatabase()
-	 * @model default="null" dataType="alma.control.datamodel.meta.base.Hashtable"
+	 * @model dataType="alma.control.datamodel.meta.base.Hashtable"
 	 * @generated
 	 */
 	Hashtable getWorldToDatabase();

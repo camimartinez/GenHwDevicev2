@@ -4,7 +4,7 @@
 	<property file="generator.properties"/>
 	<property file="log4j.properties"/>
 	
-	<!-- Load model and store it in slot model -->	
+	<!-- Load model and store it in slot model  -->	
 	<component class="alma.control.datamodel.HwDeviceWorkflowInitializer">
         <deviceDir value="${deviceDir}"/>
         <spreadsheetDir value="${spreadsheetDir}"/>
@@ -12,6 +12,6 @@
         <monitorDBOnly value="${monitorDBOnly}"/>
         <generateAlt value="${generateAlt}"/>
         <modelSlot value="model"/>
-     </component>
-
+    </component> 
+    
 </workflow>

@@ -39,8 +39,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getCp <em>Cp</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty()
@@ -59,7 +57,7 @@ public interface ArchiveProperty extends EObject {
 	 * @return the value of the '<em>Row</em>' attribute.
 	 * @see #setRow(String[])
 	 * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty_Row()
-	 * @model dataType="alma.control.datamodel.meta.base.EStringArray"
+	 * @model dataType="alma.control.datamodel.meta.base.EStringArray" derived="true"
 	 * @generated
 	 */
 	String[] getRow();
@@ -153,67 +151,6 @@ public interface ArchiveProperty extends EObject {
 	void setCp(Resource value);
 
 	/**
-	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table</em>' attribute.
-	 * @see #setTable(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty_Table()
-	 * @model dataType="alma.control.datamodel.meta.amb.TableDT"
-	 * @generated
-	 */
-	Table getTable();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.ArchiveProperty#getTable <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' attribute.
-	 * @see #getTable()
-	 * @generated
-	 */
-	void setTable(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tables</em>' reference.
-	 * @see #setTables(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty_Tables()
-	 * @model
-	 * @generated
-	 */
-	Table getTables();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.ArchiveProperty#getTables <em>Tables</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tables</em>' reference.
-	 * @see #getTables()
-	 * @generated
-	 */
-	void setTables(Table value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mp != null || cp != null;\r\n'"
-	 * @generated
-	 */
-	boolean isRefersTo();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
@@ -221,15 +158,6 @@ public interface ArchiveProperty extends EObject {
 	 * @generated
 	 */
 	boolean isMonitorPoint();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return cp != null;'"
-	 * @generated
-	 */
-	boolean isControlPoint();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,18 +172,19 @@ public interface ArchiveProperty extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return cp;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return cp != null;'"
 	 * @generated
 	 */
-	Resource getControlPoint();
+	boolean isControlPoint();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String name = Name();\n\tif (name.startsWith(table.getDepChar()))\n\tname = name.substring(1);\nreturn name;'"
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return cp;'"
 	 * @generated
 	 */
-	String APName();
+	Resource getControlPoint();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +197,15 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Refers To\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String name = Name();\n\tif (name.startsWith(table.getDepChar()))\n\tname = name.substring(1);\nreturn name;'"
+	 * @generated
+	 */
+	String APName();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet,  \"Refers To\")];'"
 	 * @generated
 	 */
 	String RefersTo();
@@ -276,7 +213,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Interval (secs)\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet,  \"Interval (secs)\")];'"
 	 * @generated
 	 */
 	String IntervalFull();
@@ -344,5 +281,28 @@ public interface ArchiveProperty extends EObject {
 	 * @generated
 	 */
 	String Title();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = table.getSheetNum(\"Archive Property\");'"
+	 * @generated
+	 */
+	void setInitializeAP(String[] row);
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	void setMP(Resource mp);
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	void setCP(Resource cp);
 
 } // ArchiveProperty

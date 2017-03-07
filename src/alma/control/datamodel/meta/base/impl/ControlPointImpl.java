@@ -26,6 +26,7 @@ import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -41,7 +42,7 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlPointImpl() {
+	protected ControlPointImpl() {
 		super();
 	}
 
@@ -55,15 +56,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 		return BasePackage.Literals.CONTROL_POINT;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public ControlPointImpl(String[] row, Resource parent) {
-		super(row, parent);
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,7 +81,7 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * @generated
 	 */
 	public boolean ArchiveOnUse() {
-		return row[table.getColNum(sheet, "Archive On Use")].equals("yes");
+		return row[Table.getColNum(sheet, "Archive On Use")].equals("yes");
 	}
 
 	/**
@@ -100,6 +92,15 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	public boolean isMonitored() {
 		return false;
 		
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitializeCP(final String[] row, final Resource parent) {
+		setInitializeMCB(row, parent);
 	}
 
 } //ControlPointImpl

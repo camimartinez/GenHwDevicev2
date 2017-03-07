@@ -42,7 +42,7 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArchiveImpl() {
+	protected ArchiveImpl() {
 		super();
 	}
 
@@ -59,10 +59,10 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public ArchiveImpl(String[] row){
-		super(row);
+	public void setInitializeAImpl(final String[] row) {
+		setInitializeAP(row);
 	}
 
 } //ArchiveImpl

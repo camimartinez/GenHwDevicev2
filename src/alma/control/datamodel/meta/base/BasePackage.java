@@ -22,12 +22,10 @@
  */
 package alma.control.datamodel.meta.base;
 
-import alma.control.datamodel.meta.amb.AmbPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,6 +76,243 @@ public interface BasePackage extends EPackage {
 	BasePackage eINSTANCE = alma.control.datamodel.meta.base.impl.BasePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl <em>Archive Property</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.impl.ArchivePropertyImpl
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArchiveProperty()
+	 * @generated
+	 */
+	int ARCHIVE_PROPERTY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE_PROPERTY__ROW = 0;
+
+	/**
+	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE_PROPERTY__SHEET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Mp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE_PROPERTY__MP = 2;
+
+	/**
+	 * The feature id for the '<em><b>Cp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE_PROPERTY__CP = 3;
+
+	/**
+	 * The number of structural features of the '<em>Archive Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE_PROPERTY_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl <em>Mand CBase</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.impl.MandCBaseImpl
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBase()
+	 * @generated
+	 */
+	int MAND_CBASE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__SPREADSHEET_NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__SHEET_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__ROW = 2;
+
+	/**
+	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__PARENT_ROW = 3;
+
+	/**
+	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__SHEET = 4;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__PARENT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__ARCHIVE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__DEPENDENTS = 7;
+
+	/**
+	 * The number of structural features of the '<em>Mand CBase</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE_FEATURE_COUNT = 8;
+
+	/**
+	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.ControlPointImpl <em>Control Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.impl.ControlPointImpl
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getControlPoint()
+	 * @generated
+	 */
+	int CONTROL_POINT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__SPREADSHEET_NAME = MAND_CBASE__SPREADSHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__SHEET_NAME = MAND_CBASE__SHEET_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__ROW = MAND_CBASE__ROW;
+
+	/**
+	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__PARENT_ROW = MAND_CBASE__PARENT_ROW;
+
+	/**
+	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__SHEET = MAND_CBASE__SHEET;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__PARENT = MAND_CBASE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
+
+	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
+
+	/**
+	 * The number of structural features of the '<em>Control Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl <em>Device Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,7 +320,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getDeviceModel()
 	 * @generated
 	 */
-	int DEVICE_MODEL = 0;
+	int DEVICE_MODEL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Description Index</b></em>' attribute.
@@ -223,78 +458,23 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__GENERATE_ALT = 14;
 
 	/**
-	 * The feature id for the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__TABLES = 15;
-
-	/**
-	 * The feature id for the '<em><b>Utils</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__UTILS = 16;
-
-	/**
-	 * The feature id for the '<em><b>Archives Properties</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__ARCHIVES_PROPERTIES = 17;
-
-	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_FEATURE_COUNT = 18;
+	int DEVICE_MODEL_FEATURE_COUNT = 15;
 
 	/**
-	 * The meta object id for the '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}' class.
+	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.xml.sax.ErrorHandler
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerAuxClass()
+	 * @see alma.control.datamodel.meta.base.impl.MainBaseImpl
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBase()
 	 * @generated
 	 */
-	int ERROR_HANDLER_AUX_CLASS = 13;
-
-	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl <em>Mand CBase</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.impl.MandCBaseImpl
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBase()
-	 * @generated
-	 */
-	int MAND_CBASE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__SPREADSHEET_NAME = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__SHEET_NAME = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 1;
+	int MAIN_BASE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
@@ -303,16 +483,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__ROW = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__PARENT_ROW = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 3;
+	int MAIN_BASE__ROW = 0;
 
 	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
@@ -321,79 +492,16 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__SHEET = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 4;
+	int MAIN_BASE__SHEET = 1;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * The number of structural features of the '<em>Main Base</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__PARENT = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__ARCHIVE = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__DEPENDENTS = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__TABLE = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__TABLES = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Archives Properties</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__ARCHIVES_PROPERTIES = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Util</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__UTIL = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 11;
-
-	/**
-	 * The number of structural features of the '<em>Mand CBase</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE_FEATURE_COUNT = AmbPackage.RESOURCE_AUX_CLASS_FEATURE_COUNT + 12;
+	int MAIN_BASE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MonitorPointImpl <em>Monitor Point</em>}' class.
@@ -403,7 +511,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMonitorPoint()
 	 * @generated
 	 */
-	int MONITOR_POINT = 1;
+	int MONITOR_POINT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
@@ -478,185 +586,280 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__TABLE = MAND_CBASE__TABLE;
-
-	/**
-	 * The feature id for the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__TABLES = MAND_CBASE__TABLES;
-
-	/**
-	 * The feature id for the '<em><b>Archives Properties</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__ARCHIVES_PROPERTIES = MAND_CBASE__ARCHIVES_PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Util</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__UTIL = MAND_CBASE__UTIL;
-
-	/**
-	 * The feature id for the '<em><b>Archive Proper</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__ARCHIVE_PROPER = MAND_CBASE_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Monitor Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 1;
+	int MONITOR_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.ControlPointImpl <em>Control Point</em>}' class.
+	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.NoteImpl <em>Note</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.impl.ControlPointImpl
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getControlPoint()
+	 * @see alma.control.datamodel.meta.base.impl.NoteImpl
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getNote()
 	 * @generated
 	 */
-	int CONTROL_POINT = 2;
+	int NOTE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Spreadsheet Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_POINT__SPREADSHEET_NAME = MAND_CBASE__SPREADSHEET_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__SHEET_NAME = MAND_CBASE__SHEET_NAME;
+	int NOTE__NOTE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * The number of structural features of the '<em>Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__ROW = MAND_CBASE__ROW;
+	int NOTE_FEATURE_COUNT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
+	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl <em>Spreadsheet Parser</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSpreadsheetParser()
+	 * @generated
+	 */
+	int SPREADSHEET_PARSER = 9;
+
+	/**
+	 * The feature id for the '<em><b>Ref Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__PARENT_ROW = MAND_CBASE__PARENT_ROW;
+	int SPREADSHEET_PARSER__REF_PATH = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * The feature id for the '<em><b>Ref Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__SHEET = MAND_CBASE__SHEET;
+	int SPREADSHEET_PARSER__REF_STATUS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * The feature id for the '<em><b>Xml</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__PARENT = MAND_CBASE__PARENT;
+	int SPREADSHEET_PARSER__XML = 2;
 
 	/**
-	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * The feature id for the '<em><b>Xsd File</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
+	int SPREADSHEET_PARSER__XSD_FILE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * The feature id for the '<em><b>Newline</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
+	int SPREADSHEET_PARSER__NEWLINE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' attribute.
+	 * The number of structural features of the '<em>Spreadsheet Parser</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__TABLE = MAND_CBASE__TABLE;
+	int SPREADSHEET_PARSER_FEATURE_COUNT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Tables</b></em>' reference.
+	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.PairImpl <em>Pair</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.impl.PairImpl
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getPair()
+	 * @generated
+	 */
+	int PAIR = 7;
+
+	/**
+	 * The feature id for the '<em><b>Ref Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__TABLES = MAND_CBASE__TABLES;
+	int PAIR__REF_PATH = SPREADSHEET_PARSER__REF_PATH;
 
 	/**
-	 * The feature id for the '<em><b>Archives Properties</b></em>' reference.
+	 * The feature id for the '<em><b>Ref Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__ARCHIVES_PROPERTIES = MAND_CBASE__ARCHIVES_PROPERTIES;
+	int PAIR__REF_STATUS = SPREADSHEET_PARSER__REF_STATUS;
 
 	/**
-	 * The feature id for the '<em><b>Util</b></em>' containment reference.
+	 * The feature id for the '<em><b>Xml</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__UTIL = MAND_CBASE__UTIL;
+	int PAIR__XML = SPREADSHEET_PARSER__XML;
 
 	/**
-	 * The number of structural features of the '<em>Control Point</em>' class.
+	 * The feature id for the '<em><b>Xsd File</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 0;
+	int PAIR__XSD_FILE = SPREADSHEET_PARSER__XSD_FILE;
+
+	/**
+	 * The feature id for the '<em><b>Newline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAIR__NEWLINE = SPREADSHEET_PARSER__NEWLINE;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAIR__CONTENT = SPREADSHEET_PARSER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAIR__NEW_STRING = SPREADSHEET_PARSER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Pair</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAIR_FEATURE_COUNT = SPREADSHEET_PARSER_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.xml.sax.ErrorHandler
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerAuxClass()
+	 * @generated
+	 */
+	int ERROR_HANDLER_AUX_CLASS = 13;
+
+	/**
+	 * The number of structural features of the '<em>Error Handler Aux Class</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ERROR_HANDLER_AUX_CLASS_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.SimpleErrorHandlerImpl <em>Simple Error Handler</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.impl.SimpleErrorHandlerImpl
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSimpleErrorHandler()
+	 * @generated
+	 */
+	int SIMPLE_ERROR_HANDLER = 8;
+
+	/**
+	 * The feature id for the '<em><b>Errors</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_ERROR_HANDLER__ERRORS = ERROR_HANDLER_AUX_CLASS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Simple Error Handler</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_ERROR_HANDLER_FEATURE_COUNT = ERROR_HANDLER_AUX_CLASS_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl <em>Spreadsheet Validator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSpreadsheetValidator()
+	 * @generated
+	 */
+	int SPREADSHEET_VALIDATOR = 10;
+
+	/**
+	 * The feature id for the '<em><b>Seh</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPREADSHEET_VALIDATOR__SEH = 0;
+
+	/**
+	 * The feature id for the '<em><b>Error List</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPREADSHEET_VALIDATOR__ERROR_LIST = 1;
+
+	/**
+	 * The feature id for the '<em><b>Seh Tmp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPREADSHEET_VALIDATOR__SEH_TMP = 2;
+
+	/**
+	 * The number of structural features of the '<em>Spreadsheet Validator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPREADSHEET_VALIDATOR_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.TableImpl <em>Table</em>}' class.
@@ -666,7 +869,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getTable()
 	 * @generated
 	 */
-	int TABLE = 3;
+	int TABLE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Dep Char</b></em>' attribute.
@@ -903,253 +1106,6 @@ public interface BasePackage extends EPackage {
 	int TABLE_FEATURE_COUNT = 25;
 
 	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl <em>Archive Property</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.impl.ArchivePropertyImpl
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArchiveProperty()
-	 * @generated
-	 */
-	int ARCHIVE_PROPERTY = 5;
-
-	/**
-	 * The feature id for the '<em><b>Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHIVE_PROPERTY__ROW = 0;
-
-	/**
-	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHIVE_PROPERTY__SHEET = 1;
-
-	/**
-	 * The feature id for the '<em><b>Mp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHIVE_PROPERTY__MP = 2;
-
-	/**
-	 * The feature id for the '<em><b>Cp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHIVE_PROPERTY__CP = 3;
-
-	/**
-	 * The feature id for the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHIVE_PROPERTY__TABLE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHIVE_PROPERTY__TABLES = 5;
-
-	/**
-	 * The number of structural features of the '<em>Archive Property</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHIVE_PROPERTY_FEATURE_COUNT = 6;
-
-	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.NoteImpl <em>Note</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.impl.NoteImpl
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getNote()
-	 * @generated
-	 */
-	int NOTE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Note</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOTE__NOTE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Note</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOTE_FEATURE_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl <em>Spreadsheet Validator</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSpreadsheetValidator()
-	 * @generated
-	 */
-	int SPREADSHEET_VALIDATOR = 7;
-
-	/**
-	 * The feature id for the '<em><b>Seh</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_VALIDATOR__SEH = 0;
-
-	/**
-	 * The feature id for the '<em><b>Error List</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_VALIDATOR__ERROR_LIST = 1;
-
-	/**
-	 * The feature id for the '<em><b>Seh Tmp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_VALIDATOR__SEH_TMP = 2;
-
-	/**
-	 * The feature id for the '<em><b>Base Fac</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_VALIDATOR__BASE_FAC = 3;
-
-	/**
-	 * The feature id for the '<em><b>Error Handler</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_VALIDATOR__ERROR_HANDLER = 4;
-
-	/**
-	 * The number of structural features of the '<em>Spreadsheet Validator</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_VALIDATOR_FEATURE_COUNT = 5;
-
-	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl <em>Spreadsheet Parser</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSpreadsheetParser()
-	 * @generated
-	 */
-	int SPREADSHEET_PARSER = 8;
-
-	/**
-	 * The feature id for the '<em><b>Ref Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_PARSER__REF_PATH = 0;
-
-	/**
-	 * The feature id for the '<em><b>Ref Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_PARSER__REF_STATUS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Xml</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_PARSER__XML = 2;
-
-	/**
-	 * The feature id for the '<em><b>Xsd File</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_PARSER__XSD_FILE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Newline</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_PARSER__NEWLINE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Pair Spread</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_PARSER__PAIR_SPREAD = 5;
-
-	/**
-	 * The feature id for the '<em><b>Validate Spread</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_PARSER__VALIDATE_SPREAD = 6;
-
-	/**
-	 * The number of structural features of the '<em>Spreadsheet Parser</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPREADSHEET_PARSER_FEATURE_COUNT = 7;
-
-	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.UtilImpl <em>Util</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1157,7 +1113,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getUtil()
 	 * @generated
 	 */
-	int UTIL = 9;
+	int UTIL = 12;
 
 	/**
 	 * The feature id for the '<em><b>Newline</b></em>' attribute.
@@ -1169,22 +1125,13 @@ public interface BasePackage extends EPackage {
 	int UTIL__NEWLINE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UTIL__TABLE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Max Length</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__MAX_LENGTH = 2;
+	int UTIL__MAX_LENGTH = 1;
 
 	/**
 	 * The feature id for the '<em><b>MONTH</b></em>' attribute.
@@ -1193,7 +1140,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__MONTH = 3;
+	int UTIL__MONTH = 2;
 
 	/**
 	 * The feature id for the '<em><b>MONT Halt</b></em>' attribute.
@@ -1202,16 +1149,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__MONT_HALT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UTIL__TABLES = 5;
+	int UTIL__MONT_HALT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Util</em>' class.
@@ -1220,217 +1158,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL_FEATURE_COUNT = 6;
-
-	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.PairImpl <em>Pair</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.impl.PairImpl
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getPair()
-	 * @generated
-	 */
-	int PAIR = 10;
-
-	/**
-	 * The feature id for the '<em><b>Ref Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR__REF_PATH = SPREADSHEET_PARSER__REF_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Ref Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR__REF_STATUS = SPREADSHEET_PARSER__REF_STATUS;
-
-	/**
-	 * The feature id for the '<em><b>Xml</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR__XML = SPREADSHEET_PARSER__XML;
-
-	/**
-	 * The feature id for the '<em><b>Xsd File</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR__XSD_FILE = SPREADSHEET_PARSER__XSD_FILE;
-
-	/**
-	 * The feature id for the '<em><b>Newline</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR__NEWLINE = SPREADSHEET_PARSER__NEWLINE;
-
-	/**
-	 * The feature id for the '<em><b>Pair Spread</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR__PAIR_SPREAD = SPREADSHEET_PARSER__PAIR_SPREAD;
-
-	/**
-	 * The feature id for the '<em><b>Validate Spread</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR__VALIDATE_SPREAD = SPREADSHEET_PARSER__VALIDATE_SPREAD;
-
-	/**
-	 * The feature id for the '<em><b>Content</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR__CONTENT = SPREADSHEET_PARSER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>New String</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR__NEW_STRING = SPREADSHEET_PARSER_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Pair</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAIR_FEATURE_COUNT = SPREADSHEET_PARSER_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Error Handler Aux Class</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ERROR_HANDLER_AUX_CLASS_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.SimpleErrorHandlerImpl <em>Simple Error Handler</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.impl.SimpleErrorHandlerImpl
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSimpleErrorHandler()
-	 * @generated
-	 */
-	int SIMPLE_ERROR_HANDLER = 11;
-
-	/**
-	 * The feature id for the '<em><b>Errors</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMPLE_ERROR_HANDLER__ERRORS = ERROR_HANDLER_AUX_CLASS_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Simple Error Handler</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMPLE_ERROR_HANDLER_FEATURE_COUNT = ERROR_HANDLER_AUX_CLASS_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.impl.MainBaseImpl
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBase()
-	 * @generated
-	 */
-	int MAIN_BASE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAIN_BASE__ROW = 0;
-
-	/**
-	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAIN_BASE__SHEET = 1;
-
-	/**
-	 * The feature id for the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAIN_BASE__TABLE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Util</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAIN_BASE__UTIL = 3;
-
-	/**
-	 * The feature id for the '<em><b>Utilss</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAIN_BASE__UTILSS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAIN_BASE__TABLES = 5;
-
-	/**
-	 * The number of structural features of the '<em>Main Base</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAIN_BASE_FEATURE_COUNT = 6;
+	int UTIL_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '<em>Simple Error Handler DT</em>' data type.
@@ -1443,6 +1171,16 @@ public interface BasePackage extends EPackage {
 	int SIMPLE_ERROR_HANDLER_DT = 14;
 
 	/**
+	 * The meta object id for the '<em>Mand CAMBDT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.amb.MandC
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCAMBDT()
+	 * @generated
+	 */
+	int MAND_CAMBDT = 15;
+
+	/**
 	 * The meta object id for the '<em>Mand CBase DT</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1450,7 +1188,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBaseDT()
 	 * @generated
 	 */
-	int MAND_CBASE_DT = 15;
+	int MAND_CBASE_DT = 16;
 
 	/**
 	 * The meta object id for the '<em>Main Base DT</em>' data type.
@@ -1460,7 +1198,27 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBaseDT()
 	 * @generated
 	 */
-	int MAIN_BASE_DT = 16;
+	int MAIN_BASE_DT = 17;
+
+	/**
+	 * The meta object id for the '<em>Resource DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.ecore.resource.Resource
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getResourceDT()
+	 * @generated
+	 */
+	int RESOURCE_DT = 18;
+
+	/**
+	 * The meta object id for the '<em>Iterator DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.Iterator
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getIteratorDT()
+	 * @generated
+	 */
+	int ITERATOR_DT = 19;
 
 	/**
 	 * The meta object id for the '<em>Array List</em>' data type.
@@ -1470,7 +1228,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArrayList()
 	 * @generated
 	 */
-	int ARRAY_LIST = 17;
+	int ARRAY_LIST = 20;
 
 	/**
 	 * The meta object id for the '<em>Hashtable</em>' data type.
@@ -1480,7 +1238,17 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getHashtable()
 	 * @generated
 	 */
-	int HASHTABLE = 18;
+	int HASHTABLE = 21;
+
+	/**
+	 * The meta object id for the '<em>Runtime Exception DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.RuntimeException
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getRuntimeExceptionDT()
+	 * @generated
+	 */
+	int RUNTIME_EXCEPTION_DT = 22;
 
 	/**
 	 * The meta object id for the '<em>Error Handler DT</em>' data type.
@@ -1490,7 +1258,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerDT()
 	 * @generated
 	 */
-	int ERROR_HANDLER_DT = 19;
+	int ERROR_HANDLER_DT = 23;
 
 	/**
 	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
@@ -1500,7 +1268,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION_DT = 20;
+	int SAX_PARSE_EXCEPTION_DT = 24;
 
 	/**
 	 * The meta object id for the '<em>EString Array3</em>' data type.
@@ -1509,7 +1277,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray3()
 	 * @generated
 	 */
-	int ESTRING_ARRAY3 = 21;
+	int ESTRING_ARRAY3 = 25;
 
 	/**
 	 * The meta object id for the '<em>EString Array2</em>' data type.
@@ -1518,7 +1286,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray2()
 	 * @generated
 	 */
-	int ESTRING_ARRAY2 = 22;
+	int ESTRING_ARRAY2 = 26;
 
 	/**
 	 * The meta object id for the '<em>EString Array</em>' data type.
@@ -1527,8 +1295,82 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray()
 	 * @generated
 	 */
-	int ESTRING_ARRAY = 23;
+	int ESTRING_ARRAY = 27;
 
+	/**
+	 * The meta object id for the '<em>Mand CETHDT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.eth.MandC
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCETHDT()
+	 * @generated
+	 */
+	int MAND_CETHDT = 28;
+
+
+	/**
+	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.ArchiveProperty <em>Archive Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Archive Property</em>'.
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty
+	 * @generated
+	 */
+	EClass getArchiveProperty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getRow <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Row</em>'.
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getRow()
+	 * @see #getArchiveProperty()
+	 * @generated
+	 */
+	EAttribute getArchiveProperty_Row();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getSheet <em>Sheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sheet</em>'.
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getSheet()
+	 * @see #getArchiveProperty()
+	 * @generated
+	 */
+	EAttribute getArchiveProperty_Sheet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getMp <em>Mp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mp</em>'.
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getMp()
+	 * @see #getArchiveProperty()
+	 * @generated
+	 */
+	EAttribute getArchiveProperty_Mp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getCp <em>Cp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cp</em>'.
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getCp()
+	 * @see #getArchiveProperty()
+	 * @generated
+	 */
+	EAttribute getArchiveProperty_Cp();
+
+	/**
+	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.ControlPoint <em>Control Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Control Point</em>'.
+	 * @see alma.control.datamodel.meta.base.ControlPoint
+	 * @generated
+	 */
+	EClass getControlPoint();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.DeviceModel <em>Device Model</em>}'.
@@ -1706,48 +1548,134 @@ public interface BasePackage extends EPackage {
 	EAttribute getDeviceModel_GenerateAlt();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}'.
+	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MainBase <em>Main Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tables</em>'.
-	 * @see alma.control.datamodel.meta.base.DeviceModel#getTables()
-	 * @see #getDeviceModel()
+	 * @return the meta object for class '<em>Main Base</em>'.
+	 * @see alma.control.datamodel.meta.base.MainBase
 	 * @generated
 	 */
-	EReference getDeviceModel_Tables();
+	EClass getMainBase();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}'.
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MainBase#getRow <em>Row</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Utils</em>'.
-	 * @see alma.control.datamodel.meta.base.DeviceModel#getUtils()
-	 * @see #getDeviceModel()
+	 * @return the meta object for the attribute '<em>Row</em>'.
+	 * @see alma.control.datamodel.meta.base.MainBase#getRow()
+	 * @see #getMainBase()
 	 * @generated
 	 */
-	EReference getDeviceModel_Utils();
+	EAttribute getMainBase_Row();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getArchivesProperties <em>Archives Properties</em>}'.
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MainBase#getSheet <em>Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Archives Properties</em>'.
-	 * @see alma.control.datamodel.meta.base.DeviceModel#getArchivesProperties()
-	 * @see #getDeviceModel()
+	 * @return the meta object for the attribute '<em>Sheet</em>'.
+	 * @see alma.control.datamodel.meta.base.MainBase#getSheet()
+	 * @see #getMainBase()
 	 * @generated
 	 */
-	EReference getDeviceModel_ArchivesProperties();
+	EAttribute getMainBase_Sheet();
 
 	/**
-	 * Returns the meta object for class '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}'.
+	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MandCBase <em>Mand CBase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Error Handler Aux Class</em>'.
-	 * @see org.xml.sax.ErrorHandler
-	 * @model instanceClass="org.xml.sax.ErrorHandler"
+	 * @return the meta object for class '<em>Mand CBase</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase
 	 * @generated
 	 */
-	EClass getErrorHandlerAuxClass();
+	EClass getMandCBase();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getSpreadsheetName <em>Spreadsheet Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Spreadsheet Name</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getSpreadsheetName()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_SpreadsheetName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getSheetName <em>Sheet Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sheet Name</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getSheetName()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_SheetName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getRow <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Row</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getRow()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_Row();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getParentRow <em>Parent Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parent Row</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getParentRow()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_ParentRow();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getSheet <em>Sheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sheet</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getSheet()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_Sheet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parent</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getParent()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_Parent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Archive</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getArchive()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_Archive();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Dependents</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getDependents()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_Dependents();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MonitorPoint <em>Monitor Point</em>}'.
@@ -1760,25 +1688,186 @@ public interface BasePackage extends EPackage {
 	EClass getMonitorPoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MonitorPoint#getArchiveProper <em>Archive Proper</em>}'.
+	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.Note <em>Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Archive Proper</em>'.
-	 * @see alma.control.datamodel.meta.base.MonitorPoint#getArchiveProper()
-	 * @see #getMonitorPoint()
+	 * @return the meta object for class '<em>Note</em>'.
+	 * @see alma.control.datamodel.meta.base.Note
 	 * @generated
 	 */
-	EReference getMonitorPoint_ArchiveProper();
+	EClass getNote();
 
 	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.ControlPoint <em>Control Point</em>}'.
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Note#getNote <em>Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Control Point</em>'.
-	 * @see alma.control.datamodel.meta.base.ControlPoint
+	 * @return the meta object for the attribute '<em>Note</em>'.
+	 * @see alma.control.datamodel.meta.base.Note#getNote()
+	 * @see #getNote()
 	 * @generated
 	 */
-	EClass getControlPoint();
+	EAttribute getNote_Note();
+
+	/**
+	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.Pair <em>Pair</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pair</em>'.
+	 * @see alma.control.datamodel.meta.base.Pair
+	 * @generated
+	 */
+	EClass getPair();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Pair#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see alma.control.datamodel.meta.base.Pair#getContent()
+	 * @see #getPair()
+	 * @generated
+	 */
+	EAttribute getPair_Content();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Pair#getNewString <em>New String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New String</em>'.
+	 * @see alma.control.datamodel.meta.base.Pair#getNewString()
+	 * @see #getPair()
+	 * @generated
+	 */
+	EAttribute getPair_NewString();
+
+	/**
+	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.SimpleErrorHandler <em>Simple Error Handler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Simple Error Handler</em>'.
+	 * @see alma.control.datamodel.meta.base.SimpleErrorHandler
+	 * @generated
+	 */
+	EClass getSimpleErrorHandler();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SimpleErrorHandler#isErrors <em>Errors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Errors</em>'.
+	 * @see alma.control.datamodel.meta.base.SimpleErrorHandler#isErrors()
+	 * @see #getSimpleErrorHandler()
+	 * @generated
+	 */
+	EAttribute getSimpleErrorHandler_Errors();
+
+	/**
+	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.SpreadsheetParser <em>Spreadsheet Parser</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Spreadsheet Parser</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetParser
+	 * @generated
+	 */
+	EClass getSpreadsheetParser();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getRefPath <em>Ref Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ref Path</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getRefPath()
+	 * @see #getSpreadsheetParser()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetParser_RefPath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#isRefStatus <em>Ref Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ref Status</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#isRefStatus()
+	 * @see #getSpreadsheetParser()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetParser_RefStatus();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getXml <em>Xml</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Xml</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getXml()
+	 * @see #getSpreadsheetParser()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetParser_Xml();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getXsdFile <em>Xsd File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Xsd File</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getXsdFile()
+	 * @see #getSpreadsheetParser()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetParser_XsdFile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getNewline <em>Newline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Newline</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getNewline()
+	 * @see #getSpreadsheetParser()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetParser_Newline();
+
+	/**
+	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.SpreadsheetValidator <em>Spreadsheet Validator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Spreadsheet Validator</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator
+	 * @generated
+	 */
+	EClass getSpreadsheetValidator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getSeh <em>Seh</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Seh</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator#getSeh()
+	 * @see #getSpreadsheetValidator()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetValidator_Seh();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorList <em>Error List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Error List</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorList()
+	 * @see #getSpreadsheetValidator()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetValidator_ErrorList();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getSehTmp <em>Seh Tmp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Seh Tmp</em>'.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator#getSehTmp()
+	 * @see #getSpreadsheetValidator()
+	 * @generated
+	 */
+	EAttribute getSpreadsheetValidator_SehTmp();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.Table <em>Table</em>}'.
@@ -2066,397 +2155,6 @@ public interface BasePackage extends EPackage {
 	EAttribute getTable_WorldToDatabase();
 
 	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MandCBase <em>Mand CBase</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Mand CBase</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase
-	 * @generated
-	 */
-	EClass getMandCBase();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getSpreadsheetName <em>Spreadsheet Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Spreadsheet Name</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getSpreadsheetName()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_SpreadsheetName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getSheetName <em>Sheet Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sheet Name</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getSheetName()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_SheetName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getRow <em>Row</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Row</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getRow()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_Row();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getParentRow <em>Parent Row</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Row</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getParentRow()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_ParentRow();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getSheet <em>Sheet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sheet</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getSheet()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_Sheet();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getParent()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_Parent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Archive</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getArchive()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_Archive();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Dependents</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getDependents()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_Dependents();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getTable <em>Table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Table</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getTable()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_Table();
-
-	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tables</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getTables()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EReference getMandCBase_Tables();
-
-	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getArchivesProperties <em>Archives Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Archives Properties</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getArchivesProperties()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EReference getMandCBase_ArchivesProperties();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.base.MandCBase#getUtil <em>Util</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Util</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getUtil()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EReference getMandCBase_Util();
-
-	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.ArchiveProperty <em>Archive Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Archive Property</em>'.
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty
-	 * @generated
-	 */
-	EClass getArchiveProperty();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getRow <em>Row</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Row</em>'.
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getRow()
-	 * @see #getArchiveProperty()
-	 * @generated
-	 */
-	EAttribute getArchiveProperty_Row();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getSheet <em>Sheet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sheet</em>'.
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getSheet()
-	 * @see #getArchiveProperty()
-	 * @generated
-	 */
-	EAttribute getArchiveProperty_Sheet();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getMp <em>Mp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mp</em>'.
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getMp()
-	 * @see #getArchiveProperty()
-	 * @generated
-	 */
-	EAttribute getArchiveProperty_Mp();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getCp <em>Cp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cp</em>'.
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getCp()
-	 * @see #getArchiveProperty()
-	 * @generated
-	 */
-	EAttribute getArchiveProperty_Cp();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getTable <em>Table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Table</em>'.
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getTable()
-	 * @see #getArchiveProperty()
-	 * @generated
-	 */
-	EAttribute getArchiveProperty_Table();
-
-	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.ArchiveProperty#getTables <em>Tables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tables</em>'.
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getTables()
-	 * @see #getArchiveProperty()
-	 * @generated
-	 */
-	EReference getArchiveProperty_Tables();
-
-	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.Note <em>Note</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Note</em>'.
-	 * @see alma.control.datamodel.meta.base.Note
-	 * @generated
-	 */
-	EClass getNote();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Note#getNote <em>Note</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Note</em>'.
-	 * @see alma.control.datamodel.meta.base.Note#getNote()
-	 * @see #getNote()
-	 * @generated
-	 */
-	EAttribute getNote_Note();
-
-	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.SpreadsheetValidator <em>Spreadsheet Validator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Spreadsheet Validator</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator
-	 * @generated
-	 */
-	EClass getSpreadsheetValidator();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getSeh <em>Seh</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Seh</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator#getSeh()
-	 * @see #getSpreadsheetValidator()
-	 * @generated
-	 */
-	EAttribute getSpreadsheetValidator_Seh();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorList <em>Error List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Error List</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorList()
-	 * @see #getSpreadsheetValidator()
-	 * @generated
-	 */
-	EAttribute getSpreadsheetValidator_ErrorList();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getSehTmp <em>Seh Tmp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Seh Tmp</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator#getSehTmp()
-	 * @see #getSpreadsheetValidator()
-	 * @generated
-	 */
-	EAttribute getSpreadsheetValidator_SehTmp();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getBaseFac <em>Base Fac</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Base Fac</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator#getBaseFac()
-	 * @see #getSpreadsheetValidator()
-	 * @generated
-	 */
-	EAttribute getSpreadsheetValidator_BaseFac();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorHandler <em>Error Handler</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Error Handler</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator#getErrorHandler()
-	 * @see #getSpreadsheetValidator()
-	 * @generated
-	 */
-	EReference getSpreadsheetValidator_ErrorHandler();
-
-	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.SpreadsheetParser <em>Spreadsheet Parser</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Spreadsheet Parser</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetParser
-	 * @generated
-	 */
-	EClass getSpreadsheetParser();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getRefPath <em>Ref Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ref Path</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getRefPath()
-	 * @see #getSpreadsheetParser()
-	 * @generated
-	 */
-	EAttribute getSpreadsheetParser_RefPath();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#isRefStatus <em>Ref Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ref Status</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#isRefStatus()
-	 * @see #getSpreadsheetParser()
-	 * @generated
-	 */
-	EAttribute getSpreadsheetParser_RefStatus();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getXml <em>Xml</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Xml</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getXml()
-	 * @see #getSpreadsheetParser()
-	 * @generated
-	 */
-	EAttribute getSpreadsheetParser_Xml();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getXsdFile <em>Xsd File</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Xsd File</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getXsdFile()
-	 * @see #getSpreadsheetParser()
-	 * @generated
-	 */
-	EAttribute getSpreadsheetParser_XsdFile();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getNewline <em>Newline</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Newline</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getNewline()
-	 * @see #getSpreadsheetParser()
-	 * @generated
-	 */
-	EAttribute getSpreadsheetParser_Newline();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getPairSpread <em>Pair Spread</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Pair Spread</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getPairSpread()
-	 * @see #getSpreadsheetParser()
-	 * @generated
-	 */
-	EReference getSpreadsheetParser_PairSpread();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.base.SpreadsheetParser#getValidateSpread <em>Validate Spread</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Validate Spread</em>'.
-	 * @see alma.control.datamodel.meta.base.SpreadsheetParser#getValidateSpread()
-	 * @see #getSpreadsheetParser()
-	 * @generated
-	 */
-	EReference getSpreadsheetParser_ValidateSpread();
-
-	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.Util <em>Util</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2476,17 +2174,6 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUtil_Newline();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Util#getTable <em>Table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Table</em>'.
-	 * @see alma.control.datamodel.meta.base.Util#getTable()
-	 * @see #getUtil()
-	 * @generated
-	 */
-	EAttribute getUtil_Table();
 
 	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Util#getMaxLength <em>Max Length</em>}'.
@@ -2522,144 +2209,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getUtil_MONTHalt();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.Util#getTables <em>Tables</em>}'.
+	 * Returns the meta object for class '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tables</em>'.
-	 * @see alma.control.datamodel.meta.base.Util#getTables()
-	 * @see #getUtil()
+	 * @return the meta object for class '<em>Error Handler Aux Class</em>'.
+	 * @see org.xml.sax.ErrorHandler
+	 * @model instanceClass="org.xml.sax.ErrorHandler"
 	 * @generated
 	 */
-	EReference getUtil_Tables();
-
-	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.Pair <em>Pair</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pair</em>'.
-	 * @see alma.control.datamodel.meta.base.Pair
-	 * @generated
-	 */
-	EClass getPair();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Pair#getContent <em>Content</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content</em>'.
-	 * @see alma.control.datamodel.meta.base.Pair#getContent()
-	 * @see #getPair()
-	 * @generated
-	 */
-	EAttribute getPair_Content();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Pair#getNewString <em>New String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>New String</em>'.
-	 * @see alma.control.datamodel.meta.base.Pair#getNewString()
-	 * @see #getPair()
-	 * @generated
-	 */
-	EAttribute getPair_NewString();
-
-	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.SimpleErrorHandler <em>Simple Error Handler</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Simple Error Handler</em>'.
-	 * @see alma.control.datamodel.meta.base.SimpleErrorHandler
-	 * @generated
-	 */
-	EClass getSimpleErrorHandler();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.SimpleErrorHandler#isErrors <em>Errors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Errors</em>'.
-	 * @see alma.control.datamodel.meta.base.SimpleErrorHandler#isErrors()
-	 * @see #getSimpleErrorHandler()
-	 * @generated
-	 */
-	EAttribute getSimpleErrorHandler_Errors();
-
-	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MainBase <em>Main Base</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Main Base</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase
-	 * @generated
-	 */
-	EClass getMainBase();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MainBase#getRow <em>Row</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Row</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase#getRow()
-	 * @see #getMainBase()
-	 * @generated
-	 */
-	EAttribute getMainBase_Row();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MainBase#getSheet <em>Sheet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sheet</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase#getSheet()
-	 * @see #getMainBase()
-	 * @generated
-	 */
-	EAttribute getMainBase_Sheet();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MainBase#getTable <em>Table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Table</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase#getTable()
-	 * @see #getMainBase()
-	 * @generated
-	 */
-	EAttribute getMainBase_Table();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MainBase#getUtil <em>Util</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Util</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase#getUtil()
-	 * @see #getMainBase()
-	 * @generated
-	 */
-	EAttribute getMainBase_Util();
-
-	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MainBase#getUtilss <em>Utilss</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Utilss</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase#getUtilss()
-	 * @see #getMainBase()
-	 * @generated
-	 */
-	EReference getMainBase_Utilss();
-
-	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MainBase#getTables <em>Tables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tables</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase#getTables()
-	 * @see #getMainBase()
-	 * @generated
-	 */
-	EReference getMainBase_Tables();
+	EClass getErrorHandlerAuxClass();
 
 	/**
 	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.base.SimpleErrorHandler <em>Simple Error Handler DT</em>}'.
@@ -2671,6 +2229,17 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getSimpleErrorHandlerDT();
+
+	/**
+	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.amb.MandC <em>Mand CAMBDT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Mand CAMBDT</em>'.
+	 * @see alma.control.datamodel.meta.amb.MandC
+	 * @model instanceClass="alma.control.datamodel.meta.amb.MandC"
+	 * @generated
+	 */
+	EDataType getMandCAMBDT();
 
 	/**
 	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.base.MandCBase <em>Mand CBase DT</em>}'.
@@ -2695,6 +2264,28 @@ public interface BasePackage extends EPackage {
 	EDataType getMainBaseDT();
 
 	/**
+	 * Returns the meta object for data type '{@link org.eclipse.emf.ecore.resource.Resource <em>Resource DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Resource DT</em>'.
+	 * @see org.eclipse.emf.ecore.resource.Resource
+	 * @model instanceClass="org.eclipse.emf.ecore.resource.Resource"
+	 * @generated
+	 */
+	EDataType getResourceDT();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.Iterator <em>Iterator DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Iterator DT</em>'.
+	 * @see java.util.Iterator
+	 * @model instanceClass="java.util.Iterator"
+	 * @generated
+	 */
+	EDataType getIteratorDT();
+
+	/**
 	 * Returns the meta object for data type '{@link java.util.ArrayList <em>Array List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2715,6 +2306,17 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getHashtable();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.RuntimeException <em>Runtime Exception DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Runtime Exception DT</em>'.
+	 * @see java.lang.RuntimeException
+	 * @model instanceClass="java.lang.RuntimeException"
+	 * @generated
+	 */
+	EDataType getRuntimeExceptionDT();
 
 	/**
 	 * Returns the meta object for data type '{@link org.xml.sax.ErrorHandler <em>Error Handler DT</em>}'.
@@ -2769,6 +2371,17 @@ public interface BasePackage extends EPackage {
 	EDataType getEStringArray();
 
 	/**
+	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.eth.MandC <em>Mand CETHDT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Mand CETHDT</em>'.
+	 * @see alma.control.datamodel.meta.eth.MandC
+	 * @model instanceClass="alma.control.datamodel.meta.eth.MandC"
+	 * @generated
+	 */
+	EDataType getMandCETHDT();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2790,6 +2403,58 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl <em>Archive Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.impl.ArchivePropertyImpl
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArchiveProperty()
+		 * @generated
+		 */
+		EClass ARCHIVE_PROPERTY = eINSTANCE.getArchiveProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHIVE_PROPERTY__ROW = eINSTANCE.getArchiveProperty_Row();
+
+		/**
+		 * The meta object literal for the '<em><b>Sheet</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHIVE_PROPERTY__SHEET = eINSTANCE.getArchiveProperty_Sheet();
+
+		/**
+		 * The meta object literal for the '<em><b>Mp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHIVE_PROPERTY__MP = eINSTANCE.getArchiveProperty_Mp();
+
+		/**
+		 * The meta object literal for the '<em><b>Cp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHIVE_PROPERTY__CP = eINSTANCE.getArchiveProperty_Cp();
+
+		/**
+		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.ControlPointImpl <em>Control Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.impl.ControlPointImpl
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getControlPoint()
+		 * @generated
+		 */
+		EClass CONTROL_POINT = eINSTANCE.getControlPoint();
+
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl <em>Device Model</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2921,38 +2586,104 @@ public interface BasePackage extends EPackage {
 		EAttribute DEVICE_MODEL__GENERATE_ALT = eINSTANCE.getDeviceModel_GenerateAlt();
 
 		/**
-		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
+		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.impl.MainBaseImpl
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBase()
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__TABLES = eINSTANCE.getDeviceModel_Tables();
+		EClass MAIN_BASE = eINSTANCE.getMainBase();
 
 		/**
-		 * The meta object literal for the '<em><b>Utils</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__UTILS = eINSTANCE.getDeviceModel_Utils();
+		EAttribute MAIN_BASE__ROW = eINSTANCE.getMainBase_Row();
 
 		/**
-		 * The meta object literal for the '<em><b>Archives Properties</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Sheet</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__ARCHIVES_PROPERTIES = eINSTANCE.getDeviceModel_ArchivesProperties();
+		EAttribute MAIN_BASE__SHEET = eINSTANCE.getMainBase_Sheet();
 
 		/**
-		 * The meta object literal for the '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}' class.
+		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl <em>Mand CBase</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.xml.sax.ErrorHandler
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerAuxClass()
+		 * @see alma.control.datamodel.meta.base.impl.MandCBaseImpl
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBase()
 		 * @generated
 		 */
-		EClass ERROR_HANDLER_AUX_CLASS = eINSTANCE.getErrorHandlerAuxClass();
+		EClass MAND_CBASE = eINSTANCE.getMandCBase();
+
+		/**
+		 * The meta object literal for the '<em><b>Spreadsheet Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__SPREADSHEET_NAME = eINSTANCE.getMandCBase_SpreadsheetName();
+
+		/**
+		 * The meta object literal for the '<em><b>Sheet Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__SHEET_NAME = eINSTANCE.getMandCBase_SheetName();
+
+		/**
+		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__ROW = eINSTANCE.getMandCBase_Row();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Row</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__PARENT_ROW = eINSTANCE.getMandCBase_ParentRow();
+
+		/**
+		 * The meta object literal for the '<em><b>Sheet</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__SHEET = eINSTANCE.getMandCBase_Sheet();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__PARENT = eINSTANCE.getMandCBase_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Archive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__ARCHIVE = eINSTANCE.getMandCBase_Archive();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependents</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__DEPENDENTS = eINSTANCE.getMandCBase_Dependents();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MonitorPointImpl <em>Monitor Point</em>}' class.
@@ -2965,22 +2696,150 @@ public interface BasePackage extends EPackage {
 		EClass MONITOR_POINT = eINSTANCE.getMonitorPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Archive Proper</b></em>' reference feature.
+		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.NoteImpl <em>Note</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.impl.NoteImpl
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getNote()
 		 * @generated
 		 */
-		EReference MONITOR_POINT__ARCHIVE_PROPER = eINSTANCE.getMonitorPoint_ArchiveProper();
+		EClass NOTE = eINSTANCE.getNote();
 
 		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.ControlPointImpl <em>Control Point</em>}' class.
+		 * The meta object literal for the '<em><b>Note</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.impl.ControlPointImpl
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getControlPoint()
 		 * @generated
 		 */
-		EClass CONTROL_POINT = eINSTANCE.getControlPoint();
+		EAttribute NOTE__NOTE = eINSTANCE.getNote_Note();
+
+		/**
+		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.PairImpl <em>Pair</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.impl.PairImpl
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getPair()
+		 * @generated
+		 */
+		EClass PAIR = eINSTANCE.getPair();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAIR__CONTENT = eINSTANCE.getPair_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>New String</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAIR__NEW_STRING = eINSTANCE.getPair_NewString();
+
+		/**
+		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.SimpleErrorHandlerImpl <em>Simple Error Handler</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.impl.SimpleErrorHandlerImpl
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSimpleErrorHandler()
+		 * @generated
+		 */
+		EClass SIMPLE_ERROR_HANDLER = eINSTANCE.getSimpleErrorHandler();
+
+		/**
+		 * The meta object literal for the '<em><b>Errors</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMPLE_ERROR_HANDLER__ERRORS = eINSTANCE.getSimpleErrorHandler_Errors();
+
+		/**
+		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl <em>Spreadsheet Parser</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSpreadsheetParser()
+		 * @generated
+		 */
+		EClass SPREADSHEET_PARSER = eINSTANCE.getSpreadsheetParser();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_PARSER__REF_PATH = eINSTANCE.getSpreadsheetParser_RefPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Status</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_PARSER__REF_STATUS = eINSTANCE.getSpreadsheetParser_RefStatus();
+
+		/**
+		 * The meta object literal for the '<em><b>Xml</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_PARSER__XML = eINSTANCE.getSpreadsheetParser_Xml();
+
+		/**
+		 * The meta object literal for the '<em><b>Xsd File</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_PARSER__XSD_FILE = eINSTANCE.getSpreadsheetParser_XsdFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Newline</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_PARSER__NEWLINE = eINSTANCE.getSpreadsheetParser_Newline();
+
+		/**
+		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl <em>Spreadsheet Validator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSpreadsheetValidator()
+		 * @generated
+		 */
+		EClass SPREADSHEET_VALIDATOR = eINSTANCE.getSpreadsheetValidator();
+
+		/**
+		 * The meta object literal for the '<em><b>Seh</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_VALIDATOR__SEH = eINSTANCE.getSpreadsheetValidator_Seh();
+
+		/**
+		 * The meta object literal for the '<em><b>Error List</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_VALIDATOR__ERROR_LIST = eINSTANCE.getSpreadsheetValidator_ErrorList();
+
+		/**
+		 * The meta object literal for the '<em><b>Seh Tmp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPREADSHEET_VALIDATOR__SEH_TMP = eINSTANCE.getSpreadsheetValidator_SehTmp();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.TableImpl <em>Table</em>}' class.
@@ -3193,304 +3052,6 @@ public interface BasePackage extends EPackage {
 		EAttribute TABLE__WORLD_TO_DATABASE = eINSTANCE.getTable_WorldToDatabase();
 
 		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl <em>Mand CBase</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.impl.MandCBaseImpl
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBase()
-		 * @generated
-		 */
-		EClass MAND_CBASE = eINSTANCE.getMandCBase();
-
-		/**
-		 * The meta object literal for the '<em><b>Spreadsheet Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__SPREADSHEET_NAME = eINSTANCE.getMandCBase_SpreadsheetName();
-
-		/**
-		 * The meta object literal for the '<em><b>Sheet Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__SHEET_NAME = eINSTANCE.getMandCBase_SheetName();
-
-		/**
-		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__ROW = eINSTANCE.getMandCBase_Row();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent Row</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__PARENT_ROW = eINSTANCE.getMandCBase_ParentRow();
-
-		/**
-		 * The meta object literal for the '<em><b>Sheet</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__SHEET = eINSTANCE.getMandCBase_Sheet();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__PARENT = eINSTANCE.getMandCBase_Parent();
-
-		/**
-		 * The meta object literal for the '<em><b>Archive</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__ARCHIVE = eINSTANCE.getMandCBase_Archive();
-
-		/**
-		 * The meta object literal for the '<em><b>Dependents</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__DEPENDENTS = eINSTANCE.getMandCBase_Dependents();
-
-		/**
-		 * The meta object literal for the '<em><b>Table</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__TABLE = eINSTANCE.getMandCBase_Table();
-
-		/**
-		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAND_CBASE__TABLES = eINSTANCE.getMandCBase_Tables();
-
-		/**
-		 * The meta object literal for the '<em><b>Archives Properties</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAND_CBASE__ARCHIVES_PROPERTIES = eINSTANCE.getMandCBase_ArchivesProperties();
-
-		/**
-		 * The meta object literal for the '<em><b>Util</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAND_CBASE__UTIL = eINSTANCE.getMandCBase_Util();
-
-		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl <em>Archive Property</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.impl.ArchivePropertyImpl
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArchiveProperty()
-		 * @generated
-		 */
-		EClass ARCHIVE_PROPERTY = eINSTANCE.getArchiveProperty();
-
-		/**
-		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARCHIVE_PROPERTY__ROW = eINSTANCE.getArchiveProperty_Row();
-
-		/**
-		 * The meta object literal for the '<em><b>Sheet</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARCHIVE_PROPERTY__SHEET = eINSTANCE.getArchiveProperty_Sheet();
-
-		/**
-		 * The meta object literal for the '<em><b>Mp</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARCHIVE_PROPERTY__MP = eINSTANCE.getArchiveProperty_Mp();
-
-		/**
-		 * The meta object literal for the '<em><b>Cp</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARCHIVE_PROPERTY__CP = eINSTANCE.getArchiveProperty_Cp();
-
-		/**
-		 * The meta object literal for the '<em><b>Table</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARCHIVE_PROPERTY__TABLE = eINSTANCE.getArchiveProperty_Table();
-
-		/**
-		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARCHIVE_PROPERTY__TABLES = eINSTANCE.getArchiveProperty_Tables();
-
-		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.NoteImpl <em>Note</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.impl.NoteImpl
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getNote()
-		 * @generated
-		 */
-		EClass NOTE = eINSTANCE.getNote();
-
-		/**
-		 * The meta object literal for the '<em><b>Note</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NOTE__NOTE = eINSTANCE.getNote_Note();
-
-		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl <em>Spreadsheet Validator</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.impl.SpreadsheetValidatorImpl
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSpreadsheetValidator()
-		 * @generated
-		 */
-		EClass SPREADSHEET_VALIDATOR = eINSTANCE.getSpreadsheetValidator();
-
-		/**
-		 * The meta object literal for the '<em><b>Seh</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPREADSHEET_VALIDATOR__SEH = eINSTANCE.getSpreadsheetValidator_Seh();
-
-		/**
-		 * The meta object literal for the '<em><b>Error List</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPREADSHEET_VALIDATOR__ERROR_LIST = eINSTANCE.getSpreadsheetValidator_ErrorList();
-
-		/**
-		 * The meta object literal for the '<em><b>Seh Tmp</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPREADSHEET_VALIDATOR__SEH_TMP = eINSTANCE.getSpreadsheetValidator_SehTmp();
-
-		/**
-		 * The meta object literal for the '<em><b>Base Fac</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPREADSHEET_VALIDATOR__BASE_FAC = eINSTANCE.getSpreadsheetValidator_BaseFac();
-
-		/**
-		 * The meta object literal for the '<em><b>Error Handler</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPREADSHEET_VALIDATOR__ERROR_HANDLER = eINSTANCE.getSpreadsheetValidator_ErrorHandler();
-
-		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl <em>Spreadsheet Parser</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.impl.SpreadsheetParserImpl
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSpreadsheetParser()
-		 * @generated
-		 */
-		EClass SPREADSHEET_PARSER = eINSTANCE.getSpreadsheetParser();
-
-		/**
-		 * The meta object literal for the '<em><b>Ref Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPREADSHEET_PARSER__REF_PATH = eINSTANCE.getSpreadsheetParser_RefPath();
-
-		/**
-		 * The meta object literal for the '<em><b>Ref Status</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPREADSHEET_PARSER__REF_STATUS = eINSTANCE.getSpreadsheetParser_RefStatus();
-
-		/**
-		 * The meta object literal for the '<em><b>Xml</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPREADSHEET_PARSER__XML = eINSTANCE.getSpreadsheetParser_Xml();
-
-		/**
-		 * The meta object literal for the '<em><b>Xsd File</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPREADSHEET_PARSER__XSD_FILE = eINSTANCE.getSpreadsheetParser_XsdFile();
-
-		/**
-		 * The meta object literal for the '<em><b>Newline</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPREADSHEET_PARSER__NEWLINE = eINSTANCE.getSpreadsheetParser_Newline();
-
-		/**
-		 * The meta object literal for the '<em><b>Pair Spread</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPREADSHEET_PARSER__PAIR_SPREAD = eINSTANCE.getSpreadsheetParser_PairSpread();
-
-		/**
-		 * The meta object literal for the '<em><b>Validate Spread</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPREADSHEET_PARSER__VALIDATE_SPREAD = eINSTANCE.getSpreadsheetParser_ValidateSpread();
-
-		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.UtilImpl <em>Util</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3507,14 +3068,6 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UTIL__NEWLINE = eINSTANCE.getUtil_Newline();
-
-		/**
-		 * The meta object literal for the '<em><b>Table</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UTIL__TABLE = eINSTANCE.getUtil_Table();
 
 		/**
 		 * The meta object literal for the '<em><b>Max Length</b></em>' attribute feature.
@@ -3541,114 +3094,14 @@ public interface BasePackage extends EPackage {
 		EAttribute UTIL__MONT_HALT = eINSTANCE.getUtil_MONTHalt();
 
 		/**
-		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
+		 * The meta object literal for the '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.xml.sax.ErrorHandler
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerAuxClass()
 		 * @generated
 		 */
-		EReference UTIL__TABLES = eINSTANCE.getUtil_Tables();
-
-		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.PairImpl <em>Pair</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.impl.PairImpl
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getPair()
-		 * @generated
-		 */
-		EClass PAIR = eINSTANCE.getPair();
-
-		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAIR__CONTENT = eINSTANCE.getPair_Content();
-
-		/**
-		 * The meta object literal for the '<em><b>New String</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAIR__NEW_STRING = eINSTANCE.getPair_NewString();
-
-		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.SimpleErrorHandlerImpl <em>Simple Error Handler</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.impl.SimpleErrorHandlerImpl
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSimpleErrorHandler()
-		 * @generated
-		 */
-		EClass SIMPLE_ERROR_HANDLER = eINSTANCE.getSimpleErrorHandler();
-
-		/**
-		 * The meta object literal for the '<em><b>Errors</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SIMPLE_ERROR_HANDLER__ERRORS = eINSTANCE.getSimpleErrorHandler_Errors();
-
-		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.impl.MainBaseImpl
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBase()
-		 * @generated
-		 */
-		EClass MAIN_BASE = eINSTANCE.getMainBase();
-
-		/**
-		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAIN_BASE__ROW = eINSTANCE.getMainBase_Row();
-
-		/**
-		 * The meta object literal for the '<em><b>Sheet</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAIN_BASE__SHEET = eINSTANCE.getMainBase_Sheet();
-
-		/**
-		 * The meta object literal for the '<em><b>Table</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAIN_BASE__TABLE = eINSTANCE.getMainBase_Table();
-
-		/**
-		 * The meta object literal for the '<em><b>Util</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAIN_BASE__UTIL = eINSTANCE.getMainBase_Util();
-
-		/**
-		 * The meta object literal for the '<em><b>Utilss</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAIN_BASE__UTILSS = eINSTANCE.getMainBase_Utilss();
-
-		/**
-		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAIN_BASE__TABLES = eINSTANCE.getMainBase_Tables();
+		EClass ERROR_HANDLER_AUX_CLASS = eINSTANCE.getErrorHandlerAuxClass();
 
 		/**
 		 * The meta object literal for the '<em>Simple Error Handler DT</em>' data type.
@@ -3659,6 +3112,16 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType SIMPLE_ERROR_HANDLER_DT = eINSTANCE.getSimpleErrorHandlerDT();
+
+		/**
+		 * The meta object literal for the '<em>Mand CAMBDT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.amb.MandC
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCAMBDT()
+		 * @generated
+		 */
+		EDataType MAND_CAMBDT = eINSTANCE.getMandCAMBDT();
 
 		/**
 		 * The meta object literal for the '<em>Mand CBase DT</em>' data type.
@@ -3681,6 +3144,26 @@ public interface BasePackage extends EPackage {
 		EDataType MAIN_BASE_DT = eINSTANCE.getMainBaseDT();
 
 		/**
+		 * The meta object literal for the '<em>Resource DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.emf.ecore.resource.Resource
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getResourceDT()
+		 * @generated
+		 */
+		EDataType RESOURCE_DT = eINSTANCE.getResourceDT();
+
+		/**
+		 * The meta object literal for the '<em>Iterator DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.Iterator
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getIteratorDT()
+		 * @generated
+		 */
+		EDataType ITERATOR_DT = eINSTANCE.getIteratorDT();
+
+		/**
 		 * The meta object literal for the '<em>Array List</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3699,6 +3182,16 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType HASHTABLE = eINSTANCE.getHashtable();
+
+		/**
+		 * The meta object literal for the '<em>Runtime Exception DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.RuntimeException
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getRuntimeExceptionDT()
+		 * @generated
+		 */
+		EDataType RUNTIME_EXCEPTION_DT = eINSTANCE.getRuntimeExceptionDT();
 
 		/**
 		 * The meta object literal for the '<em>Error Handler DT</em>' data type.
@@ -3746,6 +3239,16 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType ESTRING_ARRAY = eINSTANCE.getEStringArray();
+
+		/**
+		 * The meta object literal for the '<em>Mand CETHDT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.eth.MandC
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCETHDT()
+		 * @generated
+		 */
+		EDataType MAND_CETHDT = eINSTANCE.getMandCETHDT();
 
 	}
 

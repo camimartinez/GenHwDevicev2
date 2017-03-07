@@ -37,13 +37,12 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class MainImpl extends MainBaseImpl implements Main {
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainImpl() {
+	protected MainImpl() {
 		super();
 	}
 
@@ -60,28 +59,10 @@ public class MainImpl extends MainBaseImpl implements Main {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public MainImpl(String[] row){
-		super(row);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String Parent() {
 		return row[table.getColNum(sheet, "Parent")];
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String NodeAddress() {
-		return row[table.getColNum(sheet, "Node Address")];
 	}
 
 	/**
@@ -98,8 +79,26 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String NodeAddress() {
+		return row[table.getColNum(sheet, "Node Address")];
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String Channel() {
 		return row[table.getColNum(sheet, "Channel")];
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String BaseAddress() {
+		return row[table.getColNum(sheet, "Base Address")];
 	}
 
 	/**
@@ -116,8 +115,8 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String BaseAddress() {
-		return row[table.getColNum(sheet, "Base Address")];
+	public void setInitializeMainImpl(final String[] row) {
+		setInitializeMB(row);
 	}
 
 } //MainImpl

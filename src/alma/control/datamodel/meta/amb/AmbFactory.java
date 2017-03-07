@@ -24,11 +24,6 @@ package alma.control.datamodel.meta.amb;
 
 import org.eclipse.emf.ecore.EFactory;
 
-import alma.control.datamodel.meta.base.MandCBase;
-
-import org.eclipse.emf.ecore.resource.Resource;
-
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
@@ -46,32 +41,6 @@ public interface AmbFactory extends EFactory {
 	 */
 	AmbFactory eINSTANCE = alma.control.datamodel.meta.amb.impl.AmbFactoryImpl.init();
 
-	/**
-	 * Returns a new object of class '<em>Main AMB</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Main AMB</em>'.
-	 * @!generated
-	 */
-	Main createMain(String[] row);
-	
-	/**
-	 * Returns a new object of class '<em>Mand CAMB</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mand CAMB</em>'.
-	 * @!generated
-	 */
-	MandC createMandC(String[] row, int sheet, MandCBase mcp);
-	
-	/**
-	 * Returns a new object of class '<em>Monitor AMB</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Monitor AMB</em>'.
-	 * @!generated
-	 */
-	Monitor createMonitor(String[] row, Resource parent);
 	/**
 	 * Returns a new object of class '<em>Archive</em>'.
 	 * <!-- begin-user-doc -->
@@ -91,24 +60,6 @@ public interface AmbFactory extends EFactory {
 	Control createControl();
 
 	/**
-	 * Returns a new object of class '<em>Archive</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Archive</em>'.
-	 * @!generated
-	 */
-	Archive createArchive(String[] row);
-	
-	/**
-	 * Returns a new object of class '<em>Control</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Control</em>'.
-	 * @!generated
-	 */
-	Control createControl(String[] row, Resource parent);
-
-	/**
 	 * Returns a new object of class '<em>Device Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,6 +67,15 @@ public interface AmbFactory extends EFactory {
 	 * @generated
 	 */
 	DeviceModel createDeviceModel();
+
+	/**
+	 * Returns a new object of class '<em>Generic Monitor Points</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Generic Monitor Points</em>'.
+	 * @generated
+	 */
+	GenericMonitorPoints createGenericMonitorPoints();
 
 	/**
 	 * Returns a new object of class '<em>Main</em>'.
@@ -152,15 +112,6 @@ public interface AmbFactory extends EFactory {
 	 * @generated
 	 */
 	SWModule createSWModule();
-
-	/**
-	 * Returns a new object of class '<em>Generic Monitor Points</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Generic Monitor Points</em>'.
-	 * @generated
-	 */
-	GenericMonitorPoints createGenericMonitorPoints();
 
 	/**
 	 * Returns the package supported by this factory.

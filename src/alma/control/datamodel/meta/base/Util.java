@@ -34,11 +34,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.base.Util#getNewline <em>Newline</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.Util#getTable <em>Table</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Util#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Util#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Util#getMONTHalt <em>MONT Halt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.Util#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getUtil()
@@ -71,32 +69,6 @@ public interface Util extends EObject {
 	 * @generated
 	 */
 	void setNewline(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Table</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Table</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table</em>' attribute.
-	 * @see #setTable(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getUtil_Table()
-	 * @model dataType="alma.control.datamodel.meta.amb.TableDT"
-	 * @generated
-	 */
-	Table getTable();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.Util#getTable <em>Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' attribute.
-	 * @see #getTable()
-	 * @generated
-	 */
-	void setTable(Table value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Length</b></em>' attribute.
@@ -176,32 +148,6 @@ public interface Util extends EObject {
 	 * @generated
 	 */
 	void setMONTHalt(String[] value);
-
-	/**
-	 * Returns the value of the '<em><b>Tables</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tables</em>' reference.
-	 * @see #setTables(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getUtil_Tables()
-	 * @model
-	 * @generated
-	 */
-	Table getTables();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.Util#getTables <em>Tables</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tables</em>' reference.
-	 * @see #getTables()
-	 * @generated
-	 */
-	void setTables(Table value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -310,7 +256,7 @@ public interface Util extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (isArray(s)) {\n\t\t\tint b;\n\t\t\tint n = Integer.parseInt(NumberOfItems(s));\n\t\t\tif(s.startsWith(\"&amp;lt;\"))\n\t\t\t\treturn \"0\";\n\t\t\tif(s.startsWith(\"[\"))\n\t\t\t\treturn \"0\";\n\t\t\tint i = s.indexOf(\"[\");\n\t\t\tb = Integer.parseInt((String)table.getRawBytes().get(s.substring(0,1)));\n\n\t\t\tString x = Integer.toString(n * b);\n\t\t\treturn x;\n\t\t}\n\t\treturn (String)table.getRawBytes().get(s);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (isArray(s)) {\nint b;\nint n = Integer.parseInt(NumberOfItems(s));\nif(s.startsWith(\"&amp;lt;\"))\nreturn \"0\";\nif(s.startsWith(\"[\"))\nreturn \"0\";\nint i = s.indexOf(\"[\");\nb = Integer.parseInt((String)table.getRawBytes().get(s.substring(0,1)));\n\nString x = Integer.toString(n * b);\nreturn x;\n}\nreturn (String)table.getRawBytes().get(s);'"
 	 * @generated
 	 */
 	String RawDataTypeTotalBytes(String s);
@@ -338,6 +284,14 @@ public interface Util extends EObject {
 	 * @generated
 	 */
 	String toArrayTime(String s);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return parseDateString(s,false);'"
+	 * @generated
+	 */
+	String toDatabaseDate(String s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -379,13 +333,5 @@ public interface Util extends EObject {
 	 * @generated
 	 */
 	String getInstallDir();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return parseDateString(s,false);'"
-	 * @generated
-	 */
-	String toDatabaseDate(String s);
 
 } // Util
