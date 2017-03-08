@@ -191,7 +191,7 @@ public interface MonitorPoint extends MandCBase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.parent = parent;\ndependents = new ResourceSetImpl();\nsheet = (this instanceof MonitorPoint) ? Table.getSheetNum(\"Monitor Point\") : Table.getSheetNum(\"Control Point\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeMCB(row, parent);'"
 	 * @generated
 	 */
 	void setInitializeMP(String[] row, Resource parent);

@@ -22,12 +22,11 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Archive;
-
 import alma.control.datamodel.meta.base.impl.ArchivePropertyImpl;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,10 +61,10 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * @generated
 	 */
 	public String Assembly() {
-		return row[table.getColNum(sheet, "Assembly")];
+		return row[getTable().getColNum(sheet, "Assembly")];
 	}
 
-	/**
+		/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

@@ -27,6 +27,7 @@ import alma.control.datamodel.meta.base.BasePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,6 +124,15 @@ public interface AmbPackage extends EPackage {
 	int ARCHIVE__CP = BasePackage.ARCHIVE_PROPERTY__CP;
 
 	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE__TABLE = BasePackage.ARCHIVE_PROPERTY__TABLE;
+
+	/**
 	 * The number of structural features of the '<em>Archive</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -214,6 +224,33 @@ public interface AmbPackage extends EPackage {
 	int CONTROL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
 
 	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__TABLE = BasePackage.CONTROL_POINT__TABLE;
+
+	/**
+	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__UTIL = BasePackage.CONTROL_POINT__UTIL;
+
+	/**
+	 * The feature id for the '<em><b>Device</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__DEVICE = BasePackage.CONTROL_POINT__DEVICE;
+
+	/**
 	 * The feature id for the '<em><b>Mac</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,13 +297,13 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL__SPREADSHEET = BasePackage.DEVICE_MODEL__SPREADSHEET;
 
 	/**
-	 * The feature id for the '<em><b>Main</b></em>' attribute.
+	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
+	int DEVICE_MODEL__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' attribute.
@@ -276,15 +313,6 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_MODEL__NOTES = BasePackage.DEVICE_MODEL__NOTES;
-
-	/**
-	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
 
 	/**
 	 * The feature id for the '<em><b>Control Points</b></em>' attribute.
@@ -377,6 +405,15 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL__GENERATE_ALT = BasePackage.DEVICE_MODEL__GENERATE_ALT;
 
 	/**
+	 * The feature id for the '<em><b>Main</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
+
+	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -460,6 +497,24 @@ public interface AmbPackage extends EPackage {
 	int MAIN__SHEET = BasePackage.MAIN_BASE__SHEET;
 
 	/**
+	 * The feature id for the '<em><b>Table</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAIN__TABLE = BasePackage.MAIN_BASE__TABLE;
+
+	/**
+	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAIN__UTIL = BasePackage.MAIN_BASE__UTIL;
+
+	/**
 	 * The number of structural features of the '<em>Main</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -497,22 +552,22 @@ public interface AmbPackage extends EPackage {
 	int MAND_C__SHEET = 1;
 
 	/**
-	 * The feature id for the '<em><b>Mcp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_C__MCP = 2;
-
-	/**
 	 * The feature id for the '<em><b>Mask</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_C__MASK = 3;
+	int MAND_C__MASK = 2;
+
+	/**
+	 * The feature id for the '<em><b>Mcp</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_C__MCP = 3;
 
 	/**
 	 * The number of structural features of the '<em>Mand C</em>' class.
@@ -606,7 +661,34 @@ public interface AmbPackage extends EPackage {
 	int MONITOR__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
 
 	/**
-	 * The feature id for the '<em><b>Mac</b></em>' attribute.
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__TABLE = BasePackage.MONITOR_POINT__TABLE;
+
+	/**
+	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__UTIL = BasePackage.MONITOR_POINT__UTIL;
+
+	/**
+	 * The feature id for the '<em><b>Device</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__DEVICE = BasePackage.MONITOR_POINT__DEVICE;
+
+	/**
+	 * The feature id for the '<em><b>Mac</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -878,15 +960,15 @@ public interface AmbPackage extends EPackage {
 	EAttribute getMandC_Sheet();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mcp</em>'.
+	 * @return the meta object for the reference '<em>Mcp</em>'.
 	 * @see alma.control.datamodel.meta.amb.MandC#getMcp()
 	 * @see #getMandC()
 	 * @generated
 	 */
-	EAttribute getMandC_Mcp();
+	EReference getMandC_Mcp();
 
 	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.MandC#getMask <em>Mask</em>}'.
@@ -910,15 +992,15 @@ public interface AmbPackage extends EPackage {
 	EClass getMonitor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.Monitor#getMac <em>Mac</em>}'.
+	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.amb.Monitor#getMac <em>Mac</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mac</em>'.
+	 * @return the meta object for the containment reference '<em>Mac</em>'.
 	 * @see alma.control.datamodel.meta.amb.Monitor#getMac()
 	 * @see #getMonitor()
 	 * @generated
 	 */
-	EAttribute getMonitor_Mac();
+	EReference getMonitor_Mac();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.amb.SWModule <em>SW Module</em>}'.
@@ -1193,12 +1275,12 @@ public interface AmbPackage extends EPackage {
 		EAttribute MAND_C__SHEET = eINSTANCE.getMandC_Sheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Mcp</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Mcp</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAND_C__MCP = eINSTANCE.getMandC_Mcp();
+		EReference MAND_C__MCP = eINSTANCE.getMandC_Mcp();
 
 		/**
 		 * The meta object literal for the '<em><b>Mask</b></em>' attribute feature.
@@ -1219,12 +1301,12 @@ public interface AmbPackage extends EPackage {
 		EClass MONITOR = eINSTANCE.getMonitor();
 
 		/**
-		 * The meta object literal for the '<em><b>Mac</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Mac</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MONITOR__MAC = eINSTANCE.getMonitor_Mac();
+		EReference MONITOR__MAC = eINSTANCE.getMonitor_Mac();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.amb.impl.SWModuleImpl <em>SW Module</em>}' class.

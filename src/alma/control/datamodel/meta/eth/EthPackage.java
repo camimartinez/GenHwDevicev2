@@ -123,6 +123,15 @@ public interface EthPackage extends EPackage {
 	int ARCHIVE__CP = BasePackage.ARCHIVE_PROPERTY__CP;
 
 	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE__TABLE = BasePackage.ARCHIVE_PROPERTY__TABLE;
+
+	/**
 	 * The number of structural features of the '<em>Archive</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -214,6 +223,33 @@ public interface EthPackage extends EPackage {
 	int CONTROL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
 
 	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__TABLE = BasePackage.CONTROL_POINT__TABLE;
+
+	/**
+	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__UTIL = BasePackage.CONTROL_POINT__UTIL;
+
+	/**
+	 * The feature id for the '<em><b>Device</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__DEVICE = BasePackage.CONTROL_POINT__DEVICE;
+
+	/**
 	 * The feature id for the '<em><b>Mac</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,13 +296,13 @@ public interface EthPackage extends EPackage {
 	int DEVICE_MODEL__SPREADSHEET = BasePackage.DEVICE_MODEL__SPREADSHEET;
 
 	/**
-	 * The feature id for the '<em><b>Main</b></em>' attribute.
+	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
+	int DEVICE_MODEL__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' attribute.
@@ -276,15 +312,6 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_MODEL__NOTES = BasePackage.DEVICE_MODEL__NOTES;
-
-	/**
-	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
 
 	/**
 	 * The feature id for the '<em><b>Control Points</b></em>' attribute.
@@ -377,6 +404,15 @@ public interface EthPackage extends EPackage {
 	int DEVICE_MODEL__GENERATE_ALT = BasePackage.DEVICE_MODEL__GENERATE_ALT;
 
 	/**
+	 * The feature id for the '<em><b>Main</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
+
+	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -412,6 +448,24 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAIN__SHEET = BasePackage.MAIN_BASE__SHEET;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAIN__TABLE = BasePackage.MAIN_BASE__TABLE;
+
+	/**
+	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAIN__UTIL = BasePackage.MAIN_BASE__UTIL;
 
 	/**
 	 * The number of structural features of the '<em>Main</em>' class.
@@ -549,6 +603,33 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__TABLE = BasePackage.MONITOR_POINT__TABLE;
+
+	/**
+	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__UTIL = BasePackage.MONITOR_POINT__UTIL;
+
+	/**
+	 * The feature id for the '<em><b>Device</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__DEVICE = BasePackage.MONITOR_POINT__DEVICE;
 
 	/**
 	 * The feature id for the '<em><b>Mac</b></em>' attribute.

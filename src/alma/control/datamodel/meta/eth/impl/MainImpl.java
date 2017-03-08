@@ -22,12 +22,15 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.impl.MainBaseImpl;
 
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.Main;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,6 +58,23 @@ public class MainImpl extends MainBaseImpl implements Main {
 	protected EClass eStaticClass() {
 		return EthPackage.Literals.MAIN;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	private Object getObjectByInstanceClass(){
+		Object object = EcoreUtil.getObjectByType(eAdapters, BasePackage.Literals.TABLE);
+		if(object instanceof Table){
+			return object;
+		}else{
+			System.out.println("The is no Object for instance Table in: eth/MainImpl");
+			return "The is no Object for instance Table in: eth/MainImpl";
+		}
+	}
+
+	Table table = (Table)getObjectByInstanceClass();
 
 	/**
 	 * <!-- begin-user-doc -->

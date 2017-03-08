@@ -22,6 +22,7 @@
  */
 package alma.control.datamodel.meta.base;
 
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -38,9 +39,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getDescriptionIndex <em>Description Index</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getSpreadsheet <em>Spreadsheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getNotes <em>Notes</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMonitorPoints <em>Monitor Points</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getNotes <em>Notes</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getControlPoints <em>Control Points</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getArchiveProperties <em>Archive Properties</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getDeviceName <em>Device Name</em>}</li>
@@ -51,6 +51,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isGenerateAlt <em>Generate Alt</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel()
@@ -112,26 +113,26 @@ public interface DeviceModel extends EObject {
 	void setSpreadsheet(String[][][] value);
 
 	/**
-	 * Returns the value of the '<em><b>Main</b></em>' attribute.
+	 * Returns the value of the '<em><b>Main</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Main</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Main</em>' attribute.
+	 * @return the value of the '<em>Main</em>' containment reference.
 	 * @see #setMain(MainBase)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Main()
-	 * @model dataType="alma.control.datamodel.meta.base.MainBaseDT"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	MainBase getMain();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Main</em>' attribute.
+	 * @param value the new value of the '<em>Main</em>' containment reference.
 	 * @see #getMain()
 	 * @generated
 	 */
@@ -548,7 +549,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String dir = generatedDir + \"/\" + Assembly();\nutil.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"Base.cpp\", 1);\nutil.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"Base.h\", 1);\nutil.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Base.idl\", 1);\nutil.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\nutil.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".xml\", 1);\nutil.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \"Component.xml\", 1);\nutil.RemoveLinesFromFile(dir + \"/config/CDB/schemas\", Assembly() + \"Base.xsd\", 1);\nutil.RemoveLinesFromFile(dir + \"/config\", \"TMCDB\" + Assembly() + \"Add.xml\", 1);\nutil.RemoveLinesFromFile(dir + \"/src/CCL\", Assembly() + \"Base.py\", 1);\nutil.RemoveLinesFromFile(dir + \"/src/CCL\", \"__init__.py\", 1);\nSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\nreturn \"\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString dir = generatedDir + \"/\" + Assembly();\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/src\", Assembly() + \"Base.cpp\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/include\", Assembly() + \"Base.h\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Base.idl\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".xml\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/doc\", Assembly() + \"Component.xml\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/config/CDB/schemas\", Assembly() + \"Base.xsd\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/config\", \"TMCDB\" + Assembly() + \"Add.xml\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/src/CCL\", Assembly() + \"Base.py\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/src/CCL\", \"__init__.py\", 1);\n\t\tSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\n\t\treturn \"\";'"
 	 * @generated
 	 */
 	String TheEnd();
@@ -596,7 +597,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body=' // Get the Archive Properties\nint archiveIndex = table.getSheetNum(\"Archive Property\");\nfor(int i = 2; i &lt; spreadsheet[archiveIndex].length; i++){\n       if(spreadsheet[archiveIndex][i].length == 0)\n        break;\n        ArchivePropertyImpl ap;\n        String[] row = spreadsheet[archiveIndex][i];\n        ap = new ArchivePropertyImpl(row);\n        if(name.equals(ap.RefersTo()))\n             return ap;\n        }\nreturn null;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t // Get the Archive Properties\n\t\tint archiveIndex = table.getSheetNum(\"Archive Property\");\n\t\tfor(int i = 2; i &lt; spreadsheet[archiveIndex].length; i++){\n\t\t       if(spreadsheet[archiveIndex][i].length == 0)\n\t\t        break;\n\t\t        ArchivePropertyImpl ap;\n\t\t        String[] row = spreadsheet[archiveIndex][i];\n\t\t        ap = new ArchivePropertyImpl();\n\t\t        ap.setInitializeAP(row);\n\t\t        if(name.equals(ap.RefersTo()))\n\t\t             return ap.eResource();\n\t\t        }\n\t\treturn null;'"
 	 * @generated
 	 */
 	Resource getArchive(String name);

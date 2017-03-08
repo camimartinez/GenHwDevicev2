@@ -22,13 +22,16 @@
  */
 package alma.buildtime.gen;
 
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.jar.Manifest;
 
 import org.eclipse.emf.mwe.core.WorkflowEngine;
 import org.eclipse.emf.mwe.core.monitor.NullProgressMonitor;
+import org.eclipse.emf.mwe.internal.core.MWEPlugin;
 
-import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.BaseFactory;
 
 public class LinuxGen {
 
@@ -43,11 +46,32 @@ public class LinuxGen {
 		System.out.println("- ----- GenHwDevice Module: Starting code generation for device: " + arg[0]);
 		System.setProperty("DEVICE_NAME", arg[0]);
 		System.setProperty("DEVICE_TYPE", devType);
-		String wfFile = BasePackage.eINSTANCE.getBaseFactory().createUtil().getInstallDir() + "/config/workflow/generator.mwe";
+		String wfFile = BaseFactory.eINSTANCE.createUtil().getInstallDir() + "/config/workflow/generator.mwe";
 		Map properties = new HashMap();
 		Map slotContents = new HashMap ();
 		
 		System.out.println("- ----- GenHwDevice Module: Starting WorkflowEngine");
-		new WorkflowEngine().run(wfFile, new NullProgressMonitor(), properties, slotContents);
+		WorkflowEngine workflowEngine = new WorkflowEngine();
+		System.out.println("- ----- GenHwDevice Module: EMF Modeling Workflow Engine "+getVersion()+"");
+		System.out.println("- ----- GenHwDevice Module: (c) 2005-2009 openarchitectureware.org and contributors ");
+		System.out.println("- ----- GenHwDevice Module: running workflow: "+wfFile+"");
+		System.out.println("- ----------------------------------------------------------------------------- -");
+		workflowEngine.run(wfFile, new NullProgressMonitor(), properties, slotContents);
+	}
+	
+	private static String getVersion() {
+		try {
+			URL url = new URL(MWEPlugin.INSTANCE.getBaseURL() + "META-INF/MANIFEST.MF");
+			final Manifest manifest = new Manifest(url.openStream());
+			// Original value : "4.1.1.200609291913"
+			// Resulting value : "4.1.1, Build 200609291913"
+			String version = manifest.getMainAttributes().getValue("Bundle-Version");
+			final int lastPoint = version.lastIndexOf('.');
+			return version.substring(0, lastPoint) + ", Build " + version.substring(lastPoint + 1);
+		}
+		catch (Exception e) {
+			System.out.println("Couldn't compute version of mwe.core bundle."+e+"");
+			return "unkown version";
+		}
 	}
 }

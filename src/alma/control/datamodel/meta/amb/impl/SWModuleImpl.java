@@ -24,6 +24,9 @@ package alma.control.datamodel.meta.amb.impl;
 
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.SWModule;
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -35,6 +38,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -578,21 +582,21 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public void addMP(final Resource mp) {
-		monitorPoints.getResources().add(mp);
-		if (!(((MonitorImpl)mp).RCA().equals("none") ||
-				((MonitorImpl)mp).RCA().equals("0x00000") ||
-				((MonitorImpl)mp).RCA().equals("0x30000") ||
-				((MonitorImpl)mp).RCA().equals("0x30001") ||
-				((MonitorImpl)mp).RCA().equals("0x30002") ||
-				((MonitorImpl)mp).RCA().equals("0x30003") ||
-				((MonitorImpl)mp).RCA().equals("0x30004") ||
-				((MonitorImpl)mp).RCA().equals("0x30005")
-				)){
-			for(int i=0;i< simMonitorPoints.getResources().size();i++)
-				if(((MonitorImpl)mp).RCA().equals(((MonitorImpl)simMonitorPoints.getResources().get(i)).RCA()))
-					return;
-			simMonitorPoints.getResources().add(mp);
-		}
+				monitorPoints.getResources().add(mp);
+				if (!(((MonitorImpl)mp).RCA().equals("none") ||
+						((MonitorImpl)mp).RCA().equals("0x00000") ||
+						((MonitorImpl)mp).RCA().equals("0x30000") ||
+						((MonitorImpl)mp).RCA().equals("0x30001") ||
+						((MonitorImpl)mp).RCA().equals("0x30002") ||
+						((MonitorImpl)mp).RCA().equals("0x30003") ||
+						((MonitorImpl)mp).RCA().equals("0x30004") ||
+						((MonitorImpl)mp).RCA().equals("0x30005")
+						)){
+					for(int i=0;i< simMonitorPoints.getResources().size();i++)
+						if(((MonitorImpl)mp).RCA().equals(((MonitorImpl)simMonitorPoints.getResources().get(i)).RCA()))
+							return;
+					simMonitorPoints.getResources().add(mp);
+				}
 	}
 
 	/**
@@ -601,16 +605,16 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public void addCP(final Resource cp) {
-		controlPoints.getResources().add(cp);
-		if (!(((ControlImpl)cp).RCA().equals("none") ||
-				((ControlImpl)cp).RCA().equals("0x31000") ||
-				((ControlImpl)cp).RCA().equals("0x31001")
-				)){
-			for(int i=0;i< simControlPoints.getResources().size();i++)
-				if(((ControlImpl)cp).RCA().equals(((ControlImpl)simControlPoints.getResources().get(i)).RCA()))
-					return;
-			simControlPoints.getResources().add(cp);
-		}
+				controlPoints.getResources().add(cp);
+				if (!(((ControlImpl)cp).RCA().equals("none") ||
+						((ControlImpl)cp).RCA().equals("0x31000") ||
+						((ControlImpl)cp).RCA().equals("0x31001")
+						)){
+					for(int i=0;i< simControlPoints.getResources().size();i++)
+						if(((ControlImpl)cp).RCA().equals(((ControlImpl)simControlPoints.getResources().get(i)).RCA()))
+							return;
+					simControlPoints.getResources().add(cp);
+				}
 	}
 
 	/**
@@ -620,7 +624,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 */
 	public void addAP(final Resource ap) {
 		archiveProperties.getResources().add(ap);
-
+		
 	}
 
 	/**
@@ -632,6 +636,22 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 		return "";
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	private Object getObjectByInstanceClass(){
+		Object object = EcoreUtil.getObjectByType(eAdapters(), BasePackage.Literals.TABLE);
+		if(object instanceof Table){
+			return object;
+		}else{
+			return "The is no Object for instance Table in: amb/SwModuleImpl";
+		}
+	}
+	
+	Table table = (Table)getObjectByInstanceClass();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -650,6 +670,23 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 		return row[table.getColNum(sheet, "Description")];
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	private Object getObjectByInstanceClassUtil(){
+		Object object = EcoreUtil.getObjectByType(eAdapters(), BasePackage.Literals.UTIL);
+		if(object instanceof Util){
+			return object;
+		}else{
+			System.out.println("The is no Object for instance Util in: amb/SwModuleImpl");
+			return "The is no Object for instance Util in: amb/SwModuleImpl";
+		}
+	}
+
+	Util util = (Util)getObjectByInstanceClassUtil();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -728,13 +765,13 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String HexToDec(final String s) {
-		int n = -1;
-		try {
-			n = Integer.parseInt(s.substring(2),16);
-		} catch (NumberFormatException err) {
-			throw new RuntimeException("Invalid number (" + s + ")");
-		}
-		return Integer.toString(n);
+		        int n = -1;
+		        try {
+		            n = Integer.parseInt(s.substring(2),16);
+		        } catch (NumberFormatException err) {
+		            throw new RuntimeException("Invalid number (" + s + ")");
+		        }
+		        return Integer.toString(n);
 	}
 
 	/**
@@ -744,9 +781,9 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 */
 	public String NodeAddressInDecimal() {
 		String s = NodeAddress();
-		if (s.equals("parm"))
-			return "0";
-		return HexToDec(s);
+				if (s.equals("parm"))
+				    return "0";
+				return HexToDec(s);
 	}
 
 	/**
@@ -773,11 +810,11 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * @generated
 	 */
 	public String SimSerialNumber() {
-		String hex = Integer.toHexString(Assembly().hashCode()).toLowerCase();
-		hex = "0000000000000000" + hex;
-		int len = hex.length();
-		hex = "0x" + hex.substring(len - 16, len);
-		return hex;
+				String hex = Integer.toHexString(Assembly().hashCode()).toLowerCase();
+				hex = "0000000000000000" + hex;
+				int len = hex.length();
+				hex = "0x" + hex.substring(len - 16, len);
+				return hex;
 	}
 
 	/**
@@ -787,22 +824,22 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 */
 	public void setInitializeSW(final String[] row, final Resource parent) {
 		this.row = row;
-		this.sheet = Table.getSheetNum("Hardware Device");
+		this.sheet = table.getSheetNum("Hardware Device");
 		this.oneSwModule = oneSwModule;
-		int assemblyIndex = Table.getColNum(sheet, "Assembly");
+		int assemblyIndex = table.getColNum(sheet, "Assembly");
 		this.assemblyName = row[assemblyIndex];
 		this.mainAssembly = mainAssembly;
 		if(oneSwModule){
-			setDirPath(row[assemblyIndex]);
-		}
-		else{
-			setDirPath(mainAssembly + "/" + row[assemblyIndex]);
-		}
-		monitorPoints = new ResourceSetImpl();
-		controlPoints = new ResourceSetImpl();
-		archiveProperties = new ResourceSetImpl();
-		simMonitorPoints = new ResourceSetImpl();
-		simControlPoints = new ResourceSetImpl();
+					setDirPath(row[assemblyIndex]);
+				}
+				else{
+					setDirPath(mainAssembly + "/" + row[assemblyIndex]);
+				}
+				monitorPoints = new ResourceSetImpl();
+				controlPoints = new ResourceSetImpl();
+				archiveProperties = new ResourceSetImpl();
+				simMonitorPoints = new ResourceSetImpl();
+				simControlPoints = new ResourceSetImpl();
 	}
 
 	/**
@@ -813,30 +850,30 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
-			return getAssemblyName();
-		case AmbPackage.SW_MODULE__DIR_PATH:
-			return getDirPath();
-		case AmbPackage.SW_MODULE__MAIN_ASSEMBLY:
-			return getMainAssembly();
-		case AmbPackage.SW_MODULE__ONE_SW_MODULE:
-			return isOneSwModule();
-		case AmbPackage.SW_MODULE__ROW:
-			return getRow();
-		case AmbPackage.SW_MODULE__PARENT_ROW:
-			return getParentRow();
-		case AmbPackage.SW_MODULE__SHEET:
-			return getSheet();
-		case AmbPackage.SW_MODULE__MONITOR_POINTS:
-			return getMonitorPoints();
-		case AmbPackage.SW_MODULE__CONTROL_POINTS:
-			return getControlPoints();
-		case AmbPackage.SW_MODULE__ARCHIVE_PROPERTIES:
-			return getArchiveProperties();
-		case AmbPackage.SW_MODULE__SIM_MONITOR_POINTS:
-			return getSimMonitorPoints();
-		case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
-			return getSimControlPoints();
+			case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
+				return getAssemblyName();
+			case AmbPackage.SW_MODULE__DIR_PATH:
+				return getDirPath();
+			case AmbPackage.SW_MODULE__MAIN_ASSEMBLY:
+				return getMainAssembly();
+			case AmbPackage.SW_MODULE__ONE_SW_MODULE:
+				return isOneSwModule();
+			case AmbPackage.SW_MODULE__ROW:
+				return getRow();
+			case AmbPackage.SW_MODULE__PARENT_ROW:
+				return getParentRow();
+			case AmbPackage.SW_MODULE__SHEET:
+				return getSheet();
+			case AmbPackage.SW_MODULE__MONITOR_POINTS:
+				return getMonitorPoints();
+			case AmbPackage.SW_MODULE__CONTROL_POINTS:
+				return getControlPoints();
+			case AmbPackage.SW_MODULE__ARCHIVE_PROPERTIES:
+				return getArchiveProperties();
+			case AmbPackage.SW_MODULE__SIM_MONITOR_POINTS:
+				return getSimMonitorPoints();
+			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
+				return getSimControlPoints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -849,42 +886,42 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
-			setAssemblyName((String)newValue);
-			return;
-		case AmbPackage.SW_MODULE__DIR_PATH:
-			setDirPath((String)newValue);
-			return;
-		case AmbPackage.SW_MODULE__MAIN_ASSEMBLY:
-			setMainAssembly((String)newValue);
-			return;
-		case AmbPackage.SW_MODULE__ONE_SW_MODULE:
-			setOneSwModule((Boolean)newValue);
-			return;
-		case AmbPackage.SW_MODULE__ROW:
-			setRow((String[])newValue);
-			return;
-		case AmbPackage.SW_MODULE__PARENT_ROW:
-			setParentRow((String[])newValue);
-			return;
-		case AmbPackage.SW_MODULE__SHEET:
-			setSheet((Integer)newValue);
-			return;
-		case AmbPackage.SW_MODULE__MONITOR_POINTS:
-			setMonitorPoints((ResourceSet)newValue);
-			return;
-		case AmbPackage.SW_MODULE__CONTROL_POINTS:
-			setControlPoints((ResourceSet)newValue);
-			return;
-		case AmbPackage.SW_MODULE__ARCHIVE_PROPERTIES:
-			setArchiveProperties((ResourceSet)newValue);
-			return;
-		case AmbPackage.SW_MODULE__SIM_MONITOR_POINTS:
-			setSimMonitorPoints((ResourceSet)newValue);
-			return;
-		case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
-			setSimControlPoints((ResourceSet)newValue);
-			return;
+			case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
+				setAssemblyName((String)newValue);
+				return;
+			case AmbPackage.SW_MODULE__DIR_PATH:
+				setDirPath((String)newValue);
+				return;
+			case AmbPackage.SW_MODULE__MAIN_ASSEMBLY:
+				setMainAssembly((String)newValue);
+				return;
+			case AmbPackage.SW_MODULE__ONE_SW_MODULE:
+				setOneSwModule((Boolean)newValue);
+				return;
+			case AmbPackage.SW_MODULE__ROW:
+				setRow((String[])newValue);
+				return;
+			case AmbPackage.SW_MODULE__PARENT_ROW:
+				setParentRow((String[])newValue);
+				return;
+			case AmbPackage.SW_MODULE__SHEET:
+				setSheet((Integer)newValue);
+				return;
+			case AmbPackage.SW_MODULE__MONITOR_POINTS:
+				setMonitorPoints((ResourceSet)newValue);
+				return;
+			case AmbPackage.SW_MODULE__CONTROL_POINTS:
+				setControlPoints((ResourceSet)newValue);
+				return;
+			case AmbPackage.SW_MODULE__ARCHIVE_PROPERTIES:
+				setArchiveProperties((ResourceSet)newValue);
+				return;
+			case AmbPackage.SW_MODULE__SIM_MONITOR_POINTS:
+				setSimMonitorPoints((ResourceSet)newValue);
+				return;
+			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
+				setSimControlPoints((ResourceSet)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -897,42 +934,42 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
-			setAssemblyName(ASSEMBLY_NAME_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__DIR_PATH:
-			setDirPath(DIR_PATH_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__MAIN_ASSEMBLY:
-			setMainAssembly(MAIN_ASSEMBLY_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__ONE_SW_MODULE:
-			setOneSwModule(ONE_SW_MODULE_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__ROW:
-			setRow(ROW_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__PARENT_ROW:
-			setParentRow(PARENT_ROW_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__SHEET:
-			setSheet(SHEET_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__MONITOR_POINTS:
-			setMonitorPoints(MONITOR_POINTS_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__CONTROL_POINTS:
-			setControlPoints(CONTROL_POINTS_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__ARCHIVE_PROPERTIES:
-			setArchiveProperties(ARCHIVE_PROPERTIES_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__SIM_MONITOR_POINTS:
-			setSimMonitorPoints(SIM_MONITOR_POINTS_EDEFAULT);
-			return;
-		case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
-			setSimControlPoints(SIM_CONTROL_POINTS_EDEFAULT);
-			return;
+			case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
+				setAssemblyName(ASSEMBLY_NAME_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__DIR_PATH:
+				setDirPath(DIR_PATH_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__MAIN_ASSEMBLY:
+				setMainAssembly(MAIN_ASSEMBLY_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__ONE_SW_MODULE:
+				setOneSwModule(ONE_SW_MODULE_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__ROW:
+				setRow(ROW_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__PARENT_ROW:
+				setParentRow(PARENT_ROW_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__SHEET:
+				setSheet(SHEET_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__MONITOR_POINTS:
+				setMonitorPoints(MONITOR_POINTS_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__CONTROL_POINTS:
+				setControlPoints(CONTROL_POINTS_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__ARCHIVE_PROPERTIES:
+				setArchiveProperties(ARCHIVE_PROPERTIES_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__SIM_MONITOR_POINTS:
+				setSimMonitorPoints(SIM_MONITOR_POINTS_EDEFAULT);
+				return;
+			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
+				setSimControlPoints(SIM_CONTROL_POINTS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -945,30 +982,30 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
-			return ASSEMBLY_NAME_EDEFAULT == null ? assemblyName != null : !ASSEMBLY_NAME_EDEFAULT.equals(assemblyName);
-		case AmbPackage.SW_MODULE__DIR_PATH:
-			return DIR_PATH_EDEFAULT == null ? dirPath != null : !DIR_PATH_EDEFAULT.equals(dirPath);
-		case AmbPackage.SW_MODULE__MAIN_ASSEMBLY:
-			return MAIN_ASSEMBLY_EDEFAULT == null ? mainAssembly != null : !MAIN_ASSEMBLY_EDEFAULT.equals(mainAssembly);
-		case AmbPackage.SW_MODULE__ONE_SW_MODULE:
-			return oneSwModule != ONE_SW_MODULE_EDEFAULT;
-		case AmbPackage.SW_MODULE__ROW:
-			return ROW_EDEFAULT == null ? row != null : !ROW_EDEFAULT.equals(row);
-		case AmbPackage.SW_MODULE__PARENT_ROW:
-			return PARENT_ROW_EDEFAULT == null ? parentRow != null : !PARENT_ROW_EDEFAULT.equals(parentRow);
-		case AmbPackage.SW_MODULE__SHEET:
-			return sheet != SHEET_EDEFAULT;
-		case AmbPackage.SW_MODULE__MONITOR_POINTS:
-			return MONITOR_POINTS_EDEFAULT == null ? monitorPoints != null : !MONITOR_POINTS_EDEFAULT.equals(monitorPoints);
-		case AmbPackage.SW_MODULE__CONTROL_POINTS:
-			return CONTROL_POINTS_EDEFAULT == null ? controlPoints != null : !CONTROL_POINTS_EDEFAULT.equals(controlPoints);
-		case AmbPackage.SW_MODULE__ARCHIVE_PROPERTIES:
-			return ARCHIVE_PROPERTIES_EDEFAULT == null ? archiveProperties != null : !ARCHIVE_PROPERTIES_EDEFAULT.equals(archiveProperties);
-		case AmbPackage.SW_MODULE__SIM_MONITOR_POINTS:
-			return SIM_MONITOR_POINTS_EDEFAULT == null ? simMonitorPoints != null : !SIM_MONITOR_POINTS_EDEFAULT.equals(simMonitorPoints);
-		case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
-			return SIM_CONTROL_POINTS_EDEFAULT == null ? simControlPoints != null : !SIM_CONTROL_POINTS_EDEFAULT.equals(simControlPoints);
+			case AmbPackage.SW_MODULE__ASSEMBLY_NAME:
+				return ASSEMBLY_NAME_EDEFAULT == null ? assemblyName != null : !ASSEMBLY_NAME_EDEFAULT.equals(assemblyName);
+			case AmbPackage.SW_MODULE__DIR_PATH:
+				return DIR_PATH_EDEFAULT == null ? dirPath != null : !DIR_PATH_EDEFAULT.equals(dirPath);
+			case AmbPackage.SW_MODULE__MAIN_ASSEMBLY:
+				return MAIN_ASSEMBLY_EDEFAULT == null ? mainAssembly != null : !MAIN_ASSEMBLY_EDEFAULT.equals(mainAssembly);
+			case AmbPackage.SW_MODULE__ONE_SW_MODULE:
+				return oneSwModule != ONE_SW_MODULE_EDEFAULT;
+			case AmbPackage.SW_MODULE__ROW:
+				return ROW_EDEFAULT == null ? row != null : !ROW_EDEFAULT.equals(row);
+			case AmbPackage.SW_MODULE__PARENT_ROW:
+				return PARENT_ROW_EDEFAULT == null ? parentRow != null : !PARENT_ROW_EDEFAULT.equals(parentRow);
+			case AmbPackage.SW_MODULE__SHEET:
+				return sheet != SHEET_EDEFAULT;
+			case AmbPackage.SW_MODULE__MONITOR_POINTS:
+				return MONITOR_POINTS_EDEFAULT == null ? monitorPoints != null : !MONITOR_POINTS_EDEFAULT.equals(monitorPoints);
+			case AmbPackage.SW_MODULE__CONTROL_POINTS:
+				return CONTROL_POINTS_EDEFAULT == null ? controlPoints != null : !CONTROL_POINTS_EDEFAULT.equals(controlPoints);
+			case AmbPackage.SW_MODULE__ARCHIVE_PROPERTIES:
+				return ARCHIVE_PROPERTIES_EDEFAULT == null ? archiveProperties != null : !ARCHIVE_PROPERTIES_EDEFAULT.equals(archiveProperties);
+			case AmbPackage.SW_MODULE__SIM_MONITOR_POINTS:
+				return SIM_MONITOR_POINTS_EDEFAULT == null ? simMonitorPoints != null : !SIM_MONITOR_POINTS_EDEFAULT.equals(simMonitorPoints);
+			case AmbPackage.SW_MODULE__SIM_CONTROL_POINTS:
+				return SIM_CONTROL_POINTS_EDEFAULT == null ? simControlPoints != null : !SIM_CONTROL_POINTS_EDEFAULT.equals(simControlPoints);
 		}
 		return super.eIsSet(featureID);
 	}

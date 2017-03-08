@@ -22,15 +22,24 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
+import alma.control.datamodel.meta.amb.AmbPackage;
+import alma.control.datamodel.meta.amb.MandC;
+import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.MainBase;
+import alma.control.datamodel.meta.base.MandCBase;
+import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,6 +53,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMONTHalt <em>MONT Halt</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMandc <em>Mandc</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,7 +107,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @!generated
 	 * @ordered
 	 */
-	
+
 	protected static final String[] MONTH_EDEFAULT = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
 
 	/**
@@ -129,6 +139,16 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @ordered
 	 */
 	protected String[] montHalt = MONT_HALT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMandc() <em>Mandc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMandc()
+	 * @generated
+	 * @ordered
+	 */
+	protected MainBase mandc;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,6 +251,66 @@ public class UtilImpl extends EObjectImpl implements Util {
 		montHalt = newMONTHalt;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__MONT_HALT, oldMONTHalt, montHalt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MainBase getMandc() {
+		if (mandc != null && mandc.eIsProxy()) {
+			InternalEObject oldMandc = (InternalEObject)mandc;
+			mandc = (MainBase)eResolveProxy(oldMandc);
+			if (mandc != oldMandc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__MANDC, oldMandc, mandc));
+			}
+		}
+		return mandc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MainBase basicGetMandc() {
+		return mandc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMandc(MainBase newMandc, NotificationChain msgs) {
+		MainBase oldMandc = mandc;
+		mandc = newMandc;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__MANDC, oldMandc, newMandc);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMandc(MainBase newMandc) {
+		if (newMandc != mandc) {
+			NotificationChain msgs = null;
+			if (mandc != null)
+				msgs = ((InternalEObject)mandc).eInverseRemove(this, BasePackage.MAIN_BASE__UTIL, MainBase.class, msgs);
+			if (newMandc != null)
+				msgs = ((InternalEObject)newMandc).eInverseAdd(this, BasePackage.MAIN_BASE__UTIL, MainBase.class, msgs);
+			msgs = basicSetMandc(newMandc, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__MANDC, newMandc, newMandc));
 	}
 
 	/**
@@ -505,8 +585,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	public String NumberRawDataTypeBytes(final String s) {
-		return (String)TableImpl.RAW_BYTES_EDEFAULT.get(s);
-		
+		return (String)mandc.getTable().getRawBytes().get(s);
 	}
 
 	/**
@@ -515,20 +594,20 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	public String RawDataTypeTotalBytes(final String s) {
-		if (isArray(s)) {
-		int b;
-		int n = Integer.parseInt(NumberOfItems(s));
-		if(s.startsWith("&lt;"))
-		return "0";
-		if(s.startsWith("["))
-		return "0";
-		int i = s.indexOf("[");
-		b = Integer.parseInt((String)table.getRawBytes().get(s.substring(0,1)));
-		
-		String x = Integer.toString(n * b);
-		return x;
-		}
-		return (String)table.getRawBytes().get(s);
+				if (isArray(s)) {
+				int b;
+				int n = Integer.parseInt(NumberOfItems(s));
+				if(s.startsWith("&lt;"))
+				return "0";
+				if(s.startsWith("["))
+				return "0";
+				int i = s.indexOf("[");
+				b = Integer.parseInt((String)mandc.getTable().getRawBytes().get(s.substring(0,1)));
+				
+				String x = Integer.toString(n * b);
+				return x;
+				}
+				return (String)mandc.getTable().getRawBytes().get(s);
 	}
 
 	/**
@@ -731,6 +810,36 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BasePackage.UTIL__MANDC:
+				if (mandc != null)
+					msgs = ((InternalEObject)mandc).eInverseRemove(this, BasePackage.MAIN_BASE__UTIL, MainBase.class, msgs);
+				return basicSetMandc((MainBase)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BasePackage.UTIL__MANDC:
+				return basicSetMandc(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
@@ -741,6 +850,9 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return getMONTH();
 			case BasePackage.UTIL__MONT_HALT:
 				return getMONTHalt();
+			case BasePackage.UTIL__MANDC:
+				if (resolve) return getMandc();
+				return basicGetMandc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -764,6 +876,9 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return;
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt((String[])newValue);
+				return;
+			case BasePackage.UTIL__MANDC:
+				setMandc((MainBase)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -789,6 +904,9 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt(MONT_HALT_EDEFAULT);
 				return;
+			case BasePackage.UTIL__MANDC:
+				setMandc((MainBase)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -809,6 +927,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return MONTH_EDEFAULT == null ? month != null : !MONTH_EDEFAULT.equals(month);
 			case BasePackage.UTIL__MONT_HALT:
 				return MONT_HALT_EDEFAULT == null ? montHalt != null : !MONT_HALT_EDEFAULT.equals(montHalt);
+			case BasePackage.UTIL__MANDC:
+				return mandc != null;
 		}
 		return super.eIsSet(featureID);
 	}

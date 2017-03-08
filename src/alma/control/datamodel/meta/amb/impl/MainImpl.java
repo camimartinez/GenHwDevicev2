@@ -22,12 +22,11 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Main;
-
 import alma.control.datamodel.meta.base.impl.MainBaseImpl;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,14 +54,14 @@ public class MainImpl extends MainBaseImpl implements Main {
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.MAIN;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String Parent() {
-		return row[table.getColNum(sheet, "Parent")];
+		return row[getTable().getColNum(sheet, "Parent")];
 	}
 
 	/**
@@ -71,7 +70,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public String Cardinality() {
-		return row[table.getColNum(sheet, "Cardinality")];
+		return row[getTable().getColNum(sheet, "Cardinality")];
 	}
 
 	/**
@@ -80,7 +79,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public String NodeAddress() {
-		return row[table.getColNum(sheet, "Node Address")];
+		return row[getTable().getColNum(sheet, "Node Address")];
 	}
 
 	/**
@@ -89,7 +88,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public String Channel() {
-		return row[table.getColNum(sheet, "Channel")];
+		return row[getTable().getColNum(sheet, "Channel")];
 	}
 
 	/**
@@ -98,7 +97,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public String BaseAddress() {
-		return row[table.getColNum(sheet, "Base Address")];
+		return row[getTable().getColNum(sheet, "Base Address")];
 	}
 
 	/**
@@ -107,7 +106,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public boolean GenericMonitorPoints() {
-		return row[table.getColNum(sheet, "Generic Monitor Points")].equals("yes");
+		return row[getTable().getColNum(sheet, "Generic Monitor Points")].equals("yes");
 	}
 
 	/**

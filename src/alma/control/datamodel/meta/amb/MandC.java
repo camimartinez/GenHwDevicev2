@@ -24,6 +24,7 @@ package alma.control.datamodel.meta.amb;
 
 import alma.control.datamodel.meta.base.MandCBase;
 
+import alma.control.datamodel.meta.base.Util;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -37,8 +38,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.MandC#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.MandC#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMask <em>Mask</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC()
@@ -99,26 +100,26 @@ public interface MandC extends EObject {
 	void setSheet(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Mcp</b></em>' attribute.
+	 * Returns the value of the '<em><b>Mcp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mcp</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mcp</em>' attribute.
+	 * @return the value of the '<em>Mcp</em>' reference.
 	 * @see #setMcp(MandCBase)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Mcp()
-	 * @model dataType="alma.control.datamodel.meta.base.MandCBaseDT"
+	 * @model required="true"
 	 * @generated
 	 */
 	MandCBase getMcp();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mcp</em>' attribute.
+	 * @param value the new value of the '<em>Mcp</em>' reference.
 	 * @see #getMcp()
 	 * @generated
 	 */
@@ -144,7 +145,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Assembly\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[mcp.getTable().getColNum(sheet, \"Assembly\")];'"
 	 * @generated
 	 */
 	String Assembly();
@@ -152,7 +153,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"RCA\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[mcp.getTable().getColNum(sheet, \"RCA\")];'"
 	 * @generated
 	 */
 	String RCA();
@@ -160,7 +161,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"RCA\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[mcp.getTable().getColNum(sheet, \"RCA\")];'"
 	 * @generated
 	 */
 	String RCACell();
@@ -168,7 +169,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"Raw Data Type\")];\nif(!mcp.isDependent())\nreturn isRawDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;\nif(mcp instanceof Monitor)\nreturn ((Monitor) mcp.getParent()).RawDataType();\nif(mcp instanceof Control)\nreturn ((Control) mcp.getParent()).RawDataType();\nreturn \"ERROR\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = row[mcp.getTable().getColNum(sheet, \"Raw Data Type\")];\n\t\tif(!mcp.isDependent())\n\t\treturn isRawDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;\n\t\tif(mcp instanceof Monitor)\n\t\treturn ((Monitor) mcp.getParent()).RawDataType();\n\t\tif(mcp instanceof Control)\n\t\treturn ((Control) mcp.getParent()).RawDataType();\n\t\treturn \"ERROR\";'"
 	 * @generated
 	 */
 	String RawDataType();
@@ -176,7 +177,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Raw Data Type\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[mcp.getTable().getColNum(sheet, \"Raw Data Type\")];'"
 	 * @generated
 	 */
 	String RawDataTypeCell();
@@ -192,7 +193,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"TE Related\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[mcp.getTable().getColNum(sheet, \"TE Related\")];'"
 	 * @generated
 	 */
 	String TeRelatedCell();
@@ -200,7 +201,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"World Data Type\")];\nreturn isWorldDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[mcp.getTable().getColNum(sheet, \"World Data Type\")];\nreturn isWorldDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;'"
 	 * @generated
 	 */
 	String WorldDataType();
@@ -208,7 +209,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"World Data Type\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[mcp.getTable().getColNum(sheet, \"World Data Type\")];'"
 	 * @generated
 	 */
 	String WorldDataTypeCell();
@@ -216,7 +217,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = ScaleCell();\nif((s.equals(\"none\") == true) || (s.equals(\"extended\") == true) || (s.equals(table.getCelsiusToKelvin()) == true))\ns = \"1.0\";\nreturn s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = ScaleCell();\n\t\tif((s.equals(\"none\") == true) || (s.equals(\"extended\") == true) || (s.equals(mcp.getTable().getCelsiusToKelvin()) == true))\n\t\ts = \"1.0\";\n\t\treturn s;'"
 	 * @generated
 	 */
 	String Scale();
@@ -224,7 +225,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.normalizeNumber(WorldDataType(), row[table.getColNum(sheet, \"Scale\")]);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\treturn mcp.getUtil().normalizeNumber(WorldDataType(), row[mcp.getTable().getColNum(sheet, \"Scale\")]);\n'"
 	 * @generated
 	 */
 	String ScaleCell();
@@ -232,7 +233,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = ScaleCell();\n\tif(s.equals(table.getCelsiusToKelvin()))\n\treturn \"273.15\";\nString o = OffsetCell();\n\tif((o.equals(\"0\") == true) || (o.equals(\"none\") == true)\t|| (o.equals(\"extended\") == true))\n\to = \"0.0\";\n\treturn o;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = ScaleCell();\n\t\t\tif(s.equals(mcp.getTable().getCelsiusToKelvin()))\n\t\t\treturn \"273.15\";\n\t\tString o = OffsetCell();\n\t\t\tif((o.equals(\"0\") == true) || (o.equals(\"none\") == true)\t|| (o.equals(\"extended\") == true))\n\t\t\to = \"0.0\";\n\t\t\treturn o;'"
 	 * @generated
 	 */
 	String Offset();
@@ -240,7 +241,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.normalizeNumber(WorldDataType(), row[table.getColNum(sheet, \"Offset\")]);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mcp.getUtil().normalizeNumber(WorldDataType(), row[mcp.getTable().getColNum(sheet, \"Offset\")]);\n'"
 	 * @generated
 	 */
 	String OffsetCell();
@@ -248,7 +249,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getRawToCPP().get(RawDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getRawToCPP().get(RawDataType());'"
 	 * @generated
 	 */
 	String RawDataToCPPType();
@@ -256,7 +257,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getWorldToCPP().get(WorldDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getWorldToCPP().get(WorldDataType());'"
 	 * @generated
 	 */
 	String WorldDataToCPPType();
@@ -264,7 +265,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getWorldToCORBA().get(WorldDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getWorldToCORBA().get(WorldDataType());'"
 	 * @generated
 	 */
 	String WorldDataToCORBAType();
@@ -272,7 +273,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getWorldToIDLSeq().get(WorldDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getWorldToIDLSeq().get(WorldDataType());'"
 	 * @generated
 	 */
 	String WorldDataToIDLSeqType();
@@ -280,7 +281,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getWorldToIDL().get(WorldDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getWorldToIDL().get(WorldDataType());'"
 	 * @generated
 	 */
 	String WorldDataToIDLType();
@@ -288,7 +289,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getWorldToCORBASeq().get(WorldDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getWorldToCORBASeq().get(WorldDataType());'"
 	 * @generated
 	 */
 	String WorldDataToCORBASeqType();
@@ -296,7 +297,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getWorldToCORBADevIO().get(WorldDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getWorldToCORBADevIO().get(WorldDataType());'"
 	 * @generated
 	 */
 	String WorldDataToCORBADevIOType();
@@ -304,7 +305,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getWorldToJava().get(WorldDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getWorldToJava().get(WorldDataType());'"
 	 * @generated
 	 */
 	String WorldDataToJavaType();
@@ -312,7 +313,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getWorldToDatabase().get(WorldDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getWorldToDatabase().get(WorldDataType());'"
 	 * @generated
 	 */
 	String WorldDataToDatabaseType();
@@ -320,7 +321,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getWorldToBACI().get(WorldDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mcp.getTable().getWorldToBACI().get(WorldDataType());'"
 	 * @generated
 	 */
 	String WorldDataToBACIType();
@@ -347,7 +348,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"World Data Type\")];\nreturn s.endsWith(\"]\") ? true : false;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[mcp.getTable().getColNum(sheet, \"World Data Type\")];\nreturn s.endsWith(\"]\") ? true : false;'"
 	 * @generated
 	 */
 	boolean isWorldDataArray();
@@ -356,7 +357,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"Raw Data Type\")];\n\tif(!mcp.isDependent())\n\treturn s.endsWith(\"]\") ? true : false;\n\tif(s.startsWith(\"&amp;lt;\") &amp;&amp; s.substring(1).indexOf(\"&amp;lt;\") != -1)\n\treturn true;\nreturn false;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[mcp.getTable().getColNum(sheet, \"Raw Data Type\")];\n\t\t\tif(!mcp.isDependent())\n\t\t\treturn s.endsWith(\"]\") ? true : false;\n\t\t\tif(s.startsWith(\"&amp;lt;\") &amp;&amp; s.substring(1).indexOf(\"&amp;lt;\") != -1)\n\t\t\treturn true;\n\t\treturn false;'"
 	 * @generated
 	 */
 	boolean isRawDataArray();
@@ -364,7 +365,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"Raw Data Type\")];\nreturn util.NumberOfItems(s);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[mcp.getTable().getColNum(sheet, \"Raw Data Type\")];\nreturn mcp.getUtil().NumberOfItems(s);'"
 	 * @generated
 	 */
 	String NumberItemsRawData();
@@ -372,7 +373,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"Raw Data Type\")];\nreturn util.RawDataTypeTotalBytes(s);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[mcp.getTable().getColNum(sheet, \"Raw Data Type\")];\nreturn mcp.getUtil().RawDataTypeTotalBytes(s);'"
 	 * @generated
 	 */
 	String TotalBytesRawData();
@@ -380,7 +381,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.NumberRawDataTypeBytes(RawDataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mcp.getUtil().NumberRawDataTypeBytes(RawDataType());'"
 	 * @generated
 	 */
 	String NumberRawDataTypeBytes();
@@ -388,7 +389,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"World Data Type\")];\nreturn util.NumberOfItems(s);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[mcp.getTable().getColNum(sheet, \"World Data Type\")];\nreturn mcp.getUtil().NumberOfItems(s);'"
 	 * @generated
 	 */
 	String NumberItemsWorldData();
@@ -424,7 +425,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((String)table.getRawToByteSwapped().get(RawDataType())).equals(true);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((String)mcp.getTable().getRawToByteSwapped().get(RawDataType())).equals(true);'"
 	 * @generated
 	 */
 	boolean isByteSwapped();

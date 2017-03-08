@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getCp <em>Cp</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.ArchiveProperty#getTable <em>Table</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty()
@@ -151,6 +152,32 @@ public interface ArchiveProperty extends EObject {
 	void setCp(Resource value);
 
 	/**
+	 * Returns the value of the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Table</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Table</em>' reference.
+	 * @see #setTable(Table)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getArchiveProperty_Table()
+	 * @model required="true"
+	 * @generated
+	 */
+	Table getTable();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.ArchiveProperty#getTable <em>Table</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Table</em>' reference.
+	 * @see #getTable()
+	 * @generated
+	 */
+	void setTable(Table value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
@@ -189,7 +216,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Name\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Name\")];'"
 	 * @generated
 	 */
 	String Name();
@@ -197,7 +224,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String name = Name();\n\tif (name.startsWith(table.getDepChar()))\n\tname = name.substring(1);\nreturn name;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString name = Name();\n\t\t\tif (name.startsWith(getTable().getDepChar()))\n\t\t\tname = name.substring(1);\n\t\treturn name;'"
 	 * @generated
 	 */
 	String APName();
@@ -205,7 +232,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet,  \"Refers To\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet,  \"Refers To\")];'"
 	 * @generated
 	 */
 	String RefersTo();
@@ -213,7 +240,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet,  \"Interval (secs)\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet,  \"Interval (secs)\")];'"
 	 * @generated
 	 */
 	String IntervalFull();
@@ -221,7 +248,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Interval (secs)\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Interval (secs)\")];'"
 	 * @generated
 	 */
 	String Interval();
@@ -229,7 +256,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Only On Change\")].equals(\"yes\");'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Only On Change\")].equals(\"yes\");'"
 	 * @generated
 	 */
 	boolean OnlyOnChange();
@@ -237,7 +264,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Display Units\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Display Units\")];'"
 	 * @generated
 	 */
 	String DisplayUnits();
@@ -245,7 +272,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Graph Min\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Graph Min\")];'"
 	 * @generated
 	 */
 	String GraphMin();
@@ -253,7 +280,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Graph Max\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Graph Max\")];'"
 	 * @generated
 	 */
 	String GraphMax();
@@ -261,7 +288,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Format\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Format\")];'"
 	 * @generated
 	 */
 	String Format();
@@ -269,7 +296,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"On Startup\")].equals(\"yes\");'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"On Startup\")].equals(\"yes\");'"
 	 * @generated
 	 */
 	boolean OnStartup();
@@ -277,7 +304,7 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Title\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Title\")];'"
 	 * @generated
 	 */
 	String Title();
@@ -286,7 +313,7 @@ public interface ArchiveProperty extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = table.getSheetNum(\"Archive Property\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = getTable().getSheetNum(\"Archive Property\");'"
 	 * @generated
 	 */
 	void setInitializeAP(String[] row);

@@ -22,6 +22,8 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
 
@@ -31,6 +33,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -208,6 +211,23 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		return assembly;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	private Object getObjectByInstanceClass(){
+		Object object = EcoreUtil.getObjectByType(eAdapters, BasePackage.Literals.TABLE);
+		if(object instanceof Table){
+			return object;
+		}else{
+			System.out.println("The is no Object for instance Table in: eth/MandCImpl");
+			return "The is no Object for instance Table in: eth/MandCImpl";
+		}
+	}
+
+	Table table = (Table)getObjectByInstanceClass();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -22,18 +22,33 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
+import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.DeviceModel;
+import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.Table;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Hashtable;
+import java.util.Iterator;
 
+import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,6 +83,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getWorldToBACI <em>World To BACI</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getWorldToJava <em>World To Java</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getWorldToDatabase <em>World To Database</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getMain <em>Main</em>}</li>
  * </ul>
  *
  * @generated
@@ -1116,6 +1132,57 @@ public class TableImpl extends EObjectImpl implements Table {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.TABLE__WORLD_TO_DATABASE, oldWorldToDatabase, worldToDatabase));
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MainBase getMain() {
+		if (eContainerFeatureID() != BasePackage.TABLE__MAIN) return null;
+		return (MainBase)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MainBase basicGetMain() {
+		if (eContainerFeatureID() != BasePackage.TABLE__MAIN) return null;
+		return (MainBase)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMain(MainBase newMain, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newMain, BasePackage.TABLE__MAIN, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMain(MainBase newMain) {
+		if (newMain != eInternalContainer() || (eContainerFeatureID() != BasePackage.TABLE__MAIN && newMain != null)) {
+			if (EcoreUtil.isAncestor(this, newMain))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newMain != null)
+				msgs = ((InternalEObject)newMain).eInverseAdd(this, BasePackage.MAIN_BASE__TABLE, MainBase.class, msgs);
+			msgs = basicSetMain(newMain, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.TABLE__MAIN, newMain, newMain));
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1471,6 +1538,50 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BasePackage.TABLE__MAIN:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetMain((MainBase)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BasePackage.TABLE__MAIN:
+				return basicSetMain(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case BasePackage.TABLE__MAIN:
+				return eInternalContainer().eInverseRemove(this, BasePackage.MAIN_BASE__TABLE, MainBase.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.TABLE__DEP_CHAR:
@@ -1523,6 +1634,9 @@ public class TableImpl extends EObjectImpl implements Table {
 				return getWorldToJava();
 			case BasePackage.TABLE__WORLD_TO_DATABASE:
 				return getWorldToDatabase();
+			case BasePackage.TABLE__MAIN:
+				if (resolve) return getMain();
+				return basicGetMain();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1532,6 +1646,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -1609,6 +1724,9 @@ public class TableImpl extends EObjectImpl implements Table {
 				return;
 			case BasePackage.TABLE__WORLD_TO_DATABASE:
 				setWorldToDatabase((Hashtable)newValue);
+				return;
+			case BasePackage.TABLE__MAIN:
+				setMain((MainBase)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1697,6 +1815,9 @@ public class TableImpl extends EObjectImpl implements Table {
 			case BasePackage.TABLE__WORLD_TO_DATABASE:
 				setWorldToDatabase(WORLD_TO_DATABASE_EDEFAULT);
 				return;
+			case BasePackage.TABLE__MAIN:
+				setMain((MainBase)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1759,6 +1880,8 @@ public class TableImpl extends EObjectImpl implements Table {
 				return WORLD_TO_JAVA_EDEFAULT == null ? worldToJava != null : !WORLD_TO_JAVA_EDEFAULT.equals(worldToJava);
 			case BasePackage.TABLE__WORLD_TO_DATABASE:
 				return WORLD_TO_DATABASE_EDEFAULT == null ? worldToDatabase != null : !WORLD_TO_DATABASE_EDEFAULT.equals(worldToDatabase);
+			case BasePackage.TABLE__MAIN:
+				return basicGetMain() != null;
 		}
 		return super.eIsSet(featureID);
 	}

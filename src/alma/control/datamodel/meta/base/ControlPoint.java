@@ -54,7 +54,7 @@ public interface ControlPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[Table.getColNum(sheet, \"Archive On Use\")].equals(\"yes\");'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Archive On Use\")].equals(\"yes\");'"
 	 * @generated
 	 */
 	boolean ArchiveOnUse();

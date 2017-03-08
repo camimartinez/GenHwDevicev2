@@ -22,21 +22,29 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.base.ArchiveProperty;
-import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.MandCBase;
-import alma.control.datamodel.meta.base.MonitorPoint;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import alma.control.datamodel.meta.amb.Monitor;
+import alma.control.datamodel.meta.base.ArchiveProperty;
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.DeviceModel;
+import alma.control.datamodel.meta.base.MandCBase;
+import alma.control.datamodel.meta.base.MonitorPoint;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,6 +62,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getArchive <em>Archive</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getDependents <em>Dependents</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getTable <em>Table</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getUtil <em>Util</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getDevice <em>Device</em>}</li>
  * </ul>
  *
  * @generated
@@ -220,6 +231,36 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	protected ResourceSet dependents = DEPENDENTS_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getTable() <em>Table</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTable()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table table;
+
+	/**
+	 * The cached value of the '{@link #getUtil() <em>Util</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtil()
+	 * @generated
+	 * @ordered
+	 */
+	protected Util util;
+
+	/**
+	 * The cached value of the '{@link #getDevice() <em>Device</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDevice()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeviceModel device;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -380,11 +421,13 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 */
 	public void setArchive(Resource newArchive) {
 		this.archive = newArchive;
+		ResourceSet archiveResourceSet = new ResourceSetImpl();
+		Resource archA = archiveResourceSet.createResource(URI.createURI(""));
 		if (archive != null){
-			if(this instanceof MonitorPoint)
-				((ArchiveProperty)archive).setMP((Resource) this);
+			if(this instanceof MonitorPoint)			
+				((ArchiveProperty)archive).setMP(this.eResource());
 		}else
-			((ArchiveProperty)archive).setCP((Resource) this);
+			((ArchiveProperty)archive).setCP(this.eResource());
 	}
 
 	/**
@@ -406,6 +449,148 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		dependents = newDependents;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__DEPENDENTS, oldDependents, dependents));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table getTable() {
+		if (table != null && table.eIsProxy()) {
+			InternalEObject oldTable = (InternalEObject)table;
+			table = (Table)eResolveProxy(oldTable);
+			if (table != oldTable) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__TABLE, oldTable, table));
+			}
+		}
+		return table;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table basicGetTable() {
+		return table;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTable(Table newTable) {
+		Table oldTable = table;
+		table = newTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__TABLE, oldTable, table));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Util getUtil() {
+		if (util != null && util.eIsProxy()) {
+			InternalEObject oldUtil = (InternalEObject)util;
+			util = (Util)eResolveProxy(oldUtil);
+			if (util != oldUtil) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__UTIL, oldUtil, util));
+			}
+		}
+		return util;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Util basicGetUtil() {
+		return util;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUtil(Util newUtil) {
+		Util oldUtil = util;
+		util = newUtil;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__UTIL, oldUtil, util));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeviceModel getDevice() {
+		if (device != null && device.eIsProxy()) {
+			InternalEObject oldDevice = (InternalEObject)device;
+			device = (DeviceModel)eResolveProxy(oldDevice);
+			if (device != oldDevice) {
+				InternalEObject newDevice = (InternalEObject)device;
+				NotificationChain msgs = oldDevice.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MAND_CBASE__DEVICE, null, null);
+				if (newDevice.eInternalContainer() == null) {
+					msgs = newDevice.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.MAND_CBASE__DEVICE, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__DEVICE, oldDevice, device));
+			}
+		}
+		return device;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeviceModel basicGetDevice() {
+		return device;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDevice(DeviceModel newDevice, NotificationChain msgs) {
+		DeviceModel oldDevice = device;
+		device = newDevice;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__DEVICE, oldDevice, newDevice);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDevice(DeviceModel newDevice) {
+		if (newDevice != device) {
+			NotificationChain msgs = null;
+			if (device != null)
+				msgs = ((InternalEObject)device).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MAND_CBASE__DEVICE, null, msgs);
+			if (newDevice != null)
+				msgs = ((InternalEObject)newDevice).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.MAND_CBASE__DEVICE, null, msgs);
+			msgs = basicSetDevice(newDevice, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__DEVICE, newDevice, newDevice));
 	}
 
 	/**
@@ -438,16 +623,16 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		return !dependents.getResources().isEmpty();
 		
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String FullName() {
-		return row[table.getColNum(sheet, "Name")];
+		return row[getTable().getColNum(sheet, "Name")];
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -455,9 +640,9 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 */
 	public String Name() {
 		if(isDependent())
-			return row[table.getColNum(sheet, "Name")].substring(1);
+			return row[getTable().getColNum(sheet, "Name")].substring(1);
 		else
-			return row[table.getColNum(sheet, "Name")];
+			return row[getTable().getColNum(sheet, "Name")];
 	}
 
 	/**
@@ -469,14 +654,14 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		return Name();
 		
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getAltDependentName() {
-		return utils.AltName(getDependentName());
+		return getUtil().AltName(getDependentName());
 	}
 
 	/**
@@ -496,7 +681,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String getAltDependsOnName() {
-		return utils.AltName(((MandCBase)getParent()).Name());
+		return getUtil().AltName(((MandCBase)getParent()).Name());
 	}
 
 	/**
@@ -505,7 +690,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DataUnits() {
-		return row[table.getColNum(sheet, "Data Units")];
+		return row[getTable().getColNum(sheet, "Data Units")];
 	}
 
 	/**
@@ -514,7 +699,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String MinRange() {
-		return row[table.getColNum(sheet, "Min Range")];
+		return row[getTable().getColNum(sheet, "Min Range")];
 	}
 
 	/**
@@ -523,7 +708,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String MaxRange() {
-		return row[table.getColNum(sheet, "Max Range")];
+		return row[getTable().getColNum(sheet, "Max Range")];
 	}
 
 	/**
@@ -532,7 +717,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String Mode() {
-		return row[table.getColNum(sheet, "Mode")];
+		return row[getTable().getColNum(sheet, "Mode")];
 	}
 
 	/**
@@ -541,7 +726,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public boolean Implement() {
-		return row[table.getColNum(sheet, "Implement")].equals("yes");
+		return row[getTable().getColNum(sheet, "Implement")].equals("yes");
 	}
 
 	/**
@@ -550,7 +735,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public boolean External() {
-		return row[table.getColNum(sheet, "External")].equals("yes");
+		return row[getTable().getColNum(sheet, "External")].equals("yes");
+		
 	}
 
 	/**
@@ -559,7 +745,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String Description() {
-		return row[table.getColNum(sheet, "Description")];
+		return row[getTable().getColNum(sheet, "Description")];
 	}
 
 	/**
@@ -624,9 +810,9 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String PName() {
-		if (Name().startsWith(TableImpl.DEP_CHAR_EDEFAULT))
-			return dropPrefix(Name().substring(1));
-		return dropPrefix(Name());
+				if (Name().startsWith(getTable().getDepChar()))
+					return dropPrefix(Name().substring(1));
+				return dropPrefix(Name());
 	}
 
 	/**
@@ -635,9 +821,9 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String AltPName() {
-		if (Name().startsWith("SET_"))
-			return "Cntl" + utils.AltName(PName()); 
-		return utils.AltName(PName());
+			if (Name().startsWith("SET_"))
+					return "Cntl" + getUtil().AltName(PName()); 
+				return getUtil().AltName(PName());
 	}
 
 	/**
@@ -646,7 +832,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DescriptionAsString() {
-		return utils.descriptionAsString(Description());
+		return getUtil().descriptionAsString(Description());
 	}
 
 	/**
@@ -655,7 +841,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DescriptionFormatted() {
-		return utils.formatDescriptionL2(Description());
+		return getUtil().formatDescriptionL2(Description());
 	}
 
 	/**
@@ -664,7 +850,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DescriptionFormattedL4() {
-		return utils.formatDescriptionL4(Description());
+		return getUtil().formatDescriptionL4(Description());
 	}
 
 	/**
@@ -673,7 +859,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DescriptionFormattedL5() {
-		return utils.formatDescriptionL5(Description());
+		return getUtil().formatDescriptionL5(Description());
 	}
 
 	/**
@@ -692,9 +878,44 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		this.row = row;
 		this.parent = parent;
 		dependents = new ResourceSetImpl();
-		sheet = (this instanceof MonitorPoint) ? Table.getSheetNum("Monitor Point") : Table.getSheetNum("Control Point");
+		sheet = (this instanceof Monitor) ? getTable().getSheetNum("Monitor Point") : getTable().getSheetNum("Control Point");
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BasePackage.MAND_CBASE__DEVICE:
+				return basicSetDevice(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	//Print the values of the class, to test the objects
+	public static void printAttributeValues(EObject object) {
+		EClass eClass = object.eClass();
+		System.out.println(eClass.getName());
+		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
+			EAttribute attribute = (EAttribute)iter.next();
+			Object value = object.eGet(attribute);
+
+			System.out.print("  " + attribute.getName() + " : ");
+			if (object.eIsSet(attribute))
+				System.out.println(value);
+			else
+				System.out.println(value + " (default)");
+		}
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -719,6 +940,15 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				return getArchive();
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				return getDependents();
+			case BasePackage.MAND_CBASE__TABLE:
+				if (resolve) return getTable();
+				return basicGetTable();
+			case BasePackage.MAND_CBASE__UTIL:
+				if (resolve) return getUtil();
+				return basicGetUtil();
+			case BasePackage.MAND_CBASE__DEVICE:
+				if (resolve) return getDevice();
+				return basicGetDevice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -754,6 +984,15 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				return;
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				setDependents((ResourceSet)newValue);
+				return;
+			case BasePackage.MAND_CBASE__TABLE:
+				setTable((Table)newValue);
+				return;
+			case BasePackage.MAND_CBASE__UTIL:
+				setUtil((Util)newValue);
+				return;
+			case BasePackage.MAND_CBASE__DEVICE:
+				setDevice((DeviceModel)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -791,6 +1030,15 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				setDependents(DEPENDENTS_EDEFAULT);
 				return;
+			case BasePackage.MAND_CBASE__TABLE:
+				setTable((Table)null);
+				return;
+			case BasePackage.MAND_CBASE__UTIL:
+				setUtil((Util)null);
+				return;
+			case BasePackage.MAND_CBASE__DEVICE:
+				setDevice((DeviceModel)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -819,6 +1067,12 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				return ARCHIVE_EDEFAULT == null ? archive != null : !ARCHIVE_EDEFAULT.equals(archive);
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				return DEPENDENTS_EDEFAULT == null ? dependents != null : !DEPENDENTS_EDEFAULT.equals(dependents);
+			case BasePackage.MAND_CBASE__TABLE:
+				return table != null;
+			case BasePackage.MAND_CBASE__UTIL:
+				return util != null;
+			case BasePackage.MAND_CBASE__DEVICE:
+				return device != null;
 		}
 		return super.eIsSet(featureID);
 	}

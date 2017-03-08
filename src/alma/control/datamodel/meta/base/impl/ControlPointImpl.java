@@ -24,10 +24,12 @@ package alma.control.datamodel.meta.base.impl;
 
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
+import alma.control.datamodel.meta.base.Table;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,14 +76,14 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 		return AltPName();
 		
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean ArchiveOnUse() {
-		return row[Table.getColNum(sheet, "Archive On Use")].equals("yes");
+		return row[table.getColNum(sheet, "Archive On Use")].equals("yes");
 	}
 
 	/**

@@ -35,6 +35,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getSheet <em>Sheet</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MainBase#getTable <em>Table</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MainBase#getUtil <em>Util</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMainBase()
@@ -93,6 +95,62 @@ public interface MainBase extends EObject {
 	 * @generated
 	 */
 	void setSheet(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Table</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link alma.control.datamodel.meta.base.Table#getMain <em>Main</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Table</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Table</em>' containment reference.
+	 * @see #setTable(Table)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Table()
+	 * @see alma.control.datamodel.meta.base.Table#getMain
+	 * @model opposite="main" containment="true" resolveProxies="true" required="true"
+	 * @generated
+	 */
+	Table getTable();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getTable <em>Table</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Table</em>' containment reference.
+	 * @see #getTable()
+	 * @generated
+	 */
+	void setTable(Table value);
+
+	/**
+	 * Returns the value of the '<em><b>Util</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link alma.control.datamodel.meta.base.Util#getMandc <em>Mandc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Util</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Util</em>' reference.
+	 * @see #setUtil(Util)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Util()
+	 * @see alma.control.datamodel.meta.base.Util#getMandc
+	 * @model opposite="mandc" required="true"
+	 * @generated
+	 */
+	Util getUtil();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getUtil <em>Util</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Util</em>' reference.
+	 * @see #getUtil()
+	 * @generated
+	 */
+	void setUtil(Util value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,7 +228,7 @@ public interface MainBase extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = Table.getSheetNum(\"Hardware Device\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = getTable().getSheetNum(\"Hardware Device\");'"
 	 * @generated
 	 */
 	void setInitializeMB(String[] row);

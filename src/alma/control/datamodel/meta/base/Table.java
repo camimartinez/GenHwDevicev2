@@ -25,6 +25,7 @@ package alma.control.datamodel.meta.base;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -61,6 +62,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.base.Table#getWorldToBACI <em>World To BACI</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Table#getWorldToJava <em>World To Java</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Table#getWorldToDatabase <em>World To Database</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.Table#getMain <em>Main</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getTable()
@@ -719,6 +721,34 @@ public interface Table extends EObject {
 	 * @generated
 	 */
 	void setWorldToDatabase(Hashtable value);
+
+	/**
+	 * Returns the value of the '<em><b>Main</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link alma.control.datamodel.meta.base.MainBase#getTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main</em>' container reference.
+	 * @see #setMain(MainBase)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_Main()
+	 * @see alma.control.datamodel.meta.base.MainBase#getTable
+	 * @model opposite="table" required="true" transient="false"
+	 * @generated
+	 */
+	MainBase getMain();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.Table#getMain <em>Main</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Main</em>' container reference.
+	 * @see #getMain()
+	 * @generated
+	 */
+	void setMain(MainBase value);
 
 	/**
 	 * <!-- begin-user-doc -->

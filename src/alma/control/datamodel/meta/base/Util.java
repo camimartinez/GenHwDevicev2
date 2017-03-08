@@ -22,6 +22,7 @@
  */
 package alma.control.datamodel.meta.base;
 
+import alma.control.datamodel.meta.amb.MandC;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.base.Util#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Util#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Util#getMONTHalt <em>MONT Halt</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.Util#getMandc <em>Mandc</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getUtil()
@@ -150,6 +152,34 @@ public interface Util extends EObject {
 	void setMONTHalt(String[] value);
 
 	/**
+	 * Returns the value of the '<em><b>Mandc</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link alma.control.datamodel.meta.base.MainBase#getUtil <em>Util</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mandc</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mandc</em>' reference.
+	 * @see #setMandc(MainBase)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getUtil_Mandc()
+	 * @see alma.control.datamodel.meta.base.MainBase#getUtil
+	 * @model opposite="util" required="true"
+	 * @generated
+	 */
+	MainBase getMandc();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.Util#getMandc <em>Mandc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mandc</em>' reference.
+	 * @see #getMandc()
+	 * @generated
+	 */
+	void setMandc(MainBase value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='System.out.println(msg);\r\nSystem.exit(0);'"
@@ -248,7 +278,7 @@ public interface Util extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)TableImpl.RAW_BYTES_EDEFAULT.get(s);\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)mandc.getTable().getRawBytes().get(s);'"
 	 * @generated
 	 */
 	String NumberRawDataTypeBytes(String s);
@@ -256,7 +286,7 @@ public interface Util extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (isArray(s)) {\nint b;\nint n = Integer.parseInt(NumberOfItems(s));\nif(s.startsWith(\"&amp;lt;\"))\nreturn \"0\";\nif(s.startsWith(\"[\"))\nreturn \"0\";\nint i = s.indexOf(\"[\");\nb = Integer.parseInt((String)table.getRawBytes().get(s.substring(0,1)));\n\nString x = Integer.toString(n * b);\nreturn x;\n}\nreturn (String)table.getRawBytes().get(s);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (isArray(s)) {\n\t\tint b;\n\t\tint n = Integer.parseInt(NumberOfItems(s));\n\t\tif(s.startsWith(\"&amp;lt;\"))\n\t\treturn \"0\";\n\t\tif(s.startsWith(\"[\"))\n\t\treturn \"0\";\n\t\tint i = s.indexOf(\"[\");\n\t\tb = Integer.parseInt((String)mandc.getTable().getRawBytes().get(s.substring(0,1)));\n\t\t\n\t\tString x = Integer.toString(n * b);\n\t\treturn x;\n\t\t}\n\t\treturn (String)mandc.getTable().getRawBytes().get(s);'"
 	 * @generated
 	 */
 	String RawDataTypeTotalBytes(String s);

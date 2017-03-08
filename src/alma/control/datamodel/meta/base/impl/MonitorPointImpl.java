@@ -22,8 +22,10 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
+import alma.control.datamodel.meta.amb.Main;
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
 
 import org.eclipse.emf.ecore.EClass;
@@ -119,16 +121,16 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 */
 	public String Interval() {
 		int defaultValue = 300;
-		if(archive != null) {
-			if ( ((ArchiveProperty)archive).Interval().equals("none") )
-				return Integer.toString(defaultValue);
-			int value = Integer.valueOf(((ArchiveProperty)archive).Interval());
-			if (value <= 0)
-				value = defaultValue;
-			return Integer.toString(value);
-		}
-		else
-			return Integer.toString(defaultValue);
+			if(archive != null) {
+					if ( ((ArchiveProperty)archive).Interval().equals("none") )
+						return Integer.toString(defaultValue);
+					int value = Integer.valueOf(((ArchiveProperty)archive).Interval());
+					if (value <= 0)
+						value = defaultValue;
+					return Integer.toString(value);
+				}
+				else
+					return Integer.toString(defaultValue);
 	}
 
 	/**
@@ -210,7 +212,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 */
 	public String MPName() {
 		return PName();
-
+		
 	}
 
 	/**
@@ -220,7 +222,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 */
 	public String AltMPName() {
 		return AltPName();
-
+		
 	}
 
 	/**
@@ -262,10 +264,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public void setInitializeMP(final String[] row, final Resource parent) {
-		this.row = row;
-		this.parent = parent;
-		dependents = new ResourceSetImpl();
-		sheet = (this instanceof MonitorPoint) ? Table.getSheetNum("Monitor Point") : Table.getSheetNum("Control Point");
+		setInitializeMCB(row, parent);
 	}
 
 } //MonitorPointImpl

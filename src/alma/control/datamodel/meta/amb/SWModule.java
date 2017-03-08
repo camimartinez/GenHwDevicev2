@@ -523,7 +523,7 @@ public interface SWModule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = Table.getSheetNum(\"Hardware Device\");\nthis.oneSwModule = oneSwModule;\nint assemblyIndex = Table.getColNum(sheet, \"Assembly\");\nthis.assemblyName = row[assemblyIndex];\nthis.mainAssembly = mainAssembly;\nif(oneSwModule){\n\tsetDirPath(row[assemblyIndex]);\n}\nelse{\n\tsetDirPath(mainAssembly + \"/\" + row[assemblyIndex]);\n}\nmonitorPoints = new ResourceSetImpl();\ncontrolPoints = new ResourceSetImpl();\narchiveProperties = new ResourceSetImpl();\nsimMonitorPoints = new ResourceSetImpl();\nsimControlPoints = new ResourceSetImpl();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = table.getSheetNum(\"Hardware Device\");\nthis.oneSwModule = oneSwModule;\nint assemblyIndex = table.getColNum(sheet, \"Assembly\");\nthis.assemblyName = row[assemblyIndex];\nthis.mainAssembly = mainAssembly;\nif(oneSwModule){\n\t\t\tsetDirPath(row[assemblyIndex]);\n\t\t}\n\t\telse{\n\t\t\tsetDirPath(mainAssembly + \"/\" + row[assemblyIndex]);\n\t\t}\n\t\tmonitorPoints = new ResourceSetImpl();\n\t\tcontrolPoints = new ResourceSetImpl();\n\t\tarchiveProperties = new ResourceSetImpl();\n\t\tsimMonitorPoints = new ResourceSetImpl();\n\t\tsimControlPoints = new ResourceSetImpl();'"
 	 * @generated
 	 */
 	void setInitializeSW(String[] row, Resource parent);

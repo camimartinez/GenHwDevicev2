@@ -46,6 +46,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -293,8 +294,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMandC_Mcp() {
-		return (EAttribute)mandCEClass.getEStructuralFeatures().get(2);
+	public EReference getMandC_Mcp() {
+		return (EReference)mandCEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -303,7 +304,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * @generated
 	 */
 	public EAttribute getMandC_Mask() {
-		return (EAttribute)mandCEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)mandCEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -320,8 +321,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMonitor_Mac() {
-		return (EAttribute)monitorEClass.getEStructuralFeatures().get(0);
+	public EReference getMonitor_Mac() {
+		return (EReference)monitorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -486,11 +487,11 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		mandCEClass = createEClass(MAND_C);
 		createEAttribute(mandCEClass, MAND_C__ROW);
 		createEAttribute(mandCEClass, MAND_C__SHEET);
-		createEAttribute(mandCEClass, MAND_C__MCP);
 		createEAttribute(mandCEClass, MAND_C__MASK);
+		createEReference(mandCEClass, MAND_C__MCP);
 
 		monitorEClass = createEClass(MONITOR);
-		createEAttribute(monitorEClass, MONITOR__MAC);
+		createEReference(monitorEClass, MONITOR__MAC);
 
 		swModuleEClass = createEClass(SW_MODULE);
 		createEAttribute(swModuleEClass, SW_MODULE__ASSEMBLY_NAME);
@@ -750,8 +751,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		initEClass(mandCEClass, MandC.class, "MandC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMandC_Row(), theBasePackage.getEStringArray(), "row", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMandC_Mcp(), theBasePackage.getMandCBaseDT(), "mcp", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Mask(), theBasePackage.getEStringArray(), "mask", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandC_Mcp(), theBasePackage.getMandCBase(), null, "mcp", null, 1, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(mandCEClass, ecorePackage.getEString(), "Assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -863,7 +864,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEParameter(op, theBasePackage.getMandCBase(), "mcp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(monitorEClass, Monitor.class, "Monitor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMonitor_Mac(), theBasePackage.getMandCAMBDT(), "mac", "", 0, 1, Monitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMonitor_Mac(), this.getMandC(), null, "mac", null, 0, 1, Monitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(monitorEClass, ecorePackage.getEString(), "CanBeInvalid", 0, 1, IS_UNIQUE, IS_ORDERED);
 

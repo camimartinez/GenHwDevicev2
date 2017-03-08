@@ -44,27 +44,26 @@ import org.eclipse.emf.ecore.resource.Resource;
  */
 public interface Monitor extends MonitorPoint {
 	/**
-	 * Returns the value of the '<em><b>Mac</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * Returns the value of the '<em><b>Mac</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mac</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mac</em>' attribute.
+	 * @return the value of the '<em>Mac</em>' containment reference.
 	 * @see #setMac(MandC)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_Mac()
-	 * @model default="" dataType="alma.control.datamodel.meta.base.MandCAMBDT"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	MandC getMac();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getMac <em>Mac</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getMac <em>Mac</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mac</em>' attribute.
+	 * @param value the new value of the '<em>Mac</em>' containment reference.
 	 * @see #getMac()
 	 * @generated
 	 */
@@ -73,7 +72,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Can Be Invalid\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Can Be Invalid\")];'"
 	 * @generated
 	 */
 	String CanBeInvalid();
@@ -485,7 +484,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(), super.MinRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getUtil().normalizeNumber(WorldDataType(), super.MinRange());'"
 	 * @generated
 	 */
 	String MinRange();
@@ -493,7 +492,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(), super.MaxRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getUtil().normalizeNumber(WorldDataType(), super.MaxRange());'"
 	 * @generated
 	 */
 	String MaxRange();
@@ -501,7 +500,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(), super.Default());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getUtil().normalizeNumber(WorldDataType(), super.Default());'"
 	 * @generated
 	 */
 	String Default();

@@ -22,18 +22,17 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.GenericMonitorPoints;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import alma.control.datamodel.meta.base.Util;
 
 /**
  * <!-- begin-user-doc -->
@@ -193,36 +192,51 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.GENERIC_MONITOR_POINTS__DIR_LOCATION, oldDirLocation, dirLocation));
 	}
 
+	/*
+	private Object getObjectByInstanceClassUtil(){
+		Object object = EcoreUtil.getObjectByType(eAdapters(), BasePackage.Literals.UTIL);
+		if(object instanceof Util){
+			return object;
+		}else{
+			System.out.println("The is no Object for instance Util in: amb/GenericMonitorPointsImpl");
+			return "The is no Object for instance Util in: amb/GenericMonitorPointsImpl";
+		}
+	}
+
+	Util utils = (Util)getObjectByInstanceClassUtil();
+	*/
+	Util util = BaseFactory.eINSTANCE.createUtil();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String[][][] getParsedGenericSpreadsheet() {
-				dirLocation = util.getInstallDir();
-				if (!(new java.io.File(dirLocation + "/idl/GENERIC_spreadsheet.xml").exists())){
-					System.out.println("Spreadsheet GENERIC_spreadsheet not found. Exiting....");
-					System.exit(1);
-				}
+		dirLocation = util.getInstallDir();
+						if (!(new java.io.File(dirLocation + "/idl/GENERIC_spreadsheet.xml").exists())){
+							System.out.println("Spreadsheet GENERIC_spreadsheet not found. Exiting....");
+							System.exit(1);
+						}
+				
+						BaseFactory baseFac = BaseFactory.eINSTANCE;
+						SpreadsheetParser parserSpreadsheet = baseFac.createSpreadsheetParser();
 		
-				BaseFactory baseFac = BaseFactory.eINSTANCE;
-				SpreadsheetParser parserSpreadsheet = baseFac.createSpreadsheetParser();
-
-				String xml = parserSpreadsheet.getSpreadsheet(dirLocation + "/idl", "GENERIC_spreadsheet.xml");
-				String xmlFile = dirLocation + "/idl/GENERIC_spreadsheet.xml";
-				String xsdFile = dirLocation + "/config/schemas/amb/Workbook.xsd";
-				SpreadsheetParser p = baseFac.createSpreadsheetParser();
-				p.setInitializeSP(xml);
-				String [][][] spreadsheet = p.getWorksheets();
-				SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
-				if (!v.validate(xmlFile,xsdFile)) {
-					String s = "Spreadsheet GENERIC_spreadsheet.xml is not a valid spreadsheet.";
-					throw new RuntimeException(s);
-				}
-		
-				System.out.println("Spreadsheet GENERIC has been validated.");
-		
-				return spreadsheet;
+						String xml = parserSpreadsheet.getSpreadsheet(dirLocation + "/idl", "GENERIC_spreadsheet.xml");
+						String xmlFile = dirLocation + "/idl/GENERIC_spreadsheet.xml";
+						String xsdFile = dirLocation + "/config/schemas/amb/Workbook.xsd";
+						SpreadsheetParser p = baseFac.createSpreadsheetParser();
+						p.setInitializeSP(xml);
+						String [][][] spreadsheet = p.getWorksheets();
+						SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
+						if (!v.validate(xmlFile,xsdFile)) {
+							String s = "Spreadsheet GENERIC_spreadsheet.xml is not a valid spreadsheet.";
+							throw new RuntimeException(s);
+						}
+				
+						System.out.println("Spreadsheet GENERIC has been validated.");
+				
+						return spreadsheet;
 	}
 
 	/**
