@@ -251,7 +251,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	protected Util util;
 
 	/**
-	 * The cached value of the '{@link #getDevice() <em>Device</em>}' containment reference.
+	 * The cached value of the '{@link #getDevice() <em>Device</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDevice()
@@ -420,14 +420,19 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @!generated
 	 */
 	public void setArchive(Resource newArchive) {
+		ResourceSet archiveRes = device.getArchiveProperties();
 		this.archive = newArchive;
-		ResourceSet archiveResourceSet = new ResourceSetImpl();
-		Resource archA = archiveResourceSet.createResource(URI.createURI(""));
+		int index = archiveRes.getResources().size();
+		System.out.println("tamaño de resources "+index+"");
+		//Resource res = archiveResourceSet.getResources().get(0);
+		//Resource archA = archiveResourceSet.createResource(URI.createURI(""));
 		if (archive != null){
-			if(this instanceof MonitorPoint)			
-				((ArchiveProperty)archive).setMP(this.eResource());
+			if(this instanceof MonitorPoint)	
+				System.out.println("instance of MonitorPoint");
+				//((ArchiveProperty)archive).setMP(this.eResource());
 		}else
-			((ArchiveProperty)archive).setCP(this.eResource());
+			System.out.println("instance of ControlPoint");
+			//((ArchiveProperty)archive).setCP(this.eResource());
 	}
 
 	/**
@@ -537,12 +542,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 			InternalEObject oldDevice = (InternalEObject)device;
 			device = (DeviceModel)eResolveProxy(oldDevice);
 			if (device != oldDevice) {
-				InternalEObject newDevice = (InternalEObject)device;
-				NotificationChain msgs = oldDevice.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MAND_CBASE__DEVICE, null, null);
-				if (newDevice.eInternalContainer() == null) {
-					msgs = newDevice.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.MAND_CBASE__DEVICE, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__DEVICE, oldDevice, device));
 			}
@@ -583,9 +582,9 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		if (newDevice != device) {
 			NotificationChain msgs = null;
 			if (device != null)
-				msgs = ((InternalEObject)device).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MAND_CBASE__DEVICE, null, msgs);
+				msgs = ((InternalEObject)device).eInverseRemove(this, BasePackage.DEVICE_MODEL__MAND_C, DeviceModel.class, msgs);
 			if (newDevice != null)
-				msgs = ((InternalEObject)newDevice).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.MAND_CBASE__DEVICE, null, msgs);
+				msgs = ((InternalEObject)newDevice).eInverseAdd(this, BasePackage.DEVICE_MODEL__MAND_C, DeviceModel.class, msgs);
 			msgs = basicSetDevice(newDevice, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -598,8 +597,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addDependent(final Resource son) {
-		dependents.getResources().add(son);
+	public void addDependent(final EObject son) {
+		dependents.getAllContents().add(son);
 		
 	}
 
@@ -620,8 +619,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public boolean hasDependents() {
-		return !dependents.getResources().isEmpty();
-		
+		return !dependents.getAllContents().isEmpty();
 	}
 	
 	/**
@@ -879,6 +877,22 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		this.parent = parent;
 		dependents = new ResourceSetImpl();
 		sheet = (this instanceof Monitor) ? getTable().getSheetNum("Monitor Point") : getTable().getSheetNum("Control Point");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BasePackage.MAND_CBASE__DEVICE:
+				if (device != null)
+					msgs = ((InternalEObject)device).eInverseRemove(this, BasePackage.DEVICE_MODEL__MAND_C, DeviceModel.class, msgs);
+				return basicSetDevice((DeviceModel)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -22,22 +22,15 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.resource.Resource;
+
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.MandC;
-
-import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.impl.ControlPointImpl;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,23 +105,6 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.CONTROL__MAC, oldMac, mac));
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	private Object getObjectByInstanceClass(){
-		Object object = EcoreUtil.getObjectByType(eAdapters(), BasePackage.Literals.TABLE);
-		if(object instanceof Table){
-			return object;
-		}else{
-			System.out.println("The is no Object for instance Table in: amb/ControlImpl");
-			return "The is no Object for instance Table in: amb/ControlImpl";
-		}
-	}
-
-	Table table = (Table)getObjectByInstanceClass();
 
 	/**
 	 * <!-- begin-user-doc -->

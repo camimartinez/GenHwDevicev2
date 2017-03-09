@@ -22,6 +22,8 @@
  */
 package alma.control.datamodel;
 
+import java.io.File;
+
 import org.eclipse.emf.mwe.core.WorkflowComponentHelper;
 import org.eclipse.emf.mwe.core.WorkflowContext;
 import org.eclipse.emf.mwe.core.issues.Issues;
@@ -51,7 +53,10 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 	
 	public void invokeInternal(WorkflowContext ctx, ProgressMonitor monitor, Issues issues){
 		System.out.println("- ----- HwDeviceWorkflowInitializer: invokeInternal started.");
-					
+		
+		File tmpFolder = new File(""+deviceDir+"/tmp");		
+		tmpFolder.mkdir();
+		
 		alma.control.datamodel.meta.base.DeviceModel deviceType = null;
 		
 		if(System.getProperty(deviceTypes).equals(deviceAMB)){

@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
@@ -66,6 +67,7 @@ import alma.control.datamodel.meta.base.Util;
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#isGenerateAlt <em>Generate Alt</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMain <em>Main</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMandC <em>Mand C</em>}</li>
  * </ul>
  *
  * @generated
@@ -362,6 +364,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	protected MainBase main;
 
 	/**
+	 * The cached value of the '{@link #getMandC() <em>Mand C</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMandC()
+	 * @generated
+	 * @ordered
+	 */
+	protected MandCBase mandC;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -486,6 +498,66 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__MAIN, newMain, newMain));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandCBase getMandC() {
+		if (mandC != null && mandC.eIsProxy()) {
+			InternalEObject oldMandC = (InternalEObject)mandC;
+			mandC = (MandCBase)eResolveProxy(oldMandC);
+			if (mandC != oldMandC) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__MAND_C, oldMandC, mandC));
+			}
+		}
+		return mandC;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandCBase basicGetMandC() {
+		return mandC;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMandC(MandCBase newMandC, NotificationChain msgs) {
+		MandCBase oldMandC = mandC;
+		mandC = newMandC;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__MAND_C, oldMandC, newMandC);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMandC(MandCBase newMandC) {
+		if (newMandC != mandC) {
+			NotificationChain msgs = null;
+			if (mandC != null)
+				msgs = ((InternalEObject)mandC).eInverseRemove(this, BasePackage.MAND_CBASE__DEVICE, MandCBase.class, msgs);
+			if (newMandC != null)
+				msgs = ((InternalEObject)newMandC).eInverseAdd(this, BasePackage.MAND_CBASE__DEVICE, MandCBase.class, msgs);
+			msgs = basicSetMandC(newMandC, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__MAND_C, newMandC, newMandC));
 	}
 
 	/**
@@ -954,8 +1026,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			ap.setTable(main.getTable());
 			ap.setInitializeAP(row);
 			resourceArchive.getContents().add(ap);
-			if(name.equals(ap.RefersTo()))
+			if(name.equals(ap.RefersTo())){
+				//mandC.setArchive(value)
 				return resourceArchive;
+		}
 		}
 		return null;
 	}
@@ -1007,10 +1081,28 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BasePackage.DEVICE_MODEL__MAND_C:
+				if (mandC != null)
+					msgs = ((InternalEObject)mandC).eInverseRemove(this, BasePackage.MAND_CBASE__DEVICE, MandCBase.class, msgs);
+				return basicSetMandC((MandCBase)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case BasePackage.DEVICE_MODEL__MAIN:
 				return basicSetMain(null, msgs);
+			case BasePackage.DEVICE_MODEL__MAND_C:
+				return basicSetMandC(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1054,6 +1146,9 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__MAIN:
 				if (resolve) return getMain();
 				return basicGetMain();
+			case BasePackage.DEVICE_MODEL__MAND_C:
+				if (resolve) return getMandC();
+				return basicGetMandC();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1110,6 +1205,9 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return;
 			case BasePackage.DEVICE_MODEL__MAIN:
 				setMain((MainBase)newValue);
+				return;
+			case BasePackage.DEVICE_MODEL__MAND_C:
+				setMandC((MandCBase)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1168,6 +1266,9 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__MAIN:
 				setMain((MainBase)null);
 				return;
+			case BasePackage.DEVICE_MODEL__MAND_C:
+				setMandC((MandCBase)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1210,6 +1311,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return generateAlt != GENERATE_ALT_EDEFAULT;
 			case BasePackage.DEVICE_MODEL__MAIN:
 				return main != null;
+			case BasePackage.DEVICE_MODEL__MAND_C:
+				return mandC != null;
 		}
 		return super.eIsSet(featureID);
 	}

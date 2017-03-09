@@ -52,6 +52,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isGenerateAlt <em>Generate Alt</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMandC <em>Mand C</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel()
@@ -137,6 +138,34 @@ public interface DeviceModel extends EObject {
 	 * @generated
 	 */
 	void setMain(MainBase value);
+
+	/**
+	 * Returns the value of the '<em><b>Mand C</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link alma.control.datamodel.meta.base.MandCBase#getDevice <em>Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mand C</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mand C</em>' reference.
+	 * @see #setMandC(MandCBase)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_MandC()
+	 * @see alma.control.datamodel.meta.base.MandCBase#getDevice
+	 * @model opposite="device" required="true"
+	 * @generated
+	 */
+	MandCBase getMandC();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMandC <em>Mand C</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mand C</em>' reference.
+	 * @see #getMandC()
+	 * @generated
+	 */
+	void setMandC(MandCBase value);
 
 	/**
 	 * Returns the value of the '<em><b>Notes</b></em>' attribute.

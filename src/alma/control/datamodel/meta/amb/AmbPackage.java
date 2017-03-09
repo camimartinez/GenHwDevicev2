@@ -242,7 +242,7 @@ public interface AmbPackage extends EPackage {
 	int CONTROL__UTIL = BasePackage.CONTROL_POINT__UTIL;
 
 	/**
-	 * The feature id for the '<em><b>Device</b></em>' containment reference.
+	 * The feature id for the '<em><b>Device</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -412,6 +412,15 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
+
+	/**
+	 * The feature id for the '<em><b>Mand C</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAND_C = BasePackage.DEVICE_MODEL__MAND_C;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
@@ -679,7 +688,7 @@ public interface AmbPackage extends EPackage {
 	int MONITOR__UTIL = BasePackage.MONITOR_POINT__UTIL;
 
 	/**
-	 * The feature id for the '<em><b>Device</b></em>' containment reference.
+	 * The feature id for the '<em><b>Device</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

@@ -241,7 +241,7 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE__UTIL = 9;
 
 	/**
-	 * The feature id for the '<em><b>Device</b></em>' containment reference.
+	 * The feature id for the '<em><b>Device</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -359,7 +359,7 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__UTIL = MAND_CBASE__UTIL;
 
 	/**
-	 * The feature id for the '<em><b>Device</b></em>' containment reference.
+	 * The feature id for the '<em><b>Device</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -522,13 +522,22 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__MAIN = 14;
 
 	/**
+	 * The feature id for the '<em><b>Mand C</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAND_C = 15;
+
+	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_FEATURE_COUNT = 15;
+	int DEVICE_MODEL_FEATURE_COUNT = 16;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
@@ -686,7 +695,7 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__UTIL = MAND_CBASE__UTIL;
 
 	/**
-	 * The feature id for the '<em><b>Device</b></em>' containment reference.
+	 * The feature id for the '<em><b>Device</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1554,6 +1563,17 @@ public interface BasePackage extends EPackage {
 	EReference getDeviceModel_Main();
 
 	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMandC <em>Mand C</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Mand C</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getMandC()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_MandC();
+
+	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.DeviceModel#getNotes <em>Notes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1860,10 +1880,10 @@ public interface BasePackage extends EPackage {
 	EReference getMandCBase_Util();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.base.MandCBase#getDevice <em>Device</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getDevice <em>Device</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Device</em>'.
+	 * @return the meta object for the reference '<em>Device</em>'.
 	 * @see alma.control.datamodel.meta.base.MandCBase#getDevice()
 	 * @see #getMandCBase()
 	 * @generated
@@ -2713,6 +2733,14 @@ public interface BasePackage extends EPackage {
 		EReference DEVICE_MODEL__MAIN = eINSTANCE.getDeviceModel_Main();
 
 		/**
+		 * The meta object literal for the '<em><b>Mand C</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__MAND_C = eINSTANCE.getDeviceModel_MandC();
+
+		/**
 		 * The meta object literal for the '<em><b>Notes</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2941,7 +2969,7 @@ public interface BasePackage extends EPackage {
 		EReference MAND_CBASE__UTIL = eINSTANCE.getMandCBase_Util();
 
 		/**
-		 * The meta object literal for the '<em><b>Device</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Device</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

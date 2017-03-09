@@ -316,26 +316,28 @@ public interface MandCBase extends EObject {
 	void setUtil(Util value);
 
 	/**
-	 * Returns the value of the '<em><b>Device</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Device</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link alma.control.datamodel.meta.base.DeviceModel#getMandC <em>Mand C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Device</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Device</em>' containment reference.
+	 * @return the value of the '<em>Device</em>' reference.
 	 * @see #setDevice(DeviceModel)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Device()
-	 * @model containment="true" resolveProxies="true"
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getMandC
+	 * @model opposite="mandC" required="true"
 	 * @generated
 	 */
 	DeviceModel getDevice();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getDevice <em>Device</em>}' containment reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getDevice <em>Device</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Device</em>' containment reference.
+	 * @param value the new value of the '<em>Device</em>' reference.
 	 * @see #getDevice()
 	 * @generated
 	 */
@@ -344,10 +346,10 @@ public interface MandCBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='dependents.getResources().add(son);\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='dependents.getContents().add(son);\r\n'"
 	 * @generated
 	 */
-	void addDependent(Resource son);
+	void addDependent(EObject son);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -361,7 +363,7 @@ public interface MandCBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return !dependents.getResources().isEmpty();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return !dependents.getContents().isEmpty();'"
 	 * @generated
 	 */
 	boolean hasDependents();
