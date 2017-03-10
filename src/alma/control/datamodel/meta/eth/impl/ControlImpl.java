@@ -266,10 +266,10 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeCImpl(final String[] row, final Resource parent) {
-		setInitializeCP(row, parent);
-		mac = new MandCImpl();
-		mac.setInitializeMandCImpl(row, sheet);
+	public void setControlEth(final String[] row, final Object parent) {
+		setControlPoint(row, parent);
+				mac = new MandCImpl();
+				mac.setMandCEth(row, sheet);
 	}
 
 	/**
@@ -344,6 +344,12 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		result.append(mac);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public void addDependent(Object son) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //ControlImpl

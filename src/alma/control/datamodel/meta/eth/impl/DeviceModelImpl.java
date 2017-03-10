@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.eth.impl;
 
 import alma.control.datamodel.meta.base.BaseFactory;
+import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Note;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
@@ -199,6 +200,12 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 */
 	public String VendorClass() {
 		return ((MainImpl)main).VendorClass();
+	}
+
+	@Override
+	public MonitorPoint getMonitorPoint(String fullName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 } //DeviceModelImpl

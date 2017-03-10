@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.amb.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,10 +21,12 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.amb.impl;
+
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 
@@ -55,7 +58,6 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @ordered
 	 */
 	protected static final MandC MAC_EDEFAULT = null;
-
 	/**
 	 * The cached value of the '{@link #getMac() <em>Mac</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,7 +114,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String Data() {
-		return row[getTable().getColNum(sheet, "Data")];
+		return row[tables.getColNum(sheet, "Data")];
 	}
 
 	/**
@@ -121,7 +123,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String Value() {
-		return row[getTable().getColNum(sheet, "Value")];
+		return row[tables.getColNum(sheet, "Value")];
 	}
 
 	/**
@@ -130,7 +132,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String Returns() {
-		return row[getTable().getColNum(sheet, "Returns")];
+		return row[tables.getColNum(sheet, "Returns")];
 	}
 
 	/**
@@ -139,7 +141,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String Parameter() {
-		return row[getTable().getColNum(sheet, "Parameter")];
+		return row[tables.getColNum(sheet, "Parameter")];
 	}
 
 	/**
@@ -319,7 +321,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String MinRange() {
-		return getUtil().normalizeNumber(WorldDataType(),super.MinRange());
+		return utils.normalizeNumber(WorldDataType(),super.MinRange());
 	}
 
 	/**
@@ -328,7 +330,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String MaxRange() {
-		return getUtil().normalizeNumber(WorldDataType(),super.MaxRange());
+		return utils.normalizeNumber(WorldDataType(),super.MaxRange());
 	}
 
 	/**
@@ -337,7 +339,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String idlReturns() {
-		return (String)getTable().getWorldToIDL().get(Returns());
+		return (String)tables.getWorldToIDL().get(Returns());
 	}
 
 	/**
@@ -346,7 +348,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String corbaReturns() {
-		return (String)getTable().getWorldToCORBA().get(Returns());
+		return (String)tables.getWorldToCORBA().get(Returns());
 	}
 
 	/**
@@ -405,49 +407,49 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String idlParameters() {
-				String s = Parameter();
-				int pos = 0;
-				int n = s.indexOf(' ');
-				if (n == -1)
-				throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
-				String word = s.substring(pos,n);
-				String out = "";
-				boolean isArray = isWorldDataArray();
-				if (isArray) {
-				out += "in " + (String)getTable().getWorldToIDLSeq().get(word) + " ";
-				}
-				else
-				out = "in " + (String)getTable().getWorldToIDL().get(word) + " ";
-				pos = n + 1;
-				while (true) {
-				n = s.indexOf(',',pos);
-				if (n == -1)
-				break;
-				word = s.substring(pos,n);
-				out += word + ", ";
-				pos = n + 1;
-				while (true) {
-				if (s.charAt(pos) == ' ')
-				pos++;
-				else
-				break;
-				}
-				n = s.indexOf(' ',pos);
-				if (n == -1)
-				throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
-				word = s.substring(pos,n);
-				if (isArray) {
-				String type = (String)getTable().getWorldToIDL().get(word);
-				type = type.replace("unsigned long", "uLong");
-				out += "in " + type;
-				}
-				else
-				out = "in " + (String)getTable().getWorldToIDL().get(word) + " ";
-				pos = n + 1;
-				}
-				word = s.substring(pos);
-				out += word;
-				return out;
+						String s = Parameter();
+						int pos = 0;
+						int n = s.indexOf(' ');
+						if (n == -1)
+							throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+						String word = s.substring(pos,n);
+						String out = "";
+						boolean isArray = isWorldDataArray();
+						if (isArray) {
+							out += "in " + (String)tables.getWorldToIDLSeq().get(word) + " ";
+						}
+						else
+							out = "in " + (String)tables.getWorldToIDL().get(word) + " ";
+						pos = n + 1;
+						while (true) {
+							n = s.indexOf(',',pos);
+							if (n == -1)
+								break;
+							word = s.substring(pos,n);
+							out += word + ", ";
+							pos = n + 1;
+							while (true) {
+								if (s.charAt(pos) == ' ')
+									pos++;
+								else
+									break;
+							}
+							n = s.indexOf(' ',pos);
+							if (n == -1)
+								throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+							word = s.substring(pos,n);
+							if (isArray) {
+								String type = (String)tables.getWorldToIDL().get(word);
+								type = type.replace("unsigned long", "uLong");
+								out += "in " + type;
+							}
+							else
+								out = "in " + (String)tables.getWorldToIDL().get(word) + " ";
+							pos = n + 1;
+						}
+						word = s.substring(pos);
+						out += word;
+						return out;
 	}
 
 	/**
@@ -494,37 +496,37 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String corbaParameters() {
-				String s = Parameter();
-				int pos = 0;
-				int n = s.indexOf(' ');
-				if (n == -1)
-				throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
-				String word = s.substring(pos,n);
-				String out = (String)getTable().getWorldToCORBA().get(word) + " ";
-				pos = n + 1;
-				while (true) {
-				n = s.indexOf(',',pos);
-				if (n == -1)
-				break;
-				word = s.substring(pos,n);
-				out += word + ", ";
-				pos = n + 1;
-				while (true) {
-				if (s.charAt(pos) == ' ')
-				pos++;
-				else
-				break;
-				}
-				n = s.indexOf(' ',pos);
-				if (n == -1)
-				throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
-				word = s.substring(pos,n);
-				out += (String)getTable().getWorldToCORBA().get(word);
-				pos = n + 1;
-				}
-				word = s.substring(pos);
-				out += word;
-				return out;
+						String s = Parameter();
+						int pos = 0;
+						int n = s.indexOf(' ');
+						if (n == -1)
+							throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+						String word = s.substring(pos,n);
+						String out = (String)tables.getWorldToCORBA().get(word) + " ";
+						pos = n + 1;
+						while (true) {
+							n = s.indexOf(',',pos);
+							if (n == -1)
+								break;
+							word = s.substring(pos,n);
+							out += word + ", ";
+							pos = n + 1;
+							while (true) {
+								if (s.charAt(pos) == ' ')
+									pos++;
+								else
+									break;
+							}
+							n = s.indexOf(' ',pos);
+							if (n == -1)
+								throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+							word = s.substring(pos,n);
+							out += (String)tables.getWorldToCORBA().get(word);
+							pos = n + 1;
+						}
+						word = s.substring(pos);
+						out += word;
+						return out;
 	}
 
 	/**
@@ -533,7 +535,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String cppReturns() {
-		return (String)getTable().getWorldToCPP().get(Returns());
+		return (String)tables.getWorldToCPP().get(Returns());
 	}
 
 	/**
@@ -573,37 +575,37 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public String cppParameters() {
-				String s = Parameter();
-				int pos = 0;
-				int n = s.indexOf(' ');
-				if (n == -1)
-				throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
-				String word = s.substring(pos,n);
-				String out = (String)getTable().getWorldToCPP().get(word) + " ";
-				pos = n + 1;
-				while (true) {
-				n = s.indexOf(',',pos);
-				if (n == -1)
-				break;
-				word = s.substring(pos,n);
-				out += word + ", ";
-				pos = n + 1;
-				while (true) {
-				if (s.charAt(pos) == ' ')
-				pos++;
-				else
-				break;
-				}				
-				n = s.indexOf(' ',pos);
-				if (n == -1)
-				throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
-				word = s.substring(pos,n);
-				out += (String)getTable().getWorldToCPP().get(word) + " ";
-				pos = n + 1;
-				}
-				word = s.substring(pos);
-				out += word;
-				return out;
+			String s = Parameter();
+						int pos = 0;
+						int n = s.indexOf(' ');
+						if (n == -1)
+							throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+						String word = s.substring(pos,n);
+						String out = (String)tables.getWorldToCPP().get(word) + " ";
+						pos = n + 1;
+						while (true) {
+							n = s.indexOf(',',pos);
+							if (n == -1)
+								break;
+							word = s.substring(pos,n);
+							out += word + ", ";
+							pos = n + 1;
+							while (true) {
+								if (s.charAt(pos) == ' ')
+									pos++;
+								else
+									break;
+							}				
+							n = s.indexOf(' ',pos);
+							if (n == -1)
+								throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
+							word = s.substring(pos,n);
+							out += (String)tables.getWorldToCPP().get(word) + " ";
+							pos = n + 1;
+						}
+						word = s.substring(pos);
+						out += word;
+						return out;
 	}
 
 	/**
@@ -923,10 +925,10 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeCImpl(final String[] row, final Resource parent) {
-		setInitializeCP(row, parent);
+	public void setControlAmb(final String[] row, final Object parent) {
+		setControlPoint(row, parent);
 		mac = new MandCImpl();
-		mac.setInitializeMandCImpl(row, sheet, this);
+		mac.setMandCAmb(row, sheet, this);
 	}
 
 	/**
@@ -1001,6 +1003,12 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		result.append(mac);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public void addDependent(Object son) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //ControlImpl

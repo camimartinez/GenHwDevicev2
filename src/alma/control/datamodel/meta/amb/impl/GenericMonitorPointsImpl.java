@@ -213,30 +213,30 @@ public class GenericMonitorPointsImpl extends EObjectImpl implements GenericMoni
 	 * @generated
 	 */
 	public String[][][] getParsedGenericSpreadsheet() {
-		dirLocation = util.getInstallDir();
-						if (!(new java.io.File(dirLocation + "/idl/GENERIC_spreadsheet.xml").exists())){
-							System.out.println("Spreadsheet GENERIC_spreadsheet not found. Exiting....");
-							System.exit(1);
-						}
-				
-						BaseFactory baseFac = BaseFactory.eINSTANCE;
-						SpreadsheetParser parserSpreadsheet = baseFac.createSpreadsheetParser();
+				dirLocation = util.getInstallDir();
+				if (!(new java.io.File(dirLocation + "/idl/GENERIC_spreadsheet.xml").exists())){
+					System.out.println("Spreadsheet GENERIC_spreadsheet not found. Exiting....");
+					System.exit(1);
+				}
 		
-						String xml = parserSpreadsheet.getSpreadsheet(dirLocation + "/idl", "GENERIC_spreadsheet.xml");
-						String xmlFile = dirLocation + "/idl/GENERIC_spreadsheet.xml";
-						String xsdFile = dirLocation + "/config/schemas/amb/Workbook.xsd";
-						SpreadsheetParser p = baseFac.createSpreadsheetParser();
-						p.setInitializeSP(xml);
-						String [][][] spreadsheet = p.getWorksheets();
-						SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
-						if (!v.validate(xmlFile,xsdFile)) {
-							String s = "Spreadsheet GENERIC_spreadsheet.xml is not a valid spreadsheet.";
-							throw new RuntimeException(s);
-						}
-				
-						System.out.println("Spreadsheet GENERIC has been validated.");
-				
-						return spreadsheet;
+				BaseFactory baseFac = BaseFactory.eINSTANCE;
+				SpreadsheetParser parserSpreadsheet = baseFac.createSpreadsheetParser();
+		
+				String xml = parserSpreadsheet.getSpreadsheet(dirLocation + "/idl", "GENERIC_spreadsheet.xml");
+				String xmlFile = dirLocation + "/idl/GENERIC_spreadsheet.xml";
+				String xsdFile = dirLocation + "/config/schemas/amb/Workbook.xsd";
+				SpreadsheetParser p = baseFac.createSpreadsheetParser();
+				p.setSpreadsheetParser(xml);
+				String [][][] spreadsheet = p.getWorksheets();
+				SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
+				if (!v.validate(xmlFile,xsdFile)) {
+					String s = "Spreadsheet GENERIC_spreadsheet.xml is not a valid spreadsheet.";
+					throw new RuntimeException(s);
+				}
+		
+				System.out.println("Spreadsheet GENERIC has been validated.");
+		
+				return spreadsheet;
 	}
 
 	/**

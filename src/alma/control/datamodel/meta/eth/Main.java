@@ -47,9 +47,9 @@ public interface Main extends MainBase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeMB(row);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setMainBase(row);'"
 	 * @generated
 	 */
-	void setInitializeMainImpl(String[] row);
+	void setMainEth(String[] row);
 
 } // Main

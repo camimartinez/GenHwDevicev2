@@ -822,7 +822,7 @@ public class SWModuleImpl extends EObjectImpl implements SWModule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeSW(final String[] row, final Resource parent) {
+	public void setSWModule(final String[] row, final Object parent) {
 		this.row = row;
 		this.sheet = table.getSheetNum("Hardware Device");
 		this.oneSwModule = oneSwModule;

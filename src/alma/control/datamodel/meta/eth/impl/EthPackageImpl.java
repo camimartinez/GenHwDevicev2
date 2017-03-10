@@ -388,9 +388,9 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		addEOperation(controlEClass, ecorePackage.getEString(), "DataToDatabaseType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(controlEClass, null, "setInitializeCImpl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(controlEClass, null, "setControlEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBasePackage.getResourceDT(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -402,7 +402,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		addEOperation(mainEClass, ecorePackage.getEString(), "VendorClass", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(mainEClass, null, "setInitializeMainImpl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(mainEClass, null, "setMainEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mandCEClass, MandC.class, "MandC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -441,7 +441,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		addEOperation(mandCEClass, ecorePackage.getEString(), "DataToDatabaseType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(mandCEClass, null, "setInitializeMandCImpl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(mandCEClass, null, "setMandCEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "sheet", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -489,9 +489,9 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "isPartOfHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(monitorEClass, null, "setInitializeMImpl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(monitorEClass, null, "setMonitorEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBasePackage.getResourceDT(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

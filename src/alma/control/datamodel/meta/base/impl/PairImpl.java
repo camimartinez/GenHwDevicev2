@@ -152,7 +152,7 @@ public abstract class PairImpl extends SpreadsheetParserImpl implements Pair {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializePair(final String c, final String n) {
+	public void setPair(final String c, final String n) {
 		content = c;
 		newString = n;
 	}

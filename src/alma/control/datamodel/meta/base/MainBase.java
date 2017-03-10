@@ -35,8 +35,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MainBase#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MainBase#getUtil <em>Util</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MainBase#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MainBase#getUtils <em>Utils</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MainBase#getDevices <em>Devices</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMainBase()
@@ -97,65 +98,87 @@ public interface MainBase extends EObject {
 	void setSheet(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Table</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link alma.control.datamodel.meta.base.Table#getMain <em>Main</em>}'.
+	 * Returns the value of the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Table</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table</em>' containment reference.
-	 * @see #setTable(Table)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Table()
-	 * @see alma.control.datamodel.meta.base.Table#getMain
-	 * @model opposite="main" containment="true" resolveProxies="true" required="true"
+	 * @return the value of the '<em>Tables</em>' reference.
+	 * @see #setTables(Table)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Tables()
+	 * @model
 	 * @generated
 	 */
-	Table getTable();
+	Table getTables();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getTable <em>Table</em>}' containment reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getTables <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' containment reference.
-	 * @see #getTable()
+	 * @param value the new value of the '<em>Tables</em>' reference.
+	 * @see #getTables()
 	 * @generated
 	 */
-	void setTable(Table value);
+	void setTables(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Util</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link alma.control.datamodel.meta.base.Util#getMandc <em>Mandc</em>}'.
+	 * Returns the value of the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Util</em>' reference isn't clear,
+	 * If the meaning of the '<em>Utils</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Util</em>' reference.
-	 * @see #setUtil(Util)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Util()
-	 * @see alma.control.datamodel.meta.base.Util#getMandc
-	 * @model opposite="mandc" required="true"
+	 * @return the value of the '<em>Utils</em>' reference.
+	 * @see #setUtils(Util)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Utils()
+	 * @model
 	 * @generated
 	 */
-	Util getUtil();
+	Util getUtils();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getUtil <em>Util</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getUtils <em>Utils</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Util</em>' reference.
-	 * @see #getUtil()
+	 * @param value the new value of the '<em>Utils</em>' reference.
+	 * @see #getUtils()
 	 * @generated
 	 */
-	void setUtil(Util value);
+	void setUtils(Util value);
+
+	/**
+	 * Returns the value of the '<em><b>Devices</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Devices</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Devices</em>' reference.
+	 * @see #setDevices(DeviceModel)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Devices()
+	 * @model
+	 * @generated
+	 */
+	DeviceModel getDevices();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getDevices <em>Devices</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Devices</em>' reference.
+	 * @see #getDevices()
+	 * @generated
+	 */
+	void setDevices(DeviceModel value);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Assembly\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Assembly\")];'"
 	 * @generated
 	 */
 	String Assembly();
@@ -163,7 +186,7 @@ public interface MainBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Description\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Description\")];'"
 	 * @generated
 	 */
 	String Description();
@@ -171,7 +194,7 @@ public interface MainBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.descriptionAsString(Description());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.descriptionAsString(Description());'"
 	 * @generated
 	 */
 	String DescriptionAsString();
@@ -179,7 +202,7 @@ public interface MainBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Device Name\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Device Name\")];'"
 	 * @generated
 	 */
 	String DeviceName();
@@ -187,7 +210,7 @@ public interface MainBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Extends\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Extends\")];'"
 	 * @generated
 	 */
 	String Extends();
@@ -195,7 +218,7 @@ public interface MainBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"ICD\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"ICD\")];'"
 	 * @generated
 	 */
 	String ICD();
@@ -203,7 +226,7 @@ public interface MainBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"ICD Date\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"ICD Date\")];'"
 	 * @generated
 	 */
 	String ICDDate();
@@ -211,7 +234,7 @@ public interface MainBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.toDatabaseDate(ICDDate());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.toDatabaseDate(ICDDate());'"
 	 * @generated
 	 */
 	String ICDDateAsDatabaseDate();
@@ -219,7 +242,7 @@ public interface MainBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return util.toArrayTime(ICDDate());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.toArrayTime(ICDDate());'"
 	 * @generated
 	 */
 	String ICDDateAsArrayTime();
@@ -228,9 +251,9 @@ public interface MainBase extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = getTable().getSheetNum(\"Hardware Device\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\n\t\tthis.sheet = tables.getSheetNum(\"Hardware Device\");'"
 	 * @generated
 	 */
-	void setInitializeMB(String[] row);
+	void setMainBase(String[] row);
 
 } // MainBase

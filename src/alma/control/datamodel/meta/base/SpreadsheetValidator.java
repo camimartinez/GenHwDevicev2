@@ -139,6 +139,6 @@ public interface SpreadsheetValidator extends EObject {
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.errorList = new ArrayList&lt; String &gt;();\n'"
 	 * @generated
 	 */
-	void setInitializeSV();
+	void setSpreadsheetValidator();
 
 } // SpreadsheetValidator

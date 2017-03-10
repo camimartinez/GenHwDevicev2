@@ -22,14 +22,20 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
+import java.io.IOException;
+import java.util.Collections;
 import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.MandC;
@@ -51,7 +57,7 @@ import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
  */
 public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	/**
-	 * The cached value of the '{@link #getMac() <em>Mac</em>}' containment reference.
+	 * The cached value of the '{@link #getMac() <em>Mac</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMac()
@@ -89,12 +95,6 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 			InternalEObject oldMac = (InternalEObject)mac;
 			mac = (MandC)eResolveProxy(oldMac);
 			if (mac != oldMac) {
-				InternalEObject newMac = (InternalEObject)mac;
-				NotificationChain msgs = oldMac.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AmbPackage.MONITOR__MAC, null, null);
-				if (newMac.eInternalContainer() == null) {
-					msgs = newMac.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AmbPackage.MONITOR__MAC, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MONITOR__MAC, oldMac, mac));
 			}
@@ -116,33 +116,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMac(MandC newMac, NotificationChain msgs) {
+	public void setMac(MandC newMac) {
 		MandC oldMac = mac;
 		mac = newMac;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__MAC, oldMac, newMac);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMac(MandC newMac) {
-		if (newMac != mac) {
-			NotificationChain msgs = null;
-			if (mac != null)
-				msgs = ((InternalEObject)mac).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AmbPackage.MONITOR__MAC, null, msgs);
-			if (newMac != null)
-				msgs = ((InternalEObject)newMac).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AmbPackage.MONITOR__MAC, null, msgs);
-			msgs = basicSetMac(newMac, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__MAC, newMac, newMac));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__MAC, oldMac, mac));
 	}
 
 	/**
@@ -151,7 +129,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public String CanBeInvalid() {
-		return row[getTable().getColNum(sheet, "Can Be Invalid")];
+		return row[tables.getColNum(sheet, "Can Be Invalid")];
 	}
 
 	/**
@@ -592,7 +570,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public String MinRange() {
-		return getUtil().normalizeNumber(WorldDataType(), super.MinRange());
+		return utils.normalizeNumber(WorldDataType(), super.MinRange());
 	}
 
 	/**
@@ -601,7 +579,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public String MaxRange() {
-		return getUtil().normalizeNumber(WorldDataType(), super.MaxRange());
+		return utils.normalizeNumber(WorldDataType(), super.MaxRange());
 	}
 
 	/**
@@ -610,7 +588,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public String Default() {
-		return getUtil().normalizeNumber(WorldDataType(), super.Default());
+		return utils.normalizeNumber(WorldDataType(), super.Default());
 	}
 
 	/**
@@ -619,14 +597,14 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public boolean isPattern() {
-				boolean ret = true;
-				if( this.isDependent()) ret = false;
-				if( this.getDependents().getResources().isEmpty()) ret = false;
-				for (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {
-					MonitorImpl var = (MonitorImpl) iter.next();
-					if( var.WorldDataType().compareTo("boolean") != 0 ) ret = false;
-				}
-				return ret;
+		boolean ret = true;
+						if( this.isDependent()) ret = false;
+						if( this.getDependents().getContents().isEmpty()) ret = false;
+						for (Iterator<EObject> iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {
+							MonitorImpl var = (MonitorImpl) iter.next();
+							if( var.WorldDataType().compareTo("boolean") != 0 ) ret = false;
+						}
+						return ret;
 	}
 
 	/**
@@ -655,7 +633,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		boolean ret = true;
 		String firsttype = null;
 		if( hasDependents() ){
-			for (Iterator<Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {
+			for (Iterator<EObject> iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {
 				MonitorImpl var = (MonitorImpl) iter.next();
 				if( firsttype == null){
 					firsttype = new String(var.WorldDataType());
@@ -690,24 +668,10 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeMImpl(final String[] row, final Resource parent) {
-		setInitializeMP(row, parent);
+	public void setMonitorAmb(final String[] row, final Object parent) {
+		setMonitorPoint(row, parent);
 		mac = new MandCImpl();
-		mac.setInitializeMandCImpl(row, sheet, this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case AmbPackage.MONITOR__MAC:
-				return basicSetMac(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		mac.setMandCAmb(row, sheet, this);
 	}
 
 	/**
@@ -767,6 +731,12 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 				return mac != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	@Override
+	public void addDependent(Object son) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //MonitorImpl

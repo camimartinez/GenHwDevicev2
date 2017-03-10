@@ -9,7 +9,7 @@
           <eClassifiers xsi:type="ecore:EClass" name="Archive" eSuperTypes="#//control/datamodel/meta/base/ArchiveProperty">
             <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Assembly&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Assembly&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isIntervalTE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -22,9 +22,9 @@
                 <details key="body" value="if(isIntervalTE())&#xD;&#xA;&#x9;return IntervalFull().substring(3);&#xD;&#xA;return IntervalFull();"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeAImpl">
+            <eOperations name="setArchiveAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeAP(row);"/>
+                <details key="body" value="setArchiveProperty(row);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             </eOperations>
@@ -32,22 +32,22 @@
           <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//control/datamodel/meta/base/ControlPoint">
             <eOperations name="Data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Data&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Data&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Value&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Value&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Returns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Returns&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Returns&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Parameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Parameter&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Parameter&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -147,22 +147,22 @@
             </eOperations>
             <eOperations name="MinRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().normalizeNumber(WorldDataType(),super.MinRange());"/>
+                <details key="body" value="return utils.normalizeNumber(WorldDataType(),super.MinRange());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="MaxRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().normalizeNumber(WorldDataType(),super.MaxRange());"/>
+                <details key="body" value="return utils.normalizeNumber(WorldDataType(),super.MaxRange());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="idlReturns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)getTable().getWorldToIDL().get(Returns());"/>
+                <details key="body" value="return (String)tables.getWorldToIDL().get(Returns());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="corbaReturns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)getTable().getWorldToCORBA().get(Returns());"/>
+                <details key="body" value="return (String)tables.getWorldToCORBA().get(Returns());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="idlDeclaration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -177,7 +177,7 @@
             </eOperations>
             <eOperations name="idlParameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;String s = Parameter();&#xA;&#x9;&#x9;int pos = 0;&#xA;&#x9;&#x9;int n = s.indexOf(' ');&#xA;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;String word = s.substring(pos,n);&#xA;&#x9;&#x9;String out = &quot;&quot;;&#xA;&#x9;&#x9;boolean isArray = isWorldDataArray();&#xA;&#x9;&#x9;if (isArray) {&#xA;&#x9;&#x9;out += &quot;in &quot; + (String)getTable().getWorldToIDLSeq().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;out = &quot;in &quot; + (String)getTable().getWorldToIDL().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;n = s.indexOf(',',pos);&#xA;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;break;&#xA;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;out += word + &quot;, &quot;;&#xA;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;if (s.charAt(pos) == ' ')&#xA;&#x9;&#x9;pos++;&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;break;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;n = s.indexOf(' ',pos);&#xA;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;if (isArray) {&#xA;&#x9;&#x9;String type = (String)getTable().getWorldToIDL().get(word);&#xA;&#x9;&#x9;type = type.replace(&quot;unsigned long&quot;, &quot;uLong&quot;);&#xA;&#x9;&#x9;out += &quot;in &quot; + type;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;out = &quot;in &quot; + (String)getTable().getWorldToIDL().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;word = s.substring(pos);&#xA;&#x9;&#x9;out += word;&#xA;&#x9;&#x9;return out;"/>
+                <details key="body" value="&#x9;&#x9;&#x9;&#x9;String s = Parameter();&#xA;&#x9;&#x9;&#x9;&#x9;int pos = 0;&#xA;&#x9;&#x9;&#x9;&#x9;int n = s.indexOf(' ');&#xA;&#x9;&#x9;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;String word = s.substring(pos,n);&#xA;&#x9;&#x9;&#x9;&#x9;String out = &quot;&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;boolean isArray = isWorldDataArray();&#xA;&#x9;&#x9;&#x9;&#x9;if (isArray) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;out += &quot;in &quot; + (String)tables.getWorldToIDLSeq().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;out = &quot;in &quot; + (String)tables.getWorldToIDL().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;n = s.indexOf(',',pos);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;out += word + &quot;, &quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (s.charAt(pos) == ' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;pos++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;n = s.indexOf(' ',pos);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (isArray) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String type = (String)tables.getWorldToIDL().get(word);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;type = type.replace(&quot;unsigned long&quot;, &quot;uLong&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;out += &quot;in &quot; + type;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;out = &quot;in &quot; + (String)tables.getWorldToIDL().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;word = s.substring(pos);&#xA;&#x9;&#x9;&#x9;&#x9;out += word;&#xA;&#x9;&#x9;&#x9;&#x9;return out;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="corbaDeclaration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -187,12 +187,12 @@
             </eOperations>
             <eOperations name="corbaParameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;String s = Parameter();&#xA;&#x9;&#x9;int pos = 0;&#xA;&#x9;&#x9;int n = s.indexOf(' ');&#xA;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;String word = s.substring(pos,n);&#xA;&#x9;&#x9;String out = (String)getTable().getWorldToCORBA().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;n = s.indexOf(',',pos);&#xA;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;break;&#xA;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;out += word + &quot;, &quot;;&#xA;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;if (s.charAt(pos) == ' ')&#xA;&#x9;&#x9;pos++;&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;break;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;n = s.indexOf(' ',pos);&#xA;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;out += (String)getTable().getWorldToCORBA().get(word);&#xA;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;word = s.substring(pos);&#xA;&#x9;&#x9;out += word;&#xA;&#x9;&#x9;return out;"/>
+                <details key="body" value="&#x9;&#x9;&#x9;&#x9;String s = Parameter();&#xA;&#x9;&#x9;&#x9;&#x9;int pos = 0;&#xA;&#x9;&#x9;&#x9;&#x9;int n = s.indexOf(' ');&#xA;&#x9;&#x9;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;String word = s.substring(pos,n);&#xA;&#x9;&#x9;&#x9;&#x9;String out = (String)tables.getWorldToCORBA().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;n = s.indexOf(',',pos);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;out += word + &quot;, &quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (s.charAt(pos) == ' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;pos++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;n = s.indexOf(' ',pos);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;out += (String)tables.getWorldToCORBA().get(word);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;word = s.substring(pos);&#xA;&#x9;&#x9;&#x9;&#x9;out += word;&#xA;&#x9;&#x9;&#x9;&#x9;return out;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="cppReturns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)getTable().getWorldToCPP().get(Returns());"/>
+                <details key="body" value="return (String)tables.getWorldToCPP().get(Returns());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="cppDeclaration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -202,7 +202,7 @@
             </eOperations>
             <eOperations name="cppParameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;String s = Parameter();&#xA;&#x9;&#x9;int pos = 0;&#xA;&#x9;&#x9;int n = s.indexOf(' ');&#xA;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;String word = s.substring(pos,n);&#xA;&#x9;&#x9;String out = (String)getTable().getWorldToCPP().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;n = s.indexOf(',',pos);&#xA;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;break;&#xA;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;out += word + &quot;, &quot;;&#xA;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;if (s.charAt(pos) == ' ')&#xA;&#x9;&#x9;pos++;&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;break;&#xA;&#x9;&#x9;}&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;n = s.indexOf(' ',pos);&#xA;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;out += (String)getTable().getWorldToCPP().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;word = s.substring(pos);&#xA;&#x9;&#x9;out += word;&#xA;&#x9;&#x9;return out;"/>
+                <details key="body" value="&#x9;String s = Parameter();&#xA;&#x9;&#x9;&#x9;&#x9;int pos = 0;&#xA;&#x9;&#x9;&#x9;&#x9;int n = s.indexOf(' ');&#xA;&#x9;&#x9;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;String word = s.substring(pos,n);&#xA;&#x9;&#x9;&#x9;&#x9;String out = (String)tables.getWorldToCPP().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;n = s.indexOf(',',pos);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;out += word + &quot;, &quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (s.charAt(pos) == ' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;pos++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;n = s.indexOf(' ',pos);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (n == -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax in Parameter field: (&quot; + s + &quot;)&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;word = s.substring(pos,n);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;out += (String)tables.getWorldToCPP().get(word) + &quot; &quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;pos = n + 1;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;word = s.substring(pos);&#xA;&#x9;&#x9;&#x9;&#x9;out += word;&#xA;&#x9;&#x9;&#x9;&#x9;return out;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="argList" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -355,12 +355,12 @@
                 <details key="body" value="return mac.WorldDataTypeUpper1();"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeCImpl">
+            <eOperations name="setControlAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeCP(row, parent);&#xA;mac = new MandCImpl();&#xA;mac.setInitializeMandCImpl(row, sheet, this);"/>
+                <details key="body" value="setControlPoint(row, parent);&#xA;mac = new MandCImpl();&#xA;mac.setMandCAmb(row, sheet, this);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
-              <eParameters name="parent" eType="#//control/datamodel/meta/base/ResourceDT"/>
+              <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/base/MandCAMBDT"/>
           </eClassifiers>
@@ -430,7 +430,7 @@
           <eClassifiers xsi:type="ecore:EClass" name="GenericMonitorPoints">
             <eOperations name="getParsedGenericSpreadsheet" eType="#//control/datamodel/meta/base/EStringArray3">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="dirLocation = util.getInstallDir();&#xA;&#x9;&#x9;&#x9;&#x9;if (!(new java.io.File(dirLocation + &quot;/idl/GENERIC_spreadsheet.xml&quot;).exists())){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Spreadsheet GENERIC_spreadsheet not found. Exiting....&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;System.exit(1);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;BaseFactory baseFac = BaseFactory.eINSTANCE;&#xA;&#x9;&#x9;&#x9;&#x9;SpreadsheetParser parserSpreadsheet = baseFac.createSpreadsheetParser();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;String xml = parserSpreadsheet.getSpreadsheet(dirLocation + &quot;/idl&quot;, &quot;GENERIC_spreadsheet.xml&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;String xmlFile = dirLocation + &quot;/idl/GENERIC_spreadsheet.xml&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;String xsdFile = dirLocation + &quot;/config/schemas/amb/Workbook.xsd&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;SpreadsheetParser p = baseFac.createSpreadsheetParser();&#xA;&#x9;&#x9;&#x9;&#x9;p.setInitializeSP(xml);&#xA;&#x9;&#x9;&#x9;&#x9;String [][][] spreadsheet = p.getWorksheets();&#xA;&#x9;&#x9;&#x9;&#x9;SpreadsheetValidator v = baseFac.createSpreadsheetValidator();&#xA;&#x9;&#x9;&#x9;&#x9;if (!v.validate(xmlFile,xsdFile)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;String s = &quot;Spreadsheet GENERIC_spreadsheet.xml is not a valid spreadsheet.&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(s);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Spreadsheet GENERIC has been validated.&quot;);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;return spreadsheet;"/>
+                <details key="body" value="&#x9;&#x9;dirLocation = util.getInstallDir();&#xA;&#x9;&#x9;if (!(new java.io.File(dirLocation + &quot;/idl/GENERIC_spreadsheet.xml&quot;).exists())){&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;Spreadsheet GENERIC_spreadsheet not found. Exiting....&quot;);&#xA;&#x9;&#x9;&#x9;System.exit(1);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;BaseFactory baseFac = BaseFactory.eINSTANCE;&#xA;&#x9;&#x9;SpreadsheetParser parserSpreadsheet = baseFac.createSpreadsheetParser();&#xA;&#xA;&#x9;&#x9;String xml = parserSpreadsheet.getSpreadsheet(dirLocation + &quot;/idl&quot;, &quot;GENERIC_spreadsheet.xml&quot;);&#xA;&#x9;&#x9;String xmlFile = dirLocation + &quot;/idl/GENERIC_spreadsheet.xml&quot;;&#xA;&#x9;&#x9;String xsdFile = dirLocation + &quot;/config/schemas/amb/Workbook.xsd&quot;;&#xA;&#x9;&#x9;SpreadsheetParser p = baseFac.createSpreadsheetParser();&#xA;&#x9;&#x9;p.setSpreadsheetParser(xml);&#xA;&#x9;&#x9;String [][][] spreadsheet = p.getWorksheets();&#xA;&#x9;&#x9;SpreadsheetValidator v = baseFac.createSpreadsheetValidator();&#xA;&#x9;&#x9;if (!v.validate(xmlFile,xsdFile)) {&#xA;&#x9;&#x9;&#x9;String s = &quot;Spreadsheet GENERIC_spreadsheet.xml is not a valid spreadsheet.&quot;;&#xA;&#x9;&#x9;&#x9;throw new RuntimeException(s);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;System.out.println(&quot;Spreadsheet GENERIC has been validated.&quot;);&#xA;&#xA;&#x9;&#x9;return spreadsheet;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="getDeviceWorksheetWithGenericPointsAdded" eType="#//control/datamodel/meta/base/EStringArray3">
@@ -447,37 +447,37 @@
           <eClassifiers xsi:type="ecore:EClass" name="Main" eSuperTypes="#//control/datamodel/meta/base/MainBase">
             <eOperations name="Parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Parent&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Parent&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Cardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Cardinality&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Cardinality&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="NodeAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Node Address&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Node Address&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Channel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Channel&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Channel&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="BaseAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Base Address&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Base Address&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="GenericMonitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Generic Monitor Points&quot;)].equals(&quot;yes&quot;);"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Generic Monitor Points&quot;)].equals(&quot;yes&quot;);"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeMainImpl">
+            <eOperations name="setMainAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeMB(row);"/>
+                <details key="body" value="setMainBase(row);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             </eOperations>
@@ -485,27 +485,27 @@
           <eClassifiers xsi:type="ecore:EClass" name="MandC">
             <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[mcp.getTable().getColNum(sheet, &quot;Assembly&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Assembly&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="RCA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[mcp.getTable().getColNum(sheet, &quot;RCA&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;RCA&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="RCACell" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[mcp.getTable().getColNum(sheet, &quot;RCA&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;RCA&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="RawDataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;String s = row[mcp.getTable().getColNum(sheet, &quot;Raw Data Type&quot;)];&#xA;&#x9;&#x9;if(!mcp.isDependent())&#xA;&#x9;&#x9;return isRawDataArray() ? s.substring(0, s.indexOf(&quot;[&quot;)) : s;&#xA;&#x9;&#x9;if(mcp instanceof Monitor)&#xA;&#x9;&#x9;return ((Monitor) mcp.getParent()).RawDataType();&#xA;&#x9;&#x9;if(mcp instanceof Control)&#xA;&#x9;&#x9;return ((Control) mcp.getParent()).RawDataType();&#xA;&#x9;&#x9;return &quot;ERROR&quot;;"/>
+                <details key="body" value="&#x9;&#x9;&#x9;&#x9;String s = row[tables.getColNum(sheet, &quot;Raw Data Type&quot;)];&#xA;&#x9;&#x9;&#x9;&#x9;if(!mcp.isDependent())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return isRawDataArray() ? s.substring(0, s.indexOf(&quot;[&quot;)) : s;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(mcp instanceof Monitor)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return ((Monitor) mcp.getParent()).RawDataType();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(mcp instanceof Control)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return ((Control) mcp.getParent()).RawDataType();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return &quot;ERROR&quot;;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="RawDataTypeCell" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[mcp.getTable().getColNum(sheet, &quot;Raw Data Type&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Raw Data Type&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="TeRelated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -515,87 +515,87 @@
             </eOperations>
             <eOperations name="TeRelatedCell" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[mcp.getTable().getColNum(sheet, &quot;TE Related&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;TE Related&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="String s = row[mcp.getTable().getColNum(sheet, &quot;World Data Type&quot;)];&#xA;return isWorldDataArray() ? s.substring(0, s.indexOf(&quot;[&quot;)) : s;"/>
+                <details key="body" value="String s = row[tables.getColNum(sheet, &quot;World Data Type&quot;)];&#xA;return isWorldDataArray() ? s.substring(0, s.indexOf(&quot;[&quot;)) : s;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataTypeCell" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[mcp.getTable().getColNum(sheet, &quot;World Data Type&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;World Data Type&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;String s = ScaleCell();&#xA;&#x9;&#x9;if((s.equals(&quot;none&quot;) == true) || (s.equals(&quot;extended&quot;) == true) || (s.equals(mcp.getTable().getCelsiusToKelvin()) == true))&#xA;&#x9;&#x9;s = &quot;1.0&quot;;&#xA;&#x9;&#x9;return s;"/>
+                <details key="body" value="String s = ScaleCell();&#xA;if((s.equals(&quot;none&quot;) == true) || (s.equals(&quot;extended&quot;) == true) || (s.equals(tables.getCelsiusToKelvin()) == true))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;s = &quot;1.0&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return s;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ScaleCell" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;return mcp.getUtil().normalizeNumber(WorldDataType(), row[mcp.getTable().getColNum(sheet, &quot;Scale&quot;)]);&#xA;"/>
+                <details key="body" value="return utils.normalizeNumber(WorldDataType(), row[tables.getColNum(sheet, &quot;Scale&quot;)]);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;String s = ScaleCell();&#xA;&#x9;&#x9;&#x9;if(s.equals(mcp.getTable().getCelsiusToKelvin()))&#xA;&#x9;&#x9;&#x9;return &quot;273.15&quot;;&#xA;&#x9;&#x9;String o = OffsetCell();&#xA;&#x9;&#x9;&#x9;if((o.equals(&quot;0&quot;) == true) || (o.equals(&quot;none&quot;) == true)&#x9;|| (o.equals(&quot;extended&quot;) == true))&#xA;&#x9;&#x9;&#x9;o = &quot;0.0&quot;;&#xA;&#x9;&#x9;&#x9;return o;"/>
+                <details key="body" value="&#x9;&#x9;String s = ScaleCell();&#xA;&#x9;&#x9;if(s.equals(tables.getCelsiusToKelvin()))&#xA;&#x9;&#x9;&#x9;return &quot;273.15&quot;;&#xA;&#x9;&#x9;String o = OffsetCell();&#xA;&#x9;&#x9;if((o.equals(&quot;0&quot;) == true) || (o.equals(&quot;none&quot;) == true)&#x9;|| (o.equals(&quot;extended&quot;) == true))&#xA;&#x9;&#x9;&#x9;o = &quot;0.0&quot;;&#xA;&#x9;&#x9;return o;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="OffsetCell" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return mcp.getUtil().normalizeNumber(WorldDataType(), row[mcp.getTable().getColNum(sheet, &quot;Offset&quot;)]);&#xA;"/>
+                <details key="body" value="return utils.normalizeNumber(WorldDataType(), row[tables.getColNum(sheet, &quot;Offset&quot;)]);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="RawDataToCPPType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getRawToCPP().get(RawDataType());"/>
+                <details key="body" value="return (String)tables.getRawToCPP().get(RawDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataToCPPType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getWorldToCPP().get(WorldDataType());"/>
+                <details key="body" value="return (String)tables.getWorldToCPP().get(WorldDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataToCORBAType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getWorldToCORBA().get(WorldDataType());"/>
+                <details key="body" value="return (String)tables.getWorldToCORBA().get(WorldDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataToIDLSeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getWorldToIDLSeq().get(WorldDataType());"/>
+                <details key="body" value="return (String)tables.getWorldToIDLSeq().get(WorldDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataToIDLType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getWorldToIDL().get(WorldDataType());"/>
+                <details key="body" value="return (String)tables.getWorldToIDL().get(WorldDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataToCORBASeqType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getWorldToCORBASeq().get(WorldDataType());"/>
+                <details key="body" value="return (String)tables.getWorldToCORBASeq().get(WorldDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataToCORBADevIOType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getWorldToCORBADevIO().get(WorldDataType());"/>
+                <details key="body" value="return (String)tables.getWorldToCORBADevIO().get(WorldDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataToJavaType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getWorldToJava().get(WorldDataType());"/>
+                <details key="body" value="return (String)tables.getWorldToJava().get(WorldDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataToDatabaseType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getWorldToDatabase().get(WorldDataType());"/>
+                <details key="body" value="return (String)tables.getWorldToDatabase().get(WorldDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="WorldDataToBACIType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mcp.getTable().getWorldToBACI().get(WorldDataType());"/>
+                <details key="body" value="return (String)tables.getWorldToBACI().get(WorldDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isConversion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -610,32 +610,32 @@
             </eOperations>
             <eOperations name="isWorldDataArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="String s = row[mcp.getTable().getColNum(sheet, &quot;World Data Type&quot;)];&#xA;return s.endsWith(&quot;]&quot;) ? true : false;"/>
+                <details key="body" value="String s = row[tables.getColNum(sheet, &quot;World Data Type&quot;)];&#xA;return s.endsWith(&quot;]&quot;) ? true : false;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isRawDataArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="String s = row[mcp.getTable().getColNum(sheet, &quot;Raw Data Type&quot;)];&#xA;&#x9;&#x9;&#x9;if(!mcp.isDependent())&#xA;&#x9;&#x9;&#x9;return s.endsWith(&quot;]&quot;) ? true : false;&#xA;&#x9;&#x9;&#x9;if(s.startsWith(&quot;&amp;lt;&quot;) &amp;&amp; s.substring(1).indexOf(&quot;&amp;lt;&quot;) != -1)&#xA;&#x9;&#x9;&#x9;return true;&#xA;&#x9;&#x9;return false;"/>
+                <details key="body" value="&#x9;&#x9;String s = row[tables.getColNum(sheet, &quot;Raw Data Type&quot;)];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(!mcp.isDependent())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return s.endsWith(&quot;]&quot;) ? true : false;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(s.startsWith(&quot;&amp;lt;&quot;) &amp;&amp; s.substring(1).indexOf(&quot;&amp;lt;&quot;) != -1)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return false;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="NumberItemsRawData" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="String s = row[mcp.getTable().getColNum(sheet, &quot;Raw Data Type&quot;)];&#xA;return mcp.getUtil().NumberOfItems(s);"/>
+                <details key="body" value="String s = row[tables.getColNum(sheet, &quot;Raw Data Type&quot;)];&#xA;return utils.NumberOfItems(s);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="TotalBytesRawData" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="String s = row[mcp.getTable().getColNum(sheet, &quot;Raw Data Type&quot;)];&#xA;return mcp.getUtil().RawDataTypeTotalBytes(s);"/>
+                <details key="body" value="&#x9;&#x9;String s = row[tables.getColNum(sheet, &quot;Raw Data Type&quot;)];&#xA;&#x9;&#x9;return utils.RawDataTypeTotalBytes(s);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="NumberRawDataTypeBytes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return mcp.getUtil().NumberRawDataTypeBytes(RawDataType());"/>
+                <details key="body" value="return utils.NumberRawDataTypeBytes(RawDataType());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="NumberItemsWorldData" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="String s = row[mcp.getTable().getColNum(sheet, &quot;World Data Type&quot;)];&#xA;return mcp.getUtil().NumberOfItems(s);"/>
+                <details key="body" value="&#x9;String s = row[tables.getColNum(sheet, &quot;World Data Type&quot;)];&#xA;&#x9;&#x9;&#x9;&#x9;return utils.NumberOfItems(s);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isDependentGroupBit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -655,7 +655,7 @@
             </eOperations>
             <eOperations name="isByteSwapped" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return ((String)mcp.getTable().getRawToByteSwapped().get(RawDataType())).equals(true);"/>
+                <details key="body" value="return ((String)tables.getRawToByteSwapped().get(RawDataType())).equals(true);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isDependentBitElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -740,7 +740,7 @@
                 <details key="body" value="&#x9;&#x9;String s = WorldDataType();&#xD;&#xA;&#x9;&#x9;return Character.toUpperCase(s.charAt(0)) + s.substring(1);"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeMandCImpl">
+            <eOperations name="setMandCAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="this.row = row;&#xA;this.sheet = sheet;&#xA;this.mcp = mcp;"/>
               </eAnnotations>
@@ -751,13 +751,14 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="#//control/datamodel/meta/base/EStringArray"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="mcp" lowerBound="1"
-                eType="#//control/datamodel/meta/base/MandCBase"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//control/datamodel/meta/base/MandCBaseDT"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="utils" eType="#//control/datamodel/meta/base/Util"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Monitor" eSuperTypes="#//control/datamodel/meta/base/MonitorPoint">
             <eOperations name="CanBeInvalid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Can Be Invalid&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Can Be Invalid&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isFEStatus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1002,22 +1003,22 @@
             </eOperations>
             <eOperations name="MinRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().normalizeNumber(WorldDataType(), super.MinRange());"/>
+                <details key="body" value="return utils.normalizeNumber(WorldDataType(), super.MinRange());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="MaxRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().normalizeNumber(WorldDataType(), super.MaxRange());"/>
+                <details key="body" value="return utils.normalizeNumber(WorldDataType(), super.MaxRange());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().normalizeNumber(WorldDataType(), super.Default());"/>
+                <details key="body" value="return utils.normalizeNumber(WorldDataType(), super.Default());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;boolean ret = true;&#xD;&#xA;&#x9;&#x9;if( this.isDependent()) ret = false;&#xD;&#xA;&#x9;&#x9;if( this.getDependents().getResources().isEmpty()) ret = false;&#xD;&#xA;&#x9;&#x9;for (Iterator&lt;Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {&#xD;&#xA;&#x9;&#x9;&#x9;MonitorImpl var = (MonitorImpl) iter.next();&#xD;&#xA;&#x9;&#x9;&#x9;if( var.WorldDataType().compareTo(&quot;boolean&quot;) != 0 ) ret = false;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return ret;"/>
+                <details key="body" value="boolean ret = true;&#xA;&#x9;&#x9;&#x9;&#x9;if( this.isDependent()) ret = false;&#xA;&#x9;&#x9;&#x9;&#x9;if( this.getDependents().getContents().isEmpty()) ret = false;&#xA;&#x9;&#x9;&#x9;&#x9;for (Iterator&lt;EObject> iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;MonitorImpl var = (MonitorImpl) iter.next();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if( var.WorldDataType().compareTo(&quot;boolean&quot;) != 0 ) ret = false;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return ret;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isPartOfPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1027,7 +1028,7 @@
             </eOperations>
             <eOperations name="isHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;boolean ret = true;&#xD;&#xA;&#x9;&#x9;String firsttype = null;&#xD;&#xA;&#x9;&#x9;if( hasDependents() ){&#xD;&#xA;&#x9;&#x9;&#x9;for (Iterator&lt;Resource> iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;MonitorImpl var = (MonitorImpl) iter.next();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if( firsttype == null){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;firsttype = new String(var.WorldDataType());&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;ret = false;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return ret;"/>
+                <details key="body" value="boolean ret = true;&#xA;&#x9;&#x9;String firsttype = null;&#xA;&#x9;&#x9;if( hasDependents() ){&#xA;&#x9;&#x9;&#x9;for (Iterator&lt;EObject> iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {&#xA;&#x9;&#x9;&#x9;&#x9;MonitorImpl var = (MonitorImpl) iter.next();&#xA;&#x9;&#x9;&#x9;&#x9;if( firsttype == null){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;firsttype = new String(var.WorldDataType());&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;continue;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;if( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;ret = false;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return ret;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isPartOfHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1035,15 +1036,14 @@
                 <details key="body" value="&#x9;&#x9;boolean ret = false;&#xD;&#xA;&#x9;&#x9;if( isDependent() ){&#xD;&#xA;&#x9;&#x9;&#x9;MonitorImpl parent = ((MonitorImpl)this.getParent());&#xD;&#xA;&#x9;&#x9;&#x9;if( parent.isHomogeneous() )&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;ret = true;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return ret;"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeMImpl">
+            <eOperations name="setMonitorAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeMP(row, parent);&#xA;mac = new MandCImpl();&#xA;mac.setInitializeMandCImpl(row, sheet, this);"/>
+                <details key="body" value="setMonitorPoint(row, parent);&#xA;mac = new MandCImpl();&#xA;mac.setMandCAmb(row, sheet, this);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
-              <eParameters name="parent" eType="#//control/datamodel/meta/base/ResourceDT"/>
+              <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/amb/MandC"
-                containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/amb/MandC"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="SWModule">
             <eOperations name="addMP">
@@ -1145,12 +1145,12 @@
                 <details key="body" value="&#x9;&#x9;String hex = Integer.toHexString(Assembly().hashCode()).toLowerCase();&#xD;&#xA;&#x9;&#x9;hex = &quot;0000000000000000&quot; + hex;&#xD;&#xA;&#x9;&#x9;int len = hex.length();&#xD;&#xA;&#x9;&#x9;hex = &quot;0x&quot; + hex.substring(len - 16, len);&#xD;&#xA;&#x9;&#x9;return hex;"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeSW">
+            <eOperations name="setSWModule">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="this.row = row;&#xA;this.sheet = table.getSheetNum(&quot;Hardware Device&quot;);&#xA;this.oneSwModule = oneSwModule;&#xA;int assemblyIndex = table.getColNum(sheet, &quot;Assembly&quot;);&#xA;this.assemblyName = row[assemblyIndex];&#xA;this.mainAssembly = mainAssembly;&#xA;if(oneSwModule){&#xA;&#x9;&#x9;&#x9;setDirPath(row[assemblyIndex]);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else{&#xA;&#x9;&#x9;&#x9;setDirPath(mainAssembly + &quot;/&quot; + row[assemblyIndex]);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;monitorPoints = new ResourceSetImpl();&#xA;&#x9;&#x9;controlPoints = new ResourceSetImpl();&#xA;&#x9;&#x9;archiveProperties = new ResourceSetImpl();&#xA;&#x9;&#x9;simMonitorPoints = new ResourceSetImpl();&#xA;&#x9;&#x9;simControlPoints = new ResourceSetImpl();"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
-              <eParameters name="parent" eType="#//control/datamodel/meta/base/ResourceDT"/>
+              <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="AssemblyName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1184,96 +1184,83 @@
                 <details key="body" value="return mp != null;"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="getMonitorPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return mp;"/>
-              </eAnnotations>
-            </eOperations>
             <eOperations name="isControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="return cp != null;"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="getControlPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return cp;"/>
-              </eAnnotations>
-            </eOperations>
             <eOperations name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Name&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Name&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="APName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;String name = Name();&#xA;&#x9;&#x9;&#x9;if (name.startsWith(getTable().getDepChar()))&#xA;&#x9;&#x9;&#x9;name = name.substring(1);&#xA;&#x9;&#x9;return name;"/>
+                <details key="body" value="&#x9;String name = Name();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (name.startsWith(tables.getDepChar()))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;name = name.substring(1);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return name;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="RefersTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet,  &quot;Refers To&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet,  &quot;Refers To&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="IntervalFull" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet,  &quot;Interval (secs)&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet,  &quot;Interval (secs)&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Interval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Interval (secs)&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Interval (secs)&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="OnlyOnChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Only On Change&quot;)].equals(&quot;yes&quot;);"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Only On Change&quot;)].equals(&quot;yes&quot;);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DisplayUnits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Display Units&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Display Units&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="GraphMin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Graph Min&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Graph Min&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="GraphMax" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Graph Max&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Graph Max&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Format&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Format&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="OnStartup" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;On Startup&quot;)].equals(&quot;yes&quot;);"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;On Startup&quot;)].equals(&quot;yes&quot;);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Title&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Title&quot;)];"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeAP">
+            <eOperations name="setArchiveProperty">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="this.row = row;&#xA;this.sheet = getTable().getSheetNum(&quot;Archive Property&quot;);"/>
+                <details key="body" value="this.row = row;&#xA;this.sheet = tables.getSheetNum(&quot;Archive Property&quot;);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"
                 derived="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
-                transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="cp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
-                transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1"
-                eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mp" eType="#//control/datamodel/meta/base/MonitorPoint"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="cp" eType="#//control/datamodel/meta/base/ControlPoint"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="ControlPoint" abstract="true"
               eSuperTypes="#//control/datamodel/meta/base/MandCBase">
@@ -1289,7 +1276,7 @@
             </eOperations>
             <eOperations name="ArchiveOnUse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;Archive On Use&quot;)].equals(&quot;yes&quot;);"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Archive On Use&quot;)].equals(&quot;yes&quot;);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isMonitored" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1297,12 +1284,12 @@
                 <details key="body" value="return false;&#xD;&#xA;"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeCP">
+            <eOperations name="setControlPoint">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeMCB(row, parent);"/>
+                <details key="body" value="setMandCBase(row, parent);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
-              <eParameters name="parent" eType="#//control/datamodel/meta/base/ResourceDT"/>
+              <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
             </eOperations>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" abstract="true">
@@ -1364,7 +1351,7 @@
             </eOperations>
             <eOperations name="TheEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;String dir = generatedDir + &quot;/&quot; + Assembly();&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;Base.cpp&quot;, 1);&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;Base.h&quot;, 1);&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Base.idl&quot;, 1);&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.xml&quot;, 1);&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;Component.xml&quot;, 1);&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/config/CDB/schemas&quot;, Assembly() + &quot;Base.xsd&quot;, 1);&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/config&quot;, &quot;TMCDB&quot; + Assembly() + &quot;Add.xml&quot;, 1);&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, Assembly() + &quot;Base.py&quot;, 1);&#xA;&#x9;&#x9;main.getUtil().RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, &quot;__init__.py&quot;, 1);&#xA;&#x9;&#x9;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xA;&#x9;&#x9;return &quot;&quot;;"/>
+                <details key="body" value="&#x9;&#x9;String dir = generatedDir + &quot;/&quot; + Assembly();&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;Base.cpp&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;Base.h&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Base.idl&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.xml&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;Component.xml&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/config/CDB/schemas&quot;, Assembly() + &quot;Base.xsd&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/config&quot;, &quot;TMCDB&quot; + Assembly() + &quot;Add.xml&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, Assembly() + &quot;Base.py&quot;, 1);&#xA;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, &quot;__init__.py&quot;, 1);&#xA;&#x9;&#x9;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xA;&#x9;&#x9;return &quot;&quot;;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="checkIfFileExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1400,25 +1387,7 @@
               </eAnnotations>
               <eParameters name="directory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
-            <eOperations name="getArchive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9; // Get the Archive Properties&#xA;&#x9;&#x9;int archiveIndex = table.getSheetNum(&quot;Archive Property&quot;);&#xA;&#x9;&#x9;for(int i = 2; i &lt; spreadsheet[archiveIndex].length; i++){&#xA;&#x9;&#x9;       if(spreadsheet[archiveIndex][i].length == 0)&#xA;&#x9;&#x9;        break;&#xA;&#x9;&#x9;        ArchivePropertyImpl ap;&#xA;&#x9;&#x9;        String[] row = spreadsheet[archiveIndex][i];&#xA;&#x9;&#x9;        ap = new ArchivePropertyImpl();&#xA;&#x9;&#x9;        ap.setInitializeAP(row);&#xA;&#x9;&#x9;        if(name.equals(ap.RefersTo()))&#xA;&#x9;&#x9;             return ap.eResource();&#xA;&#x9;&#x9;        }&#xA;&#x9;&#x9;return null;"/>
-              </eAnnotations>
-              <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            </eOperations>
-            <eOperations name="getMonitorPoint" eType="#//control/datamodel/meta/base/MonitorPoint">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="for(int i = 0; i &lt; monitorPoints.getResources().size(); i++){&#xD;&#xA;&#x9;MonitorPoint mp = (MonitorPoint) monitorPoints.getResources().get(i);&#xD;&#xA;      if(mp.FullName().equals(fullName))&#xD;&#xA;&#x9;&#x9;      return mp;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#x9;return null;"/>
-              </eAnnotations>
-              <eParameters name="fullName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            </eOperations>
-            <eOperations name="getControlPoint" eType="#//control/datamodel/meta/base/ControlPoint">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="for (int i = 0; i &lt; controlPoints.getResources().size(); i++) {&#xD;&#xA;&#x9; ControlPoint cp = (ControlPoint) controlPoints.getResources().get(i);&#xD;&#xA;&#x9; if (cp.FullName().equals(fullName))&#xD;&#xA;&#x9;&#x9;         return cp;&#xD;&#xA;&#x9; }&#xD;&#xA;&#x9;&#x9;  return null;"/>
-              </eAnnotations>
-              <eParameters name="fullName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            </eOperations>
-            <eOperations name="setInitializeDM">
+            <eOperations name="setDeviceModel">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="this.setDeviceName(System.getProperty(&quot;deviceName&quot;));&#xA;this.setDeviceDir(System.getProperty(&quot;deviceDir&quot;));&#xA;this.setCodegenDir(System.getProperty(&quot;codegenDir&quot;));&#xA;this.setSpreadsheetDir(System.getProperty(&quot;spreadsheetDir&quot;));&#xA;this.setGeneratedDir(System.getProperty(&quot;generatedDir&quot;));"/>
               </eAnnotations>
@@ -1428,15 +1397,17 @@
                 defaultValueLiteral="1"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheet" eType="#//control/datamodel/meta/base/EStringArray3"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorPoints"
-                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPoints"
-                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties"
-                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+                transient="true"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="container" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="busType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1448,74 +1419,78 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorDBOnly"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateAlt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="main" eType="#//control/datamodel/meta/base/MainBase"
-                containment="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="mandC" lowerBound="1"
-                eType="#//control/datamodel/meta/base/MandCBase" eOpposite="#//control/datamodel/meta/base/MandCBase/device"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="main" eType="#//control/datamodel/meta/base/MainBase"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="aProperties" lowerBound="1"
+                upperBound="-1" eType="#//control/datamodel/meta/base/ArchiveProperty"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="cPoints" lowerBound="1"
+                upperBound="-1" eType="#//control/datamodel/meta/base/ControlPoint"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mPoints" lowerBound="1"
+                upperBound="-1" eType="#//control/datamodel/meta/base/MonitorPoint"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="utils" eType="#//control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MainBase">
             <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;Assembly&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Assembly&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;Description&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Description&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DescriptionAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return util.descriptionAsString(Description());"/>
+                <details key="body" value="return utils.descriptionAsString(Description());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DeviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;Device Name&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Device Name&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Extends" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;Extends&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Extends&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ICD" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;ICD&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;ICD&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ICDDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;ICD Date&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;ICD Date&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ICDDateAsDatabaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return util.toDatabaseDate(ICDDate());"/>
+                <details key="body" value="return utils.toDatabaseDate(ICDDate());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ICDDateAsArrayTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return util.toArrayTime(ICDDate());"/>
+                <details key="body" value="return utils.toArrayTime(ICDDate());"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeMB">
+            <eOperations name="setMainBase">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="this.row = row;&#xA;this.sheet = getTable().getSheetNum(&quot;Hardware Device&quot;);"/>
+                <details key="body" value="this.row = row;&#xA;&#x9;&#x9;this.sheet = tables.getSheetNum(&quot;Hardware Device&quot;);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1"
-                eType="#//control/datamodel/meta/base/Table" containment="true" eOpposite="#//control/datamodel/meta/base/Table/main"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="util" lowerBound="1"
-                eType="#//control/datamodel/meta/base/Util" eOpposite="#//control/datamodel/meta/base/Util/mandc"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="utils" eType="#//control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="devices" eType="#//control/datamodel/meta/base/DeviceModel"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MandCBase" abstract="true">
             <eOperations name="addDependent">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="dependents.getContents().add(son);&#xD;&#xA;"/>
+                <details key="body" value="dependents.getContents().add(son);"/>
               </eAnnotations>
               <eParameters name="son" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
             </eOperations>
@@ -1531,12 +1506,12 @@
             </eOperations>
             <eOperations name="FullName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Name&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Name&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="if(isDependent())&#xA;&#x9;return row[getTable().getColNum(sheet, &quot;Name&quot;)].substring(1);&#xA;else&#xA;&#x9;return row[getTable().getColNum(sheet, &quot;Name&quot;)];"/>
+                <details key="body" value="if(isDependent())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return row[tables.getColNum(sheet, &quot;Name&quot;)].substring(1);&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return row[tables.getColNum(sheet, &quot;Name&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="getDependentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1546,52 +1521,52 @@
             </eOperations>
             <eOperations name="getAltDependentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().AltName(getDependentName());"/>
+                <details key="body" value="return utils.AltName(getDependentName());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="getDependsOnName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="if(!isDependent())&#xD;&#xA;&#x9;return &quot;&quot;;&#xD;&#xA;return ((MandCBase)getParent()).Name();"/>
+                <details key="body" value="if(!isDependent())&#xA;&#x9;&#x9;&#x9;return &quot;&quot;;&#xA;&#x9;&#x9;return ((MandCBase)getParent()).Name();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="getAltDependsOnName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().AltName(((MandCBase)getParent()).Name());"/>
+                <details key="body" value="return utils.AltName(((MandCBase)getParent()).Name());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DataUnits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Data Units&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Data Units&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="MinRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Min Range&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Min Range&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="MaxRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Max Range&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Max Range&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Mode&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Mode&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Implement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Implement&quot;)].equals(&quot;yes&quot;);"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Implement&quot;)].equals(&quot;yes&quot;);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="External" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;External&quot;)].equals(&quot;yes&quot;);&#xA;"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;External&quot;)].equals(&quot;yes&quot;);"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[getTable().getColNum(sheet, &quot;Description&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Description&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isExternal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1631,41 +1606,41 @@
             </eOperations>
             <eOperations name="PName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;if (Name().startsWith(getTable().getDepChar()))&#xA;&#x9;&#x9;&#x9;return dropPrefix(Name().substring(1));&#xA;&#x9;&#x9;return dropPrefix(Name());"/>
+                <details key="body" value="&#x9;&#x9;if (Name().startsWith(tables.getDepChar()))&#xA;&#x9;&#x9;&#x9;return dropPrefix(Name().substring(1));&#xA;&#x9;&#x9;return dropPrefix(Name());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="AltPName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;if (Name().startsWith(&quot;SET_&quot;))&#xA;&#x9;&#x9;&#x9;return &quot;Cntl&quot; + getUtil().AltName(PName()); &#xA;&#x9;&#x9;return getUtil().AltName(PName());"/>
+                <details key="body" value="&#x9;if (Name().startsWith(&quot;SET_&quot;))&#xA;&#x9;&#x9;&#x9;return &quot;Cntl&quot; + utils.AltName(PName()); &#xA;&#x9;&#x9;return utils.AltName(PName());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DescriptionAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().descriptionAsString(Description());"/>
+                <details key="body" value="return utils.descriptionAsString(Description());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DescriptionFormatted" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().formatDescriptionL2(Description());"/>
+                <details key="body" value="return utils.formatDescriptionL2(Description());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DescriptionFormattedL4" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().formatDescriptionL4(Description());"/>
+                <details key="body" value="return utils.formatDescriptionL4(Description());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DescriptionFormattedL5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return getUtil().formatDescriptionL5(Description());"/>
+                <details key="body" value="return utils.formatDescriptionL5(Description());"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="isMonitored" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            <eOperations name="setInitializeMCB">
+            <eOperations name="setMandCBase">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="this.row = row;&#xA;this.parent = parent;&#xA;dependents = new ResourceSetImpl();&#xA;sheet = (this instanceof Monitor) ? getTable().getSheetNum(&quot;Monitor Point&quot;) : getTable().getSheetNum(&quot;Control Point&quot;);"/>
+                <details key="body" value="this.row = row;&#xA;this.parent = parent;&#xA;resourceSetDependents = new ResourceSetImpl();&#xA;dependents = resourceSetDependents.createResource(URI.createURI(&quot;&quot;));&#xA;sheet = (this instanceof Monitor) ? tables.getSheetNum(&quot;Monitor Point&quot;) : getTables().getSheetNum(&quot;Control Point&quot;);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
-              <eParameters name="parent" eType="#//control/datamodel/meta/base/ResourceDT"/>
+              <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadsheetName"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1674,39 +1649,37 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceSetDependent"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="archive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1"
-                eType="#//control/datamodel/meta/base/Table"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="util" lowerBound="1"
-                eType="#//control/datamodel/meta/base/Util"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="device" lowerBound="1"
-                eType="#//control/datamodel/meta/base/DeviceModel" eOpposite="#//control/datamodel/meta/base/DeviceModel/mandC"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="utils" eType="#//control/datamodel/meta/base/Util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="archive" eType="#//control/datamodel/meta/base/ArchiveProperty"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MonitorPoint" abstract="true"
               eSuperTypes="#//control/datamodel/meta/base/MandCBase">
             <eOperations name="Default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;Default&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Default&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ErrorCondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;Error Condition&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Error Condition&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ErrorSeverity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;Error Severity&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Error Severity&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ErrorAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return row[table.getColNum(sheet, &quot;Error Action&quot;)];"/>
+                <details key="body" value="return row[tables.getColNum(sheet, &quot;Error Action&quot;)];"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="APName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1768,12 +1741,12 @@
             <eOperations name="isHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eOperations name="isPartOfHomogeneous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eOperations name="isMonitored" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            <eOperations name="setInitializeMP">
+            <eOperations name="setMonitorPoint">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeMCB(row, parent);"/>
+                <details key="body" value="setMandCBase(row, parent);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
-              <eParameters name="parent" eType="#//control/datamodel/meta/base/ResourceDT"/>
+              <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
             </eOperations>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Note">
@@ -1781,7 +1754,7 @@
                 defaultValueLiteral=""/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Pair" abstract="true" eSuperTypes="#//control/datamodel/meta/base/SpreadsheetParser">
-            <eOperations name="setInitializePair">
+            <eOperations name="setPair">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="content = c;&#xA;newString = n;"/>
               </eAnnotations>
@@ -1828,7 +1801,7 @@
             </eOperations>
             <eOperations name="getBoundedContent" eType="#//control/datamodel/meta/base/Pair">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;int b1 = s.indexOf(beginPart1);&#xA;&#x9;&#x9;if (b1 == -1)&#xA;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;int b2 = s.indexOf(beginPart2,b1);&#xA;&#x9;&#x9;if (b2 == -1)&#xA;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;int e = s.indexOf(end,b2);&#xA;&#x9;&#x9;if (e == -1)&#xA;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;String content = s.substring(b2 + 1,e).trim();&#xA;&#x9;&#x9;int n = e + end.length();&#xA;&#x9;&#x9;String newS = null;&#xA;&#x9;&#x9;if (n &lt; s.length())&#xA;&#x9;&#x9;&#x9;newS = s.substring(n);&#xA;&#x9;&#x9;PairImpl pp = new PairImpl() {};&#xA;&#x9;&#x9;pp.setInitializePair(content,newS);&#xA;&#x9;&#x9;return pp;"/>
+                <details key="body" value="&#x9;&#x9;int b1 = s.indexOf(beginPart1);&#xA;&#x9;&#x9;if (b1 == -1)&#xA;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;int b2 = s.indexOf(beginPart2,b1);&#xA;&#x9;&#x9;if (b2 == -1)&#xA;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;int e = s.indexOf(end,b2);&#xA;&#x9;&#x9;if (e == -1)&#xA;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;String content = s.substring(b2 + 1,e).trim();&#xA;&#x9;&#x9;int n = e + end.length();&#xA;&#x9;&#x9;String newS = null;&#xA;&#x9;&#x9;if (n &lt; s.length())&#xA;&#x9;&#x9;&#x9;newS = s.substring(n);&#xA;&#x9;&#x9;PairImpl pp = new PairImpl() {};&#xA;&#x9;&#x9;pp.setPair(content,newS);&#xA;&#x9;&#x9;return pp;"/>
               </eAnnotations>
               <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eParameters name="beginPart1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1837,7 +1810,7 @@
             </eOperations>
             <eOperations name="getDataCells" eType="#//control/datamodel/meta/base/EStringArray">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;ArrayList list = new ArrayList ();&#xA;&#x9;&#x9;String data = null;&#xA;&#x9;&#x9;String content = null;&#xA;&#x9;&#x9;while (row != null &amp;&amp; row.length() > 0) {&#xA;&#x9;&#x9;&#x9;Pair p = getBoundedContent(row,&quot;&lt;Cell&quot;,&quot;>&quot;,&quot;&lt;/Cell>&quot;);&#xA;&#x9;&#x9;&#x9;if (p == null)&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;data = p.getContent();&#xA;&#x9;&#x9;&#x9;row = p.getNewString();&#xA;&#x9;&#x9;&#x9;p = getBoundedContent(data,&quot;&lt;Data&quot;,&quot;>&quot;,&quot;&lt;/Data>&quot;);&#xA;&#x9;&#x9;&#x9;if (p == null)&#xA;&#x9;&#x9;&#x9;&#x9;continue;&#xA;&#x9;&#x9;&#x9;content = p.getContent();&#xA;&#x9;&#x9;&#x9;list.add(content);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;if(list.size() == 0)&#xA;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;String[] x = new String [list.size()];&#xA;&#x9;&#x9;return (String[])list.toArray(x);"/>
+                <details key="body" value="ArrayList list = new ArrayList ();&#xA;&#x9;&#x9;String data = null;&#xA;&#x9;&#x9;String content = null;&#xA;&#x9;&#x9;while (row != null &amp;&amp; row.length() > 0) {&#xA;&#x9;&#x9;&#x9;Pair p = getBoundedContent(row,&quot;&lt;Cell&quot;,&quot;>&quot;,&quot;&lt;/Cell>&quot;);&#xA;&#x9;&#x9;&#x9;if (p == null)&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;data = p.getContent();&#xA;&#x9;&#x9;&#x9;row = p.getNewString();&#xA;&#x9;&#x9;&#x9;p = getBoundedContent(data,&quot;&lt;Data&quot;,&quot;>&quot;,&quot;&lt;/Data>&quot;);&#xA;&#x9;&#x9;&#x9;if (p == null)&#xA;&#x9;&#x9;&#x9;&#x9;continue;&#xA;&#x9;&#x9;&#x9;content = p.getContent();&#xA;&#x9;&#x9;&#x9;list.add(content);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;if(list.size() == 0)&#xA;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;String[] x = new String [list.size()];&#xA;&#x9;&#x9;return (String[])list.toArray(x);"/>
               </eAnnotations>
               <eParameters name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
@@ -1864,7 +1837,7 @@
             </eOperations>
             <eOperations name="filter" eType="#//control/datamodel/meta/base/EStringArray3">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="// A. Get the directory that is referenced, and the old and new assembly names.&#xA;&#x9;&#x9;&#x9;&#x9;// Syntax: @reference = &lt;base-directory-path-name> &lt;base-assembly-name> = &lt;new-assembly-name>&#xA;&#x9;&#x9;&#x9;&#x9;java.io.LineNumberReader text = new java.io.LineNumberReader(new java.io.StringReader(doc));&#xA;&#x9;&#x9;&#x9;&#x9;String line = null;&#xA;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;line = text.readLine();&#xA;&#x9;&#x9;&#x9;&#x9;} catch (java.io.IOException err) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Cannot read file: &quot; + err.toString());&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;String[] tmp = line.split(&quot;[ |\t]+&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;if (!tmp[0].equals(&quot;@reference&quot;) || !tmp[1].equals(&quot;=&quot;) || !tmp[4].equals(&quot;=&quot;)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax at line number &quot; + text.getLineNumber() + &quot; in file filter.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;String baseDirectory = tmp[2];&#xA;&#x9;&#x9;&#x9;&#x9;String baseAssemblyName = tmp[3];&#xA;&#x9;&#x9;&#x9;&#x9;String newAssemblyName = tmp[5];&#xA;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Applying filter in directory &quot; + baseDirectory + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot; to assembly &quot; + baseAssemblyName + &quot;.  New assembly is &quot; + newAssemblyName + &quot;.&quot;);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;// B. Get the contents of this base spreadsheet.&#xA;&#x9;&#x9;&#x9;&#x9;BaseFactory baseFac = BaseFactory.eINSTANCE;&#xA;&#x9;&#x9;&#x9;&#x9;String referenceXml = baseFac.createSpreadsheetParser().getSpreadsheet(baseDirectory, baseAssemblyName + &quot;_spreadsheet.xml&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;refPath = baseDirectory + &quot;/&quot; + baseAssemblyName + &quot;_spreadsheet.xml&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;SpreadsheetParser p = baseFac.createSpreadsheetParser();&#xA;&#x9;&#x9;&#x9;&#x9;p.setInitializeSP(referenceXml);&#xA;&#x9;&#x9;&#x9;&#x9;SpreadsheetValidator v = baseFac.createSpreadsheetValidator();&#xA;&#x9;&#x9;&#x9;&#x9;if (!v.validate(refPath,xsdFile)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;String s = &quot;Spreadsheet &quot; + baseAssemblyName + &quot;_spreadsheet.xml is not a valid spreadsheet.&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(s);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Base spreadsheet &quot; + baseAssemblyName + &quot; has been validated.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;String[][][] base = p.getWorksheets();&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;// C. Change the assembly name in the base spreadsheet.&#xA;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; base.length; ++i) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;for (int j = 0; j &lt; base[i].length; ++j) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (base[i][j][0].equals(baseAssemblyName)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;base[i][j][0] = newAssemblyName;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;// D. Apply the filter to the base.&#xA;&#x9;&#x9;&#x9;&#x9;//    Any deleted rows we will simply make null.&#xA;&#x9;&#x9;&#x9;&#x9;String[][] worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;line = text.readLine();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (java.io.IOException err) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Cannot read file: &quot; + err.toString());&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (line == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (line.trim().length() == 0)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;continue;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (line.startsWith(&quot;Main&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = base[0];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndMain&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;Monitor&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = base[1];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndMonitor&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;Control&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = base[2];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndControl&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;Archive&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = base[3];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndArchive&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (worksheet == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax at line number &quot; + text.getLineNumber() + &quot; in file filter. (Missing statement)&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;tmp = line.split(&quot;[ |\t]+&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (line.startsWith(&quot;~&quot;)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;deleteRow(worksheet,tmp[0].substring(1));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String s = line.substring(tmp[0].length());&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;modifyRow(worksheet,text.getLineNumber(),tmp[0],s);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;// E. Assign the non-null array.&#xA;&#x9;&#x9;&#x9;&#x9;String[][][] result = new String [base.length] [] [];&#xA;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; result.length; ++i) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int nrow = 0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;for (int j = 0; j &lt; base[i].length; ++j) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (base[i][j] != null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;++nrow;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;result[i] = new String [nrow] [];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int jj = 0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;for (int j = 0; j &lt; base[i].length; ++j) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (base[i][j] != null) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;result[i][jj] = new String [base[i][j].length];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int k = 0; k &lt; base[i][j].length; ++k)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;result[i][jj][k] = base[i][j][k];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;++jj;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;// F. Return the new spreadsheet. &#xA;&#x9;&#x9;&#x9;&#x9;return result;"/>
+                <details key="body" value="// A. Get the directory that is referenced, and the old and new assembly names.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;// Syntax: @reference = &lt;base-directory-path-name> &lt;base-assembly-name> = &lt;new-assembly-name>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;java.io.LineNumberReader text = new java.io.LineNumberReader(new java.io.StringReader(doc));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String line = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;line = text.readLine();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (java.io.IOException err) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Cannot read file: &quot; + err.toString());&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String[] tmp = line.split(&quot;[ |\t]+&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!tmp[0].equals(&quot;@reference&quot;) || !tmp[1].equals(&quot;=&quot;) || !tmp[4].equals(&quot;=&quot;)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax at line number &quot; + text.getLineNumber() + &quot; in file filter.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String baseDirectory = tmp[2];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String baseAssemblyName = tmp[3];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String newAssemblyName = tmp[5];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Applying filter in directory &quot; + baseDirectory + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot; to assembly &quot; + baseAssemblyName + &quot;.  New assembly is &quot; + newAssemblyName + &quot;.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;// B. Get the contents of this base spreadsheet.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;BaseFactory baseFac = BaseFactory.eINSTANCE;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String referenceXml = baseFac.createSpreadsheetParser().getSpreadsheet(baseDirectory, baseAssemblyName + &quot;_spreadsheet.xml&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;refPath = baseDirectory + &quot;/&quot; + baseAssemblyName + &quot;_spreadsheet.xml&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SpreadsheetParser p = baseFac.createSpreadsheetParser();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;p.setSpreadsheetParser(referenceXml);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SpreadsheetValidator v = baseFac.createSpreadsheetValidator();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!v.validate(refPath,xsdFile)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String s = &quot;Spreadsheet &quot; + baseAssemblyName + &quot;_spreadsheet.xml is not a valid spreadsheet.&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(s);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Base spreadsheet &quot; + baseAssemblyName + &quot; has been validated.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String[][][] base = p.getWorksheets();&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;// C. Change the assembly name in the base spreadsheet.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; base.length; ++i) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int j = 0; j &lt; base[i].length; ++j) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (base[i][j][0].equals(baseAssemblyName)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;base[i][j][0] = newAssemblyName;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;// D. Apply the filter to the base.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//    Any deleted rows we will simply make null.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String[][] worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;line = text.readLine();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (java.io.IOException err) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Cannot read file: &quot; + err.toString());&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (line == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (line.trim().length() == 0)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;continue;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (line.startsWith(&quot;Main&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = base[0];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndMain&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;Monitor&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = base[1];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndMonitor&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;Control&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = base[2];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndControl&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;Archive&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = base[3];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if (line.startsWith(&quot;EndArchive&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;worksheet = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (worksheet == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new RuntimeException(&quot;Invalid syntax at line number &quot; + text.getLineNumber() + &quot; in file filter. (Missing statement)&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;tmp = line.split(&quot;[ |\t]+&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (line.startsWith(&quot;~&quot;)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;deleteRow(worksheet,tmp[0].substring(1));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String s = line.substring(tmp[0].length());&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;modifyRow(worksheet,text.getLineNumber(),tmp[0],s);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;// E. Assign the non-null array.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;String[][][] result = new String [base.length] [] [];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; result.length; ++i) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;int nrow = 0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int j = 0; j &lt; base[i].length; ++j) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (base[i][j] != null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;++nrow;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;result[i] = new String [nrow] [];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;int jj = 0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int j = 0; j &lt; base[i].length; ++j) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (base[i][j] != null) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;result[i][jj] = new String [base[i][j].length];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int k = 0; k &lt; base[i][j].length; ++k)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;result[i][jj][k] = base[i][j][k];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;++jj;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;// F. Return the new spreadsheet. &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return result;"/>
               </eAnnotations>
               <eParameters name="doc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
@@ -1884,7 +1857,7 @@
               <eParameters name="rowName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
-            <eOperations name="setInitializeSP">
+            <eOperations name="setSpreadsheetParser">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="this.xml = xml;"/>
               </eAnnotations>
@@ -1906,7 +1879,7 @@
               <eParameters name="xmlFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eParameters name="xsdFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
-            <eOperations name="setInitializeSV">
+            <eOperations name="setSpreadsheetValidator">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="this.errorList = new ArrayList&lt; String >();&#xA;"/>
               </eAnnotations>
@@ -1981,8 +1954,6 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToJava" eType="#//control/datamodel/meta/base/Hashtable"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldToDatabase"
                 eType="#//control/datamodel/meta/base/Hashtable"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="main" lowerBound="1"
-                eType="#//control/datamodel/meta/base/MainBase" eOpposite="#//control/datamodel/meta/base/MainBase/table"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Util">
             <eOperations name="error">
@@ -2062,13 +2033,13 @@
             </eOperations>
             <eOperations name="NumberRawDataTypeBytes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return (String)mandc.getTable().getRawBytes().get(s);"/>
+                <details key="body" value="return (String)tables.getRawBytes().get(s);"/>
               </eAnnotations>
               <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eOperations name="RawDataTypeTotalBytes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;if (isArray(s)) {&#xA;&#x9;&#x9;int b;&#xA;&#x9;&#x9;int n = Integer.parseInt(NumberOfItems(s));&#xA;&#x9;&#x9;if(s.startsWith(&quot;&amp;lt;&quot;))&#xA;&#x9;&#x9;return &quot;0&quot;;&#xA;&#x9;&#x9;if(s.startsWith(&quot;[&quot;))&#xA;&#x9;&#x9;return &quot;0&quot;;&#xA;&#x9;&#x9;int i = s.indexOf(&quot;[&quot;);&#xA;&#x9;&#x9;b = Integer.parseInt((String)mandc.getTable().getRawBytes().get(s.substring(0,1)));&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;String x = Integer.toString(n * b);&#xA;&#x9;&#x9;return x;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return (String)mandc.getTable().getRawBytes().get(s);"/>
+                <details key="body" value="&#x9;&#x9;&#x9;&#x9;if (isArray(s)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int b;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int n = Integer.parseInt(NumberOfItems(s));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(s.startsWith(&quot;&amp;lt;&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return &quot;0&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(s.startsWith(&quot;[&quot;))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return &quot;0&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int i = s.indexOf(&quot;[&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;b = Integer.parseInt((String)tables.getRawBytes().get(s.substring(0,1)));&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;String x = Integer.toString(n * b);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return x;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return (String)tables.getRawBytes().get(s);"/>
               </eAnnotations>
               <eParameters name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
@@ -2132,14 +2103,16 @@
                 defaultValueLiteral="54"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTH" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="MONTHalt" eType="#//control/datamodel/meta/base/EStringArray"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="mandc" lowerBound="1"
-                eType="#//control/datamodel/meta/base/MainBase" eOpposite="#//control/datamodel/meta/base/MainBase/util"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
           </eClassifiers>
+          <eClassifiers xsi:type="ecore:EDataType" name="ControlPointDT" instanceClassName="alma.control.datamodel.meta.base.ControlPoint"/>
+          <eClassifiers xsi:type="ecore:EDataType" name="MonitorPointDT" instanceClassName="alma.control.datamodel.meta.base.MonitorPoint"/>
+          <eClassifiers xsi:type="ecore:EDataType" name="ArchivePropertyDT" instanceClassName="alma.control.datamodel.meta.base.ArchiveProperty"/>
           <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandlerDT" instanceClassName="alma.control.datamodel.meta.base.SimpleErrorHandler"/>
           <eClassifiers xsi:type="ecore:EDataType" name="MandCAMBDT" instanceClassName="alma.control.datamodel.meta.amb.MandC"/>
           <eClassifiers xsi:type="ecore:EDataType" name="MandCBaseDT" instanceClassName="alma.control.datamodel.meta.base.MandCBase"/>
-          <eClassifiers xsi:type="ecore:EDataType" name="MainBaseDT" instanceClassName="alma.control.datamodel.meta.base.MainBase"/>
-          <eClassifiers xsi:type="ecore:EDataType" name="ResourceDT" instanceClassName="org.eclipse.emf.ecore.resource.Resource"/>
+          <eClassifiers xsi:type="ecore:EDataType" name="MainBaseDT" instanceClassName="alma.control.datamodel.meta.base.MainBase"
+              serializable="false"/>
           <eClassifiers xsi:type="ecore:EDataType" name="IteratorDT" instanceClassName="java.util.Iterator"/>
           <eClassifiers xsi:type="ecore:EDataType" name="ArrayList" instanceClassName="java.util.ArrayList"/>
           <eClassifiers xsi:type="ecore:EDataType" name="Hashtable" instanceClassName="java.util.Hashtable"/>
@@ -2158,7 +2131,7 @@
           <eClassifiers xsi:type="ecore:EClass" name="Archive" eSuperTypes="#//control/datamodel/meta/base/ArchiveProperty">
             <eOperations name="setInitializeAImpl">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeAP(row);"/>
+                <details key="body" value="&#x9;&#x9;setArchiveProperty(row);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             </eOperations>
@@ -2245,12 +2218,12 @@
                 <details key="body" value="return mac.DataToDatabaseType();"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeCImpl">
+            <eOperations name="setControlEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeCP(row, parent);&#xA;mac = new MandCImpl();&#xA;mac.setInitializeMandCImpl(row, sheet);"/>
+                <details key="body" value="setControlPoint(row, parent);&#xA;&#x9;&#x9;mac = new MandCImpl();&#xA;&#x9;&#x9;mac.setMandCEth(row, sheet);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
-              <eParameters name="parent" eType="#//control/datamodel/meta/base/ResourceDT"/>
+              <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/base/MandCETHDT"/>
           </eClassifiers>
@@ -2272,9 +2245,9 @@
                 <details key="body" value="return row[table.getColNum(sheet, &quot;Vendor Class&quot;)];"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeMainImpl">
+            <eOperations name="setMainEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeMB(row);"/>
+                <details key="body" value="setMainBase(row);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             </eOperations>
@@ -2356,7 +2329,7 @@
                 <details key="body" value="return (String)table.getToDatabase().get(DataType());"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeMandCImpl">
+            <eOperations name="setMandCEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="this.row = row;&#xA;this.sheet = sheet;"/>
               </eAnnotations>
@@ -2469,12 +2442,12 @@
                 <details value="return false;"/>
               </eAnnotations>
             </eOperations>
-            <eOperations name="setInitializeMImpl">
+            <eOperations name="setMonitorEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setInitializeMP(row, parent);&#xA;mac = new MandCImpl();&#xA;mac.setInitializeMandCImpl(row, sheet);"/>
+                <details key="body" value="&#x9;setMonitorEth(row, parent);&#xA;&#x9;&#x9;mac = new MandCImpl();&#xA;&#x9;&#x9;mac.setMandCEth(row, sheet);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
-              <eParameters name="parent" eType="#//control/datamodel/meta/base/ResourceDT"/>
+              <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/base/MandCETHDT"/>
           </eClassifiers>

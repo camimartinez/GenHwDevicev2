@@ -241,7 +241,7 @@ public class SpreadsheetValidatorImpl extends EObjectImpl implements Spreadsheet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeSV() {
+	public void setSpreadsheetValidator() {
 		this.errorList = new ArrayList< String >();
 		
 	}

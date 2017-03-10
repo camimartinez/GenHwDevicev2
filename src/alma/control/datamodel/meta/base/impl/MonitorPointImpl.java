@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.base.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,7 +21,10 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.base.impl;
+
+
+import java.io.IOException;
+import java.util.Collections;
 
 import alma.control.datamodel.meta.amb.Main;
 import alma.control.datamodel.meta.base.ArchiveProperty;
@@ -28,9 +32,11 @@ import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
@@ -66,7 +72,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String Default() {
-		return row[table.getColNum(sheet, "Default")];
+		return row[tables.getColNum(sheet, "Default")];
 	}
 
 	/**
@@ -75,7 +81,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String ErrorCondition() {
-		return row[table.getColNum(sheet, "Error Condition")];
+		return row[tables.getColNum(sheet, "Error Condition")];
 	}
 
 	/**
@@ -84,7 +90,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String ErrorSeverity() {
-		return row[table.getColNum(sheet, "Error Severity")];
+		return row[tables.getColNum(sheet, "Error Severity")];
 	}
 
 	/**
@@ -93,7 +99,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @generated
 	 */
 	public String ErrorAction() {
-		return row[table.getColNum(sheet, "Error Action")];
+		return row[tables.getColNum(sheet, "Error Action")];
 	}
 
 	/**
@@ -263,8 +269,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeMP(final String[] row, final Resource parent) {
-		setInitializeMCB(row, parent);
+	public void setMonitorPoint(final String[] row, final Object parent) {
+		setMandCBase(row, parent);
 	}
 
 } //MonitorPointImpl

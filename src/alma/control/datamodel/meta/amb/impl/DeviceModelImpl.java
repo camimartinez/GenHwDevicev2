@@ -23,9 +23,8 @@
 package alma.control.datamodel.meta.amb.impl;
 
 import java.io.IOException;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -33,21 +32,17 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
-import alma.control.datamodel.meta.amb.Archive;
-import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.DeviceModel;
 import alma.control.datamodel.meta.amb.GenericMonitorPoints;
-import alma.control.datamodel.meta.amb.Monitor;
+import alma.control.datamodel.meta.amb.Main;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Note;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
@@ -176,8 +171,10 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		AmbPackage.eINSTANCE.eClass();
 		AmbFactory ambFactory = AmbFactory.eINSTANCE;
 
-		//Creation of instances base package
+		//Creation 
+		
 		Util util = baseFactory.createUtil();
+
 		SpreadsheetParser spreadParser = baseFactory.createSpreadsheetParser();
 		SpreadsheetParser p = baseFactory.createSpreadsheetParser();
 		SpreadsheetValidator spreadValid = baseFactory.createSpreadsheetValidator();
@@ -185,14 +182,18 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 
 		//Creation of instances of in amb package
 		GenericMonitorPoints genericMPoints = ambFactory.createGenericMonitorPoints();
-		main = ambFactory.createMain();
-		
-		// Register the XMI resource factory fot the .tmp extension
+
+		// Register the XMI resource factory for the .xmi extension
 		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
-		String extension = "tmp";
+		String extension = "xmi";
 		String tmp = deviceDir.concat("/").concat(extension).concat("/");
 		mm.put(extension, new XMIResourceFactoryImpl());
+
+		Map<String, Boolean> options = new HashMap<String, Boolean>();
+		options.put(XMLResource.OPTION_SAVE_ONLY_IF_CHANGED, Boolean.TRUE);
+
+		container = new ResourceSetImpl();
 
 		// Check if the spreadsheet file is an actual spreadsheet or a
 		// "filter" file which is some kind of a filter for a real
@@ -210,7 +211,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		String xml = spreadParser.getSpreadsheet(spreadsheetDir, fileSpreadsheetName);		
 		String xsdFile = util.getInstallDir()+ "/config/schemas/" + busType.toLowerCase() + "/Workbook.xsd";
 
-		p.setInitializeSP(xml);
+		p.setSpreadsheetParser(xml);
 		p.setXSD(xsdFile);
 		spreadsheet = p.getWorksheets();
 
@@ -226,29 +227,26 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		monitorIndex = table.getSheetNum("Monitor Point");
 		controlIndex = table.getSheetNum("Control Point");
 		archiveIndex = table.getSheetNum("Archive Property");
-		
-		ResourceSet tables = new ResourceSetImpl();
+
+		//Table:
 		String xmiTables = tmp.concat("tables.").concat(extension);	
-		Resource resourceTables = tables.createResource(URI.createURI(xmiTables));
-
-		resourceTables.getContents().add(table);
+		Resource resourceTables = container.createResource(URI.createURI(xmiTables));
+		resourceTables.getContents().add(table);	
 		try{
-			resourceTables.save(Collections.EMPTY_MAP);
+			resourceTables.save(options);
 		}catch(IOException e){
 			e.printStackTrace();
-		}
-
-		ResourceSet utils = new ResourceSetImpl();
-		String xmiUtils = tmp.concat("utils.").concat(extension);	
-		Resource resourceUtils= utils.createResource(URI.createURI(xmiUtils));
-
-		resourceUtils.getContents().add(util);
+		}	
 		
+		//Util:
+		String xmiUtils = tmp.concat("utils.").concat(extension);	
+		Resource resourceUtils= container.createResource(URI.createURI(xmiUtils));
+		resourceUtils.getContents().add(util);
 		try{
-			resourceUtils.save(Collections.EMPTY_MAP);
+			resourceUtils.save(options);
 		}catch(IOException e){
 			e.printStackTrace();
-		}
+		}	
 		
 		if(spreadsheet[mainIndex][2][table.getColNum(mainIndex,"Generic Monitor Points")].equals("yes")){
 			String[][][] spreadsheetWithGenericPointsAdded;
@@ -256,46 +254,38 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			spreadsheet = spreadsheetWithGenericPointsAdded;
 		}
 
-		//printAttributeValues(tab);
-
-		// Get the Main
-		main.setTable(table);
-		main.setUtil(util);
-		main.setInitializeMB(spreadsheet[mainIndex][2]);
-
 		// Get the Notes
-		notes = new ResourceSetImpl();	
 		String xmiNote = tmp.concat("notes.").concat(extension);		
-		Resource resourceNote = notes.createResource(URI.createURI(xmiNote));
-
 		for (i = 3; i < spreadsheet[mainIndex].length; i++) {
 			Note note = baseFactory.createNote();
+			notes = container.createResource(URI.createURI(xmiNote));
 			note.setNote(spreadsheet[mainIndex][i][descriptionIndex]);
-			resourceNote.getContents().add(note);
+			notes.getContents().add(note);
 			try{
-				resourceNote.save(Collections.EMPTY_MAP);
+				notes.save(options);
 			}catch(IOException e){
 				e.printStackTrace();
-			}
+			}	
 		}
-			
+
+		//Get the Main
+		//FIXME
+		String xmiMain = tmp.concat("main.").concat(extension);		
+		Main main2 = ambFactory.createMain();
+		main2.setMainAmb(spreadsheet[mainIndex][2]);
+	
+		printAttributeValues(main2);
+		
+		Resource resourceMain = container.createResource(URI.createURI(xmiMain));
+		resourceMain.getContents().add(main2);
+		
+		/*
 		// Get the monitor points
 		Monitor mparent = null;
-		monitorPoints = new ResourceSetImpl();
-		String xmiMonitorPoints = tmp.concat("monitorPoints.").concat(extension);	
-		Resource monitorResource = monitorPoints.createResource(URI.createURI(xmiMonitorPoints));
+		//monitorPoints = new ResourceSetImpl();
+		String xmiMonitorPoints = tmp.concat("monitorPoints.").concat(extension);
+		monitorPoints = container.createResource(URI.createURI(xmiMonitorPoints));
 
-		/*
-		ResourceSet resourceSetMparent = new ResourceSetImpl();
-		String xmiMPparent = tmp.concat("mpParent.").concat(extension);	
-		Resource resourceMparent = resourceSetMparent.createResource(URI.createURI(xmiMPparent));
-
-
-		ResourceSet resourceSetMp = new ResourceSetImpl();
-		String xmiMp = tmp.concat("mp.").concat(extension);	
-		Resource resourceMp = resourceSetMp.createResource(URI.createURI(xmiMp));
-		*/
-		
 		for (i = 2; i < spreadsheet[monitorIndex].length; i++) {
 			if(spreadsheet[monitorIndex][i].length == 0)
 				break;
@@ -303,59 +293,35 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			String[] row = spreadsheet[monitorIndex][i];
 			if(!spreadsheet[monitorIndex][i][1].startsWith(table.getDepChar())){
 				mp = ambFactory.createMonitor();
-				mp.setTable(main.getTable());
-				mp.setUtil(main.getUtil());
-				mp.setInitializeMImpl(row, null);
+				//Resource mParentResource = containerResource.createResource(URI.createURI(xmiMonitorPoints));
+				// FIXME
+				//mp.setTables(table);
+				//mp.setUtils(util);
+				mp.setMonitorPoint(row, null);
 				mparent = mp;
 			}else{
 				mp = ambFactory.createMonitor();
-				mp.setTable(main.getTable());
-				mp.setUtil(main.getUtil());
-				mp.setInitializeMImpl(row, mparent.eResource());
-				//monitorResource.getContents().add(mp);
+				//Resource mpResource = containerResource.createResource(URI.createURI(xmiMonitorPoints));
+				//mp.setTables(table);
+				//mp.setUtils(util);
+				mp.setMonitorPoint(row, mparent);
 				mparent.addDependent(mp);	
-			}
-			//printAttributeValues(table);
-			
-			
-			ResourceSet tryi = new ResourceSetImpl();
-			
-			Resource resource = tryi.createResource(URI.createDeviceURI(""));
-
-					
-			// FIXME: fix the method 			
-			//mp.setArchive(getArchive(mp.FullName()));
-			monitorResource.getContents().add(mp);
+			}						
+			mp.setArchive(getArchiveProperties(mp.FullName()));		
+			monitorPoints.getContents().add(mp);	
 			try{
-				monitorResource.save(Collections.EMPTY_MAP);
+				monitorPoints.save(options);
 			}catch(IOException e){
 				e.printStackTrace();
-			}			
-			//Arreglar:
-
-			//mp.setArchive(getArchive(mp.FullName()));
-			/*
-			monitorPoints.getResources().addAll(c);
-			//resourcemp.getContents().add(mp);
-			monitorRes.getContents().add(mp);
-			try{
-				monitorRes.save(Collections.EMPTY_MAP);
-			}catch(IOException e){
-				System.out.println("error en guardar monitorRes");
-				//e.printStackTrace();
-			}	
-			*/
+			}
 		}
-
-		/*
+	
 		// Define undefined dependent monitor points for sequence properties
-
-		List<EObject> listMP = monitorRes.getContents();
+		List<EObject> listMP = monitorPoints.getContents();
 		MonitorImpl[] arrayMP = listMP.toArray( new MonitorImpl[0]);
-
-		ResourceSet resourceSetImp = new ResourceSetImpl();
-		Resource resourceImp = resourceSetImp.createResource(URI.createURI(""));
-
+		System.out.println("size of array is: "+arrayMP.length+"");
+	
+		
 		for (Monitor mp : arrayMP) {
 			if (mp.isWorldDataArray() && !mp.hasDependents())
 				for (i=0; i < Integer.parseInt(mp.NumberItemsWorldData()); i++) {
@@ -381,32 +347,37 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 							mp.CanBeInvalid(),
 							mp.Description() + " (dependent monitor point)"
 					};
-					Monitor dep = ambFactory.createMonitor();
-					dep.setTable(main.getTable());
-					dep.setUtil(main.getUtil());
-					dep.setInitializeMImpl(row, resourceImp);
-					mp.addDependent(resourceImp);
-
-					//Arreglar:
+					//Monitor dep = ambFactory.createMonitor();
+					//Resource depMPResource = monitorPoints.createResource(URI.createURI(xmiMonitorPoints));
+					//dep.setDevices(this);		
+					//dep.setInitializeMImpl(row, mp.eResource());
+					//depMPResource.getContents().add(dep);
+					//mp.addDependent(dep.eResource());
 					//dep.setArchive(getArchive(dep.FullName()));
-					
-					//resourcemp.getContents().add(mp);
+					//monitorResource.getContents().add(dep);							
+					//try{
+					//	monitorResource.save(Collections.EMPTY_MAP);
+					//}catch(IOException e){
+					//	e.printStackTrace();
+					//}
 
-					monitorRes.getContents().add(dep);
 				}
 		}
 
+		
 		// Get the control points
-		Control cparent = ambFactory.createControl();
-		cparent = null;
+		Control cparent = null;
 		controlPoints = new ResourceSetImpl();
-		Resource controlRes = controlPoints.createResource(URI.createURI(""));
 
-		ResourceSet resourceSetCparent = new ResourceSetImpl();
-		Resource resourceCparent  = resourceSetCparent.createResource(URI.createURI(""));
+		String xmiControlPoints = tmp.concat("controlPoints.").concat(extension);
 
-		ResourceSet resourceSetCp = new ResourceSetImpl();
-		Resource resourceCp = resourceSetCp.createResource(URI.createURI(""));
+
+		//ResourceSet resourceSetCparent = new ResourceSetImpl();
+		//Resource resourceCparent  = resourceSetCparent.createResource(URI.createURI(""));
+
+		//ResourceSet resourceSetCp = new ResourceSetImpl();
+		//Resource resourceCp = resourceSetCp.createResource(URI.createURI(""));
+		Resource controlResource = controlPoints.createResource(URI.createURI(xmiControlPoints));
 
 		for (i = 2; i < spreadsheet[controlIndex].length; ++i) {
 			if(spreadsheet[controlIndex][i].length == 0)
@@ -415,52 +386,76 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			String[] row = spreadsheet[controlIndex][i];
 			if(!spreadsheet[controlIndex][i][1].startsWith(table.getDepChar())){
 				cp = ambFactory.createControl();
-				cp.setTable(main.getTable());
-				cp.setUtil(main.getUtil());
+				Resource cParentResource = controlPoints.createResource(URI.createURI(xmiControlPoints));
+				cp.setDevices(this);	
 				cp.setInitializeCImpl(row, null);
 				cparent = cp;
-				resourceCparent.getContents().add(cparent);
+				cParentResource.getContents().add(cparent);
 			}else{
 				cp = ambFactory.createControl();
-				cp.setTable(main.getTable());
-				cp.setUtil(main.getUtil());
-				cp.setInitializeCImpl(row, resourceCparent);
-				resourceCp.getContents().add(cp);
-				cparent.addDependent(resourceCp);
-			}
-			//Arreglar
-			//cp.setArchive(getArchive(cp.FullName()));
-			
-			//resourcecp.getContents().add(cp);
-
-			controlRes.getContents().add(cp);
+				Resource cpResource = controlPoints.createResource(URI.createURI(xmiControlPoints));
+				cp.setDevices(this);
+				cp.setInitializeCImpl(row, cparent.eResource());
+				cpResource.getContents().add(cp);
+				cparent.addDependent(cp.eResource());
+			}	
+			//setControlPoint(cp);
+			cp.setArchive(getArchive(cp.FullName()));
+			controlResource.getContents().add(cp);
+			//try{
+			//	controlResource.save(Collections.EMPTY_MAP);
+			//}catch(IOException e){
+			//	e.printStackTrace();
+			//}
 		}
-			
+
 		//Get the Archive Properties
-		archiveProperties = new ResourceSetImpl();
-		Resource archiveRes = archiveProperties.createResource(URI.createURI(""));
-		
+		archiveProperties = new ResourceSetImpl();	
+		String xmiArchiveProperties = tmp.concat("archiveproperties.").concat(extension);
+		Resource archivePropResource = archiveProperties.createResource(URI.createURI(xmiArchiveProperties));
+
 		for(i = 2; i < spreadsheet[archiveIndex].length; i++) {
 			if(spreadsheet[archiveIndex][i].length == 0)
 				break;
 			Archive ap;
 			String[] row = spreadsheet[archiveIndex][i];
 			ap = ambFactory.createArchive();
-			ap.setTable(main.getTable());
+			Resource apResouce = archiveProperties.createResource(URI.createURI(xmiArchiveProperties));
+			ap.setDevices(this);
 			ap.setInitializeAImpl(row);
+			apResouce.getContents().add(ap);
+
 			MonitorPoint mp = getMonitorPoint(ap.RefersTo());
-			if (mp != null)
+
+			Resource mpRes = archiveProperties.createResource(URI.createURI(xmiArchiveProperties));
+			mpRes.getContents().add(mp);
+			if (mp != null){
 				ap.setMP(mp.eResource());
-			ControlPoint cp = getControlPoint(ap.RefersTo());
-			if (cp != null)
-				ap.setCP(cp.eResource());
-			archiveRes.getContents().add(ap);
+				apResouce.getContents().add(ap);
+			}else{
+				ControlPoint cp = getControlPoint(ap.RefersTo());
+				Resource cpRes = archiveProperties.createResource(URI.createURI(xmiArchiveProperties));
+				if (cp != null){
+					ap.setCP(cp.eResource());
+					cpRes.getContents().add(cp);
+				}
+
+			}
+
+			archivePropResource.getContents().add(ap);
+
+			//try{
+			//	archivePropResource.save(Collections.EMPTY_MAP);
+			//}catch(IOException e){
+			//	e.printStackTrace();
+			//}
 		}
 
-		*/
+		 */
 		System.out.println("DeviceModel: Initialization complete.");
 		return "";
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -486,38 +481,30 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
 	public String TheEnd() {
-		Object object = EcoreUtil.getObjectByType(eAdapters(), BasePackage.Literals.UTIL);
-		if(object instanceof Util){
-			Util util = (Util)object;
-			String dir = generatedDir + "/" + Assembly();
-			util.RemoveLinesFromFile(dir + "/doc", Assembly() + ".html", 1);
-			util.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
-			util.RemoveLinesFromFile(dir + "/include", Assembly() + "HWSimBase.h", 1);
-			util.RemoveLinesFromFile(dir + "/src", Assembly() + "HWSimBase.cpp", 1);
-			util.RemoveLinesFromFile(dir + "/include", Assembly() + "CompSimBase.h", 1);
-			util.RemoveLinesFromFile(dir + "/src", Assembly() + "CompSimBase.cpp", 1);
-			util.RemoveLinesFromFile(dir + "/idl", Assembly() + "CompSimBase.idl", 1);
-			util.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "HWSimImpl.cpp", 1);
-			util.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "AmbDeviceInt.cpp", 1);
-			if (!isMonitorDBOnly()) {
-				if (isGenerateAlt()) {
-					util.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + ".makefile", 1);
-					util.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.idl", 1);
-					util.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.h", 1);
-					util.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.cpp", 1);
-				}
-				super.TheEnd();
-			} else 
-				System.out.println("Code generation for " + deviceName + " done.");
-			return "";
-		}else{
-			System.out.println("There is no instance of class Util in: amb/DeviceModelImpl");
-			return "There is no instance of class Util in: amb/DeviceModelImpl";
-		}
-
+				String dir = generatedDir + "/" + Assembly();
+				utils.RemoveLinesFromFile(dir + "/doc", Assembly() + ".html", 1);
+				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
+				utils.RemoveLinesFromFile(dir + "/include", Assembly() + "HWSimBase.h", 1);
+				utils.RemoveLinesFromFile(dir + "/src", Assembly() + "HWSimBase.cpp", 1);
+				utils.RemoveLinesFromFile(dir + "/include", Assembly() + "CompSimBase.h", 1);
+				utils.RemoveLinesFromFile(dir + "/src", Assembly() + "CompSimBase.cpp", 1);
+				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "CompSimBase.idl", 1);
+				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "HWSimImpl.cpp", 1);
+				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "AmbDeviceInt.cpp", 1);
+					if (!isMonitorDBOnly()) {
+						if (isGenerateAlt()) {
+							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + ".makefile", 1);
+							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.idl", 1);
+							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.h", 1);
+							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.cpp", 1);
+						}
+						super.TheEnd();
+					} else 
+						System.out.println("Code generation for " + deviceName + " done.");
+					return "";
 	}
 
 	/**
@@ -545,6 +532,12 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 					throw new RuntimeException("Invalid number (" + s + ")");
 				}
 				return Integer.toString(n);
+	}
+
+	@Override
+	public MonitorPoint getMonitorPoint(String fullName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 } //DeviceModelImpl

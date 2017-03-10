@@ -90,8 +90,8 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeMainImpl(final String[] row) {
-		setInitializeMB(row);
+	public void setMainEth(final String[] row) {
+		setMainBase(row);
 	}
 
 } //MainImpl

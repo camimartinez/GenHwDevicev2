@@ -72,7 +72,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Data\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Data\")];'"
 	 * @generated
 	 */
 	String Data();
@@ -80,7 +80,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Value\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Value\")];'"
 	 * @generated
 	 */
 	String Value();
@@ -88,7 +88,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Returns\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Returns\")];'"
 	 * @generated
 	 */
 	String Returns();
@@ -96,7 +96,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Parameter\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Parameter\")];'"
 	 * @generated
 	 */
 	String Parameter();
@@ -258,7 +258,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getUtil().normalizeNumber(WorldDataType(),super.MinRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(),super.MinRange());'"
 	 * @generated
 	 */
 	String MinRange();
@@ -266,7 +266,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getUtil().normalizeNumber(WorldDataType(),super.MaxRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(),super.MaxRange());'"
 	 * @generated
 	 */
 	String MaxRange();
@@ -274,7 +274,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)getTable().getWorldToIDL().get(Returns());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getWorldToIDL().get(Returns());'"
 	 * @generated
 	 */
 	String idlReturns();
@@ -282,7 +282,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)getTable().getWorldToCORBA().get(Returns());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getWorldToCORBA().get(Returns());'"
 	 * @generated
 	 */
 	String corbaReturns();
@@ -306,7 +306,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\n\t\tint pos = 0;\n\t\tint n = s.indexOf(\' \');\n\t\tif (n == -1)\n\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\tString word = s.substring(pos,n);\n\t\tString out = \"\";\n\t\tboolean isArray = isWorldDataArray();\n\t\tif (isArray) {\n\t\tout += \"in \" + (String)getTable().getWorldToIDLSeq().get(word) + \" \";\n\t\t}\n\t\telse\n\t\tout = \"in \" + (String)getTable().getWorldToIDL().get(word) + \" \";\n\t\tpos = n + 1;\n\t\twhile (true) {\n\t\tn = s.indexOf(\',\',pos);\n\t\tif (n == -1)\n\t\tbreak;\n\t\tword = s.substring(pos,n);\n\t\tout += word + \", \";\n\t\tpos = n + 1;\n\t\twhile (true) {\n\t\tif (s.charAt(pos) == \' \')\n\t\tpos++;\n\t\telse\n\t\tbreak;\n\t\t}\n\t\tn = s.indexOf(\' \',pos);\n\t\tif (n == -1)\n\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\tword = s.substring(pos,n);\n\t\tif (isArray) {\n\t\tString type = (String)getTable().getWorldToIDL().get(word);\n\t\ttype = type.replace(\"unsigned long\", \"uLong\");\n\t\tout += \"in \" + type;\n\t\t}\n\t\telse\n\t\tout = \"in \" + (String)getTable().getWorldToIDL().get(word) + \" \";\n\t\tpos = n + 1;\n\t\t}\n\t\tword = s.substring(pos);\n\t\tout += word;\n\t\treturn out;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tString s = Parameter();\n\t\t\t\tint pos = 0;\n\t\t\t\tint n = s.indexOf(\' \');\n\t\t\t\tif (n == -1)\n\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\tString word = s.substring(pos,n);\n\t\t\t\tString out = \"\";\n\t\t\t\tboolean isArray = isWorldDataArray();\n\t\t\t\tif (isArray) {\n\t\t\t\t\tout += \"in \" + (String)tables.getWorldToIDLSeq().get(word) + \" \";\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t\tout = \"in \" + (String)tables.getWorldToIDL().get(word) + \" \";\n\t\t\t\tpos = n + 1;\n\t\t\t\twhile (true) {\n\t\t\t\t\tn = s.indexOf(\',\',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tout += word + \", \";\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t\twhile (true) {\n\t\t\t\t\t\tif (s.charAt(pos) == \' \')\n\t\t\t\t\t\t\tpos++;\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t\tn = s.indexOf(\' \',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tif (isArray) {\n\t\t\t\t\t\tString type = (String)tables.getWorldToIDL().get(word);\n\t\t\t\t\t\ttype = type.replace(\"unsigned long\", \"uLong\");\n\t\t\t\t\t\tout += \"in \" + type;\n\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t\tout = \"in \" + (String)tables.getWorldToIDL().get(word) + \" \";\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t}\n\t\t\t\tword = s.substring(pos);\n\t\t\t\tout += word;\n\t\t\t\treturn out;'"
 	 * @generated
 	 */
 	String idlParameters();
@@ -322,7 +322,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\n\t\tint pos = 0;\n\t\tint n = s.indexOf(\' \');\n\t\tif (n == -1)\n\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\tString word = s.substring(pos,n);\n\t\tString out = (String)getTable().getWorldToCORBA().get(word) + \" \";\n\t\tpos = n + 1;\n\t\twhile (true) {\n\t\tn = s.indexOf(\',\',pos);\n\t\tif (n == -1)\n\t\tbreak;\n\t\tword = s.substring(pos,n);\n\t\tout += word + \", \";\n\t\tpos = n + 1;\n\t\twhile (true) {\n\t\tif (s.charAt(pos) == \' \')\n\t\tpos++;\n\t\telse\n\t\tbreak;\n\t\t}\n\t\tn = s.indexOf(\' \',pos);\n\t\tif (n == -1)\n\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\tword = s.substring(pos,n);\n\t\tout += (String)getTable().getWorldToCORBA().get(word);\n\t\tpos = n + 1;\n\t\t}\n\t\tword = s.substring(pos);\n\t\tout += word;\n\t\treturn out;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tString s = Parameter();\n\t\t\t\tint pos = 0;\n\t\t\t\tint n = s.indexOf(\' \');\n\t\t\t\tif (n == -1)\n\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\tString word = s.substring(pos,n);\n\t\t\t\tString out = (String)tables.getWorldToCORBA().get(word) + \" \";\n\t\t\t\tpos = n + 1;\n\t\t\t\twhile (true) {\n\t\t\t\t\tn = s.indexOf(\',\',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tout += word + \", \";\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t\twhile (true) {\n\t\t\t\t\t\tif (s.charAt(pos) == \' \')\n\t\t\t\t\t\t\tpos++;\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t\tn = s.indexOf(\' \',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tout += (String)tables.getWorldToCORBA().get(word);\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t}\n\t\t\t\tword = s.substring(pos);\n\t\t\t\tout += word;\n\t\t\t\treturn out;'"
 	 * @generated
 	 */
 	String corbaParameters();
@@ -330,7 +330,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)getTable().getWorldToCPP().get(Returns());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getWorldToCPP().get(Returns());'"
 	 * @generated
 	 */
 	String cppReturns();
@@ -346,7 +346,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = Parameter();\n\t\tint pos = 0;\n\t\tint n = s.indexOf(\' \');\n\t\tif (n == -1)\n\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\tString word = s.substring(pos,n);\n\t\tString out = (String)getTable().getWorldToCPP().get(word) + \" \";\n\t\tpos = n + 1;\n\t\twhile (true) {\n\t\tn = s.indexOf(\',\',pos);\n\t\tif (n == -1)\n\t\tbreak;\n\t\tword = s.substring(pos,n);\n\t\tout += word + \", \";\n\t\tpos = n + 1;\n\t\twhile (true) {\n\t\tif (s.charAt(pos) == \' \')\n\t\tpos++;\n\t\telse\n\t\tbreak;\n\t\t}\t\t\t\t\n\t\tn = s.indexOf(\' \',pos);\n\t\tif (n == -1)\n\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\tword = s.substring(pos,n);\n\t\tout += (String)getTable().getWorldToCPP().get(word) + \" \";\n\t\tpos = n + 1;\n\t\t}\n\t\tword = s.substring(pos);\n\t\tout += word;\n\t\treturn out;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tString s = Parameter();\n\t\t\t\tint pos = 0;\n\t\t\t\tint n = s.indexOf(\' \');\n\t\t\t\tif (n == -1)\n\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\tString word = s.substring(pos,n);\n\t\t\t\tString out = (String)tables.getWorldToCPP().get(word) + \" \";\n\t\t\t\tpos = n + 1;\n\t\t\t\twhile (true) {\n\t\t\t\t\tn = s.indexOf(\',\',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tout += word + \", \";\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t\twhile (true) {\n\t\t\t\t\t\tif (s.charAt(pos) == \' \')\n\t\t\t\t\t\t\tpos++;\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\t\t\t\t\n\t\t\t\t\tn = s.indexOf(\' \',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tout += (String)tables.getWorldToCPP().get(word) + \" \";\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t}\n\t\t\t\tword = s.substring(pos);\n\t\t\t\tout += word;\n\t\t\t\treturn out;'"
 	 * @generated
 	 */
 	String cppParameters();
@@ -611,10 +611,10 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeCP(row, parent);\nmac = new MandCImpl();\nmac.setInitializeMandCImpl(row, sheet, this);'"
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setControlPoint(row, parent);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this);'"
 	 * @generated
 	 */
-	void setInitializeCImpl(String[] row, Resource parent);
+	void setControlAmb(String[] row, Object parent);
 
 } // Control

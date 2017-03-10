@@ -39,7 +39,7 @@ public interface Archive extends ArchiveProperty {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeAP(row);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tsetArchiveProperty(row);'"
 	 * @generated
 	 */
 	void setInitializeAImpl(String[] row);

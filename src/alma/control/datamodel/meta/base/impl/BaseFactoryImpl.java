@@ -109,16 +109,18 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case BasePackage.CONTROL_POINT_DT:
+				return createControlPointDTFromString(eDataType, initialValue);
+			case BasePackage.MONITOR_POINT_DT:
+				return createMonitorPointDTFromString(eDataType, initialValue);
+			case BasePackage.ARCHIVE_PROPERTY_DT:
+				return createArchivePropertyDTFromString(eDataType, initialValue);
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return createSimpleErrorHandlerDTFromString(eDataType, initialValue);
 			case BasePackage.MAND_CAMBDT:
 				return createMandCAMBDTFromString(eDataType, initialValue);
 			case BasePackage.MAND_CBASE_DT:
 				return createMandCBaseDTFromString(eDataType, initialValue);
-			case BasePackage.MAIN_BASE_DT:
-				return createMainBaseDTFromString(eDataType, initialValue);
-			case BasePackage.RESOURCE_DT:
-				return createResourceDTFromString(eDataType, initialValue);
 			case BasePackage.ITERATOR_DT:
 				return createIteratorDTFromString(eDataType, initialValue);
 			case BasePackage.ARRAY_LIST:
@@ -152,16 +154,18 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case BasePackage.CONTROL_POINT_DT:
+				return convertControlPointDTToString(eDataType, instanceValue);
+			case BasePackage.MONITOR_POINT_DT:
+				return convertMonitorPointDTToString(eDataType, instanceValue);
+			case BasePackage.ARCHIVE_PROPERTY_DT:
+				return convertArchivePropertyDTToString(eDataType, instanceValue);
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return convertSimpleErrorHandlerDTToString(eDataType, instanceValue);
 			case BasePackage.MAND_CAMBDT:
 				return convertMandCAMBDTToString(eDataType, instanceValue);
 			case BasePackage.MAND_CBASE_DT:
 				return convertMandCBaseDTToString(eDataType, instanceValue);
-			case BasePackage.MAIN_BASE_DT:
-				return convertMainBaseDTToString(eDataType, instanceValue);
-			case BasePackage.RESOURCE_DT:
-				return convertResourceDTToString(eDataType, instanceValue);
 			case BasePackage.ITERATOR_DT:
 				return convertIteratorDTToString(eDataType, instanceValue);
 			case BasePackage.ARRAY_LIST:
@@ -272,6 +276,60 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ControlPoint createControlPointDTFromString(EDataType eDataType, String initialValue) {
+		return (ControlPoint)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertControlPointDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MonitorPoint createMonitorPointDTFromString(EDataType eDataType, String initialValue) {
+		return (MonitorPoint)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMonitorPointDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ArchiveProperty createArchivePropertyDTFromString(EDataType eDataType, String initialValue) {
+		return (ArchiveProperty)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertArchivePropertyDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SimpleErrorHandler createSimpleErrorHandlerDTFromString(EDataType eDataType, String initialValue) {
 		return (SimpleErrorHandler)super.createFromString(eDataType, initialValue);
 	}
@@ -318,42 +376,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertMandCBaseDTToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MainBase createMainBaseDTFromString(EDataType eDataType, String initialValue) {
-		return (MainBase)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertMainBaseDTToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Resource createResourceDTFromString(EDataType eDataType, String initialValue) {
-		return (Resource)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertResourceDTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

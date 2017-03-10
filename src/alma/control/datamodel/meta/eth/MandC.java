@@ -251,6 +251,6 @@ public interface MandC extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = sheet;'"
 	 * @generated
 	 */
-	void setInitializeMandCImpl(String[] row, int sheet);
+	void setMandCEth(String[] row, int sheet);
 
 } // MandC

@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.base.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,7 +21,7 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.base.impl;
+
 
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
@@ -83,7 +84,7 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * @generated
 	 */
 	public boolean ArchiveOnUse() {
-		return row[table.getColNum(sheet, "Archive On Use")].equals("yes");
+		return row[tables.getColNum(sheet, "Archive On Use")].equals("yes");
 	}
 
 	/**
@@ -101,8 +102,8 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeCP(final String[] row, final Resource parent) {
-		setInitializeMCB(row, parent);
+	public void setControlPoint(final String[] row, final Object parent) {
+		setMandCBase(row, parent);
 	}
 
 } //ControlPointImpl

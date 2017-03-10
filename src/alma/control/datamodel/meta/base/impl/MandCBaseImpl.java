@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.base.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,12 +21,11 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.base.impl;
+
 
 import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import alma.control.datamodel.meta.amb.Monitor;
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.DeviceModel;
+import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Table;
@@ -59,12 +59,12 @@ import alma.control.datamodel.meta.base.Util;
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getParentRow <em>Parent Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getSheet <em>Sheet</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getResourceSetDependent <em>Resource Set Dependent</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getParent <em>Parent</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getArchive <em>Archive</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getDependents <em>Dependents</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getUtil <em>Util</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getDevice <em>Device</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getUtils <em>Utils</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getArchive <em>Archive</em>}</li>
  * </ul>
  *
  * @generated
@@ -171,6 +171,26 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	protected int sheet = SHEET_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getResourceSetDependent() <em>Resource Set Dependent</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResourceSetDependent()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ResourceSet RESOURCE_SET_DEPENDENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getResourceSetDependent() <em>Resource Set Dependent</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResourceSetDependent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ResourceSet resourceSetDependent = RESOURCE_SET_DEPENDENT_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getParent() <em>Parent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -178,7 +198,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Resource PARENT_EDEFAULT = null;
+	protected static final Object PARENT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getParent() <em>Parent</em>}' attribute.
@@ -188,27 +208,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected Resource parent = PARENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getArchive() <em>Archive</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getArchive()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Resource ARCHIVE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getArchive() <em>Archive</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getArchive()
-	 * @generated
-	 * @ordered
-	 */
-	protected Resource archive = ARCHIVE_EDEFAULT;
+	protected Object parent = PARENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDependents() <em>Dependents</em>}' attribute.
@@ -218,7 +218,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ResourceSet DEPENDENTS_EDEFAULT = null;
+	protected static final Resource DEPENDENTS_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getDependents() <em>Dependents</em>}' attribute.
@@ -228,37 +228,37 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 * @ordered
 	 */
-	protected ResourceSet dependents = DEPENDENTS_EDEFAULT;
+	protected Resource dependents = DEPENDENTS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' reference.
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTable()
+	 * @see #getTables()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table table;
+	protected Table tables;
 
 	/**
-	 * The cached value of the '{@link #getUtil() <em>Util</em>}' reference.
+	 * The cached value of the '{@link #getUtils() <em>Utils</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUtil()
+	 * @see #getUtils()
 	 * @generated
 	 * @ordered
 	 */
-	protected Util util;
+	protected Util utils;
 
 	/**
-	 * The cached value of the '{@link #getDevice() <em>Device</em>}' reference.
+	 * The cached value of the '{@link #getArchive() <em>Archive</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDevice()
+	 * @see #getArchive()
 	 * @generated
 	 * @ordered
 	 */
-	protected DeviceModel device;
+	protected ArchiveProperty archive;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -389,7 +389,28 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Resource getParent() {
+	public ResourceSet getResourceSetDependent() {
+		return resourceSetDependent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResourceSetDependent(ResourceSet newResourceSetDependent) {
+		ResourceSet oldResourceSetDependent = resourceSetDependent;
+		resourceSetDependent = newResourceSetDependent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT, oldResourceSetDependent, resourceSetDependent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Object getParent() {
 		return parent;
 	}
 
@@ -398,8 +419,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParent(Resource newParent) {
-		Resource oldParent = parent;
+	public void setParent(Object newParent) {
+		Object oldParent = parent;
 		parent = newParent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__PARENT, oldParent, parent));
@@ -410,7 +431,24 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Resource getArchive() {
+	public ArchiveProperty getArchive() {
+		if (archive != null && archive.eIsProxy()) {
+			InternalEObject oldArchive = (InternalEObject)archive;
+			archive = (ArchiveProperty)eResolveProxy(oldArchive);
+			if (archive != oldArchive) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__ARCHIVE, oldArchive, archive));
+			}
+		}
+		return archive;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ArchiveProperty basicGetArchive() {
 		return archive;
 	}
 
@@ -419,20 +457,35 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	public void setArchive(Resource newArchive) {
-		ResourceSet archiveRes = device.getArchiveProperties();
+	public void setArchive(ArchiveProperty newArchive) {
+
+		//ResourceSet archiveRes = getDevices().getArchiveProperties();
 		this.archive = newArchive;
-		int index = archiveRes.getResources().size();
-		System.out.println("tamaño de resources "+index+"");
-		//Resource res = archiveResourceSet.getResources().get(0);
+		//int index = archiveRes.getContents().size();
+		//System.out.println("tamaño de resources "+index+"");
+		//Resource res = archiveResourceSet.getContents().get(0);
 		//Resource archA = archiveResourceSet.createResource(URI.createURI(""));
-		if (archive != null){
-			if(this instanceof MonitorPoint)	
-				System.out.println("instance of MonitorPoint");
-				//((ArchiveProperty)archive).setMP(this.eResource());
-		}else
-			System.out.println("instance of ControlPoint");
-			//((ArchiveProperty)archive).setCP(this.eResource());
+
+		try {
+			if (archive != null){
+				if(this instanceof MonitorPoint)	
+					archive.setMP((MonitorPoint)this);
+				else
+					archive.setCP((ControlPoint)this);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addDependent(EObject son) {
+		dependents.getContents().add(son);
 	}
 
 	/**
@@ -440,7 +493,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceSet getDependents() {
+	public Resource getDependents() {
 		return dependents;
 	}
 
@@ -449,8 +502,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDependents(ResourceSet newDependents) {
-		ResourceSet oldDependents = dependents;
+	public void setDependents(Resource newDependents) {
+		Resource oldDependents = dependents;
 		dependents = newDependents;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__DEPENDENTS, oldDependents, dependents));
@@ -461,16 +514,16 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getTable() {
-		if (table != null && table.eIsProxy()) {
-			InternalEObject oldTable = (InternalEObject)table;
-			table = (Table)eResolveProxy(oldTable);
-			if (table != oldTable) {
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__TABLE, oldTable, table));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__TABLES, oldTables, tables));
 			}
 		}
-		return table;
+		return tables;
 	}
 
 	/**
@@ -478,8 +531,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetTable() {
-		return table;
+	public Table basicGetTables() {
+		return tables;
 	}
 
 	/**
@@ -487,11 +540,11 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTable(Table newTable) {
-		Table oldTable = table;
-		table = newTable;
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__TABLE, oldTable, table));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__TABLES, oldTables, tables));
 	}
 
 	/**
@@ -499,16 +552,16 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util getUtil() {
-		if (util != null && util.eIsProxy()) {
-			InternalEObject oldUtil = (InternalEObject)util;
-			util = (Util)eResolveProxy(oldUtil);
-			if (util != oldUtil) {
+	public Util getUtils() {
+		if (utils != null && utils.eIsProxy()) {
+			InternalEObject oldUtils = (InternalEObject)utils;
+			utils = (Util)eResolveProxy(oldUtils);
+			if (utils != oldUtils) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__UTIL, oldUtil, util));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__UTILS, oldUtils, utils));
 			}
 		}
-		return util;
+		return utils;
 	}
 
 	/**
@@ -516,8 +569,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetUtil() {
-		return util;
+	public Util basicGetUtils() {
+		return utils;
 	}
 
 	/**
@@ -525,81 +578,11 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUtil(Util newUtil) {
-		Util oldUtil = util;
-		util = newUtil;
+	public void setUtils(Util newUtils) {
+		Util oldUtils = utils;
+		utils = newUtils;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__UTIL, oldUtil, util));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DeviceModel getDevice() {
-		if (device != null && device.eIsProxy()) {
-			InternalEObject oldDevice = (InternalEObject)device;
-			device = (DeviceModel)eResolveProxy(oldDevice);
-			if (device != oldDevice) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAND_CBASE__DEVICE, oldDevice, device));
-			}
-		}
-		return device;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DeviceModel basicGetDevice() {
-		return device;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDevice(DeviceModel newDevice, NotificationChain msgs) {
-		DeviceModel oldDevice = device;
-		device = newDevice;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__DEVICE, oldDevice, newDevice);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDevice(DeviceModel newDevice) {
-		if (newDevice != device) {
-			NotificationChain msgs = null;
-			if (device != null)
-				msgs = ((InternalEObject)device).eInverseRemove(this, BasePackage.DEVICE_MODEL__MAND_C, DeviceModel.class, msgs);
-			if (newDevice != null)
-				msgs = ((InternalEObject)newDevice).eInverseAdd(this, BasePackage.DEVICE_MODEL__MAND_C, DeviceModel.class, msgs);
-			msgs = basicSetDevice(newDevice, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__DEVICE, newDevice, newDevice));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void addDependent(final EObject son) {
-		dependents.getAllContents().add(son);
-		
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__UTILS, oldUtils, utils));
 	}
 
 	/**
@@ -619,18 +602,18 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public boolean hasDependents() {
-		return !dependents.getAllContents().isEmpty();
+		return !dependents.getContents().isEmpty();
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String FullName() {
-		return row[getTable().getColNum(sheet, "Name")];
+		return row[tables.getColNum(sheet, "Name")];
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -638,9 +621,9 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 */
 	public String Name() {
 		if(isDependent())
-			return row[getTable().getColNum(sheet, "Name")].substring(1);
-		else
-			return row[getTable().getColNum(sheet, "Name")];
+							return row[tables.getColNum(sheet, "Name")].substring(1);
+						else
+							return row[tables.getColNum(sheet, "Name")];
 	}
 
 	/**
@@ -652,14 +635,14 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		return Name();
 		
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getAltDependentName() {
-		return getUtil().AltName(getDependentName());
+		return utils.AltName(getDependentName());
 	}
 
 	/**
@@ -669,8 +652,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 */
 	public String getDependsOnName() {
 		if(!isDependent())
-			return "";
-		return ((MandCBase)getParent()).Name();
+					return "";
+				return ((MandCBase)getParent()).Name();
 	}
 
 	/**
@@ -679,7 +662,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String getAltDependsOnName() {
-		return getUtil().AltName(((MandCBase)getParent()).Name());
+		return utils.AltName(((MandCBase)getParent()).Name());
 	}
 
 	/**
@@ -688,7 +671,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DataUnits() {
-		return row[getTable().getColNum(sheet, "Data Units")];
+		return row[tables.getColNum(sheet, "Data Units")];
 	}
 
 	/**
@@ -697,7 +680,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String MinRange() {
-		return row[getTable().getColNum(sheet, "Min Range")];
+		return row[tables.getColNum(sheet, "Min Range")];
 	}
 
 	/**
@@ -706,7 +689,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String MaxRange() {
-		return row[getTable().getColNum(sheet, "Max Range")];
+		return row[tables.getColNum(sheet, "Max Range")];
 	}
 
 	/**
@@ -715,7 +698,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String Mode() {
-		return row[getTable().getColNum(sheet, "Mode")];
+		return row[tables.getColNum(sheet, "Mode")];
 	}
 
 	/**
@@ -724,7 +707,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public boolean Implement() {
-		return row[getTable().getColNum(sheet, "Implement")].equals("yes");
+		return row[tables.getColNum(sheet, "Implement")].equals("yes");
 	}
 
 	/**
@@ -733,8 +716,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public boolean External() {
-		return row[getTable().getColNum(sheet, "External")].equals("yes");
-		
+		return row[tables.getColNum(sheet, "External")].equals("yes");
 	}
 
 	/**
@@ -743,7 +725,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String Description() {
-		return row[getTable().getColNum(sheet, "Description")];
+		return row[tables.getColNum(sheet, "Description")];
 	}
 
 	/**
@@ -808,7 +790,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String PName() {
-				if (Name().startsWith(getTable().getDepChar()))
+				if (Name().startsWith(tables.getDepChar()))
 					return dropPrefix(Name().substring(1));
 				return dropPrefix(Name());
 	}
@@ -820,8 +802,8 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 */
 	public String AltPName() {
 			if (Name().startsWith("SET_"))
-					return "Cntl" + getUtil().AltName(PName()); 
-				return getUtil().AltName(PName());
+					return "Cntl" + utils.AltName(PName()); 
+				return utils.AltName(PName());
 	}
 
 	/**
@@ -830,7 +812,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DescriptionAsString() {
-		return getUtil().descriptionAsString(Description());
+		return utils.descriptionAsString(Description());
 	}
 
 	/**
@@ -839,7 +821,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DescriptionFormatted() {
-		return getUtil().formatDescriptionL2(Description());
+		return utils.formatDescriptionL2(Description());
 	}
 
 	/**
@@ -848,7 +830,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DescriptionFormattedL4() {
-		return getUtil().formatDescriptionL4(Description());
+		return utils.formatDescriptionL4(Description());
 	}
 
 	/**
@@ -857,7 +839,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public String DescriptionFormattedL5() {
-		return getUtil().formatDescriptionL5(Description());
+		return utils.formatDescriptionL5(Description());
 	}
 
 	/**
@@ -870,43 +852,14 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
-	public void setInitializeMCB(final String[] row, final Resource parent) {
-		this.row = row;
-		this.parent = parent;
-		dependents = new ResourceSetImpl();
-		sheet = (this instanceof Monitor) ? getTable().getSheetNum("Monitor Point") : getTable().getSheetNum("Control Point");
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BasePackage.MAND_CBASE__DEVICE:
-				if (device != null)
-					msgs = ((InternalEObject)device).eInverseRemove(this, BasePackage.DEVICE_MODEL__MAND_C, DeviceModel.class, msgs);
-				return basicSetDevice((DeviceModel)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BasePackage.MAND_CBASE__DEVICE:
-				return basicSetDevice(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setMandCBase(final String[] row, Object parent) {
+				this.row = row;
+				this.parent = parent;
+				ResourceSet dependt = new ResourceSetImpl();  
+				dependents = dependt.createResource(URI.createURI(""));
+				sheet = (this instanceof Monitor) ? getTables().getSheetNum("Monitor Point") : getTables().getSheetNum("Control Point");
 	}
 
 	/**
@@ -929,7 +882,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				System.out.println(value + " (default)");
 		}
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -948,21 +901,21 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				return getParentRow();
 			case BasePackage.MAND_CBASE__SHEET:
 				return getSheet();
+			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT:
+				return getResourceSetDependent();
 			case BasePackage.MAND_CBASE__PARENT:
 				return getParent();
-			case BasePackage.MAND_CBASE__ARCHIVE:
-				return getArchive();
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				return getDependents();
-			case BasePackage.MAND_CBASE__TABLE:
-				if (resolve) return getTable();
-				return basicGetTable();
-			case BasePackage.MAND_CBASE__UTIL:
-				if (resolve) return getUtil();
-				return basicGetUtil();
-			case BasePackage.MAND_CBASE__DEVICE:
-				if (resolve) return getDevice();
-				return basicGetDevice();
+			case BasePackage.MAND_CBASE__TABLES:
+				if (resolve) return getTables();
+				return basicGetTables();
+			case BasePackage.MAND_CBASE__UTILS:
+				if (resolve) return getUtils();
+				return basicGetUtils();
+			case BasePackage.MAND_CBASE__ARCHIVE:
+				if (resolve) return getArchive();
+				return basicGetArchive();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -990,23 +943,23 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 			case BasePackage.MAND_CBASE__SHEET:
 				setSheet((Integer)newValue);
 				return;
-			case BasePackage.MAND_CBASE__PARENT:
-				setParent((Resource)newValue);
+			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT:
+				setResourceSetDependent((ResourceSet)newValue);
 				return;
-			case BasePackage.MAND_CBASE__ARCHIVE:
-				setArchive((Resource)newValue);
+			case BasePackage.MAND_CBASE__PARENT:
+				setParent(newValue);
 				return;
 			case BasePackage.MAND_CBASE__DEPENDENTS:
-				setDependents((ResourceSet)newValue);
+				setDependents((Resource)newValue);
 				return;
-			case BasePackage.MAND_CBASE__TABLE:
-				setTable((Table)newValue);
+			case BasePackage.MAND_CBASE__TABLES:
+				setTables((Table)newValue);
 				return;
-			case BasePackage.MAND_CBASE__UTIL:
-				setUtil((Util)newValue);
+			case BasePackage.MAND_CBASE__UTILS:
+				setUtils((Util)newValue);
 				return;
-			case BasePackage.MAND_CBASE__DEVICE:
-				setDevice((DeviceModel)newValue);
+			case BasePackage.MAND_CBASE__ARCHIVE:
+				setArchive((ArchiveProperty)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1035,23 +988,23 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 			case BasePackage.MAND_CBASE__SHEET:
 				setSheet(SHEET_EDEFAULT);
 				return;
+			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT:
+				setResourceSetDependent(RESOURCE_SET_DEPENDENT_EDEFAULT);
+				return;
 			case BasePackage.MAND_CBASE__PARENT:
 				setParent(PARENT_EDEFAULT);
-				return;
-			case BasePackage.MAND_CBASE__ARCHIVE:
-				setArchive(ARCHIVE_EDEFAULT);
 				return;
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				setDependents(DEPENDENTS_EDEFAULT);
 				return;
-			case BasePackage.MAND_CBASE__TABLE:
-				setTable((Table)null);
+			case BasePackage.MAND_CBASE__TABLES:
+				setTables((Table)null);
 				return;
-			case BasePackage.MAND_CBASE__UTIL:
-				setUtil((Util)null);
+			case BasePackage.MAND_CBASE__UTILS:
+				setUtils((Util)null);
 				return;
-			case BasePackage.MAND_CBASE__DEVICE:
-				setDevice((DeviceModel)null);
+			case BasePackage.MAND_CBASE__ARCHIVE:
+				setArchive((ArchiveProperty)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1075,18 +1028,18 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				return PARENT_ROW_EDEFAULT == null ? parentRow != null : !PARENT_ROW_EDEFAULT.equals(parentRow);
 			case BasePackage.MAND_CBASE__SHEET:
 				return sheet != SHEET_EDEFAULT;
+			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT:
+				return RESOURCE_SET_DEPENDENT_EDEFAULT == null ? resourceSetDependent != null : !RESOURCE_SET_DEPENDENT_EDEFAULT.equals(resourceSetDependent);
 			case BasePackage.MAND_CBASE__PARENT:
 				return PARENT_EDEFAULT == null ? parent != null : !PARENT_EDEFAULT.equals(parent);
-			case BasePackage.MAND_CBASE__ARCHIVE:
-				return ARCHIVE_EDEFAULT == null ? archive != null : !ARCHIVE_EDEFAULT.equals(archive);
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				return DEPENDENTS_EDEFAULT == null ? dependents != null : !DEPENDENTS_EDEFAULT.equals(dependents);
-			case BasePackage.MAND_CBASE__TABLE:
-				return table != null;
-			case BasePackage.MAND_CBASE__UTIL:
-				return util != null;
-			case BasePackage.MAND_CBASE__DEVICE:
-				return device != null;
+			case BasePackage.MAND_CBASE__TABLES:
+				return tables != null;
+			case BasePackage.MAND_CBASE__UTILS:
+				return utils != null;
+			case BasePackage.MAND_CBASE__ARCHIVE:
+				return archive != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1111,10 +1064,10 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		result.append(parentRow);
 		result.append(", sheet: ");
 		result.append(sheet);
+		result.append(", resourceSetDependent: ");
+		result.append(resourceSetDependent);
 		result.append(", parent: ");
 		result.append(parent);
-		result.append(", archive: ");
-		result.append(archive);
 		result.append(", dependents: ");
 		result.append(dependents);
 		result.append(')');

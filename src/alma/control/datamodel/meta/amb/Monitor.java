@@ -44,26 +44,26 @@ import org.eclipse.emf.ecore.resource.Resource;
  */
 public interface Monitor extends MonitorPoint {
 	/**
-	 * Returns the value of the '<em><b>Mac</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Mac</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mac</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mac</em>' containment reference.
+	 * @return the value of the '<em>Mac</em>' reference.
 	 * @see #setMac(MandC)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMonitor_Mac()
-	 * @model containment="true" resolveProxies="true"
+	 * @model
 	 * @generated
 	 */
 	MandC getMac();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getMac <em>Mac</em>}' containment reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.Monitor#getMac <em>Mac</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mac</em>' containment reference.
+	 * @param value the new value of the '<em>Mac</em>' reference.
 	 * @see #getMac()
 	 * @generated
 	 */
@@ -72,7 +72,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Can Be Invalid\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Can Be Invalid\")];'"
 	 * @generated
 	 */
 	String CanBeInvalid();
@@ -484,7 +484,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getUtil().normalizeNumber(WorldDataType(), super.MinRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(), super.MinRange());'"
 	 * @generated
 	 */
 	String MinRange();
@@ -492,7 +492,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getUtil().normalizeNumber(WorldDataType(), super.MaxRange());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(), super.MaxRange());'"
 	 * @generated
 	 */
 	String MaxRange();
@@ -500,7 +500,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getUtil().normalizeNumber(WorldDataType(), super.Default());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.normalizeNumber(WorldDataType(), super.Default());'"
 	 * @generated
 	 */
 	String Default();
@@ -509,7 +509,7 @@ public interface Monitor extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = true;\r\n\t\tif( this.isDependent()) ret = false;\r\n\t\tif( this.getDependents().getResources().isEmpty()) ret = false;\r\n\t\tfor (Iterator&lt;Resource&gt; iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {\r\n\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\r\n\t\t\tif( var.WorldDataType().compareTo(\"boolean\") != 0 ) ret = false;\r\n\t\t}\r\n\t\treturn ret;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = true;\n\t\t\t\tif( this.isDependent()) ret = false;\n\t\t\t\tif( this.getDependents().getContents().isEmpty()) ret = false;\n\t\t\t\tfor (Iterator&lt;EObject&gt; iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\n\t\t\t\t\tif( var.WorldDataType().compareTo(\"boolean\") != 0 ) ret = false;\n\t\t\t\t}\n\t\t\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean isPattern();
@@ -527,7 +527,7 @@ public interface Monitor extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = true;\r\n\t\tString firsttype = null;\r\n\t\tif( hasDependents() ){\r\n\t\t\tfor (Iterator&lt;Resource&gt; iter = this.getDependents().getResources().iterator(); iter.hasNext(); ) {\r\n\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\r\n\t\t\t\tif( firsttype == null){\r\n\t\t\t\t\tfirsttype = new String(var.WorldDataType());\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\t}\r\n\t\t\t\tif( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;\r\n\t\t\t}\r\n\t\t}else{\r\n\t\t\tret = false;\r\n\t\t}\r\n\t\treturn ret;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = true;\n\t\tString firsttype = null;\n\t\tif( hasDependents() ){\n\t\t\tfor (Iterator&lt;EObject&gt; iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\n\t\t\t\tif( firsttype == null){\n\t\t\t\t\tfirsttype = new String(var.WorldDataType());\n\t\t\t\t\tcontinue;\n\t\t\t\t}\n\t\t\t\tif( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;\n\t\t\t}\n\t\t}else{\n\t\t\tret = false;\n\t\t}\n\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean isHomogeneous();
@@ -544,10 +544,10 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeMP(row, parent);\nmac = new MandCImpl();\nmac.setInitializeMandCImpl(row, sheet, this);'"
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setMonitorPoint(row, parent);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this);'"
 	 * @generated
 	 */
-	void setInitializeMImpl(String[] row, Resource parent);
+	void setMonitorAmb(String[] row, Object parent);
 
 } // Monitor

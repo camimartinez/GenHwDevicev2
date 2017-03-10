@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.amb.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,7 +21,7 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.amb.impl;
+
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -61,7 +62,7 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * @generated
 	 */
 	public String Assembly() {
-		return row[getTable().getColNum(sheet, "Assembly")];
+		return row[tables.getColNum(sheet, "Assembly")];
 	}
 
 		/**
@@ -92,8 +93,8 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeAImpl(final String[] row) {
-		setInitializeAP(row);
+	public void setArchiveAmb(final String[] row) {
+		setArchiveProperty(row);
 	}
 
 } //ArchiveImpl

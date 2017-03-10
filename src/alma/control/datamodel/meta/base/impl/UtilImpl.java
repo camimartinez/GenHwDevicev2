@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.base.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,12 +21,13 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.base.impl;
+
 
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.DeviceModel;
 import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.Table;
@@ -40,6 +42,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.xml.sax.ErrorHandler;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +56,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMONTH <em>MONTH</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMONTHalt <em>MONT Halt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getMandc <em>Mandc</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.UtilImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
@@ -141,14 +144,14 @@ public class UtilImpl extends EObjectImpl implements Util {
 	protected String[] montHalt = MONT_HALT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMandc() <em>Mandc</em>}' reference.
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMandc()
+	 * @see #getTables()
 	 * @generated
 	 * @ordered
 	 */
-	protected MainBase mandc;
+	protected Table tables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,16 +261,16 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainBase getMandc() {
-		if (mandc != null && mandc.eIsProxy()) {
-			InternalEObject oldMandc = (InternalEObject)mandc;
-			mandc = (MainBase)eResolveProxy(oldMandc);
-			if (mandc != oldMandc) {
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__MANDC, oldMandc, mandc));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.UTIL__TABLES, oldTables, tables));
 			}
 		}
-		return mandc;
+		return tables;
 	}
 
 	/**
@@ -275,8 +278,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainBase basicGetMandc() {
-		return mandc;
+	public Table basicGetTables() {
+		return tables;
 	}
 
 	/**
@@ -284,33 +287,11 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMandc(MainBase newMandc, NotificationChain msgs) {
-		MainBase oldMandc = mandc;
-		mandc = newMandc;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__MANDC, oldMandc, newMandc);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMandc(MainBase newMandc) {
-		if (newMandc != mandc) {
-			NotificationChain msgs = null;
-			if (mandc != null)
-				msgs = ((InternalEObject)mandc).eInverseRemove(this, BasePackage.MAIN_BASE__UTIL, MainBase.class, msgs);
-			if (newMandc != null)
-				msgs = ((InternalEObject)newMandc).eInverseAdd(this, BasePackage.MAIN_BASE__UTIL, MainBase.class, msgs);
-			msgs = basicSetMandc(newMandc, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__MANDC, newMandc, newMandc));
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.UTIL__TABLES, oldTables, tables));
 	}
 
 	/**
@@ -585,7 +566,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	public String NumberRawDataTypeBytes(final String s) {
-		return (String)mandc.getTable().getRawBytes().get(s);
+		return (String)tables.getRawBytes().get(s);
 	}
 
 	/**
@@ -594,20 +575,20 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	public String RawDataTypeTotalBytes(final String s) {
-				if (isArray(s)) {
-				int b;
-				int n = Integer.parseInt(NumberOfItems(s));
-				if(s.startsWith("&lt;"))
-				return "0";
-				if(s.startsWith("["))
-				return "0";
-				int i = s.indexOf("[");
-				b = Integer.parseInt((String)mandc.getTable().getRawBytes().get(s.substring(0,1)));
+						if (isArray(s)) {
+							int b;
+							int n = Integer.parseInt(NumberOfItems(s));
+							if(s.startsWith("&lt;"))
+								return "0";
+							if(s.startsWith("["))
+								return "0";
+							int i = s.indexOf("[");
+							b = Integer.parseInt((String)tables.getRawBytes().get(s.substring(0,1)));
 				
-				String x = Integer.toString(n * b);
-				return x;
-				}
-				return (String)mandc.getTable().getRawBytes().get(s);
+							String x = Integer.toString(n * b);
+							return x;
+						}
+						return (String)tables.getRawBytes().get(s);
 	}
 
 	/**
@@ -810,36 +791,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BasePackage.UTIL__MANDC:
-				if (mandc != null)
-					msgs = ((InternalEObject)mandc).eInverseRemove(this, BasePackage.MAIN_BASE__UTIL, MainBase.class, msgs);
-				return basicSetMandc((MainBase)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BasePackage.UTIL__MANDC:
-				return basicSetMandc(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BasePackage.UTIL__NEWLINE:
@@ -850,9 +801,9 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return getMONTH();
 			case BasePackage.UTIL__MONT_HALT:
 				return getMONTHalt();
-			case BasePackage.UTIL__MANDC:
-				if (resolve) return getMandc();
-				return basicGetMandc();
+			case BasePackage.UTIL__TABLES:
+				if (resolve) return getTables();
+				return basicGetTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -877,8 +828,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt((String[])newValue);
 				return;
-			case BasePackage.UTIL__MANDC:
-				setMandc((MainBase)newValue);
+			case BasePackage.UTIL__TABLES:
+				setTables((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -904,8 +855,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 			case BasePackage.UTIL__MONT_HALT:
 				setMONTHalt(MONT_HALT_EDEFAULT);
 				return;
-			case BasePackage.UTIL__MANDC:
-				setMandc((MainBase)null);
+			case BasePackage.UTIL__TABLES:
+				setTables((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -927,8 +878,8 @@ public class UtilImpl extends EObjectImpl implements Util {
 				return MONTH_EDEFAULT == null ? month != null : !MONTH_EDEFAULT.equals(month);
 			case BasePackage.UTIL__MONT_HALT:
 				return MONT_HALT_EDEFAULT == null ? montHalt != null : !MONT_HALT_EDEFAULT.equals(montHalt);
-			case BasePackage.UTIL__MANDC:
-				return mandc != null;
+			case BasePackage.UTIL__TABLES:
+				return tables != null;
 		}
 		return super.eIsSet(featureID);
 	}

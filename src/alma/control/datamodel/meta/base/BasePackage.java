@@ -105,7 +105,7 @@ public interface BasePackage extends EPackage {
 	int ARCHIVE_PROPERTY__SHEET = 1;
 
 	/**
-	 * The feature id for the '<em><b>Mp</b></em>' attribute.
+	 * The feature id for the '<em><b>Mp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,7 +114,7 @@ public interface BasePackage extends EPackage {
 	int ARCHIVE_PROPERTY__MP = 2;
 
 	/**
-	 * The feature id for the '<em><b>Cp</b></em>' attribute.
+	 * The feature id for the '<em><b>Cp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -123,13 +123,13 @@ public interface BasePackage extends EPackage {
 	int ARCHIVE_PROPERTY__CP = 3;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * The feature id for the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHIVE_PROPERTY__TABLE = 4;
+	int ARCHIVE_PROPERTY__TABLES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Archive Property</em>' class.
@@ -196,22 +196,22 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE__SHEET = 4;
 
 	/**
+	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__RESOURCE_SET_DEPENDENT = 5;
+
+	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__PARENT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__ARCHIVE = 6;
+	int MAND_CBASE__PARENT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
@@ -223,31 +223,31 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE__DEPENDENTS = 7;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * The feature id for the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__TABLE = 8;
+	int MAND_CBASE__TABLES = 8;
 
 	/**
-	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__UTIL = 9;
+	int MAND_CBASE__UTILS = 9;
 
 	/**
-	 * The feature id for the '<em><b>Device</b></em>' reference.
+	 * The feature id for the '<em><b>Archive</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__DEVICE = 10;
+	int MAND_CBASE__ARCHIVE = 10;
 
 	/**
 	 * The number of structural features of the '<em>Mand CBase</em>' class.
@@ -314,6 +314,15 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__SHEET = MAND_CBASE__SHEET;
 
 	/**
+	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__RESOURCE_SET_DEPENDENT = MAND_CBASE__RESOURCE_SET_DEPENDENT;
+
+	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -321,15 +330,6 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_POINT__PARENT = MAND_CBASE__PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
 
 	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
@@ -341,31 +341,31 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * The feature id for the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__TABLE = MAND_CBASE__TABLE;
+	int CONTROL_POINT__TABLES = MAND_CBASE__TABLES;
 
 	/**
-	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__UTIL = MAND_CBASE__UTIL;
+	int CONTROL_POINT__UTILS = MAND_CBASE__UTILS;
 
 	/**
-	 * The feature id for the '<em><b>Device</b></em>' reference.
+	 * The feature id for the '<em><b>Archive</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__DEVICE = MAND_CBASE__DEVICE;
+	int CONTROL_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
 
 	/**
 	 * The number of structural features of the '<em>Control Point</em>' class.
@@ -441,13 +441,22 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__ARCHIVE_PROPERTIES = 5;
 
 	/**
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__CONTAINER = 6;
+
+	/**
 	 * The feature id for the '<em><b>Device Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__DEVICE_NAME = 6;
+	int DEVICE_MODEL__DEVICE_NAME = 7;
 
 	/**
 	 * The feature id for the '<em><b>Bus Type</b></em>' attribute.
@@ -456,7 +465,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__BUS_TYPE = 7;
+	int DEVICE_MODEL__BUS_TYPE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Device Dir</b></em>' attribute.
@@ -465,7 +474,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__DEVICE_DIR = 8;
+	int DEVICE_MODEL__DEVICE_DIR = 9;
 
 	/**
 	 * The feature id for the '<em><b>Codegen Dir</b></em>' attribute.
@@ -474,7 +483,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__CODEGEN_DIR = 9;
+	int DEVICE_MODEL__CODEGEN_DIR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Spreadsheet Dir</b></em>' attribute.
@@ -483,7 +492,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__SPREADSHEET_DIR = 10;
+	int DEVICE_MODEL__SPREADSHEET_DIR = 11;
 
 	/**
 	 * The feature id for the '<em><b>Generated Dir</b></em>' attribute.
@@ -492,7 +501,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GENERATED_DIR = 11;
+	int DEVICE_MODEL__GENERATED_DIR = 12;
 
 	/**
 	 * The feature id for the '<em><b>Monitor DB Only</b></em>' attribute.
@@ -501,7 +510,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MONITOR_DB_ONLY = 12;
+	int DEVICE_MODEL__MONITOR_DB_ONLY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Generate Alt</b></em>' attribute.
@@ -510,25 +519,61 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GENERATE_ALT = 13;
+	int DEVICE_MODEL__GENERATE_ALT = 14;
 
 	/**
-	 * The feature id for the '<em><b>Main</b></em>' containment reference.
+	 * The feature id for the '<em><b>Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN = 14;
+	int DEVICE_MODEL__MAIN = 15;
 
 	/**
-	 * The feature id for the '<em><b>Mand C</b></em>' reference.
+	 * The feature id for the '<em><b>AProperties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAND_C = 15;
+	int DEVICE_MODEL__APROPERTIES = 16;
+
+	/**
+	 * The feature id for the '<em><b>CPoints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__CPOINTS = 17;
+
+	/**
+	 * The feature id for the '<em><b>MPoints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MPOINTS = 18;
+
+	/**
+	 * The feature id for the '<em><b>Utils</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__UTILS = 19;
+
+	/**
+	 * The feature id for the '<em><b>Tables</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__TABLES = 20;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
@@ -537,7 +582,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_FEATURE_COUNT = 16;
+	int DEVICE_MODEL_FEATURE_COUNT = 21;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
@@ -568,22 +613,31 @@ public interface BasePackage extends EPackage {
 	int MAIN_BASE__SHEET = 1;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' containment reference.
+	 * The feature id for the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_BASE__TABLE = 2;
+	int MAIN_BASE__TABLES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_BASE__UTIL = 3;
+	int MAIN_BASE__UTILS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Devices</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAIN_BASE__DEVICES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Main Base</em>' class.
@@ -592,7 +646,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_BASE_FEATURE_COUNT = 4;
+	int MAIN_BASE_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MonitorPointImpl <em>Monitor Point</em>}' class.
@@ -650,6 +704,15 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__SHEET = MAND_CBASE__SHEET;
 
 	/**
+	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__RESOURCE_SET_DEPENDENT = MAND_CBASE__RESOURCE_SET_DEPENDENT;
+
+	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -657,15 +720,6 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR_POINT__PARENT = MAND_CBASE__PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
 
 	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
@@ -677,31 +731,31 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * The feature id for the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__TABLE = MAND_CBASE__TABLE;
+	int MONITOR_POINT__TABLES = MAND_CBASE__TABLES;
 
 	/**
-	 * The feature id for the '<em><b>Util</b></em>' reference.
+	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__UTIL = MAND_CBASE__UTIL;
+	int MONITOR_POINT__UTILS = MAND_CBASE__UTILS;
 
 	/**
-	 * The feature id for the '<em><b>Device</b></em>' reference.
+	 * The feature id for the '<em><b>Archive</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__DEVICE = MAND_CBASE__DEVICE;
+	int MONITOR_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
 
 	/**
 	 * The number of structural features of the '<em>Monitor Point</em>' class.
@@ -1215,22 +1269,13 @@ public interface BasePackage extends EPackage {
 	int TABLE__WORLD_TO_DATABASE = 24;
 
 	/**
-	 * The feature id for the '<em><b>Main</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLE__MAIN = 25;
-
-	/**
 	 * The number of structural features of the '<em>Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_FEATURE_COUNT = 26;
+	int TABLE_FEATURE_COUNT = 25;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.UtilImpl <em>Util</em>}' class.
@@ -1279,13 +1324,13 @@ public interface BasePackage extends EPackage {
 	int UTIL__MONT_HALT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Mandc</b></em>' reference.
+	 * The feature id for the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UTIL__MANDC = 4;
+	int UTIL__TABLES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Util</em>' class.
@@ -1297,6 +1342,36 @@ public interface BasePackage extends EPackage {
 	int UTIL_FEATURE_COUNT = 5;
 
 	/**
+	 * The meta object id for the '<em>Control Point DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.ControlPoint
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getControlPointDT()
+	 * @generated
+	 */
+	int CONTROL_POINT_DT = 14;
+
+	/**
+	 * The meta object id for the '<em>Monitor Point DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.MonitorPoint
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMonitorPointDT()
+	 * @generated
+	 */
+	int MONITOR_POINT_DT = 15;
+
+	/**
+	 * The meta object id for the '<em>Archive Property DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArchivePropertyDT()
+	 * @generated
+	 */
+	int ARCHIVE_PROPERTY_DT = 16;
+
+	/**
 	 * The meta object id for the '<em>Simple Error Handler DT</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1304,7 +1379,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSimpleErrorHandlerDT()
 	 * @generated
 	 */
-	int SIMPLE_ERROR_HANDLER_DT = 14;
+	int SIMPLE_ERROR_HANDLER_DT = 17;
 
 	/**
 	 * The meta object id for the '<em>Mand CAMBDT</em>' data type.
@@ -1314,7 +1389,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCAMBDT()
 	 * @generated
 	 */
-	int MAND_CAMBDT = 15;
+	int MAND_CAMBDT = 18;
 
 	/**
 	 * The meta object id for the '<em>Mand CBase DT</em>' data type.
@@ -1324,7 +1399,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBaseDT()
 	 * @generated
 	 */
-	int MAND_CBASE_DT = 16;
+	int MAND_CBASE_DT = 19;
 
 	/**
 	 * The meta object id for the '<em>Main Base DT</em>' data type.
@@ -1334,17 +1409,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBaseDT()
 	 * @generated
 	 */
-	int MAIN_BASE_DT = 17;
-
-	/**
-	 * The meta object id for the '<em>Resource DT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.emf.ecore.resource.Resource
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getResourceDT()
-	 * @generated
-	 */
-	int RESOURCE_DT = 18;
+	int MAIN_BASE_DT = 20;
 
 	/**
 	 * The meta object id for the '<em>Iterator DT</em>' data type.
@@ -1354,7 +1419,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getIteratorDT()
 	 * @generated
 	 */
-	int ITERATOR_DT = 19;
+	int ITERATOR_DT = 21;
 
 	/**
 	 * The meta object id for the '<em>Array List</em>' data type.
@@ -1364,7 +1429,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArrayList()
 	 * @generated
 	 */
-	int ARRAY_LIST = 20;
+	int ARRAY_LIST = 22;
 
 	/**
 	 * The meta object id for the '<em>Hashtable</em>' data type.
@@ -1374,7 +1439,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getHashtable()
 	 * @generated
 	 */
-	int HASHTABLE = 21;
+	int HASHTABLE = 23;
 
 	/**
 	 * The meta object id for the '<em>Runtime Exception DT</em>' data type.
@@ -1384,7 +1449,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getRuntimeExceptionDT()
 	 * @generated
 	 */
-	int RUNTIME_EXCEPTION_DT = 22;
+	int RUNTIME_EXCEPTION_DT = 24;
 
 	/**
 	 * The meta object id for the '<em>Error Handler DT</em>' data type.
@@ -1394,7 +1459,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerDT()
 	 * @generated
 	 */
-	int ERROR_HANDLER_DT = 23;
+	int ERROR_HANDLER_DT = 25;
 
 	/**
 	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
@@ -1404,7 +1469,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION_DT = 24;
+	int SAX_PARSE_EXCEPTION_DT = 26;
 
 	/**
 	 * The meta object id for the '<em>EString Array3</em>' data type.
@@ -1413,7 +1478,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray3()
 	 * @generated
 	 */
-	int ESTRING_ARRAY3 = 25;
+	int ESTRING_ARRAY3 = 27;
 
 	/**
 	 * The meta object id for the '<em>EString Array2</em>' data type.
@@ -1422,7 +1487,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray2()
 	 * @generated
 	 */
-	int ESTRING_ARRAY2 = 26;
+	int ESTRING_ARRAY2 = 28;
 
 	/**
 	 * The meta object id for the '<em>EString Array</em>' data type.
@@ -1431,7 +1496,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray()
 	 * @generated
 	 */
-	int ESTRING_ARRAY = 27;
+	int ESTRING_ARRAY = 29;
 
 	/**
 	 * The meta object id for the '<em>Mand CETHDT</em>' data type.
@@ -1441,7 +1506,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCETHDT()
 	 * @generated
 	 */
-	int MAND_CETHDT = 28;
+	int MAND_CETHDT = 30;
 
 
 	/**
@@ -1477,37 +1542,37 @@ public interface BasePackage extends EPackage {
 	EAttribute getArchiveProperty_Sheet();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getMp <em>Mp</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.ArchiveProperty#getMp <em>Mp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mp</em>'.
+	 * @return the meta object for the reference '<em>Mp</em>'.
 	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getMp()
 	 * @see #getArchiveProperty()
 	 * @generated
 	 */
-	EAttribute getArchiveProperty_Mp();
+	EReference getArchiveProperty_Mp();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ArchiveProperty#getCp <em>Cp</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.ArchiveProperty#getCp <em>Cp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cp</em>'.
+	 * @return the meta object for the reference '<em>Cp</em>'.
 	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getCp()
 	 * @see #getArchiveProperty()
 	 * @generated
 	 */
-	EAttribute getArchiveProperty_Cp();
+	EReference getArchiveProperty_Cp();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.ArchiveProperty#getTable <em>Table</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.ArchiveProperty#getTables <em>Tables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Table</em>'.
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getTable()
+	 * @return the meta object for the reference '<em>Tables</em>'.
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty#getTables()
 	 * @see #getArchiveProperty()
 	 * @generated
 	 */
-	EReference getArchiveProperty_Table();
+	EReference getArchiveProperty_Tables();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.ControlPoint <em>Control Point</em>}'.
@@ -1552,28 +1617,6 @@ public interface BasePackage extends EPackage {
 	EAttribute getDeviceModel_Spreadsheet();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Main</em>'.
-	 * @see alma.control.datamodel.meta.base.DeviceModel#getMain()
-	 * @see #getDeviceModel()
-	 * @generated
-	 */
-	EReference getDeviceModel_Main();
-
-	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMandC <em>Mand C</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mand C</em>'.
-	 * @see alma.control.datamodel.meta.base.DeviceModel#getMandC()
-	 * @see #getDeviceModel()
-	 * @generated
-	 */
-	EReference getDeviceModel_MandC();
-
-	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.DeviceModel#getNotes <em>Notes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1616,6 +1659,17 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDeviceModel_ArchiveProperties();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.DeviceModel#getContainer <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Container</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getContainer()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EAttribute getDeviceModel_Container();
 
 	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.DeviceModel#getDeviceName <em>Device Name</em>}'.
@@ -1706,6 +1760,72 @@ public interface BasePackage extends EPackage {
 	EAttribute getDeviceModel_GenerateAlt();
 
 	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Main</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getMain()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_Main();
+
+	/**
+	 * Returns the meta object for the reference list '{@link alma.control.datamodel.meta.base.DeviceModel#getAPropertiesList <em>AProperties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>AProperties</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getAPropertiesList()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_AProperties();
+
+	/**
+	 * Returns the meta object for the reference list '{@link alma.control.datamodel.meta.base.DeviceModel#getCPointsList <em>CPoints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>CPoints</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getCPointsList()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_CPoints();
+
+	/**
+	 * Returns the meta object for the reference list '{@link alma.control.datamodel.meta.base.DeviceModel#getMPointsList <em>MPoints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>MPoints</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getMPointsList()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_MPoints();
+
+	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Utils</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getUtils()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_Utils();
+
+	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tables</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getTables()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_Tables();
+
+	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MainBase <em>Main Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1738,26 +1858,37 @@ public interface BasePackage extends EPackage {
 	EAttribute getMainBase_Sheet();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.base.MainBase#getTable <em>Table</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MainBase#getTables <em>Tables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Table</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase#getTable()
+	 * @return the meta object for the reference '<em>Tables</em>'.
+	 * @see alma.control.datamodel.meta.base.MainBase#getTables()
 	 * @see #getMainBase()
 	 * @generated
 	 */
-	EReference getMainBase_Table();
+	EReference getMainBase_Tables();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MainBase#getUtil <em>Util</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MainBase#getUtils <em>Utils</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Util</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase#getUtil()
+	 * @return the meta object for the reference '<em>Utils</em>'.
+	 * @see alma.control.datamodel.meta.base.MainBase#getUtils()
 	 * @see #getMainBase()
 	 * @generated
 	 */
-	EReference getMainBase_Util();
+	EReference getMainBase_Utils();
+
+	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MainBase#getDevices <em>Devices</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Devices</em>'.
+	 * @see alma.control.datamodel.meta.base.MainBase#getDevices()
+	 * @see #getMainBase()
+	 * @generated
+	 */
+	EReference getMainBase_Devices();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MandCBase <em>Mand CBase</em>}'.
@@ -1825,6 +1956,17 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_Sheet();
 
 	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependent <em>Resource Set Dependent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Resource Set Dependent</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getResourceSetDependent()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_ResourceSetDependent();
+
+	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1836,15 +1978,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_Parent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Archive</em>'.
+	 * @return the meta object for the reference '<em>Archive</em>'.
 	 * @see alma.control.datamodel.meta.base.MandCBase#getArchive()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EAttribute getMandCBase_Archive();
+	EReference getMandCBase_Archive();
 
 	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}'.
@@ -1858,37 +2000,26 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_Dependents();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getTable <em>Table</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Table</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getTable()
+	 * @return the meta object for the reference '<em>Tables</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getTables()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_Table();
+	EReference getMandCBase_Tables();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getUtil <em>Util</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getUtils <em>Utils</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Util</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getUtil()
+	 * @return the meta object for the reference '<em>Utils</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getUtils()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_Util();
-
-	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getDevice <em>Device</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Device</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getDevice()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EReference getMandCBase_Device();
+	EReference getMandCBase_Utils();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MonitorPoint <em>Monitor Point</em>}'.
@@ -2368,17 +2499,6 @@ public interface BasePackage extends EPackage {
 	EAttribute getTable_WorldToDatabase();
 
 	/**
-	 * Returns the meta object for the container reference '{@link alma.control.datamodel.meta.base.Table#getMain <em>Main</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Main</em>'.
-	 * @see alma.control.datamodel.meta.base.Table#getMain()
-	 * @see #getTable()
-	 * @generated
-	 */
-	EReference getTable_Main();
-
-	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.Util <em>Util</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2433,15 +2553,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getUtil_MONTHalt();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.Util#getMandc <em>Mandc</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.Util#getTables <em>Tables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mandc</em>'.
-	 * @see alma.control.datamodel.meta.base.Util#getMandc()
+	 * @return the meta object for the reference '<em>Tables</em>'.
+	 * @see alma.control.datamodel.meta.base.Util#getTables()
 	 * @see #getUtil()
 	 * @generated
 	 */
-	EReference getUtil_Mandc();
+	EReference getUtil_Tables();
 
 	/**
 	 * Returns the meta object for class '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}'.
@@ -2453,6 +2573,39 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getErrorHandlerAuxClass();
+
+	/**
+	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.base.ControlPoint <em>Control Point DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Control Point DT</em>'.
+	 * @see alma.control.datamodel.meta.base.ControlPoint
+	 * @model instanceClass="alma.control.datamodel.meta.base.ControlPoint"
+	 * @generated
+	 */
+	EDataType getControlPointDT();
+
+	/**
+	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.base.MonitorPoint <em>Monitor Point DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Monitor Point DT</em>'.
+	 * @see alma.control.datamodel.meta.base.MonitorPoint
+	 * @model instanceClass="alma.control.datamodel.meta.base.MonitorPoint"
+	 * @generated
+	 */
+	EDataType getMonitorPointDT();
+
+	/**
+	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.base.ArchiveProperty <em>Archive Property DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Archive Property DT</em>'.
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty
+	 * @model instanceClass="alma.control.datamodel.meta.base.ArchiveProperty"
+	 * @generated
+	 */
+	EDataType getArchivePropertyDT();
 
 	/**
 	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.base.SimpleErrorHandler <em>Simple Error Handler DT</em>}'.
@@ -2493,21 +2646,10 @@ public interface BasePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Main Base DT</em>'.
 	 * @see alma.control.datamodel.meta.base.MainBase
-	 * @model instanceClass="alma.control.datamodel.meta.base.MainBase"
+	 * @model instanceClass="alma.control.datamodel.meta.base.MainBase" serializeable="false"
 	 * @generated
 	 */
 	EDataType getMainBaseDT();
-
-	/**
-	 * Returns the meta object for data type '{@link org.eclipse.emf.ecore.resource.Resource <em>Resource DT</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Resource DT</em>'.
-	 * @see org.eclipse.emf.ecore.resource.Resource
-	 * @model instanceClass="org.eclipse.emf.ecore.resource.Resource"
-	 * @generated
-	 */
-	EDataType getResourceDT();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.Iterator <em>Iterator DT</em>}'.
@@ -2665,28 +2807,28 @@ public interface BasePackage extends EPackage {
 		EAttribute ARCHIVE_PROPERTY__SHEET = eINSTANCE.getArchiveProperty_Sheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Mp</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Mp</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARCHIVE_PROPERTY__MP = eINSTANCE.getArchiveProperty_Mp();
+		EReference ARCHIVE_PROPERTY__MP = eINSTANCE.getArchiveProperty_Mp();
 
 		/**
-		 * The meta object literal for the '<em><b>Cp</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cp</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARCHIVE_PROPERTY__CP = eINSTANCE.getArchiveProperty_Cp();
+		EReference ARCHIVE_PROPERTY__CP = eINSTANCE.getArchiveProperty_Cp();
 
 		/**
-		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARCHIVE_PROPERTY__TABLE = eINSTANCE.getArchiveProperty_Table();
+		EReference ARCHIVE_PROPERTY__TABLES = eINSTANCE.getArchiveProperty_Tables();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.ControlPointImpl <em>Control Point</em>}' class.
@@ -2725,22 +2867,6 @@ public interface BasePackage extends EPackage {
 		EAttribute DEVICE_MODEL__SPREADSHEET = eINSTANCE.getDeviceModel_Spreadsheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Main</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEVICE_MODEL__MAIN = eINSTANCE.getDeviceModel_Main();
-
-		/**
-		 * The meta object literal for the '<em><b>Mand C</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEVICE_MODEL__MAND_C = eINSTANCE.getDeviceModel_MandC();
-
-		/**
 		 * The meta object literal for the '<em><b>Notes</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2771,6 +2897,14 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEVICE_MODEL__ARCHIVE_PROPERTIES = eINSTANCE.getDeviceModel_ArchiveProperties();
+
+		/**
+		 * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE_MODEL__CONTAINER = eINSTANCE.getDeviceModel_Container();
 
 		/**
 		 * The meta object literal for the '<em><b>Device Name</b></em>' attribute feature.
@@ -2837,6 +2971,54 @@ public interface BasePackage extends EPackage {
 		EAttribute DEVICE_MODEL__GENERATE_ALT = eINSTANCE.getDeviceModel_GenerateAlt();
 
 		/**
+		 * The meta object literal for the '<em><b>Main</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__MAIN = eINSTANCE.getDeviceModel_Main();
+
+		/**
+		 * The meta object literal for the '<em><b>AProperties</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__APROPERTIES = eINSTANCE.getDeviceModel_AProperties();
+
+		/**
+		 * The meta object literal for the '<em><b>CPoints</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__CPOINTS = eINSTANCE.getDeviceModel_CPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>MPoints</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__MPOINTS = eINSTANCE.getDeviceModel_MPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>Utils</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__UTILS = eINSTANCE.getDeviceModel_Utils();
+
+		/**
+		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__TABLES = eINSTANCE.getDeviceModel_Tables();
+
+		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2863,20 +3045,28 @@ public interface BasePackage extends EPackage {
 		EAttribute MAIN_BASE__SHEET = eINSTANCE.getMainBase_Sheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Table</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAIN_BASE__TABLE = eINSTANCE.getMainBase_Table();
+		EReference MAIN_BASE__TABLES = eINSTANCE.getMainBase_Tables();
 
 		/**
-		 * The meta object literal for the '<em><b>Util</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Utils</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAIN_BASE__UTIL = eINSTANCE.getMainBase_Util();
+		EReference MAIN_BASE__UTILS = eINSTANCE.getMainBase_Utils();
+
+		/**
+		 * The meta object literal for the '<em><b>Devices</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAIN_BASE__DEVICES = eINSTANCE.getMainBase_Devices();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl <em>Mand CBase</em>}' class.
@@ -2929,6 +3119,14 @@ public interface BasePackage extends EPackage {
 		EAttribute MAND_CBASE__SHEET = eINSTANCE.getMandCBase_Sheet();
 
 		/**
+		 * The meta object literal for the '<em><b>Resource Set Dependent</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__RESOURCE_SET_DEPENDENT = eINSTANCE.getMandCBase_ResourceSetDependent();
+
+		/**
 		 * The meta object literal for the '<em><b>Parent</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2937,12 +3135,12 @@ public interface BasePackage extends EPackage {
 		EAttribute MAND_CBASE__PARENT = eINSTANCE.getMandCBase_Parent();
 
 		/**
-		 * The meta object literal for the '<em><b>Archive</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Archive</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAND_CBASE__ARCHIVE = eINSTANCE.getMandCBase_Archive();
+		EReference MAND_CBASE__ARCHIVE = eINSTANCE.getMandCBase_Archive();
 
 		/**
 		 * The meta object literal for the '<em><b>Dependents</b></em>' attribute feature.
@@ -2953,28 +3151,20 @@ public interface BasePackage extends EPackage {
 		EAttribute MAND_CBASE__DEPENDENTS = eINSTANCE.getMandCBase_Dependents();
 
 		/**
-		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__TABLE = eINSTANCE.getMandCBase_Table();
+		EReference MAND_CBASE__TABLES = eINSTANCE.getMandCBase_Tables();
 
 		/**
-		 * The meta object literal for the '<em><b>Util</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Utils</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__UTIL = eINSTANCE.getMandCBase_Util();
-
-		/**
-		 * The meta object literal for the '<em><b>Device</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAND_CBASE__DEVICE = eINSTANCE.getMandCBase_Device();
+		EReference MAND_CBASE__UTILS = eINSTANCE.getMandCBase_Utils();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MonitorPointImpl <em>Monitor Point</em>}' class.
@@ -3343,14 +3533,6 @@ public interface BasePackage extends EPackage {
 		EAttribute TABLE__WORLD_TO_DATABASE = eINSTANCE.getTable_WorldToDatabase();
 
 		/**
-		 * The meta object literal for the '<em><b>Main</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TABLE__MAIN = eINSTANCE.getTable_Main();
-
-		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.UtilImpl <em>Util</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3393,12 +3575,12 @@ public interface BasePackage extends EPackage {
 		EAttribute UTIL__MONT_HALT = eINSTANCE.getUtil_MONTHalt();
 
 		/**
-		 * The meta object literal for the '<em><b>Mandc</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UTIL__MANDC = eINSTANCE.getUtil_Mandc();
+		EReference UTIL__TABLES = eINSTANCE.getUtil_Tables();
 
 		/**
 		 * The meta object literal for the '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}' class.
@@ -3409,6 +3591,36 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ERROR_HANDLER_AUX_CLASS = eINSTANCE.getErrorHandlerAuxClass();
+
+		/**
+		 * The meta object literal for the '<em>Control Point DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.ControlPoint
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getControlPointDT()
+		 * @generated
+		 */
+		EDataType CONTROL_POINT_DT = eINSTANCE.getControlPointDT();
+
+		/**
+		 * The meta object literal for the '<em>Monitor Point DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.MonitorPoint
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMonitorPointDT()
+		 * @generated
+		 */
+		EDataType MONITOR_POINT_DT = eINSTANCE.getMonitorPointDT();
+
+		/**
+		 * The meta object literal for the '<em>Archive Property DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see alma.control.datamodel.meta.base.ArchiveProperty
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArchivePropertyDT()
+		 * @generated
+		 */
+		EDataType ARCHIVE_PROPERTY_DT = eINSTANCE.getArchivePropertyDT();
 
 		/**
 		 * The meta object literal for the '<em>Simple Error Handler DT</em>' data type.
@@ -3449,16 +3661,6 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType MAIN_BASE_DT = eINSTANCE.getMainBaseDT();
-
-		/**
-		 * The meta object literal for the '<em>Resource DT</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.emf.ecore.resource.Resource
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getResourceDT()
-		 * @generated
-		 */
-		EDataType RESOURCE_DT = eINSTANCE.getResourceDT();
 
 		/**
 		 * The meta object literal for the '<em>Iterator DT</em>' data type.

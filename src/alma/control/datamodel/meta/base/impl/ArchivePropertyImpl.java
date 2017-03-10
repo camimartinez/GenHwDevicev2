@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.base.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,25 +21,23 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.base.ArchiveProperty;
-import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.DeviceModel;
-import alma.control.datamodel.meta.base.Table;
+
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import alma.control.datamodel.meta.base.ArchiveProperty;
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.ControlPoint;
+import alma.control.datamodel.meta.base.MonitorPoint;
+import alma.control.datamodel.meta.base.Table;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +51,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getCp <em>Cp</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getTable <em>Table</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,54 +98,34 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	protected int sheet = SHEET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMp() <em>Mp</em>}' attribute.
+	 * The cached value of the '{@link #getMp() <em>Mp</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMp()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Resource MP_EDEFAULT = null;
+	protected MonitorPoint mp;
 
 	/**
-	 * The cached value of the '{@link #getMp() <em>Mp</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMp()
-	 * @generated
-	 * @ordered
-	 */
-	protected Resource mp = MP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCp() <em>Cp</em>}' attribute.
+	 * The cached value of the '{@link #getCp() <em>Cp</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCp()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Resource CP_EDEFAULT = null;
+	protected ControlPoint cp;
 
 	/**
-	 * The cached value of the '{@link #getCp() <em>Cp</em>}' attribute.
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCp()
+	 * @see #getTables()
 	 * @generated
 	 * @ordered
 	 */
-	protected Resource cp = CP_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected Table table;
+	protected Table tables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +193,24 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Resource getMp() {
+	public MonitorPoint getMp() {
+		if (mp != null && mp.eIsProxy()) {
+			InternalEObject oldMp = (InternalEObject)mp;
+			mp = (MonitorPoint)eResolveProxy(oldMp);
+			if (mp != oldMp) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__MP, oldMp, mp));
+			}
+		}
+		return mp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MonitorPoint basicGetMp() {
 		return mp;
 	}
 
@@ -223,26 +219,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	public void setMP(Resource mp){
-		this.mp = mp;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public void setCP(Resource cp){
-		this.cp = cp;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMp(Resource newMp) {
-		Resource oldMp = mp;
+	public void setMP(MonitorPoint newMp) {
+		MonitorPoint oldMp = mp;
 		mp = newMp;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__MP, oldMp, mp));
@@ -253,7 +231,15 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Resource getCp() {
+	public ControlPoint getCp() {
+		if (cp != null && cp.eIsProxy()) {
+			InternalEObject oldCp = (InternalEObject)cp;
+			cp = (ControlPoint)eResolveProxy(oldCp);
+			if (cp != oldCp) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__CP, oldCp, cp));
+			}
+		}
 		return cp;
 	}
 
@@ -262,49 +248,20 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCp(Resource newCp) {
-		Resource oldCp = cp;
+	public ControlPoint basicGetCp() {
+		return cp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public void setCP(ControlPoint newCp) {
+		ControlPoint oldCp = cp;
 		cp = newCp;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__CP, oldCp, cp));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getTable() {
-		if (table != null && table.eIsProxy()) {
-			InternalEObject oldTable = (InternalEObject)table;
-			table = (Table)eResolveProxy(oldTable);
-			if (table != oldTable) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__TABLE, oldTable, table));
-			}
-		}
-		return table;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetTable() {
-		return table;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTable(Table newTable) {
-		Table oldTable = table;
-		table = newTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TABLE, oldTable, table));
 	}
 
 	/**
@@ -321,15 +278,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Resource getMonitorPoint() {
-		return mp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isControlPoint() {
 		return cp != null;
 	}
@@ -339,17 +287,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Resource getControlPoint() {
-		return cp;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String Name() {
-		return row[getTable().getColNum(sheet, "Name")];
+		return row[tables.getColNum(sheet, "Name")];
 	}
 
 	/**
@@ -358,10 +297,10 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String APName() {
-				String name = Name();
-					if (name.startsWith(getTable().getDepChar()))
-					name = name.substring(1);
-				return name;
+			String name = Name();
+									if (name.startsWith(tables.getDepChar()))
+									name = name.substring(1);
+								return name;
 	}
 
 	/**
@@ -370,7 +309,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String RefersTo() {
-		return row[getTable().getColNum(sheet,  "Refers To")];
+		return row[tables.getColNum(sheet,  "Refers To")];
 	}
 
 	/**
@@ -379,7 +318,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String IntervalFull() {
-		return row[getTable().getColNum(sheet,  "Interval (secs)")];
+		return row[tables.getColNum(sheet,  "Interval (secs)")];
 	}
 
 	/**
@@ -388,7 +327,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String Interval() {
-		return row[getTable().getColNum(sheet, "Interval (secs)")];
+		return row[tables.getColNum(sheet, "Interval (secs)")];
 	}
 
 	/**
@@ -397,7 +336,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public boolean OnlyOnChange() {
-		return row[getTable().getColNum(sheet, "Only On Change")].equals("yes");
+		return row[tables.getColNum(sheet, "Only On Change")].equals("yes");
 	}
 
 	/**
@@ -406,7 +345,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String DisplayUnits() {
-		return row[getTable().getColNum(sheet, "Display Units")];
+		return row[tables.getColNum(sheet, "Display Units")];
 	}
 
 	/**
@@ -415,7 +354,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String GraphMin() {
-		return row[getTable().getColNum(sheet, "Graph Min")];
+		return row[tables.getColNum(sheet, "Graph Min")];
 	}
 
 	/**
@@ -424,7 +363,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String GraphMax() {
-		return row[getTable().getColNum(sheet, "Graph Max")];
+		return row[tables.getColNum(sheet, "Graph Max")];
 	}
 
 	/**
@@ -433,7 +372,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String Format() {
-		return row[getTable().getColNum(sheet, "Format")];
+		return row[tables.getColNum(sheet, "Format")];
 	}
 
 	/**
@@ -442,7 +381,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public boolean OnStartup() {
-		return row[getTable().getColNum(sheet, "On Startup")].equals("yes");
+		return row[tables.getColNum(sheet, "On Startup")].equals("yes");
 	}
 
 	/**
@@ -451,19 +390,40 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public String Title() {
-		return row[getTable().getColNum(sheet, "Title")];
+		return row[tables.getColNum(sheet, "Title")];
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeAP(final String[] row) {
+
+	public void setArchiveProperty(final String[] row) {
 		this.row = row;
-		this.sheet = getTable().getSheetNum("Archive Property");
+		this.sheet = tables.getSheetNum("Archive Property");
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	//Print the values of the class, to test the objects
+	public static void printAttributeValues(EObject object) {
+		EClass eClass = object.eClass();
+		System.out.println(eClass.getName());
+		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
+			EAttribute attribute = (EAttribute)iter.next();
+			Object value = object.eGet(attribute);
+
+			System.out.print("  " + attribute.getName() + " : ");
+			if (object.eIsSet(attribute))
+				System.out.println(value);
+			else
+				System.out.println(value + " (default)");
+		}
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -477,12 +437,14 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				return getSheet();
 			case BasePackage.ARCHIVE_PROPERTY__MP:
-				return getMp();
+				if (resolve) return getMp();
+				return basicGetMp();
 			case BasePackage.ARCHIVE_PROPERTY__CP:
-				return getCp();
-			case BasePackage.ARCHIVE_PROPERTY__TABLE:
-				if (resolve) return getTable();
-				return basicGetTable();
+				if (resolve) return getCp();
+				return basicGetCp();
+			case BasePackage.ARCHIVE_PROPERTY__TABLES:
+				if (resolve) return getTables();
+				return basicGetTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -502,13 +464,13 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				setSheet((Integer)newValue);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__MP:
-				setMp((Resource)newValue);
+				setMp((MonitorPoint)newValue);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__CP:
-				setCp((Resource)newValue);
+				setCp((ControlPoint)newValue);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__TABLE:
-				setTable((Table)newValue);
+			case BasePackage.ARCHIVE_PROPERTY__TABLES:
+				setTables((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -529,13 +491,13 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				setSheet(SHEET_EDEFAULT);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__MP:
-				setMp(MP_EDEFAULT);
+				setMp((MonitorPoint)null);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__CP:
-				setCp(CP_EDEFAULT);
+				setCp((ControlPoint)null);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__TABLE:
-				setTable((Table)null);
+			case BasePackage.ARCHIVE_PROPERTY__TABLES:
+				setTables((Table)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -554,11 +516,11 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				return sheet != SHEET_EDEFAULT;
 			case BasePackage.ARCHIVE_PROPERTY__MP:
-				return MP_EDEFAULT == null ? mp != null : !MP_EDEFAULT.equals(mp);
+				return mp != null;
 			case BasePackage.ARCHIVE_PROPERTY__CP:
-				return CP_EDEFAULT == null ? cp != null : !CP_EDEFAULT.equals(cp);
-			case BasePackage.ARCHIVE_PROPERTY__TABLE:
-				return table != null;
+				return cp != null;
+			case BasePackage.ARCHIVE_PROPERTY__TABLES:
+				return tables != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -577,12 +539,58 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 		result.append(row);
 		result.append(", sheet: ");
 		result.append(sheet);
-		result.append(", mp: ");
-		result.append(mp);
-		result.append(", cp: ");
-		result.append(cp);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public void setMp(MonitorPoint value) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setCp(ControlPoint value) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
+			}
+		}
+		return tables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table basicGetTables() {
+		return tables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
 	}
 
 } //ArchivePropertyImpl

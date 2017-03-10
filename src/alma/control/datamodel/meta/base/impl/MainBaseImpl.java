@@ -1,51 +1,23 @@
-/**
- * ALMA - Atacama Large Millimiter Array
- * (c) European Southern Observatory, 2017
- * Copyright by ESO (in the framework of the ALMA collaboration),
- * All rights reserved
- * 
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- * 
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
- * MA 02111-1307  USA
- * 
- */
 package alma.control.datamodel.meta.base.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
 
-import alma.control.datamodel.meta.amb.impl.DeviceModelImpl;
-import alma.control.datamodel.meta.base.BaseFactory;
-import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.MainBase;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
+
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.DeviceModel;
+import alma.control.datamodel.meta.base.MainBase;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,8 +29,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getTable <em>Table</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getUtil <em>Util</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getUtils <em>Utils</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getDevices <em>Devices</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,14 +78,34 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	protected int sheet = SHEET_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' containment reference.
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTable()
+	 * @see #getTables()
 	 * @generated
 	 * @ordered
 	 */
-	protected Table table;
+	protected Table tables;
+
+	/**
+	 * The cached value of the '{@link #getUtils() <em>Utils</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtils()
+	 * @generated
+	 * @ordered
+	 */
+	protected Util utils;
+
+	/**
+	 * The cached value of the '{@link #getDevices() <em>Devices</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDevices()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeviceModel devices;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,22 +173,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table getTable() {
-		if (table != null && table.eIsProxy()) {
-			InternalEObject oldTable = (InternalEObject)table;
-			table = (Table)eResolveProxy(oldTable);
-			if (table != oldTable) {
-				InternalEObject newTable = (InternalEObject)table;
-				NotificationChain msgs =  oldTable.eInverseRemove(this, BasePackage.TABLE__MAIN, Table.class, null);
-				if (newTable.eInternalContainer() == null) {
-					msgs =  newTable.eInverseAdd(this, BasePackage.TABLE__MAIN, Table.class, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TABLE, oldTable, table));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__TABLES, oldTables, tables));
 			}
 		}
-		return table;
+		return tables;
 	}
 
 	/**
@@ -203,8 +190,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Table basicGetTable() {
-		return table;
+	public Table basicGetTables() {
+		return tables;
 	}
 
 	/**
@@ -212,14 +199,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTable(Table newTable, NotificationChain msgs) {
-		Table oldTable = table;
-		table = newTable;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TABLE, oldTable, newTable);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TABLES, oldTables, tables));
 	}
 
 	/**
@@ -227,35 +211,16 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTable(Table newTable) {
-		if (newTable != table) {
-			NotificationChain msgs = null;
-			if (table != null)
-				msgs = ((InternalEObject)table).eInverseRemove(this, BasePackage.TABLE__MAIN, Table.class, msgs);
-			if (newTable != null)
-				msgs = ((InternalEObject)newTable).eInverseAdd(this, BasePackage.TABLE__MAIN, Table.class, msgs);
-			msgs = basicSetTable(newTable, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__TABLE, newTable, newTable));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Util getUtil() {
-		if (util != null && util.eIsProxy()) {
-			InternalEObject oldUtil = (InternalEObject)util;
-			util = (Util)eResolveProxy(oldUtil);
-			if (util != oldUtil) {
+	public Util getUtils() {
+		if (utils != null && utils.eIsProxy()) {
+			InternalEObject oldUtils = (InternalEObject)utils;
+			utils = (Util)eResolveProxy(oldUtils);
+			if (utils != oldUtils) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__UTIL, oldUtil, util));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__UTILS, oldUtils, utils));
 			}
 		}
-		return util;
+		return utils;
 	}
 
 	/**
@@ -263,8 +228,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Util basicGetUtil() {
-		return util;
+	public Util basicGetUtils() {
+		return utils;
 	}
 
 	/**
@@ -272,14 +237,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUtil(Util newUtil, NotificationChain msgs) {
-		Util oldUtil = util;
-		util = newUtil;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__UTIL, oldUtil, newUtil);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public void setUtils(Util newUtils) {
+		Util oldUtils = utils;
+		utils = newUtils;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__UTILS, oldUtils, utils));
 	}
 
 	/**
@@ -287,40 +249,38 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUtil(Util newUtil) {
-		if (newUtil != util) {
-			NotificationChain msgs = null;
-			if (util != null)
-				msgs = ((InternalEObject)util).eInverseRemove(this, BasePackage.UTIL__MANDC, Util.class, msgs);
-			if (newUtil != null)
-				msgs = ((InternalEObject)newUtil).eInverseAdd(this, BasePackage.UTIL__MANDC, Util.class, msgs);
-			msgs = basicSetUtil(newUtil, msgs);
-			if (msgs != null) msgs.dispatch();
+	public DeviceModel getDevices() {
+		if (devices != null && devices.eIsProxy()) {
+			InternalEObject oldDevices = (InternalEObject)devices;
+			devices = (DeviceModel)eResolveProxy(oldDevices);
+			if (devices != oldDevices) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__DEVICES, oldDevices, devices));
+			}
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__UTIL, newUtil, newUtil));
+		return devices;
 	}
 
-	/*
-	private Object getObjectByInstanceClass(){
-		System.out.println("entra a getObjectBYInstanceClass");
-		Collection<Table> allObjects = EcoreUtil.getObjectsByType(BaseFactory.eINSTANCE.getClass()., BasePackage.Literals.TABLE);
-		int size = allObjects.size();
-		System.out.println("Tamaño es: "+size+"");
-		Object object = EcoreUtil.getObjectsByType(eAdapters(), BasePackage.Literals.TABLE);
-		if(object instanceof Table){
-			return object;
-		}else{
-			System.out.println("The is no Object in instance Table in: base/MainBaseImpl");
-			System.out.println("Creating ...");
-			return "The is no Object for instance Table in: base/MainBaseImpl";
-		}
-	}
-
-	Table table = (Table)getObjectByInstanceClass();
-
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	//Table table = BaseFactory.eINSTANCE.createTable();
+	public DeviceModel basicGetDevices() {
+		return devices;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDevices(DeviceModel newDevices) {
+		DeviceModel oldDevices = devices;
+		devices = newDevices;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__DEVICES, oldDevices, devices));
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -328,7 +288,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 */
 	public String Assembly() {
-		return row[table.getColNum(sheet, "Assembly")];
+		return row[tables.getColNum(sheet, "Assembly")];
 	}
 
 	/**
@@ -337,24 +297,8 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 */
 	public String Description() {
-		return row[table.getColNum(sheet, "Description")];
+		return row[tables.getColNum(sheet, "Description")];
 	}
-
-	/*
-	private Object getObjectByInstanceClassUtil(){
-		Object object = EcoreUtil.getObjectByType(eAdapters(), BasePackage.Literals.UTIL);
-		if(object instanceof Util){
-			return object;
-		}else{
-			System.out.println("The is no Object for instance Util in: base/MainBaseImpl");
-			return "The is no Object for instance Util in: base/MainBaseImpl";
-		}
-	}
-
-	Util util = (Util)getObjectByInstanceClassUtil();
-	 */
-
-	Util util = BaseFactory.eINSTANCE.createUtil();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -362,7 +306,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 */
 	public String DescriptionAsString() {
-		return util.descriptionAsString(Description());
+		return utils.descriptionAsString(Description());
 	}
 
 	/**
@@ -371,7 +315,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 */
 	public String DeviceName() {
-		return row[table.getColNum(sheet, "Device Name")];
+		return row[tables.getColNum(sheet, "Device Name")];
 	}
 
 	/**
@@ -380,7 +324,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 */
 	public String Extends() {
-		return row[table.getColNum(sheet, "Extends")];
+		return row[tables.getColNum(sheet, "Extends")];
 	}
 
 	/**
@@ -389,7 +333,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 */
 	public String ICD() {
-		return row[table.getColNum(sheet, "ICD")];
+		return row[tables.getColNum(sheet, "ICD")];
 	}
 
 	/**
@@ -398,7 +342,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 */
 	public String ICDDate() {
-		return row[table.getColNum(sheet, "ICD Date")];
+		return row[tables.getColNum(sheet, "ICD Date")];
 	}
 
 	/**
@@ -407,7 +351,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 */
 	public String ICDDateAsDatabaseDate() {
-		return util.toDatabaseDate(ICDDate());
+		return utils.toDatabaseDate(ICDDate());
 	}
 
 	/**
@@ -416,7 +360,17 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @generated
 	 */
 	public String ICDDateAsArrayTime() {
-		return util.toArrayTime(ICDDate());
+		return utils.toArrayTime(ICDDate());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMainBase(final String[] row) {
+		this.row = row;
+				this.sheet = tables.getSheetNum("Hardware Device");
 	}
 
 	/**
@@ -427,8 +381,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	public static void printAttributeValues(EObject object) {
 		EClass eClass = object.eClass();
 		System.out.println(eClass.getName());
-		for (Iterator iter =
-				eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
+		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
 			EAttribute attribute = (EAttribute)iter.next();
 			Object value = object.eGet(attribute);
 
@@ -445,85 +398,6 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeMB(final String[] row) {
-		this.row = row;
-		this.sheet = getTable().getSheetNum("Hardware Device");
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BasePackage.MAIN_BASE__TABLE:
-				if (table != null)
-					msgs = ((InternalEObject)table).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MAIN_BASE__TABLE, null, msgs);
-				return basicSetTable((Table)otherEnd, msgs);
-			case BasePackage.MAIN_BASE__UTIL:
-				if (util != null)
-					msgs = ((InternalEObject)util).eInverseRemove(this, BasePackage.UTIL__MANDC, Util.class, msgs);
-				return basicSetUtil((Util)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BasePackage.MAIN_BASE__TABLE:
-				return basicSetTable(null, msgs);
-			case BasePackage.MAIN_BASE__UTIL:
-				return basicSetUtil(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/*
-	
-	
-	EObject cont;
-	public void getObjectFrom(EObject name){
-		try {
-			cont = name.eContainer();
-		} catch (Exception e) {
-			System.out.println("No container Object of type Class");	
-		}	
-	}
-	
-	
-	
-	public void setInitializeMB(final String[] row) {
-		getObjectFrom(table);
-		if(cont != null){
-			System.out.println("cont != null en table");
-				this.row = row;
-				printAttributeValues(table);
-		}else{
-			System.out.println("no puede sacar el container de table");
-			this.row = row;
-			if(cont instanceof Table){
-				table = (Table)cont;
-			}else{
-				System.out.println("eroor en initializeMB not container table");
-			}
-
-			this.sheet = table.getSheetNum("Hardware Device");
-		}
-	}
-	*/
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -531,12 +405,15 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return getRow();
 			case BasePackage.MAIN_BASE__SHEET:
 				return getSheet();
-			case BasePackage.MAIN_BASE__TABLE:
-				if (resolve) return getTable();
-				return basicGetTable();
-			case BasePackage.MAIN_BASE__UTIL:
-				if (resolve) return getUtil();
-				return basicGetUtil();
+			case BasePackage.MAIN_BASE__TABLES:
+				if (resolve) return getTables();
+				return basicGetTables();
+			case BasePackage.MAIN_BASE__UTILS:
+				if (resolve) return getUtils();
+				return basicGetUtils();
+			case BasePackage.MAIN_BASE__DEVICES:
+				if (resolve) return getDevices();
+				return basicGetDevices();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -555,11 +432,14 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__SHEET:
 				setSheet((Integer)newValue);
 				return;
-			case BasePackage.MAIN_BASE__TABLE:
-				setTable((Table)newValue);
+			case BasePackage.MAIN_BASE__TABLES:
+				setTables((Table)newValue);
 				return;
-			case BasePackage.MAIN_BASE__UTIL:
-				setUtil((Util)newValue);
+			case BasePackage.MAIN_BASE__UTILS:
+				setUtils((Util)newValue);
+				return;
+			case BasePackage.MAIN_BASE__DEVICES:
+				setDevices((DeviceModel)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -579,11 +459,14 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__SHEET:
 				setSheet(SHEET_EDEFAULT);
 				return;
-			case BasePackage.MAIN_BASE__TABLE:
-				setTable((Table)null);
+			case BasePackage.MAIN_BASE__TABLES:
+				setTables((Table)null);
 				return;
-			case BasePackage.MAIN_BASE__UTIL:
-				setUtil((Util)null);
+			case BasePackage.MAIN_BASE__UTILS:
+				setUtils((Util)null);
+				return;
+			case BasePackage.MAIN_BASE__DEVICES:
+				setDevices((DeviceModel)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -601,10 +484,12 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 				return ROW_EDEFAULT == null ? row != null : !ROW_EDEFAULT.equals(row);
 			case BasePackage.MAIN_BASE__SHEET:
 				return sheet != SHEET_EDEFAULT;
-			case BasePackage.MAIN_BASE__TABLE:
-				return table != null;
-			case BasePackage.MAIN_BASE__UTIL:
-				return util != null;
+			case BasePackage.MAIN_BASE__TABLES:
+				return tables != null;
+			case BasePackage.MAIN_BASE__UTILS:
+				return utils != null;
+			case BasePackage.MAIN_BASE__DEVICES:
+				return devices != null;
 		}
 		return super.eIsSet(featureID);
 	}

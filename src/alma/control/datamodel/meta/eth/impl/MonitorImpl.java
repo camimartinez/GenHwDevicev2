@@ -303,22 +303,22 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	@Override
-	public boolean isPartOfHomogeneous() {
-		return false;
+	public void setMonitorEth(final String[] row, final Object parent) {
+			setMonitorEth(row, parent);
+				mac = new MandCImpl();
+				mac.setMandCEth(row, sheet);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
-	public void setInitializeMImpl(final String[] row, final Resource parent) {
-		setInitializeMP(row, parent);
-		mac = new MandCImpl();
-		mac.setInitializeMandCImpl(row, sheet);
+	@Override
+	public boolean isPartOfHomogeneous() {
+		return false;
 	}
 
 	/**
@@ -393,6 +393,12 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		result.append(mac);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public void addDependent(Object son) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //MonitorImpl

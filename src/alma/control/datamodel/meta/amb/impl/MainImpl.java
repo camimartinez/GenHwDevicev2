@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.amb.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,12 +21,23 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.amb.impl;
 
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Main;
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.impl.MainBaseImpl;
 
 /**
@@ -61,7 +73,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public String Parent() {
-		return row[getTable().getColNum(sheet, "Parent")];
+		return row[tables.getColNum(sheet, "Parent")];
 	}
 
 	/**
@@ -70,7 +82,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public String Cardinality() {
-		return row[getTable().getColNum(sheet, "Cardinality")];
+		return row[tables.getColNum(sheet, "Cardinality")];
 	}
 
 	/**
@@ -79,7 +91,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public String NodeAddress() {
-		return row[getTable().getColNum(sheet, "Node Address")];
+		return row[tables.getColNum(sheet, "Node Address")];
 	}
 
 	/**
@@ -88,7 +100,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public String Channel() {
-		return row[getTable().getColNum(sheet, "Channel")];
+		return row[tables.getColNum(sheet, "Channel")];
 	}
 
 	/**
@@ -97,7 +109,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public String BaseAddress() {
-		return row[getTable().getColNum(sheet, "Base Address")];
+		return row[tables.getColNum(sheet, "Base Address")];
 	}
 
 	/**
@@ -106,16 +118,34 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public boolean GenericMonitorPoints() {
-		return row[getTable().getColNum(sheet, "Generic Monitor Points")].equals("yes");
+		return row[tables.getColNum(sheet, "Generic Monitor Points")].equals("yes");
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
-	public void setInitializeMainImpl(final String[] row) {
-		setInitializeMB(row);
+	public void setMainAmb(final String[] row) {
+		/*
+		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
+		String extension = "xmi";
+		//String tmp = getDevices().getDeviceDir().concat("/").concat(extension).concat("/");
+		mm.put(extension, new XMIResourceFactoryImpl());
+
+		Map<String, Boolean> options = new HashMap<String, Boolean>();
+		options.put(XMLResource.OPTION_SAVE_ONLY_IF_CHANGED, Boolean.TRUE);
+		
+		ResourceSet ress = new ResourceSetImpl();
+		
+		Resource resource = ress.getResource(URI.
+				createURI("/home/almamgr/alma-src/2014-04-B/CONTROL/Device/HardwareDevice/MOUNT/MountVertexLLama/xmi/tables.xmi"),true);
+		
+		Table tablee = (Table) resource.getContents().get(0);
+		setTables(tablee)
+		*/;
+		setMainBase(row);
 	}
 
 } //MainImpl

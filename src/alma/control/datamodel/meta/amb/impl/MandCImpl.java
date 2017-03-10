@@ -22,12 +22,19 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
+import java.io.IOException;
+import java.util.Collections;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Control;
@@ -35,6 +42,7 @@ import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.MandCBase;
+import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
 
 /**
@@ -49,6 +57,8 @@ import alma.control.datamodel.meta.base.Util;
  *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getMask <em>Mask</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getMcp <em>Mcp</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MandCImpl#getUtils <em>Utils</em>}</li>
  * </ul>
  *
  * @generated
@@ -115,14 +125,44 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	protected String[] mask = MASK_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMcp() <em>Mcp</em>}' reference.
+	 * The default value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMcp()
 	 * @generated
 	 * @ordered
 	 */
-	protected MandCBase mcp;
+	protected static final MandCBase MCP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMcp()
+	 * @generated
+	 * @ordered
+	 */
+	protected MandCBase mcp = MCP_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTables()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table tables;
+
+	/**
+	 * The cached value of the '{@link #getUtils() <em>Utils</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUtils()
+	 * @generated
+	 * @ordered
+	 */
+	protected Util utils;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,44 +228,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandCBase getMcp() {
-		if (mcp != null && mcp.eIsProxy()) {
-			InternalEObject oldMcp = (InternalEObject)mcp;
-			mcp = (MandCBase)eResolveProxy(oldMcp);
-			if (mcp != oldMcp) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__MCP, oldMcp, mcp));
-			}
-		}
-		return mcp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandCBase basicGetMcp() {
-		return mcp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMcp(MandCBase newMcp) {
-		MandCBase oldMcp = mcp;
-		mcp = newMcp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__MCP, oldMcp, mcp));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
 	public String getMask() {
@@ -260,28 +262,107 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	
-	private Object getObjectByInstanceClass(){
-		Object object = EcoreUtil.getObjectByType(eAdapters(), BasePackage.Literals.TABLE);
-		if(object instanceof Table){
-			return object;
-		}else{
-			System.out.println("The is no Object for instance Table in: amb/MandCImpl");
-			return "The is no Object for instance Table in: amb/MandCImpl";
-		}
-	}
-	
-	Table table = (Table)getObjectByInstanceClass();
+	 * @generated
 	 */
-	
+	public MandCBase getMcp() {
+		return mcp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMcp(MandCBase newMcp) {
+		MandCBase oldMcp = mcp;
+		mcp = newMcp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__MCP, oldMcp, mcp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__TABLES, oldTables, tables));
+			}
+		}
+		return tables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table basicGetTables() {
+		return tables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__TABLES, oldTables, tables));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Util getUtils() {
+		if (utils != null && utils.eIsProxy()) {
+			InternalEObject oldUtils = (InternalEObject)utils;
+			utils = (Util)eResolveProxy(oldUtils);
+			if (utils != oldUtils) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__UTILS, oldUtils, utils));
+			}
+		}
+		return utils;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Util basicGetUtils() {
+		return utils;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUtils(Util newUtils) {
+		Util oldUtils = utils;
+		utils = newUtils;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MAND_C__UTILS, oldUtils, utils));
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String Assembly() {
-		return row[mcp.getTable().getColNum(sheet, "Assembly")];
+		return row[tables.getColNum(sheet, "Assembly")];
 	}
 
 	/**
@@ -290,7 +371,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String RCA() {
-		return row[mcp.getTable().getColNum(sheet, "RCA")];
+		return row[tables.getColNum(sheet, "RCA")];
 	}
 
 	/**
@@ -299,7 +380,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String RCACell() {
-		return row[mcp.getTable().getColNum(sheet, "RCA")];
+		return row[tables.getColNum(sheet, "RCA")];
 	}
 
 	/**
@@ -308,14 +389,14 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String RawDataType() {
-				String s = row[mcp.getTable().getColNum(sheet, "Raw Data Type")];
-				if(!mcp.isDependent())
-				return isRawDataArray() ? s.substring(0, s.indexOf("[")) : s;
-				if(mcp instanceof Monitor)
-				return ((Monitor) mcp.getParent()).RawDataType();
-				if(mcp instanceof Control)
-				return ((Control) mcp.getParent()).RawDataType();
-				return "ERROR";
+						String s = row[tables.getColNum(sheet, "Raw Data Type")];
+						if(!mcp.isDependent())
+							return isRawDataArray() ? s.substring(0, s.indexOf("[")) : s;
+							if(mcp instanceof Monitor)
+								return ((Monitor) mcp.getParent()).RawDataType();
+							if(mcp instanceof Control)
+								return ((Control) mcp.getParent()).RawDataType();
+							return "ERROR";
 	}
 
 	/**
@@ -324,7 +405,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String RawDataTypeCell() {
-		return row[mcp.getTable().getColNum(sheet, "Raw Data Type")];
+		return row[tables.getColNum(sheet, "Raw Data Type")];
 	}
 
 	/**
@@ -342,7 +423,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String TeRelatedCell() {
-		return row[mcp.getTable().getColNum(sheet, "TE Related")];
+		return row[tables.getColNum(sheet, "TE Related")];
 	}
 
 	/**
@@ -351,7 +432,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataType() {
-		String s = row[mcp.getTable().getColNum(sheet, "World Data Type")];
+		String s = row[tables.getColNum(sheet, "World Data Type")];
 		return isWorldDataArray() ? s.substring(0, s.indexOf("[")) : s;
 	}
 
@@ -361,7 +442,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataTypeCell() {
-		return row[mcp.getTable().getColNum(sheet, "World Data Type")];
+		return row[tables.getColNum(sheet, "World Data Type")];
 	}
 
 	/**
@@ -370,37 +451,19 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String Scale() {
-				String s = ScaleCell();
-				if((s.equals("none") == true) || (s.equals("extended") == true) || (s.equals(mcp.getTable().getCelsiusToKelvin()) == true))
-				s = "1.0";
-				return s;
+		String s = ScaleCell();
+		if((s.equals("none") == true) || (s.equals("extended") == true) || (s.equals(tables.getCelsiusToKelvin()) == true))
+								s = "1.0";
+								return s;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	
-	private Object getObjectByInstanceClassUtil(){
-		Object object = EcoreUtil.getObjectByType(eAdapters(), BasePackage.Literals.UTIL);
-		if(object instanceof Util){
-			return object;
-		}else{
-			System.out.println("The is no Object for instance Util in: amb/ControlImpl");
-			return "The is no Object for instance Util in: amb/ControlImpl";
-		}
-	}
-	
-	Util util = (Util)getObjectByInstanceClassUtil();
-	 */
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String ScaleCell() {
-				return mcp.getUtil().normalizeNumber(WorldDataType(), row[mcp.getTable().getColNum(sheet, "Scale")]);
-		
+		return utils.normalizeNumber(WorldDataType(), row[tables.getColNum(sheet, "Scale")]);
 	}
 
 	/**
@@ -410,12 +473,12 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 */
 	public String Offset() {
 				String s = ScaleCell();
-					if(s.equals(mcp.getTable().getCelsiusToKelvin()))
+				if(s.equals(tables.getCelsiusToKelvin()))
 					return "273.15";
 				String o = OffsetCell();
-					if((o.equals("0") == true) || (o.equals("none") == true)	|| (o.equals("extended") == true))
+				if((o.equals("0") == true) || (o.equals("none") == true)	|| (o.equals("extended") == true))
 					o = "0.0";
-					return o;
+				return o;
 	}
 
 	/**
@@ -424,8 +487,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String OffsetCell() {
-		return mcp.getUtil().normalizeNumber(WorldDataType(), row[mcp.getTable().getColNum(sheet, "Offset")]);
-		
+		return utils.normalizeNumber(WorldDataType(), row[tables.getColNum(sheet, "Offset")]);
 	}
 
 	/**
@@ -434,7 +496,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String RawDataToCPPType() {
-		return (String)mcp.getTable().getRawToCPP().get(RawDataType());
+		return (String)tables.getRawToCPP().get(RawDataType());
 	}
 
 	/**
@@ -443,7 +505,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataToCPPType() {
-		return (String)mcp.getTable().getWorldToCPP().get(WorldDataType());
+		return (String)tables.getWorldToCPP().get(WorldDataType());
 	}
 
 	/**
@@ -452,7 +514,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataToCORBAType() {
-		return (String)mcp.getTable().getWorldToCORBA().get(WorldDataType());
+		return (String)tables.getWorldToCORBA().get(WorldDataType());
 	}
 
 	/**
@@ -461,7 +523,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataToIDLSeqType() {
-		return (String)mcp.getTable().getWorldToIDLSeq().get(WorldDataType());
+		return (String)tables.getWorldToIDLSeq().get(WorldDataType());
 	}
 
 	/**
@@ -470,7 +532,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataToIDLType() {
-		return (String)mcp.getTable().getWorldToIDL().get(WorldDataType());
+		return (String)tables.getWorldToIDL().get(WorldDataType());
 	}
 
 	/**
@@ -479,7 +541,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataToCORBASeqType() {
-		return (String)mcp.getTable().getWorldToCORBASeq().get(WorldDataType());
+		return (String)tables.getWorldToCORBASeq().get(WorldDataType());
 	}
 
 	/**
@@ -488,7 +550,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataToCORBADevIOType() {
-		return (String)mcp.getTable().getWorldToCORBADevIO().get(WorldDataType());
+		return (String)tables.getWorldToCORBADevIO().get(WorldDataType());
 	}
 
 	/**
@@ -497,7 +559,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataToJavaType() {
-		return (String)mcp.getTable().getWorldToJava().get(WorldDataType());
+		return (String)tables.getWorldToJava().get(WorldDataType());
 	}
 
 	/**
@@ -506,7 +568,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataToDatabaseType() {
-		return (String)mcp.getTable().getWorldToDatabase().get(WorldDataType());
+		return (String)tables.getWorldToDatabase().get(WorldDataType());
 	}
 
 	/**
@@ -515,7 +577,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String WorldDataToBACIType() {
-		return (String)mcp.getTable().getWorldToBACI().get(WorldDataType());
+		return (String)tables.getWorldToBACI().get(WorldDataType());
 	}
 
 	/**
@@ -555,7 +617,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public boolean isWorldDataArray() {
-		String s = row[mcp.getTable().getColNum(sheet, "World Data Type")];
+		String s = row[tables.getColNum(sheet, "World Data Type")];
 		return s.endsWith("]") ? true : false;
 	}
 
@@ -565,12 +627,12 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public boolean isRawDataArray() {
-		String s = row[mcp.getTable().getColNum(sheet, "Raw Data Type")];
-					if(!mcp.isDependent())
-					return s.endsWith("]") ? true : false;
-					if(s.startsWith("&lt;") && s.substring(1).indexOf("&lt;") != -1)
-					return true;
-				return false;
+				String s = row[tables.getColNum(sheet, "Raw Data Type")];
+									if(!mcp.isDependent())
+									return s.endsWith("]") ? true : false;
+									if(s.startsWith("&lt;") && s.substring(1).indexOf("&lt;") != -1)
+									return true;
+								return false;
 	}
 
 	/**
@@ -579,8 +641,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String NumberItemsRawData() {
-		String s = row[mcp.getTable().getColNum(sheet, "Raw Data Type")];
-		return mcp.getUtil().NumberOfItems(s);
+		String s = row[tables.getColNum(sheet, "Raw Data Type")];
+		return utils.NumberOfItems(s);
 	}
 
 	/**
@@ -589,8 +651,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String TotalBytesRawData() {
-		String s = row[mcp.getTable().getColNum(sheet, "Raw Data Type")];
-		return mcp.getUtil().RawDataTypeTotalBytes(s);
+				String s = row[tables.getColNum(sheet, "Raw Data Type")];
+				return utils.RawDataTypeTotalBytes(s);
 	}
 
 	/**
@@ -599,7 +661,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String NumberRawDataTypeBytes() {
-		return mcp.getUtil().NumberRawDataTypeBytes(RawDataType());
+		return utils.NumberRawDataTypeBytes(RawDataType());
 	}
 
 	/**
@@ -608,8 +670,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String NumberItemsWorldData() {
-		String s = row[mcp.getTable().getColNum(sheet, "World Data Type")];
-		return mcp.getUtil().NumberOfItems(s);
+			String s = row[tables.getColNum(sheet, "World Data Type")];
+						return utils.NumberOfItems(s);
 	}
 
 	/**
@@ -657,7 +719,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public boolean isByteSwapped() {
-		return ((String)mcp.getTable().getRawToByteSwapped().get(RawDataType())).equals(true);
+		return ((String)tables.getRawToByteSwapped().get(RawDataType())).equals(true);
 	}
 
 	/**
@@ -923,7 +985,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeMandCImpl(final String[] row, final int sheet, final MandCBase mcp) {
+	public void setMandCAmb(final String[] row, final int sheet, final MandCBase mcp) {
 		this.row = row;
 		this.sheet = sheet;
 		this.mcp = mcp;
@@ -944,8 +1006,13 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case AmbPackage.MAND_C__MASK:
 				return getMask();
 			case AmbPackage.MAND_C__MCP:
-				if (resolve) return getMcp();
-				return basicGetMcp();
+				return getMcp();
+			case AmbPackage.MAND_C__TABLES:
+				if (resolve) return getTables();
+				return basicGetTables();
+			case AmbPackage.MAND_C__UTILS:
+				if (resolve) return getUtils();
+				return basicGetUtils();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -970,6 +1037,12 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case AmbPackage.MAND_C__MCP:
 				setMcp((MandCBase)newValue);
 				return;
+			case AmbPackage.MAND_C__TABLES:
+				setTables((Table)newValue);
+				return;
+			case AmbPackage.MAND_C__UTILS:
+				setUtils((Util)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -992,7 +1065,13 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				setMask(MASK_EDEFAULT);
 				return;
 			case AmbPackage.MAND_C__MCP:
-				setMcp((MandCBase)null);
+				setMcp(MCP_EDEFAULT);
+				return;
+			case AmbPackage.MAND_C__TABLES:
+				setTables((Table)null);
+				return;
+			case AmbPackage.MAND_C__UTILS:
+				setUtils((Util)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1013,7 +1092,11 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case AmbPackage.MAND_C__MASK:
 				return MASK_EDEFAULT == null ? mask != null : !MASK_EDEFAULT.equals(mask);
 			case AmbPackage.MAND_C__MCP:
-				return mcp != null;
+				return MCP_EDEFAULT == null ? mcp != null : !MCP_EDEFAULT.equals(mcp);
+			case AmbPackage.MAND_C__TABLES:
+				return tables != null;
+			case AmbPackage.MAND_C__UTILS:
+				return utils != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1034,6 +1117,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		result.append(sheet);
 		result.append(", mask: ");
 		result.append(mask);
+		result.append(", mcp: ");
+		result.append(mcp);
 		result.append(')');
 		return result.toString();
 	}

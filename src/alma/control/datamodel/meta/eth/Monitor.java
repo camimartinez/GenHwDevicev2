@@ -240,10 +240,10 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeMP(row, parent);\nmac = new MandCImpl();\nmac.setInitializeMandCImpl(row, sheet);'"
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\tsetMonitorEth(row, parent);\n\t\tmac = new MandCImpl();\n\t\tmac.setMandCEth(row, sheet);'"
 	 * @generated
 	 */
-	void setInitializeMImpl(String[] row, Resource parent);
+	void setMonitorEth(String[] row, Object parent);
 
 } // Monitor

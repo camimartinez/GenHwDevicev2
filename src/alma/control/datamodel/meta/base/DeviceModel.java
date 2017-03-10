@@ -22,6 +22,7 @@
  */
 package alma.control.datamodel.meta.base;
 
+import alma.control.datamodel.meta.amb.Monitor;
 import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getNotes <em>Notes</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getControlPoints <em>Control Points</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getArchiveProperties <em>Archive Properties</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getContainer <em>Container</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getBusType <em>Bus Type</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getDeviceDir <em>Device Dir</em>}</li>
@@ -52,7 +54,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isGenerateAlt <em>Generate Alt</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMandC <em>Mand C</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getAPropertiesList <em>AProperties</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getCPointsList <em>CPoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMPointsList <em>MPoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel()
@@ -114,60 +120,6 @@ public interface DeviceModel extends EObject {
 	void setSpreadsheet(String[][][] value);
 
 	/**
-	 * Returns the value of the '<em><b>Main</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Main</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Main</em>' containment reference.
-	 * @see #setMain(MainBase)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Main()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	MainBase getMain();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Main</em>' containment reference.
-	 * @see #getMain()
-	 * @generated
-	 */
-	void setMain(MainBase value);
-
-	/**
-	 * Returns the value of the '<em><b>Mand C</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link alma.control.datamodel.meta.base.MandCBase#getDevice <em>Device</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mand C</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mand C</em>' reference.
-	 * @see #setMandC(MandCBase)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_MandC()
-	 * @see alma.control.datamodel.meta.base.MandCBase#getDevice
-	 * @model opposite="device" required="true"
-	 * @generated
-	 */
-	MandCBase getMandC();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMandC <em>Mand C</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mand C</em>' reference.
-	 * @see #getMandC()
-	 * @generated
-	 */
-	void setMandC(MandCBase value);
-
-	/**
 	 * Returns the value of the '<em><b>Notes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -176,12 +128,12 @@ public interface DeviceModel extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Notes</em>' attribute.
-	 * @see #setNotes(ResourceSet)
+	 * @see #setNotes(Resource)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Notes()
 	 * @model transient="true"
 	 * @generated
 	 */
-	ResourceSet getNotes();
+	Resource getNotes();
 
 	/**
 	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getNotes <em>Notes</em>}' attribute.
@@ -191,7 +143,7 @@ public interface DeviceModel extends EObject {
 	 * @see #getNotes()
 	 * @generated
 	 */
-	void setNotes(ResourceSet value);
+	void setNotes(Resource value);
 
 	/**
 	 * Returns the value of the '<em><b>Monitor Points</b></em>' attribute.
@@ -202,12 +154,12 @@ public interface DeviceModel extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Monitor Points</em>' attribute.
-	 * @see #setMonitorPoints(ResourceSet)
+	 * @see #setMonitorPoints(Resource)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_MonitorPoints()
 	 * @model transient="true"
 	 * @generated
 	 */
-	ResourceSet getMonitorPoints();
+	Resource getMonitorPoints();
 
 	/**
 	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMonitorPoints <em>Monitor Points</em>}' attribute.
@@ -217,7 +169,7 @@ public interface DeviceModel extends EObject {
 	 * @see #getMonitorPoints()
 	 * @generated
 	 */
-	void setMonitorPoints(ResourceSet value);
+	void setMonitorPoints(Resource value);
 
 	/**
 	 * Returns the value of the '<em><b>Control Points</b></em>' attribute.
@@ -228,12 +180,12 @@ public interface DeviceModel extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Control Points</em>' attribute.
-	 * @see #setControlPoints(ResourceSet)
+	 * @see #setControlPoints(Resource)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ControlPoints()
 	 * @model transient="true"
 	 * @generated
 	 */
-	ResourceSet getControlPoints();
+	Resource getControlPoints();
 
 	/**
 	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getControlPoints <em>Control Points</em>}' attribute.
@@ -243,7 +195,7 @@ public interface DeviceModel extends EObject {
 	 * @see #getControlPoints()
 	 * @generated
 	 */
-	void setControlPoints(ResourceSet value);
+	void setControlPoints(Resource value);
 
 	/**
 	 * Returns the value of the '<em><b>Archive Properties</b></em>' attribute.
@@ -254,13 +206,28 @@ public interface DeviceModel extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Archive Properties</em>' attribute.
-	 * @see #setArchiveProperties(ResourceSet)
+	 * @see #setArchiveProperties(Resource)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ArchiveProperties()
 	 * @model transient="true"
 	 * @generated
 	 */
-	ResourceSet getArchiveProperties();
+	Resource getArchiveProperties();
 
+	/**
+	 * Returns the value of the '<em><b>Archive Properties</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Archive Properties</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Archive Properties</em>' attribute.
+	 * @see #setArchiveProperties(Resource)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ArchiveProperties()
+	 * @model transient="true"
+	 * @!generated
+	 */
+	ArchiveProperty getArchiveProperties(String name);
 	/**
 	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getArchiveProperties <em>Archive Properties</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -269,7 +236,33 @@ public interface DeviceModel extends EObject {
 	 * @see #getArchiveProperties()
 	 * @generated
 	 */
-	void setArchiveProperties(ResourceSet value);
+	void setArchiveProperties(Resource value);
+
+	/**
+	 * Returns the value of the '<em><b>Container</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Container</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Container</em>' attribute.
+	 * @see #setContainer(ResourceSet)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Container()
+	 * @model transient="true"
+	 * @generated
+	 */
+	ResourceSet getContainer();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getContainer <em>Container</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Container</em>' attribute.
+	 * @see #getContainer()
+	 * @generated
+	 */
+	void setContainer(ResourceSet value);
 
 	/**
 	 * Returns the value of the '<em><b>Device Name</b></em>' attribute.
@@ -480,6 +473,260 @@ public interface DeviceModel extends EObject {
 	void setGenerateAlt(boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Main</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main</em>' reference.
+	 * @see #setMain(MainBase)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Main()
+	 * @model
+	 * @generated
+	 */
+	MainBase getMain();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Main</em>' reference.
+	 * @see #getMain()
+	 * @generated
+	 */
+	void setMain(MainBase value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	ArchiveProperty[] getAProperties();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	ArchiveProperty getAProperties(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getAPropertiesLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setAProperties(ArchiveProperty[] newAProperties);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setAProperties(int index, ArchiveProperty element);
+
+	/**
+	 * Returns the value of the '<em><b>AProperties</b></em>' reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.base.ArchiveProperty}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>AProperties</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>AProperties</em>' reference list.
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_AProperties()
+	 * @model required="true"
+	 * @generated
+	 */
+	List<ArchiveProperty> getAPropertiesList();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	ControlPoint[] getCPoints();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	ControlPoint getCPoints(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getCPointsLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setCPoints(ControlPoint[] newCPoints);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setCPoints(int index, ControlPoint element);
+
+	/**
+	 * Returns the value of the '<em><b>CPoints</b></em>' reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.base.ControlPoint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>CPoints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>CPoints</em>' reference list.
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_CPoints()
+	 * @model required="true"
+	 * @generated
+	 */
+	List<ControlPoint> getCPointsList();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	MonitorPoint[] getMPoints();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	MonitorPoint getMPoints(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getMPointsLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setMPoints(MonitorPoint[] newMPoints);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setMPoints(int index, MonitorPoint element);
+
+	/**
+	 * Returns the value of the '<em><b>MPoints</b></em>' reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.base.MonitorPoint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MPoints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MPoints</em>' reference list.
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_MPoints()
+	 * @model required="true"
+	 * @generated
+	 */
+	List<MonitorPoint> getMPointsList();
+
+	/**
+	 * Returns the value of the '<em><b>Utils</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Utils</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Utils</em>' reference.
+	 * @see #setUtils(Util)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Utils()
+	 * @model
+	 * @generated
+	 */
+	Util getUtils();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Utils</em>' reference.
+	 * @see #getUtils()
+	 * @generated
+	 */
+	void setUtils(Util value);
+
+	/**
+	 * Returns the value of the '<em><b>Tables</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tables</em>' reference.
+	 * @see #setTables(Table)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Tables()
+	 * @model
+	 * @generated
+	 */
+	Table getTables();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tables</em>' reference.
+	 * @see #getTables()
+	 * @generated
+	 */
+	void setTables(Table value);
+
+	/**
+	 * Returns the value of the '<em><b>Control Point</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Control Point</em>' containment reference.
+	 * @see #setControlPoint(ControlPoint)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_ControlPoint()
+	 * @model containment="true" resolveProxies="true"
+	 * @!generated
+	 */
+	ControlPoint getControlPoint(String fullName);
+	/**
+	 * Returns the value of the '<em><b>Monitor Point</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Monitor Point</em>' containment reference.
+	 * @see #setMonitorPoint(MonitorPoint)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_MonitorPoint()
+	 * @model containment="true" resolveProxies="true"
+	 * @!generated
+	 */
+	MonitorPoint getMonitorPoint(String fullName);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
@@ -578,7 +825,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString dir = generatedDir + \"/\" + Assembly();\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/src\", Assembly() + \"Base.cpp\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/include\", Assembly() + \"Base.h\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Base.idl\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".xml\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/doc\", Assembly() + \"Component.xml\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/config/CDB/schemas\", Assembly() + \"Base.xsd\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/config\", \"TMCDB\" + Assembly() + \"Add.xml\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/src/CCL\", Assembly() + \"Base.py\", 1);\n\t\tmain.getUtil().RemoveLinesFromFile(dir + \"/src/CCL\", \"__init__.py\", 1);\n\t\tSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\n\t\treturn \"\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString dir = generatedDir + \"/\" + Assembly();\n\t\tutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"Base.cpp\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"Base.h\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Base.idl\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".xml\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \"Component.xml\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/config/CDB/schemas\", Assembly() + \"Base.xsd\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/config\", \"TMCDB\" + Assembly() + \"Add.xml\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/src/CCL\", Assembly() + \"Base.py\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/src/CCL\", \"__init__.py\", 1);\n\t\tSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\n\t\treturn \"\";'"
 	 * @generated
 	 */
 	String TheEnd();
@@ -626,33 +873,9 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t // Get the Archive Properties\n\t\tint archiveIndex = table.getSheetNum(\"Archive Property\");\n\t\tfor(int i = 2; i &lt; spreadsheet[archiveIndex].length; i++){\n\t\t       if(spreadsheet[archiveIndex][i].length == 0)\n\t\t        break;\n\t\t        ArchivePropertyImpl ap;\n\t\t        String[] row = spreadsheet[archiveIndex][i];\n\t\t        ap = new ArchivePropertyImpl();\n\t\t        ap.setInitializeAP(row);\n\t\t        if(name.equals(ap.RefersTo()))\n\t\t             return ap.eResource();\n\t\t        }\n\t\treturn null;'"
-	 * @generated
-	 */
-	Resource getArchive(String name);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(int i = 0; i &lt; monitorPoints.getResources().size(); i++){\r\n\tMonitorPoint mp = (MonitorPoint) monitorPoints.getResources().get(i);\r\n      if(mp.FullName().equals(fullName))\r\n\t\t      return mp;\r\n\t}\r\n\t\treturn null;'"
-	 * @generated
-	 */
-	MonitorPoint getMonitorPoint(String fullName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (int i = 0; i &lt; controlPoints.getResources().size(); i++) {\r\n\t ControlPoint cp = (ControlPoint) controlPoints.getResources().get(i);\r\n\t if (cp.FullName().equals(fullName))\r\n\t\t         return cp;\r\n\t }\r\n\t\t  return null;'"
-	 * @generated
-	 */
-	ControlPoint getControlPoint(String fullName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.setDeviceName(System.getProperty(\"deviceName\"));\nthis.setDeviceDir(System.getProperty(\"deviceDir\"));\nthis.setCodegenDir(System.getProperty(\"codegenDir\"));\nthis.setSpreadsheetDir(System.getProperty(\"spreadsheetDir\"));\nthis.setGeneratedDir(System.getProperty(\"generatedDir\"));'"
 	 * @generated
 	 */
-	void setInitializeDM();
+	void setDeviceModel();
 
 } // DeviceModel

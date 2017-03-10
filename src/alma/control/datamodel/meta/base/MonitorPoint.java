@@ -38,7 +38,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Default\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Default\")];'"
 	 * @generated
 	 */
 	String Default();
@@ -46,7 +46,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Error Condition\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Error Condition\")];'"
 	 * @generated
 	 */
 	String ErrorCondition();
@@ -54,7 +54,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Error Severity\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Error Severity\")];'"
 	 * @generated
 	 */
 	String ErrorSeverity();
@@ -62,7 +62,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Error Action\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Error Action\")];'"
 	 * @generated
 	 */
 	String ErrorAction();
@@ -190,10 +190,10 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray" parentDataType="alma.control.datamodel.meta.base.ResourceDT"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeMCB(row, parent);'"
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setMandCBase(row, parent);'"
 	 * @generated
 	 */
-	void setInitializeMP(String[] row, Resource parent);
+	void setMonitorPoint(String[] row, Object parent);
 
 } // MonitorPoint

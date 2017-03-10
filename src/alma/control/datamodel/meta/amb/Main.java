@@ -38,7 +38,7 @@ public interface Main extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Parent\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Parent\")];'"
 	 * @generated
 	 */
 	String Parent();
@@ -46,7 +46,7 @@ public interface Main extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Cardinality\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Cardinality\")];'"
 	 * @generated
 	 */
 	String Cardinality();
@@ -54,7 +54,7 @@ public interface Main extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Node Address\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Node Address\")];'"
 	 * @generated
 	 */
 	String NodeAddress();
@@ -62,7 +62,7 @@ public interface Main extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Channel\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Channel\")];'"
 	 * @generated
 	 */
 	String Channel();
@@ -70,7 +70,7 @@ public interface Main extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Base Address\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Base Address\")];'"
 	 * @generated
 	 */
 	String BaseAddress();
@@ -78,7 +78,7 @@ public interface Main extends MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[getTable().getColNum(sheet, \"Generic Monitor Points\")].equals(\"yes\");'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Generic Monitor Points\")].equals(\"yes\");'"
 	 * @generated
 	 */
 	boolean GenericMonitorPoints();
@@ -87,9 +87,9 @@ public interface Main extends MainBase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setInitializeMB(row);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setMainBase(row);'"
 	 * @generated
 	 */
-	void setInitializeMainImpl(String[] row);
+	void setMainAmb(String[] row);
 
 } // Main
