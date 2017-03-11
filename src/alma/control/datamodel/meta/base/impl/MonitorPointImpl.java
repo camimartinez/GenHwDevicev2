@@ -32,6 +32,8 @@ import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
 
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 
@@ -269,8 +271,10 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorPoint(final String[] row, final Object parent) {
-		setMandCBase(row, parent);
+	public void setMonitorPoint(final String[] row, final Object parent, final Table tables, final Util utils) {
+		this.tables = tables;
+		this.utils = utils;
+		setMandCBase(row, parent, tables, utils);
 	}
 
 } //MonitorPointImpl

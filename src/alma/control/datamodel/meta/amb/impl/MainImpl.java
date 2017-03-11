@@ -38,6 +38,7 @@ import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Main;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 import alma.control.datamodel.meta.base.impl.MainBaseImpl;
 
 /**
@@ -66,7 +67,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.MAIN;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,28 +125,12 @@ public class MainImpl extends MainBaseImpl implements Main {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public void setMainAmb(final String[] row) {
-		/*
-		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
-		String extension = "xmi";
-		//String tmp = getDevices().getDeviceDir().concat("/").concat(extension).concat("/");
-		mm.put(extension, new XMIResourceFactoryImpl());
-
-		Map<String, Boolean> options = new HashMap<String, Boolean>();
-		options.put(XMLResource.OPTION_SAVE_ONLY_IF_CHANGED, Boolean.TRUE);
-		
-		ResourceSet ress = new ResourceSetImpl();
-		
-		Resource resource = ress.getResource(URI.
-				createURI("/home/almamgr/alma-src/2014-04-B/CONTROL/Device/HardwareDevice/MOUNT/MountVertexLLama/xmi/tables.xmi"),true);
-		
-		Table tablee = (Table) resource.getContents().get(0);
-		setTables(tablee)
-		*/;
-		setMainBase(row);
+	public void setMainAmb(final String[] row, final Table tables, final Util utils) {
+			this.tables = tables;
+						this.utils = utils;
+						setMainBase(row,tables,utils);
 	}
 
 } //MainImpl

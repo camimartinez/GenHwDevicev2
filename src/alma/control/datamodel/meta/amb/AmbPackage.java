@@ -251,7 +251,7 @@ public interface AmbPackage extends EPackage {
 	int CONTROL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
 
 	/**
-	 * The feature id for the '<em><b>Mac</b></em>' attribute.
+	 * The feature id for the '<em><b>Mac</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -935,15 +935,15 @@ public interface AmbPackage extends EPackage {
 	EClass getControl();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.Control#getMac <em>Mac</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.amb.Control#getMac <em>Mac</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mac</em>'.
+	 * @return the meta object for the reference '<em>Mac</em>'.
 	 * @see alma.control.datamodel.meta.amb.Control#getMac()
 	 * @see #getControl()
 	 * @generated
 	 */
-	EAttribute getControl_Mac();
+	EReference getControl_Mac();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.amb.DeviceModel <em>Device Model</em>}'.
@@ -1290,12 +1290,12 @@ public interface AmbPackage extends EPackage {
 		EClass CONTROL = eINSTANCE.getControl();
 
 		/**
-		 * The meta object literal for the '<em><b>Mac</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Mac</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTROL__MAC = eINSTANCE.getControl_Mac();
+		EReference CONTROL__MAC = eINSTANCE.getControl_Mac();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl <em>Device Model</em>}' class.

@@ -397,8 +397,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-
-	public void setArchiveProperty(final String[] row) {
+	public void setArchiveProperty(final String[] row, final Table tables) {
+		this.tables = tables;
 		this.row = row;
 		this.sheet = tables.getSheetNum("Archive Property");
 	}

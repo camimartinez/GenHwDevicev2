@@ -191,9 +191,9 @@ public interface MonitorPoint extends MandCBase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setMandCBase(row, parent);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMandCBase(row, parent, tables, utils);'"
 	 * @generated
 	 */
-	void setMonitorPoint(String[] row, Object parent);
+	void setMonitorPoint(String[] row, Object parent, Table tables, Util utils);
 
 } // MonitorPoint

@@ -24,6 +24,7 @@ package alma.control.datamodel.meta.base;
 
 import alma.control.datamodel.meta.amb.Monitor;
 import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -877,5 +878,13 @@ public interface DeviceModel extends EObject {
 	 * @generated
 	 */
 	void setDeviceModel();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;'"
+	 * @generated
+	 */
+	void setDeviceModel(Table tables, Util utils);
 
 } // DeviceModel

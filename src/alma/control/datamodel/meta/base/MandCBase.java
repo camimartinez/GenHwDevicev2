@@ -264,6 +264,14 @@ public interface MandCBase extends EObject {
 	void setArchive(ArchiveProperty value);
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='dependents.getContents().add(son);'"
+	 * @generated
+	 */
+	void addDependent(Object son);
+
+	/**
 	 * Returns the value of the '<em><b>Dependents</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -340,14 +348,6 @@ public interface MandCBase extends EObject {
 	 * @generated
 	 */
 	void setUtils(Util value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='dependents.getContents().add(son);'"
-	 * @generated
-	 */
-	void addDependent(Object son);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -587,9 +587,9 @@ public interface MandCBase extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.parent = parent;\nresourceSetDependents = new ResourceSetImpl();\ndependents = resourceSetDependents.createResource(URI.createURI(\"\"));\nsheet = (this instanceof Monitor) ? tables.getSheetNum(\"Monitor Point\") : getTables().getSheetNum(\"Control Point\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.tables = tables;\n\t\tthis.utils = utils;\n\t\tthis.row = row;\n\t\tthis.parent = parent;\n\t\tResourceSet resourceSetDependents = new ResourceSetImpl();\n\t\tdependents = resourceSetDependents.createResource(URI.createURI(\"\"));\n\t\tsheet = (this instanceof Monitor) ? tables.getSheetNum(\"Monitor Point\") : tables.getSheetNum(\"Control Point\");'"
 	 * @generated
 	 */
-	void setMandCBase(String[] row, Object parent);
+	void setMandCBase(String[] row, Object parent, Table tables, Util utils);
 
 } // MandCBase

@@ -1080,22 +1080,13 @@ public interface BasePackage extends EPackage {
 	int TABLE__COL_NAMES = 3;
 
 	/**
-	 * The feature id for the '<em><b>Tag Names</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLE__TAG_NAMES = 4;
-
-	/**
 	 * The feature id for the '<em><b>To CPP</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__TO_CPP = 5;
+	int TABLE__TO_CPP = 4;
 
 	/**
 	 * The feature id for the '<em><b>To IDL</b></em>' attribute.
@@ -1104,7 +1095,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__TO_IDL = 6;
+	int TABLE__TO_IDL = 5;
 
 	/**
 	 * The feature id for the '<em><b>To IDL Seq</b></em>' attribute.
@@ -1113,7 +1104,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__TO_IDL_SEQ = 7;
+	int TABLE__TO_IDL_SEQ = 6;
 
 	/**
 	 * The feature id for the '<em><b>To CORBA</b></em>' attribute.
@@ -1122,7 +1113,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__TO_CORBA = 8;
+	int TABLE__TO_CORBA = 7;
 
 	/**
 	 * The feature id for the '<em><b>To CORBA Seq</b></em>' attribute.
@@ -1131,7 +1122,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__TO_CORBA_SEQ = 9;
+	int TABLE__TO_CORBA_SEQ = 8;
 
 	/**
 	 * The feature id for the '<em><b>To CORBA Dev IO</b></em>' attribute.
@@ -1140,7 +1131,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__TO_CORBA_DEV_IO = 10;
+	int TABLE__TO_CORBA_DEV_IO = 9;
 
 	/**
 	 * The feature id for the '<em><b>To BACI</b></em>' attribute.
@@ -1149,7 +1140,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__TO_BACI = 11;
+	int TABLE__TO_BACI = 10;
 
 	/**
 	 * The feature id for the '<em><b>To Database</b></em>' attribute.
@@ -1158,7 +1149,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__TO_DATABASE = 12;
+	int TABLE__TO_DATABASE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Raw To CPP</b></em>' attribute.
@@ -1167,7 +1158,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__RAW_TO_CPP = 13;
+	int TABLE__RAW_TO_CPP = 12;
 
 	/**
 	 * The feature id for the '<em><b>Raw To Byte Swapped</b></em>' attribute.
@@ -1176,7 +1167,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__RAW_TO_BYTE_SWAPPED = 14;
+	int TABLE__RAW_TO_BYTE_SWAPPED = 13;
 
 	/**
 	 * The feature id for the '<em><b>Raw Bytes</b></em>' attribute.
@@ -1185,7 +1176,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__RAW_BYTES = 15;
+	int TABLE__RAW_BYTES = 14;
 
 	/**
 	 * The feature id for the '<em><b>World To CPP</b></em>' attribute.
@@ -1194,7 +1185,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__WORLD_TO_CPP = 16;
+	int TABLE__WORLD_TO_CPP = 15;
 
 	/**
 	 * The feature id for the '<em><b>World To IDL</b></em>' attribute.
@@ -1203,7 +1194,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__WORLD_TO_IDL = 17;
+	int TABLE__WORLD_TO_IDL = 16;
 
 	/**
 	 * The feature id for the '<em><b>World To IDL Seq</b></em>' attribute.
@@ -1212,7 +1203,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__WORLD_TO_IDL_SEQ = 18;
+	int TABLE__WORLD_TO_IDL_SEQ = 17;
 
 	/**
 	 * The feature id for the '<em><b>World To CORBA</b></em>' attribute.
@@ -1221,7 +1212,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__WORLD_TO_CORBA = 19;
+	int TABLE__WORLD_TO_CORBA = 18;
 
 	/**
 	 * The feature id for the '<em><b>World To CORBA Seq</b></em>' attribute.
@@ -1230,7 +1221,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__WORLD_TO_CORBA_SEQ = 20;
+	int TABLE__WORLD_TO_CORBA_SEQ = 19;
 
 	/**
 	 * The feature id for the '<em><b>World To CORBA Dev IO</b></em>' attribute.
@@ -1239,7 +1230,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__WORLD_TO_CORBA_DEV_IO = 21;
+	int TABLE__WORLD_TO_CORBA_DEV_IO = 20;
 
 	/**
 	 * The feature id for the '<em><b>World To BACI</b></em>' attribute.
@@ -1248,7 +1239,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__WORLD_TO_BACI = 22;
+	int TABLE__WORLD_TO_BACI = 21;
 
 	/**
 	 * The feature id for the '<em><b>World To Java</b></em>' attribute.
@@ -1257,7 +1248,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__WORLD_TO_JAVA = 23;
+	int TABLE__WORLD_TO_JAVA = 22;
 
 	/**
 	 * The feature id for the '<em><b>World To Database</b></em>' attribute.
@@ -1266,7 +1257,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__WORLD_TO_DATABASE = 24;
+	int TABLE__WORLD_TO_DATABASE = 23;
 
 	/**
 	 * The number of structural features of the '<em>Table</em>' class.
@@ -1275,7 +1266,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_FEATURE_COUNT = 25;
+	int TABLE_FEATURE_COUNT = 24;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.UtilImpl <em>Util</em>}' class.
@@ -1352,76 +1343,6 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT_DT = 14;
 
 	/**
-	 * The meta object id for the '<em>Monitor Point DT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.MonitorPoint
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMonitorPointDT()
-	 * @generated
-	 */
-	int MONITOR_POINT_DT = 15;
-
-	/**
-	 * The meta object id for the '<em>Archive Property DT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.ArchiveProperty
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArchivePropertyDT()
-	 * @generated
-	 */
-	int ARCHIVE_PROPERTY_DT = 16;
-
-	/**
-	 * The meta object id for the '<em>Simple Error Handler DT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.SimpleErrorHandler
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSimpleErrorHandlerDT()
-	 * @generated
-	 */
-	int SIMPLE_ERROR_HANDLER_DT = 17;
-
-	/**
-	 * The meta object id for the '<em>Mand CAMBDT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.amb.MandC
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCAMBDT()
-	 * @generated
-	 */
-	int MAND_CAMBDT = 18;
-
-	/**
-	 * The meta object id for the '<em>Mand CBase DT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.MandCBase
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBaseDT()
-	 * @generated
-	 */
-	int MAND_CBASE_DT = 19;
-
-	/**
-	 * The meta object id for the '<em>Main Base DT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.MainBase
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBaseDT()
-	 * @generated
-	 */
-	int MAIN_BASE_DT = 20;
-
-	/**
-	 * The meta object id for the '<em>Iterator DT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.Iterator
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getIteratorDT()
-	 * @generated
-	 */
-	int ITERATOR_DT = 21;
-
-	/**
 	 * The meta object id for the '<em>Array List</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1429,7 +1350,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArrayList()
 	 * @generated
 	 */
-	int ARRAY_LIST = 22;
+	int ARRAY_LIST = 15;
 
 	/**
 	 * The meta object id for the '<em>Hashtable</em>' data type.
@@ -1439,7 +1360,67 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getHashtable()
 	 * @generated
 	 */
-	int HASHTABLE = 23;
+	int HASHTABLE = 16;
+
+	/**
+	 * The meta object id for the '<em>Monitor Point DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.MonitorPoint
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMonitorPointDT()
+	 * @generated
+	 */
+	int MONITOR_POINT_DT = 17;
+
+	/**
+	 * The meta object id for the '<em>Archive Property DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.ArchiveProperty
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArchivePropertyDT()
+	 * @generated
+	 */
+	int ARCHIVE_PROPERTY_DT = 18;
+
+	/**
+	 * The meta object id for the '<em>Simple Error Handler DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.SimpleErrorHandler
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSimpleErrorHandlerDT()
+	 * @generated
+	 */
+	int SIMPLE_ERROR_HANDLER_DT = 19;
+
+	/**
+	 * The meta object id for the '<em>Mand CAMBDT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.amb.MandC
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCAMBDT()
+	 * @generated
+	 */
+	int MAND_CAMBDT = 20;
+
+	/**
+	 * The meta object id for the '<em>Mand CBase DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.MandCBase
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBaseDT()
+	 * @generated
+	 */
+	int MAND_CBASE_DT = 21;
+
+	/**
+	 * The meta object id for the '<em>Main Base DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see alma.control.datamodel.meta.base.MainBase
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBaseDT()
+	 * @generated
+	 */
+	int MAIN_BASE_DT = 22;
 
 	/**
 	 * The meta object id for the '<em>Runtime Exception DT</em>' data type.
@@ -1449,7 +1430,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getRuntimeExceptionDT()
 	 * @generated
 	 */
-	int RUNTIME_EXCEPTION_DT = 24;
+	int RUNTIME_EXCEPTION_DT = 23;
 
 	/**
 	 * The meta object id for the '<em>Error Handler DT</em>' data type.
@@ -1459,7 +1440,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerDT()
 	 * @generated
 	 */
-	int ERROR_HANDLER_DT = 25;
+	int ERROR_HANDLER_DT = 24;
 
 	/**
 	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
@@ -1469,7 +1450,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION_DT = 26;
+	int SAX_PARSE_EXCEPTION_DT = 25;
 
 	/**
 	 * The meta object id for the '<em>EString Array3</em>' data type.
@@ -1478,7 +1459,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray3()
 	 * @generated
 	 */
-	int ESTRING_ARRAY3 = 27;
+	int ESTRING_ARRAY3 = 26;
 
 	/**
 	 * The meta object id for the '<em>EString Array2</em>' data type.
@@ -1487,7 +1468,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray2()
 	 * @generated
 	 */
-	int ESTRING_ARRAY2 = 28;
+	int ESTRING_ARRAY2 = 27;
 
 	/**
 	 * The meta object id for the '<em>EString Array</em>' data type.
@@ -1506,7 +1487,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCETHDT()
 	 * @generated
 	 */
-	int MAND_CETHDT = 30;
+	int MAND_CETHDT = 28;
 
 
 	/**
@@ -2268,17 +2249,6 @@ public interface BasePackage extends EPackage {
 	EAttribute getTable_ColNames();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Table#getTagNames <em>Tag Names</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tag Names</em>'.
-	 * @see alma.control.datamodel.meta.base.Table#getTagNames()
-	 * @see #getTable()
-	 * @generated
-	 */
-	EAttribute getTable_TagNames();
-
-	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.Table#getToCPP <em>To CPP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2586,6 +2556,28 @@ public interface BasePackage extends EPackage {
 	EDataType getControlPointDT();
 
 	/**
+	 * Returns the meta object for data type '{@link java.util.ArrayList <em>Array List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Array List</em>'.
+	 * @see java.util.ArrayList
+	 * @model instanceClass="java.util.ArrayList"
+	 * @generated
+	 */
+	EDataType getArrayList();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.Hashtable <em>Hashtable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Hashtable</em>'.
+	 * @see java.util.Hashtable
+	 * @model instanceClass="java.util.Hashtable"
+	 * @generated
+	 */
+	EDataType getHashtable();
+
+	/**
 	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.base.MonitorPoint <em>Monitor Point DT</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2650,39 +2642,6 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getMainBaseDT();
-
-	/**
-	 * Returns the meta object for data type '{@link java.util.Iterator <em>Iterator DT</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Iterator DT</em>'.
-	 * @see java.util.Iterator
-	 * @model instanceClass="java.util.Iterator"
-	 * @generated
-	 */
-	EDataType getIteratorDT();
-
-	/**
-	 * Returns the meta object for data type '{@link java.util.ArrayList <em>Array List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Array List</em>'.
-	 * @see java.util.ArrayList
-	 * @model instanceClass="java.util.ArrayList"
-	 * @generated
-	 */
-	EDataType getArrayList();
-
-	/**
-	 * Returns the meta object for data type '{@link java.util.Hashtable <em>Hashtable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Hashtable</em>'.
-	 * @see java.util.Hashtable
-	 * @model instanceClass="java.util.Hashtable"
-	 * @generated
-	 */
-	EDataType getHashtable();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.RuntimeException <em>Runtime Exception DT</em>}'.
@@ -3365,14 +3324,6 @@ public interface BasePackage extends EPackage {
 		EAttribute TABLE__COL_NAMES = eINSTANCE.getTable_ColNames();
 
 		/**
-		 * The meta object literal for the '<em><b>Tag Names</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TABLE__TAG_NAMES = eINSTANCE.getTable_TagNames();
-
-		/**
 		 * The meta object literal for the '<em><b>To CPP</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3603,6 +3554,26 @@ public interface BasePackage extends EPackage {
 		EDataType CONTROL_POINT_DT = eINSTANCE.getControlPointDT();
 
 		/**
+		 * The meta object literal for the '<em>Array List</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.ArrayList
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArrayList()
+		 * @generated
+		 */
+		EDataType ARRAY_LIST = eINSTANCE.getArrayList();
+
+		/**
+		 * The meta object literal for the '<em>Hashtable</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.Hashtable
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getHashtable()
+		 * @generated
+		 */
+		EDataType HASHTABLE = eINSTANCE.getHashtable();
+
+		/**
 		 * The meta object literal for the '<em>Monitor Point DT</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3661,36 +3632,6 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType MAIN_BASE_DT = eINSTANCE.getMainBaseDT();
-
-		/**
-		 * The meta object literal for the '<em>Iterator DT</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.Iterator
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getIteratorDT()
-		 * @generated
-		 */
-		EDataType ITERATOR_DT = eINSTANCE.getIteratorDT();
-
-		/**
-		 * The meta object literal for the '<em>Array List</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.ArrayList
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getArrayList()
-		 * @generated
-		 */
-		EDataType ARRAY_LIST = eINSTANCE.getArrayList();
-
-		/**
-		 * The meta object literal for the '<em>Hashtable</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.Hashtable
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getHashtable()
-		 * @generated
-		 */
-		EDataType HASHTABLE = eINSTANCE.getHashtable();
 
 		/**
 		 * The meta object literal for the '<em>Runtime Exception DT</em>' data type.

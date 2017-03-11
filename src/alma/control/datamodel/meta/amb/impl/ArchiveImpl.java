@@ -94,7 +94,7 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * @generated
 	 */
 	public void setArchiveAmb(final String[] row) {
-		setArchiveProperty(row);
+	//	setArchiveProperty(row);
 	}
 
 } //ArchiveImpl

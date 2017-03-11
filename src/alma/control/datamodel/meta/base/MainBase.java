@@ -251,9 +251,9 @@ public interface MainBase extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\n\t\tthis.sheet = tables.getSheetNum(\"Hardware Device\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\n\t\tthis.utils = utils;\n\t\tthis.row = row;\n\t\t\t\tthis.sheet = tables.getSheetNum(\"Hardware Device\");'"
 	 * @generated
 	 */
-	void setMainBase(String[] row);
+	void setMainBase(String[] row, Table tables, Util utils);
 
 } // MainBase

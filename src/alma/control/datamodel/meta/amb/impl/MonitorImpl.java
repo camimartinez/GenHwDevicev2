@@ -24,7 +24,9 @@ package alma.control.datamodel.meta.amb.impl;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -36,10 +38,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
 
 /**
@@ -563,7 +570,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	public String WorldDataTypeUpper1() {
 		return mac.WorldDataTypeUpper1();
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -666,12 +673,32 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
-	public void setMonitorAmb(final String[] row, final Object parent) {
-		setMonitorPoint(row, parent);
-		mac = new MandCImpl();
-		mac.setMandCAmb(row, sheet, this);
+	public void setMonitorAmb(final String[] row, final Object parent, final Table tables, final Util utils) {
+				this.tables = tables;
+				this.utils = utils;
+				setMonitorPoint(row, parent,tables,utils);
+				mac = new MandCImpl();
+				mac.setMandCAmb(row, sheet, this, tables, utils);
+				String dir = setParameters();
+				ResourceSet mandC = new ResourceSetImpl();
+				Resource res = mandC.createResource(URI.createURI(dir));
+				res.getContents().add(mac);
+				
+				
+	}
+
+	public static String setParameters(){
+		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
+		String extension = "xmi";
+		String tmp = "/home/almamgr/alma-src/2014-04-B/CONTROL/Device/HardwareDevice/MOUNT/MountVertexLLama/src/";
+		mm.put(extension, new XMIResourceFactoryImpl());
+
+		String xmiArchive = tmp.concat("MonitorAmb.").concat(extension);
+		
+		return xmiArchive;
 	}
 
 	/**
@@ -736,7 +763,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	public void addDependent(Object son) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 } //MonitorImpl

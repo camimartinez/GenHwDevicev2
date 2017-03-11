@@ -27,6 +27,7 @@ import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.Table;
 
+import alma.control.datamodel.meta.base.Util;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -102,8 +103,10 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlPoint(final String[] row, final Object parent) {
-		setMandCBase(row, parent);
+	public void setControlPoint(final String[] row, final Object parent, final Table tables, final Util utils) {
+		this.tables = tables;
+		this.utils = utils;
+		setMandCBase(row, parent, tables, utils);
 	}
 
 } //ControlPointImpl

@@ -23,6 +23,8 @@
 package alma.control.datamodel.meta.amb;
 
 import alma.control.datamodel.meta.base.MainBase;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,9 +89,9 @@ public interface Main extends MainBase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setMainBase(row);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\tthis.tables = tables;\n\t\t\t\tthis.utils = utils;\n\t\t\t\tsetMainBase(row,tables,utils);'"
 	 * @generated
 	 */
-	void setMainAmb(String[] row);
+	void setMainAmb(String[] row, Table tables, Util utils);
 
 } // Main

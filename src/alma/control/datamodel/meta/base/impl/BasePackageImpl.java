@@ -54,6 +54,7 @@ import java.util.Iterator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -182,6 +183,20 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType arrayListEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType hashtableEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType monitorPointDTEDataType = null;
 
 	/**
@@ -218,27 +233,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	private EDataType mainBaseDTEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType iteratorDTEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType arrayListEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType hashtableEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -993,7 +987,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_TagNames() {
+	public EAttribute getTable_ToCPP() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1002,7 +996,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_ToCPP() {
+	public EAttribute getTable_ToIDL() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1011,7 +1005,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_ToIDL() {
+	public EAttribute getTable_ToIDLSeq() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1020,7 +1014,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_ToIDLSeq() {
+	public EAttribute getTable_ToCORBA() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1029,7 +1023,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_ToCORBA() {
+	public EAttribute getTable_ToCORBASeq() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1038,7 +1032,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_ToCORBASeq() {
+	public EAttribute getTable_ToCORBADevIO() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1047,7 +1041,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_ToCORBADevIO() {
+	public EAttribute getTable_ToBACI() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -1056,7 +1050,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_ToBACI() {
+	public EAttribute getTable_ToDatabase() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1065,7 +1059,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_ToDatabase() {
+	public EAttribute getTable_RawToCPP() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -1074,7 +1068,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_RawToCPP() {
+	public EAttribute getTable_RawToByteSwapped() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1083,7 +1077,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_RawToByteSwapped() {
+	public EAttribute getTable_RawBytes() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1092,7 +1086,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_RawBytes() {
+	public EAttribute getTable_WorldToCPP() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -1101,7 +1095,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_WorldToCPP() {
+	public EAttribute getTable_WorldToIDL() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1110,7 +1104,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_WorldToIDL() {
+	public EAttribute getTable_WorldToIDLSeq() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -1119,7 +1113,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_WorldToIDLSeq() {
+	public EAttribute getTable_WorldToCORBA() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -1128,7 +1122,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_WorldToCORBA() {
+	public EAttribute getTable_WorldToCORBASeq() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -1137,7 +1131,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_WorldToCORBASeq() {
+	public EAttribute getTable_WorldToCORBADevIO() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -1146,7 +1140,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_WorldToCORBADevIO() {
+	public EAttribute getTable_WorldToBACI() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -1155,7 +1149,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_WorldToBACI() {
+	public EAttribute getTable_WorldToJava() {
 		return (EAttribute)tableEClass.getEStructuralFeatures().get(22);
 	}
 
@@ -1164,17 +1158,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_WorldToJava() {
-		return (EAttribute)tableEClass.getEStructuralFeatures().get(23);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getTable_WorldToDatabase() {
-		return (EAttribute)tableEClass.getEStructuralFeatures().get(24);
+		return (EAttribute)tableEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -1254,6 +1239,24 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getArrayList() {
+		return arrayListEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getHashtable() {
+		return hashtableEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getMonitorPointDT() {
 		return monitorPointDTEDataType;
 	}
@@ -1301,33 +1304,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 */
 	public EDataType getMainBaseDT() {
 		return mainBaseDTEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getIteratorDT() {
-		return iteratorDTEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getArrayList() {
-		return arrayListEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getHashtable() {
-		return hashtableEDataType;
 	}
 
 	/**
@@ -1502,7 +1478,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEAttribute(tableEClass, TABLE__CELSIUS_TO_KELVIN);
 		createEAttribute(tableEClass, TABLE__SHEET_NAMES);
 		createEAttribute(tableEClass, TABLE__COL_NAMES);
-		createEAttribute(tableEClass, TABLE__TAG_NAMES);
 		createEAttribute(tableEClass, TABLE__TO_CPP);
 		createEAttribute(tableEClass, TABLE__TO_IDL);
 		createEAttribute(tableEClass, TABLE__TO_IDL_SEQ);
@@ -1535,22 +1510,21 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		// Create data types
 		controlPointDTEDataType = createEDataType(CONTROL_POINT_DT);
+		arrayListEDataType = createEDataType(ARRAY_LIST);
+		hashtableEDataType = createEDataType(HASHTABLE);
 		monitorPointDTEDataType = createEDataType(MONITOR_POINT_DT);
 		archivePropertyDTEDataType = createEDataType(ARCHIVE_PROPERTY_DT);
 		simpleErrorHandlerDTEDataType = createEDataType(SIMPLE_ERROR_HANDLER_DT);
 		mandCAMBDTEDataType = createEDataType(MAND_CAMBDT);
 		mandCBaseDTEDataType = createEDataType(MAND_CBASE_DT);
 		mainBaseDTEDataType = createEDataType(MAIN_BASE_DT);
-		iteratorDTEDataType = createEDataType(ITERATOR_DT);
-		arrayListEDataType = createEDataType(ARRAY_LIST);
-		hashtableEDataType = createEDataType(HASHTABLE);
 		runtimeExceptionDTEDataType = createEDataType(RUNTIME_EXCEPTION_DT);
 		errorHandlerDTEDataType = createEDataType(ERROR_HANDLER_DT);
 		saxParseExceptionDTEDataType = createEDataType(SAX_PARSE_EXCEPTION_DT);
 		eStringArray3EDataType = createEDataType(ESTRING_ARRAY3);
 		eStringArray2EDataType = createEDataType(ESTRING_ARRAY2);
-		eStringArrayEDataType = createEDataType(ESTRING_ARRAY);
 		mandCETHDTEDataType = createEDataType(MAND_CETHDT);
+		eStringArrayEDataType = createEDataType(ESTRING_ARRAY);
 	}
 
 	/**
@@ -1624,6 +1598,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		EOperation op = addEOperation(archivePropertyEClass, null, "setArchiveProperty", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(controlPointEClass, ControlPoint.class, "ControlPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1638,6 +1613,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		op = addEOperation(controlPointEClass, null, "setControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeviceModel_DescriptionIndex(), ecorePackage.getEInt(), "DescriptionIndex", "1", 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1708,6 +1685,10 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		addEOperation(deviceModelEClass, null, "setDeviceModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(deviceModelEClass, null, "setDeviceModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(mainBaseEClass, MainBase.class, "MainBase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMainBase_Row(), this.getEStringArray(), "row", null, 0, 1, MainBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMainBase_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MainBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1735,6 +1716,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		op = addEOperation(mainBaseEClass, null, "setMainBase", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mandCBaseEClass, MandCBase.class, "MandCBase", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMandCBase_SpreadsheetName(), ecorePackage.getEString(), "spreadsheetName", "Not needed", 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1816,6 +1799,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		op = addEOperation(mandCBaseEClass, null, "setMandCBase", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(monitorPointEClass, MonitorPoint.class, "MonitorPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1860,6 +1845,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		op = addEOperation(monitorPointEClass, null, "setMonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNote_Note(), ecorePackage.getEString(), "note", "", 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1933,7 +1920,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		initEClass(spreadsheetValidatorEClass, SpreadsheetValidator.class, "SpreadsheetValidator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSpreadsheetValidator_Seh(), this.getSimpleErrorHandlerDT(), "seh", null, 0, 1, SpreadsheetValidator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSpreadsheetValidator_ErrorList(), this.getArrayList(), "errorList", null, 0, 1, SpreadsheetValidator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpreadsheetValidator_ErrorList(), this.getArrayList(), "errorList", null, 0, 1, SpreadsheetValidator.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpreadsheetValidator_SehTmp(), this.getErrorHandlerDT(), "sehTmp", null, 0, 1, SpreadsheetValidator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(spreadsheetValidatorEClass, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1947,7 +1934,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEAttribute(getTable_CelsiusToKelvin(), ecorePackage.getEString(), "CelsiusToKelvin", "CelsiusToKelvin", 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_SheetNames(), this.getArrayList(), "sheetNames", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_ColNames(), this.getArrayList(), "colNames", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTable_TagNames(), this.getArrayList(), "tagNames", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_ToCPP(), this.getHashtable(), "toCPP", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_ToIDL(), this.getHashtable(), "toIDL", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTable_ToIDLSeq(), this.getHashtable(), "toIDLSeq", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2070,22 +2056,21 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		// Initialize data types
 		initEDataType(controlPointDTEDataType, ControlPoint.class, "ControlPointDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(arrayListEDataType, ArrayList.class, "ArrayList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(hashtableEDataType, Hashtable.class, "Hashtable", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(monitorPointDTEDataType, MonitorPoint.class, "MonitorPointDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(archivePropertyDTEDataType, ArchiveProperty.class, "ArchivePropertyDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(simpleErrorHandlerDTEDataType, SimpleErrorHandler.class, "SimpleErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mandCAMBDTEDataType, MandC.class, "MandCAMBDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mandCBaseDTEDataType, MandCBase.class, "MandCBaseDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mainBaseDTEDataType, MainBase.class, "MainBaseDT", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(iteratorDTEDataType, Iterator.class, "IteratorDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(arrayListEDataType, ArrayList.class, "ArrayList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(hashtableEDataType, Hashtable.class, "Hashtable", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(runtimeExceptionDTEDataType, RuntimeException.class, "RuntimeExceptionDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(errorHandlerDTEDataType, ErrorHandler.class, "ErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(saxParseExceptionDTEDataType, SAXParseException.class, "SAXParseExceptionDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(eStringArray3EDataType, String[][][].class, "EStringArray3", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(eStringArray2EDataType, String[][].class, "EStringArray2", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(eStringArrayEDataType, String[].class, "EStringArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mandCETHDTEDataType, alma.control.datamodel.meta.eth.MandC.class, "MandCETHDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eStringArrayEDataType, String[].class, "EStringArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

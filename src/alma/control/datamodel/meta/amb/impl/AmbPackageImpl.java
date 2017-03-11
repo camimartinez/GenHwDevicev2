@@ -204,8 +204,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getControl_Mac() {
-		return (EAttribute)controlEClass.getEStructuralFeatures().get(0);
+	public EReference getControl_Mac() {
+		return (EReference)controlEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -491,7 +491,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		archiveEClass = createEClass(ARCHIVE);
 
 		controlEClass = createEClass(CONTROL);
-		createEAttribute(controlEClass, CONTROL__MAC);
+		createEReference(controlEClass, CONTROL__MAC);
 
 		deviceModelEClass = createEClass(DEVICE_MODEL);
 
@@ -578,7 +578,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(controlEClass, Control.class, "Control", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getControl_Mac(), theBasePackage.getMandCAMBDT(), "mac", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControl_Mac(), this.getMandC(), null, "mac", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(controlEClass, ecorePackage.getEString(), "Data", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -713,6 +713,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		op = addEOperation(controlEClass, null, "setControlAmb", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -767,6 +769,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		op = addEOperation(mainEClass, null, "setMainAmb", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mandCEClass, MandC.class, "MandC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMandC_Row(), theBasePackage.getEStringArray(), "row", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -884,6 +888,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "sheet", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getMandCBase(), "mcp", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(monitorEClass, Monitor.class, "Monitor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMonitor_Mac(), this.getMandC(), null, "mac", null, 0, 1, Monitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1003,6 +1009,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		op = addEOperation(monitorEClass, null, "setMonitorAmb", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(swModuleEClass, SWModule.class, "SWModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSWModule_AssemblyName(), ecorePackage.getEString(), "AssemblyName", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

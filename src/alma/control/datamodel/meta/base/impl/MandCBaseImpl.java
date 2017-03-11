@@ -478,15 +478,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		}
 
 	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void addDependent(EObject son) {
-		dependents.getContents().add(son);
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -852,15 +843,18 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public void setMandCBase(final String[] row, Object parent) {
+	public void setMandCBase(final String[] row, final Object parent, final Table tables, final Util utils) {
+				this.tables = tables;
+				this.utils = utils;
 				this.row = row;
 				this.parent = parent;
-				ResourceSet dependt = new ResourceSetImpl();  
-				dependents = dependt.createResource(URI.createURI(""));
-				sheet = (this instanceof Monitor) ? getTables().getSheetNum("Monitor Point") : getTables().getSheetNum("Control Point");
+				ResourceSet resourceSetDependents = new ResourceSetImpl();
+				dependents = resourceSetDependents.createResource(URI.createURI(""));
+				sheet = (this instanceof Monitor) ? tables.getSheetNum("Monitor Point") : tables.getSheetNum("Control Point");
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->

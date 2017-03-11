@@ -2,15 +2,21 @@ package alma.control.datamodel.meta.base.impl;
 
 
 
+import java.io.IOException;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -20,6 +26,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
@@ -854,8 +863,22 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public ArchiveProperty getArchiveProperties(String name) {
 		// Get the Archive Properties
-		Resource arch = container.createResource(URI.createURI(""));
-		int archiveIndex = getMain().getTables().getSheetNum("Archive Property");
+		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
+		String extension = "xmi";
+		String tmp = deviceDir.concat("/").concat(extension).concat("/");
+		mm.put(extension, new XMIResourceFactoryImpl());
+
+		Map<String, Boolean> options = new HashMap<String, Boolean>();
+		options.put(XMLResource.OPTION_SAVE_ONLY_IF_CHANGED, Boolean.TRUE);
+
+		String xmiArchive = tmp.concat("archive.").concat(extension);
+
+		Resource arch = container.createResource(URI.createURI(xmiArchive));
+
+		//printAttributeValues(tables);
+
+		int archiveIndex = tables.getSheetNum("Archive Property");
 		//System.out.println("archiveIndex is: "+archiveIndex+"");
 		for(int i = 2; i < spreadsheet[archiveIndex].length; i++){
 			if(spreadsheet[archiveIndex][i].length == 0)
@@ -863,19 +886,45 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			ArchiveProperty ap;
 			String[] row = spreadsheet[archiveIndex][i];
 			ap = BaseFactory.eINSTANCE.createArchiveProperty();
-			ap.setTables(getMain().getTables());
 
-			ap.setArchiveProperty(row);			//contener en resource!!!!
+
+			ap.setArchiveProperty(row, tables);			//contener en resource!!!!
 			if(name.equals(ap.RefersTo())){
 				arch.getContents().add(ap);
 				//aProperties.add(ap);
+				try{
+					arch.save(options);
+				}catch(IOException e){
+					e.printStackTrace();
+				}
 				return ap;
 			}
 		}
 		return null;
 
 	}
-	
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	//Print the values of the class, to test the objects
+	public static void printAttributeValues(EObject object) {
+		EClass eClass = object.eClass();
+		System.out.println(eClass.getName());
+		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
+			EAttribute attribute = (EAttribute)iter.next();
+			Object value = object.eGet(attribute);
+
+			System.out.print("  " + attribute.getName() + " : ");
+			if (object.eIsSet(attribute))
+				System.out.println(value);
+			else
+				System.out.println(value + " (default)");
+		}
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1116,14 +1165,14 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	 public ControlPoint getControlPoint(String fullName) {
-	        for (int i = 0; i < controlPoints.getContents().size(); i++) {
-	            ControlPoint cp = (ControlPoint) controlPoints.getContents().get(i);
-	            if (cp.FullName().equals(fullName))
-	                return cp;
-	        }
-	        return null;
-	    }
+	public ControlPoint getControlPoint(String fullName) {
+		for (int i = 0; i < controlPoints.getContents().size(); i++) {
+			ControlPoint cp = (ControlPoint) controlPoints.getContents().get(i);
+			if (cp.FullName().equals(fullName))
+				return cp;
+		}
+		return null;
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1335,6 +1384,16 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDeviceModel(final Table tables, final Util utils) {
+		this.tables = tables;
+		this.utils = utils;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
 	public Resource getArchive(String name) {
@@ -1355,7 +1414,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			if(name.equals(ap.RefersTo())){
 				//mandC.setArchive(value)
 				return ap.eResource();
-		}
+			}
 		}
 		return null;
 	}

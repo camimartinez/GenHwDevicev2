@@ -295,10 +295,10 @@ public interface ArchiveProperty extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = tables.getSheetNum(\"Archive Property\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.row = row;\nthis.sheet = tables.getSheetNum(\"Archive Property\");'"
 	 * @generated
 	 */
-	void setArchiveProperty(String[] row);
+	void setArchiveProperty(String[] row, Table tables);
 
 	/**
 	 * <!-- begin-user-doc -->

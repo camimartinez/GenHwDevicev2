@@ -24,6 +24,7 @@ package alma.control.datamodel.meta.base;
 
 import java.util.ArrayList;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import org.xml.sax.ErrorHandler;
@@ -84,7 +85,7 @@ public interface SpreadsheetValidator extends EObject {
 	 * @return the value of the '<em>Error List</em>' attribute.
 	 * @see #setErrorList(ArrayList)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getSpreadsheetValidator_ErrorList()
-	 * @model dataType="alma.control.datamodel.meta.base.ArrayList"
+	 * @model dataType="alma.control.datamodel.meta.base.ArrayList" transient="true"
 	 * @generated
 	 */
 	ArrayList getErrorList();

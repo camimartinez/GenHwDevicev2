@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.EFactory;
+import org.xml.sax.ErrorHandler;
 
 /**
  * <!-- begin-user-doc -->

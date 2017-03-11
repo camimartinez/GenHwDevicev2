@@ -24,8 +24,10 @@ package alma.control.datamodel.meta.base;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
-
 import java.util.List;
+import java.util.Map;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -41,7 +43,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.base.Table#getCelsiusToKelvin <em>Celsius To Kelvin</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Table#getSheetNames <em>Sheet Names</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Table#getColNames <em>Col Names</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.Table#getTagNames <em>Tag Names</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Table#getToCPP <em>To CPP</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Table#getToIDL <em>To IDL</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.Table#getToIDLSeq <em>To IDL Seq</em>}</li>
@@ -174,32 +175,6 @@ public interface Table extends EObject {
 	 * @generated
 	 */
 	void setColNames(ArrayList value);
-
-	/**
-	 * Returns the value of the '<em><b>Tag Names</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tag Names</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tag Names</em>' attribute.
-	 * @see #setTagNames(ArrayList)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_TagNames()
-	 * @model dataType="alma.control.datamodel.meta.base.ArrayList"
-	 * @generated
-	 */
-	ArrayList getTagNames();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.Table#getTagNames <em>Tag Names</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tag Names</em>' attribute.
-	 * @see #getTagNames()
-	 * @generated
-	 */
-	void setTagNames(ArrayList value);
 
 	/**
 	 * Returns the value of the '<em><b>To CPP</b></em>' attribute.

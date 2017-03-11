@@ -22,27 +22,35 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.amb.MandC;
-
-import alma.control.datamodel.meta.base.*;
-
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.Iterator;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.emf.ecore.resource.Resource;
-
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
+
+import alma.control.datamodel.meta.amb.MandC;
+import alma.control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.base.ArchiveProperty;
+import alma.control.datamodel.meta.base.BaseFactory;
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.ControlPoint;
+import alma.control.datamodel.meta.base.MainBase;
+import alma.control.datamodel.meta.base.MandCBase;
+import alma.control.datamodel.meta.base.MonitorPoint;
+import alma.control.datamodel.meta.base.Note;
+import alma.control.datamodel.meta.base.SimpleErrorHandler;
+import alma.control.datamodel.meta.base.SpreadsheetParser;
+import alma.control.datamodel.meta.base.SpreadsheetValidator;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -111,6 +119,10 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 		switch (eDataType.getClassifierID()) {
 			case BasePackage.CONTROL_POINT_DT:
 				return createControlPointDTFromString(eDataType, initialValue);
+			case BasePackage.ARRAY_LIST:
+				return createArrayListFromString(eDataType, initialValue);
+			case BasePackage.HASHTABLE:
+				return createHashtableFromString(eDataType, initialValue);
 			case BasePackage.MONITOR_POINT_DT:
 				return createMonitorPointDTFromString(eDataType, initialValue);
 			case BasePackage.ARCHIVE_PROPERTY_DT:
@@ -121,12 +133,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createMandCAMBDTFromString(eDataType, initialValue);
 			case BasePackage.MAND_CBASE_DT:
 				return createMandCBaseDTFromString(eDataType, initialValue);
-			case BasePackage.ITERATOR_DT:
-				return createIteratorDTFromString(eDataType, initialValue);
-			case BasePackage.ARRAY_LIST:
-				return createArrayListFromString(eDataType, initialValue);
-			case BasePackage.HASHTABLE:
-				return createHashtableFromString(eDataType, initialValue);
 			case BasePackage.RUNTIME_EXCEPTION_DT:
 				return createRuntimeExceptionDTFromString(eDataType, initialValue);
 			case BasePackage.ERROR_HANDLER_DT:
@@ -137,10 +143,10 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createEStringArray3FromString(eDataType, initialValue);
 			case BasePackage.ESTRING_ARRAY2:
 				return createEStringArray2FromString(eDataType, initialValue);
-			case BasePackage.ESTRING_ARRAY:
-				return createEStringArrayFromString(eDataType, initialValue);
 			case BasePackage.MAND_CETHDT:
 				return createMandCETHDTFromString(eDataType, initialValue);
+			case BasePackage.ESTRING_ARRAY:
+				return createEStringArrayFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -156,6 +162,10 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 		switch (eDataType.getClassifierID()) {
 			case BasePackage.CONTROL_POINT_DT:
 				return convertControlPointDTToString(eDataType, instanceValue);
+			case BasePackage.ARRAY_LIST:
+				return convertArrayListToString(eDataType, instanceValue);
+			case BasePackage.HASHTABLE:
+				return convertHashtableToString(eDataType, instanceValue);
 			case BasePackage.MONITOR_POINT_DT:
 				return convertMonitorPointDTToString(eDataType, instanceValue);
 			case BasePackage.ARCHIVE_PROPERTY_DT:
@@ -166,12 +176,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertMandCAMBDTToString(eDataType, instanceValue);
 			case BasePackage.MAND_CBASE_DT:
 				return convertMandCBaseDTToString(eDataType, instanceValue);
-			case BasePackage.ITERATOR_DT:
-				return convertIteratorDTToString(eDataType, instanceValue);
-			case BasePackage.ARRAY_LIST:
-				return convertArrayListToString(eDataType, instanceValue);
-			case BasePackage.HASHTABLE:
-				return convertHashtableToString(eDataType, instanceValue);
 			case BasePackage.RUNTIME_EXCEPTION_DT:
 				return convertRuntimeExceptionDTToString(eDataType, instanceValue);
 			case BasePackage.ERROR_HANDLER_DT:
@@ -182,10 +186,10 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertEStringArray3ToString(eDataType, instanceValue);
 			case BasePackage.ESTRING_ARRAY2:
 				return convertEStringArray2ToString(eDataType, instanceValue);
-			case BasePackage.ESTRING_ARRAY:
-				return convertEStringArrayToString(eDataType, instanceValue);
 			case BasePackage.MAND_CETHDT:
 				return convertMandCETHDTToString(eDataType, instanceValue);
+			case BasePackage.ESTRING_ARRAY:
+				return convertEStringArrayToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -292,6 +296,70 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public ArrayList createArrayListFromString(EDataType eDataType, String initialValue) {
+		ArrayList list = new ArrayList();
+		for (int i =0 ; i< initialValue.length() ; i++){
+			list.add(initialValue.split("@"));
+		}
+		return list;
+		
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public String convertArrayListToString(EDataType eDataType, Object instanceValue) {
+		ArrayList arrayList = (ArrayList)instanceValue;
+		StringBuilder sb = new StringBuilder();
+		for(int i =0 ; i< arrayList.size() ; i++){
+			sb.append(arrayList);
+			if(i < arrayList.size()-1){
+				sb.append("@");
+			}
+		}
+	
+		return sb.toString();
+		
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public Hashtable createHashtableFromString(EDataType eDataType, String initialValue) {
+		Hashtable ht = new Hashtable();
+		for(int i=0 ; i<initialValue.length() ; i++){
+			String[] s = initialValue.split("@");
+			ht.put(s[i], s[i+1]);
+			
+		}
+		return ht;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public String convertHashtableToString(EDataType eDataType, Object instanceValue) {
+		String sep = "@";
+		StringBuilder sb = new StringBuilder();
+		Hashtable has = (Hashtable)instanceValue;
+		Set<String> keys = has.keySet();
+		for(String key : keys){
+			sb.append(key+has.get(key)+sep);
+		}
+		return sb.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public MonitorPoint createMonitorPointDTFromString(EDataType eDataType, String initialValue) {
@@ -376,60 +444,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertMandCBaseDTToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Iterator createIteratorDTFromString(EDataType eDataType, String initialValue) {
-		return (Iterator)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertIteratorDTToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ArrayList createArrayListFromString(EDataType eDataType, String initialValue) {
-		return (ArrayList)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertArrayListToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hashtable createHashtableFromString(EDataType eDataType, String initialValue) {
-		return (Hashtable)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertHashtableToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
@@ -526,19 +540,27 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
 	public String[] createEStringArrayFromString(EDataType eDataType, String initialValue) {
-		return (String[])super.createFromString(initialValue);
+		return initialValue.split("@");
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
 	public String convertEStringArrayToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(instanceValue);
+		String[] array = (String[])instanceValue;
+		StringBuilder sb = new StringBuilder();
+		for(int i=0 ; i< array.length ; i++){
+			sb.append(array[i]);
+			if(i < array.length-1){
+				sb.append("@");
+			}
+		}
+		return sb.toString();
 	}
 
 	/**

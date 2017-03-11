@@ -985,7 +985,9 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMandCAmb(final String[] row, final int sheet, final MandCBase mcp) {
+	public void setMandCAmb(final String[] row, final int sheet, final MandCBase mcp, final Table tables, final Util utils) {
+		this.tables = tables;
+		this.utils = utils;
 		this.row = row;
 		this.sheet = sheet;
 		this.mcp = mcp;

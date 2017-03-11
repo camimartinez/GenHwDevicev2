@@ -368,9 +368,11 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMainBase(final String[] row) {
-		this.row = row;
-				this.sheet = tables.getSheetNum("Hardware Device");
+	public void setMainBase(final String[] row, final Table tables, final Util utils) {
+		this.tables = tables;
+				this.utils = utils;
+				this.row = row;
+						this.sheet = tables.getSheetNum("Hardware Device");
 	}
 
 	/**

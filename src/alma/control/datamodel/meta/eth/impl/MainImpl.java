@@ -62,27 +62,10 @@ public class MainImpl extends MainBaseImpl implements Main {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	private Object getObjectByInstanceClass(){
-		Object object = EcoreUtil.getObjectByType(eAdapters, BasePackage.Literals.TABLE);
-		if(object instanceof Table){
-			return object;
-		}else{
-			System.out.println("The is no Object for instance Table in: eth/MainImpl");
-			return "The is no Object for instance Table in: eth/MainImpl";
-		}
-	}
-
-	Table table = (Table)getObjectByInstanceClass();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String VendorClass() {
-		return row[table.getColNum(sheet, "Vendor Class")];
+		return row[tables.getColNum(sheet, "Vendor Class")];
 	}
 
 	/**
@@ -91,7 +74,7 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * @generated
 	 */
 	public void setMainEth(final String[] row) {
-		setMainBase(row);
+		//setMainBase(row);
 	}
 
 } //MainImpl

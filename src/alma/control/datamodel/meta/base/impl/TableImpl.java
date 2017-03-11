@@ -22,33 +22,22 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.base.ArchiveProperty;
-import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.DeviceModel;
-import alma.control.datamodel.meta.base.MainBase;
-import alma.control.datamodel.meta.base.Table;
-
+import java.awt.List;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.Iterator;
-
-import java.util.List;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.Table;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,7 +51,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getCelsiusToKelvin <em>Celsius To Kelvin</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getSheetNames <em>Sheet Names</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getColNames <em>Col Names</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getTagNames <em>Tag Names</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getToCPP <em>To CPP</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getToIDL <em>To IDL</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.TableImpl#getToIDLSeq <em>To IDL Seq</em>}</li>
@@ -167,26 +155,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * @ordered
 	 */
 	protected ArrayList colNames = COL_NAMES_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTagNames() <em>Tag Names</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTagNames()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ArrayList TAG_NAMES_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTagNames() <em>Tag Names</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTagNames()
-	 * @generated
-	 * @ordered
-	 */
-	protected ArrayList tagNames = TAG_NAMES_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getToCPP() <em>To CPP</em>}' attribute.
@@ -649,6 +617,8 @@ public class TableImpl extends EObjectImpl implements Table {
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.TABLE__CELSIUS_TO_KELVIN, oldCelsiusToKelvin, celsiusToKelvin));
 	}
 
+
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -675,6 +645,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public ArrayList getColNames() {
 		return colNames;
 	}
@@ -696,27 +667,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArrayList getTagNames() {
-		return tagNames;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTagNames(ArrayList newTagNames) {
-		ArrayList oldTagNames = tagNames;
-		tagNames = newTagNames;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.TABLE__TAG_NAMES, oldTagNames, tagNames));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getToCPP() {
 		return toCPP;
 	}
@@ -738,6 +689,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getToIDL() {
 		return toIDL;
 	}
@@ -759,6 +711,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getToIDLSeq() {
 		return toIDLSeq;
 	}
@@ -780,6 +733,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getToCORBA() {
 		return toCORBA;
 	}
@@ -801,6 +755,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getToCORBASeq() {
 		return toCORBASeq;
 	}
@@ -822,6 +777,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getToCORBADevIO() {
 		return toCORBADevIO;
 	}
@@ -843,6 +799,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getToBACI() {
 		return toBACI;
 	}
@@ -864,6 +821,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getToDatabase() {
 		return toDatabase;
 	}
@@ -885,6 +843,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getRawToCPP() {
 		return rawToCPP;
 	}
@@ -906,6 +865,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getRawToByteSwapped() {
 		return rawToByteSwapped;
 	}
@@ -927,6 +887,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getRawBytes() {
 		return rawBytes;
 	}
@@ -948,6 +909,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToCPP() {
 		return worldToCPP;
 	}
@@ -969,6 +931,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToIDL() {
 		return worldToIDL;
 	}
@@ -990,6 +953,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToIDLSeq() {
 		return worldToIDLSeq;
 	}
@@ -1011,6 +975,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToCORBA() {
 		return worldToCORBA;
 	}
@@ -1032,6 +997,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToCORBASeq() {
 		return worldToCORBASeq;
 	}
@@ -1053,6 +1019,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToCORBADevIO() {
 		return worldToCORBADevIO;
 	}
@@ -1074,6 +1041,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToBACI() {
 		return worldToBACI;
 	}
@@ -1095,6 +1063,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToJava() {
 		return worldToJava;
 	}
@@ -1116,6 +1085,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToDatabase() {
 		return worldToDatabase;
 	}
@@ -1131,7 +1101,7 @@ public class TableImpl extends EObjectImpl implements Table {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.TABLE__WORLD_TO_DATABASE, oldWorldToDatabase, worldToDatabase));
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1496,8 +1466,6 @@ public class TableImpl extends EObjectImpl implements Table {
 				return getSheetNames();
 			case BasePackage.TABLE__COL_NAMES:
 				return getColNames();
-			case BasePackage.TABLE__TAG_NAMES:
-				return getTagNames();
 			case BasePackage.TABLE__TO_CPP:
 				return getToCPP();
 			case BasePackage.TABLE__TO_IDL:
@@ -1562,9 +1530,6 @@ public class TableImpl extends EObjectImpl implements Table {
 				return;
 			case BasePackage.TABLE__COL_NAMES:
 				setColNames((ArrayList)newValue);
-				return;
-			case BasePackage.TABLE__TAG_NAMES:
-				setTagNames((ArrayList)newValue);
 				return;
 			case BasePackage.TABLE__TO_CPP:
 				setToCPP((Hashtable)newValue);
@@ -1650,9 +1615,6 @@ public class TableImpl extends EObjectImpl implements Table {
 			case BasePackage.TABLE__COL_NAMES:
 				setColNames(COL_NAMES_EDEFAULT);
 				return;
-			case BasePackage.TABLE__TAG_NAMES:
-				setTagNames(TAG_NAMES_EDEFAULT);
-				return;
 			case BasePackage.TABLE__TO_CPP:
 				setToCPP(TO_CPP_EDEFAULT);
 				return;
@@ -1733,8 +1695,6 @@ public class TableImpl extends EObjectImpl implements Table {
 				return SHEET_NAMES_EDEFAULT == null ? sheetNames != null : !SHEET_NAMES_EDEFAULT.equals(sheetNames);
 			case BasePackage.TABLE__COL_NAMES:
 				return COL_NAMES_EDEFAULT == null ? colNames != null : !COL_NAMES_EDEFAULT.equals(colNames);
-			case BasePackage.TABLE__TAG_NAMES:
-				return TAG_NAMES_EDEFAULT == null ? tagNames != null : !TAG_NAMES_EDEFAULT.equals(tagNames);
 			case BasePackage.TABLE__TO_CPP:
 				return TO_CPP_EDEFAULT == null ? toCPP != null : !TO_CPP_EDEFAULT.equals(toCPP);
 			case BasePackage.TABLE__TO_IDL:
@@ -1797,8 +1757,6 @@ public class TableImpl extends EObjectImpl implements Table {
 		result.append(sheetNames);
 		result.append(", colNames: ");
 		result.append(colNames);
-		result.append(", tagNames: ");
-		result.append(tagNames);
 		result.append(", toCPP: ");
 		result.append(toCPP);
 		result.append(", toIDL: ");

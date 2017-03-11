@@ -24,7 +24,7 @@
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control">
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/mac"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/mac"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/Data"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/Value"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/Returns"/>
@@ -93,6 +93,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb/parent"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb/tables"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb/utils"/>
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel">
@@ -129,6 +131,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Main/GenericMonitorPoints"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Main/setMainAmb">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Main/setMainAmb/row"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Main/setMainAmb/tables"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Main/setMainAmb/utils"/>
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC">
@@ -198,6 +202,8 @@
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/setMandCAmb/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/setMandCAmb/sheet"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/setMandCAmb/mcp"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/setMandCAmb/tables"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/setMandCAmb/utils"/>
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor">
@@ -261,6 +267,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/parent"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/tables"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/utils"/>
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule">
@@ -312,22 +320,21 @@
           <nestedGenPackages prefix="Base" basePackage="alma.control.datamodel.meta"
               disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//control/datamodel/meta/base">
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPointDT"/>
+            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/ArrayList"/>
+            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/Hashtable"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPointDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchivePropertyDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/SimpleErrorHandlerDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCAMBDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBaseDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBaseDT"/>
-            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/IteratorDT"/>
-            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/ArrayList"/>
-            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/Hashtable"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/RuntimeExceptionDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/ErrorHandlerDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/SAXParseExceptionDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/EStringArray3"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/EStringArray2"/>
-            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/EStringArray"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCETHDT"/>
+            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/EStringArray"/>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/row"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/sheet"/>
@@ -351,6 +358,7 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/Title"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/setArchiveProperty">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/setArchiveProperty/row"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/setArchiveProperty/tables"/>
               </genOperations>
             </genClasses>
             <genClasses image="false" ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint">
@@ -361,6 +369,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/setControlPoint">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/setControlPoint/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/setControlPoint/parent"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/setControlPoint/tables"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/setControlPoint/utils"/>
               </genOperations>
             </genClasses>
             <genClasses image="false" ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel">
@@ -423,6 +433,10 @@
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/checkIfCvsignoreFileExists/directory"/>
               </genOperations>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/setDeviceModel"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/setDeviceModel.1">
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/setDeviceModel.1/tables"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/setDeviceModel.1/utils"/>
+              </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/row"/>
@@ -444,6 +458,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/ICDDateAsArrayTime"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/setMainBase">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/setMainBase/row"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/setMainBase/tables"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBase/setMainBase/utils"/>
               </genOperations>
             </genClasses>
             <genClasses image="false" ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase">
@@ -502,6 +518,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/setMandCBase">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/setMandCBase/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/setMandCBase/parent"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/setMandCBase/tables"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/setMandCBase/utils"/>
               </genOperations>
             </genClasses>
             <genClasses image="false" ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint">
@@ -527,6 +545,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/setMonitorPoint">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/setMonitorPoint/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/setMonitorPoint/parent"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/setMonitorPoint/tables"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/setMonitorPoint/utils"/>
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/Note">
@@ -610,7 +630,6 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/Table/CelsiusToKelvin"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/Table/sheetNames"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/Table/colNames"/>
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/Table/tagNames"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/Table/toCPP"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/Table/toIDL"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/Table/toIDLSeq"/>

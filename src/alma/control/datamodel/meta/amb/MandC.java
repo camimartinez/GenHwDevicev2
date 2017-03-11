@@ -627,9 +627,9 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = sheet;\nthis.mcp = mcp;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nthis.row = row;\nthis.sheet = sheet;\nthis.mcp = mcp;'"
 	 * @generated
 	 */
-	void setMandCAmb(String[] row, int sheet, MandCBase mcp);
+	void setMandCAmb(String[] row, int sheet, MandCBase mcp, Table tables, Util utils);
 
 } // MandC
