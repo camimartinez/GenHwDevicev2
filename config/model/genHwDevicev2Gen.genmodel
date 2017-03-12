@@ -21,6 +21,7 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/Interval"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/setArchiveAmb">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/setArchiveAmb/row"/>
+                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/setArchiveAmb/tables"/>
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control">
@@ -325,16 +326,15 @@
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPointDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchivePropertyDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/SimpleErrorHandlerDT"/>
-            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCAMBDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBaseDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MainBaseDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/RuntimeExceptionDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/ErrorHandlerDT"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/SAXParseExceptionDT"/>
+            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/EStringArray"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/EStringArray3"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/EStringArray2"/>
             <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCETHDT"/>
-            <genDataTypes ecoreDataType="genHwDevicev2.ecore#//control/datamodel/meta/base/EStringArray"/>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/row"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/sheet"/>

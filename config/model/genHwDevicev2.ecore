@@ -24,9 +24,10 @@
             </eOperations>
             <eOperations name="setArchiveAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setArchiveProperty(row);"/>
+                <details key="body" value="this.tables = tables;&#xA;setArchiveProperty(row, tables);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
+              <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
             </eOperations>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//control/datamodel/meta/base/ControlPoint">

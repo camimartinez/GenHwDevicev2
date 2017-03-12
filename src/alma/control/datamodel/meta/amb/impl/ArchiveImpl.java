@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Archive;
+import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.impl.ArchivePropertyImpl;
 
 /**
@@ -93,8 +94,9 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setArchiveAmb(final String[] row) {
-	//	setArchiveProperty(row);
+	public void setArchiveAmb(final String[] row, final Table tables) {
+		this.tables = tables;
+		setArchiveProperty(row, tables);
 	}
 
 } //ArchiveImpl

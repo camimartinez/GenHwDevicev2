@@ -144,14 +144,14 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public boolean isEnumAddress() {
-		try {
-			Integer.decode(mac.Address());
-		}
-		catch(Exception e) {
-			return true;
-		}
-
-		return false;
+				try {
+					Integer.decode(mac.Address());
+				}
+				catch(Exception e) {
+					return true;
+				}
+		
+				return false;
 	}
 
 	/**
@@ -268,16 +268,16 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public boolean isArchived() {
-
-		if (DataType().equals("uint"))
-			return false;
-
-		if ( DataType().equals("bool") || DataType().equals("boolean")
-				|| DataType().equals("string")
-				|| (DataType().equals("double") && isDataArray())
-				|| (DataType().equals("int") && isDataArray()) )
-			return false;
-		return true;
+		
+				if (DataType().equals("uint"))
+					return false;
+			
+				if ( DataType().equals("bool") || DataType().equals("boolean")
+						|| DataType().equals("string")
+						|| (DataType().equals("double") && isDataArray())
+						|| (DataType().equals("int") && isDataArray()) )
+					return false;
+				return true;
 	}
 
 	/**
@@ -307,9 +307,9 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public void setMonitorEth(final String[] row, final Object parent) {
-		setMonitorEth(row, parent);
-		mac = new MandCImpl();
-		mac.setMandCEth(row, sheet);
+			setMonitorEth(row, parent);
+				mac = new MandCImpl();
+				mac.setMandCEth(row, sheet);
 	}
 
 	/**
@@ -330,8 +330,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case EthPackage.MONITOR__MAC:
-			return getMac();
+			case EthPackage.MONITOR__MAC:
+				return getMac();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -344,9 +344,9 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case EthPackage.MONITOR__MAC:
-			setMac((MandC)newValue);
-			return;
+			case EthPackage.MONITOR__MAC:
+				setMac((MandC)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -359,9 +359,9 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case EthPackage.MONITOR__MAC:
-			setMac(MAC_EDEFAULT);
-			return;
+			case EthPackage.MONITOR__MAC:
+				setMac(MAC_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -374,8 +374,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case EthPackage.MONITOR__MAC:
-			return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
+			case EthPackage.MONITOR__MAC:
+				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -129,8 +129,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createArchivePropertyDTFromString(eDataType, initialValue);
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return createSimpleErrorHandlerDTFromString(eDataType, initialValue);
-			case BasePackage.MAND_CAMBDT:
-				return createMandCAMBDTFromString(eDataType, initialValue);
 			case BasePackage.MAND_CBASE_DT:
 				return createMandCBaseDTFromString(eDataType, initialValue);
 			case BasePackage.RUNTIME_EXCEPTION_DT:
@@ -139,14 +137,14 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createErrorHandlerDTFromString(eDataType, initialValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
 				return createSAXParseExceptionDTFromString(eDataType, initialValue);
+			case BasePackage.ESTRING_ARRAY:
+				return createEStringArrayFromString(eDataType, initialValue);
 			case BasePackage.ESTRING_ARRAY3:
 				return createEStringArray3FromString(eDataType, initialValue);
 			case BasePackage.ESTRING_ARRAY2:
 				return createEStringArray2FromString(eDataType, initialValue);
 			case BasePackage.MAND_CETHDT:
 				return createMandCETHDTFromString(eDataType, initialValue);
-			case BasePackage.ESTRING_ARRAY:
-				return createEStringArrayFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -172,8 +170,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertArchivePropertyDTToString(eDataType, instanceValue);
 			case BasePackage.SIMPLE_ERROR_HANDLER_DT:
 				return convertSimpleErrorHandlerDTToString(eDataType, instanceValue);
-			case BasePackage.MAND_CAMBDT:
-				return convertMandCAMBDTToString(eDataType, instanceValue);
 			case BasePackage.MAND_CBASE_DT:
 				return convertMandCBaseDTToString(eDataType, instanceValue);
 			case BasePackage.RUNTIME_EXCEPTION_DT:
@@ -182,14 +178,14 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertErrorHandlerDTToString(eDataType, instanceValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
 				return convertSAXParseExceptionDTToString(eDataType, instanceValue);
+			case BasePackage.ESTRING_ARRAY:
+				return convertEStringArrayToString(eDataType, instanceValue);
 			case BasePackage.ESTRING_ARRAY3:
 				return convertEStringArray3ToString(eDataType, instanceValue);
 			case BasePackage.ESTRING_ARRAY2:
 				return convertEStringArray2ToString(eDataType, instanceValue);
 			case BasePackage.MAND_CETHDT:
 				return convertMandCETHDTToString(eDataType, instanceValue);
-			case BasePackage.ESTRING_ARRAY:
-				return convertEStringArrayToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -408,24 +404,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertSimpleErrorHandlerDTToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandC createMandCAMBDTFromString(EDataType eDataType, String initialValue) {
-		return (MandC)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertMandCAMBDTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

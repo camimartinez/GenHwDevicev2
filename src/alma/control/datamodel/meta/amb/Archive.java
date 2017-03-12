@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.amb;
 
 import alma.control.datamodel.meta.base.ArchiveProperty;
+import alma.control.datamodel.meta.base.Table;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,9 +65,9 @@ public interface Archive extends ArchiveProperty {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='setArchiveProperty(row);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nsetArchiveProperty(row, tables);'"
 	 * @generated
 	 */
-	void setArchiveAmb(String[] row);
+	void setArchiveAmb(String[] row, Table tables);
 
 } // Archive

@@ -684,9 +684,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 				String dir = setParameters();
 				ResourceSet mandC = new ResourceSetImpl();
 				Resource res = mandC.createResource(URI.createURI(dir));
-				res.getContents().add(mac);
-				
-				
+				res.getContents().add(mac);		
 	}
 
 	public static String setParameters(){

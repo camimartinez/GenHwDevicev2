@@ -218,13 +218,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType mandCAMBDTEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EDataType mandCBaseDTEDataType = null;
 
 	/**
@@ -1284,15 +1277,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getMandCAMBDT() {
-		return mandCAMBDTEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EDataType getMandCBaseDT() {
 		return mandCBaseDTEDataType;
 	}
@@ -1515,16 +1499,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		monitorPointDTEDataType = createEDataType(MONITOR_POINT_DT);
 		archivePropertyDTEDataType = createEDataType(ARCHIVE_PROPERTY_DT);
 		simpleErrorHandlerDTEDataType = createEDataType(SIMPLE_ERROR_HANDLER_DT);
-		mandCAMBDTEDataType = createEDataType(MAND_CAMBDT);
 		mandCBaseDTEDataType = createEDataType(MAND_CBASE_DT);
 		mainBaseDTEDataType = createEDataType(MAIN_BASE_DT);
 		runtimeExceptionDTEDataType = createEDataType(RUNTIME_EXCEPTION_DT);
 		errorHandlerDTEDataType = createEDataType(ERROR_HANDLER_DT);
 		saxParseExceptionDTEDataType = createEDataType(SAX_PARSE_EXCEPTION_DT);
+		eStringArrayEDataType = createEDataType(ESTRING_ARRAY);
 		eStringArray3EDataType = createEDataType(ESTRING_ARRAY3);
 		eStringArray2EDataType = createEDataType(ESTRING_ARRAY2);
 		mandCETHDTEDataType = createEDataType(MAND_CETHDT);
-		eStringArrayEDataType = createEDataType(ESTRING_ARRAY);
 	}
 
 	/**
@@ -2061,16 +2044,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEDataType(monitorPointDTEDataType, MonitorPoint.class, "MonitorPointDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(archivePropertyDTEDataType, ArchiveProperty.class, "ArchivePropertyDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(simpleErrorHandlerDTEDataType, SimpleErrorHandler.class, "SimpleErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(mandCAMBDTEDataType, MandC.class, "MandCAMBDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mandCBaseDTEDataType, MandCBase.class, "MandCBaseDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mainBaseDTEDataType, MainBase.class, "MainBaseDT", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(runtimeExceptionDTEDataType, RuntimeException.class, "RuntimeExceptionDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(errorHandlerDTEDataType, ErrorHandler.class, "ErrorHandlerDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(saxParseExceptionDTEDataType, SAXParseException.class, "SAXParseExceptionDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eStringArrayEDataType, String[].class, "EStringArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(eStringArray3EDataType, String[][][].class, "EStringArray3", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(eStringArray2EDataType, String[][].class, "EStringArray2", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mandCETHDTEDataType, alma.control.datamodel.meta.eth.MandC.class, "MandCETHDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(eStringArrayEDataType, String[].class, "EStringArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

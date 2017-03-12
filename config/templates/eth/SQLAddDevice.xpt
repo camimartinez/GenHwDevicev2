@@ -26,8 +26,8 @@ MA 02111-1307  USA
 «IMPORT org::eclipse::emf::ecore::EClass»
 «IMPORT org::eclipse::emf::ecore::InternalEObject»
 «IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
-«IMPORT alma::Control::datamodel::meta::base::impl»
-«IMPORT alma::Control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base::impl»
+«IMPORT alma::control::datamodel::meta::eth::impl»
 
 «DEFINE Root FOR DeviceModelImpl»
 «FILE Assembly+"/idl/"+Assembly+"Add.sql"»

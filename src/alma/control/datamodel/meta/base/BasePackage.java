@@ -1393,16 +1393,6 @@ public interface BasePackage extends EPackage {
 	int SIMPLE_ERROR_HANDLER_DT = 19;
 
 	/**
-	 * The meta object id for the '<em>Mand CAMBDT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.amb.MandC
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCAMBDT()
-	 * @generated
-	 */
-	int MAND_CAMBDT = 20;
-
-	/**
 	 * The meta object id for the '<em>Mand CBase DT</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1410,7 +1400,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCBaseDT()
 	 * @generated
 	 */
-	int MAND_CBASE_DT = 21;
+	int MAND_CBASE_DT = 20;
 
 	/**
 	 * The meta object id for the '<em>Main Base DT</em>' data type.
@@ -1420,7 +1410,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBaseDT()
 	 * @generated
 	 */
-	int MAIN_BASE_DT = 22;
+	int MAIN_BASE_DT = 21;
 
 	/**
 	 * The meta object id for the '<em>Runtime Exception DT</em>' data type.
@@ -1430,7 +1420,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getRuntimeExceptionDT()
 	 * @generated
 	 */
-	int RUNTIME_EXCEPTION_DT = 23;
+	int RUNTIME_EXCEPTION_DT = 22;
 
 	/**
 	 * The meta object id for the '<em>Error Handler DT</em>' data type.
@@ -1440,7 +1430,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerDT()
 	 * @generated
 	 */
-	int ERROR_HANDLER_DT = 24;
+	int ERROR_HANDLER_DT = 23;
 
 	/**
 	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
@@ -1450,7 +1440,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION_DT = 25;
+	int SAX_PARSE_EXCEPTION_DT = 24;
 
 	/**
 	 * The meta object id for the '<em>EString Array3</em>' data type.
@@ -1477,7 +1467,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray()
 	 * @generated
 	 */
-	int ESTRING_ARRAY = 29;
+	int ESTRING_ARRAY = 25;
 
 	/**
 	 * The meta object id for the '<em>Mand CETHDT</em>' data type.
@@ -2611,17 +2601,6 @@ public interface BasePackage extends EPackage {
 	EDataType getSimpleErrorHandlerDT();
 
 	/**
-	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.amb.MandC <em>Mand CAMBDT</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Mand CAMBDT</em>'.
-	 * @see alma.control.datamodel.meta.amb.MandC
-	 * @model instanceClass="alma.control.datamodel.meta.amb.MandC"
-	 * @generated
-	 */
-	EDataType getMandCAMBDT();
-
-	/**
 	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.base.MandCBase <em>Mand CBase DT</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3602,16 +3581,6 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType SIMPLE_ERROR_HANDLER_DT = eINSTANCE.getSimpleErrorHandlerDT();
-
-		/**
-		 * The meta object literal for the '<em>Mand CAMBDT</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.amb.MandC
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCAMBDT()
-		 * @generated
-		 */
-		EDataType MAND_CAMBDT = eINSTANCE.getMandCAMBDT();
 
 		/**
 		 * The meta object literal for the '<em>Mand CBase DT</em>' data type.

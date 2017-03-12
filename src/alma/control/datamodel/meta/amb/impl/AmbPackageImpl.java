@@ -576,6 +576,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		EOperation op = addEOperation(archiveEClass, null, "setArchiveAmb", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(controlEClass, Control.class, "Control", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControl_Mac(), this.getMandC(), null, "mac", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

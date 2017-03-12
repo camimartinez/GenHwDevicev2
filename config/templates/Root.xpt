@@ -1,4 +1,4 @@
-Â«REMÂ»
+«REM»
 
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
@@ -20,88 +20,88 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
 
-Â«ENDREMÂ»
+«ENDREM»
 
-Â«IMPORT org::eclipse::emf::common::notify::NotificationÂ»
-Â«IMPORT org::eclipse::emf::ecore::EClassÂ»
-Â«IMPORT org::eclipse::emf::ecore::InternalEObjectÂ»
-Â«IMPORT org::eclipse::emf::ecore::impl::ENotificationImplÂ»
-Â«IMPORT alma::Control::datamodel::meta::base::implÂ»
+«IMPORT org::eclipse::emf::common::notify::Notification»
+«IMPORT org::eclipse::emf::ecore::EClass»
+«IMPORT org::eclipse::emf::ecore::InternalEObject»
+«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
+«IMPORT alma::control::datamodel::meta::base::impl»
 
-Â«REMÂ»
+«REM»
     === The Following is the Definition for the ETH Devices. ===
-Â«ENDREMÂ»
-Â«DEFINE Root FOR alma::Control::datamodel::meta::eth::impl::DeviceModelImplÂ»
-Â«CheckConstraintsÂ»
-Â«EXPAND eth::CVSIgnore::RootÂ»
-Â«EXPAND eth::CDBSchema::RootÂ»
-Â«EXPAND eth::CDBComponent::RootÂ»
-Â«EXPAND eth::CDBInstance::RootÂ»
-Â«EXPAND eth::BaseIDL::RootÂ»
-Â«EXPAND eth::BaseDotH::RootÂ»
-Â«EXPAND eth::BaseDotCPP::RootÂ»
-Â«EXPAND eth::CCLBaseDotPY::RootÂ»
-Â«EXPAND eth::SQLAddDevice::RootÂ»
-Â«EXPAND eth::XMLAddDevice::RootÂ»
-Â«REMÂ»
-Â«EXPAND eth::Sim::EthSimBaseDotH::RootÂ»
-Â«EXPAND eth::Sim::EthSimBaseDotCPP::RootÂ»
-Â«EXPAND eth::Sim::CompSimIDL::RootÂ»
-Â«EXPAND eth::Sim::CompSimDotH::RootÂ»
-Â«EXPAND eth::Sim::CompSimDotCPP::RootÂ»
-Â«ENDREMÂ»
-Â«TheEndÂ»
-Â«ENDDEFINEÂ»
+«ENDREM»
+«DEFINE Root FOR alma::control::datamodel::meta::eth::impl::DeviceModelImpl»
+«CheckConstraints»
+«EXPAND eth::CVSIgnore::Root»
+«EXPAND eth::CDBSchema::Root»
+«EXPAND eth::CDBComponent::Root»
+«EXPAND eth::CDBInstance::Root»
+«EXPAND eth::BaseIDL::Root»
+«EXPAND eth::BaseDotH::Root»
+«EXPAND eth::BaseDotCPP::Root»
+«EXPAND eth::CCLBaseDotPY::Root»
+«EXPAND eth::SQLAddDevice::Root»
+«EXPAND eth::XMLAddDevice::Root»
+«REM»
+«EXPAND eth::Sim::EthSimBaseDotH::Root»
+«EXPAND eth::Sim::EthSimBaseDotCPP::Root»
+«EXPAND eth::Sim::CompSimIDL::Root»
+«EXPAND eth::Sim::CompSimDotH::Root»
+«EXPAND eth::Sim::CompSimDotCPP::Root»
+«ENDREM»
+«TheEnd»
+«ENDDEFINE»
 
-Â«REMÂ»
+«REM»
     === The Following is the Definition for the AMB Devices. ===
-Â«ENDREMÂ»
-Â«DEFINE Root FOR alma::Control::datamodel::meta::amb::impl::DeviceModelImplÂ»
-Â«CheckConstraintsï¿½
-Â«EXPAND amb::CVSIgnore::RootÂ»
-Â«EXPAND amb::HTML::RootÂ»
-Â«EXPAND amb::CDBSchema::RootÂ»
-Â«EXPAND amb::CDBComponent::RootÂ»
-Â«EXPAND amb::CDBInstance::RootÂ»
-Â«EXPAND amb::BaseIDL::RootÂ»
-Â«EXPAND amb::BaseDotH::RootÂ»
-Â«EXPAND amb::BaseDotCPP::RootÂ»
-Â«EXPAND amb::HWSim::HWSimBaseDotH::RootÂ»
-Â«EXPAND amb::HWSim::HWSimBaseDotCPP::RootÂ»
-Â«EXPAND amb::HWSim::CompSimBaseIDL::RootÂ»
-Â«EXPAND amb::HWSim::CompSimBaseDotH::RootÂ»
-Â«EXPAND amb::HWSim::CompSimBaseDotCPP::RootÂ»
-Â«IF !checkIfDeviceFileExists("include", "HWSimImpl.h")Â»
-    Â«EXPAND amb::HWSim::HWSimImplDotH::RootÂ»
-Â«ENDIFï¿½
-Â«IF !checkIfDeviceFileExists("src", "HWSimImpl.cpp")Â»
-    Â«EXPAND amb::HWSim::HWSimImplDotCPP::RootÂ»
-Â«ENDIFï¿½
-Â«IF !checkIfDeviceFileExists("include", "CompSimImpl.h")Â»
-    Â«EXPAND amb::HWSim::CompSimImplDotH::RootÂ»
-Â«ENDIFï¿½
-Â«IF !checkIfDeviceFileExists("src", "CompSimImpl.cpp")Â»
-    Â«EXPAND amb::HWSim::CompSimImplDotCPP::RootÂ»
-Â«ENDIFï¿½
-Â«IF !checkIfTestFileExists("test", "HWSimImpl.cpp")Â»
-Â«EXPAND amb::HWSim::TestHWSimImpl::RootÂ»
-Â«ENDIFï¿½
-Â«IF !checkIfTestFileExists("test", "AmbDeviceInt.cpp")Â»
-Â«EXPAND amb::HWSim::TestAmbDeviceInt::RootÂ»
-Â«ENDIFï¿½
-Â«EXPAND amb::SQLAddDevice::RootÂ»
-Â«EXPAND amb::XMLAddDevice::RootÂ»
-Â«EXPAND amb::CCLBaseDotPY::RootÂ»
-Â«EXPAND amb::ALT::RootÂ»
-Â«EXPAND amb::DeviceDefDotPY::RootÂ»
-Â«EXPAND amb::MonitorPoints::RootÂ»
-Â«EXPAND amb::ControlPoints::RootÂ»
-Â«REMÂ»
+«ENDREM»
+«DEFINE Root FOR alma::control::datamodel::meta::amb::impl::DeviceModelImpl»
+«CheckConstraints»
+«EXPAND amb::CVSIgnore::Root»
+«EXPAND amb::HTML::Root»
+«EXPAND amb::CDBSchema::Root»
+«EXPAND amb::CDBComponent::Root»
+«EXPAND amb::CDBInstance::Root»
+«EXPAND amb::BaseIDL::Root»
+«EXPAND amb::BaseDotH::Root»
+«EXPAND amb::BaseDotCPP::Root»
+«EXPAND amb::HWSim::HWSimBaseDotH::Root»
+«EXPAND amb::HWSim::HWSimBaseDotCPP::Root»
+«EXPAND amb::HWSim::CompSimBaseIDL::Root»
+«EXPAND amb::HWSim::CompSimBaseDotH::Root»
+«EXPAND amb::HWSim::CompSimBaseDotCPP::Root»
+«IF !checkIfDeviceFileExists("include", "HWSimImpl.h")»
+    «EXPAND amb::HWSim::HWSimImplDotH::Root»
+«ENDIF»
+«IF !checkIfDeviceFileExists("src", "HWSimImpl.cpp")»
+    «EXPAND amb::HWSim::HWSimImplDotCPP::Root»
+«ENDIF»
+«IF !checkIfDeviceFileExists("include", "CompSimImpl.h")»
+    «EXPAND amb::HWSim::CompSimImplDotH::Root»
+«ENDIF»
+«IF !checkIfDeviceFileExists("src", "CompSimImpl.cpp")»
+    «EXPAND amb::HWSim::CompSimImplDotCPP::Root»
+«ENDIF»
+«IF !checkIfTestFileExists("test", "HWSimImpl.cpp")»
+«EXPAND amb::HWSim::TestHWSimImpl::Root»
+«ENDIF»
+«IF !checkIfTestFileExists("test", "AmbDeviceInt.cpp")»
+«EXPAND amb::HWSim::TestAmbDeviceInt::Root»
+«ENDIF»
+«EXPAND amb::SQLAddDevice::Root»
+«EXPAND amb::XMLAddDevice::Root»
+«EXPAND amb::CCLBaseDotPY::Root»
+«EXPAND amb::ALT::Root»
+«EXPAND amb::DeviceDefDotPY::Root»
+«EXPAND amb::MonitorPoints::Root»
+«EXPAND amb::ControlPoints::Root»
+«REM»
     === The following support GUI code generation. ===
-Â«ENDREMÂ»
-Â«EXPAND amb::GUIControlPointPMDotJava::RootÂ»
-Â«EXPAND amb::GUIIcdControlPointsDotJava::RootÂ»
-Â«EXPAND amb::GUIIcdMonitorPointsDotJava::RootÂ»
-Â«EXPAND amb::GUIMonitorPointPMDotJava::RootÂ»
-Â«TheEndÂ»
-Â«ENDDEFINEÂ»
+«ENDREM»
+«EXPAND amb::GUIControlPointPMDotJava::Root»
+«EXPAND amb::GUIIcdControlPointsDotJava::Root»
+«EXPAND amb::GUIIcdMonitorPointsDotJava::Root»
+«EXPAND amb::GUIMonitorPointPMDotJava::Root»
+«TheEnd»
+«ENDDEFINE»

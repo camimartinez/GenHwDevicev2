@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
+import alma.control.datamodel.meta.amb.Archive;
 import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.DeviceModel;
 import alma.control.datamodel.meta.amb.GenericMonitorPoints;
@@ -49,6 +50,7 @@ import alma.control.datamodel.meta.amb.Monitor;
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Note;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
@@ -279,10 +281,8 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		String xmiMain = tmp.concat("main.").concat(extension);		
 		Main mainAmb = ambFactory.createMain();
 		mainAmb.setMainAmb(spreadsheet[mainIndex][2],table,util);
-
 		Resource resourceMain = container.createResource(URI.createURI(xmiMain));
 		resourceMain.getContents().add(mainAmb);
-
 		try{
 			resourceMain.save(options);
 		}catch(IOException e){
@@ -309,22 +309,18 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			}	
 			setDeviceModel(table,util);
 			mp.setArchive(getArchiveProperties(mp.FullName()));		
-			monitorPoints.getContents().add(mp);			
-			
+			monitorPoints.getContents().add(mp);				
 			try{
 				monitorPoints.save(options);
 			}catch(IOException e){
 				e.printStackTrace();
-			}
-			
+			}		
 		}
-	
 		
 		// Define undefined dependent monitor points for sequence properties
 		List<EObject> listMP = monitorPoints.getContents();
 		MonitorImpl[] arrayMP = listMP.toArray( new MonitorImpl[0]);
-		System.out.println("size of array is: "+arrayMP.length+"");
-
+		//System.out.println("size of array is: "+arrayMP.length+"");
 		for (Monitor mp : arrayMP) {
 			if (mp.isWorldDataArray() && !mp.hasDependents())
 				for (i=0; i < Integer.parseInt(mp.NumberItemsWorldData()); i++) {
@@ -360,11 +356,9 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 					}catch(IOException e){
 						e.printStackTrace();
 					}
-
 				}
-		}
-	
-		/*
+		}	
+		
 		// Get the control points
 		Control cparent = null;
 		String xmiControlPoints = tmp.concat("controlPoints.").concat(extension);
@@ -382,61 +376,39 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 				cp = ambFactory.createControl();
 				cp.setControlAmb(row, cparent, table, util);
 				cparent.addDependent(cp);
-			}	
-			
+			}				
 			cp.setArchive(getArchiveProperties(cp.FullName()));
 			controlPoints.getContents().add(cp);
-			//try{
-			//	controlResource.save(Collections.EMPTY_MAP);
-			//}catch(IOException e){
-			//	e.printStackTrace();
-			//}
+			try{
+				controlPoints.save(options);
+			}catch(IOException e){
+				e.printStackTrace();
+			}
 		}
 
-
 		//Get the Archive Properties
-		archiveProperties = new ResourceSetImpl();	
 		String xmiArchiveProperties = tmp.concat("archiveproperties.").concat(extension);
-		Resource archivePropResource = archiveProperties.createResource(URI.createURI(xmiArchiveProperties));
-
+		archiveProperties = container.createResource(URI.createURI(xmiArchiveProperties));
 		for(i = 2; i < spreadsheet[archiveIndex].length; i++) {
 			if(spreadsheet[archiveIndex][i].length == 0)
 				break;
 			Archive ap;
 			String[] row = spreadsheet[archiveIndex][i];
 			ap = ambFactory.createArchive();
-			Resource apResouce = archiveProperties.createResource(URI.createURI(xmiArchiveProperties));
-			ap.setDevices(this);
-			ap.setInitializeAImpl(row);
-			apResouce.getContents().add(ap);
-
+			ap.setArchiveAmb(row, table);
 			MonitorPoint mp = getMonitorPoint(ap.RefersTo());
-
-			Resource mpRes = archiveProperties.createResource(URI.createURI(xmiArchiveProperties));
-			mpRes.getContents().add(mp);
-			if (mp != null){
-				ap.setMP(mp.eResource());
-				apResouce.getContents().add(ap);
-			}else{
-				ControlPoint cp = getControlPoint(ap.RefersTo());
-				Resource cpRes = archiveProperties.createResource(URI.createURI(xmiArchiveProperties));
-				if (cp != null){
-					ap.setCP(cp.eResource());
-					cpRes.getContents().add(cp);
-				}
-
+			if (mp != null)
+				ap.setMP(mp);			
+			ControlPoint cp = getControlPoint(ap.RefersTo());
+			if (cp != null)
+				ap.setCP(cp);
+			archiveProperties.getContents().add(ap);
+			try{
+				archiveProperties.save(options);
+			}catch(IOException e){
+				e.printStackTrace();
 			}
-
-			archivePropResource.getContents().add(ap);
-
-			//try{
-			//	archivePropResource.save(Collections.EMPTY_MAP);
-			//}catch(IOException e){
-			//	e.printStackTrace();
-			//}
-		}
-
-		 */
+		}	
 		System.out.println("DeviceModel: Initialization complete.");
 		return "";
 	}

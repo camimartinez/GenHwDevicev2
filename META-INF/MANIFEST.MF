@@ -28,7 +28,9 @@ Export-Package: alma.control.datamodel.meta.amb,
  alma.control.datamodel.meta.eth.impl,
  alma.control.datamodel.meta.eth.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ com.ibm.icu;bundle-version="4.4.2",
+ com.ibm.icu.source;bundle-version="4.4.2"
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

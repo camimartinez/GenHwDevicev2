@@ -27,11 +27,14 @@ import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import alma.control.datamodel.meta.amb.AmbPackage;
@@ -937,14 +940,18 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
 	public void setControlAmb(final String[] row, final Object parent, final Table tables, final Util utils) {
 		this.tables = tables;
-				this.utils = utils;
-				setControlPoint(row, parent, tables, utils);
-				mac = new MandCImpl();
-				mac.setMandCAmb(row, sheet, this, tables, utils);
+		this.utils = utils;
+		setControlPoint(row, parent, tables, utils);
+		mac = new MandCImpl();
+		mac.setMandCAmb(row, sheet, this, tables, utils);
+		String dir = setParameters();
+		ResourceSet mandC = new ResourceSetImpl();
+		Resource res = mandC.createResource(URI.createURI(dir));
+		res.getContents().add(mac);
 	}
 
 	public static String setParameters(){
@@ -955,10 +962,10 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		mm.put(extension, new XMIResourceFactoryImpl());
 
 		String xmiArchive = tmp.concat("archiveControl.").concat(extension);
-		
+
 		return xmiArchive;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1022,7 +1029,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	@Override
 	public void addDependent(Object son) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 } //ControlImpl
