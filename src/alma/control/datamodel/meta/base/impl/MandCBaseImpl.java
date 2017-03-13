@@ -22,7 +22,6 @@ package alma.control.datamodel.meta.base.impl;
  * 
  */
 
-
 import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -59,9 +58,9 @@ import alma.control.datamodel.meta.base.Util;
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getParentRow <em>Parent Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getResourceSetDependent <em>Resource Set Dependent</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getDependents <em>Dependents</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getResourceSetDependents <em>Resource Set Dependents</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getTables <em>Tables</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getUtils <em>Utils</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MandCBaseImpl#getArchive <em>Archive</em>}</li>
@@ -171,26 +170,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	protected int sheet = SHEET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getResourceSetDependent() <em>Resource Set Dependent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceSetDependent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ResourceSet RESOURCE_SET_DEPENDENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getResourceSetDependent() <em>Resource Set Dependent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceSetDependent()
-	 * @generated
-	 * @ordered
-	 */
-	protected ResourceSet resourceSetDependent = RESOURCE_SET_DEPENDENT_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getParent() <em>Parent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,6 +208,26 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @ordered
 	 */
 	protected Resource dependents = DEPENDENTS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getResourceSetDependents() <em>Resource Set Dependents</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResourceSetDependents()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ResourceSet RESOURCE_SET_DEPENDENTS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getResourceSetDependents() <em>Resource Set Dependents</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResourceSetDependents()
+	 * @generated
+	 * @ordered
+	 */
+	protected ResourceSet resourceSetDependents = RESOURCE_SET_DEPENDENTS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
@@ -389,27 +388,6 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceSet getResourceSetDependent() {
-		return resourceSetDependent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResourceSetDependent(ResourceSet newResourceSetDependent) {
-		ResourceSet oldResourceSetDependent = resourceSetDependent;
-		resourceSetDependent = newResourceSetDependent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT, oldResourceSetDependent, resourceSetDependent));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Object getParent() {
 		return parent;
 	}
@@ -458,14 +436,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @!generated
 	 */
 	public void setArchive(ArchiveProperty newArchive) {
-
-		//ResourceSet archiveRes = getDevices().getArchiveProperties();
 		this.archive = newArchive;
-		//int index = archiveRes.getContents().size();
-		//System.out.println("tamaño de resources "+index+"");
-		//Resource res = archiveResourceSet.getContents().get(0);
-		//Resource archA = archiveResourceSet.createResource(URI.createURI(""));
-
 		try {
 			if (archive != null){
 				if(this instanceof MonitorPoint)	
@@ -478,9 +449,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		}
 
 	}
-
 	
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -500,6 +469,27 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		dependents = newDependents;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__DEPENDENTS, oldDependents, dependents));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceSet getResourceSetDependents() {
+		return resourceSetDependents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResourceSetDependents(ResourceSet newResourceSetDependents) {
+		ResourceSet oldResourceSetDependents = resourceSetDependents;
+		resourceSetDependents = newResourceSetDependents;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENTS, oldResourceSetDependents, resourceSetDependents));
 	}
 
 	/**
@@ -848,13 +838,13 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 	 * @generated
 	 */
 	public void setMandCBase(final String[] row, final Object parent, final Table tables, final Util utils) {
-				this.tables = tables;
-				this.utils = utils;
-				this.row = row;
-				this.parent = parent;
-				ResourceSet resourceSetDependents = new ResourceSetImpl();
-				dependents = resourceSetDependents.createResource(URI.createURI(""));
-				sheet = (this instanceof Monitor) ? tables.getSheetNum("Monitor Point") : tables.getSheetNum("Control Point");
+		this.tables = tables;
+		this.utils = utils;
+		this.row = row;
+		this.parent = parent;
+		resourceSetDependents = new ResourceSetImpl();
+		dependents = resourceSetDependents.createResource(URI.createURI(""));
+		sheet = (this instanceof Monitor) ? tables.getSheetNum("Monitor Point") : tables.getSheetNum("Control Point");
 	}
 
 
@@ -897,12 +887,12 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				return getParentRow();
 			case BasePackage.MAND_CBASE__SHEET:
 				return getSheet();
-			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT:
-				return getResourceSetDependent();
 			case BasePackage.MAND_CBASE__PARENT:
 				return getParent();
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				return getDependents();
+			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENTS:
+				return getResourceSetDependents();
 			case BasePackage.MAND_CBASE__TABLES:
 				if (resolve) return getTables();
 				return basicGetTables();
@@ -939,14 +929,14 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 			case BasePackage.MAND_CBASE__SHEET:
 				setSheet((Integer)newValue);
 				return;
-			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT:
-				setResourceSetDependent((ResourceSet)newValue);
-				return;
 			case BasePackage.MAND_CBASE__PARENT:
 				setParent(newValue);
 				return;
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				setDependents((Resource)newValue);
+				return;
+			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENTS:
+				setResourceSetDependents((ResourceSet)newValue);
 				return;
 			case BasePackage.MAND_CBASE__TABLES:
 				setTables((Table)newValue);
@@ -984,14 +974,14 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 			case BasePackage.MAND_CBASE__SHEET:
 				setSheet(SHEET_EDEFAULT);
 				return;
-			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT:
-				setResourceSetDependent(RESOURCE_SET_DEPENDENT_EDEFAULT);
-				return;
 			case BasePackage.MAND_CBASE__PARENT:
 				setParent(PARENT_EDEFAULT);
 				return;
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				setDependents(DEPENDENTS_EDEFAULT);
+				return;
+			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENTS:
+				setResourceSetDependents(RESOURCE_SET_DEPENDENTS_EDEFAULT);
 				return;
 			case BasePackage.MAND_CBASE__TABLES:
 				setTables((Table)null);
@@ -1024,12 +1014,12 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 				return PARENT_ROW_EDEFAULT == null ? parentRow != null : !PARENT_ROW_EDEFAULT.equals(parentRow);
 			case BasePackage.MAND_CBASE__SHEET:
 				return sheet != SHEET_EDEFAULT;
-			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENT:
-				return RESOURCE_SET_DEPENDENT_EDEFAULT == null ? resourceSetDependent != null : !RESOURCE_SET_DEPENDENT_EDEFAULT.equals(resourceSetDependent);
 			case BasePackage.MAND_CBASE__PARENT:
 				return PARENT_EDEFAULT == null ? parent != null : !PARENT_EDEFAULT.equals(parent);
 			case BasePackage.MAND_CBASE__DEPENDENTS:
 				return DEPENDENTS_EDEFAULT == null ? dependents != null : !DEPENDENTS_EDEFAULT.equals(dependents);
+			case BasePackage.MAND_CBASE__RESOURCE_SET_DEPENDENTS:
+				return RESOURCE_SET_DEPENDENTS_EDEFAULT == null ? resourceSetDependents != null : !RESOURCE_SET_DEPENDENTS_EDEFAULT.equals(resourceSetDependents);
 			case BasePackage.MAND_CBASE__TABLES:
 				return tables != null;
 			case BasePackage.MAND_CBASE__UTILS:
@@ -1060,12 +1050,12 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		result.append(parentRow);
 		result.append(", sheet: ");
 		result.append(sheet);
-		result.append(", resourceSetDependent: ");
-		result.append(resourceSetDependent);
 		result.append(", parent: ");
 		result.append(parent);
 		result.append(", dependents: ");
 		result.append(dependents);
+		result.append(", resourceSetDependents: ");
+		result.append(resourceSetDependents);
 		result.append(')');
 		return result.toString();
 	}

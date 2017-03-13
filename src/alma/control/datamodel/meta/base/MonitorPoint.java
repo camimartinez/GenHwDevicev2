@@ -23,18 +23,51 @@
 package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Monitor Point</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link alma.control.datamodel.meta.base.MonitorPoint#getResourceSetMonitor <em>Resource Set Monitor</em>}</li>
+ * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint()
  * @model abstract="true"
  * @generated
  */
 public interface MonitorPoint extends MandCBase {
+	/**
+	 * Returns the value of the '<em><b>Resource Set Monitor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Resource Set Monitor</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Resource Set Monitor</em>' attribute.
+	 * @see #setResourceSetMonitor(ResourceSet)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint_ResourceSetMonitor()
+	 * @model transient="true"
+	 * @generated
+	 */
+	ResourceSet getResourceSetMonitor();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MonitorPoint#getResourceSetMonitor <em>Resource Set Monitor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Resource Set Monitor</em>' attribute.
+	 * @see #getResourceSetMonitor()
+	 * @generated
+	 */
+	void setResourceSetMonitor(ResourceSet value);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

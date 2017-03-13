@@ -24,6 +24,8 @@ package alma.control.datamodel.meta.eth;
 
 import alma.control.datamodel.meta.base.MonitorPoint;
 
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -44,26 +46,26 @@ import org.eclipse.emf.ecore.resource.Resource;
  */
 public interface Monitor extends MonitorPoint {
 	/**
-	 * Returns the value of the '<em><b>Mac</b></em>' attribute.
+	 * Returns the value of the '<em><b>Mac</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mac</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mac</em>' attribute.
+	 * @return the value of the '<em>Mac</em>' reference.
 	 * @see #setMac(MandC)
 	 * @see alma.control.datamodel.meta.eth.EthPackage#getMonitor_Mac()
-	 * @model dataType="alma.control.datamodel.meta.base.MandCETHDT"
+	 * @model
 	 * @generated
 	 */
 	MandC getMac();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.Monitor#getMac <em>Mac</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.Monitor#getMac <em>Mac</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mac</em>' attribute.
+	 * @param value the new value of the '<em>Mac</em>' reference.
 	 * @see #getMac()
 	 * @generated
 	 */
@@ -241,9 +243,9 @@ public interface Monitor extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\tsetMonitorEth(row, parent);\n\t\tmac = new MandCImpl();\n\t\tmac.setMandCEth(row, sheet);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMonitorPoint(row, parent,tables,utils);\nmac = new MandCImpl();\nmac.setMandCEth(row, sheet, tables, utils);\nString dir = setParameters(dirDevice);\nresourceSetMonitor = new ResourceSetImpl();\nResource res = resourceSetMonitor.createResource(URI.createURI(dir));\nres.getContents().add(mac);\t'"
 	 * @generated
 	 */
-	void setMonitorEth(String[] row, Object parent);
+	void setMonitorEth(String[] row, Object parent, Table tables, Util utils, String dirDevice);
 
 } // Monitor

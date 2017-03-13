@@ -423,7 +423,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				System.out.println(value + " (default)");
 		}
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

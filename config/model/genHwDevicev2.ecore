@@ -358,12 +358,13 @@
             </eOperations>
             <eOperations name="setControlAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="this.tables = tables;&#xA;&#x9;&#x9;this.utils = utils;&#xA;&#x9;&#x9;setControlPoint(row, parent, tables, utils);&#xA;&#x9;&#x9;mac = new MandCImpl();&#xA;&#x9;&#x9;mac.setMandCAmb(row, sheet, this, tables, utils);"/>
+                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setControlPoint(row, parent, tables, utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCAmb(row, sheet, this, tables, utils);&#xA;String dir = setParameters(dirDevice);&#xA;resourceSetControl = new ResourceSetImpl();&#xA;Resource res = resourceSetControl.createResource(URI.createURI(dir));&#xA;res.getContents().add(mac);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
               <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
               <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
+              <eParameters name="dirDevice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/amb/MandC"/>
           </eClassifiers>
@@ -758,7 +759,7 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="#//control/datamodel/meta/base/EStringArray"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcp" eType="#//control/datamodel/meta/base/MandCBaseDT"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mcp" eType="#//control/datamodel/meta/base/MandCBase"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="utils" eType="#//control/datamodel/meta/base/Util"/>
           </eClassifiers>
@@ -1045,12 +1046,13 @@
             </eOperations>
             <eOperations name="setMonitorAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;this.tables = tables;&#xA;&#x9;&#x9;this.utils = utils;&#xA;&#x9;&#x9;setMonitorPoint(row, parent,tables,utils);&#xA;&#x9;&#x9;mac = new MandCImpl();&#xA;&#x9;&#x9;mac.setMandCAmb(row, sheet, this, tables, utils);"/>
+                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setMonitorPoint(row, parent,tables,utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCAmb(row, sheet, this, tables, utils);&#xA;String dir = setParameters(dirDevice);&#xA;resourceSetMonitor = new ResourceSetImpl();&#xA;Resource res = resourceSetMonitor.createResource(URI.createURI(dir));&#xA;res.getContents().add(mac);&#x9;&#x9;"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
               <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
               <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
+              <eParameters name="dirDevice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/amb/MandC"/>
           </eClassifiers>
@@ -1303,6 +1305,9 @@
               <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
               <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
             </eOperations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceSetControl"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+                transient="true"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" abstract="true">
             <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1658,7 +1663,7 @@
             <eOperations name="isMonitored" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eOperations name="setMandCBase">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;this.tables = tables;&#xA;&#x9;&#x9;this.utils = utils;&#xA;&#x9;&#x9;this.row = row;&#xA;&#x9;&#x9;this.parent = parent;&#xA;&#x9;&#x9;ResourceSet resourceSetDependents = new ResourceSetImpl();&#xA;&#x9;&#x9;dependents = resourceSetDependents.createResource(URI.createURI(&quot;&quot;));&#xA;&#x9;&#x9;sheet = (this instanceof Monitor) ? tables.getSheetNum(&quot;Monitor Point&quot;) : tables.getSheetNum(&quot;Control Point&quot;);"/>
+                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;this.row = row;&#xA;this.parent = parent;&#xA;resourceSetDependents = new ResourceSetImpl();&#xA;dependents = resourceSetDependents.createResource(URI.createURI(&quot;&quot;));&#xA;sheet = (this instanceof Monitor) ? tables.getSheetNum(&quot;Monitor Point&quot;) : tables.getSheetNum(&quot;Control Point&quot;);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
@@ -1672,12 +1677,12 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentRow" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceSetDependent"
-                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
-                transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+                transient="true"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceSetDependents"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="utils" eType="#//control/datamodel/meta/base/Util"/>
@@ -1773,6 +1778,9 @@
               <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
               <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
             </eOperations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceSetMonitor"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
+                transient="true"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Note">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="note" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -2152,11 +2160,12 @@
         <eSubpackages name="eth" nsURI="http://alma/Control/datamodel/meta/eth/1.0"
             nsPrefix="alma.Control.datamodel.meta.eth">
           <eClassifiers xsi:type="ecore:EClass" name="Archive" eSuperTypes="#//control/datamodel/meta/base/ArchiveProperty">
-            <eOperations name="setInitializeAImpl">
+            <eOperations name="setArchiveEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;&#x9;setArchiveProperty(row);"/>
+                <details key="body" value="this.tables = tables;&#xA;setArchiveProperty(row, tables);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
+              <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
             </eOperations>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//control/datamodel/meta/base/ControlPoint">
@@ -2243,12 +2252,15 @@
             </eOperations>
             <eOperations name="setControlEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setControlPoint(row, parent);&#xA;&#x9;&#x9;mac = new MandCImpl();&#xA;&#x9;&#x9;mac.setMandCEth(row, sheet);"/>
+                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setControlPoint(row, parent, tables, utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCEth(row, sheet, tables, utils);&#xA;String dir = setParameters(dirDevice);&#xA;resourceSetControl = new ResourceSetImpl();&#xA;Resource res = resourceSetControl.createResource(URI.createURI(dir));&#xA;res.getContents().add(mac);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+              <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
+              <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
+              <eParameters name="dirDevice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/base/MandCETHDT"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/eth/MandC"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" eSuperTypes="#//control/datamodel/meta/base/DeviceModel">
             <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -2270,9 +2282,11 @@
             </eOperations>
             <eOperations name="setMainEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="setMainBase(row);"/>
+                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setMainBase(row, tables, utils);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
+              <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
+              <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
             </eOperations>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="MandC">
@@ -2354,14 +2368,19 @@
             </eOperations>
             <eOperations name="setMandCEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="this.row = row;&#xA;this.sheet = sheet;"/>
+                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;this.row = row;&#xA;this.sheet = sheet;"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
+              <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mcp" eType="#//control/datamodel/meta/base/MandCBase"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="utils" eType="#//control/datamodel/meta/base/Util"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Monitor" eSuperTypes="#//control/datamodel/meta/base/MonitorPoint">
             <eOperations name="setAssemblyName">
@@ -2467,12 +2486,15 @@
             </eOperations>
             <eOperations name="setMonitorEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="&#x9;setMonitorEth(row, parent);&#xA;&#x9;&#x9;mac = new MandCImpl();&#xA;&#x9;&#x9;mac.setMandCEth(row, sheet);"/>
+                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setMonitorPoint(row, parent,tables,utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCEth(row, sheet, tables, utils);&#xA;String dir = setParameters(dirDevice);&#xA;resourceSetMonitor = new ResourceSetImpl();&#xA;Resource res = resourceSetMonitor.createResource(URI.createURI(dir));&#xA;res.getContents().add(mac);&#x9;"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+              <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
+              <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
+              <eParameters name="dirDevice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="#//control/datamodel/meta/base/MandCETHDT"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/eth/MandC"/>
           </eClassifiers>
         </eSubpackages>
       </eSubpackages>

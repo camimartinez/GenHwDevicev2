@@ -22,6 +22,10 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
+import java.util.Map;
+
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 import alma.control.datamodel.meta.base.impl.ControlPointImpl;
 
 import alma.control.datamodel.meta.eth.Control;
@@ -29,13 +33,16 @@ import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,24 +59,14 @@ import org.eclipse.emf.ecore.resource.Resource;
  */
 public class ControlImpl extends ControlPointImpl implements Control {
 	/**
-	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
+	 * The cached value of the '{@link #getMac() <em>Mac</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMac()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MandC MAC_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMac() <em>Mac</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMac()
-	 * @generated
-	 * @ordered
-	 */
-	protected MandC mac = MAC_EDEFAULT;
+	protected MandC mac;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,6 +93,23 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * @generated
 	 */
 	public MandC getMac() {
+		if (mac != null && mac.eIsProxy()) {
+			InternalEObject oldMac = (InternalEObject)mac;
+			mac = (MandC)eResolveProxy(oldMac);
+			if (mac != oldMac) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.CONTROL__MAC, oldMac, mac));
+			}
+		}
+		return mac;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandC basicGetMac() {
 		return mac;
 	}
 
@@ -253,7 +267,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		return mac.DataToBACIType();
 	}
 
-	/**
+	/**import alma.control.datamodel.meta.eth.Main;
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -267,12 +282,33 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlEth(final String[] row, final Object parent) {
-		//setControlPoint(row, parent);
-				mac = new MandCImpl();
-				mac.setMandCEth(row, sheet);
+	public void setControlEth(final String[] row, final Object parent, final Table tables, final Util utils, final String dirDevice) {
+		this.tables = tables;
+		this.utils = utils;
+		setControlPoint(row, parent, tables, utils);
+		mac = new MandCImpl();
+		mac.setMandCEth(row, sheet, tables, utils);
+		String dir = setParameters(dirDevice);
+		resourceSetControl = new ResourceSetImpl();
+		Resource res = resourceSetControl.createResource(URI.createURI(dir));
+		res.getContents().add(mac);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public String setParameters(String dirDevice){
+		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
+		String extension = "xmi";
+		String tmp = dirDevice.concat("/").concat(extension).concat("/");
+		mm.put(extension, new XMIResourceFactoryImpl());
+		String xmiArchive = tmp.concat("controlEth.").concat(extension);
+		return xmiArchive;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -282,7 +318,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EthPackage.CONTROL__MAC:
-				return getMac();
+				if (resolve) return getMac();
+				return basicGetMac();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -311,7 +348,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case EthPackage.CONTROL__MAC:
-				setMac(MAC_EDEFAULT);
+				setMac((MandC)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -326,27 +363,10 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case EthPackage.CONTROL__MAC:
-				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
+				return mac != null;
 		}
 		return super.eIsSet(featureID);
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (mac: ");
-		result.append(mac);
-		result.append(')');
-		return result.toString();
-	}
-
 
 	@Override
 	public void addDependent(Object son) {

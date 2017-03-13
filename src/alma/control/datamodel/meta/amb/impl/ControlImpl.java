@@ -940,29 +940,32 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public void setControlAmb(final String[] row, final Object parent, final Table tables, final Util utils) {
+	public void setControlAmb(final String[] row, final Object parent, final Table tables, final Util utils, final String dirDevice) {
 		this.tables = tables;
 		this.utils = utils;
 		setControlPoint(row, parent, tables, utils);
 		mac = new MandCImpl();
 		mac.setMandCAmb(row, sheet, this, tables, utils);
-		String dir = setParameters();
-		ResourceSet mandC = new ResourceSetImpl();
-		Resource res = mandC.createResource(URI.createURI(dir));
+		String dir = setParameters(dirDevice);
+		resourceSetControl = new ResourceSetImpl();
+		Resource res = resourceSetControl.createResource(URI.createURI(dir));
 		res.getContents().add(mac);
 	}
 
-	public static String setParameters(){
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public String setParameters(String dirDevice){
 		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
 		String extension = "xmi";
-		String tmp = "/home/almamgr/alma-src/2014-04-B/CONTROL/Device/HardwareDevice/MOUNT/MountVertexLLama/src/";
+		String tmp = dirDevice.concat("/").concat(extension).concat("/");
 		mm.put(extension, new XMIResourceFactoryImpl());
-
-		String xmiArchive = tmp.concat("archiveControl.").concat(extension);
-
+		String xmiArchive = tmp.concat("controlAmb.").concat(extension);
 		return xmiArchive;
 	}
 

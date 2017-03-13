@@ -61,6 +61,7 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 		
 		if(System.getProperty(deviceTypes).equals(deviceAMB)){
 			deviceType= AmbPackage.eINSTANCE.getAmbFactory().createDeviceModel();
+			deviceType.setDeviceModel();
 		}else if (System.getProperty(deviceTypes).equals(deviceETH)){
 			deviceType = EthPackage.eINSTANCE.getEthFactory().createDeviceModel();
 		}else{ 

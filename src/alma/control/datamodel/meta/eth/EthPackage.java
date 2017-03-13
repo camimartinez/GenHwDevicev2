@@ -27,6 +27,7 @@ import alma.control.datamodel.meta.base.BasePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -196,15 +197,6 @@ public interface EthPackage extends EPackage {
 	int CONTROL__SHEET = BasePackage.CONTROL_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__RESOURCE_SET_DEPENDENT = BasePackage.CONTROL_POINT__RESOURCE_SET_DEPENDENT;
-
-	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,6 +213,15 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__RESOURCE_SET_DEPENDENTS = BasePackage.CONTROL_POINT__RESOURCE_SET_DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -250,7 +251,16 @@ public interface EthPackage extends EPackage {
 	int CONTROL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
 
 	/**
-	 * The feature id for the '<em><b>Mac</b></em>' attribute.
+	 * The feature id for the '<em><b>Resource Set Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__RESOURCE_SET_CONTROL = BasePackage.CONTROL_POINT__RESOURCE_SET_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Mac</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -577,13 +587,40 @@ public interface EthPackage extends EPackage {
 	int MAND_C__ASSEMBLY = 2;
 
 	/**
+	 * The feature id for the '<em><b>Mcp</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_C__MCP = 3;
+
+	/**
+	 * The feature id for the '<em><b>Tables</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_C__TABLES = 4;
+
+	/**
+	 * The feature id for the '<em><b>Utils</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_C__UTILS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Mand C</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_C_FEATURE_COUNT = 3;
+	int MAND_C_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.eth.impl.MonitorImpl <em>Monitor</em>}' class.
@@ -641,15 +678,6 @@ public interface EthPackage extends EPackage {
 	int MONITOR__SHEET = BasePackage.MONITOR_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__RESOURCE_SET_DEPENDENT = BasePackage.MONITOR_POINT__RESOURCE_SET_DEPENDENT;
-
-	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -666,6 +694,15 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__RESOURCE_SET_DEPENDENTS = BasePackage.MONITOR_POINT__RESOURCE_SET_DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -695,7 +732,16 @@ public interface EthPackage extends EPackage {
 	int MONITOR__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
 
 	/**
-	 * The feature id for the '<em><b>Mac</b></em>' attribute.
+	 * The feature id for the '<em><b>Resource Set Monitor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__RESOURCE_SET_MONITOR = BasePackage.MONITOR_POINT__RESOURCE_SET_MONITOR;
+
+	/**
+	 * The feature id for the '<em><b>Mac</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -734,15 +780,15 @@ public interface EthPackage extends EPackage {
 	EClass getControl();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.eth.Control#getMac <em>Mac</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.eth.Control#getMac <em>Mac</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mac</em>'.
+	 * @return the meta object for the reference '<em>Mac</em>'.
 	 * @see alma.control.datamodel.meta.eth.Control#getMac()
 	 * @see #getControl()
 	 * @generated
 	 */
-	EAttribute getControl_Mac();
+	EReference getControl_Mac();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.eth.DeviceModel <em>Device Model</em>}'.
@@ -808,6 +854,39 @@ public interface EthPackage extends EPackage {
 	EAttribute getMandC_Assembly();
 
 	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.eth.MandC#getMcp <em>Mcp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Mcp</em>'.
+	 * @see alma.control.datamodel.meta.eth.MandC#getMcp()
+	 * @see #getMandC()
+	 * @generated
+	 */
+	EReference getMandC_Mcp();
+
+	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.eth.MandC#getTables <em>Tables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tables</em>'.
+	 * @see alma.control.datamodel.meta.eth.MandC#getTables()
+	 * @see #getMandC()
+	 * @generated
+	 */
+	EReference getMandC_Tables();
+
+	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.eth.MandC#getUtils <em>Utils</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Utils</em>'.
+	 * @see alma.control.datamodel.meta.eth.MandC#getUtils()
+	 * @see #getMandC()
+	 * @generated
+	 */
+	EReference getMandC_Utils();
+
+	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.eth.Monitor <em>Monitor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -818,15 +897,15 @@ public interface EthPackage extends EPackage {
 	EClass getMonitor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.eth.Monitor#getMac <em>Mac</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.eth.Monitor#getMac <em>Mac</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mac</em>'.
+	 * @return the meta object for the reference '<em>Mac</em>'.
 	 * @see alma.control.datamodel.meta.eth.Monitor#getMac()
 	 * @see #getMonitor()
 	 * @generated
 	 */
-	EAttribute getMonitor_Mac();
+	EReference getMonitor_Mac();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -871,12 +950,12 @@ public interface EthPackage extends EPackage {
 		EClass CONTROL = eINSTANCE.getControl();
 
 		/**
-		 * The meta object literal for the '<em><b>Mac</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Mac</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTROL__MAC = eINSTANCE.getControl_Mac();
+		EReference CONTROL__MAC = eINSTANCE.getControl_Mac();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.eth.impl.DeviceModelImpl <em>Device Model</em>}' class.
@@ -933,6 +1012,30 @@ public interface EthPackage extends EPackage {
 		EAttribute MAND_C__ASSEMBLY = eINSTANCE.getMandC_Assembly();
 
 		/**
+		 * The meta object literal for the '<em><b>Mcp</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAND_C__MCP = eINSTANCE.getMandC_Mcp();
+
+		/**
+		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAND_C__TABLES = eINSTANCE.getMandC_Tables();
+
+		/**
+		 * The meta object literal for the '<em><b>Utils</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAND_C__UTILS = eINSTANCE.getMandC_Utils();
+
+		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.eth.impl.MonitorImpl <em>Monitor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -943,12 +1046,12 @@ public interface EthPackage extends EPackage {
 		EClass MONITOR = eINSTANCE.getMonitor();
 
 		/**
-		 * The meta object literal for the '<em><b>Mac</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Mac</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MONITOR__MAC = eINSTANCE.getMonitor_Mac();
+		EReference MONITOR__MAC = eINSTANCE.getMonitor_Mac();
 
 	}
 

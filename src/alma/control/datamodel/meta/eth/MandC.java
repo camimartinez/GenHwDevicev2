@@ -22,6 +22,9 @@
  */
 package alma.control.datamodel.meta.eth;
 
+import alma.control.datamodel.meta.base.MandCBase;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -36,6 +39,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getAssembly <em>Assembly</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.MandC#getMcp <em>Mcp</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.MandC#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.MandC#getUtils <em>Utils</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.eth.EthPackage#getMandC()
@@ -120,6 +126,84 @@ public interface MandC extends EObject {
 	 * @generated
 	 */
 	void setAssembly(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Mcp</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mcp</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mcp</em>' reference.
+	 * @see #setMcp(MandCBase)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getMandC_Mcp()
+	 * @model
+	 * @generated
+	 */
+	MandCBase getMcp();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.MandC#getMcp <em>Mcp</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mcp</em>' reference.
+	 * @see #getMcp()
+	 * @generated
+	 */
+	void setMcp(MandCBase value);
+
+	/**
+	 * Returns the value of the '<em><b>Tables</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tables</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tables</em>' reference.
+	 * @see #setTables(Table)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getMandC_Tables()
+	 * @model
+	 * @generated
+	 */
+	Table getTables();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.MandC#getTables <em>Tables</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tables</em>' reference.
+	 * @see #getTables()
+	 * @generated
+	 */
+	void setTables(Table value);
+
+	/**
+	 * Returns the value of the '<em><b>Utils</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Utils</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Utils</em>' reference.
+	 * @see #setUtils(Util)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getMandC_Utils()
+	 * @model
+	 * @generated
+	 */
+	Util getUtils();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.MandC#getUtils <em>Utils</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Utils</em>' reference.
+	 * @see #getUtils()
+	 * @generated
+	 */
+	void setUtils(Util value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,9 +332,9 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = sheet;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nthis.row = row;\nthis.sheet = sheet;'"
 	 * @generated
 	 */
-	void setMandCEth(String[] row, int sheet);
+	void setMandCEth(String[] row, int sheet, Table tables, Util utils);
 
 } // MandC

@@ -41,9 +41,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getParentRow <em>Parent Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependent <em>Resource Set Dependent</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependents <em>Resource Set Dependents</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getUtils <em>Utils</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}</li>
@@ -186,32 +186,6 @@ public interface MandCBase extends EObject {
 	void setSheet(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Resource Set Dependent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resource Set Dependent</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource Set Dependent</em>' attribute.
-	 * @see #setResourceSetDependent(ResourceSet)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_ResourceSetDependent()
-	 * @model transient="true"
-	 * @generated
-	 */
-	ResourceSet getResourceSetDependent();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependent <em>Resource Set Dependent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource Set Dependent</em>' attribute.
-	 * @see #getResourceSetDependent()
-	 * @generated
-	 */
-	void setResourceSetDependent(ResourceSet value);
-
-	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -296,6 +270,32 @@ public interface MandCBase extends EObject {
 	 * @generated
 	 */
 	void setDependents(Resource value);
+
+	/**
+	 * Returns the value of the '<em><b>Resource Set Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Resource Set Dependents</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Resource Set Dependents</em>' attribute.
+	 * @see #setResourceSetDependents(ResourceSet)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_ResourceSetDependents()
+	 * @model transient="true"
+	 * @generated
+	 */
+	ResourceSet getResourceSetDependents();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependents <em>Resource Set Dependents</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Resource Set Dependents</em>' attribute.
+	 * @see #getResourceSetDependents()
+	 * @generated
+	 */
+	void setResourceSetDependents(ResourceSet value);
 
 	/**
 	 * Returns the value of the '<em><b>Tables</b></em>' reference.
@@ -587,7 +587,7 @@ public interface MandCBase extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.tables = tables;\n\t\tthis.utils = utils;\n\t\tthis.row = row;\n\t\tthis.parent = parent;\n\t\tResourceSet resourceSetDependents = new ResourceSetImpl();\n\t\tdependents = resourceSetDependents.createResource(URI.createURI(\"\"));\n\t\tsheet = (this instanceof Monitor) ? tables.getSheetNum(\"Monitor Point\") : tables.getSheetNum(\"Control Point\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nthis.row = row;\nthis.parent = parent;\nresourceSetDependents = new ResourceSetImpl();\ndependents = resourceSetDependents.createResource(URI.createURI(\"\"));\nsheet = (this instanceof Monitor) ? tables.getSheetNum(\"Monitor Point\") : tables.getSheetNum(\"Control Point\");'"
 	 * @generated
 	 */
 	void setMandCBase(String[] row, Object parent, Table tables, Util utils);

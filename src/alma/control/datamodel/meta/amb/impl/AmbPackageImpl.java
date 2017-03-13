@@ -303,8 +303,8 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMandC_Mcp() {
-		return (EAttribute)mandCEClass.getEStructuralFeatures().get(3);
+	public EReference getMandC_Mcp() {
+		return (EReference)mandCEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -506,7 +506,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		createEAttribute(mandCEClass, MAND_C__ROW);
 		createEAttribute(mandCEClass, MAND_C__SHEET);
 		createEAttribute(mandCEClass, MAND_C__MASK);
-		createEAttribute(mandCEClass, MAND_C__MCP);
+		createEReference(mandCEClass, MAND_C__MCP);
 		createEReference(mandCEClass, MAND_C__TABLES);
 		createEReference(mandCEClass, MAND_C__UTILS);
 
@@ -716,6 +716,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "dirDevice", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -777,7 +778,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		initEAttribute(getMandC_Row(), theBasePackage.getEStringArray(), "row", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Mask(), theBasePackage.getEStringArray(), "mask", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMandC_Mcp(), theBasePackage.getMandCBaseDT(), "mcp", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandC_Mcp(), theBasePackage.getMandCBase(), null, "mcp", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandC_Tables(), theBasePackage.getTable(), null, "tables", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandC_Utils(), theBasePackage.getUtil(), null, "utils", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1012,6 +1013,7 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "dirDevice", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(swModuleEClass, SWModule.class, "SWModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSWModule_AssemblyName(), ecorePackage.getEString(), "AssemblyName", null, 0, 1, SWModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -1,7 +1,5 @@
 package alma.control.datamodel.meta.base.impl;
 
-
-
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
@@ -10,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -23,9 +20,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
@@ -1389,34 +1383,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	public void setDeviceModel(final Table tables, final Util utils) {
 		this.tables = tables;
 		this.utils = utils;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public Resource getArchive(String name) {
-		// Get the Archive Properties
-		//ResourceSet resourceSetarchive = new ResourceSetImpl();
-		//Resource resourceArchive  = resourceSetarchive.createResource(URI.createURI(""));
-		int archiveIndex = getTables().getSheetNum("Archive Property");
-		for(int i = 2; i < spreadsheet[archiveIndex].length; i++){
-			if(spreadsheet[archiveIndex][i].length == 0)
-				break;
-			ArchiveProperty ap;
-			String[] row = spreadsheet[archiveIndex][i];
-			ap = BaseFactory.eINSTANCE.createArchiveProperty();
-			//ap.setTable(main.getTable());
-			//ap.setDevices(this);
-			//ap.setInitializeAP(row);
-			//resourceArchive.getContents().add(ap);
-			if(name.equals(ap.RefersTo())){
-				//mandC.setArchive(value)
-				return ap.eResource();
-			}
-		}
-		return null;
 	}
 
 	/**

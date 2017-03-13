@@ -125,24 +125,14 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	protected String[] mask = MASK_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
+	 * The cached value of the '{@link #getMcp() <em>Mcp</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMcp()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MandCBase MCP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMcp() <em>Mcp</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMcp()
-	 * @generated
-	 * @ordered
-	 */
-	protected MandCBase mcp = MCP_EDEFAULT;
+	protected MandCBase mcp;
 
 	/**
 	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
@@ -265,6 +255,23 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public MandCBase getMcp() {
+		if (mcp != null && mcp.eIsProxy()) {
+			InternalEObject oldMcp = (InternalEObject)mcp;
+			mcp = (MandCBase)eResolveProxy(oldMcp);
+			if (mcp != oldMcp) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.MAND_C__MCP, oldMcp, mcp));
+			}
+		}
+		return mcp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandCBase basicGetMcp() {
 		return mcp;
 	}
 
@@ -1008,7 +1015,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case AmbPackage.MAND_C__MASK:
 				return getMask();
 			case AmbPackage.MAND_C__MCP:
-				return getMcp();
+				if (resolve) return getMcp();
+				return basicGetMcp();
 			case AmbPackage.MAND_C__TABLES:
 				if (resolve) return getTables();
 				return basicGetTables();
@@ -1067,7 +1075,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				setMask(MASK_EDEFAULT);
 				return;
 			case AmbPackage.MAND_C__MCP:
-				setMcp(MCP_EDEFAULT);
+				setMcp((MandCBase)null);
 				return;
 			case AmbPackage.MAND_C__TABLES:
 				setTables((Table)null);
@@ -1094,7 +1102,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case AmbPackage.MAND_C__MASK:
 				return MASK_EDEFAULT == null ? mask != null : !MASK_EDEFAULT.equals(mask);
 			case AmbPackage.MAND_C__MCP:
-				return MCP_EDEFAULT == null ? mcp != null : !MCP_EDEFAULT.equals(mcp);
+				return mcp != null;
 			case AmbPackage.MAND_C__TABLES:
 				return tables != null;
 			case AmbPackage.MAND_C__UTILS:
@@ -1119,8 +1127,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		result.append(sheet);
 		result.append(", mask: ");
 		result.append(mask);
-		result.append(", mcp: ");
-		result.append(mcp);
 		result.append(')');
 		return result.toString();
 	}

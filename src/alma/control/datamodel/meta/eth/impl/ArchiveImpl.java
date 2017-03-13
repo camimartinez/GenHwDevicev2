@@ -22,6 +22,7 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
+import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.impl.ArchivePropertyImpl;
 
 import alma.control.datamodel.meta.eth.Archive;
@@ -61,8 +62,9 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeAImpl(final String[] row) {
-			//	setArchiveProperty(row);
+	public void setArchiveEth(final String[] row, final Table tables) {
+		this.tables = tables;
+		setArchiveProperty(row, tables);
 	}
 
 } //ArchiveImpl

@@ -197,15 +197,6 @@ public interface AmbPackage extends EPackage {
 	int CONTROL__SHEET = BasePackage.CONTROL_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__RESOURCE_SET_DEPENDENT = BasePackage.CONTROL_POINT__RESOURCE_SET_DEPENDENT;
-
-	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,6 +213,15 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__RESOURCE_SET_DEPENDENTS = BasePackage.CONTROL_POINT__RESOURCE_SET_DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -249,6 +249,15 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
+
+	/**
+	 * The feature id for the '<em><b>Resource Set Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__RESOURCE_SET_CONTROL = BasePackage.CONTROL_POINT__RESOURCE_SET_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Mac</b></em>' reference.
@@ -624,7 +633,7 @@ public interface AmbPackage extends EPackage {
 	int MAND_C__MASK = 2;
 
 	/**
-	 * The feature id for the '<em><b>Mcp</b></em>' attribute.
+	 * The feature id for the '<em><b>Mcp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -715,15 +724,6 @@ public interface AmbPackage extends EPackage {
 	int MONITOR__SHEET = BasePackage.MONITOR_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__RESOURCE_SET_DEPENDENT = BasePackage.MONITOR_POINT__RESOURCE_SET_DEPENDENT;
-
-	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -740,6 +740,15 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__RESOURCE_SET_DEPENDENTS = BasePackage.MONITOR_POINT__RESOURCE_SET_DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -767,6 +776,15 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
+
+	/**
+	 * The feature id for the '<em><b>Resource Set Monitor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__RESOURCE_SET_MONITOR = BasePackage.MONITOR_POINT__RESOURCE_SET_MONITOR;
 
 	/**
 	 * The feature id for the '<em><b>Mac</b></em>' reference.
@@ -1052,15 +1070,15 @@ public interface AmbPackage extends EPackage {
 	EAttribute getMandC_Mask();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mcp</em>'.
+	 * @return the meta object for the reference '<em>Mcp</em>'.
 	 * @see alma.control.datamodel.meta.amb.MandC#getMcp()
 	 * @see #getMandC()
 	 * @generated
 	 */
-	EAttribute getMandC_Mcp();
+	EReference getMandC_Mcp();
 
 	/**
 	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.amb.MandC#getTables <em>Tables</em>}'.
@@ -1386,12 +1404,12 @@ public interface AmbPackage extends EPackage {
 		EAttribute MAND_C__MASK = eINSTANCE.getMandC_Mask();
 
 		/**
-		 * The meta object literal for the '<em><b>Mcp</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Mcp</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAND_C__MCP = eINSTANCE.getMandC_Mcp();
+		EReference MAND_C__MCP = eINSTANCE.getMandC_Mcp();
 
 		/**
 		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.

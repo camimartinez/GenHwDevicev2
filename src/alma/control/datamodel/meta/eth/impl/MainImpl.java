@@ -22,15 +22,14 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
-import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 import alma.control.datamodel.meta.base.impl.MainBaseImpl;
 
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.Main;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,8 +72,10 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMainEth(final String[] row) {
-		//setMainBase(row);
+	public void setMainEth(final String[] row, final Table tables, final Util utils) {
+		this.tables = tables;
+		this.utils = utils;
+		setMainBase(row, tables, utils);
 	}
 
 } //MainImpl

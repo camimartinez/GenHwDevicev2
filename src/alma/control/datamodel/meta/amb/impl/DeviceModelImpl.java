@@ -23,7 +23,6 @@
 package alma.control.datamodel.meta.amb.impl;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -47,7 +46,6 @@ import alma.control.datamodel.meta.amb.DeviceModel;
 import alma.control.datamodel.meta.amb.GenericMonitorPoints;
 import alma.control.datamodel.meta.amb.Main;
 import alma.control.datamodel.meta.amb.Monitor;
-import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
@@ -300,11 +298,11 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			String[] row = spreadsheet[monitorIndex][i];
 			if(!spreadsheet[monitorIndex][i][1].startsWith(table.getDepChar())){
 				mp = ambFactory.createMonitor();
-				mp.setMonitorAmb(row, null, table, util);
+				mp.setMonitorAmb(row, null, table, util, deviceDir);
 				mparent = mp;
 			}else{
 				mp = ambFactory.createMonitor();
-				mp.setMonitorAmb(row, mparent, table, util);
+				mp.setMonitorAmb(row, mparent, table, util, deviceDir);
 				mparent.addDependent(mp);	
 			}	
 			setDeviceModel(table,util);
@@ -316,7 +314,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 				e.printStackTrace();
 			}		
 		}
-		
+
 		// Define undefined dependent monitor points for sequence properties
 		List<EObject> listMP = monitorPoints.getContents();
 		MonitorImpl[] arrayMP = listMP.toArray( new MonitorImpl[0]);
@@ -347,7 +345,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 							mp.Description() + " (dependent monitor point)"
 					};
 					Monitor dep = ambFactory.createMonitor();
-					dep.setMonitorAmb(row, mp, table, util);
+					dep.setMonitorAmb(row, mp, table, util, deviceDir);
 					mp.addDependent(dep);
 					dep.setArchive(getArchiveProperties(dep.FullName()));		
 					monitorPoints.getContents().add(dep);							
@@ -358,7 +356,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 					}
 				}
 		}	
-		
+
 		// Get the control points
 		Control cparent = null;
 		String xmiControlPoints = tmp.concat("controlPoints.").concat(extension);
@@ -370,13 +368,15 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			String[] row = spreadsheet[controlIndex][i];
 			if(!spreadsheet[controlIndex][i][1].startsWith(table.getDepChar())){
 				cp = ambFactory.createControl();
-				cp.setControlAmb(row, null, table, util);
+				cp.setControlAmb(row, null, table, util, deviceDir);
+				//cp.setParameters(tmp);
 				cparent = cp;
 			}else{
 				cp = ambFactory.createControl();
-				cp.setControlAmb(row, cparent, table, util);
+				cp.setControlAmb(row, cparent, table, util, deviceDir);
 				cparent.addDependent(cp);
-			}				
+			}	
+			setDeviceModel(table,util);
 			cp.setArchive(getArchiveProperties(cp.FullName()));
 			controlPoints.getContents().add(cp);
 			try{
@@ -402,6 +402,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			ControlPoint cp = getControlPoint(ap.RefersTo());
 			if (cp != null)
 				ap.setCP(cp);
+			setDeviceModel(table,util);
 			archiveProperties.getContents().add(ap);
 			try{
 				archiveProperties.save(options);

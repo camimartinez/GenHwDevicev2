@@ -66,7 +66,7 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 		return row[tables.getColNum(sheet, "Assembly")];
 	}
 
-		/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -187,8 +188,8 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getControl_Mac() {
-		return (EAttribute)controlEClass.getEStructuralFeatures().get(0);
+	public EReference getControl_Mac() {
+		return (EReference)controlEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -250,6 +251,33 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMandC_Mcp() {
+		return (EReference)mandCEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMandC_Tables() {
+		return (EReference)mandCEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMandC_Utils() {
+		return (EReference)mandCEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMonitor() {
 		return monitorEClass;
 	}
@@ -259,8 +287,8 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMonitor_Mac() {
-		return (EAttribute)monitorEClass.getEStructuralFeatures().get(0);
+	public EReference getMonitor_Mac() {
+		return (EReference)monitorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -294,7 +322,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 		archiveEClass = createEClass(ARCHIVE);
 
 		controlEClass = createEClass(CONTROL);
-		createEAttribute(controlEClass, CONTROL__MAC);
+		createEReference(controlEClass, CONTROL__MAC);
 
 		deviceModelEClass = createEClass(DEVICE_MODEL);
 
@@ -304,9 +332,12 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 		createEAttribute(mandCEClass, MAND_C__ROW);
 		createEAttribute(mandCEClass, MAND_C__SHEET);
 		createEAttribute(mandCEClass, MAND_C__ASSEMBLY);
+		createEReference(mandCEClass, MAND_C__MCP);
+		createEReference(mandCEClass, MAND_C__TABLES);
+		createEReference(mandCEClass, MAND_C__UTILS);
 
 		monitorEClass = createEClass(MONITOR);
-		createEAttribute(monitorEClass, MONITOR__MAC);
+		createEReference(monitorEClass, MONITOR__MAC);
 	}
 
 	/**
@@ -349,11 +380,12 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(archiveEClass, Archive.class, "Archive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(archiveEClass, null, "setInitializeAImpl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(archiveEClass, null, "setArchiveEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(controlEClass, Control.class, "Control", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getControl_Mac(), theBasePackage.getMandCETHDT(), "mac", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControl_Mac(), this.getMandC(), null, "mac", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(controlEClass, null, "setAssemblyName", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -391,6 +423,9 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 		op = addEOperation(controlEClass, null, "setControlEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "dirDevice", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -404,11 +439,16 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		op = addEOperation(mainEClass, null, "setMainEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mandCEClass, MandC.class, "MandC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMandC_Row(), theBasePackage.getEStringArray(), "row", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandC_Assembly(), ecorePackage.getEString(), "assembly", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandC_Mcp(), theBasePackage.getMandCBase(), null, "mcp", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandC_Tables(), theBasePackage.getTable(), null, "tables", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandC_Utils(), theBasePackage.getUtil(), null, "utils", null, 0, 1, MandC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(mandCEClass, null, "setAssemblyName", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -444,9 +484,11 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 		op = addEOperation(mandCEClass, null, "setMandCEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "sheet", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(monitorEClass, Monitor.class, "Monitor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMonitor_Mac(), theBasePackage.getMandCETHDT(), "mac", null, 0, 1, Monitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMonitor_Mac(), this.getMandC(), null, "mac", null, 0, 1, Monitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(monitorEClass, null, "setAssemblyName", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "assembly", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -492,6 +534,9 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 		op = addEOperation(monitorEClass, null, "setMonitorEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "dirDevice", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

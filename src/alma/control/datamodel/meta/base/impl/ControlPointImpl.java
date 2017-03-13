@@ -28,19 +28,47 @@ import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.Table;
 
 import alma.control.datamodel.meta.base.Util;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Control Point</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.ControlPointImpl#getResourceSetControl <em>Resource Set Control</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public abstract class ControlPointImpl extends MandCBaseImpl implements ControlPoint {
+	/**
+	 * The default value of the '{@link #getResourceSetControl() <em>Resource Set Control</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResourceSetControl()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ResourceSet RESOURCE_SET_CONTROL_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getResourceSetControl() <em>Resource Set Control</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResourceSetControl()
+	 * @generated
+	 * @ordered
+	 */
+	protected ResourceSet resourceSetControl = RESOURCE_SET_CONTROL_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,6 +86,27 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	@Override
 	protected EClass eStaticClass() {
 		return BasePackage.Literals.CONTROL_POINT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceSet getResourceSetControl() {
+		return resourceSetControl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResourceSetControl(ResourceSet newResourceSetControl) {
+		ResourceSet oldResourceSetControl = resourceSetControl;
+		resourceSetControl = newResourceSetControl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.CONTROL_POINT__RESOURCE_SET_CONTROL, oldResourceSetControl, resourceSetControl));
 	}
 
 	/**
@@ -107,6 +156,80 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 		this.tables = tables;
 		this.utils = utils;
 		setMandCBase(row, parent, tables, utils);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case BasePackage.CONTROL_POINT__RESOURCE_SET_CONTROL:
+				return getResourceSetControl();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case BasePackage.CONTROL_POINT__RESOURCE_SET_CONTROL:
+				setResourceSetControl((ResourceSet)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case BasePackage.CONTROL_POINT__RESOURCE_SET_CONTROL:
+				setResourceSetControl(RESOURCE_SET_CONTROL_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case BasePackage.CONTROL_POINT__RESOURCE_SET_CONTROL:
+				return RESOURCE_SET_CONTROL_EDEFAULT == null ? resourceSetControl != null : !RESOURCE_SET_CONTROL_EDEFAULT.equals(resourceSetControl);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (resourceSetControl: ");
+		result.append(resourceSetControl);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ControlPointImpl

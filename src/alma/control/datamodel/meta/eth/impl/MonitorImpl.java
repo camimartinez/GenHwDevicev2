@@ -22,6 +22,11 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
+import java.util.Map;
+
+import alma.control.datamodel.meta.eth.impl.MandCImpl;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
 
 import alma.control.datamodel.meta.eth.EthPackage;
@@ -29,13 +34,15 @@ import alma.control.datamodel.meta.eth.MandC;
 import alma.control.datamodel.meta.eth.Monitor;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,24 +59,14 @@ import org.eclipse.emf.ecore.resource.Resource;
  */
 public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	/**
-	 * The default value of the '{@link #getMac() <em>Mac</em>}' attribute.
+	 * The cached value of the '{@link #getMac() <em>Mac</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMac()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MandC MAC_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMac() <em>Mac</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMac()
-	 * @generated
-	 * @ordered
-	 */
-	protected MandC mac = MAC_EDEFAULT;
+	protected MandC mac;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,6 +93,23 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public MandC getMac() {
+		if (mac != null && mac.eIsProxy()) {
+			InternalEObject oldMac = (InternalEObject)mac;
+			mac = (MandC)eResolveProxy(oldMac);
+			if (mac != oldMac) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MONITOR__MAC, oldMac, mac));
+			}
+		}
+		return mac;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandC basicGetMac() {
 		return mac;
 	}
 
@@ -306,12 +320,33 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorEth(final String[] row, final Object parent) {
-			setMonitorEth(row, parent);
-				mac = new MandCImpl();
-				mac.setMandCEth(row, sheet);
+	public void setMonitorEth(final String[] row, final Object parent, final Table tables, final Util utils, final String dirDevice) {
+		this.tables = tables;
+		this.utils = utils;
+		setMonitorPoint(row, parent,tables,utils);
+		mac = new MandCImpl();
+		mac.setMandCEth(row, sheet, tables, utils);
+		String dir = setParameters(dirDevice);
+		resourceSetMonitor = new ResourceSetImpl();
+		Resource res = resourceSetMonitor.createResource(URI.createURI(dir));
+		res.getContents().add(mac);	
 	}
-
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public static String setParameters(String dirDevice){
+		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
+		String extension = "xmi";
+		String tmp = dirDevice.concat("/").concat(extension).concat("/");
+		mm.put(extension, new XMIResourceFactoryImpl());
+		String xmiArchive = tmp.concat("monitorEth.").concat(extension);	
+		return xmiArchive;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -331,7 +366,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EthPackage.MONITOR__MAC:
-				return getMac();
+				if (resolve) return getMac();
+				return basicGetMac();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -360,7 +396,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case EthPackage.MONITOR__MAC:
-				setMac(MAC_EDEFAULT);
+				setMac((MandC)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -375,27 +411,10 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case EthPackage.MONITOR__MAC:
-				return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
+				return mac != null;
 		}
 		return super.eIsSet(featureID);
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (mac: ");
-		result.append(mac);
-		result.append(')');
-		return result.toString();
-	}
-
 
 	@Override
 	public void addDependent(Object son) {

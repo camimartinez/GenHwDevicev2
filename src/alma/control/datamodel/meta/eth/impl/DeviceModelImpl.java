@@ -22,7 +22,13 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 import alma.control.datamodel.meta.base.BaseFactory;
+import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Note;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
@@ -34,11 +40,15 @@ import alma.control.datamodel.meta.eth.Control;
 import alma.control.datamodel.meta.eth.DeviceModel;
 import alma.control.datamodel.meta.eth.EthFactory;
 import alma.control.datamodel.meta.eth.EthPackage;
+import alma.control.datamodel.meta.eth.Main;
 import alma.control.datamodel.meta.eth.Monitor;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,117 +89,186 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		int monitorIndex;
 		int controlIndex;
 		int archiveIndex;
-		/*
+		String suffixSpreadsheet="_spreadsheet.";
+		
+		//Base Package and Factory instances
+		BasePackage.eINSTANCE.eClass();
+		BaseFactory baseFactory = BaseFactory.eINSTANCE;		
+
+		//Eth Package and Factory instances
+		EthPackage.eINSTANCE.eClass();
+		EthFactory ethFactory = EthFactory.eINSTANCE;
+		
+		//Creation 
+		SpreadsheetParser spreadParser = baseFactory.createSpreadsheetParser();
+		SpreadsheetParser p = baseFactory.createSpreadsheetParser();
+		SpreadsheetValidator spreadValid = baseFactory.createSpreadsheetValidator();
+		Table table = baseFactory.createTable();
+		
+		// Register the XMI resource factory for the .xmi extension
+		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
+		String extension = "xmi";
+		String tmp = deviceDir.concat("/").concat(extension).concat("/");
+		mm.put(extension, new XMIResourceFactoryImpl());
+
+		Map<String, Boolean> options = new HashMap<String, Boolean>();
+		options.put(XMLResource.OPTION_SAVE_ONLY_IF_CHANGED, Boolean.TRUE);
+
+		container = new ResourceSetImpl();
+				
 		// Check if the spreadsheet file is an actual spreadsheet or a
 		// "filter" file which is some kind of a filter for a real
 		// spreadsheet but inherits from it.
-		String xmlFile = spreadsheetDir + "/" + deviceName + "_spreadsheet.";
+		String xmlFile = spreadsheetDir + "/" + deviceName + suffixSpreadsheet;
 		String suffix = "filter";
 		java.io.File fileExists = new java.io.File(xmlFile + suffix);
-		if(fileExists.exists() == false)
-		{
+		if(fileExists.exists() == false){
 			// The blah.filter file does not exist, so assume that the file
 			// is an XML file.
 			suffix = "xml";
 		}
+	
+		Util util = baseFactory.createUtil();
 
-		SpreadsheetParser spreadParser = baseFac.createSpreadsheetParser();
-		Util utils = baseFac.createUtil();
-		
 		xmlFile += suffix;
-		String xml = spreadParser.getSpreadsheet(spreadsheetDir, deviceName + "_spreadsheet." + suffix);
+		String fileSpreadsheetName = deviceName.concat(suffixSpreadsheet).concat(suffix);
+		String xml = spreadParser.getSpreadsheet(spreadsheetDir,fileSpreadsheetName);
 		String xsdFile = utils.getInstallDir() + "/config/schemas/" + busType.toLowerCase() + "/Workbook.xsd";
 
-		SpreadsheetParser p = baseFac.createSpreadsheetParser(xml);
+		p.setSpreadsheetParser(xml);
 		spreadsheet = p.getWorksheets();
-		SpreadsheetValidator v = baseFac.createSpreadsheetValidator();
-		if (!v.validate(xmlFile, xsdFile)) {
-			String s = "Spreadsheet " + deviceName + "_spreadsheet." + suffix + " is not a valid spreadsheet.";
+		if (!spreadValid.validate(xmlFile, xsdFile)) {
+			String s = "Spreadsheet: " + fileSpreadsheetName + suffix + " is not a valid spreadsheet.";
 			throw new RuntimeException(s);
 		}
-		System.out.println("Spreadsheet " + deviceName + " has been validated.");
+		System.out.println("Spreadsheet: " + fileSpreadsheetName + " has been validated.");
 
-		Table table = baseFac.createTable();
 		table.initialize(spreadsheet);
-		
-		// Get the Main..
 		mainIndex = table.getSheetNum("Hardware Device");
 		monitorIndex = table.getSheetNum("Monitor Point");
 		controlIndex = table.getSheetNum("Control Point");
 		archiveIndex = table.getSheetNum("Archive Property");
-		
-		EthFactory ethFac = EthFactory.eINSTANCE;
-		
-		main = ethFac.createMain(spreadsheet[mainIndex][2]);
-		//main.setMetaEnvironment(this.getMetaEnvironment());
-		
+	
+		//Table:
+		String xmiTables = tmp.concat("tables.").concat(extension);	
+		Resource resourceTables = container.createResource(URI.createURI(xmiTables));
+		resourceTables.getContents().add(table);	
+		try{
+			resourceTables.save(Collections.EMPTY_MAP);
+		}catch(IOException e){
+			e.printStackTrace();
+		}	
+
+		util.setTables(table);
+
+		//Util:
+		String xmiUtils = tmp.concat("utils.").concat(extension);	
+		Resource resourceUtils= container.createResource(URI.createURI(xmiUtils));
+		resourceUtils.getContents().add(util);
+		try{
+			resourceUtils.save(options);
+		}catch(IOException e){
+			e.printStackTrace();
+		}	
+
 		// Get the Notes
-		notes = new ResourceSetImpl();
-		for (i = 3; i < spreadsheet[mainIndex].length; ++i) {
-			Note note = baseFac.createNote();
-			//note.setMetaEnvironment(this.getMetaEnvironment());
+		String xmiNote = tmp.concat("notes.").concat(extension);		
+		for (i = 3; i < spreadsheet[mainIndex].length; i++) {
+			Note note = baseFactory.createNote();
+			notes = container.createResource(URI.createURI(xmiNote));
 			note.setNote(spreadsheet[mainIndex][i][descriptionIndex]);
-			notes.getResources().add((Resource) note);
+			notes.getContents().add(note);
+			try{
+				notes.save(options);
+			}catch(IOException e){
+				e.printStackTrace();
+			}	
 		}
+		
+		//Get the Main
+		String xmiMain = tmp.concat("main.").concat(extension);		
+		Main mainEth = ethFactory.createMain();
+		mainEth.setMainEth(spreadsheet[mainIndex][2],table,util);
+		Resource resourceMain = container.createResource(URI.createURI(xmiMain));
+		resourceMain.getContents().add(mainEth);
+		try{
+			resourceMain.save(options);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	
 		// Get the monitor points
-		Monitor mparent = ethFac.createMonitor();
-		mparent = null;
-		monitorPoints = new ResourceSetImpl();
+		Monitor mparent = null;
+		String xmiMonitorPoints = tmp.concat("monitorPoints.").concat(extension);
+		monitorPoints = container.createResource(URI.createURI(xmiMonitorPoints));
 		for (i = 2; i < spreadsheet[monitorIndex].length; ++i) {
 			if(spreadsheet[monitorIndex][i].length == 0)
 				break;
-			Monitor mp = ethFac.createMonitor();
+			Monitor mp;
 			String[] row = spreadsheet[monitorIndex][i];
 			if(!spreadsheet[monitorIndex][i][0].startsWith(table.getDepChar())){
-				mp = ethFac.createMonitor(row,null);
+				mp = ethFactory.createMonitor();
+				mp.setMonitorEth(row, null, table, util, deviceDir);
 				mparent = mp;
-			}
-			else{
-				mp = ethFac.createMonitor(row, mparent);
+			}else{
+				mp = ethFactory.createMonitor();
+				mp.setMonitorEth(row, mparent, table, util, deviceDir);
 				mparent.addDependent(mp);
 			}
-			mp.setArchive(getArchive(mp.FullName()));
+			setDeviceModel(table,util);
+			mp.setArchive(getArchiveProperties(mp.FullName()));
 			mp.setAssemblyName(main.Assembly());
-			//mp.setMetaEnvironment(this.getMetaEnvironment());
-			monitorPoints.getResources().add(mp);
+			monitorPoints.getContents().add(mp);
+			try{
+				monitorPoints.save(options);
+			}catch(IOException e){
+				e.printStackTrace();
+			}		
 		}
+		
 		// Get the control points
-		Control cparent = ethFac.createControl();
-		cparent = null;
-		controlPoints = new ResourceSetImpl();
+		Control cparent = null;
+		String xmiControlPoints = tmp.concat("controlPoints.").concat(extension);
+		controlPoints = container.createResource(URI.createURI(xmiControlPoints));
 		for (i = 2; i < spreadsheet[controlIndex].length; ++i) {
 			if(spreadsheet[controlIndex][i].length == 0)
 				break;
-			Control cp = ethFac.createControl();
+			Control cp;
 			String[] row = spreadsheet[controlIndex][i];
-			if(!spreadsheet[controlIndex][i][0].startsWith(table.getDepChar()))
-			{
-				cp = ethFac.createControl(row, null);
+			if(!spreadsheet[controlIndex][i][0].startsWith(table.getDepChar())){
+				cp = ethFactory.createControl();
+				cp.setControlEth(row, null, table, util, deviceDir);
 				cparent = cp;
-			}
-			else{
-				cp = ethFac.createControl(row, cparent);
+			}else{
+				cp = ethFactory.createControl();
+				cp.setControlEth(row, cparent, table, util, deviceDir);
 				cparent.addDependent(cp);
 			}
-			cp.setArchive(getArchive(cp.FullName()));
+			cp.setArchive(getArchiveProperties(cp.FullName()));
 			cp.setAssemblyName(main.Assembly());
-			//cp.setMetaEnvironment(this.getMetaEnvironment());
-			controlPoints.getResources().add(cp);
+			controlPoints.getContents().add(cp);
+			try{
+				controlPoints.save(options);
+			}catch(IOException e){
+				e.printStackTrace();
+			}
 		}
 
 		//Get the Archive Properties
-		archiveProperties = new ResourceSetImpl();
+		String xmiArchiveProperties = tmp.concat("archiveproperties.").concat(extension);
+		archiveProperties = container.createResource(URI.createURI(xmiArchiveProperties));
 		for(i = 2; i < spreadsheet[archiveIndex].length; i++) {
 			if(spreadsheet[archiveIndex][i].length == 0)
 				break;
 			Archive ap;
 			String[] row = spreadsheet[archiveIndex][i];
-			ap = ethFac.createArchive(row);
-			//ap.setMetaEnvironment(this.getMetaEnvironment());
-			archiveProperties.getResources().add(ap);
+			ap = ethFactory.createArchive();
+			ap.setArchiveEth(row, table);
+			archiveProperties.getContents().add(ap);
 		}
 		System.out.println("DeviceModel: Initialization complete.");
-		*/
+
 		return "";
 	}
 

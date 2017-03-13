@@ -196,22 +196,13 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE__SHEET = 4;
 
 	/**
-	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__RESOURCE_SET_DEPENDENT = 5;
-
-	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__PARENT = 6;
+	int MAND_CBASE__PARENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
@@ -220,7 +211,16 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__DEPENDENTS = 7;
+	int MAND_CBASE__DEPENDENTS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__RESOURCE_SET_DEPENDENTS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -314,15 +314,6 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__SHEET = MAND_CBASE__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_POINT__RESOURCE_SET_DEPENDENT = MAND_CBASE__RESOURCE_SET_DEPENDENT;
-
-	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,6 +330,15 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__RESOURCE_SET_DEPENDENTS = MAND_CBASE__RESOURCE_SET_DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -368,13 +368,22 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
 
 	/**
+	 * The feature id for the '<em><b>Resource Set Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__RESOURCE_SET_CONTROL = MAND_CBASE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Control Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 0;
+	int CONTROL_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl <em>Device Model</em>}' class.
@@ -704,15 +713,6 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__SHEET = MAND_CBASE__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Resource Set Dependent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__RESOURCE_SET_DEPENDENT = MAND_CBASE__RESOURCE_SET_DEPENDENT;
-
-	/**
 	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -729,6 +729,15 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__RESOURCE_SET_DEPENDENTS = MAND_CBASE__RESOURCE_SET_DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -758,13 +767,22 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
 
 	/**
+	 * The feature id for the '<em><b>Resource Set Monitor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__RESOURCE_SET_MONITOR = MAND_CBASE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Monitor Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 0;
+	int MONITOR_POINT_FEATURE_COUNT = MAND_CBASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.NoteImpl <em>Note</em>}' class.
@@ -1556,6 +1574,17 @@ public interface BasePackage extends EPackage {
 	EClass getControlPoint();
 
 	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.ControlPoint#getResourceSetControl <em>Resource Set Control</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Resource Set Control</em>'.
+	 * @see alma.control.datamodel.meta.base.ControlPoint#getResourceSetControl()
+	 * @see #getControlPoint()
+	 * @generated
+	 */
+	EAttribute getControlPoint_ResourceSetControl();
+
+	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.DeviceModel <em>Device Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1927,17 +1956,6 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_Sheet();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependent <em>Resource Set Dependent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Resource Set Dependent</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getResourceSetDependent()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_ResourceSetDependent();
-
-	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1971,6 +1989,17 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_Dependents();
 
 	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependents <em>Resource Set Dependents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Resource Set Dependents</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getResourceSetDependents()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_ResourceSetDependents();
+
+	/**
 	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2001,6 +2030,17 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMonitorPoint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MonitorPoint#getResourceSetMonitor <em>Resource Set Monitor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Resource Set Monitor</em>'.
+	 * @see alma.control.datamodel.meta.base.MonitorPoint#getResourceSetMonitor()
+	 * @see #getMonitorPoint()
+	 * @generated
+	 */
+	EAttribute getMonitorPoint_ResourceSetMonitor();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.Note <em>Note</em>}'.
@@ -2779,6 +2819,14 @@ public interface BasePackage extends EPackage {
 		EClass CONTROL_POINT = eINSTANCE.getControlPoint();
 
 		/**
+		 * The meta object literal for the '<em><b>Resource Set Control</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL_POINT__RESOURCE_SET_CONTROL = eINSTANCE.getControlPoint_ResourceSetControl();
+
+		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl <em>Device Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3057,14 +3105,6 @@ public interface BasePackage extends EPackage {
 		EAttribute MAND_CBASE__SHEET = eINSTANCE.getMandCBase_Sheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Resource Set Dependent</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__RESOURCE_SET_DEPENDENT = eINSTANCE.getMandCBase_ResourceSetDependent();
-
-		/**
 		 * The meta object literal for the '<em><b>Parent</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3087,6 +3127,14 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MAND_CBASE__DEPENDENTS = eINSTANCE.getMandCBase_Dependents();
+
+		/**
+		 * The meta object literal for the '<em><b>Resource Set Dependents</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__RESOURCE_SET_DEPENDENTS = eINSTANCE.getMandCBase_ResourceSetDependents();
 
 		/**
 		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
@@ -3113,6 +3161,14 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EClass MONITOR_POINT = eINSTANCE.getMonitorPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Resource Set Monitor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MONITOR_POINT__RESOURCE_SET_MONITOR = eINSTANCE.getMonitorPoint_ResourceSetMonitor();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.NoteImpl <em>Note</em>}' class.

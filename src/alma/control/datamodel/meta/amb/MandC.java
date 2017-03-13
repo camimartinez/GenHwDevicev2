@@ -120,26 +120,26 @@ public interface MandC extends EObject {
 	void setMask(String[] value);
 
 	/**
-	 * Returns the value of the '<em><b>Mcp</b></em>' attribute.
+	 * Returns the value of the '<em><b>Mcp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mcp</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mcp</em>' attribute.
+	 * @return the value of the '<em>Mcp</em>' reference.
 	 * @see #setMcp(MandCBase)
 	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Mcp()
-	 * @model dataType="alma.control.datamodel.meta.base.MandCBaseDT"
+	 * @model
 	 * @generated
 	 */
 	MandCBase getMcp();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMcp <em>Mcp</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mcp</em>' attribute.
+	 * @param value the new value of the '<em>Mcp</em>' reference.
 	 * @see #getMcp()
 	 * @generated
 	 */

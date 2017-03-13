@@ -413,6 +413,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getControlPoint_ResourceSetControl() {
+		return (EAttribute)controlPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDeviceModel() {
 		return deviceModelEClass;
 	}
@@ -719,17 +728,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMandCBase_ResourceSetDependent() {
-		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getMandCBase_Parent() {
-		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -747,6 +747,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	public EAttribute getMandCBase_Dependents() {
+		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMandCBase_ResourceSetDependents() {
 		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -775,6 +784,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 */
 	public EClass getMonitorPoint() {
 		return monitorPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMonitorPoint_ResourceSetMonitor() {
+		return (EAttribute)monitorPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1389,6 +1407,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEReference(archivePropertyEClass, ARCHIVE_PROPERTY__TABLES);
 
 		controlPointEClass = createEClass(CONTROL_POINT);
+		createEAttribute(controlPointEClass, CONTROL_POINT__RESOURCE_SET_CONTROL);
 
 		deviceModelEClass = createEClass(DEVICE_MODEL);
 		createEAttribute(deviceModelEClass, DEVICE_MODEL__DESCRIPTION_INDEX);
@@ -1426,14 +1445,15 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEAttribute(mandCBaseEClass, MAND_CBASE__ROW);
 		createEAttribute(mandCBaseEClass, MAND_CBASE__PARENT_ROW);
 		createEAttribute(mandCBaseEClass, MAND_CBASE__SHEET);
-		createEAttribute(mandCBaseEClass, MAND_CBASE__RESOURCE_SET_DEPENDENT);
 		createEAttribute(mandCBaseEClass, MAND_CBASE__PARENT);
 		createEAttribute(mandCBaseEClass, MAND_CBASE__DEPENDENTS);
+		createEAttribute(mandCBaseEClass, MAND_CBASE__RESOURCE_SET_DEPENDENTS);
 		createEReference(mandCBaseEClass, MAND_CBASE__TABLES);
 		createEReference(mandCBaseEClass, MAND_CBASE__UTILS);
 		createEReference(mandCBaseEClass, MAND_CBASE__ARCHIVE);
 
 		monitorPointEClass = createEClass(MONITOR_POINT);
+		createEAttribute(monitorPointEClass, MONITOR_POINT__RESOURCE_SET_MONITOR);
 
 		noteEClass = createEClass(NOTE);
 		createEAttribute(noteEClass, NOTE__NOTE);
@@ -1584,6 +1604,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(controlPointEClass, ControlPoint.class, "ControlPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getControlPoint_ResourceSetControl(), ecorePackage.getEResourceSet(), "resourceSetControl", null, 0, 1, ControlPoint.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(controlPointEClass, ecorePackage.getEString(), "CPName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1708,9 +1729,9 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEAttribute(getMandCBase_Row(), this.getEStringArray(), "row", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandCBase_ParentRow(), this.getEStringArray(), "parentRow", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandCBase_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMandCBase_ResourceSetDependent(), ecorePackage.getEResourceSet(), "resourceSetDependent", null, 0, 1, MandCBase.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandCBase_Parent(), ecorePackage.getEJavaObject(), "parent", null, 0, 1, MandCBase.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandCBase_Dependents(), ecorePackage.getEResource(), "dependents", null, 0, 1, MandCBase.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMandCBase_ResourceSetDependents(), ecorePackage.getEResourceSet(), "resourceSetDependents", null, 0, 1, MandCBase.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandCBase_Tables(), this.getTable(), null, "tables", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandCBase_Utils(), this.getUtil(), null, "utils", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandCBase_Archive(), this.getArchiveProperty(), null, "archive", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1786,6 +1807,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		addEParameter(op, this.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(monitorPointEClass, MonitorPoint.class, "MonitorPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMonitorPoint_ResourceSetMonitor(), ecorePackage.getEResourceSet(), "resourceSetMonitor", null, 0, 1, MonitorPoint.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(monitorPointEClass, ecorePackage.getEString(), "Default", 0, 1, IS_UNIQUE, IS_ORDERED);
 
