@@ -342,6 +342,15 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL__ARCHIVE_PROPERTIES = BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES;
 
 	/**
+	 * The feature id for the '<em><b>Main</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
+
+	/**
 	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -423,15 +432,6 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL__GENERATE_ALT = BasePackage.DEVICE_MODEL__GENERATE_ALT;
 
 	/**
-	 * The feature id for the '<em><b>Main</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
-
-	/**
 	 * The feature id for the '<em><b>AProperties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -475,6 +475,33 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_MODEL__TABLES = BasePackage.DEVICE_MODEL__TABLES;
+
+	/**
+	 * The feature id for the '<em><b>Tables Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__TABLES_AUX = BasePackage.DEVICE_MODEL__TABLES_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Main Amb</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAIN_AMB = BasePackage.DEVICE_MODEL__MAIN_AMB;
+
+	/**
+	 * The feature id for the '<em><b>Main Eth</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAIN_ETH = BasePackage.DEVICE_MODEL__MAIN_ETH;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.

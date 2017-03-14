@@ -26,5 +26,6 @@
 		<metaModel class="org.eclipse.xtend.type.impl.java.JavaBeansMetaModel"/>	
 		<expand value="Root::Root FOR model"/>
         <outlet path="${generatedDir}"></outlet>  
-	</component>	
+	</component>
+		
 </workflow>

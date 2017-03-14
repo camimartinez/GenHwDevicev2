@@ -381,32 +381,32 @@
             </eOperations>
             <eOperations name="Parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return ((MainImpl)main).Parent();"/>
+                <details key="body" value="return mainAmb.Parent();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Cardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return ((MainImpl)main).Cardinality();"/>
+                <details key="body" value="return mainAmb.Cardinality();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="NodeAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return ((MainImpl)main).NodeAddress();"/>
+                <details key="body" value="return mainAmb.NodeAddress();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Channel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return ((MainImpl)main).Channel();"/>
+                <details key="body" value="return mainAmb.Channel();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="BaseAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return ((MainImpl)main).BaseAddress();"/>
+                <details key="body" value="return mainAmb.BaseAddress();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="GenericMonitorPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return ((MainImpl)main).GenericMonitorPoints();"/>
+                <details key="body" value="return mainAmb.GenericMonitorPoints();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1311,54 +1311,49 @@
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="DeviceModel" abstract="true">
             <eOperations name="CreateModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eOperations name="CheckConstraints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return &quot;&quot;;&#xD;&#xA;"/>
-              </eAnnotations>
-            </eOperations>
             <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return main.Assembly();&#xD;&#xA;"/>
+                <details key="body" value="if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){&#xA;&#x9;&#x9;return mainAmb.Assembly();&#xA;}else&#xA;&#x9;&#x9;return mainEth.Assembly();&#x9;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Extends" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return main.Extends();&#xD;&#xA;"/>
+                <details key="body" value="&#x9;&#x9;if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){&#xA;&#x9;&#x9;&#x9;return mainAmb.Extends();&#xA;&#x9;&#x9;}else&#xA;&#x9;&#x9;&#x9;return mainEth.Extends();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DeviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return main.DeviceName();&#xD;&#xA;"/>
+                <details key="body" value="if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){&#xA;&#x9;&#x9;&#x9;return mainAmb.DeviceName();&#xA;&#x9;&#x9;}else&#xA;&#x9;&#x9;&#x9;return mainEth.DeviceName();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return main.Description();&#xD;&#xA;"/>
+                <details key="body" value="&#x9;if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){&#xA;&#x9;&#x9;&#x9;return mainAmb.Description();&#xA;&#x9;&#x9;}else&#xA;&#x9;&#x9;&#x9;return mainEth.Description();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DescriptionAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return main.DescriptionAsString();&#xD;&#xA;"/>
+                <details key="body" value="&#x9;&#x9;if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){&#xA;&#x9;&#x9;&#x9;return mainAmb.DescriptionAsString();&#xA;&#x9;&#x9;}else&#xA;&#x9;&#x9;&#x9;return mainEth.DescriptionAsString();&#x9;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ICD" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return main.ICD();&#xD;&#xA;"/>
+                <details key="body" value="&#x9;&#x9;if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){&#xA;&#x9;&#x9;&#x9;return mainAmb.ICD();&#xA;&#x9;&#x9;}else&#xA;&#x9;&#x9;&#x9;return mainEth.ICD();&#x9;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ICDDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return main.ICDDate();&#xD;&#xA;"/>
+                <details key="body" value="&#x9;&#x9;if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){&#xA;&#x9;&#x9;&#x9;return mainAmb.ICDDate();&#xA;&#x9;&#x9;}else&#xA;&#x9;&#x9;&#x9;return mainEth.ICDDate();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ICDDateAsDatabaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return main.ICDDateAsDatabaseDate();&#xD;&#xA;"/>
+                <details key="body" value="&#x9;&#x9;if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){&#xA;&#x9;&#x9;&#x9;return mainAmb.ICDDateAsDatabaseDate();&#xA;&#x9;&#x9;}else&#xA;&#x9;&#x9;&#x9;return mainEth.ICDDateAsDatabaseDate();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="ICDDateAsArrayTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="return main.ICDDateAsArrayTime();&#xD;&#xA;"/>
+                <details key="body" value="&#x9;&#x9;if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){&#xA;&#x9;&#x9;&#x9;return mainAmb.ICDDateAsArrayTime();&#xA;&#x9;&#x9;}else&#xA;&#x9;&#x9;&#x9;return mainEth.ICDDateAsArrayTime();"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="DirPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1431,6 +1426,8 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="archiveProperties"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
                 transient="true"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
+                transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="container" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"
                 transient="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1443,7 +1440,6 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorDBOnly"
                 eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateAlt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="main" eType="#//control/datamodel/meta/base/MainBase"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="aProperties" lowerBound="1"
                 upperBound="-1" eType="#//control/datamodel/meta/base/ArchiveProperty"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="cPoints" lowerBound="1"
@@ -1452,8 +1448,11 @@
                 upperBound="-1" eType="#//control/datamodel/meta/base/MonitorPoint"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="utils" eType="#//control/datamodel/meta/base/Util"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="tables" eType="#//control/datamodel/meta/base/Table"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="tablesAux" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mainAmb" eType="#//control/datamodel/meta/amb/Main"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="mainEth" eType="#//control/datamodel/meta/eth/Main"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="MainBase">
+          <eClassifiers xsi:type="ecore:EClass" name="MainBase" abstract="true">
             <eOperations name="Assembly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="body" value="return row[tables.getColNum(sheet, &quot;Assembly&quot;)];"/>
@@ -2145,8 +2144,6 @@
           <eClassifiers xsi:type="ecore:EDataType" name="ArchivePropertyDT" instanceClassName="alma.control.datamodel.meta.base.ArchiveProperty"/>
           <eClassifiers xsi:type="ecore:EDataType" name="SimpleErrorHandlerDT" instanceClassName="alma.control.datamodel.meta.base.SimpleErrorHandler"/>
           <eClassifiers xsi:type="ecore:EDataType" name="MandCBaseDT" instanceClassName="alma.control.datamodel.meta.base.MandCBase"/>
-          <eClassifiers xsi:type="ecore:EDataType" name="MainBaseDT" instanceClassName="alma.control.datamodel.meta.base.MainBase"
-              serializable="false"/>
           <eClassifiers xsi:type="ecore:EDataType" name="RuntimeExceptionDT" instanceClassName="java.lang.RuntimeException"/>
           <eClassifiers xsi:type="ecore:EDataType" name="ErrorHandlerDT" instanceClassName="org.xml.sax.ErrorHandler"/>
           <eClassifiers xsi:type="ecore:EDataType" name="SAXParseExceptionDT" instanceClassName="org.xml.sax.SAXParseException"/>

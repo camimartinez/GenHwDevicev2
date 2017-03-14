@@ -22,6 +22,7 @@
  */
 package alma.control.datamodel.meta.base;
 
+import alma.control.datamodel.meta.amb.Main;
 import alma.control.datamodel.meta.amb.Monitor;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -45,6 +46,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getNotes <em>Notes</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getControlPoints <em>Control Points</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getArchiveProperties <em>Archive Properties</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getContainer <em>Container</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getBusType <em>Bus Type</em>}</li>
@@ -54,12 +56,14 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isGenerateAlt <em>Generate Alt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getAPropertiesList <em>AProperties</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getCPointsList <em>CPoints</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMPointsList <em>MPoints</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getTablesAux <em>Tables Aux</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMainAmb <em>Main Amb</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMainEth <em>Main Eth</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel()
@@ -238,6 +242,32 @@ public interface DeviceModel extends EObject {
 	 * @generated
 	 */
 	void setArchiveProperties(Resource value);
+
+	/**
+	 * Returns the value of the '<em><b>Main</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main</em>' attribute.
+	 * @see #setMain(Resource)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Main()
+	 * @model transient="true"
+	 * @generated
+	 */
+	Resource getMain();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Main</em>' attribute.
+	 * @see #getMain()
+	 * @generated
+	 */
+	void setMain(Resource value);
 
 	/**
 	 * Returns the value of the '<em><b>Container</b></em>' attribute.
@@ -474,32 +504,6 @@ public interface DeviceModel extends EObject {
 	void setGenerateAlt(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Main</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Main</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Main</em>' reference.
-	 * @see #setMain(MainBase)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Main()
-	 * @model
-	 * @generated
-	 */
-	MainBase getMain();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Main</em>' reference.
-	 * @see #getMain()
-	 * @generated
-	 */
-	void setMain(MainBase value);
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -705,6 +709,84 @@ public interface DeviceModel extends EObject {
 	void setTables(Table value);
 
 	/**
+	 * Returns the value of the '<em><b>Tables Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tables Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tables Aux</em>' attribute.
+	 * @see #setTablesAux(Object)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_TablesAux()
+	 * @model
+	 * @generated
+	 */
+	Object getTablesAux();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getTablesAux <em>Tables Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tables Aux</em>' attribute.
+	 * @see #getTablesAux()
+	 * @generated
+	 */
+	void setTablesAux(Object value);
+
+	/**
+	 * Returns the value of the '<em><b>Main Amb</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Amb</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main Amb</em>' reference.
+	 * @see #setMainAmb(Main)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_MainAmb()
+	 * @model
+	 * @generated
+	 */
+	Main getMainAmb();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMainAmb <em>Main Amb</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Main Amb</em>' reference.
+	 * @see #getMainAmb()
+	 * @generated
+	 */
+	void setMainAmb(Main value);
+
+	/**
+	 * Returns the value of the '<em><b>Main Eth</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Eth</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main Eth</em>' reference.
+	 * @see #setMainEth(alma.control.datamodel.meta.eth.Main)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_MainEth()
+	 * @model
+	 * @generated
+	 */
+	alma.control.datamodel.meta.eth.Main getMainEth();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMainEth <em>Main Eth</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Main Eth</em>' reference.
+	 * @see #getMainEth()
+	 * @generated
+	 */
+	void setMainEth(alma.control.datamodel.meta.eth.Main value);
+
+	/**
 	 * Returns the value of the '<em><b>Control Point</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -738,15 +820,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return \"\";\r\n'"
-	 * @generated
-	 */
-	String CheckConstraints();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return main.Assembly();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){\n\t\treturn mainAmb.Assembly();\n}else\n\t\treturn mainEth.Assembly();\t'"
 	 * @generated
 	 */
 	String Assembly();
@@ -754,7 +828,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return main.Extends();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){\n\t\t\treturn mainAmb.Extends();\n\t\t}else\n\t\t\treturn mainEth.Extends();'"
 	 * @generated
 	 */
 	String Extends();
@@ -762,7 +836,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return main.DeviceName();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){\n\t\t\treturn mainAmb.DeviceName();\n\t\t}else\n\t\t\treturn mainEth.DeviceName();'"
 	 * @generated
 	 */
 	String DeviceName();
@@ -770,7 +844,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return main.Description();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tif (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){\n\t\t\treturn mainAmb.Description();\n\t\t}else\n\t\t\treturn mainEth.Description();'"
 	 * @generated
 	 */
 	String Description();
@@ -778,7 +852,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return main.DescriptionAsString();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){\n\t\t\treturn mainAmb.DescriptionAsString();\n\t\t}else\n\t\t\treturn mainEth.DescriptionAsString();\t'"
 	 * @generated
 	 */
 	String DescriptionAsString();
@@ -786,7 +860,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return main.ICD();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){\n\t\t\treturn mainAmb.ICD();\n\t\t}else\n\t\t\treturn mainEth.ICD();\t'"
 	 * @generated
 	 */
 	String ICD();
@@ -794,7 +868,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return main.ICDDate();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){\n\t\t\treturn mainAmb.ICDDate();\n\t\t}else\n\t\t\treturn mainEth.ICDDate();'"
 	 * @generated
 	 */
 	String ICDDate();
@@ -802,7 +876,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return main.ICDDateAsDatabaseDate();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){\n\t\t\treturn mainAmb.ICDDateAsDatabaseDate();\n\t\t}else\n\t\t\treturn mainEth.ICDDateAsDatabaseDate();'"
 	 * @generated
 	 */
 	String ICDDateAsDatabaseDate();
@@ -810,7 +884,7 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return main.ICDDateAsArrayTime();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){\n\t\t\treturn mainAmb.ICDDateAsArrayTime();\n\t\t}else\n\t\t\treturn mainEth.ICDDateAsArrayTime();'"
 	 * @generated
 	 */
 	String ICDDateAsArrayTime();

@@ -28,14 +28,18 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.eclipse.emf.common.notify.Notification;
 import java.lang.String;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
@@ -108,7 +112,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String Parent() {
-		return ((MainImpl)main).Parent();
+		return mainAmb.Parent();
 	}
 
 	/**
@@ -117,7 +121,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String Cardinality() {
-		return ((MainImpl)main).Cardinality();
+		return mainAmb.Cardinality();
 	}
 
 	/**
@@ -126,7 +130,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String NodeAddress() {
-		return ((MainImpl)main).NodeAddress();
+		return mainAmb.NodeAddress();
 	}
 
 	/**
@@ -135,16 +139,15 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String Channel() {
-		return ((MainImpl)main).Channel();
+		return mainAmb.Channel();
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String BaseAddress() {
-		return ((MainImpl)main).BaseAddress();
+		return mainAmb.BaseAddress();
 	}
 
 	/**
@@ -153,7 +156,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public boolean GenericMonitorPoints() {
-		return ((MainImpl)main).GenericMonitorPoints();
+		return mainAmb.GenericMonitorPoints();
 	}
 
 	/**
@@ -234,6 +237,8 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		controlIndex = table.getSheetNum("Control Point");
 		archiveIndex = table.getSheetNum("Archive Property");
 
+		tablesAux = EcoreUtil.copy(table);
+		
 		//Table:
 		String xmiTables = tmp.concat("tables.").concat(extension);	
 		Resource resourceTables = container.createResource(URI.createURI(xmiTables));
@@ -278,12 +283,12 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 
 		//Get the Main
 		String xmiMain = tmp.concat("main.").concat(extension);		
-		Main mainAmb = ambFactory.createMain();
+		mainAmb = ambFactory.createMain();
 		mainAmb.setMainAmb(spreadsheet[mainIndex][2],table,util);
-		Resource resourceMain = container.createResource(URI.createURI(xmiMain));
-		resourceMain.getContents().add(mainAmb);
+		main = container.createResource(URI.createURI(xmiMain));
+		main.getContents().add(mainAmb);
 		try{
-			resourceMain.save(options);
+			main.save(options);
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -412,7 +417,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			}
 		}	
 		System.out.println("DeviceModel: Initialization complete.");
-				
+
 		return "";
 	}
 

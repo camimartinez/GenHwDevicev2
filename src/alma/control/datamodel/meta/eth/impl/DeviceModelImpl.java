@@ -218,7 +218,8 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			}
 			setDeviceModel(table,util);
 			mp.setArchive(getArchiveProperties(mp.FullName()));
-			mp.setAssemblyName(main.Assembly());
+			//FIXME
+			//mp.setAssemblyName(main.Assembly());
 			monitorPoints.getContents().add(mp);
 			try{
 				monitorPoints.save(options);
@@ -246,7 +247,8 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 				cparent.addDependent(cp);
 			}
 			cp.setArchive(getArchiveProperties(cp.FullName()));
-			cp.setAssemblyName(main.Assembly());
+			//FIXME
+			//cp.setAssemblyName(main.Assembly());
 			controlPoints.getContents().add(cp);
 			try{
 				controlPoints.save(options);

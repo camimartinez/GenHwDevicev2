@@ -52,15 +52,6 @@ public interface BaseFactory extends EFactory {
 	ArchiveProperty createArchiveProperty();
 
 	/**
-	 * Returns a new object of class '<em>Main Base</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Main Base</em>'.
-	 * @generated
-	 */
-	MainBase createMainBase();
-
-	/**
 	 * Returns a new object of class '<em>Note</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

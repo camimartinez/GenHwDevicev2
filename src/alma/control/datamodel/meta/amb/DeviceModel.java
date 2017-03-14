@@ -53,7 +53,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainImpl)main).Parent();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.Parent();'"
 	 * @generated
 	 */
 	String Parent();
@@ -61,7 +61,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainImpl)main).Cardinality();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.Cardinality();'"
 	 * @generated
 	 */
 	String Cardinality();
@@ -69,7 +69,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainImpl)main).NodeAddress();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.NodeAddress();'"
 	 * @generated
 	 */
 	String NodeAddress();
@@ -77,7 +77,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainImpl)main).Channel();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.Channel();'"
 	 * @generated
 	 */
 	String Channel();
@@ -85,7 +85,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainImpl)main).BaseAddress();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.BaseAddress();'"
 	 * @generated
 	 */
 	String BaseAddress();
@@ -93,7 +93,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainImpl)main).GenericMonitorPoints();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.GenericMonitorPoints();'"
 	 * @generated
 	 */
 	boolean GenericMonitorPoints();

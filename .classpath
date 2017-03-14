@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="lib" path="lib/antlr-4.6-complete.jar"/>
-	<classpathentry kind="lib" path="lib/icu4j-57_1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/antlr-4.6-complete.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/asdmIDLTypes.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/asdmRuntime.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/commons-cli-1.3.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/commons-lang3-3.5.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/commons-logging-1.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/emf_v2.13.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/icu4j-57_1.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/log4j-1.2.17.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/maciSchemaBindings.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/mwe_v2.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/mwe2_v2.8.3.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/ojdbc14.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/xpand_v2.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/xtext_v2.10.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMainBase()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface MainBase extends EObject {

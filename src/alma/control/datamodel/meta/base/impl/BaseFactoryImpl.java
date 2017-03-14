@@ -97,7 +97,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BasePackage.ARCHIVE_PROPERTY: return createArchiveProperty();
-			case BasePackage.MAIN_BASE: return createMainBase();
 			case BasePackage.NOTE: return createNote();
 			case BasePackage.SIMPLE_ERROR_HANDLER: return createSimpleErrorHandler();
 			case BasePackage.SPREADSHEET_PARSER: return createSpreadsheetParser();
@@ -199,16 +198,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	public ArchiveProperty createArchiveProperty() {
 		ArchivePropertyImpl archiveProperty = new ArchivePropertyImpl();
 		return archiveProperty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MainBase createMainBase() {
-		MainBaseImpl mainBase = new MainBaseImpl();
-		return mainBase;
 	}
 
 	/**

@@ -450,13 +450,22 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__ARCHIVE_PROPERTIES = 5;
 
 	/**
+	 * The feature id for the '<em><b>Main</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAIN = 6;
+
+	/**
 	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__CONTAINER = 6;
+	int DEVICE_MODEL__CONTAINER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Device Name</b></em>' attribute.
@@ -465,7 +474,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__DEVICE_NAME = 7;
+	int DEVICE_MODEL__DEVICE_NAME = 8;
 
 	/**
 	 * The feature id for the '<em><b>Bus Type</b></em>' attribute.
@@ -474,7 +483,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__BUS_TYPE = 8;
+	int DEVICE_MODEL__BUS_TYPE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Device Dir</b></em>' attribute.
@@ -483,7 +492,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__DEVICE_DIR = 9;
+	int DEVICE_MODEL__DEVICE_DIR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Codegen Dir</b></em>' attribute.
@@ -492,7 +501,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__CODEGEN_DIR = 10;
+	int DEVICE_MODEL__CODEGEN_DIR = 11;
 
 	/**
 	 * The feature id for the '<em><b>Spreadsheet Dir</b></em>' attribute.
@@ -501,7 +510,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__SPREADSHEET_DIR = 11;
+	int DEVICE_MODEL__SPREADSHEET_DIR = 12;
 
 	/**
 	 * The feature id for the '<em><b>Generated Dir</b></em>' attribute.
@@ -510,7 +519,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GENERATED_DIR = 12;
+	int DEVICE_MODEL__GENERATED_DIR = 13;
 
 	/**
 	 * The feature id for the '<em><b>Monitor DB Only</b></em>' attribute.
@@ -519,7 +528,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MONITOR_DB_ONLY = 13;
+	int DEVICE_MODEL__MONITOR_DB_ONLY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Generate Alt</b></em>' attribute.
@@ -528,16 +537,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__GENERATE_ALT = 14;
-
-	/**
-	 * The feature id for the '<em><b>Main</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__MAIN = 15;
+	int DEVICE_MODEL__GENERATE_ALT = 15;
 
 	/**
 	 * The feature id for the '<em><b>AProperties</b></em>' reference list.
@@ -585,13 +585,40 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__TABLES = 20;
 
 	/**
+	 * The feature id for the '<em><b>Tables Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__TABLES_AUX = 21;
+
+	/**
+	 * The feature id for the '<em><b>Main Amb</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAIN_AMB = 22;
+
+	/**
+	 * The feature id for the '<em><b>Main Eth</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MAIN_ETH = 23;
+
+	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_FEATURE_COUNT = 21;
+	int DEVICE_MODEL_FEATURE_COUNT = 24;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
@@ -1421,16 +1448,6 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE_DT = 20;
 
 	/**
-	 * The meta object id for the '<em>Main Base DT</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.base.MainBase
-	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBaseDT()
-	 * @generated
-	 */
-	int MAIN_BASE_DT = 21;
-
-	/**
 	 * The meta object id for the '<em>Runtime Exception DT</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1438,7 +1455,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getRuntimeExceptionDT()
 	 * @generated
 	 */
-	int RUNTIME_EXCEPTION_DT = 22;
+	int RUNTIME_EXCEPTION_DT = 21;
 
 	/**
 	 * The meta object id for the '<em>Error Handler DT</em>' data type.
@@ -1448,7 +1465,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getErrorHandlerDT()
 	 * @generated
 	 */
-	int ERROR_HANDLER_DT = 23;
+	int ERROR_HANDLER_DT = 22;
 
 	/**
 	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
@@ -1458,7 +1475,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION_DT = 24;
+	int SAX_PARSE_EXCEPTION_DT = 23;
 
 	/**
 	 * The meta object id for the '<em>EString Array3</em>' data type.
@@ -1467,7 +1484,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray3()
 	 * @generated
 	 */
-	int ESTRING_ARRAY3 = 26;
+	int ESTRING_ARRAY3 = 25;
 
 	/**
 	 * The meta object id for the '<em>EString Array2</em>' data type.
@@ -1476,7 +1493,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray2()
 	 * @generated
 	 */
-	int ESTRING_ARRAY2 = 27;
+	int ESTRING_ARRAY2 = 26;
 
 	/**
 	 * The meta object id for the '<em>EString Array</em>' data type.
@@ -1485,7 +1502,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray()
 	 * @generated
 	 */
-	int ESTRING_ARRAY = 25;
+	int ESTRING_ARRAY = 24;
 
 	/**
 	 * The meta object id for the '<em>Mand CETHDT</em>' data type.
@@ -1495,7 +1512,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMandCETHDT()
 	 * @generated
 	 */
-	int MAND_CETHDT = 28;
+	int MAND_CETHDT = 27;
 
 
 	/**
@@ -1661,6 +1678,17 @@ public interface BasePackage extends EPackage {
 	EAttribute getDeviceModel_ArchiveProperties();
 
 	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Main</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getMain()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EAttribute getDeviceModel_Main();
+
+	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.DeviceModel#getContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1760,17 +1788,6 @@ public interface BasePackage extends EPackage {
 	EAttribute getDeviceModel_GenerateAlt();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Main</em>'.
-	 * @see alma.control.datamodel.meta.base.DeviceModel#getMain()
-	 * @see #getDeviceModel()
-	 * @generated
-	 */
-	EReference getDeviceModel_Main();
-
-	/**
 	 * Returns the meta object for the reference list '{@link alma.control.datamodel.meta.base.DeviceModel#getAPropertiesList <em>AProperties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1824,6 +1841,39 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDeviceModel_Tables();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.DeviceModel#getTablesAux <em>Tables Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tables Aux</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getTablesAux()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EAttribute getDeviceModel_TablesAux();
+
+	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMainAmb <em>Main Amb</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Main Amb</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getMainAmb()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_MainAmb();
+
+	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMainEth <em>Main Eth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Main Eth</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getMainEth()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_MainEth();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MainBase <em>Main Base</em>}'.
@@ -2652,17 +2702,6 @@ public interface BasePackage extends EPackage {
 	EDataType getMandCBaseDT();
 
 	/**
-	 * Returns the meta object for data type '{@link alma.control.datamodel.meta.base.MainBase <em>Main Base DT</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Main Base DT</em>'.
-	 * @see alma.control.datamodel.meta.base.MainBase
-	 * @model instanceClass="alma.control.datamodel.meta.base.MainBase" serializeable="false"
-	 * @generated
-	 */
-	EDataType getMainBaseDT();
-
-	/**
 	 * Returns the meta object for data type '{@link java.lang.RuntimeException <em>Runtime Exception DT</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2885,6 +2924,14 @@ public interface BasePackage extends EPackage {
 		EAttribute DEVICE_MODEL__ARCHIVE_PROPERTIES = eINSTANCE.getDeviceModel_ArchiveProperties();
 
 		/**
+		 * The meta object literal for the '<em><b>Main</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE_MODEL__MAIN = eINSTANCE.getDeviceModel_Main();
+
+		/**
 		 * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2957,14 +3004,6 @@ public interface BasePackage extends EPackage {
 		EAttribute DEVICE_MODEL__GENERATE_ALT = eINSTANCE.getDeviceModel_GenerateAlt();
 
 		/**
-		 * The meta object literal for the '<em><b>Main</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEVICE_MODEL__MAIN = eINSTANCE.getDeviceModel_Main();
-
-		/**
 		 * The meta object literal for the '<em><b>AProperties</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3003,6 +3042,30 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEVICE_MODEL__TABLES = eINSTANCE.getDeviceModel_Tables();
+
+		/**
+		 * The meta object literal for the '<em><b>Tables Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE_MODEL__TABLES_AUX = eINSTANCE.getDeviceModel_TablesAux();
+
+		/**
+		 * The meta object literal for the '<em><b>Main Amb</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__MAIN_AMB = eINSTANCE.getDeviceModel_MainAmb();
+
+		/**
+		 * The meta object literal for the '<em><b>Main Eth</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__MAIN_ETH = eINSTANCE.getDeviceModel_MainEth();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
@@ -3647,16 +3710,6 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType MAND_CBASE_DT = eINSTANCE.getMandCBaseDT();
-
-		/**
-		 * The meta object literal for the '<em>Main Base DT</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.base.MainBase
-		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getMainBaseDT()
-		 * @generated
-		 */
-		EDataType MAIN_BASE_DT = eINSTANCE.getMainBaseDT();
 
 		/**
 		 * The meta object literal for the '<em>Runtime Exception DT</em>' data type.

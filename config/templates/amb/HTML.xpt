@@ -45,7 +45,7 @@ MA 02111-1307  USA
   </ul>
       <h3>Notes</h3>
       <ul>
-«FOREACH (Set[Note]) Notes AS x»
+«FOREACH (Set[Note]) getNotes() AS x»
     <li><em>«x.Note»</em>
 «ENDFOREACH»
       </ul>

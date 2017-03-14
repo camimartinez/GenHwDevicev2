@@ -57,3 +57,6 @@ alma.control.datamodel.meta.base.impl.DeviceModelImpl.ICDDateAsArrayTime();
 
 String DescriptionAsString():JAVA
 alma.control.datamodel.meta.base.impl.DeviceModelImpl.DescriptionAsString();
+
+Resource getNotes():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.getNotes();

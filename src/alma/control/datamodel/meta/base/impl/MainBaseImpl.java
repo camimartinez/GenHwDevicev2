@@ -36,7 +36,7 @@ import alma.control.datamodel.meta.base.Util;
  *
  * @generated
  */
-public class MainBaseImpl extends EObjectImpl implements MainBase {
+public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
 	/**
 	 * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->

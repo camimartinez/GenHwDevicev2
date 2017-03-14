@@ -1,5 +1,6 @@
 package alma.control.datamodel.meta.base.impl;
 
+import alma.control.datamodel.meta.amb.Main;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
@@ -47,6 +48,7 @@ import alma.control.datamodel.meta.base.Util;
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getNotes <em>Notes</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getControlPoints <em>Control Points</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getArchiveProperties <em>Archive Properties</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMain <em>Main</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getBusType <em>Bus Type</em>}</li>
@@ -56,12 +58,14 @@ import alma.control.datamodel.meta.base.Util;
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#isGenerateAlt <em>Generate Alt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMain <em>Main</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getAPropertiesList <em>AProperties</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getCPointsList <em>CPoints</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMPointsList <em>MPoints</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getUtils <em>Utils</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getTablesAux <em>Tables Aux</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMainAmb <em>Main Amb</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMainEth <em>Main Eth</em>}</li>
  * </ul>
  *
  * @generated
@@ -186,6 +190,26 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @ordered
 	 */
 	protected Resource archiveProperties = ARCHIVE_PROPERTIES_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMain() <em>Main</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMain()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Resource MAIN_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMain() <em>Main</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMain()
+	 * @generated
+	 * @ordered
+	 */
+	protected Resource main = MAIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getContainer() <em>Container</em>}' attribute.
@@ -368,16 +392,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	protected boolean generateAlt = GENERATE_ALT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMain() <em>Main</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMain()
-	 * @generated
-	 * @ordered
-	 */
-	protected MainBase main;
-
-	/**
 	 * The cached value of the '{@link #getAPropertiesList() <em>AProperties</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -456,6 +470,46 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @ordered
 	 */
 	protected Table tables;
+
+	/**
+	 * The default value of the '{@link #getTablesAux() <em>Tables Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTablesAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Object TABLES_AUX_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTablesAux() <em>Tables Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTablesAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected Object tablesAux = TABLES_AUX_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMainAmb() <em>Main Amb</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMainAmb()
+	 * @generated
+	 * @ordered
+	 */
+	protected Main mainAmb;
+
+	/**
+	 * The cached value of the '{@link #getMainEth() <em>Main Eth</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMainEth()
+	 * @generated
+	 * @ordered
+	 */
+	protected alma.control.datamodel.meta.eth.Main mainEth;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -600,6 +654,27 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 		archiveProperties = newArchiveProperties;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES, oldArchiveProperties, archiveProperties));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Resource getMain() {
+		return main;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMain(Resource newMain) {
+		Resource oldMain = main;
+		main = newMain;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__MAIN, oldMain, main));
 	}
 
 	/**
@@ -796,44 +871,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MainBase getMain() {
-		if (main != null && main.eIsProxy()) {
-			InternalEObject oldMain = (InternalEObject)main;
-			main = (MainBase)eResolveProxy(oldMain);
-			if (main != oldMain) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__MAIN, oldMain, main));
-			}
-		}
-		return main;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MainBase basicGetMain() {
-		return main;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMain(MainBase newMain) {
-		MainBase oldMain = main;
-		main = newMain;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__MAIN, oldMain, main));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ArchiveProperty[] getAProperties() {
 		if (aProperties == null || aProperties.isEmpty()) return APROPERTIES_EEMPTY_ARRAY;
 		BasicEList<ArchiveProperty> list = (BasicEList<ArchiveProperty>)aProperties;
@@ -910,7 +947,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 		return xmiArchive;
 	}
 
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1170,6 +1207,103 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Object getTablesAux() {
+		return tablesAux;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTablesAux(Object newTablesAux) {
+		Object oldTablesAux = tablesAux;
+		tablesAux = newTablesAux;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__TABLES_AUX, oldTablesAux, tablesAux));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Main getMainAmb() {
+		if (mainAmb != null && mainAmb.eIsProxy()) {
+			InternalEObject oldMainAmb = (InternalEObject)mainAmb;
+			mainAmb = (Main)eResolveProxy(oldMainAmb);
+			if (mainAmb != oldMainAmb) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__MAIN_AMB, oldMainAmb, mainAmb));
+			}
+		}
+		return mainAmb;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Main basicGetMainAmb() {
+		return mainAmb;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMainAmb(Main newMainAmb) {
+		Main oldMainAmb = mainAmb;
+		mainAmb = newMainAmb;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__MAIN_AMB, oldMainAmb, mainAmb));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public alma.control.datamodel.meta.eth.Main getMainEth() {
+		if (mainEth != null && mainEth.eIsProxy()) {
+			InternalEObject oldMainEth = (InternalEObject)mainEth;
+			mainEth = (alma.control.datamodel.meta.eth.Main)eResolveProxy(oldMainEth);
+			if (mainEth != oldMainEth) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.DEVICE_MODEL__MAIN_ETH, oldMainEth, mainEth));
+			}
+		}
+		return mainEth;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public alma.control.datamodel.meta.eth.Main basicGetMainEth() {
+		return mainEth;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMainEth(alma.control.datamodel.meta.eth.Main newMainEth) {
+		alma.control.datamodel.meta.eth.Main oldMainEth = mainEth;
+		mainEth = newMainEth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__MAIN_ETH, oldMainEth, mainEth));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
 	public ControlPoint getControlPoint(String fullName) {
@@ -1192,19 +1326,11 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String CheckConstraints() {
-		return "";
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String Assembly() {
-		return main.Assembly();
-		
+		if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){
+				return mainAmb.Assembly();
+		}else
+				return mainEth.Assembly();	
 	}
 
 	/**
@@ -1213,8 +1339,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public String Extends() {
-		return main.Extends();
-		
+				if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){
+					return mainAmb.Extends();
+				}else
+					return mainEth.Extends();
 	}
 
 	/**
@@ -1223,8 +1351,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public String DeviceName() {
-		return main.DeviceName();
-		
+		if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){
+					return mainAmb.DeviceName();
+				}else
+					return mainEth.DeviceName();
 	}
 
 	/**
@@ -1233,8 +1363,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public String Description() {
-		return main.Description();
-		
+			if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){
+					return mainAmb.Description();
+				}else
+					return mainEth.Description();
 	}
 
 	/**
@@ -1243,8 +1375,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public String DescriptionAsString() {
-		return main.DescriptionAsString();
-		
+				if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){
+					return mainAmb.DescriptionAsString();
+				}else
+					return mainEth.DescriptionAsString();	
 	}
 
 	/**
@@ -1253,8 +1387,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public String ICD() {
-		return main.ICD();
-		
+				if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){
+					return mainAmb.ICD();
+				}else
+					return mainEth.ICD();	
 	}
 
 	/**
@@ -1263,8 +1399,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public String ICDDate() {
-		return main.ICDDate();
-		
+				if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){
+					return mainAmb.ICDDate();
+				}else
+					return mainEth.ICDDate();
 	}
 
 	/**
@@ -1273,8 +1411,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public String ICDDateAsDatabaseDate() {
-		return main.ICDDateAsDatabaseDate();
-		
+				if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){
+					return mainAmb.ICDDateAsDatabaseDate();
+				}else
+					return mainEth.ICDDateAsDatabaseDate();
 	}
 
 	/**
@@ -1283,8 +1423,10 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public String ICDDateAsArrayTime() {
-		return main.ICDDateAsArrayTime();
-		
+				if (this instanceof alma.control.datamodel.meta.amb.impl.DeviceModelImpl){
+					return mainAmb.ICDDateAsArrayTime();
+				}else
+					return mainEth.ICDDateAsArrayTime();
 	}
 
 	/**
@@ -1418,6 +1560,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return getControlPoints();
 			case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
 				return getArchiveProperties();
+			case BasePackage.DEVICE_MODEL__MAIN:
+				return getMain();
 			case BasePackage.DEVICE_MODEL__CONTAINER:
 				return getContainer();
 			case BasePackage.DEVICE_MODEL__DEVICE_NAME:
@@ -1436,9 +1580,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return isMonitorDBOnly();
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
 				return isGenerateAlt();
-			case BasePackage.DEVICE_MODEL__MAIN:
-				if (resolve) return getMain();
-				return basicGetMain();
 			case BasePackage.DEVICE_MODEL__APROPERTIES:
 				return getAPropertiesList();
 			case BasePackage.DEVICE_MODEL__CPOINTS:
@@ -1451,6 +1592,14 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__TABLES:
 				if (resolve) return getTables();
 				return basicGetTables();
+			case BasePackage.DEVICE_MODEL__TABLES_AUX:
+				return getTablesAux();
+			case BasePackage.DEVICE_MODEL__MAIN_AMB:
+				if (resolve) return getMainAmb();
+				return basicGetMainAmb();
+			case BasePackage.DEVICE_MODEL__MAIN_ETH:
+				if (resolve) return getMainEth();
+				return basicGetMainEth();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1482,6 +1631,9 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
 				setArchiveProperties((Resource)newValue);
 				return;
+			case BasePackage.DEVICE_MODEL__MAIN:
+				setMain((Resource)newValue);
+				return;
 			case BasePackage.DEVICE_MODEL__CONTAINER:
 				setContainer((ResourceSet)newValue);
 				return;
@@ -1509,9 +1661,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
 				setGenerateAlt((Boolean)newValue);
 				return;
-			case BasePackage.DEVICE_MODEL__MAIN:
-				setMain((MainBase)newValue);
-				return;
 			case BasePackage.DEVICE_MODEL__APROPERTIES:
 				getAPropertiesList().clear();
 				getAPropertiesList().addAll((Collection<? extends ArchiveProperty>)newValue);
@@ -1529,6 +1678,15 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return;
 			case BasePackage.DEVICE_MODEL__TABLES:
 				setTables((Table)newValue);
+				return;
+			case BasePackage.DEVICE_MODEL__TABLES_AUX:
+				setTablesAux(newValue);
+				return;
+			case BasePackage.DEVICE_MODEL__MAIN_AMB:
+				setMainAmb((Main)newValue);
+				return;
+			case BasePackage.DEVICE_MODEL__MAIN_ETH:
+				setMainEth((alma.control.datamodel.meta.eth.Main)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1560,6 +1718,9 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
 				setArchiveProperties(ARCHIVE_PROPERTIES_EDEFAULT);
 				return;
+			case BasePackage.DEVICE_MODEL__MAIN:
+				setMain(MAIN_EDEFAULT);
+				return;
 			case BasePackage.DEVICE_MODEL__CONTAINER:
 				setContainer(CONTAINER_EDEFAULT);
 				return;
@@ -1587,9 +1748,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
 				setGenerateAlt(GENERATE_ALT_EDEFAULT);
 				return;
-			case BasePackage.DEVICE_MODEL__MAIN:
-				setMain((MainBase)null);
-				return;
 			case BasePackage.DEVICE_MODEL__APROPERTIES:
 				getAPropertiesList().clear();
 				return;
@@ -1604,6 +1762,15 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return;
 			case BasePackage.DEVICE_MODEL__TABLES:
 				setTables((Table)null);
+				return;
+			case BasePackage.DEVICE_MODEL__TABLES_AUX:
+				setTablesAux(TABLES_AUX_EDEFAULT);
+				return;
+			case BasePackage.DEVICE_MODEL__MAIN_AMB:
+				setMainAmb((Main)null);
+				return;
+			case BasePackage.DEVICE_MODEL__MAIN_ETH:
+				setMainEth((alma.control.datamodel.meta.eth.Main)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1629,6 +1796,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return CONTROL_POINTS_EDEFAULT == null ? controlPoints != null : !CONTROL_POINTS_EDEFAULT.equals(controlPoints);
 			case BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES:
 				return ARCHIVE_PROPERTIES_EDEFAULT == null ? archiveProperties != null : !ARCHIVE_PROPERTIES_EDEFAULT.equals(archiveProperties);
+			case BasePackage.DEVICE_MODEL__MAIN:
+				return MAIN_EDEFAULT == null ? main != null : !MAIN_EDEFAULT.equals(main);
 			case BasePackage.DEVICE_MODEL__CONTAINER:
 				return CONTAINER_EDEFAULT == null ? container != null : !CONTAINER_EDEFAULT.equals(container);
 			case BasePackage.DEVICE_MODEL__DEVICE_NAME:
@@ -1647,8 +1816,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return monitorDBOnly != MONITOR_DB_ONLY_EDEFAULT;
 			case BasePackage.DEVICE_MODEL__GENERATE_ALT:
 				return generateAlt != GENERATE_ALT_EDEFAULT;
-			case BasePackage.DEVICE_MODEL__MAIN:
-				return main != null;
 			case BasePackage.DEVICE_MODEL__APROPERTIES:
 				return aProperties != null && !aProperties.isEmpty();
 			case BasePackage.DEVICE_MODEL__CPOINTS:
@@ -1659,6 +1826,12 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return utils != null;
 			case BasePackage.DEVICE_MODEL__TABLES:
 				return tables != null;
+			case BasePackage.DEVICE_MODEL__TABLES_AUX:
+				return TABLES_AUX_EDEFAULT == null ? tablesAux != null : !TABLES_AUX_EDEFAULT.equals(tablesAux);
+			case BasePackage.DEVICE_MODEL__MAIN_AMB:
+				return mainAmb != null;
+			case BasePackage.DEVICE_MODEL__MAIN_ETH:
+				return mainEth != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1685,6 +1858,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 		result.append(controlPoints);
 		result.append(", archiveProperties: ");
 		result.append(archiveProperties);
+		result.append(", main: ");
+		result.append(main);
 		result.append(", container: ");
 		result.append(container);
 		result.append(", deviceName: ");
@@ -1703,6 +1878,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 		result.append(monitorDBOnly);
 		result.append(", generateAlt: ");
 		result.append(generateAlt);
+		result.append(", tablesAux: ");
+		result.append(tablesAux);
 		result.append(')');
 		return result.toString();
 	}
