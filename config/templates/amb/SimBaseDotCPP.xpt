@@ -20,21 +20,19 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
+  «IF !IsMonitorDBOnly()»
     «EXPAND SWModuleDef»
   «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"SimBase.cpp"»
+«FILE DirPath()+"/src/"+Assembly()+"SimBase.cpp"»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -65,12 +63,12 @@ MA 02111-1307  USA
  */
 
 
-#include <«Assembly»SimBase.h>
+#include <«Assembly()»SimBase.h>
 
 
-«Assembly»SimBase::«Assembly»SimBase(const ACE_CString& name,
+«Assembly()»SimBase::«Assembly()»SimBase(const ACE_CString& name,
     maci::ContainerServices* cs):
-    «Assembly»Impl(name, cs),
+    «Assembly()»Impl(name, cs),
     simulationModeEnabled(true)
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
@@ -91,7 +89,7 @@ MA 02111-1307  USA
 «ENDFOREACH»
 }
 
-«Assembly»SimBase::~«Assembly»SimBase()
+«Assembly()»SimBase::~«Assembly()»SimBase()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
@@ -118,7 +116,7 @@ MA 02111-1307  USA
 /// Get the current value of «MPName» from the device.
         «IF !isDependent»
             «IF isWorldDataArray»
-std::vector< «WorldDataToCPPType» > «Assembly»SimBase::get«AltMPName»(
+std::vector< «WorldDataToCPPType» > «Assembly()»SimBase::get«AltMPName»(
     ACS::Time& timestamp)
             «ELSE»
 «WorldDataToCPPType» «Assembly»SimBase::get«AltMPName»(
@@ -140,7 +138,7 @@ std::vector< «WorldDataToCPPType» > «Assembly»SimBase::get«AltMPName»(
     }
     else if(getHwState() != Control::HardwareDevice::Simulation)
     {
-        return «Assembly»Base::get«AltMPName»(timestamp);
+        return «Assembly()»Base::get«AltMPName»(timestamp);
     }
 
             «IF isWorldDataArray»
@@ -156,7 +154,7 @@ std::vector< «WorldDataToCPPType» > «Assembly»SimBase::get«AltMPName»(
 «DEFINE ProtectedControlPoint FOR ControlPoint»
     «IF !isDependent»
         «IF Implement»
-«cppReturns» «Assembly»SimBase::set«AltCPName»«cppDeclaration»
+«cppReturns» «Assembly()»SimBase::set«AltCPName»«cppDeclaration»
 {
     if((isReady() == false)
     || (inErrorState() == true))

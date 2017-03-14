@@ -20,15 +20,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly+"/idl/"+Assembly+"Add.sql"»
+«FILE Assembly()+"/idl/"+Assembly()+"Add.sql"»
 SET SERVEROUTPUT ON;
 
 DECLARE
@@ -50,15 +48,15 @@ dbms_output.put_line('Transaction BEGIN');
 «REM»
   First we find out wether LRUType Assembly has already been inserted. 
 «ENDREM»
-SELECT COUNT(lruName) INTO lruNameCount FROM lruType WHERE lruName='«Assembly»';
+SELECT COUNT(lruName) INTO lruNameCount FROM lruType WHERE lruName='«Assembly()»';
 IF lruNameCount=0 THEN
 dbms_output.put_line('Inserting LRU');
 INSERT INTO LRUType VALUES (
-    '«Assembly»',
-    '«DeviceName»',
-    '«ICD»',
-    '«ICDDateAsArrayTime»',
-    '«DescriptionAsString»',
+    '«Assembly()»',
+    '«DeviceName()»',
+    '«ICD()»',
+    '«ICDDateAsArrayTime()»',
+    '«DescriptionAsString()»',
     ''
 );
 ELSE
@@ -70,28 +68,28 @@ END IF;
   NOW  We find out wether ComponentType has already been inserted.
   A special case is considered for CCC_Monitor component, since its interface is defined in Correlator.
 «ENDREM»
-SELECT COUNT(componentTypeId) INTO componentTypeIdCount FROM componentType WHERE idl='IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0';
+SELECT COUNT(componentTypeId) INTO componentTypeIdCount FROM componentType WHERE idl='IDL:alma/«IF Assembly() == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly()»:1.0';
 IF componentTypeIdCount=0 THEN
-    dbms_output.put_line('Inserting component type IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0');
+    dbms_output.put_line('Inserting component type IDL:alma/«IF Assembly() == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly()»:1.0');
     INSERT INTO componentType VALUES (
         ComponT_seq.NextVal,
-        'IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0'
+        'IDL:alma/«IF Assembly() == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly()»:1.0'
     );
     «REM»
       Next line was added since Oracle sequences are implemented such that we cannot be sure that next element is current+1
     «ENDREM»
 ELSE 
-    dbms_output.put_line('Component type IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0 already exists... continue');
+    dbms_output.put_line('Component type IDL:alma/«IF Assembly() == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly()»:1.0 already exists... continue');
 END IF;
-SELECT componenttypeid INTO compTypeId FROM componentType WHERE idl='IDL:alma/«IF Assembly == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly»:1.0';
+SELECT componenttypeid INTO compTypeId FROM componentType WHERE idl='IDL:alma/«IF Assembly() == "CCC_Monitor"»Correlator«ELSE»Control«ENDIF»/«Assembly()»:1.0';
 
 
 «REM»
   NOW  We find out wether AssemblyType has already been inserted. 
 «ENDREM»
-SELECT count(assemblytypename) INTO assemblyNameCount FROM assemblytype WHERE assemblytypename='«Assembly»';
+SELECT count(assemblytypename) INTO assemblyNameCount FROM assemblytype WHERE assemblytypename='«Assembly()»';
 IF assemblyNameCount=0 THEN
-    dbms_output.put_line('Inserting assembly type «Assembly»');
+    dbms_output.put_line('Inserting assembly type «Assembly()»');
     INSERT INTO AssemblyType (
         ASSEMBLYTYPENAME,
         BASEELEMENTTYPE,
@@ -103,37 +101,37 @@ IF assemblyNameCount=0 THEN
 	PRODUCTIONCODE,
 	SIMULATEDCODE)
     VALUES (
-        '«Assembly»', 
+        '«Assembly()»', 
         'Antenna',
-        '«Assembly»', 
-        '«DeviceName»', 
-        '«DescriptionAsString»', 
+        '«Assembly()»', 
+        '«DeviceName()»', 
+        '«DescriptionAsString()»', 
         '',
         compTypeId,
-        '«Assembly»Impl',
-        '«Assembly»CompSimImpl'
+        '«Assembly()»Impl',
+        '«Assembly()»CompSimImpl'
     );
 ELSE
-    dbms_output.put_line('Assembly type «Assembly» already exists... continue');
+    dbms_output.put_line('Assembly type «Assembly()» already exists... continue');
 END IF;
 
 
 «REM»
   NOW  We find out wether DefaultComponent has already been inserted. 
 «ENDREM»
-SELECT count(defaultcomponentid) INTO defaultComponentCount FROM defaultComponent WHERE assemblytypename='«Assembly»';
+SELECT count(defaultcomponentid) INTO defaultComponentCount FROM defaultComponent WHERE assemblytypename='«Assembly()»';
 IF defaultComponentCount=0 THEN
-    dbms_output.put_line('Inserting default component «Assembly»');
+    dbms_output.put_line('Inserting default component «Assembly()»');
     SELECT MAX(defaultcomponentid) INTO defCompId FROM defaultComponent;
     defCompId:=COALESCE(defCompId,0)+1;
     INSERT INTO DefaultComponent VALUES (
         defCompId,
         compTypeId, 
-        '«Assembly»', 
+        '«Assembly()»', 
         'cpp', 
         '1',
-        '«Assembly»Impl.cpp',
-        '«Assembly»Impl.cpp',
+        '«Assembly()»Impl.cpp',
+        '«Assembly()»Impl.cpp',
         '0',
         '0',
         '0',
@@ -143,11 +141,10 @@ IF defaultComponentCount=0 THEN
         ''
     );
 ELSE
-    SELECT defaultcomponentid INTO defCompId FROM defaultcomponent WHERE assemblytypename='«Assembly»';
-«IF Extends != "none"»
-    dbms_output.put_line('Default component «Assembly» already exists... continue');
+    SELECT defaultcomponentid INTO defCompId FROM defaultcomponent WHERE assemblytypename='«Assembly()»';
+«IF Extends() != "none"»
+    dbms_output.put_line('Default component «Assembly()» already exists... continue');
 «ELSE»
-    dbms_output.put_line('Default component «Assembly» already exists. Deleting associated baciprops and monpoints...');
     FOR propCur in (select defaultbacipropid from defaultbaciproperty where defaultcomponentid = defCompId)
     LOOP
         FOR monCur in (select defaultmonitorpointid from defaultmonitorpoint where defaultbacipropertyid = propCur.defaultbacipropid)

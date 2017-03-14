@@ -1,0 +1,35 @@
+String DirPath():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.DirPath();
+
+String Assembly():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.Assembly();
+
+Boolean checkIfCvsignoreFileExists(String this):JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.checkIfCvsignoreFileExists(java.lang.String);
+
+String Extends():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.Extends();
+
+String DeviceName():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.DeviceName();
+
+String Description():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.Description();
+
+String ICD():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.ICD();
+
+String ICDDate():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.ICDDate();
+
+String ICDDateAsDatabaseDate():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.ICDDateAsDatabaseDate();
+
+String ICDDateAsArrayTime():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.ICDDateAsArrayTime();
+
+String DescriptionAsString():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.DescriptionAsString();
+
+String VendorClass():JAVA
+alma.control.datamodel.meta.eth.impl.DeviceModelImpl.VendorClass();

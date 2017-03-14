@@ -267,8 +267,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		return mac.DataToBACIType();
 	}
 
-	/**import alma.control.datamodel.meta.eth.Main;
-
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

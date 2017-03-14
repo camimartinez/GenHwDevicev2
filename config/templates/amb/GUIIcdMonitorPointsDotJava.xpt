@@ -20,22 +20,20 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/alma/Control/device/gui/"+Assembly+"/IcdMonitorPoints.java"»
+«FILE DirPath()+"/src/alma/Control/device/gui/"+Assembly()+"/IcdMonitorPoints.java"»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -65,10 +63,10 @@ MA 02111-1307  USA
  *
  */
 
-package alma.Control.device.gui.«Assembly»;
+package alma.Control.device.gui.«Assembly()»;
 
 import alma.Control.device.gui.common.IMonitorPoint;
-import alma.Control.device.gui.«Assembly».presentationModels.MonitorPointPM;
+import alma.Control.device.gui.«Assembly()».presentationModels.MonitorPointPM;
 
 /**
  * List all Monitor Points implemented in this device.

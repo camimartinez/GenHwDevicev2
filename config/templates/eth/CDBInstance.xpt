@@ -22,19 +22,17 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
+
+«EXTENSION alma::control::templates::extensions::eth::util»
 
 «DEFINE Root FOR DeviceModelImpl»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/doc/"+Assembly+".xml"»
+«FILE DirPath()+"/doc/"+Assembly()+".xml"»
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
  * ALMA - Atacama Large Millimiter Array
@@ -65,9 +63,9 @@ MA 02111-1307  USA
  *
 -->
 
-<«Assembly»Base xmlns="urn:schemas-cosylab-com:«Assembly»Base:1.0"
-    xsi:schemaLocation="urn:schemas-cosylab-com:«Assembly»Base:1.0
-    http://www.nrao.edu/schemas/CONTROL/«Assembly»Base.xsd"
+<«Assembly()»Base xmlns="urn:schemas-cosylab-com:«Assembly()»Base:1.0"
+    xsi:schemaLocation="urn:schemas-cosylab-com:«Assembly()»Base:1.0
+    http://www.nrao.edu/schemas/CONTROL/«Assembly()»Base.xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
@@ -148,6 +146,6 @@ MA 02111-1307  USA
         retries="3"
         timeoutRxTx="2.0"
         lingerTime="2"></EthernetConfig>
-</«Assembly»Base>
+</«Assembly()»Base>
 «ENDFILE»
 «ENDDEFINE»

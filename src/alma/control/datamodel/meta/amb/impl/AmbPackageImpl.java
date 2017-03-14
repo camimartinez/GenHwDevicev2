@@ -720,9 +720,9 @@ public class AmbPackageImpl extends EPackageImpl implements AmbPackage {
 
 		initEClass(deviceModelEClass, DeviceModel.class, "DeviceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "isMonitorDBOnly", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "IsMonitorDBOnly", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "IsGeneratedAlt", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deviceModelEClass, ecorePackage.getEBoolean(), "IsGenerateAlt", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(deviceModelEClass, ecorePackage.getEString(), "Parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 

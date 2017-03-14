@@ -20,21 +20,19 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/config/CDB/schemas/"+Assembly+"Base.xsd"»
+«FILE DirPath()+"/config/CDB/schemas/"+Assembly()+"Base.xsd"»
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
  * ALMA - Atacama Large Millimiter Array
@@ -64,14 +62,14 @@ MA 02111-1307  USA
  *  ---------------------------------------------------------
  *
 -->
-<xs:schema targetNamespace="urn:schemas-cosylab-com:«Assembly»Base:1.0"
-    xmlns="urn:schemas-cosylab-com:«Assembly»Base:1.0"
+<xs:schema targetNamespace="urn:schemas-cosylab-com:«Assembly()»Base:1.0"
+    xmlns="urn:schemas-cosylab-com:«Assembly()»Base:1.0"
     xmlns:amb="urn:schemas-cosylab-com:AmbDevice:1.0"
     xmlns:baci="urn:schemas-cosylab-com:BACI:1.0"
     xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    «IF Extends != "none"»
-          xmlns:ext="urn:schemas-cosylab-com:«Extends»:1.0" 
+    «IF Extends() != "none"»
+          xmlns:ext="urn:schemas-cosylab-com:«Extends()»:1.0" 
     «ELSE»
           xmlns:extcontrol="urn:schemas-cosylab-com:ControlDevice:1.0"
     «ENDIF»
@@ -80,15 +78,15 @@ MA 02111-1307  USA
     <xs:import namespace="urn:schemas-cosylab-com:CDB:1.0" schemaLocation="http://www.eso.org/schemas/ACS/CDB.xsd"/>
     <xs:import namespace="urn:schemas-cosylab-com:BACI:1.0" schemaLocation="http://www.eso.org/schemas/ACS/BACI.xsd"/>
     <xs:import namespace="urn:schemas-cosylab-com:AmbDevice:1.0" schemaLocation="http://www.nrao.edu/schemas/CONTROL/AmbDevice.xsd"/>
-    «IF Extends != "none"»
-          <xs:import namespace="urn:schemas-cosylab-com:«Extends»:1.0" schemaLocation="http://www.nrao.edu/schemas/CONTROL/«Extends».xsd"/>
+    «IF Extends() != "none"»
+          <xs:import namespace="urn:schemas-cosylab-com:«Extends()»:1.0" schemaLocation="http://www.nrao.edu/schemas/CONTROL/«Extends()».xsd"/>
     «ELSE»
           <xs:import namespace="urn:schemas-cosylab-com:ControlDevice:1.0" schemaLocation="http://www.nrao.edu/schemas/CONTROL/ControlDevice.xsd"/>
     «ENDIF»
-    <xs:complexType name="«Assembly»Base">
-    «IF Extends != "none"»
+    <xs:complexType name="«Assembly()»Base">
+    «IF Extends() != "none"»
         <xs:complexContent>
-        <xs:extension base="ext:«Extends»">
+        <xs:extension base="ext:«Extends()»">
     «ELSE»
           <xs:complexContent>
           <xs:extension base="extcontrol:ControlDevice">
@@ -107,33 +105,33 @@ MA 02111-1307  USA
           «ENDIF»
         «ENDIF»
     «ENDFOREACH»
-    «IF Extends == "none"»
+    «IF Extends() == "none"»
         <xs:element name="Address">
         <xs:complexType>
           <xs:complexContent>
             <xs:restriction base="amb:Address">
-        «IF Channel == "none" || Channel == "parm"»
-            «IF Channel == "none"»
+        «IF Channel ()== "none" || Channel() == "parm"»
+            «IF Channel() == "none"»
                   <xs:attribute name="ChannelNumber" type="xs:long" use="optional"/>
             «ELSE»
                   <xs:attribute name="ChannelNumber" type="xs:long" use="required"/>
             «ENDIF»
         «ELSE»
-              <xs:attribute name="ChannelNumber" type="xs:long" use="optional" default="«Channel»"/>
+              <xs:attribute name="ChannelNumber" type="xs:long" use="optional" default="«Channel()»"/>
         «ENDIF»
-        «IF NodeAddress == "none" || NodeAddress == "parm"»
-            «IF NodeAddress == "none"»
+        «IF NodeAddress() == "none" || NodeAddress() == "parm"»
+            «IF NodeAddress() == "none"»
                   <xs:attribute name="NodeNumber" type="xs:long" use="optional"/>
             «ELSE»
                   <xs:attribute name="NodeNumber" type="xs:long" use="required"/>
             «ENDIF»
         «ELSE»
-              <xs:attribute name="NodeNumber" type="xs:long" use="optional" default="«NodeAddressInDecimal»"/>
+              <xs:attribute name="NodeNumber" type="xs:long" use="optional" default="«NodeAddressInDecimal()»"/>
         «ENDIF»
               <xs:attribute name="IDL" type="xs:string" use="optional"
-                            default="IDL:alma/Control/«Assembly»Base:1.0"/>
+                            default="IDL:alma/Control/«Assembly()»Base:1.0"/>
               <xs:attribute name="Implementation" type="xs:string"
-                            use="optional" default="«Assembly»Impl"/>
+                            use="optional" default="«Assembly()»Impl"/>
             </xs:restriction>
           </xs:complexContent>
         </xs:complexType>
@@ -143,7 +141,7 @@ MA 02111-1307  USA
   </xs:extension>
  </xs:complexContent>
 </xs:complexType>
-<xs:element name="«Assembly»Base" type="«Assembly»Base"/>
+<xs:element name="«Assembly()»Base" type="«Assembly()»Base"/>
 </xs:schema>
 «ENDFILE»
 «ENDDEFINE»

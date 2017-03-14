@@ -20,15 +20,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF IsGenerateAlt»
+    «IF IsGenerateAlt()»
         «EXPAND AltSWModuleDef»
     «ENDIF»
 «ENDDEFINE»
@@ -41,7 +39,7 @@ MA 02111-1307  USA
             ////////////////////////////////
 «ENDREM»
 
-«FILE "ALT/"+Assembly+".makefile"»
+«FILE "ALT/"+Assembly()+".makefile"»
 #******************************************************************************
 #  ALMA - Atacama Large Millimiter Array
 #  (c) European Southern Observatory, 2017
@@ -68,7 +66,7 @@ MA 02111-1307  USA
 #
 # Generated Code Name
 # --------------------
-MODULE_NAME = «Assembly»
+MODULE_NAME = «Assembly()»
 
 #
 # user definable C-compilation flags
@@ -234,9 +232,9 @@ install : install_all
             ////////////////////////////////
 «ENDREM»
 
-«FILE "ALT/"+Assembly+"Impl.idl"»
-#ifndef «Assembly»Impl_IDL
-#define «Assembly»Impl_IDL
+«FILE "ALT/"+Assembly()+"Impl.idl"»
+#ifndef «Assembly()»Impl_IDL
+#define «Assembly()»Impl_IDL
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -262,20 +260,20 @@ install : install_all
  */
 
 /**
- * External device interface to «Assembly».
+ * External device interface to «Assembly()».
  */
 
-#include <«Assembly»Base.idl>
+#include <«Assembly()»Base.idl>
 
 #pragma prefix "alma"
 
 module Control
 {
-    interface «Assembly»Impl: Control::«Assembly»Base
+    interface «Assembly()»Impl: Control::«Assembly()»Base
     {
     };
 };
-#endif /* «Assembly»Impl_IDL */
+#endif /* «Assembly()»Impl_IDL */
 «ENDFILE»
 
 «REM»
@@ -284,9 +282,9 @@ module Control
             ////////////////////////////////
 «ENDREM»
 
-«FILE "ALT/"+Assembly+"Impl.h"»
-#ifndef «Assembly»Impl_H
-#define «Assembly»Impl_H
+«FILE "ALT/"+Assembly()+"Impl.h"»
+#ifndef «Assembly()»Impl_H
+#define «Assembly()»Impl_H
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -316,21 +314,21 @@ module Control
 #endif
 
 // Base class
-#include <«Assembly»Base.h>
+#include <«Assembly()»Base.h>
 
 
-class «Assembly»Impl: public «Assembly»Base
+class «Assembly()»Impl: public «Assembly()»Base
 {
     public:
     /**
      * Constructor
      */
-    «Assembly»Impl(const ACE_CString& name, maci::ContainerServices* cs);
+    «Assembly()»Impl(const ACE_CString& name, maci::ContainerServices* cs);
 
     /**
      * Destructor
      */
-    virtual ~«Assembly»Impl();
+    virtual ~«Assembly()»Impl();
 
 «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
     «IF x.isSpecialConversion»
@@ -354,7 +352,7 @@ class «Assembly»Impl: public «Assembly»Base
     «ENDIF»
 «ENDFOREACH»
 };
-#endif // «Assembly»Impl_H
+#endif // «Assembly()»Impl_H
 «ENDFILE»
 
 «REM»
@@ -363,7 +361,7 @@ class «Assembly»Impl: public «Assembly»Base
             ////////////////////////////////
 «ENDREM»
 
-«FILE "ALT/"+Assembly+"Impl.cpp"»
+«FILE "ALT/"+Assembly()+"Impl.cpp"»
 /*
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -388,34 +386,34 @@ class «Assembly»Impl: public «Assembly»Base
  *
  */
 
-#include <«Assembly»Impl.h>
+#include <«Assembly()»Impl.h>
 
 
 /**
  *-----------------------
- * «Assembly» Constructor
+ * «Assembly()» Constructor
  *-----------------------
  */
-«Assembly»Impl::«Assembly»Impl(const ACE_CString& name,
+«Assembly()»Impl::«Assembly()»Impl(const ACE_CString& name,
     maci::ContainerServices* cs):
-    «Assembly»Base(name,cs)
+    «Assembly()»Base(name,cs)
 {
     ACS_TRACE(__PRETTY_FUNCTION__);
 }
 
 /**
  *-----------------------
- * «Assembly» Destructor
+ * «Assembly()» Destructor
  *-----------------------
  */
-«Assembly»Impl::~«Assembly»Impl()
+«Assembly()»Impl::~«Assembly()»Impl()
 {
   ACS_TRACE(__PRETTY_FUNCTION__);
 }
 
 
 ///////////////////////////////////////
-// Additional methods for «Assembly»
+// Additional methods for «Assembly()»
 ///////////////////////////////////////
 
 «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
@@ -442,7 +440,7 @@ std::vector< «x.WorldDataToCPPType» > convert_«x.MPName»(«x.RawDataToCPPTyp
 ///////////////////////////////////
 // Control point: «x.CPName»
 ///////////////////////////////////
-«x.cppReturns» «Assembly»Impl::«x.CPName»«x.cppDeclaration»
+«x.cppReturns» «Assembly()»Impl::«x.CPName»«x.cppDeclaration»
 {
     // TODO
 }
@@ -456,7 +454,7 @@ std::vector< «x.WorldDataToCPPType» > convert_«x.MPName»(«x.RawDataToCPPTyp
  *----------------------------
  */
 #include <maciACSComponentDefines.h>
-MACI_DLL_SUPPORT_FUNCTIONS(«Assembly»Impl)
+MACI_DLL_SUPPORT_FUNCTIONS(«Assembly()»Impl)
 «ENDFILE»
 
 «REM»
@@ -466,9 +464,9 @@ MACI_DLL_SUPPORT_FUNCTIONS(«Assembly»Impl)
 «ENDREM»
 
 
-«FILE "ALT/"+Assembly+"SimImpl.h"»
-#ifndef «Assembly»SimImpl_H
-#define «Assembly»SimImpl_H
+«FILE "ALT/"+Assembly()+"SimImpl.h"»
+#ifndef «Assembly()»SimImpl_H
+#define «Assembly()»SimImpl_H
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -498,23 +496,23 @@ MACI_DLL_SUPPORT_FUNCTIONS(«Assembly»Impl)
 #endif
 
 // Base class
-#include <«Assembly»SimBase.h>
+#include <«Assembly()»SimBase.h>
 #include <maciContainerServices.h>
 #include <ControlDeviceExceptionsC.h>
 
 
-class «Assembly»SimImpl: public «Assembly»SimBase
+class «Assembly()»SimImpl: public «Assembly()»SimBase
 {
     public:
     /**
      * Constructor
      */
-    «Assembly»SimImpl(const ACE_CString& name, maci::ContainerServices* cs);
+    «Assembly()»SimImpl(const ACE_CString& name, maci::ContainerServices* cs);
 
     /**
      * Destructor
      */
-    virtual ~«Assembly»SimImpl();
+    virtual ~«Assembly()»SimImpl();
 
 «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
     «IF x.isSpecialConversion»
@@ -546,20 +544,20 @@ class «Assembly»SimImpl: public «Assembly»SimBase
     /**
      * No default constructor.
      */
-    «Assembly»SimImpl();
+    «Assembly()»SimImpl();
 
     /**
      * ALMA coding standards: copy constructor is disabled.
      */
-    «Assembly»SimImpl(const «Assembly»SimImpl&);
+    «Assembly()»SimImpl(const «Assembly()»SimImpl&);
 
     /**
      * ALMA coding standards: assignment operator is disabled.
      */
-    «Assembly»SimImpl& operator=(const «Assembly»SimImpl&);
+    «Assembly()»SimImpl& operator=(const «Assembly()»SimImpl&);
 
 };
-#endif // «Assembly»SimImpl_H
+#endif // «Assembly()»SimImpl_H
 «ENDFILE»
 
 «REM»
@@ -569,7 +567,7 @@ class «Assembly»SimImpl: public «Assembly»SimBase
 «ENDREM»
 
 
-«FILE "ALT/"+Assembly+"SimImpl.cpp"»
+«FILE "ALT/"+Assembly()+"SimImpl.cpp"»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -595,41 +593,41 @@ class «Assembly»SimImpl: public «Assembly»SimBase
  *
  */
 
-#include <«Assembly»SimImpl.h>
+#include <«Assembly()»SimImpl.h>
 #include <logging.h>
 
 /**
  *-----------------------
- * «Assembly» Constructor
+ * «Assembly()» Constructor
  *-----------------------
  */
-«Assembly»SimImpl::«Assembly»SimImpl(const ACE_CString& name,
+«Assembly()»SimImpl::«Assembly()»SimImpl(const ACE_CString& name,
     maci::ContainerServices* cs):
-    «Assembly»SimBase::«Assembly»SimBase(name, cs)
+    «Assembly()»SimBase::«Assembly()»SimBase(name, cs)
 {
     ACS_TRACE(__PRETTY_FUNCTION__);
 }
 
 /**
  *-----------------------
- * «Assembly» Destructor
+ * «Assembly()» Destructor
  *-----------------------
  */
-«Assembly»SimImpl::~«Assembly»SimImpl()
+«Assembly()»SimImpl::~«Assembly()»SimImpl()
 {
     ACS_TRACE(__PRETTY_FUNCTION__);
 }
 
 
-void «Assembly»SimImpl::hwSimulationAction()
+void «Assembly()»SimImpl::hwSimulationAction()
 {
     ACS_TRACE(__PRETTY_FUNCTION__);
 
-    «Assembly»Impl::hwOperationalAction();
+    «Assembly()»Impl::hwOperationalAction();
 }
 
 ///////////////////////////////////////
-// Additional methods for «Assembly»
+// Additional methods for «Assembly()»
 ///////////////////////////////////////
 
 «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
@@ -638,12 +636,12 @@ void «Assembly»SimImpl::hwSimulationAction()
 // Monitor point: «x.MPName»
 ///////////////////////////////////
         «IF x.isWorldDataArray»
-std::vector< «x.WorldDataToCPPType» > «Assembly»SimImpl::convert_«x.MPName»(«x.RawDataToCPPType»* raw)
+std::vector< «x.WorldDataToCPPType» > «Assembly()»SimImpl::convert_«x.MPName»(«x.RawDataToCPPType»* raw)
 {
     // TODO
 }
         «ELSE»
-«x.WorldDataToCPPType» «Assembly»SimImpl::convert_«x.MPName»(«x.RawDataToCPPType» raw)
+«x.WorldDataToCPPType» «Assembly()»SimImpl::convert_«x.MPName»(«x.RawDataToCPPType» raw)
 {
     // TODO
 }
@@ -656,7 +654,7 @@ std::vector< «x.WorldDataToCPPType» > «Assembly»SimImpl::convert_«x.MPName�
 ///////////////////////////////////
 // Control point: «x.CPName»
 ///////////////////////////////////
-«x.cppReturns» «Assembly»SimImpl::«x.CPName»«x.cppDeclaration»
+«x.cppReturns» «Assembly()»SimImpl::«x.CPName»«x.cppDeclaration»
 {
     // TODO
 }
@@ -670,6 +668,6 @@ std::vector< «x.WorldDataToCPPType» > «Assembly»SimImpl::convert_«x.MPName�
  *----------------------------
  */
 #include <maciACSComponentDefines.h>
-MACI_DLL_SUPPORT_FUNCTIONS(«Assembly»Impl)
+MACI_DLL_SUPPORT_FUNCTIONS(«Assembly()»Impl)
 «ENDFILE»
 «ENDDEFINE»

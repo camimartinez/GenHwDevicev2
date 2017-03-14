@@ -100,8 +100,8 @@
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel">
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/isMonitorDBOnly"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/IsGeneratedAlt"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/IsMonitorDBOnly"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/IsGenerateAlt"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/Parent"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/Cardinality"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel/NodeAddress"/>

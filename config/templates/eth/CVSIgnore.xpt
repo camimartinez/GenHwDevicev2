@@ -22,11 +22,10 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
+
+«EXTENSION alma::control::templates::extensions::eth::util»
 
 «DEFINE Root FOR DeviceModelImpl»
     «IF !checkIfCvsignoreFileExists("idl")»
@@ -47,37 +46,37 @@ MA 02111-1307  USA
 «ENDDEFINE»
 
 «DEFINE SWModuleIdlDef FOR DeviceModelImpl»
-«FILE DirPath + "/idl/.cvsignore"»
-«Assembly»Base.idl
-«Assembly»CompSim.idl
-«Assembly»Add.sql
+«FILE DirPath() + "/idl/.cvsignore"»
+«Assembly()»Base.idl
+«Assembly()»CompSim.idl
+«Assembly()»Add.sql
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE SWModuleSrcDef FOR DeviceModelImpl»
-«FILE DirPath + "/src/.cvsignore"»
-«Assembly»Base.cpp
-«Assembly»CompSim.cpp
-«Assembly»EthSimBase.cpp
+«FILE DirPath() + "/src/.cvsignore"»
+«Assembly()»Base.cpp
+«Assembly()»CompSim.cpp
+«Assembly()»EthSimBase.cpp
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE SWModuleCCLDef FOR DeviceModelImpl»
-«FILE DirPath + "/src/CCL/.cvsignore"»
-«Assembly»Base.py
+«FILE DirPath() + "/src/CCL/.cvsignore"»
+«Assembly()»Base.py
 __init__.py
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE SWModuleIncludeDef FOR DeviceModelImpl»
-«FILE DirPath + "/include/.cvsignore"»
-«Assembly»Base.h
-«Assembly»CompSim.h
-«Assembly»EthSimBase.h
+«FILE DirPath() + "/include/.cvsignore"»
+«Assembly()»Base.h
+«Assembly()»CompSim.h
+«Assembly()»EthSimBase.h
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE SWModuleTestDef FOR DeviceModelImpl»
-«FILE DirPath + "/test/.cvsignore"»
+«FILE DirPath() + "/test/.cvsignore"»
 «ENDFILE»
 «ENDDEFINE»

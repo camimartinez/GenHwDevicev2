@@ -20,23 +20,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-  «IF !IsMonitorDBOnly»
+  «IF !IsMonitorDBOnly()»
     «EXPAND SWModuleDef»
   «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"SimBase.h"»
-#ifndef «Assembly»SimBase_h
-#define «Assembly»SimBase_h
+«FILE DirPath()+"/include/"+Assembly()+"SimBase.h"»
+#ifndef «Assembly()»SimBase_h
+#define «Assembly()»SimBase_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -71,29 +69,29 @@ MA 02111-1307  USA
 #endif
 
 
-#include <«Assembly»Impl.h>
+#include <«Assembly()»Impl.h>
 
 
-/// The «Assembly»SimBase class is the base class for the
-/// «DeviceName»Impl simulation.
+/// The «Assembly()»SimBase class is the base class for the
+/// «DeviceName()»Impl simulation.
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
-/// <li> Parent:   «Parent»
-/// <li> Node:     «NodeAddress»
-/// <li> Channel:  «Channel»
+/// <li> Device:   «DeviceName()»
+/// <li> Assembly: «Assembly()»
+/// <li> Parent:   «Parent()»
+/// <li> Node:     «NodeAddress()»
+/// <li> Channel:  «Channel()»
 /// </ul>
 /// <p>
 /// «DescriptionL1»
-class «Assembly»SimBase: public «Assembly»Impl
+class «Assembly()»SimBase: public «Assembly()»Impl
 {
     public:
     /// Destructor
-    virtual ~«Assembly»SimBase();
+    virtual ~«Assembly()»SimBase();
 
     protected:
     /// Constructor. Never instanciate this class directly!
-    «Assembly»SimBase(const ACE_CString& name, maci::ContainerServices* cs);
+    «Assembly()»SimBase(const ACE_CString& name, maci::ContainerServices* cs);
 
 «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
     «EXPAND ProtectedMonitorPoint FOR x»
@@ -103,13 +101,13 @@ class «Assembly»SimBase: public «Assembly»Impl
 «ENDFOREACH»
     private:
     /// Default constructor. Never instanciate this class directly!
-    «Assembly»SimBase();
+    «Assembly()»SimBase();
 
     /// ALMA coding standards: copy constructor is disabled.
-    «Assembly»SimBase(const «Assembly»SimBase&);
+    «Assembly()»SimBase(const «Assembly()»SimBase&);
 
     /// ALMA coding standards: assignment operator is disabled.
-    «Assembly»SimBase& operator=(const «Assembly»SimBase&);
+    «Assembly()»SimBase& operator=(const «Assembly()»SimBase&);
 };
 #endif
 «ENDFILE»

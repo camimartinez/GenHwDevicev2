@@ -20,23 +20,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/idl/"+Assembly+"Base.idl"»
-#ifndef «Assembly»Base_idl
-#define «Assembly»Base_idl
+«FILE DirPath()+"/idl/"+Assembly()+"Base.idl"»
+#ifndef «Assembly()»Base_idl
+#define «Assembly()»Base_idl
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -64,14 +62,14 @@ MA 02111-1307  USA
 //  ---------------------------------------------------------
 //
 
-/// External interface to the hardware assembly: Control::«Assembly».
+/// External interface to the hardware assembly: Control::«Assembly()».
 
 
 #include <HardwareDevice.idl>
 #include <ControlExceptions.idl>
 #include <baci.idl>
-«IF Extends != "none"»
-#include <«Extends».idl>
+«IF Extends() != "none"»
+#include <«Extends()».idl>
 «ENDIF»
 
 
@@ -80,11 +78,11 @@ MA 02111-1307  USA
 
 module Control
 {
-    /// «Description»
+    /// «Description()»
 «IF Extends != "none"»
-    interface «Assembly»Base: «Extends»
+    interface «Assembly()»Base: «Extends()»
 «ELSE»
-    interface «Assembly»Base: Control::HardwareDevice
+    interface «Assembly()»Base: Control::HardwareDevice
 «ENDIF»
     {
         /////////////////////
@@ -105,7 +103,7 @@ module Control
     «ENDIF»
 «ENDFOREACH»
 
-«IF GenericMonitorPoints »
+«IF GenericMonitorPoints() »
         /////////////////////////////////////////
         // IDL Definition for                  //
         // Custom Generic Methods              //
@@ -118,7 +116,7 @@ module Control
         string GET_LAST_CAN_ERROR_MSG();
 «ENDIF»
         
-«IF Extends == "none"»
+«IF Extends() == "none"»
         /////////////////////////////////////////
         // IDL Definitions for General Methods //
         /////////////////////////////////////////
@@ -129,19 +127,19 @@ module Control
 
         /// Get the channel number for this device.
         unsigned long GET_CHANNEL_NUMBER();
-    «IF Channel == "parm"»
+    «IF Channel() == "parm"»
         /// Set the channel number for this device.
         void SET_CHANNEL_NUMBER(in unsigned long channelNumber);
     «ENDIF»
         /// Get the node address for this device.
         unsigned long GET_NODE_ADDRESS();
-    «IF NodeAddress == "parm"»
+    «IF NodeAddress() == "parm"»
         /// Set the node address for this device.
         void SET_NODE_ADDRESS(in unsigned long nodeAddress);
     «ENDIF»
         /// Get the base address for this device.
         unsigned long GET_BASE_ADDRESS();
-    «IF BaseAddress == "parm"»
+    «IF BaseAddress() == "parm"»
         /// Set the base address for this device.
         void SET_BASE_ADDRESS(in unsigned long baseAddress);
     «ENDIF»

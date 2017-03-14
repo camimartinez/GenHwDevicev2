@@ -20,23 +20,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"Base.h"»
-#ifndef «Assembly»Base_h
-#define «Assembly»Base_h
+«FILE DirPath()+"/include/"+Assembly()+"Base.h"»
+#ifndef «Assembly()»Base_h
+#define «Assembly()»Base_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -96,7 +94,7 @@ MA 02111-1307  USA
 #include <acstimeC.h>
 
 // CORBA servant header generated from IDL.
-#include <«Assembly»BaseS.h>
+#include <«Assembly()»BaseS.h>
 
 // Includes needed for data members.
 #include <baciSmartPropertyPointer.h>
@@ -109,34 +107,34 @@ MA 02111-1307  USA
 
 #include <Utils.h>
 
-«IF Extends != "none"»
-#include <«Extends»Impl.h>
+«IF Extends() != "none"»
+#include <«Extends()»Impl.h>
 «ENDIF»
 
-/// The «Assembly»Base class is the base class for the «DeviceName».
+/// The «Assembly()»Base class is the base class for the «DeviceName()».
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
-/// <li> Parent:   «Parent»
-/// <li> Node:     «NodeAddress»
-/// <li> Channel:  «Channel»
+/// <li> Device:   «DeviceName()»
+/// <li> Assembly: «Assembly()»
+/// <li> Parent:   «Parent()»
+/// <li> Node:     «NodeAddress()»
+/// <li> Channel:  «Channel()»
 /// </ul>
 /// <p>
-/// «Description»
-class «Assembly»Base
+/// «Description()»
+class «Assembly()»Base
     :
-    «IF Extends != "none"»
-    public «Extends»Impl,
+    «IF Extends() != "none"»
+    public «Extends()»Impl,
     «ELSE»
     public AmbDeviceImpl,
     «ENDIF»
-    public virtual POA_Control::«Assembly»Base
+    public virtual POA_Control::«Assembly()»Base
 {
-    friend class «Assembly»SimBase;
+    friend class «Assembly()»SimBase;
 
     public:
     /// Destructor
-    virtual ~«Assembly»Base();
+    virtual ~«Assembly()»Base();
 
     /// Returns true if a device is in simulation mode, false if
     /// it works with real hardware.
@@ -150,7 +148,7 @@ class «Assembly»Base
     /// \exception acsErrTypeLifeCycle::LifeCycleExImpl
     virtual void cleanUp();
 
- «IF GenericMonitorPoints »
+ «IF GenericMonitorPoints() »
     /// \return Internal slave error in a readable form.
     virtual char* GET_INTERNAL_SLAVE_CAN_ERROR_MSG();
 
@@ -225,13 +223,13 @@ Declaration of overloaded hwOperationalAction method.
 
     private:
     /// Default constructor. Never instanciate this class directly!
-    «Assembly»Base();
+    «Assembly()»Base();
 
     /// ALMA coding standards: copy constructor is disabled.
-    «Assembly»Base(const «Assembly»Base&);
+    «Assembly()»Base(const «Assembly()»Base&);
 
     /// ALMA coding standards: assignment operator is disabled.
-    «Assembly»Base& operator=(const «Assembly»Base&);
+    «Assembly()»Base& operator=(const «Assembly()»Base&);
 
 «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
     «IF !x.isDependent && x.hasDependents»

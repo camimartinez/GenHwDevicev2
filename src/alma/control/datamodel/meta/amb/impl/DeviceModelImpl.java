@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.lang.String;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
@@ -88,7 +89,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isMonitorDBOnly() {
+	public boolean IsMonitorDBOnly() {
 		return monitorDBOnly;
 	}
 
@@ -97,7 +98,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean IsGeneratedAlt() {
+	public boolean IsGenerateAlt() {
 		return generateAlt;
 	}
 
@@ -411,6 +412,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			}
 		}	
 		System.out.println("DeviceModel: Initialization complete.");
+				
 		return "";
 	}
 

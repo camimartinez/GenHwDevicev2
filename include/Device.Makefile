@@ -209,6 +209,7 @@ empty:=
 space:= $(empty) $(empty)
 GEN_CLASSPATH = $(GenHwLocation)$(GenHwDir):
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/lib/ControlGenHwDevicev2.jar:
+#GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/config/extensions:
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/config/templates:
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/config/workflow:
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/lib/antlr-4.6-complete.jar:

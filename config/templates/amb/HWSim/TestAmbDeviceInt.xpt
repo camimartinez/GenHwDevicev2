@@ -20,21 +20,19 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/test/Test"+Assembly+"AmbDeviceInt.cpp"»
+«FILE DirPath()+"/test/Test"+Assembly()+"AmbDeviceInt.cpp"»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -72,19 +70,19 @@ MA 02111-1307  USA
 #include <ambDefs.h>
 #include <cppunit/extensions/HelperMacros.h>
 #include <BareAmbDeviceInt.h>
-#include <«Assembly»HWSimImpl.h>
+#include <«Assembly()»HWSimImpl.h>
 
 
 static unsigned int node_m(0x999999U);
 
 /**
- * A test case for the «Assembly» device communication,
+ * A test case for the «Assembly()» device communication,
  * using the AmbDeviceInt class
  *
  */
-class «Assembly»AmbDeviceIntTestCase: public CPPUNIT_NS::TestFixture
+class «Assembly()»AmbDeviceIntTestCase: public CPPUNIT_NS::TestFixture
 {
-    CPPUNIT_TEST_SUITE(«Assembly»AmbDeviceIntTestCase);
+    CPPUNIT_TEST_SUITE(«Assembly()»AmbDeviceIntTestCase);
     CPPUNIT_TEST(test_simulation);
     CPPUNIT_TEST_SUITE_END();
 
@@ -114,9 +112,9 @@ class «Assembly»AmbDeviceIntTestCase: public CPPUNIT_NS::TestFixture
     BareAMBDeviceInt::ICDPoint point;
 };
 
-CPPUNIT_TEST_SUITE_REGISTRATION(«Assembly»AmbDeviceIntTestCase);
+CPPUNIT_TEST_SUITE_REGISTRATION(«Assembly()»AmbDeviceIntTestCase);
 
-void «Assembly»AmbDeviceIntTestCase::setUp()
+void «Assembly()»AmbDeviceIntTestCase::setUp()
 {
     int channel(0), nodeId(0);
 
@@ -132,8 +130,8 @@ void «Assembly»AmbDeviceIntTestCase::setUp()
     }
     else
     {
-    «IF NodeAddress != "none" && NodeAddress != "parm"»
-        nodeId = «NodeAddress»;
+    «IF NodeAddress() != "none" && NodeAddress() != "parm"»
+        nodeId = «NodeAddress()»;
         std::cout << "No Node Address provided. Using default 0x"
             << nodeId
             << ".\n";
@@ -154,9 +152,9 @@ void «Assembly»AmbDeviceIntTestCase::setUp()
     «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
         «IF !x.isDependent»
     ///  monitorPoint_«x.MPName»
-void «Assembly»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName»()
+void «Assembly()»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName»()
 {
-    point.rca = AMB::«Assembly»HWSimBase::monitorPoint_«x.MPName»;
+    point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_«x.MPName»;
     const AmbDataLength_t size(«x.TotalBytesRawData»U);
 
     point.status = AMBERR_PENDING;
@@ -170,9 +168,9 @@ void «Assembly»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName»()
     «FOREACH (Set[ControlPoint]) ControlPoint AS x»
         «IF !x.isDependent»
     ///  controlPoint_«x.CPName»
-void «Assembly»AmbDeviceIntTestCase::testControlPoint_«x.CPName»()
+void «Assembly()»AmbDeviceIntTestCase::testControlPoint_«x.CPName»()
 {
-    point.rca = AMB::«Assembly»HWSimBase::controlPoint_«x.CPName»;
+    point.rca = AMB::«Assembly()»HWSimBase::controlPoint_«x.CPName»;
     point.dataLength = «x.TotalBytesRawData»U;
 
     for(AmbDataLength_t i(0U); i < point.dataLength; ++i)
@@ -203,44 +201,44 @@ void «Assembly»AmbDeviceIntTestCase::test_simulation()
         «ENDIF»
     «ENDFOREACH»
 
-    «IF GenericMonitorPoints»
+    «IF GenericMonitorPoints()»
     /// Testing generic monitor points
-    point.rca = AMB::«Assembly»HWSimBase::monitorPoint_SERIAL_NUMBER;
+    point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_SERIAL_NUMBER;
     point.status = AMBERR_PENDING;
     AmbDataLength_t size(8U);
     CPPUNIT_ASSERT_NO_THROW(deviceIf.sendMonitor(point));
     CPPUNIT_ASSERT_EQUAL(AMBERR_NOERR, point.status);  //If fails, probably point was not found.
     CPPUNIT_ASSERT_EQUAL(size, point.dataLength);
 
-    point.rca = AMB::«Assembly»HWSimBase::monitorPoint_PROTOCOL_REV_LEVEL;
+    point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_PROTOCOL_REV_LEVEL;
     point.status = AMBERR_PENDING;
     size = 3U;
     CPPUNIT_ASSERT_NO_THROW(deviceIf.sendMonitor(point));
     CPPUNIT_ASSERT_EQUAL(AMBERR_NOERR, point.status);  //If fails, probably point was not found.
     CPPUNIT_ASSERT_EQUAL(size, point.dataLength);
 
-    point.rca = AMB::«Assembly»HWSimBase::monitorPoint_CAN_ERROR;
+    point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_CAN_ERROR;
     point.status = AMBERR_PENDING;
     size = 4U;
     CPPUNIT_ASSERT_NO_THROW(deviceIf.sendMonitor(point));
     CPPUNIT_ASSERT_EQUAL(AMBERR_NOERR, point.status);  //If fails, probably point was not found.
     CPPUNIT_ASSERT_EQUAL(size, point.dataLength);
 
-    point.rca = AMB::«Assembly»HWSimBase::monitorPoint_TRANS_NUM;
+    point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_TRANS_NUM;
     point.status = AMBERR_PENDING;
     size = 4U;
     CPPUNIT_ASSERT_NO_THROW(deviceIf.sendMonitor(point));
     CPPUNIT_ASSERT_EQUAL(AMBERR_NOERR, point.status);  //If fails, probably point was not found.
     CPPUNIT_ASSERT_EQUAL(size, point.dataLength);
 
-    point.rca = AMB::«Assembly»HWSimBase::monitorPoint_AMBIENT_TEMPERATURE;
+    point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_AMBIENT_TEMPERATURE;
     point.status = AMBERR_PENDING;
     size = 4U;
     CPPUNIT_ASSERT_NO_THROW(deviceIf.sendMonitor(point));
     CPPUNIT_ASSERT_EQUAL(AMBERR_NOERR, point.status);  //If fails, probably point was not found.
     CPPUNIT_ASSERT_EQUAL(size, point.dataLength);
 
-    point.rca = AMB::«Assembly»HWSimBase::monitorPoint_SW_REV_LEVEL;
+    point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_SW_REV_LEVEL;
     point.status = AMBERR_PENDING;
     size = 3U;
     CPPUNIT_ASSERT_NO_THROW(deviceIf.sendMonitor(point));
@@ -248,14 +246,14 @@ void «Assembly»AmbDeviceIntTestCase::test_simulation()
     CPPUNIT_ASSERT_EQUAL(size, point.dataLength);
 
     /// Testing generic control points
-    point.rca = AMB::«Assembly»HWSimBase::controlPoint_RESET_AMBSI;
+    point.rca = AMB::«Assembly()»HWSimBase::controlPoint_RESET_AMBSI;
     point.dataLength = 1U;
     point.data.Char[0] = 1U;
     point.status = AMBERR_PENDING;
     CPPUNIT_ASSERT_NO_THROW(deviceIf.sendControl(point));
     CPPUNIT_ASSERT_EQUAL(AMBERR_NOERR, point.status);  //If fails, probably point was not found.
 
-    point.rca = AMB::«Assembly»HWSimBase::controlPoint_RESET_DEVICE;
+    point.rca = AMB::«Assembly()»HWSimBase::controlPoint_RESET_DEVICE;
     point.dataLength = 1U;
     point.data.Char[0] = 1U;
     point.status = AMBERR_PENDING;

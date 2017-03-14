@@ -23,23 +23,25 @@ MA 02111-1307  USA
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly+"/doc/"+Assembly+".html"»
+«FILE Assembly()+"/doc/"+Assembly()+".html"»
 <html>
   <body>
-  <h1>Device «DeviceName»</h1>
+  <h1>Device «DeviceName()»</h1>
   <ul>
-    <li><em>Assembly</em>  «Assembly»
-    <li><em>Description</em>  «Description»
-    <li><em>DeviceName</em>  «DeviceName»
-    <li><em>Extends</em>  «Extends»
-    <li><em>Parent</em>  «Parent»
-    <li><em>Cardinality</em>  «Cardinality»
-    <li><em>NodeAddress</em>  «NodeAddress»
-    <li><em>Channel</em>  «Channel»
-    <li><em>BaseAddress</em>  «BaseAddress»
-    <li><em>ICD</em>  «ICD»
-    <li><em>ICDDate</em>  «ICDDate»
+    <li><em>Assembly</em>  «Assembly()»
+    <li><em>Description</em>  «Description()»
+    <li><em>DeviceName</em>  «DeviceName()»
+    <li><em>Extends</em>  «Extends()»
+    <li><em>Parent</em>  «Parent()»
+    <li><em>Cardinality</em>  «Cardinality()»
+    <li><em>NodeAddress</em>  «NodeAddress()»
+    <li><em>Channel</em>  «Channel()»
+    <li><em>BaseAddress</em>  «BaseAddress()»
+    <li><em>ICD</em>  «ICD()»
+    <li><em>ICDDate</em>  «ICDDate()»
   </ul>
       <h3>Notes</h3>
       <ul>

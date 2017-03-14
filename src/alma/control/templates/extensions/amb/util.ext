@@ -1,0 +1,59 @@
+Boolean IsMonitorDBOnly():JAVA
+alma.control.datamodel.meta.amb.impl.DeviceModelImpl.IsMonitorDBOnly();
+
+Boolean checkIfCvsignoreFileExists(String this):JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.checkIfCvsignoreFileExists(java.lang.String);
+
+String DirPath():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.DirPath();
+
+String Assembly():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.Assembly();
+
+String Channel():JAVA
+alma.control.datamodel.meta.amb.impl.DeviceModelImpl.Channel();
+
+String NodeAddress():JAVA
+alma.control.datamodel.meta.amb.impl.DeviceModelImpl.NodeAddress();
+
+String NodeAddressInDecimal():JAVA
+alma.control.datamodel.meta.amb.impl.DeviceModelImpl.NodeAddressInDecimal();
+
+String Extends():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.Extends();
+
+String DeviceName():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.DeviceName();
+
+String Description():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.Description();
+
+String Parent():JAVA
+alma.control.datamodel.meta.amb.impl.DeviceModelImpl.Parent();
+
+String Cardinality():JAVA
+alma.control.datamodel.meta.amb.impl.DeviceModelImpl.Cardinality();
+
+String BaseAddress():JAVA
+alma.control.datamodel.meta.amb.impl.DeviceModelImpl.BaseAddress();
+
+String ICD():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.ICD();
+
+String ICDDate():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.ICDDate();
+
+Boolean GenericMonitorPoints():JAVA
+alma.control.datamodel.meta.amb.impl.DeviceModelImpl.GenericMonitorPoints();
+
+Boolean IsGenerateAlt():JAVA
+alma.control.datamodel.meta.amb.impl.DeviceModelImpl.IsGenerateAlt();
+
+String ICDDateAsDatabaseDate():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.ICDDateAsDatabaseDate();
+
+String ICDDateAsArrayTime():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.ICDDateAsArrayTime();
+
+String DescriptionAsString():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.DescriptionAsString();

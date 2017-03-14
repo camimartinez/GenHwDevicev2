@@ -23,14 +23,17 @@
 package alma.control.datamodel;
 
 import java.io.File;
+import java.util.Arrays;
 
 import org.eclipse.emf.mwe.core.WorkflowComponentHelper;
 import org.eclipse.emf.mwe.core.WorkflowContext;
 import org.eclipse.emf.mwe.core.issues.Issues;
 import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 
+import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.eth.EthFactory;
 import alma.control.datamodel.meta.eth.EthPackage;
 
 import org.eclipse.emf.mwe.utils.AbstractEMFWorkflowComponent;
@@ -60,10 +63,10 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 		alma.control.datamodel.meta.base.DeviceModel deviceType = null;
 		
 		if(System.getProperty(deviceTypes).equals(deviceAMB)){
-			deviceType= AmbPackage.eINSTANCE.getAmbFactory().createDeviceModel();
+			deviceType= AmbFactory.eINSTANCE.createDeviceModel();
 			deviceType.setDeviceModel();
 		}else if (System.getProperty(deviceTypes).equals(deviceETH)){
-			deviceType = EthPackage.eINSTANCE.getEthFactory().createDeviceModel();
+			deviceType = EthFactory.eINSTANCE.createDeviceModel();
 		}else{ 
 			System.out.println("The device type: "+ System.getProperty(deviceTypes) + "is not supported.");
 			return;
@@ -79,6 +82,7 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 		deviceType.setBusType(System.getProperty(deviceTypes));
 		deviceType.CreateModel();
 		ctx.set(modelSlot, deviceType);
+		//System.out.println("the model is: "+Arrays.toString(ctx.getSlotNames())+"");
 		System.out.println("- ----- HwDeviceWorkflowInitializer: Completed.");
 	}
 

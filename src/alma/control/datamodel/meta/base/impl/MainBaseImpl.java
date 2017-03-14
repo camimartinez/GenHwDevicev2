@@ -299,7 +299,7 @@ public class MainBaseImpl extends EObjectImpl implements MainBase {
 	public String Description() {
 		return row[tables.getColNum(sheet, "Description")];
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

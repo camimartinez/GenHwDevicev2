@@ -20,23 +20,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"CompSimImpl.h"»
-#ifndef «Assembly»CompSimImpl_h
-#define «Assembly»CompSimImpl_h
+«FILE DirPath()+"/include/"+Assembly()+"CompSimImpl.h"»
+#ifndef «Assembly()»CompSimImpl_h
+#define «Assembly()»CompSimImpl_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -71,7 +69,7 @@ MA 02111-1307  USA
 #endif
 
 
-#include <«Assembly»CompSimBase.h>
+#include <«Assembly()»CompSimBase.h>
 #include <boost/shared_ptr.hpp>
 
 
@@ -82,31 +80,31 @@ namespace maci
 
 namespace AMB
 {
-    class «Assembly»HWSimImpl;
+    class «Assembly()»HWSimImpl;
 };
 
 /**
  * Please use this class to implement alternative components, extending
- * the «Assembly»CompSimBase class.
+ * the «Assembly()»CompSimBase class.
  */
 
-class «Assembly»CompSimImpl: public «Assembly»CompSimBase
+class «Assembly()»CompSimImpl: public «Assembly()»CompSimBase
 {
     public:
-    «Assembly»CompSimImpl(const ACE_CString& name, maci::ContainerServices* cs);
+    «Assembly()»CompSimImpl(const ACE_CString& name, maci::ContainerServices* cs);
 
-    virtual ~«Assembly»CompSimImpl()
+    virtual ~«Assembly()»CompSimImpl()
     {
     };
 
 
     private:
-    «Assembly»CompSimImpl();
-    «Assembly»CompSimImpl(const «Assembly»CompSimImpl&);
-    «Assembly»CompSimImpl& operator=(const «Assembly»CompSimImpl&);
+    «Assembly()»CompSimImpl();
+    «Assembly()»CompSimImpl(const «Assembly()»CompSimImpl&);
+    «Assembly()»CompSimImpl& operator=(const «Assembly()»CompSimImpl&);
 
     /// boost::share_ptr to the simulated object.
-    boost::shared_ptr< AMB::«Assembly»HWSimImpl > simulationObject;
+    boost::shared_ptr< AMB::«Assembly()»HWSimImpl > simulationObject;
 };
 #endif
 «ENDFILE»

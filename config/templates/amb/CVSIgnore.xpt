@@ -23,8 +23,10 @@ MA 02111-1307  USA
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !monitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «IF !checkIfCvsignoreFileExists("idl")»
             «EXPAND SWModuleIdlDef»
         «ENDIF»
@@ -41,32 +43,32 @@ MA 02111-1307  USA
 «ENDDEFINE»
 
 «DEFINE SWModuleIdlDef FOR DeviceModelImpl»
-«FILE DirPath + "/idl/.cvsignore"»
-«Assembly»Add.sql
-«Assembly»Base.idl
-«Assembly»CompSimBase.idl
+«FILE DirPath() + "/idl/.cvsignore"»
+«Assembly()»Add.sql
+«Assembly()»Base.idl
+«Assembly()»CompSimBase.idl
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE SWModuleSrcDef FOR DeviceModelImpl»
-«FILE DirPath + "/src/.cvsignore"»
-«Assembly»Base.cpp
-«Assembly»CompSimBase.cpp
-«Assembly»HWSimBase.cpp
+«FILE DirPath() + "/src/.cvsignore"»
+«Assembly()»Base.cpp
+«Assembly()»CompSimBase.cpp
+«Assembly()»HWSimBase.cpp
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE SWModuleIncludeDef FOR DeviceModelImpl»
-«FILE DirPath + "/include/.cvsignore"»
-«Assembly»Base.h
-«Assembly»CompSimBase.h
-«Assembly»HWSimBase.h
+«FILE DirPath() + "/include/.cvsignore"»
+«Assembly()»Base.h
+«Assembly()»CompSimBase.h
+«Assembly()»HWSimBase.h
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE SWModuleTestDef FOR DeviceModelImpl»
 «FILE DirPath + "/test/.cvsignore"»
-Test«Assembly»AmbDeviceInt.cpp
-Test«Assembly»HWSimImpl.cpp
+Test«Assembly()»AmbDeviceInt.cpp
+Test«Assembly()»HWSimImpl.cpp
 «ENDFILE»
 «ENDDEFINE»

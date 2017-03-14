@@ -20,23 +20,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/idl/"+Assembly+"CompSimBase.idl"»
-#ifndef «Assembly»CompSimBase_idl
-#define «Assembly»CompSimBase_idl
+«FILE DirPath()+"/idl/"+Assembly()+"CompSimBase.idl"»
+#ifndef «Assembly()»CompSimBase_idl
+#define «Assembly()»CompSimBase_idl
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -64,7 +62,7 @@ MA 02111-1307  USA
 //  ---------------------------------------------------------
 //
 
-#include <«Assembly».idl>
+#include <«Assembly()».idl>
 
 
 #pragma prefix "alma"
@@ -72,8 +70,8 @@ MA 02111-1307  USA
 
 module Control
 {
-    /// This interfaces define data specific to the Control::«Assembly» device.
-    interface «Assembly»CompSimBase: Control::«Assembly»
+    /// This interfaces define data specific to the Control::«Assembly()» device.
+    interface «Assembly()»CompSimBase: Control::«Assembly()»
     {
         void setSimValue(in long rca, in Control::LongSeq data)
             raises(ControlExceptions::SimErrorEx);

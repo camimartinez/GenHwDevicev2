@@ -871,7 +871,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 		Resource arch = container.createResource(URI.createURI(xmiArchive));
 
 		//printAttributeValues(tables);
-
 		int archiveIndex = tables.getSheetNum("Archive Property");
 		//System.out.println("archiveIndex is: "+archiveIndex+"");
 		for(int i = 2; i < spreadsheet[archiveIndex].length; i++){
@@ -880,9 +879,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			ArchiveProperty ap;
 			String[] row = spreadsheet[archiveIndex][i];
 			ap = BaseFactory.eINSTANCE.createArchiveProperty();
-
-
-			ap.setArchiveProperty(row, tables);			//contener en resource!!!!
+			ap.setArchiveProperty(row, tables);
 			if(name.equals(ap.RefersTo())){
 				arch.getContents().add(ap);
 				//aProperties.add(ap);
@@ -898,6 +895,22 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public String setParameters(String dirDevice){
+		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
+		String extension = "xmi";
+		String tmp = dirDevice.concat("/").concat(extension).concat("/");
+		mm.put(extension, new XMIResourceFactoryImpl());
+		String xmiArchive = tmp.concat("archiveAmb.").concat(extension);
+		return xmiArchive;
+	}
+
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

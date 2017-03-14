@@ -449,7 +449,7 @@ public abstract class MandCBaseImpl extends EObjectImpl implements MandCBase {
 		}
 
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -37,11 +37,10 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return monitorDBOnly;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return monitorDBOnly;'"
 	 * @generated
 	 */
-	boolean isMonitorDBOnly();
+	boolean IsMonitorDBOnly();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -49,7 +48,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return generateAlt;'"
 	 * @generated
 	 */
-	boolean IsGeneratedAlt();
+	boolean IsGenerateAlt();
 
 	/**
 	 * <!-- begin-user-doc -->

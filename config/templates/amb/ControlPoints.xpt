@@ -20,15 +20,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly+"/doc/"+Assembly+"ControlPoints.html"»
+«FILE Assembly()+"/doc/"+Assembly()+"ControlPoints.html"»
 <html>
     <body>
 
@@ -47,7 +45,7 @@ function showme(funcName){
 }
 </script>
 
-  <h1>Device «DeviceName»</h1>
+  <h1>Device «DeviceName()»</h1>
     <h2>Control Points</h2>
 <table>
 <tr><td>Function Name</td><td>RCA</td></tr>
@@ -77,7 +75,7 @@ SET_«x.CPName»
 «ENDDEFINE»
 
 «DEFINE ControlPointDisplay FOR ControlPoint»
-    <li><em>Assembly</em> «Assembly»
+    <li><em>Assembly</em> «Assembly()»
     <li><em>Name</em> «CPName»
     <li><em>RCA</em> «RCA»
     <li><em>RawDataType</em> «RawDataType»
@@ -95,7 +93,7 @@ SET_«x.CPName»
     <li><em>Mode</em> «Mode»
     <li><em>Implement</em> «Implement»
     <li><em>External</em> «External»
-    <li><em>Description</em> «Description»
+    <li><em>Description</em> «Description()»
       «IF isArchived»
       <li><em>Is archived</em>
       «ELSE»

@@ -20,26 +20,24 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"HWSimImpl.h"»
+«FILE DirPath()+"/include/"+Assembly()+"HWSimImpl.h"»
 #ifndef __cplusplus
 #error This is a C++ include file and cannot be used from plain C.
 #endif
-#ifndef «Assembly»HWSimImpl_h
-#define «Assembly»HWSimImpl_h
+#ifndef «Assembly()»HWSimImpl_h
+#define «Assembly()»HWSimImpl_h
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -68,7 +66,7 @@ MA 02111-1307  USA
 //
 
 
-#include <«Assembly»HWSimBase.h>
+#include <«Assembly()»HWSimBase.h>
 #include <vector>
 // For AMB::node_t and CAN::byte_t
 #include <CANTypes.h>
@@ -78,30 +76,30 @@ namespace AMB
 {
     /**
      * Please use this class to implement complex functionality for the
-     * «Assembly»HWSimBase helper functions. Use AMB::TypeConvertion methods
+     * «Assembly()»HWSimBase helper functions. Use AMB::TypeConvertion methods
      * for convenient type convertions.
      */
-    class «Assembly»HWSimImpl: public «Assembly»HWSimBase
+    class «Assembly()»HWSimImpl: public «Assembly()»HWSimBase
     {
         public:
         /// Constructor.
-        «Assembly»HWSimImpl(AMB::node_t node,
+        «Assembly()»HWSimImpl(AMB::node_t node,
             const std::vector< CAN::byte_t >& serialNumber);
 
         /// Destructor.
-        virtual ~«Assembly»HWSimImpl()
+        virtual ~«Assembly()»HWSimImpl()
         {
         };
 
         private:
         /// No default ctor.
-        «Assembly»HWSimImpl();
+        «Assembly()»HWSimImpl();
 
         /// No copy ctor.
-        «Assembly»HWSimImpl(const «Assembly»HWSimImpl&);
+        «Assembly()»HWSimImpl(const «Assembly()»HWSimImpl&);
 
         /// No assignment optor.
-        «Assembly»HWSimImpl& operator=(const «Assembly»HWSimImpl&);
+        «Assembly()»HWSimImpl& operator=(const «Assembly()»HWSimImpl&);
     };
 }
 #endif

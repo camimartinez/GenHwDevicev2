@@ -22,19 +22,17 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
+
+«EXTENSION alma::control::templates::extensions::eth::util»
 
 «DEFINE Root FOR DeviceModelImpl»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/config/CDB/schemas/"+Assembly+"Base.xsd"»
+«FILE DirPath()+"/config/CDB/schemas/"+Assembly()+"Base.xsd"»
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
  * 
@@ -69,12 +67,12 @@ MA 02111-1307  USA
 <xs:schema
     attributeFormDefault="unqualified"
     elementFormDefault="qualified"
-    targetNamespace="urn:schemas-cosylab-com:«Assembly»Base:1.0"
-    xmlns="urn:schemas-cosylab-com:«Assembly»Base:1.0"
+    targetNamespace="urn:schemas-cosylab-com:«Assembly()»Base:1.0"
+    xmlns="urn:schemas-cosylab-com:«Assembly()»Base:1.0"
     xmlns:baci="urn:schemas-cosylab-com:BACI:1.0"
     xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
-«IF Extends != "none"»
-    xmlns:exteth="urn:schemas-cosylab-com:«Extends»:1.0" 
+«IF Extends() != "none"»
+    xmlns:exteth="urn:schemas-cosylab-com:«Extends()»:1.0" 
 «ELSE»
     xmlns:eth="urn:schemas-cosylab-com:EthernetDevice:1.0"
 «ENDIF»
@@ -86,10 +84,10 @@ MA 02111-1307  USA
     <xs:import
         namespace="urn:schemas-cosylab-com:BACI:1.0"
         schemaLocation="http://www.eso.org/schemas/ACS/BACI.xsd"></xs:import>
-«IF Extends != "none"»
+«IF Extends() != "none"»
     <xs:import
-        namespace="urn:schemas-cosylab-com:«Extends»:1.0"
-        schemaLocation="http://www.nrao.edu/schemas/CONTROL/«Extends».xsd"></xs:import>
+        namespace="urn:schemas-cosylab-com:«Extends()»:1.0"
+        schemaLocation="http://www.nrao.edu/schemas/CONTROL/«Extends()».xsd"></xs:import>
 «ELSE»
     <xs:import
         namespace="urn:schemas-cosylab-com:EthernetDevice:1.0"
@@ -99,7 +97,7 @@ MA 02111-1307  USA
         namespace="urn:schemas-cosylab-com:ControlDevice:1.0"
         schemaLocation="http://www.nrao.edu/schemas/CONTROL/ControlDevice.xsd"></xs:import>
     <xs:complexType
-        name="«Assembly»Base">
+        name="«Assembly()»Base">
         <xs:complexContent>
             <xs:extension
                 base="extcontrol:ControlDevice">
@@ -197,8 +195,8 @@ MA 02111-1307  USA
         </xs:complexContent>
     </xs:complexType>
     <xs:element
-        name="«Assembly»Base"
-        type="«Assembly»Base"></xs:element>
+        name="«Assembly()»Base"
+        type="«Assembly()»Base"></xs:element>
 </xs:schema>
 «ENDFILE»
 «ENDDEFINE»

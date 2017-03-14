@@ -20,21 +20,19 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-    «IF !IsMonitorDBOnly»
+    «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"Base.cpp"»
+«FILE DirPath()+"/src/"+Assembly()+"Base.cpp"»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -70,7 +68,7 @@ MA 02111-1307  USA
 #include <loggingACEMACROS.h>
 #include <string>
 #include <sstream>
-#include <«Assembly»Base.h>
+#include <«Assembly()»Base.h>
 «REM»For setting of the alarm family and member.«ENDREM»
 #include <controlDeviceImpl.h>
 #include <ControlPointArchival.h>
@@ -95,10 +93,10 @@ MA 02111-1307  USA
 
 
 /// Constructor
-«Assembly»Base::«Assembly»Base(const ACE_CString& name,
+«Assembly()»Base::«Assembly()»Base(const ACE_CString& name,
     maci::ContainerServices* cs):
-«IF Extends != "none"»
-    «Extends»Impl(name, cs)
+«IF Extends() != "none"»
+    «Extends()»Impl(name, cs)
 «ELSE»
     AmbDeviceImpl(name, cs)
 «ENDIF»
@@ -160,40 +158,40 @@ TODO: What about not monitorint seqs but monitoring their elements?
 «ENDFOREACH»
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
-«IF BaseAddress == "none"»
+«IF BaseAddress() == "none"»
     AmbDeviceImpl::setBaseAddress(0UL);
-«ELSEIF BaseAddress == "parm"»
+«ELSEIF BaseAddress() == "parm"»
     AmbDeviceImpl::setBaseAddress(
         std::numeric_limits< unsigned long >::max());
 «ELSE»
-    AmbDeviceImpl::setBaseAddress(«BaseAddress»UL);
+    AmbDeviceImpl::setBaseAddress(«BaseAddress()»UL);
 «ENDIF»
 }
 
-«Assembly»Base::~«Assembly»Base()
+«Assembly()»Base::~«Assembly()»Base()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
-CORBA::Boolean «Assembly»Base::isSimulated()
+CORBA::Boolean «Assembly()»Base::isSimulated()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
     return false;
 }
 
-void «Assembly»Base::initialize()
+void «Assembly()»Base::initialize()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
     // Call the base class implementation so it can set up the common properties
-    «IF Extends != "none"»
-    «Extends»Impl::initialize();
+    «IF Extends() != "none"»
+    «Extends()»Impl::initialize();
     «ELSE»
      AmbDeviceImpl::initialize();
     «ENDIF»
 
-    // create the properties specific to the «Assembly»
+    // create the properties specific to the «Assembly()»
     try
     {
         const ACE_CString nameWithSep(cdbName_m + ":");
@@ -257,25 +255,25 @@ void «Assembly»Base::initialize()
         }
         «ENDIF»
     «ENDFOREACH»
-    «IF Channel == "none"»
+    «IF Channel() == "none"»
         AmbDeviceImpl::setChannelNumber(0UL);
-    «ELSEIF Channel == "parm"»
+    «ELSEIF Channel() == "parm"»
     «REM»
        Do nothing, the channel is read from the CDB in
        AmbDeviceImpl::initialize().
     «ENDREM»
     «ELSE»
-        AmbDeviceImpl::setChannelNumber(«Channel»UL);
+        AmbDeviceImpl::setChannelNumber(«Channel()»UL);
     «ENDIF»
-    «IF NodeAddress == "none"»
+    «IF NodeAddress() == "none"»
         AmbDeviceImpl::setNodeAddress(0UL);
-    «ELSEIF NodeAddress == "parm"»
+    «ELSEIF NodeAddress() == "parm"»
     «REM»
        Do nothing, the node address is read from the CDB in
        AmbDeviceImpl::initialize().
     «ENDREM»
     «ELSE»
-        AmbDeviceImpl::setNodeAddress(«NodeAddress»UL);
+        AmbDeviceImpl::setNodeAddress(«NodeAddress()»UL);
     «ENDIF»
     }
     catch(const ControlExceptions::CDBErrorExImpl& ex)
@@ -292,7 +290,7 @@ void «Assembly»Base::initialize()
     }
 }
 
-void «Assembly»Base::cleanUp()
+void «Assembly()»Base::cleanUp()
 {
     // No need to check if the device is already in hwStop state.  This is
     // done in Control::HardwareDeviceImpl::hwStop() anyway.
@@ -305,8 +303,8 @@ void «Assembly»Base::cleanUp()
         LOG_TO_OPERATOR(LM_WARNING, "Caught an exception during transition to "
             "the hardware stop state.  Continuing anyway.");
     }
-«IF Extends != "none"»
-    «Extends»Impl::cleanUp();
+«IF Extends() != "none"»
+    «Extends()»Impl::cleanUp();
 «ELSE»
     AmbDeviceImpl::cleanUp();
 «ENDIF»
@@ -318,11 +316,11 @@ Implementation of overloaded hwOperationalAction method.
 «ENDREM»
 «IF !ArchiveProperty.select(i | i.OnStartup).isEmpty»
 //-------------->Only On Startup monitoring
-void «Assembly»Base::hwOperationalAction(){
+void «Assembly()»Base::hwOperationalAction(){
 
 	// Call the base class implementation for hw lifecycle.
-	«IF Extends != "none"»
-    «Extends»Impl::hwOperationalAction();
+	«IF Extends() != "none"»
+    «Extends()»Impl::hwOperationalAction();
 	«ELSE»
     AmbDeviceImpl::hwOperationalAction();
 	«ENDIF»
@@ -344,11 +342,11 @@ void «Assembly»Base::hwOperationalAction(){
 «ENDIF»
 
 
-«IF GenericMonitorPoints »
+«IF GenericMonitorPoints() »
 
 
 //-------------->GenericMonitorPoints Methods
-char* «Assembly»Base::GET_INTERNAL_SLAVE_CAN_ERROR_MSG()
+char* «Assembly()»Base::GET_INTERNAL_SLAVE_CAN_ERROR_MSG()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
@@ -359,7 +357,7 @@ char* «Assembly»Base::GET_INTERNAL_SLAVE_CAN_ERROR_MSG()
 
     try
     {
-        errorCode = «Assembly»Base::getInternalSlaveErrorCode(ts);
+        errorCode = «Assembly()»Base::getInternalSlaveErrorCode(ts);
         if((errorCode & 0x01) == 0x01)
         {
             errorFound = true;
@@ -406,7 +404,7 @@ char* «Assembly»Base::GET_INTERNAL_SLAVE_CAN_ERROR_MSG()
     return CORBA::string_dup(errMsg.str().c_str());
 }
 
-char* «Assembly»Base::GET_LAST_CAN_ERROR_MSG()
+char* «Assembly()»Base::GET_LAST_CAN_ERROR_MSG()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
@@ -417,7 +415,7 @@ char* «Assembly»Base::GET_LAST_CAN_ERROR_MSG()
 
     try
     {
-        errorCode = «Assembly»Base::getErrorCodeLastCanError(ts);
+        errorCode = «Assembly()»Base::getErrorCodeLastCanError(ts);
 
         //Bits 0-2
         if((errorCode & 0x01) == 0x01)
@@ -701,7 +699,7 @@ std::vector< «WorldDataToCPPType» > «Assembly»Base::get«AltMPName»Proxy(
 «ENDDEFINE»
 
 «DEFINE ProtectedGetDependentMonitorPointMethod FOR MonitorPoint»
-«WorldDataToCPPType» «Assembly»Base::get«AltMPName»(
+«WorldDataToCPPType» «Assembly()»Base::get«AltMPName»(
     ACS::Time& timestamp)
 {
     «IF Mode == "startup"»
@@ -734,10 +732,10 @@ std::vector< «WorldDataToCPPType» > «Assembly»Base::get«AltMPName»Proxy(
     There are two cases: returning a vector and returning a scalar.
     «ENDREM»
     «IF isWorldDataArray»
-std::vector< «WorldDataToCPPType» > «Assembly»Base::get«AltMPName»(
+std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
     ACS::Time& timestamp)
     «ELSE»
-«WorldDataToCPPType» «Assembly»Base::get«AltMPName»(
+«WorldDataToCPPType» «Assembly()»Base::get«AltMPName»(
     ACS::Time& timestamp)
      «ENDIF»
 {
@@ -1003,7 +1001,7 @@ inline void «Assembly»Base::setMonitorRCA«AltMPName»(const unsigned long rca
              «REM»
              Case 2: Raw and world data types are arrays of the same dimension
              «ENDREM»
-std::vector< «WorldDataToCPPType» > «Assembly»Base::rawToWorld«AltMPName»(
+std::vector< «WorldDataToCPPType» > «Assembly()»Base::rawToWorld«AltMPName»(
     const std::vector< «RawDataToCPPType» >& raw) const
 {
     return AMB::Utils::rawToWorld<
@@ -1027,7 +1025,7 @@ std::vector< «WorldDataToCPPType» > «Assembly»Base::rawToWorld«AltMPName»(
               «REM»
              Case 1: Raw data type and world data types are both scalar quantities
              «ENDREM»
-«WorldDataToCPPType» «Assembly»Base::rawToWorld«AltMPName»(
+«WorldDataToCPPType» «Assembly()»Base::rawToWorld«AltMPName»(
     const «RawDataToCPPType» raw) const
 {
     return static_cast< «WorldDataToCPPType» >(raw * scale«AltMPName» + offset«AltMPName»);
@@ -1037,7 +1035,7 @@ std::vector< «WorldDataToCPPType» > «Assembly»Base::rawToWorld«AltMPName»(
 /**
  * Get the scale conversion factor of «MPName».
  */
-inline double «Assembly»Base::getScale«AltMPName»() const
+inline double «Assembly()»Base::getScale«AltMPName»() const
 {
     return scale«AltMPName»;
 }
@@ -1045,7 +1043,7 @@ inline double «Assembly»Base::getScale«AltMPName»() const
 /**
  * Get the offset conversion factor of «MPName».
  */
-inline double «Assembly»Base::getOffset«AltMPName»() const
+inline double «Assembly()»Base::getOffset«AltMPName»() const
 {
     return offset«AltMPName»;
 }
@@ -1053,7 +1051,7 @@ inline double «Assembly»Base::getOffset«AltMPName»() const
 /**
  * Override the default conversion factors of «MPName»: scale and offset.
  */
-inline void «Assembly»Base::setConversion«AltMPName»(
+inline void «Assembly()»Base::setConversion«AltMPName»(
     const double scale, const double offset)
 {
     scale«AltMPName» = scale;
@@ -1067,7 +1065,7 @@ inline void «Assembly»Base::setConversion«AltMPName»(
  * Get the current value of «MPName» as a BACI property.
  */
       «IF isPattern»
-ACS::ROpattern_ptr «Assembly»Base::«MPName»()
+ACS::ROpattern_ptr «Assembly()»Base::«MPName»()
       «ELSE»
         «IF isWorldDataArray»
 ACS::RO«WorldDataToBACIType»Seq_ptr «Assembly»Base::«MPName»()
@@ -1105,7 +1103,7 @@ ACS::RO«WorldDataToBACIType»_ptr «Assembly»Base::«MPName»()
     «REM»
     The "if hasDependents" part of this is not yet implemented.
     «ENDREM»
-«corbaReturns» «Assembly»Base::SET_«CPName»«corbaDeclaration»
+«corbaReturns» «Assembly()»Base::SET_«CPName»«corbaDeclaration»
 {
         «IF isWorldDataArray»
             «IF WorldDataToCPPType != "void"»
@@ -1162,7 +1160,7 @@ ACS::RO«WorldDataToBACIType»_ptr «Assembly»Base::«MPName»()
 /**
  * Get the RCA for control point «CPName».
  */
-inline unsigned long «Assembly»Base::getControlRCA«AltCPName»() const
+inline unsigned long «Assembly()»Base::getControlRCA«AltCPName»() const
 {
     return rcaControl«AltCPName»;
 }
@@ -1183,7 +1181,7 @@ inline unsigned long «Assembly»Base::getControlRCA«AltCPName»() const
 
 «DEFINE ProtectedSetControlPointMethod FOR ControlPoint»
     «IF !isDependent && Implement»
-«cppReturns» «Assembly»Base::set«AltCPName»«cppDeclaration»
+«cppReturns» «Assembly()»Base::set«AltCPName»«cppDeclaration»
 {
     «IF Mode == "startup"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
@@ -1288,7 +1286,7 @@ inline unsigned long «Assembly»Base::getControlRCA«AltCPName»() const
         throw ex;
     }
     «ENDIF»
-    AmbRelativeAddr rca(rcaControl«AltCPName»«IF Assembly != "FEMC"» + AmbDeviceImpl::getBaseAddress()«ENDIF»);
+    AmbRelativeAddr rca(rcaControl«AltCPName»«IF Assembly() != "FEMC"» + AmbDeviceImpl::getBaseAddress()«ENDIF»);
     AmbDataLength_t length(«TotalBytesRawData»U);
     unsigned char rawBytes[8];
         «IF Parameter == "void"»
@@ -1485,7 +1483,7 @@ std::vector < «RawDataToCPPType» > «Assembly»Base::worldToRaw«AltCPName»(
  /**
  * Get the scale conversion factor of «CPName».
  */
-inline double «Assembly»Base::getScale«AltCPName»() const
+inline double «Assembly()»Base::getScale«AltCPName»() const
 {
     return scale«AltCPName»;
 }
@@ -1493,7 +1491,7 @@ inline double «Assembly»Base::getScale«AltCPName»() const
 /**
  * Get the offset conversion factor of «CPName».
  */
-inline double «Assembly»Base::getOffset«AltCPName»() const
+inline double «Assembly()»Base::getOffset«AltCPName»() const
 {
     return offset«AltCPName»;
 }
@@ -1501,7 +1499,7 @@ inline double «Assembly»Base::getOffset«AltCPName»() const
 /**
  * Override the default conversion factors of «CPName»: scale and offset.
  */
-inline void «Assembly»Base::setConversion«AltCPName»(
+inline void «Assembly()»Base::setConversion«AltCPName»(
     const double scale, const double offset)
 {
     scale«AltCPName» = scale;

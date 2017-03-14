@@ -22,21 +22,19 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
+
+«EXTENSION alma::control::templates::extensions::eth::util»
 
 «DEFINE Root FOR DeviceModelImpl»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/idl/"+Assembly+"Base.idl"»
-#ifndef «Assembly»Base_idl
-#define «Assembly»Base_idl
+«FILE DirPath()+"/idl/"+Assembly()+"Base.idl"»
+#ifndef «Assembly()»Base_idl
+#define «Assembly()»Base_idl
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -67,11 +65,11 @@ MA 02111-1307  USA
  */
 
 
-/// External interface to the hardware assembly: Control::«Assembly».
+/// External interface to the hardware assembly: Control::«Assembly()».
 
 
-«IF Extends != "none"»
-#include <«Extends».idl>
+«IF Extends() != "none"»
+#include <«Extends()».idl>
 «ELSE»
 #include <HardwareDevice.idl>
 «ENDIF»
@@ -85,10 +83,10 @@ MA 02111-1307  USA
 
 module Control
 {
-    /// «Description»
-    interface «Assembly»Base:
-«IF Extends != "none"»
-    «Extends»
+    /// «Description()»
+    interface «Assembly()»Base:
+«IF Extends() != "none"»
+    «Extends()»
 «ELSE»
     Control::HardwareDevice
 «ENDIF»

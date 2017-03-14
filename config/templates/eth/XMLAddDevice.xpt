@@ -22,25 +22,23 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
 
+«EXTENSION alma::control::templates::extensions::eth::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly+"/config/TMCDB"+Assembly+"Add.xml"»<?xml version="1.0" ?>
+«FILE Assembly()+"/config/TMCDB"+Assembly()+"Add.xml"»<?xml version="1.0" ?>
 <lru-type>
-    <name>«Assembly»</name>
-    <fullname>«DeviceName»</fullname>
-    <icd>«ICD»</icd>
-    <icd-date>«ICDDateAsArrayTime»</icd-date>
-    <description>«DescriptionAsString»</description>
+    <name>«Assembly()»</name>
+    <fullname>«DeviceName()»</fullname>
+    <icd>«ICD()»</icd>
+    <icd-date>«ICDDateAsArrayTime()»</icd-date>
+    <description>«DescriptionAsString()»</description>
     <assembly-type>
-        <name>«Assembly»</name>
-        <dev-name>«DeviceName»</dev-name>
-        <description>«DescriptionAsString»</description>
+        <name>«Assembly()»</name>
+        <dev-name>«DeviceName()»</dev-name>
+        <description>«DescriptionAsString()»</description>
         <default-role>
             <node>none</node>
             <base-address>none</base-address>

@@ -22,19 +22,17 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
+
+«EXTENSION alma::control::templates::extensions::eth::util»
 
 «DEFINE Root FOR DeviceModelImpl»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"Base.cpp"»
+«FILE DirPath()+"/src/"+Assembly()+"Base.cpp"»
 
 /**
  * ALMA - Atacama Large Millimiter Array
@@ -66,7 +64,7 @@ MA 02111-1307  USA
  */
  
  
-#include <«Assembly»Base.h>
+#include <«Assembly()»Base.h>
 // For audience logs.
 #include <LogToAudience.h>
 // Includes for Utils helpers
@@ -74,10 +72,10 @@ MA 02111-1307  USA
 
 
 /// Constructor
-«Assembly»Base::«Assembly»Base(const ACE_CString& name,
+«Assembly()»Base::«Assembly()»Base(const ACE_CString& name,
     maci::ContainerServices* cs):
-«IF Extends != "none"»
-    «Extends»Impl(name, cs)
+«IF Extends() != "none"»
+    «Extends()»Impl(name, cs)
 «ELSE»
     EthernetDevice(name, cs)
 «ENDIF»
@@ -109,24 +107,24 @@ MA 02111-1307  USA
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
-«Assembly»Base::~«Assembly»Base()
+«Assembly()»Base::~«Assembly()»Base()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
-CORBA::Boolean «Assembly»Base::isSimulated()
+CORBA::Boolean «Assembly()»Base::isSimulated()
 {
     return false;
 }
 
 // ACS Lifecycle methods
-void «Assembly»Base::initialize()
+void «Assembly()»Base::initialize()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
     // Call the base class implementation
-«IF Extends != "none"»
-    «Extends»Impl::initialize();
+«IF Extends() != "none"»
+    «Extends()»Impl::initialize();
 «ELSE»
     EthernetDevice::initialize();
 «ENDIF»
@@ -204,7 +202,7 @@ void «Assembly»Base::initialize()
     {
         LOG_TO_DEVELOPER(LM_DEBUG, "Creating a new Ethernet communication "
             "class instance.");
-        ethernetDeviceIF_mp.reset(new «VendorClass»);
+        ethernetDeviceIF_mp.reset(new «VendorClass()»);
     }
     else
     {
@@ -213,7 +211,7 @@ void «Assembly»Base::initialize()
     }
 }
 
-void «Assembly»Base::cleanUp()
+void «Assembly()»Base::cleanUp()
 {
     // No need to check if the device is already in hwStop state.  This is
     // done in Control::HardwareDeviceImpl::hwStop() anyway.
@@ -226,8 +224,8 @@ void «Assembly»Base::cleanUp()
         LOG_TO_OPERATOR(LM_WARNING, "Caught an exception during transition to "
             "the hardware stop state.  Continuing anyway.");
     }
-«IF Extends != "none"»
-    «Extends»Impl::cleanUp();
+«IF Extends() != "none"»
+    «Extends()»Impl::cleanUp();
 «ELSE»
     EthernetDevice::cleanUp();
 «ENDIF»
@@ -263,7 +261,7 @@ void «Assembly»Base::cleanUp()
     «IF isDataArray»
         «IF DataType != "void"»
 «DataToCORBASeqType»*
-    «Assembly»Base::GET_«MPName»(ACS::Time& timestamp)
+    «Assembly()»Base::GET_«MPName»(ACS::Time& timestamp)
 {
     std::vector< «DataToCPPType» > ret;
     try
@@ -304,9 +302,9 @@ void «Assembly»Base::cleanUp()
             «ENDIF»
         «ELSE»
             «IF DataType == "string"»
-«DataToCORBAType» «Assembly»Base::GET_«MPName»(ACS::Time& timestamp)
+«DataToCORBAType» «Assembly()»Base::GET_«MPName»(ACS::Time& timestamp)
             «ELSE»
-«DataToCORBAType» «Assembly»Base::GET_«MPName»(ACS::Time& timestamp)
+«DataToCORBAType» «Assembly()»Base::GET_«MPName»(ACS::Time& timestamp)
             «ENDIF»
 {
     try
@@ -362,7 +360,7 @@ std::string «Assembly»Base::get«AltMPName»(ACS::Time& timestamp)
 {
     std::string value;
         «ELSE»
-«DataToCPPType» «Assembly»Base::get«AltMPName»(ACS::Time& timestamp)
+«DataToCPPType» «Assembly()»Base::get«AltMPName»(ACS::Time& timestamp)
 {
     «DataToCPPType» value;
         «ENDIF»
@@ -438,9 +436,9 @@ std::string «Assembly»Base::get«AltMPName»(ACS::Time& timestamp)
 ACS::ROpattern_ptr «Assembly»Base::«MPName»()
     «ELSE»
         «IF isDataArray»
-ACS::RO«DataToBACIType»Seq_ptr «Assembly»Base::«MPName»()
+ACS::RO«DataToBACIType»Seq_ptr «Assembly()»Base::«MPName»()
         «ELSE»
-ACS::RO«DataToBACIType»_ptr «Assembly»Base::«MPName»()
+ACS::RO«DataToBACIType»_ptr «Assembly()»Base::«MPName»()
         «ENDIF»
     «ENDIF»
 {

@@ -20,29 +20,27 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::amb::impl»
 
+«EXTENSION alma::control::templates::extensions::amb::util»
+
 «DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly+"/config/TMCDB"+Assembly+"Add.xml"»<?xml version="1.0" ?>
+«FILE Assembly()+"/config/TMCDB"+Assembly()+"Add.xml"»<?xml version="1.0" ?>
 <lru-type>
-    <name>«Assembly»</name>
-    <fullname>«DeviceName»</fullname>
-    <icd>«ICD»</icd>
-    <icd-date>«ICDDateAsArrayTime»</icd-date>
-    <description>«DescriptionAsString»</description>
+    <name>«Assembly()»</name>
+    <fullname>«DeviceName()»</fullname>
+    <icd>«ICD()»</icd>
+    <icd-date>«ICDDateAsArrayTime()»</icd-date>
+    <description>«DescriptionAsString()»</description>
     <assembly-type>
-        <name>«Assembly»</name>
-        <dev-name>«DeviceName»</dev-name>
-        <description>«DescriptionAsString»</description>
+        <name>«Assembly()»</name>
+        <dev-name>«DeviceName()»</dev-name>
+        <description>«DescriptionAsString()»</description>
         <default-role>
-            <node>«NodeAddress»</node>
-            <base-address>«BaseAddress»</base-address>
-            <channel>«Channel»</channel>
+            <node>«NodeAddress()»</node>
+            <base-address>«BaseAddress()»</base-address>
+            <channel>«Channel()»</channel>
         </default-role>
     «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
         «IF x.isMonitored»

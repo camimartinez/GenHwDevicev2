@@ -22,21 +22,19 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT org::eclipse::emf::common::notify::Notification»
-«IMPORT org::eclipse::emf::ecore::EClass»
-«IMPORT org::eclipse::emf::ecore::InternalEObject»
-«IMPORT org::eclipse::emf::ecore::impl::ENotificationImpl»
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
+
+«EXTENSION alma::control::templates::extensions::eth::util»
 
 «DEFINE Root FOR DeviceModelImpl»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"Base.h"»
-#ifndef «Assembly»Base_h
-#define «Assembly»Base_h
+«FILE DirPath()+"/include/"+Assembly()+"Base.h"»
+#ifndef «Assembly()»Base_h
+#define «Assembly()»Base_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -72,18 +70,18 @@ MA 02111-1307  USA
 
 
 // Ethernet vendor communication class.
-#include <«VendorClass».h>
+#include <«VendorClass()».h>
 
-«IF Extends != "none"»
+«IF Extends() != "none"»
 // Extended device.
-#include <«Extends»Impl.h>
+#include <«Extends()»Impl.h>
 «ELSE»
 // Base class.
 #include <EthernetDevice.h>
 #include <EthernetDevIO.i>
 
 // CORBA servant header generated from IDL.
-#include <«Assembly»BaseS.h>
+#include <«Assembly()»BaseS.h>
 
 // ACS classes that might be needed.
 #include <acscommonC.h>
@@ -119,24 +117,24 @@ MA 02111-1307  USA
 #include <cmath>
 «ENDIF»
 
-/// The «Assembly»Base class is the base class for the «DeviceName».
+/// The «Assembly()»Base class is the base class for the «DeviceName()».
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
+/// <li> Device:   «DeviceName()»
+/// <li> Assembly: «Assembly()»
 /// </ul>
 /// <p>
-/// «Description»
-class «Assembly»Base:
-«IF Extends != "none"»
-    public «Extends»Impl,
+/// «Description()»
+class «Assembly()»Base:
+«IF Extends() != "none"»
+    public «Extends()»Impl,
 «ELSE»
     public EthernetDevice,
 «ENDIF»
-    public virtual POA_Control::«Assembly»Base
+    public virtual POA_Control::«Assembly()»Base
 {
     public:
     /// Destructor
-    virtual ~«Assembly»Base();
+    virtual ~«Assembly()»Base();
 
     /// Returns true if a device is in simulation mode, false if
     /// it works with real hardware.
@@ -157,7 +155,7 @@ class «Assembly»Base:
 
     protected:
     /// Constructor. Never instanciate this class directly!
-    «Assembly»Base(const ACE_CString& name, maci::ContainerServices* cs);
+    «Assembly()»Base(const ACE_CString& name, maci::ContainerServices* cs);
     
     /// Overriden from the component lifecycle interface.
     /// \exception acsErrTypeLifeCycle::LifeCycleExImpl
@@ -178,10 +176,10 @@ class «Assembly»Base:
 
     private:
     /// ALMA coding standards: copy constructor is disabled.
-    «Assembly»Base(const «Assembly»Base&);
+    «Assembly()»Base(const «Assembly()»Base&);
     
     /// ALMA coding standards: assignment operator is disabled.
-    «Assembly»Base& operator=(const «Assembly»Base&);
+    «Assembly()»Base& operator=(const «Assembly()»Base&);
 };
 #endif
 «ENDFILE»
@@ -190,7 +188,7 @@ class «Assembly»Base:
 
 «DEFINE PublicMonitorPoint FOR MonitorPoint»
     /// MonitorPoint: «MPName»
-    /// «Description»
+    /// «Description()»
     /// \exception EthernetDeviceExceptions::SocketOperationFailedEx
     /// \exception EthernetDeviceExceptions::IllegalParameterEx
     /// \exception ControlExceptions::INACTErrorEx

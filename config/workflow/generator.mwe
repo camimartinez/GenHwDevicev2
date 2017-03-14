@@ -4,7 +4,13 @@
 	<property file="generator.properties"/>
 	<property file="log4j.properties"/>
 	
-	<!-- Load model and store it in slot model  -->	
+	<!--
+	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >              
+		<platformUri value="/home/almamgr/alma-src/2014-04-B/CONTROL/Common/GenHwDevicev2"/>
+		<registerEcoreFile value="platform:/resource/GenHwDevicev2/config/model/genHwDevicev2.ecore"/>                                          
+	</bean>-->
+	
+	<!-- Load model and store it in slot model -->	
 	<component class="alma.control.datamodel.HwDeviceWorkflowInitializer">
         <deviceDir value="${deviceDir}"/>
         <spreadsheetDir value="${spreadsheetDir}"/>
@@ -14,12 +20,11 @@
         <modelSlot value="model"/>
     </component> 
     
-    <!--Generate Code
+    <!-- Generate Code -->
 	<component id="generator" class="org.eclipse.xpand2.Generator">
 	    <fileEncoding value="ISO-8859-1"/>
 		<metaModel class="org.eclipse.xtend.type.impl.java.JavaBeansMetaModel"/>	
 		<expand value="Root::Root FOR model"/>
         <outlet path="${generatedDir}"></outlet>  
-	</component>
-	-->
+	</component>	
 </workflow>
