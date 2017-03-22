@@ -93,13 +93,13 @@ class «Assembly()»AmbDeviceIntTestCase: public CPPUNIT_NS::TestFixture
 
     protected:
     «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
-        «IF !x.isDependent()»
+        «IF !x.IsDependent()»
     ///  monitorPoint_«x.MPName()»
     void testMonitorPoint_«x.MPName()»();
         «ENDIF»
     «ENDFOREACH»
     «FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
-        «IF !x.isDependent()»
+        «IF !x.IsDependent()»
     ///  controlPoint_«x.CPName()»
     void testControlPoint_«x.CPName()»();
         «ENDIF»
@@ -150,12 +150,12 @@ void «Assembly()»AmbDeviceIntTestCase::setUp()
 }
 
     «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
-        «IF !x.isDependent()»
+        «IF !x.IsDependent()»
     ///  monitorPoint_«x.MPName()»
 void «Assembly()»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName()»()
 {
     point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_«x.MPName()»;
-    const AmbDataLength_t size(«x.TotalBytesRawData»U);
+    const AmbDataLength_t size(«x.TotalBytesRawData()»U);
 
     point.status = AMBERR_PENDING;
     CPPUNIT_ASSERT_NO_THROW(deviceIf.sendMonitor(point));
@@ -166,7 +166,7 @@ void «Assembly()»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName()»()
     «ENDFOREACH»
 
     «FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
-        «IF !x.isDependent()»
+        «IF !x.IsDependent()»
     ///  controlPoint_«x.CPName()»
 void «Assembly()»AmbDeviceIntTestCase::testControlPoint_«x.CPName()»()
 {
@@ -185,18 +185,18 @@ void «Assembly()»AmbDeviceIntTestCase::testControlPoint_«x.CPName()»()
         «ENDIF»
     «ENDFOREACH»
 
-void «Assembly»AmbDeviceIntTestCase::test_simulation()
+void «Assembly()»AmbDeviceIntTestCase::test_simulation()
 {
     /// Testing specific monitor points
     «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
-        «IF !x.isDependent()»
+        «IF !x.IsDependent()»
     testMonitorPoint_«x.MPName()»();
         «ENDIF»
     «ENDFOREACH»
 
     /// Testing specific control points
-    «FOREACH (Set[ControlPointImpl]) controlPoints.contentsAS x»
-        «IF !x.isDependent()»
+    «FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+        «IF !x.IsDependent()»
     testControlPoint_«x.CPName»();
         «ENDIF»
     «ENDFOREACH»

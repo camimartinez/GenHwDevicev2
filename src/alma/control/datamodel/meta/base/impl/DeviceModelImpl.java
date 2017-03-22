@@ -896,7 +896,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			ap.setArchiveProperty(row, tables);
 			if(name.equals(ap.RefersTo())){
 				arch.getContents().add(ap);
-				//aProperties.add(ap);
 				try{
 					arch.save(options);
 				}catch(IOException e){
@@ -1416,19 +1415,24 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @generated
 	 */
 	public String TheEnd() {
-				String dir = generatedDir + "/" + Assembly();
-				utils.RemoveLinesFromFile(dir + "/src", Assembly() + "Base.cpp", 1);
-				utils.RemoveLinesFromFile(dir + "/include", Assembly() + "Base.h", 1);
-				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Base.idl", 1);
-				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
-				utils.RemoveLinesFromFile(dir + "/doc", Assembly() + ".xml", 1);
-				utils.RemoveLinesFromFile(dir + "/doc", Assembly() + "Component.xml", 1);
-				utils.RemoveLinesFromFile(dir + "/config/CDB/schemas", Assembly() + "Base.xsd", 1);
-				utils.RemoveLinesFromFile(dir + "/config", "TMCDB" + Assembly() + "Add.xml", 1);
-				utils.RemoveLinesFromFile(dir + "/src/CCL", Assembly() + "Base.py", 1);
-				utils.RemoveLinesFromFile(dir + "/src/CCL", "__init__.py", 1);
-				System.out.println("Code generation for " + deviceName + " done.");
-				return "";
+		String dir = generatedDir + "/" + Assembly();
+						utils.RemoveLinesFromFile(dir + "/src", Assembly() + "Base.cpp", 1);
+						utils.RemoveLinesFromFile(dir + "/include", Assembly() + "Base.h", 1);
+						utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Base.idl", 1);
+						utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
+						utils.RemoveLinesFromFile(dir + "/doc", Assembly() + ".xml", 1);
+						utils.RemoveLinesFromFile(dir + "/doc", Assembly() + "Component.xml", 1);
+						utils.RemoveLinesFromFile(dir + "/config/CDB/schemas", Assembly() + "Base.xsd", 1);
+						utils.RemoveLinesFromFile(dir + "/config", "TMCDB" + Assembly() + "Add.xml", 1);
+						utils.RemoveLinesFromFile(dir + "/src/CCL", Assembly() + "Base.py", 1);
+						utils.RemoveLinesFromFile(dir + "/src/CCL", "__init__.py", 1);
+						try {
+							Runtime.getRuntime().exec("rm -rf "+deviceDir+"/xmi");
+						} catch (IOException e) {
+							System.out.println(e);
+						}
+						System.out.println("Code generation for " + deviceName + " done.");
+						return "";
 	}
 
 	/**

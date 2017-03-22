@@ -2,9 +2,9 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="ALMA - Atacama Large Millimiter Array&#xD;&#xA;(c) European Southern Observatory, 2017&#xD;&#xA;Copyright by ESO (in the framework of the ALMA collaboration),&#xD;&#xA;All rights reserved&#xD;&#xA;&#xD;&#xA;This library is free software; you can redistribute it and/or&#xD;&#xA;modify it under the terms of the GNU Lesser General Public&#xD;&#xA;License as published by the Free Software Foundation; either&#xD;&#xA;version 2.1 of the License, or (at your option) any later version.&#xD;&#xA;&#xD;&#xA;This library is distributed in the hope that it will be useful,&#xD;&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xD;&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU&#xD;&#xA;Lesser General Public License for more details.&#xD;&#xA;&#xD;&#xA;You should have received a copy of the GNU Lesser General Public&#xD;&#xA;License along with this library; if not, write to the Free Software&#xD;&#xA;Foundation, Inc., 59 Temple Place, Suite 330, Boston, &#xD;&#xA;MA 02111-1307  USA&#xD;&#xA;"
     modelDirectory="/GenHwDevicev2/src" modelPluginID="GenHwDevicev2" modelName="GenHwDevicev2Gen"
-    rootImplementsInterface="" suppressEMFTypes="true" featureMapWrapperInterface=""
-    importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" arrayAccessors="true"
-    complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.13" language="">
+    rootImplementsInterface="" featureMapWrapperInterface="" importerID="org.eclipse.emf.importer.ecore"
+    containmentProxies="true" arrayAccessors="true" complianceLevel="6.0" copyrightFields="false"
+    runtimeVersion="2.13" language="">
   <foreignModel>genHwDevicev2.ecore</foreignModel>
   <genPackages prefix="Alma" disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#/">
     <nestedGenPackages prefix="Control" basePackage="alma" disposableProviderFactory="true"
@@ -17,7 +17,7 @@
               disposableProviderFactory="true" ecorePackage="genHwDevicev2.ecore#//control/datamodel/meta/amb">
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive">
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/Assembly"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/isIntervalTE"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/IsIntervalTE"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/Interval"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/setArchiveAmb">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Archive/setArchiveAmb/row"/>
@@ -47,8 +47,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/WorldDataToJavaType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/WorldDataToDatabaseType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/WorldDataToBACIType"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isRawDataArray"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isWorldDataArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsRawDataArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsWorldDataArray"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/MinRange"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/MaxRange"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/idlReturns"/>
@@ -63,32 +63,32 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/cppParameters"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/argList"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/argWords"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isConversion"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isSpecialConversion"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsConversion"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsSpecialConversion"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/NumberItemsRawData"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/TotalBytesRawData"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/NumberRawDataTypeBytes"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/NumberItemsWorldData"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/RCACell"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/TeRelatedCell"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isDependentGroupBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isDependentBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isDependentElement"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isByteSwapped"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isDependentBitElement"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isDependentArrayElement"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsDependentGroupBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsDependentBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsDependentElement"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsByteSwapped"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsDependentBitElement"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsDependentArrayElement"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/GetDimension"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isSingleBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/getBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/getMask"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/getFirstBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/getLastBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/getGroupMask"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/getGroupEnd"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/getGroupStart"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsSingleBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/GetBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/GetMask"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/GetFirstBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/GetLastBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/GetGroupMask"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/GetGroupEnd"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/GetGroupStart"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/RawSubArrayEndIndex"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/RawSubArrayStartIndex"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/isRawSubArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/IsRawSubArray"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/WorlDataToDatabaseTypeUpper1"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/WorldDataTypeUpper1"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb">
@@ -169,29 +169,29 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/WorldDataToJavaType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/WorldDataToDatabaseType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/WorldDataToBACIType"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isConversion"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isSpecialConversion"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isWorldDataArray"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isRawDataArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsConversion"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsSpecialConversion"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsWorldDataArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsRawDataArray"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/NumberItemsRawData"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/TotalBytesRawData"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/NumberRawDataTypeBytes"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/NumberItemsWorldData"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isDependentGroupBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isDependentBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isDependentElement"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isByteSwapped"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isDependentBitElement"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isDependentArrayElement"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsDependentGroupBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsDependentBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsDependentElement"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsByteSwapped"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsDependentBitElement"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsDependentArrayElement"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/GetDimension"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isSingleBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/getBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/getFirstBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/getLastBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/getGroupStart"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/getGroupEnd"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/getGroupMask"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/isRawSubArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsSingleBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/GetBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/GetFirstBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/GetLastBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/GetGroupStart"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/GetGroupEnd"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/GetGroupMask"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/IsRawSubArray"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/RawSubArrayStartIndex"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/RawSubArrayEndIndex"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/MandC/findRawSubArrayIndex">
@@ -211,7 +211,7 @@
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor">
               <genFeatures createChild="false" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/mac"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/CanBeInvalid"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isFEStatus"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsFEStatus"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/Assembly"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/RCA"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/RawDataType"/>
@@ -229,43 +229,43 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/WorldDataToJavaType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/WorldDataToDatabaseType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/WorldDataToBACIType"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isRawDataArray"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isWorldDataArray"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isConversion"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isSpecialConversion"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsRawDataArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsWorldDataArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsConversion"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsSpecialConversion"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/NumberItemsRawData"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/TotalBytesRawData"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/NumberRawDataTypeBytes"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/RCACell"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/NumberItemsWorldData"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/TeRelatedCell"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isDependentGroupBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isDependentBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isDependentElement"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isByteSwapped"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isDependentBitElement"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isDependentArrayElement"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsDependentGroupBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsDependentBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsDependentElement"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsByteSwapped"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsDependentBitElement"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsDependentArrayElement"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/GetDimension"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isSingleBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/getBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/getMask"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/getFirstBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/getLastBit"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/getGroupMask"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/getGroupEnd"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/getGroupStart"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsSingleBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/GetBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/GetMask"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/GetFirstBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/GetLastBit"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/GetGroupMask"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/GetGroupEnd"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/GetGroupStart"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/RawSubArrayEndIndex"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/RawSubArrayStartIndex"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isRawSubArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsRawSubArray"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/WorldDataToDatabaseTypeUpper1"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/WorldDataTypeUpper1"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/MinRange"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/MaxRange"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/Default"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isPattern"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isPartOfPattern"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isHomogeneous"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/isPartOfHomogeneous"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsPattern"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsPartOfPattern"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsHomogeneous"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/IsPartOfHomogeneous"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/parent"/>
@@ -343,8 +343,8 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/cp"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/tables"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/isMonitorPoint"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/isControlPoint"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/IsMonitorPoint"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/IsControlPoint"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/Name"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/APName"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ArchiveProperty/RefersTo"/>
@@ -367,7 +367,7 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/CPName"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/AltCPName"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/ArchiveOnUse"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/isMonitored"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/IsMonitored"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/setControlPoint">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/setControlPoint/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/ControlPoint/setControlPoint/parent"/>
@@ -402,7 +402,6 @@
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/utils"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/tables"/>
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/tablesAux"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/DeviceModel/mainAmb"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -473,25 +472,25 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/row"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/parentRow"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/sheet"/>
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/parent"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/dependents"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/resourceSetDependents"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/tables"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/parent"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/utils"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EReference genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/archive"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/addDependent">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/addDependent/son"/>
               </genOperations>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/isDependent"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/IsDependent"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/hasDependents"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/FullName"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/Name"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/getDependentName"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/getAltDependentName"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/getDependsOnName"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/getAltDependsOnName"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/GetDependentName"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/GetAltDependentName"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/GetDependsOnName"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/GetAltDependsOnName"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/DataUnits"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/MinRange"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/MaxRange"/>
@@ -499,9 +498,9 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/Implement"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/External"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/Description"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/isExternal"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/isArchived"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/isImplemented"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/IsExternal"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/IsArchived"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/IsImplemented"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/dErr">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/dErr/err"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/dErr/cell"/>
@@ -519,7 +518,7 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/DescriptionFormatted"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/DescriptionFormattedL4"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/DescriptionFormattedL5"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/isMonitored"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/IsMonitored"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/setMandCBase">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/setMandCBase/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MandCBase/setMandCBase/parent"/>
@@ -544,10 +543,10 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/Title"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/MPName"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/AltMPName"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/isPartOfPattern"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/isHomogeneous"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/isPartOfHomogeneous"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/isMonitored"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/IsPartOfPattern"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/IsHomogeneous"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/IsPartOfHomogeneous"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/IsMonitored"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/setMonitorPoint">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/setMonitorPoint/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/base/MonitorPoint/setMonitorPoint/parent"/>
@@ -771,10 +770,10 @@
               </genOperations>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/Assembly"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/Address"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/isEnumAddress"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/IsEnumAddress"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/DataType"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/isDataArray"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/isOpenArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/IsDataArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/IsOpenArray"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/getArrayLength"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/DataToIDLType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/DataToIDLSeqType"/>
@@ -820,8 +819,8 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/Assembly"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/Address"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/DataType"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/isDataArray"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/isOpenArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/IsDataArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/IsOpenArray"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/getArrayLength"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/DataToCPPType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/MandC/DataToIDLType"/>
@@ -845,10 +844,10 @@
               </genOperations>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/Assembly"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/Address"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/isEnumAddress"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/IsEnumAddress"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/DataType"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/isDataArray"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/isOpenArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/IsDataArray"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/IsOpenArray"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/getArrayLength"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/DataToIDLType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/DataToIDLSeqType"/>
@@ -858,10 +857,10 @@
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/DataToCORBASeqType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/DataToBACIType"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/DataToDatabaseType"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/isArchived"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/isPartOfPattern"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/isHomogeneous"/>
-              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/isPartOfHomogeneous"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/IsArchived"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/IsPartOfPattern"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/IsHomogeneous"/>
+              <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/IsPartOfHomogeneous"/>
               <genOperations ecoreOperation="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/setMonitorEth">
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/setMonitorEth/row"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/setMonitorEth/parent"/>

@@ -29,7 +29,6 @@ MA 02111-1307  USA
     === The Following is the Definition for the ETH Devices. ===
 «ENDREM»
 «DEFINE Root FOR alma::control::datamodel::meta::eth::impl::DeviceModelImpl»
-«REM»«CheckConstraints»«ENDREM»
 «EXPAND eth::CVSIgnore::Root»
 «EXPAND eth::CDBSchema::Root»
 «EXPAND eth::CDBComponent::Root»
@@ -40,21 +39,18 @@ MA 02111-1307  USA
 «EXPAND eth::CCLBaseDotPY::Root»
 «EXPAND eth::SQLAddDevice::Root»
 «EXPAND eth::XMLAddDevice::Root»
-«REM»
 «EXPAND eth::Sim::EthSimBaseDotH::Root»
 «EXPAND eth::Sim::EthSimBaseDotCPP::Root»
 «EXPAND eth::Sim::CompSimIDL::Root»
 «EXPAND eth::Sim::CompSimDotH::Root»
 «EXPAND eth::Sim::CompSimDotCPP::Root»
-«ENDREM»
-«TheEnd»
+«TheEnd()»
 «ENDDEFINE»
 
 «REM»
     === The Following is the Definition for the AMB Devices. ===
 «ENDREM»
 «DEFINE Root FOR alma::control::datamodel::meta::amb::impl::DeviceModelImpl»
-«REM»«CheckConstraints»«ENDREM»
 «EXPAND amb::CVSIgnore::Root»
 «EXPAND amb::HTML::Root»
 «EXPAND amb::CDBSchema::Root»
@@ -100,5 +96,5 @@ MA 02111-1307  USA
 «EXPAND amb::GUIIcdControlPointsDotJava::Root»
 «EXPAND amb::GUIIcdMonitorPointsDotJava::Root»
 «EXPAND amb::GUIMonitorPointPMDotJava::Root»
-«TheEnd»
+«TheEnd()»
 «ENDDEFINE»

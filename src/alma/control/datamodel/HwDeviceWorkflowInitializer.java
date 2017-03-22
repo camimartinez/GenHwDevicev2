@@ -22,7 +22,7 @@
  */
 package alma.control.datamodel;
 
-import java.io.File;
+import java.io.IOException;
 
 import org.eclipse.emf.mwe.core.WorkflowComponentHelper;
 import org.eclipse.emf.mwe.core.WorkflowContext;
@@ -53,9 +53,11 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 	public void invokeInternal(WorkflowContext ctx, ProgressMonitor monitor, Issues issues){
 		System.out.println("- ----- HwDeviceWorkflowInitializer: invokeInternal started.");
 		
-		File tmpFolder = new File(""+deviceDir+"/xmi");		
-		tmpFolder.mkdir();
-		
+		try {
+			Runtime.getRuntime().exec("mkdir "+deviceDir+"/xmi");
+		} catch (IOException e) {
+			System.out.println(e);
+		}
 		alma.control.datamodel.meta.base.DeviceModel deviceType = null;
 		
 		if(System.getProperty(deviceTypes).equals(deviceAMB)){
@@ -63,6 +65,7 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 			deviceType.setDeviceModel();
 		}else if (System.getProperty(deviceTypes).equals(deviceETH)){
 			deviceType = EthFactory.eINSTANCE.createDeviceModel();
+			deviceType.setDeviceModel();
 		}else{ 
 			System.out.println("The device type: "+ System.getProperty(deviceTypes) + "is not supported.");
 			return;
@@ -78,7 +81,6 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 		deviceType.setBusType(System.getProperty(deviceTypes));
 		deviceType.CreateModel();
 		ctx.set(modelSlot, deviceType);
-		//System.out.println("the model is: "+Arrays.toString(ctx.getSlotNames())+"");
 		System.out.println("- ----- HwDeviceWorkflowInitializer: Completed.");
 	}
 

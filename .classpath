@@ -17,6 +17,5 @@
 	<classpathentry exported="true" kind="lib" path="lib/mwe2_v2.8.3.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/ojdbc14.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/xpand_v2.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/xtext_v2.10.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

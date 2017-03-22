@@ -17,8 +17,7 @@ Bundle-ClassPath: .,
  lib/mwe_v2.8.3.jar,
  lib/mwe2_v2.8.3.jar,
  lib/ojdbc14.jar,
- lib/xpand_v2.0.0.jar,
- lib/xtext_v2.10.0.jar
+ lib/xpand_v2.0.0.jar
 Bundle-Vendor: ALMA
 Bundle-Localization: plugin
 Export-Package: alma.control.datamodel.meta.amb,
@@ -30,10 +29,8 @@ Export-Package: alma.control.datamodel.meta.amb,
  alma.control.datamodel.meta.eth,
  alma.control.datamodel.meta.eth.impl,
  alma.control.datamodel.meta.eth.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.eclipse.text;bundle-version="3.5.200",
- org.eclipse.xtend.shared.ui,
- org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport

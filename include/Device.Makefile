@@ -226,7 +226,6 @@ GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/lib/mwe_v2.8.3.jar:
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/lib/mwe2_v2.8.3.jar:
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/lib/ojdbc4.jar:
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/lib/xpand_v2.0.0.jar
-GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/lib/xtext_v2.10.0.jar
 
 # List of generated files and directories.
 #GEN_LIST += ../bin

@@ -78,4 +78,4 @@ String RawDataType():JAVA
 alma.control.datamodel.meta.amb.impl.MandCImpl.RawDataType();
 
 String TheEnd():JAVA
-alma.control.datamodel.meta.amb.impl.DeviceModelImpl.TheEnd();
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.TheEnd();
