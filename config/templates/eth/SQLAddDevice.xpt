@@ -162,10 +162,10 @@ END IF;
 «REM»
   NOW  We find out wether defaultBACIPropertyType has already been inserted. 
 «ENDREM»
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF x.isMonitored»
-            «IF !x.isDependent && x.hasDependents»
-                «LET x.MPName AS parentBACIProperty»
+    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+        «IF x.IsMonitored()»
+            «IF !x.IsDependent() && x.hasDependents()»
+                «LET x.MPName() AS parentBACIProperty»
                 «ENDLET»
             «ENDIF»
 
@@ -173,12 +173,12 @@ END IF;
               Ethernet device have no dependent monitor points.
               However, we better check in case of the spreadsheet typo.
             «ENDREM»
-            «IF !x.isDependent»
+            «IF !x.IsDependent()»
                 «REM»Adding BACIProperty«ENDREM»
-                SELECT COUNT(propertyname) INTO defaultBACIPropertyCount FROM defaultbaciProperty WHERE propertyname='«x.MPName»' and defaultComponentId=defCompId;
+                SELECT COUNT(propertyname) INTO defaultBACIPropertyCount FROM defaultbaciProperty WHERE propertyname='«x.MPName()»' and defaultComponentId=defCompId;
                 IF defaultBACIPropertyCount=0 THEN
                     «REM»NO default property found. It will be added...«ENDREM»
-                    dbms_output.put_line('Inserting default BACI Property «x.MPName»');
+                    dbms_output.put_line('Inserting default BACI Property «x.MPName()»');
                     SELECT MAX(defaultBACIPropId) INTO defaultBACIPropId FROM defaultbaciProperty;
                     defaultBACIPropId:=COALESCE(defaultBACIPropId,0)+1;
                     INSERT INTO DefaultBACIProperty (
@@ -224,21 +224,21 @@ END IF;
                     VALUES (
                         defaultBACIPropId,
                         defCompId,
-                        '«x.MPName»',
-                        '«x.Description»',
-                        '«x.Format»',
-                        '«x.DisplayUnits»',
+                        '«x.MPName()»',
+                        '«x.Description()»',
+                        '«x.Format()»',
+                        '«x.DisplayUnits()»',
                         '0',
                         '3',
                         '0',
-                        «IF x.Interval != "none"»'«x.Interval»', «ELSE»'0', «ENDIF»
+                        «IF x.Interval() != "none"»'«x.Interval()»', «ELSE»'0', «ENDIF»
                         '1',
                         '0.048',
                         '0',
                         '0',
                         '0',
-                        «IF x.GraphMin == "na" || x.GraphMin == "none"»'0',  «ELSE»'«x.GraphMin»',  «ENDIF» 
-                        «IF x.GraphMax == "na" || x.GraphMax == "none"»'0',  «ELSE»'«x.GraphMax»',  «ENDIF» 
+                        «IF x.GraphMin() == "na" || x.GraphMin() == "none"»'0',  «ELSE»'«x.GraphMin()»',  «ENDIF» 
+                        «IF x.GraphMax() == "na" || x.GraphMax() == "none"»'0',  «ELSE»'«x.GraphMax()»',  «ENDIF» 
                         '0',
                         '0',
                         '0',
@@ -259,12 +259,12 @@ END IF;
                         '!',
                         '!',
                         '0',
-                        «IF x.Interval == "none" || x.Interval == "0"»'1', «ELSE»'0', «ENDIF»
+                        «IF x.Interval() == "none" || x.Interval() == "0"»'1', «ELSE»'0', «ENDIF»
                         'monitor_collector'
                     );
                 ELSE 
-                    dbms_output.put_line('Default BACI Property «x.MPName» already exists... continue');
-                    SELECT defaultBACIPropId INTO defaultBACIPropId FROM defaultbaciProperty WHERE propertyname='«x.MPName»' and defaultComponentId=defCompId;
+                    dbms_output.put_line('Default BACI Property «x.MPName()» already exists... continue');
+                    SELECT defaultBACIPropId INTO defaultBACIPropId FROM defaultbaciProperty WHERE propertyname='«x.MPName()»' and defaultComponentId=defCompId;
                 END IF;
                 
                «REM»Adding MonitorPoint«ENDREM»
@@ -291,22 +291,22 @@ END IF;
                     VALUES(
                         defaultMonPointId,
                         defaultBACIPropId,
-                        '«x.MPName»',
+                        '«x.MPName()»',
                         '0',
-                        '«x.DataToDatabaseType»',
+                        '«x.DataToDatabaseType()»',
                         '0x0',
                         '0',
-                        '«x.DataType»',
-                        '«x.DataToCPPType»',
-                        '«x.DataUnits»',
+                        '«x.DataType()»',
+                        '«x.DataToCPPType()»',
+                        '«x.DataUnits()»',
                         '0',
                         '0',
-                        «IF x.MinRange == "na" || x.MinRange == "none" || x.MinRange == "not specified"»'0',  «ELSE»'«x.MinRange»',  «ENDIF» 
-                        «IF x.MaxRange == "na" || x.MaxRange == "none" || x.MaxRange == "not specified"»'0',  «ELSE»'«x.MaxRange»',  «ENDIF» 
-                        '«x.DescriptionAsString»'
+                        «IF x.MinRange() == "na" || x.MinRange() == "none" || x.MinRange() == "not specified"»'0',  «ELSE»'«x.MinRange()»',  «ENDIF» 
+                        «IF x.MaxRange() == "na" || x.MaxRange() == "none" || x.MaxRange() == "not specified"»'0',  «ELSE»'«x.MaxRange()»',  «ENDIF» 
+                        '«x.DescriptionAsString()»'
                     );
                 ELSE 
-                    dbms_output.put_line('WARNING: Found other Monitor Points associated with property «x.MPName». Skipping unique monitor point insertion.');
+                    dbms_output.put_line('WARNING: Found other Monitor Points associated with property «x.MPName()». Skipping unique monitor point insertion.');
                 END IF;
             «ENDIF»   «REM»IF !x.isDependent«ENDREM»
         «ENDIF»   «REM»IF x.isMonitored«ENDREM»

@@ -68,30 +68,30 @@ MA 02111-1307  USA
     http://www.nrao.edu/schemas/CONTROL/«Assembly()»Base.xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-  «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isMonitored»
-    <«x.MPName»
+  «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.IsMonitored()»
+    <«x.MPName()»
         archive_priority="15"
-      «IF x.Interval != "none" && x.Interval != "0"»
-        archive_min_int="«x.Interval»"
-        archive_max_int="«x.Interval»"
+      «IF x.Interval() != "none" && x.Interval() != "0"»
+        archive_min_int="«x.Interval()»"
+        archive_max_int="«x.Interval()»"
       «ELSE»
         archive_min_int="0"
         archive_max_int="0"
         archive_suppress="1"
       «ENDIF»
         default_value="0"
-      «IF x.GraphMin != "none"»
-        graph_min="«x.GraphMin»"
+      «IF x.GraphMin() != "none"»
+        graph_min="«x.GraphMin()»"
       «ENDIF»
-      «IF x.GraphMax != "none"»
-        graph_max="«x.GraphMax»"
+      «IF x.GraphMax() != "none"»
+        graph_max="«x.GraphMax()»"
       «ENDIF»
-        format="%«x.Format»"
-        description="«x.Title»"
-        units="«x.DataUnits»"
+        format="%«x.Format()»"
+        description="«x.Title()»"
+        units="«x.DataUnits()»"
         min_timer_trig="1.0"
-      «IF x.DisplayUnits == "pattern"»
+      «IF x.DisplayUnits() == "pattern"»
         bitDescription=""
         alarm_mask="0"
         alarm_trigger="0"
@@ -101,7 +101,7 @@ MA 02111-1307  USA
         default_timer_trig="1"
         resolution="1"
         min_step="1"
-        alarm_timer_trig="0"></«x.MPName»>
+        alarm_timer_trig="0"></«x.MPName()»>
     «ENDIF»
   «ENDFOREACH»
 

@@ -118,7 +118,7 @@ from CCL.logging import getLogger
 import math
 «ENDIF»
 
-«IF Extends != "none"»
+«IF Extends() != "none"»
 class «Assembly()»Base(CCL.«Extends()».«Extends()»):
 «ELSE»
 class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
@@ -233,20 +233,20 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
     #
     # --------------------- Monitor Points ---------------------
     #
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isExternal»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.IsExternal()»
     #
-    # «x.MPName»
+    # «x.MPName()»
     #
-    def GET_«x.MPName»(self):
+    def GET_«x.MPName()»(self):
         '''
-«x.Description»
+«x.Description()»
         '''
         result = {}
         for key, val in self._devices.iteritems():
             antName = key.rsplit("/")[1]
             result[antName] = \
-                self._devices[key].GET_«x.MPName»()
+                self._devices[key].GET_«x.MPName()»()
         if len(self._devices) == 1:
             return result.values()[0]
         return result
@@ -256,25 +256,25 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
     #
     # --------------------- Control Points ---------------------
     #
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF x.isExternal»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF x.IsExternal()»
     #
-    # «x.CPName»
+    # «x.CPName()»
     #
-        «IF x.DataType == "void"»
-    def  SET_«x.CPName»(self):
+        «IF x.DataType() == "void"»
+    def  SET_«x.CPName()»(self):
         «ELSE»
-    def  SET_«x.CPName»(self, value):
+    def  SET_«x.CPName()»(self, value):
         «ENDIF»
         '''
-«x.Description»
+«x.Description()»
         '''
         result = {}
         for key, val in self._devices.iteritems():
             antName = key.rsplit("/")[1]
-            result[antName] = \«IF x.DataType == "void"»
-                self._devices[key].SET_«x.CPName»()«ELSE»
-                self._devices[key].SET_«x.CPName»(value)«ENDIF»
+            result[antName] = \«IF x.DataType() == "void"»
+                self._devices[key].SET_«x.CPName()»()«ELSE»
+                self._devices[key].SET_«x.CPName()»(value)«ENDIF»
         if len(self._devices) == 1:
             return result.values()[0]
         return result
@@ -295,8 +295,8 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
             monitorList = \
                 CCL.«Extends()».«Extends()».getMonitorList(self)«ELSE»
             monitorList = []«ENDIF»
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-            «IF x.isExternal && x.isMonitored»monitorList.append("«x.MPName»")«ENDIF»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+            «IF x.IsExternal() && x.IsMonitored()»monitorList.append("«x.MPName()»")«ENDIF»
 «ENDFOREACH»
             result[antName] = monitorList
         if len(self._devices) == 1:
@@ -317,8 +317,8 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
             controlList = \
                 CCL.«Extends()».«Extends()».getControlList(self)«ELSE»
             controlList = []«ENDIF»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-            «IF x.isExternal»controlList.append("«x.CPName»")«ENDIF»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+            «IF x.IsExternal()»controlList.append("«x.CPName()»")«ENDIF»
 «ENDFOREACH»
             result[antName] = controlList
         if len(self._devices) == 1:

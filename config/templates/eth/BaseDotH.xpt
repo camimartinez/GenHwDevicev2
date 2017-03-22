@@ -140,14 +140,14 @@ class «Assembly()»Base:
     /// it works with real hardware.
     virtual CORBA::Boolean isSimulated();
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isExternal || x.isMonitored»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.IsExternal() || x.IsMonitored()»
         «EXPAND PublicMonitorPoint FOR x»
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF x.isExternal»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF x.IsExternal()»
         «EXPAND PublicControlPoint FOR x»
     «ENDIF»
 «ENDFOREACH»
@@ -165,11 +165,11 @@ class «Assembly()»Base:
     /// \exception acsErrTypeLifeCycle::LifeCycleExImpl
     virtual void cleanUp();
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
     «EXPAND ProtectedMonitorPoint FOR x»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
     «EXPAND ProtectedControlPoint FOR x»
 «ENDFOREACH»
 
@@ -186,8 +186,8 @@ class «Assembly()»Base:
 «ENDDEFINE»
 
 
-«DEFINE PublicMonitorPoint FOR MonitorPoint»
-    /// MonitorPoint: «MPName»
+«DEFINE PublicMonitorPoint FOR MonitorPointImpl»
+    /// MonitorPoint: «MPName()»
     /// «Description()»
     /// \exception EthernetDeviceExceptions::SocketOperationFailedEx
     /// \exception EthernetDeviceExceptions::IllegalParameterEx
@@ -195,152 +195,152 @@ class «Assembly()»Base:
     «REM»
     a. Major monitor method
     «ENDREM»
-    «IF isDataArray»
-        «IF DataType != "void"»
-    virtual «DataToCORBASeqType»* GET_«MPName»(
+    «IF IsDataArray()»
+        «IF DataType() != "void"»
+    virtual «DataToCORBASeqType()»* GET_«MPName()»(
         ACS::Time& timestamp);
         «ELSE»
-#error "MonitorPoint: «MPName» is of type void. Cannot create GET_«MPName»!"
+#error "MonitorPoint: «MPName()» is of type void. Cannot create GET_«MPName()»!"
         «ENDIF»
     «ELSE»
-        «IF DataType == "string"»
-    virtual «DataToCORBAType» GET_«MPName»(ACS::Time& timestamp);
+        «IF DataType() == "string"»
+    virtual «DataToCORBAType()» GET_«MPName()»(ACS::Time& timestamp);
         «ELSE»
-    virtual «DataToCORBAType» GET_«MPName»(ACS::Time& timestamp);
+    virtual «DataToCORBAType()» GET_«MPName()»(ACS::Time& timestamp);
         «ENDIF»
     «ENDIF»
 
     «REM»
     b. Method for monitored property
     «ENDREM»
-    «IF isMonitored»
-        «IF DisplayUnits == "pattern"»
-    virtual ACS::ROpattern_ptr «MPName»();
+    «IF IsMonitored()»
+        «IF DisplayUnits() == "pattern"»
+    virtual ACS::ROpattern_ptr «MPName()»();
         «ELSE»
-            «IF isDataArray»
-    virtual ACS::RO«DataToBACIType»Seq_ptr «MPName»();
+            «IF IsDataArray()»
+    virtual ACS::RO«DataToBACIType()»Seq_ptr «MPName()»();
             «ELSE»
-    virtual ACS::RO«DataToBACIType»_ptr «MPName»();
+    virtual ACS::RO«DataToBACIType()»_ptr «MPName()»();
             «ENDIF»
         «ENDIF»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
-    «IF isExternal»
-    /// MonitorPoint: «MPName»
+«DEFINE ProtectedMonitorPoint FOR MonitorPointImpl»
+    «IF IsExternal()»
+    /// MonitorPoint: «MPName()»
     «ELSE»
-    /// MonitorPoint: «MPName»
-    /// «Description»
+    /// MonitorPoint: «MPName()»
+    /// «Description()»
     «ENDIF»
     «REM»
     a. Major monitor method
     «ENDREM»
-    «IF isImplemented»
-        «IF isDataArray»
-    virtual std::vector< «DataToCPPType» > get«AltMPName»(
+    «IF IsImplemented()»
+        «IF IsDataArray()»
+    virtual std::vector< «DataToCPPType()» > get«AltMPName()»(
         ACS::Time& timestamp);
-        «ELSEIF DataType == "string"»
-    virtual std::string get«AltMPName»(ACS::Time& timestamp);
+        «ELSEIF DataType() == "string"»
+    virtual std::string get«AltMPName()»(ACS::Time& timestamp);
         «ELSE»
-    virtual «DataToCPPType» get«AltMPName»(ACS::Time& timestamp);
+    virtual «DataToCPPType()» get«AltMPName()»(ACS::Time& timestamp);
         «ENDIF»
     «ELSE»
-        «IF isDataArray»
-    virtual std::vector< «DataToCPPType» > get«AltMPName»(
+        «IF IsDataArray()»
+    virtual std::vector< «DataToCPPType()» > get«AltMPName()»(
         ACS::Time& timestamp) = 0;
-        «ELSEIF DataType == "string"»
-    virtual std::string get«AltMPName»(ACS::Time& timestamp) = 0;
+        «ELSEIF DataType() == "string"»
+    virtual std::string get«AltMPName()»(ACS::Time& timestamp) = 0;
         «ELSE»
-    virtual «DataToCPPType» get«AltMPName»(ACS::Time& timestamp) = 0;
+    virtual «DataToCPPType()» get«AltMPName()»(ACS::Time& timestamp) = 0;
         «ENDIF»
     «ENDIF»
 
     «REM»
     b. Field for Address
     «ENDREM»
-    «IF !isDependent && Address != "none"»
+    «IF !IsDependent && Address() != "none"»
     /// The command address for this monitor point.
-    int address«AltMPName»;
+    int address«AltMPName()»;
     «ENDIF»
 
     «REM»
     c. Property pointers.
     «ENDREM»
-    «IF isMonitored»
+    «IF IsMonitored()»
     /// The ACS smart property pointer for getting the property.
-        «IF DisplayUnits == "pattern"»
-    baci::SmartPropertyPointer< baci::ROpattern > spp«AltMPName»;
+        «IF DisplayUnits() == "pattern"»
+    baci::SmartPropertyPointer< baci::ROpattern > spp«AltMPName()»;
         «ELSE»
-            «IF isDataArray»
-    baci::SmartPropertyPointer< baci::RO«DataToBACIType»Seq > spp«AltMPName»;
+            «IF IsDataArray()»
+    baci::SmartPropertyPointer< baci::RO«DataToBACIType()»Seq > spp«AltMPName()»;
             «ELSE»
-    baci::SmartPropertyPointer< baci::RO«DataToBACIType» > spp«AltMPName»;
+    baci::SmartPropertyPointer< baci::RO«DataToBACIType()» > spp«AltMPName()»;
             «ENDIF»
         «ENDIF»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE PublicControlPoint FOR ControlPoint»
-    /// ControlPoint: «CPName»
-    /// «Description»
+«DEFINE PublicControlPoint FOR ControlPointImpl»
+    /// ControlPoint: «CPName()»
+    /// «Description()»
     /// \exception EthernetDeviceExceptions::SocketOperationFailedEx
     /// \exception EthernetDeviceExceptions::IllegalParameterEx
     /// \exception ControlExceptions::INACTErrorEx
     «REM»
     a. Major control method
     «ENDREM»
-    «IF isDataArray»
-        «IF DataType != "void"»
-    virtual void SET_«CPName»(const «DataToCORBASeqType»&);
+    «IF IsDataArray()»
+        «IF DataType() != "void"»
+    virtual void SET_«CPName()»(const «DataToCORBASeqType()»&);
         «ELSE»
-#error "ControlPoint: «CPName» is of type void. Cannot create SET_«CPName»!"
+#error "ControlPoint: «CPName()» is of type void. Cannot create SET_«CPName()»!"
         «ENDIF»
     «ELSE»
-        «IF DataType == "string"»
-    virtual void SET_«CPName»(const «DataToCORBAType»);
-        «ELSEIF DataType == "void"»
-    virtual void SET_«CPName»();
+        «IF DataType() == "string"»
+    virtual void SET_«CPName()»(const «DataToCORBAType()»);
+        «ELSEIF DataType() == "void"»
+    virtual void SET_«CPName()»();
         «ELSE»
-    virtual void SET_«CPName»(«DataToCORBAType»);
+    virtual void SET_«CPName()»(«DataToCORBAType()»);
         «ENDIF»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedControlPoint FOR ControlPoint»
-    «IF isExternal»
-    /// ControlPoint: «CPName»
+«DEFINE ProtectedControlPoint FOR ControlPointImpl»
+    «IF IsExternal()»
+    /// ControlPoint: «CPName()»
     «ELSE»
-    /// ControlPoint: «CPName»
-    /// «Description»
+    /// ControlPoint: «CPName()»
+    /// «Description()»
     «ENDIF»
-    «IF isImplemented»
-        «IF isDataArray»
-    virtual void set«AltCPName»(const std::vector< «DataToCPPType» >&);
-        «ELSEIF DataType == "void"»
-    virtual void set«AltCPName»();
-        «ELSEIF DataType == "string"»
-    virtual void set«AltCPName»(const std::string&);
+    «IF IsImplemented()»
+        «IF IsDataArray()»
+    virtual void set«AltCPName()»(const std::vector< «DataToCPPType()» >&);
+        «ELSEIF DataType() == "void"»
+    virtual void set«AltCPName()»();
+        «ELSEIF DataType() == "string"»
+    virtual void set«AltCPName()»(const std::string&);
         «ELSE»
-    virtual void set«AltCPName»(«DataToCPPType»);
+    virtual void set«AltCPName()»(«DataToCPPType()»);
         «ENDIF»
     «ELSE»
-        «IF isDataArray»
-    virtual void set«AltCPName»(const std::vector< «DataToCPPType» >&) = 0;
-        «ELSEIF DataType == "void"»
-    virtual void set«AltCPName»() = 0;
-        «ELSEIF DataType == "string"»
-    virtual void set«AltCPName»(const std::string&) = 0;
+        «IF IsDataArray()»
+    virtual void set«AltCPName()»(const std::vector< «DataToCPPType()» >&) = 0;
+        «ELSEIF DataType() == "void"»
+    virtual void set«AltCPName()»() = 0;
+        «ELSEIF DataType() == "string"»
+    virtual void set«AltCPName()»(const std::string&) = 0;
         «ELSE»
-    virtual void set«AltCPName»(«DataToCPPType») = 0;
+    virtual void set«AltCPName()»(«DataToCPPType()») = 0;
         «ENDIF»
     «ENDIF»
 
     «REM»
     b. Field for Address
     «ENDREM»
-    «IF !isDependent && Address != "none"»
+    «IF !IsDependent() && Address() != "none"»
     /// The command address for this control point.
-    int address«AltCPName»;
+    int address«AltCPName()»;
     «ENDIF»
 «ENDDEFINE»

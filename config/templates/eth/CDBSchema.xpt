@@ -102,21 +102,21 @@ MA 02111-1307  USA
             <xs:extension
                 base="extcontrol:ControlDevice">
                 <xs:sequence>
-    «FOREACH MonitorPoint AS x»
-        «IF x.isMonitored»
-          «IF x.DisplayUnits == "pattern"»
+    «FOREACH MonitorPointImpl AS x»
+        «IF x.IsMonitored()»
+          «IF x.DisplayUnits() == "pattern"»
                     <xs:element
-                        name="«x.MPName»"
+                        name="«x.MPName()»"
                         type ="baci:ROpattern"></xs:element>
           «ELSE»
-            «IF x.isDataArray»
+            «IF x.IsDataArray()»
                     <xs:element
-                        name="«x.MPName»"
-                        type ="baci:RO«x.DataToBACIType»Seq"></xs:element>
+                        name="«x.MPName()»"
+                        type ="baci:RO«x.DataToBACIType()»Seq"></xs:element>
             «ELSE»
                     <xs:element
-                        name="«x.MPName»"
-                        type ="baci:RO«x.DataToBACIType»"></xs:element>
+                        name="«x.MPName()»"
+                        type ="baci:RO«x.DataToBACIType()»"></xs:element>
             «ENDIF»
           «ENDIF»
         «ENDIF»

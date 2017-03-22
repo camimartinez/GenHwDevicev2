@@ -79,28 +79,28 @@ MA 02111-1307  USA
 «ELSE»
     EthernetDevice(name, cs)
 «ENDIF»
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent && x.Address != "none"»
-        «IF x.isEnumAddress»
-    , address«x.AltMPName»(«VendorClass»::«x.Address»)
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF !x.IsDependent() && x.Address() != "none"»
+        «IF x.IsEnumAddress()»
+    , address«x.AltMPName()»(«VendorClass()»::«x.Address()»)
         «ELSE»
-    , address«x.AltMPName»(«x.Address»)
+    , address«x.AltMPName()»(«x.Address()»)
         «ENDIF» 
     «ENDIF»
-        «IF x.isMonitored»
-    , spp«x.AltMPName»(this)
+        «IF x.IsMonitored()»
+    , spp«x.AltMPName()»(this)
         «ENDIF»
 «ENDFOREACH»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent && x.Address != "none"»
-        «IF x.isEnumAddress»
-    , address«x.AltCPName»(«VendorClass»::«x.Address»)
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF !x.IsDependent() && x.Address() != "none"»
+        «IF x.IsEnumAddress()»
+    , address«x.AltCPName()»(«VendorClass()»::«x.Address()»)
         «ELSE»
-    , address«x.AltCPName»(«x.Address»)
+    , address«x.AltCPName()»(«x.Address()»)
         «ENDIF» 
     «ENDIF»
-    «IF x.isMonitored»
-    , spp«x.AltMPName»(this)
+    «IF x.IsMonitored()»
+    , spp«x.AltMPName()»(this)
     «ENDIF»
 «ENDFOREACH»
 {
@@ -133,46 +133,46 @@ void «Assembly()»Base::initialize()
     try
     {
         const ACE_CString nameWithSep(cdbName_m + ":");
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isMonitored»
+    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.IsMonitored()»
         {
-            const ACE_CString propName(nameWithSep + "«x.MPName»");
+            const ACE_CString propName(nameWithSep + "«x.MPName()»");
             /**
               * Create new property with new DevIO. The DevIO will automatically
               * be deleted on destruction of the property.
               */
-            spp«x.AltMPName» =
-        «IF x.DisplayUnits == "pattern"»
+            spp«x.AltMPName()» =
+        «IF x.DisplayUnits() == "pattern"»
             new baci::ROpattern(propName, getComponent(),
-            «IF x.isDataArray»
-                new EthernetRODevIO< std::vector< «x.DataToCPPType» > >(
-                    address«x.AltMPName», this));
+            «IF x.IsDataArray()»
+                new EthernetRODevIO< std::vector< «x.DataToCPPType()» > >(
+                    address«x.AltMPName()», this));
             «ELSE»
-            new EthernetRODevIO< «x.DataToCPPType» >(
-                address«x.AltMPName», this));
+            new EthernetRODevIO< «x.DataToCPPType()» >(
+                address«x.AltMPName()», this));
             «ENDIF»
         «ELSE»
-            «IF x.isDataArray»
-            new baci::RO«x.DataToBACIType»Seq(propName, getComponent(),
-                new EthernetRODevIO< std::vector< «x.DataToCPPType» > >(
-                    address«x.AltMPName», this));
-            «ELSEIF x.DataType == "string"»
-            new baci::RO«x.DataToBACIType»(propName, getComponent(),
+            «IF x.IsDataArray()»
+            new baci::RO«x.DataToBACIType()»Seq(propName, getComponent(),
+                new EthernetRODevIO< std::vector< «x.DataToCPPType()» > >(
+                    address«x.AltMPName()», this));
+            «ELSEIF x.DataType() == "string"»
+            new baci::RO«x.DataToBACIType()»(propName, getComponent(),
                 new EthernetRODevIO< std::string >(
-                    address«x.AltMPName», this));
+                    address«x.AltMPName()», this));
             «ELSE»
-            new baci::RO«x.DataToBACIType»(propName, getComponent(),
-            «IF x.DataToCPPType == "long long"»
+            new baci::RO«x.DataToBACIType()»(propName, getComponent(),
+            «IF x.DataToCPPType() == "long long"»
 #if __x86_64__
                 new EthernetRODevIO< long >(
-                    address«x.AltMPName», this));
+                    address«x.AltMPName()», this));
 #else
-                new EthernetRODevIO< «x.DataToCPPType» >(
-                    address«x.AltMPName», this));
+                new EthernetRODevIO< «x.DataToCPPType()» >(
+                    address«x.AltMPName()», this));
 #endif
             «ELSE»
-                new EthernetRODevIO< «x.DataToCPPType» >(
-                    address«x.AltMPName», this));
+                new EthernetRODevIO< «x.DataToCPPType()» >(
+                    address«x.AltMPName()», this));
             «ENDIF»
             «ENDIF»
         «ENDIF»
@@ -231,18 +231,18 @@ void «Assembly()»Base::cleanUp()
 «ENDIF»
 }
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isExternal»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.IsExternal()»
         «EXPAND PublicMonitorPoint FOR x»
     «ENDIF»
     «EXPAND ProtectedMonitorPoint FOR x»
-    «IF x.isMonitored»
+    «IF x.IsMonitored()»
         «EXPAND BACIMethod FOR x»
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF x.isExternal»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF x.IsExternal()»
         «EXPAND PublicControlPoint FOR x»
     «ENDIF»
     «EXPAND ProtectedControlPoint FOR x»
@@ -252,21 +252,21 @@ void «Assembly()»Base::cleanUp()
 «ENDDEFINE»
 
 
-«DEFINE PublicMonitorPoint FOR MonitorPoint»
-/// MonitorPoint: «MPName»
-/// «Description»
+«DEFINE PublicMonitorPoint FOR MonitorPointImpl»
+/// MonitorPoint: «MPName()»
+/// «Description()»
     «REM»
     a. Major monitor method
     «ENDREM»
-    «IF isDataArray»
-        «IF DataType != "void"»
-«DataToCORBASeqType»*
-    «Assembly()»Base::GET_«MPName»(ACS::Time& timestamp)
+    «IF IsDataArray()»
+        «IF DataType() != "void"»
+«DataToCORBASeqType()»*
+    «Assembly()»Base::GET_«MPName()»(ACS::Time& timestamp)
 {
-    std::vector< «DataToCPPType» > ret;
+    std::vector< «DataToCPPType()» > ret;
     try
     {
-        ret = get«AltMPName»(timestamp);
+        ret = get«AltMPName()»(timestamp);
     }
     catch(const EthernetDeviceExceptions::SocketOperationFailedExImpl& ex)
     {
@@ -285,36 +285,36 @@ void «Assembly()»Base::cleanUp()
             __PRETTY_FUNCTION__).getINACTErrorEx();
     }
 
-    «DataToCORBASeqType»_var x(
-        new «DataToCORBASeqType»);
+    «DataToCORBASeqType()»_var x(
+        new «DataToCORBASeqType()»);
     x->length(ret.size());
     std::size_t i(0U);
-    for(std::vector< «DataToCPPType» >::iterator iter(ret.begin());
+    for(std::vector< «DataToCPPType()» >::iterator iter(ret.begin());
         iter != ret.end(); ++iter, ++i)
     {
-        x[i] = static_cast< «DataToCORBAType» >(*iter);
+        x[i] = static_cast< «DataToCORBAType()» >(*iter);
     }
 
     return x._retn();
 }
             «ELSE»
-#error "MonitorPoint: «MPName» is of type void. Cannot create GET_«MPName»!"
+#error "MonitorPoint: «MPName()» is of type void. Cannot create GET_«MPName()»!"
             «ENDIF»
         «ELSE»
-            «IF DataType == "string"»
-«DataToCORBAType» «Assembly()»Base::GET_«MPName»(ACS::Time& timestamp)
+            «IF DataType() == "string"»
+«DataToCORBAType()» «Assembly()»Base::GET_«MPName()»(ACS::Time& timestamp)
             «ELSE»
-«DataToCORBAType» «Assembly()»Base::GET_«MPName»(ACS::Time& timestamp)
+«DataToCORBAType()» «Assembly()»Base::GET_«MPName()»(ACS::Time& timestamp)
             «ENDIF»
 {
     try
     {
-                «IF DataType == "string"»
+                «IF DataType() == "string"»
         CORBA::String_var ret(
-            CORBA::string_dup(get«AltMPName»(timestamp).c_str()));
+            CORBA::string_dup(get«AltMPName()»(timestamp).c_str()));
         return ret._retn();
                 «ELSE»
-        «DataToCORBAType» ret(get«AltMPName»(timestamp));
+        «DataToCORBAType()» ret(get«AltMPName()»(timestamp));
         return ret;
                 «ENDIF»
     }
@@ -339,36 +339,36 @@ void «Assembly()»Base::cleanUp()
 «ENDDEFINE»
 
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
-    «IF isExternal»
-    /// MonitorPoint: «MPName»
+«DEFINE ProtectedMonitorPoint FOR MonitorPointImpl»
+    «IF IsExternal()»
+    /// MonitorPoint: «MPName()»
     «ELSE»
-    /// MonitorPoint: «MPName»
-    /// «Description»
+    /// MonitorPoint: «MPName()»
+    /// «Description()»
     «ENDIF»
     «REM»
     a. Major monitor method
     «ENDREM»
-    «IF isImplemented»
-        «IF isDataArray»
-std::vector< «DataToCPPType» > «Assembly»Base::get«AltMPName»(
+    «IF IsImplemented()»
+        «IF IsDataArray()»
+std::vector< «DataToCPPType()» > «Assembly()»Base::get«AltMPName()»(
     ACS::Time& timestamp)
 {
-    std::vector< «DataToCPPType» > value;
-        «ELSEIF DataType == "string"»
-std::string «Assembly»Base::get«AltMPName»(ACS::Time& timestamp)
+    std::vector< «DataToCPPType()» > value;
+        «ELSEIF DataType() == "string"»
+std::string «Assembly()»Base::get«AltMPName()»(ACS::Time& timestamp)
 {
     std::string value;
         «ELSE»
-«DataToCPPType» «Assembly()»Base::get«AltMPName»(ACS::Time& timestamp)
+«DataToCPPType» «Assembly()»Base::get«AltMPName()»(ACS::Time& timestamp)
 {
-    «DataToCPPType» value;
+    «DataToCPPType()» value;
         «ENDIF»
-    «IF Mode == "startup"»
+    «IF Mode() == "startup"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isStartup, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
-    «ELSEIF Mode == "diagnostic"»
+    «ELSEIF Mode() == "diagnostic"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isDiagnostic, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
@@ -378,10 +378,10 @@ std::string «Assembly»Base::get«AltMPName»(ACS::Time& timestamp)
         __PRETTY_FUNCTION__);
     «ENDIF»
 
-    «IF !isDependent»
+    «IF !IsDependent()»
     try
     {
-        EthernetDevice::monitor(address«AltMPName», value, timestamp);
+        EthernetDevice::monitor(address«AltMPName()», value, timestamp);
         Control::HardwareDeviceImpl::clearDeviceErrorCounter();
     }
     catch(const EthernetDeviceExceptions::SocketOperationFailedExImpl& ex)
@@ -428,33 +428,33 @@ std::string «Assembly»Base::get«AltMPName»(ACS::Time& timestamp)
 «ENDDEFINE»
 
 
-«DEFINE BACIMethod FOR MonitorPoint»
+«DEFINE BACIMethod FOR MonitorPointImpl»
 /**
- * Get the current value of «MPName» as a BACI property.
+ * Get the current value of «MPName()» as a BACI property.
  */
-    «IF DisplayUnits == "pattern"»
-ACS::ROpattern_ptr «Assembly»Base::«MPName»()
+    «IF DisplayUnits() == "pattern"»
+ACS::ROpattern_ptr «Assembly()»Base::«MPName()»()
     «ELSE»
-        «IF isDataArray»
-ACS::RO«DataToBACIType»Seq_ptr «Assembly()»Base::«MPName»()
+        «IF IsDataArray()»
+ACS::RO«DataToBACIType()»Seq_ptr «Assembly()»Base::«MPName»()
         «ELSE»
-ACS::RO«DataToBACIType»_ptr «Assembly()»Base::«MPName»()
+ACS::RO«DataToBACIType()»_ptr «Assembly()»Base::«MPName»()
         «ENDIF»
     «ENDIF»
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
-    «IF DisplayUnits == "pattern"»
+    «IF DisplayUnits() == "pattern"»
     ACS::ROpattern_var prop(ACS::ROpattern::_narrow(
-        spp«AltMPName»->getCORBAReference()));
+        spp«AltMPName()»->getCORBAReference()));
     «ELSE»
-        «IF isDataArray»
-    ACS::RO«DataToBACIType»Seq_var prop(
-        ACS::RO«DataToBACIType»Seq::_narrow(
-            spp«AltMPName»->getCORBAReference()));
+        «IF IsDataArray()»
+    ACS::RO«DataToBACIType()»Seq_var prop(
+        ACS::RO«DataToBACIType()»Seq::_narrow(
+            spp«AltMPName()»->getCORBAReference()));
         «ELSE»
-    ACS::RO«DataToBACIType»_var prop(
-        ACS::RO«DataToBACIType»::_narrow(
-            spp«AltMPName»->getCORBAReference()));
+    ACS::RO«DataToBACIType()»_var prop(
+        ACS::RO«DataToBACIType()»::_narrow(
+            spp«AltMPName()»->getCORBAReference()));
         «ENDIF»
     «ENDIF»
     return prop._retn();
@@ -462,28 +462,28 @@ ACS::RO«DataToBACIType»_ptr «Assembly()»Base::«MPName»()
 «ENDDEFINE»
 
 
-«DEFINE PublicControlPoint FOR ControlPoint»
-/// ControlPoint: «CPName»
-/// «Description»
+«DEFINE PublicControlPoint FOR ControlPointImpl»
+/// ControlPoint: «CPName()»
+/// «Description()»
     «REM»
     a. Major control method
     «ENDREM»
-    «IF isDataArray»
-        «IF DataType != "void"»
-void «Assembly»Base::SET_«CPName»(
-    const «DataToCORBASeqType»& data)
+    «IF IsDataArray()»
+        «IF DataType() != "void"»
+void «Assembly()»Base::SET_«CPName()»(
+    const «DataToCORBASeqType()»& data)
 {
-    std::vector< «DataToCPPType» > x(data.length());
+    std::vector< «DataToCPPType()» > x(data.length());
     std::size_t i(0U);
-    for(std::vector< «DataToCPPType» >::iterator iter(x.begin());
+    for(std::vector< «DataToCPPType()» >::iterator iter(x.begin());
         iter != x.end(); ++iter, ++i)
     {
-        (*iter) = static_cast< «DataToCPPType» >(data[i]);
+        (*iter) = static_cast< «DataToCPPType()» >(data[i]);
     }
 
     try
     {
-        set«AltCPName»(x);
+        set«AltCPName()»(x);
     }
     catch(const EthernetDeviceExceptions::SocketOperationFailedExImpl& ex)
     {
@@ -503,26 +503,26 @@ void «Assembly»Base::SET_«CPName»(
     }
 }
         «ELSE»
-#error "ControlPoint: «CPName» is of type void. Cannot create SET_«CPName»!"
+#error "ControlPoint: «CPName()» is of type void. Cannot create SET_«CPName()»!"
         «ENDIF»
     «ELSE»
-        «IF DataType == "void"»
-void «Assembly»Base::SET_«CPName»()
+        «IF DataType() == "void"»
+void «Assembly()»Base::SET_«CPName()»()
         «ELSEIF DataType == "string"»
-void «Assembly»Base::SET_«CPName»(const «DataToCORBAType» data)
+void «Assembly()»Base::SET_«CPName()»(const «DataToCORBAType()» data)
         «ELSE»
-void «Assembly»Base::SET_«CPName»(«DataToCORBAType» data)
+void «Assembly()»Base::SET_«CPName()»(«DataToCORBAType()» data)
         «ENDIF»
 {
     try
     {
-        «IF DataType == "void"»
-        set«AltCPName»();
-        «ELSEIF DataType == "string"»
+        «IF DataType() == "void"»
+        set«AltCPName()»();
+        «ELSEIF DataType() == "string"»
         const std::string tempData(data);
-        set«AltCPName»(tempData);
+        set«AltCPName()»(tempData);
         «ELSE»
-        set«AltCPName»(data);
+        set«AltCPName()»(data);
         «ENDIF»
     }
     catch(const EthernetDeviceExceptions::SocketOperationFailedExImpl& ex)
@@ -546,30 +546,30 @@ void «Assembly»Base::SET_«CPName»(«DataToCORBAType» data)
 «ENDDEFINE»
 
 
-«DEFINE ProtectedControlPoint FOR ControlPoint»
-    «IF isExternal»
-    /// ControlPoint: «CPName»
+«DEFINE ProtectedControlPoint FOR ControlPointImpl»
+    «IF IsExternal()»
+    /// ControlPoint: «CPName()»
     «ELSE»
-    /// ControlPoint: «CPName»
-    /// «Description»
+    /// ControlPoint: «CPName()»
+    /// «Description()»
     «ENDIF»
-    «IF isImplemented»
-        «IF isDataArray»
-void «Assembly»Base::set«AltCPName»(
-    const std::vector< «DataToCPPType» >& value)
-        «ELSEIF DataType == "void"»
-void «Assembly»Base::set«AltCPName»()
+    «IF IsImplemented()»
+        «IF IsDataArray()»
+void «Assembly()»Base::set«AltCPName()»(
+    const std::vector< «DataToCPPType()» >& value)
+        «ELSEIF DataType() == "void"»
+void «Assembly()»Base::set«AltCPName()»()
         «ELSEIF DataType == "string"»
-void «Assembly»Base::set«AltCPName»(const std::string& value)
+void «Assembly()»Base::set«AltCPName()»(const std::string& value)
         «ELSE»
-void «Assembly»Base::set«AltCPName»(«DataToCPPType» value)
+void «Assembly()»Base::set«AltCPName()»(«DataToCPPType()» value)
         «ENDIF»
 {
-    «IF Mode == "startup"»
+    «IF Mode() == "startup"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isStartup, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
-    «ELSEIF Mode == "diagnostic"»
+    «ELSEIF Mode() == "diagnostic"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isDiagnostic, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
@@ -579,14 +579,14 @@ void «Assembly»Base::set«AltCPName»(«DataToCPPType» value)
         __PRETTY_FUNCTION__);
     «ENDIF»
 
-    «IF !isDependent»
+    «IF !IsDependent()»
     try
     {
         ACS::Time timestamp(0ULL);
-        «IF DataType == "void"»
-        EthernetDevice::command(address«AltCPName», timestamp);
+        «IF DataType() == "void"»
+        EthernetDevice::command(address«AltCPName()», timestamp);
         «ELSE»
-        EthernetDevice::command(address«AltCPName», value, timestamp);
+        EthernetDevice::command(address«AltCPName()», value, timestamp);
         «ENDIF»
         Control::HardwareDeviceImpl::clearDeviceErrorCounter();
     }

@@ -98,16 +98,16 @@ module Control
         /////////////////////
         // BACI Properties //
         /////////////////////
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isMonitored»
-        /// «x.Description»
-        «IF x.DisplayUnits == "pattern"»
-        readonly attribute ACS::ROpattern «x.MPName»;
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.IsMonitored()»
+        /// «x.Description()»
+        «IF x.DisplayUnits() == "pattern"»
+        readonly attribute ACS::ROpattern «x.MPName()»;
         «ELSE»
-            «IF x.isDataArray»
-        readonly attribute ACS::RO«x.DataToBACIType»Seq «x.MPName»;
+            «IF x.IsDataArray()»
+        readonly attribute ACS::RO«x.DataToBACIType()»Seq «x.MPName()»;
             «ELSE»
-        readonly attribute ACS::RO«x.DataToBACIType» «x.MPName»;
+        readonly attribute ACS::RO«x.DataToBACIType()» «x.MPName()»;
             «ENDIF»
         «ENDIF»
     «ENDIF»
@@ -116,16 +116,16 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Monitor Points //
         ////////////////////////////////////////
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-«IF x.isExternal»
-        /// «x.Description»
-        «IF x.isDataArray»
-        «x.DataToIDLSeqType» GET_«x.MPName»(out ACS::Time timestamp) raises
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«IF x.IsExternal()»
+        /// «x.Description()»
+        «IF x.IsDataArray()»
+        «x.DataToIDLSeqType()» GET_«x.MPName()»(out ACS::Time timestamp) raises
             (EthernetDeviceExceptions::SocketOperationFailedEx,
             EthernetDeviceExceptions::IllegalParameterEx,
             ControlExceptions::INACTErrorEx);
         «ELSE»
-        «x.DataToIDLType» GET_«x.MPName»(out ACS::Time timestamp) raises
+        «x.DataToIDLType()» GET_«x.MPName()»(out ACS::Time timestamp) raises
             (EthernetDeviceExceptions::SocketOperationFailedEx,
             EthernetDeviceExceptions::IllegalParameterEx,
             ControlExceptions::INACTErrorEx);
@@ -136,15 +136,15 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Control Points //
         ////////////////////////////////////////
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF x.isExternal»
-        /// «x.Description»
-        «IF x.isDataArray»
-        void SET_«x.CPName»(in «x.DataToIDLSeqType» param) raises
-        «ELSEIF x.DataType == "void"»
-        void SET_«x.CPName»() raises
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF x.IsExternal()»
+        /// «x.Description()»
+        «IF x.IsDataArray()»
+        void SET_«x.CPName()»(in «x.DataToIDLSeqType()» param) raises
+        «ELSEIF x.DataType() == "void"»
+        void SET_«x.CPName()»() raises
         «ELSE»
-        void SET_«x.CPName»(in «x.DataToIDLType» param) raises
+        void SET_«x.CPName()»(in «x.DataToIDLType()» param) raises
         «ENDIF»
             (EthernetDeviceExceptions::SocketOperationFailedEx,
             EthernetDeviceExceptions::IllegalParameterEx,
