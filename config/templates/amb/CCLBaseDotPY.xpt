@@ -154,8 +154,8 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
         both or neither antennaName and componentName are specified.
 
         EXAMPLE:
-        import CCL.«Assembly»Base
-        obj = CCL.«Assembly»Base.«Assembly»Base("DV01")
+        import CCL.«Assembly()»Base
+        obj = CCL.«Assembly()»Base.«Assembly()»Base("DV01")
 
         or
 
@@ -350,12 +350,12 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
     #
     # --------------------- Monitor Points ---------------------
     #
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isExternal»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.IsExternal()»
     #
-    # «x.MPName»
+    # «x.MPName()»
     #
-    def GET_«x.MPName»(self):
+    def GET_«x.MPName()»(self):
         '''
 «x.Description»
         '''
@@ -363,7 +363,7 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
         for key, val in self._devices.iteritems():
             antName = key.rsplit("/")[1]
             result[antName] = \
-                self._devices[key].GET_«x.MPName»()
+                self._devices[key].GET_«x.MPName()»()
         if len(self._devices) == 1:
             return result.values()[0]
         return result
@@ -375,25 +375,25 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
     # --------------------- Control Points ---------------------
     #
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF x.isExternal»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF x.IsExternal()»
     #
-    # «x.CPName»
+    # «x.CPName()»
     #
-        «IF x.argList == ""»
-    def  SET_«x.CPName»(self):
+        «IF x.argList() == ""»
+    def  SET_«x.CPName()»(self):
         «ELSE»
-    def SET_«x.CPName»(self, «x.argList»):
+    def SET_«x.CPName()»(self, «x.argList()»):
         «ENDIF»
         '''
-«x.Description»
+«x.Description()»
         '''
         result = {}
         for key, val in self._devices.iteritems():
             antName = key.rsplit("/")[1]
-            result[antName] = \«IF x.argList == ""»
-                self._devices[key].SET_«x.CPName»()«ELSE»
-                self._devices[key].SET_«x.CPName»(«x.argList»)«ENDIF»
+            result[antName] = \«IF x.argList() == ""»
+                self._devices[key].SET_«x.CPName()»()«ELSE»
+                self._devices[key].SET_«x.CPName()»(«x.argList()»)«ENDIF»
         if len(self._devices) == 1:
             return result.values()[0]
         return result
@@ -409,12 +409,12 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
         '''
         result = {}
         for key, val in self._devices.iteritems():
-            antName = key.rsplit("/")[1]«IF Extends != "none"»
+            antName = key.rsplit("/")[1]«IF Extends() != "none"»
             monitorList = \
                 CCL.«Extends()».«Extends()».getMonitorList(self)«ELSE»
             monitorList = []«ENDIF»
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-            «IF x.isExternal && x.isMonitored»monitorList.append("«x.MPName»")«ENDIF»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+            «IF x.IsExternal() && x.IsMonitored()»monitorList.append("«x.MPName()»")«ENDIF»
 «ENDFOREACH»
             result[antName] = monitorList
         if len(self._devices) == 1:
@@ -429,12 +429,12 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
         '''
         result = {}
         for key, val in self._devices.iteritems():
-            antName = key.rsplit("/")[1]«IF Extends != "none"»
+            antName = key.rsplit("/")[1]«IF Extends() != "none"»
             controlList = \
                 CCL.«Extends()».«Extends()».getControlList(self)«ELSE»
             controlList = []«ENDIF»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-            «IF x.isExternal»controlList.append("«x.CPName»")«ENDIF»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+            «IF x.IsExternal()»controlList.append("«x.CPName()»")«ENDIF»
 «ENDFOREACH»
             result[antName] = controlList
         if len(self._devices) == 1:

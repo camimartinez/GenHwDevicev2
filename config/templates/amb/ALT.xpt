@@ -330,25 +330,25 @@ class «Assembly()»Impl: public «Assembly()»Base
      */
     virtual ~«Assembly()»Impl();
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isSpecialConversion»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.isSpecialConversion()»
     ///////////////////////////////////
-    // Monitor point: «x.MPName»
+    // Monitor point: «x.MPName()»
     ///////////////////////////////////
-        «IF x.isWorldDataArray»
-    virtual std::vector< «x.WorldDataToCPPType» > convert_«x.MPName»(«x.RawDataToCPPType»* raw);
+        «IF x.isWorldDataArray()»
+    virtual std::vector< «x.WorldDataToCPPType()» > convert_«x.MPName()»(«x.RawDataToCPPType()»* raw);
         «ELSE»
-    virtual «x.WorldDataToCPPType» convert_«x.MPName»(«x.RawDataToCPPType» raw);
+    virtual «x.WorldDataToCPPType()» convert_«x.MPName()»(«x.RawDataToCPPType()» raw);
         «ENDIF»
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.Implement»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF !x.Implement()»
     ///////////////////////////////////
-    // Control point: «x.CPName»
+    // Control point: «x.CPName()»
     ///////////////////////////////////
-    virtual «x.cppReturns» «x.CPName»«x.cppDeclaration»;
+    virtual «x.cppReturns()» «x.CPName()»«x.cppDeclaration()»;
     «ENDIF»
 «ENDFOREACH»
 };
@@ -416,18 +416,18 @@ class «Assembly()»Impl: public «Assembly()»Base
 // Additional methods for «Assembly()»
 ///////////////////////////////////////
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isSpecialConversion»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.isSpecialConversion()»
 ///////////////////////////////////
-// Monitor point: «x.MPName»
+// Monitor point: «x.MPName()»
 ///////////////////////////////////
-        «IF x.isWorldDataArray»
-std::vector< «x.WorldDataToCPPType» > convert_«x.MPName»(«x.RawDataToCPPType»* raw)
+        «IF x.isWorldDataArray()»
+std::vector< «x.WorldDataToCPPType()» > convert_«x.MPName()»(«x.RawDataToCPPType()»* raw)
 {
     // TODO
 }
         «ELSE»
-«x.WorldDataToCPPType» convert_«x.MPName»(«x.RawDataToCPPType» raw)
+«x.WorldDataToCPPType()» convert_«x.MPName()»(«x.RawDataToCPPType()» raw)
 {
     // TODO
 }
@@ -435,12 +435,12 @@ std::vector< «x.WorldDataToCPPType» > convert_«x.MPName»(«x.RawDataToCPPTyp
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.Implement»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF !x.Implement()»
 ///////////////////////////////////
-// Control point: «x.CPName»
+// Control point: «x.CPName()»
 ///////////////////////////////////
-«x.cppReturns» «Assembly()»Impl::«x.CPName»«x.cppDeclaration»
+«x.cppReturns()» «Assembly()»Impl::«x.CPName()»«x.cppDeclaration()»
 {
     // TODO
 }
@@ -514,25 +514,25 @@ class «Assembly()»SimImpl: public «Assembly()»SimBase
      */
     virtual ~«Assembly()»SimImpl();
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isSpecialConversion»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.isSpecialConversion()»
     ///////////////////////////////////
-    // Monitor point: «x.MPName»
+    // Monitor point: «x.MPName()»
     ///////////////////////////////////
-        «IF x.isWorldDataArray»
-    virtual std::vector< «x.WorldDataToCPPType» > convert_«x.MPName»(«x.RawDataToCPPType»* raw);
+        «IF x.isWorldDataArray()»
+    virtual std::vector< «x.WorldDataToCPPType()» > convert_«x.MPName()»(«x.RawDataToCPPType()»* raw);
         «ELSE»
-    virtual «x.WorldDataToCPPType» convert_«x.MPName»(«x.RawDataToCPPType» raw);
+    virtual «x.WorldDataToCPPType()» convert_«x.MPName()»(«x.RawDataToCPPType()» raw);
         «ENDIF»
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.Implement»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF !x.Implement()»
     ///////////////////////////////////
-    // Control point: «x.CPName»
+    // Control point: «x.CPName()»
     ///////////////////////////////////
-    virtual «x.cppReturns» «x.CPName»«x.cppDeclaration»;
+    virtual «x.cppReturns()» «x.CPName()»«x.cppDeclaration()»;
     «ENDIF»
 «ENDFOREACH»
 
@@ -630,18 +630,18 @@ void «Assembly()»SimImpl::hwSimulationAction()
 // Additional methods for «Assembly()»
 ///////////////////////////////////////
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isSpecialConversion»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.isSpecialConversion()»
 ///////////////////////////////////
-// Monitor point: «x.MPName»
+// Monitor point: «x.MPName()»
 ///////////////////////////////////
-        «IF x.isWorldDataArray»
-std::vector< «x.WorldDataToCPPType» > «Assembly()»SimImpl::convert_«x.MPName»(«x.RawDataToCPPType»* raw)
+        «IF x.isWorldDataArray()»
+std::vector< «x.WorldDataToCPPType()» > «Assembly()»SimImpl::convert_«x.MPName()»(«x.RawDataToCPPType()»* raw)
 {
     // TODO
 }
         «ELSE»
-«x.WorldDataToCPPType» «Assembly()»SimImpl::convert_«x.MPName»(«x.RawDataToCPPType» raw)
+«x.WorldDataToCPPType()» «Assembly()»SimImpl::convert_«x.MPName()»(«x.RawDataToCPPType()» raw)
 {
     // TODO
 }
@@ -649,12 +649,12 @@ std::vector< «x.WorldDataToCPPType» > «Assembly()»SimImpl::convert_«x.MPNam
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.Implement»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF !x.Implement()»
 ///////////////////////////////////
-// Control point: «x.CPName»
+// Control point: «x.CPName()»
 ///////////////////////////////////
-«x.cppReturns» «Assembly()»SimImpl::«x.CPName»«x.cppDeclaration»
+«x.cppReturns()» «Assembly()»SimImpl::«x.CPName()»«x.cppDeclaration()»
 {
     // TODO
 }

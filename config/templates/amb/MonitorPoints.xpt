@@ -49,21 +49,21 @@ function showme(funcName){
     <h2>Monitor Points</h2>
 <table>
 <tr><td>Function Name</td><td>RCA</td></tr>
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
 <tr>
 <td VALIGN=top>
-GET_«x.MPName»
+GET_«x.MPName()»
 </td>
 <td VALIGN=top>
-«x.RCA»
+«x.RCA()»
 </td>
 <td>
-        <a href="javascript:showme('GET_«x.MPName»')">details</a> <div id="GET_«x.MPName»Cont" style="visibility:hidden">
+        <a href="javascript:showme('GET_«x.MPName()»')">details</a> <div id="GET_«x.MPName()»Cont" style="visibility:hidden">
       «EXPAND MonitorPointDisplay FOR x»
         </div>
 <script language="javascript">
-   var GET_«x.MPName»Text = document.getElementById("GET_«x.MPName»Cont").innerHTML;
-   document.getElementById("GET_«x.MPName»Cont").innerHTML = "";
+   var GET_«x.MPName()»Text = document.getElementById("GET_«x.MPName()»Cont").innerHTML;
+   document.getElementById("GET_«x.MPName()»Cont").innerHTML = "";
 </script>
 </td>
 </tr>
@@ -74,48 +74,48 @@ GET_«x.MPName»
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE MonitorPointDisplay FOR MonitorPoint»
+«DEFINE MonitorPointDisplay FOR MonitorPointImpl»
     <li><em>Assembly</em> «Assembly()»
-      «IF isDependent»
-      <li><em>Name</em> «getDependentName» depends on «getDependsOnName»
+      «IF IsDependent()»
+      <li><em>Name</em> «GetDependentName()» depends on «GetDependsOnName()»
       «ELSE»
-    <li><em>Name</em> «MPName»
+    <li><em>Name</em> «MPName()»
       «ENDIF»
-    <li><em>RCA</em> «RCA»
-      «IF isDependent»
-          «IF isDependentGroupBit»
-      <li><em>RawDataType</em> bits «IF isRawDataArray» «getGroupStart» through «getGroupEnd» «ELSE» «getFirstBit» through «getLastBit» «ENDIF»
-          «ELSEIF isDependentBit»
-      <li><em>RawDataType</em> bit «IF isSingleBit» «getBit» «ELSE» «getFirstBit» through «getLastBit» «ENDIF»
+    <li><em>RCA</em> «RCA()»
+      «IF IsDependent()»
+          «IF IsDependentGroupBit()»
+      <li><em>RawDataType</em> bits «IF IsRawDataArray()» «GetGroupStart()» through «GetGroupEnd()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
+          «ELSEIF IsDependentBit()»
+      <li><em>RawDataType</em> bit «IF IsSingleBit()» «GetBit()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
           «ENDIF»
-          «IF isDependentElement»
-    <li><em>RawDataType</em> «RawDataType» Array Element «GetDimension»
+          «IF IsDependentElement()»
+    <li><em>RawDataType</em> «RawDataType()» Array Element «GetDimension()»
         «ENDIF»
       «ELSE»
-    <li><em>RawDataType</em> «RawDataType» «IF isRawDataArray» Array Of «NumberItemsRawData» Total «TotalBytesRawData» bytes «ENDIF» CPP type is «RawDataToCPPType»
+    <li><em>RawDataType</em> «RawDataType()» «IF IsRawDataArray()» Array Of «NumberItemsRawData()» Total «TotalBytesRawData()» bytes «ENDIF» CPP type is «RawDataToCPPType()»
       «ENDIF»
-    <li><em>TeRelated</em> «TeRelated»
-    <li><em>WorldDataType</em> «WorldDataType» «IF isWorldDataArray» Array Of «NumberItemsWorldData» «ENDIF»
-    <li><em>DataUnits</em> «DataUnits»
-    <li><em>Scale</em> «Scale»
-    <li><em>Offset</em> «Offset»
-    <li><em>MinRange</em> «MinRange»
-    <li><em>MaxRange</em> «MaxRange»
-    <li><em>Default</em> «Default»
-    <li><em>ErrorCondition</em> «ErrorCondition»
-    <li><em>ErrorSeverity</em> «ErrorSeverity»
-    <li><em>ErrorAction</em> «ErrorAction»
-    <li><em>Mode</em> «Mode»
-    <li><em>Implement</em> «Implement»
-    <li><em>External</em> «External»
-    <li><em>CanBeInvalid</em> «CanBeInvalid»
-    <li><em>Description</em> «Description»
-      «IF hasDependents»
+    <li><em>TeRelated</em> «TeRelated()»
+    <li><em>WorldDataType</em> «WorldDataType()» «IF IsWorldDataArray()» Array Of «NumberItemsWorldData()» «ENDIF»
+    <li><em>DataUnits</em> «DataUnits()»
+    <li><em>Scale</em> «Scale()»
+    <li><em>Offset</em> «Offset()»
+    <li><em>MinRange</em> «MinRange()»
+    <li><em>MaxRange</em> «MaxRange()»
+    <li><em>Default</em> «Default()»
+    <li><em>ErrorCondition</em> «ErrorCondition()»
+    <li><em>ErrorSeverity</em> «ErrorSeverity()»
+    <li><em>ErrorAction</em> «ErrorAction()»
+    <li><em>Mode</em> «Mode()»
+    <li><em>Implement</em> «Implement()»
+    <li><em>External</em> «External()»
+    <li><em>CanBeInvalid</em> «CanBeInvalid()»
+    <li><em>Description</em> «Description()»
+      «IF hasDependents()»
       <li><em>Has dependents</em>
       «ELSE»
       <li><em>No dependents</em>
       «ENDIF»
-      «IF isArchived»
+      «IF IsArchived()»
       <li><em>Is archived</em>
       «ELSE»
       <li><em>Not archived</em>

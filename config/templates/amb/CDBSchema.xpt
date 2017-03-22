@@ -92,15 +92,15 @@ MA 02111-1307  USA
           <xs:extension base="extcontrol:ControlDevice">
     «ENDIF»
     <xs:sequence>
-    «FOREACH MonitorPoint AS x»
-        «IF x.isMonitored»
-          «IF x.isPattern»
-      <xs:element name="«x.MPName»" type ="baci:ROpattern"/>
+    «FOREACH monitorPoints.contents AS x»
+        «IF x.IsMonitored()»
+          «IF x.IsPattern()»
+      <xs:element name="«x.MPName()»" type ="baci:ROpattern"/>
           «ELSE»
-            «IF x.isWorldDataArray»
-      <xs:element name="«x.MPName»" type ="baci:RO«x.WorldDataToBACIType»Seq"/>
+            «IF x.IsWorldDataArray()»
+      <xs:element name="«x.MPName()»" type ="baci:RO«x.WorldDataToBACIType()»Seq"/>
             «ELSE»
-      <xs:element name="«x.MPName»" type ="baci:RO«x.WorldDataToBACIType»"/>
+      <xs:element name="«x.MPName()»" type ="baci:RO«x.WorldDataToBACIType()»"/>
             «ENDIF»
           «ENDIF»
         «ENDIF»

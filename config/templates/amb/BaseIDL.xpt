@@ -79,7 +79,7 @@ MA 02111-1307  USA
 module Control
 {
     /// «Description()»
-«IF Extends != "none"»
+«IF Extends() != "none"»
     interface «Assembly()»Base: «Extends()»
 «ELSE»
     interface «Assembly()»Base: Control::HardwareDevice
@@ -88,16 +88,16 @@ module Control
         /////////////////////
         // BACI Properties //
         /////////////////////
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isMonitored»
-        /// «x.DescriptionFormatted»
-        «IF x.isPattern»
-        readonly attribute ACS::ROpattern «x.MPName»;
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.IsMonitored()»
+        /// «x.DescriptionFormatted()»
+        «IF x.IsPattern()»
+        readonly attribute ACS::ROpattern «x.MPName()»;
         «ELSE»
-            «IF x.isWorldDataArray»
-        readonly attribute ACS::RO«x.WorldDataToBACIType»Seq «x.MPName»;
+            «IF x.IsWorldDataArray()»
+        readonly attribute ACS::RO«x.WorldDataToBACIType()»Seq «x.MPName()»;
             «ELSE»
-        readonly attribute ACS::RO«x.WorldDataToBACIType» «x.MPName»;
+        readonly attribute ACS::RO«x.WorldDataToBACIType()» «x.MPName()»;
             «ENDIF»
         «ENDIF»
     «ENDIF»
@@ -147,13 +147,13 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Monitor Points //
         ////////////////////////////////////////
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isExternal»
-        /// «x.DescriptionFormatted»
-        «IF x.isWorldDataArray»
-        «x.WorldDataToIDLSeqType» GET_«x.MPName»(out ACS::Time timestamp) raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx);
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF x.IsExternal()»
+        /// «x.DescriptionFormatted()»
+        «IF x.IsWorldDataArray()»
+        «x.WorldDataToIDLSeqType()» GET_«x.MPName()»(out ACS::Time timestamp) raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx);
         «ELSE»
-        «x.WorldDataToIDLType» GET_«x.MPName»(out ACS::Time timestamp) raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx);
+        «x.WorldDataToIDLType()» GET_«x.MPName()»(out ACS::Time timestamp) raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx);
         «ENDIF»
     «ENDIF»
 «ENDFOREACH»
@@ -161,13 +161,13 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Control Points //
         ////////////////////////////////////////
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
     «REM»
     The condition isTERelated is built into the idlDeclaration method for ControlPoint.
     «ENDREM»
-    «IF x.isExternal»
-        /// «x.DescriptionFormatted»
-        «x.idlReturns» «x.idlDeclaration»;
+    «IF x.IsExternal()»
+        /// «x.DescriptionFormatted()»
+        «x.idlReturns()» «x.idlDeclaration()»;
     «ENDIF»
 «ENDFOREACH»
     };

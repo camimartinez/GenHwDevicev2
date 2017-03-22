@@ -49,21 +49,21 @@ function showme(funcName){
     <h2>Control Points</h2>
 <table>
 <tr><td>Function Name</td><td>RCA</td></tr>
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
 <tr>
 <td VALIGN=top>
-SET_«x.CPName»
+SET_«x.CPName()»
 </td>
 <td VALIGN=top>
-«x.RCA»
+«x.RCA()»
 </td>
 <td>
-        <a href="javascript:showme('SET_«x.CPName»')">details</a> <div id="SET_«x.CPName»Cont" style="visibility:hidden">
+        <a href="javascript:showme('SET_«x.CPName()»')">details</a> <div id="SET_«x.CPName()»Cont" style="visibility:hidden">
       «EXPAND ControlPointDisplay FOR x»
         </div>
 <script language="javascript">
-   var SET_«x.CPName»Text = document.getElementById("SET_«x.CPName»Cont").innerHTML;
-   document.getElementById("SET_«x.CPName»Cont").innerHTML = "";
+   var SET_«x.CPName()»Text = document.getElementById("SET_«x.CPName()»Cont").innerHTML;
+   document.getElementById("SET_«x.CPName()»Cont").innerHTML = "";
 </script>
 </td>
 </tr>
@@ -74,27 +74,27 @@ SET_«x.CPName»
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE ControlPointDisplay FOR ControlPoint»
+«DEFINE ControlPointDisplay FOR ControlPointImpl»
     <li><em>Assembly</em> «Assembly()»
-    <li><em>Name</em> «CPName»
-    <li><em>RCA</em> «RCA»
-    <li><em>RawDataType</em> «RawDataType»
-    <li><em>TeRelated</em> «TeRelated»
-    <li><em>WorldDataType</em> «WorldDataType»
-    <li><em>DataUnits</em> «DataUnits»
-    <li><em>Scale</em> «Scale»
-    <li><em>Offset</em> «Offset»
-    <li><em>MinRange</em> «MinRange»
-    <li><em>MaxRange</em> «MaxRange»
-    <li><em>Returns</em> «Returns»
-    <li><em>Parameter</em> «Parameter»
-    <li><em>Data</em> «Data»
-    <li><em>Value</em> «Value»
-    <li><em>Mode</em> «Mode»
-    <li><em>Implement</em> «Implement»
-    <li><em>External</em> «External»
+    <li><em>Name</em> «CPName()»
+    <li><em>RCA</em> «RCA()»
+    <li><em>RawDataType</em> «RawDataType()»
+    <li><em>TeRelated</em> «TeRelated()»
+    <li><em>WorldDataType</em> «WorldDataType()»
+    <li><em>DataUnits</em> «DataUnits()»
+    <li><em>Scale</em> «Scale()»
+    <li><em>Offset</em> «Offset()»
+    <li><em>MinRange</em> «MinRange()»
+    <li><em>MaxRange</em> «MaxRange()»
+    <li><em>Returns</em> «Returns()»
+    <li><em>Parameter</em> «Parameter()»
+    <li><em>Data</em> «Data()»
+    <li><em>Value</em> «Value()»
+    <li><em>Mode</em> «Mode()»
+    <li><em>Implement</em> «Implement()»
+    <li><em>External</em> «External()»
     <li><em>Description</em> «Description()»
-      «IF isArchived»
+      «IF IsArchived()»
       <li><em>Is archived</em>
       «ELSE»
       <li><em>Not archived</em>

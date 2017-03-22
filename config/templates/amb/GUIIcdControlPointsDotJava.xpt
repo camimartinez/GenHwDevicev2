@@ -78,26 +78,26 @@ import alma.Control.device.gui.common.IControlPoint;
  
 public enum IcdControlPoints implements IControlPoint {
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-  «IF x.CPName != "PHASE_SEQ1" &&  x.CPName != "PHASE_SEQ2" »
-    «IF x.isExternal »
-        «IF !x.hasDependents»
-    «x.CPName»(
-            «IF x.Data == "parm"»
-                «IF x.isWorldDataArray»
-        «x.WorldDataToJavaType»[].class, «x.NumberItemsWorldData»,
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+  «IF x.CPName() != "PHASE_SEQ1" &&  x.CPName() != "PHASE_SEQ2" »
+    «IF x.IsExternal() »
+        «IF !x.hasDependents()»
+    «x.CPName()»(
+            «IF x.Data() == "parm"»
+                «IF x.IsWorldDataArray()»
+        «x.WorldDataToJavaType()»[].class, «x.NumberItemsWorldData()»,
                 «ELSE»
-        «x.WorldDataToJavaType».class,
+        «x.WorldDataToJavaType()».class,
                 «ENDIF»
            «ENDIF» 
-        "«x.Mode»"
-            «IF x.Data == "parm"»
-                «IF x.MinRange != "none" && x.MaxRange != "none"»
-        , «x.MinRange», «x.MaxRange»
+        "«x.Mode()»"
+            «IF x.Data() == "parm"»
+                «IF x.MinRange() != "none" && x.MaxRange() != "none"»
+        , «x.MinRange()», «x.MaxRange()»
                 «ENDIF»
             «ENDIF»
-            «IF x.DataUnits != "none"»
-        , "«x.DataUnits»"
+            «IF x.DataUnits() != "none"»
+        , "«x.DataUnits()»"
             «ENDIF»
     ),
         «ENDIF»

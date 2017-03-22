@@ -31,61 +31,61 @@ MA 02111-1307  USA
   <body>
   <h1>Device «DeviceName()»</h1>
   <ul>
-    <li><em>Assembly</em>  «Assembly()»
-    <li><em>Description</em>  «Description()»
-    <li><em>DeviceName</em>  «DeviceName()»
-    <li><em>Extends</em>  «Extends()»
-    <li><em>Parent</em>  «Parent()»
-    <li><em>Cardinality</em>  «Cardinality()»
-    <li><em>NodeAddress</em>  «NodeAddress()»
-    <li><em>Channel</em>  «Channel()»
-    <li><em>BaseAddress</em>  «BaseAddress()»
-    <li><em>ICD</em>  «ICD()»
-    <li><em>ICDDate</em>  «ICDDate()»
+    <li><em>Assembly:</em>  «Assembly()»
+    <li><em>Description:</em>  «Description()»
+    <li><em>DeviceName:</em>  «DeviceName()»
+    <li><em>Extends:</em>  «Extends()»
+    <li><em>Parent:</em>  «Parent()»
+    <li><em>Cardinality:</em>  «Cardinality()»
+    <li><em>NodeAddress:</em>  «NodeAddress()»
+    <li><em>Channel:</em>  «Channel()»
+    <li><em>BaseAddress:</em>  «BaseAddress()»
+    <li><em>ICD:</em>  «ICD()»
+    <li><em>ICDDate:</em>  «ICDDate()»
   </ul>
       <h3>Notes</h3>
       <ul>
-«FOREACH (Set[Note]) getNotes() AS x»
-    <li><em>«x.Note»</em>
+«FOREACH (Set[NoteImpl]) notes.contents AS n»
+    <li><em>«n.note»</em>
 «ENDFOREACH»
       </ul>
 
     <h2>Monitor Points</h2>
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-      <h3>«x.MPName»</h3>
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS m»
+      <h3>«m.MPName()»</h3>
       <ul>
-      «EXPAND MonitorPointDisplay FOR x»
+     «EXPAND MonitorPointDisplay FOR m»
       </ul>
 «ENDFOREACH»
 
-    <h2>Control Points</h2>
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-      <h3>«x.CPName»</h3>
+    <h2>Control Points</h2>isDependent
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS c»
+      <h3>«c.CPName()»</h3>
       <ul>
-      «EXPAND ControlPointDisplay FOR x»
+      «EXPAND ControlPointDisplay FOR c»
       </ul>
 «ENDFOREACH»
 
     <h2>Archive Property</h2>
-«FOREACH (Set[ArchiveProperty]) ArchiveProperty AS x»
-      <h3>«x.APName»</h3>
+«FOREACH (Set[ArchivePropertyImpl]) archiveProperties.contents AS a»
+      <h3>«a.APName()»</h3>isDependent
       <ul>
-    <li><em>Assembly</em> «x.Assembly»
-    <li><em>Name</em> «x.APName»
-    <li><em>RefersTo</em> «x.RefersTo»
-    <li><em>Interval</em> «x.IntervalFull» «IF x.isIntervalTE» Monitored every TE and dumped every «x.Interval» seconds «ENDIF»
-    <li><em>OnlyOnChange</em> «x.OnlyOnChange»
-    <li><em>DisplayUnits</em> «x.DisplayUnits»
-    <li><em>GraphMin</em> «x.GraphMin»
-    <li><em>GraphMax</em> «x.GraphMax»
-    <li><em>Format</em> «x.Format»
-    <li><em>Title</em> «x.Title»
-    «IF x.RefersTo != "none"»  
-        «IF x.isMonitorPoint»  
-            «EXPAND MonitorPointDisplay FOR x.getMonitorPoint »
+    <li><em>Assembly</em> «a.Assembly()»
+    <li><em>Name</em> «a.APName()»
+    <li><em>RefersTo</em> «a.RefersTo()»
+    <li><em>Interval</em> «a.IntervalFull()» «IF a.IsIntervalTE()» Monitored every TE and dumped every «a.Interval()» seconds «ENDIF»
+    <li><em>OnlyOnChange</em> «a.OnlyOnChange()»
+    <li><em>DisplayUnits</em> «a.DisplayUnits()»
+    <li><em>GraphMin</em> «a.GraphMin()»
+    <li><em>GraphMax</em> «a.GraphMax()»
+    <li><em>Format</em> «a.Format()»
+    <li><em>Title</em> «a.Title()»
+    «IF a.RefersTo() != "none"»  
+        «IF a.IsMonitorPoint()»  
+            «EXPAND MonitorPointDisplay FOR a.GetMonitorPoint() »
         «ENDIF»
-        «IF x.isControlPoint»  
-            «EXPAND ControlPointDisplay FOR x.getControlPoint »
+        «IF a.IsControlPoint()»  
+            «EXPAND ControlPointDisplay FOR a.GetControlPoint() »
         «ENDIF»
     «ENDIF»
       </ul>
@@ -96,75 +96,75 @@ MA 02111-1307  USA
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE MonitorPointDisplay FOR MonitorPoint»
-    <li><em>Assembly</em> «Assembly»
-      «IF isDependent»
-      <li><em>Name</em> «getDependentName» depends on «getDependsOnName»
+«DEFINE MonitorPointDisplay FOR MonitorPointImpl»
+    <li><em>Assembly</em> «Assembly()»
+      «IF IsDependent()»
+      <li><em>Name:</em> «GetDependentName()» depends on «GetDependsOnName()»
       «ELSE»
-    <li><em>Name</em> «MPName»
+    <li><em>Name:</em> «MPName()»
       «ENDIF»
-    <li><em>RCA</em> «RCA»
-      «IF isDependent»
-          «IF isDependentGroupBit»
-      <li><em>RawDataType</em> bits «IF isRawDataArray» «getGroupStart» through «getGroupEnd» «ELSE» «getFirstBit» through «getLastBit» «ENDIF»
-          «ELSEIF isDependentBit»
-      <li><em>RawDataType</em> bit «IF isSingleBit» «getBit» «ELSE» «getFirstBit» through «getLastBit» «ENDIF»
+    <li><em>RCA:</em> «RCA()»
+      «IF IsDependent()»
+          «IF IsDependentGroupBit()»
+      <li><em>RawDataType:</em> bits «IF IsRawDataArray()» «GetGroupStart()» through «GetGroupEnd()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
+          «ELSEIF IsDependentBit()»
+      <li><em>RawDataType:</em> bit «IF IsSingleBit()» «GetBit()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
           «ENDIF»
-          «IF isDependentElement»
-    <li><em>RawDataType</em> «RawDataType» Array Element «GetDimension» 
+          «IF IsDependentElement()»
+    <li><em>RawDataType:</em> «RawDataType()» Array Element «GetDimension()» 
         «ENDIF»
       «ELSE»
-    <li><em>RawDataType</em> «RawDataType» «IF isRawDataArray» Array Of «NumberItemsRawData» Total «TotalBytesRawData» bytes «ENDIF» CPP type is «RawDataToCPPType»
+    <li><em>RawDataType:</em> «RawDataType()» «IF IsRawDataArray()» Array Of «NumberItemsRawData()» Total «TotalBytesRawData()» bytes «ENDIF» CPP type is «RawDataToCPPType()»
       «ENDIF»
-    <li><em>TeRelated</em> «TeRelated»
-    <li><em>WorldDataType</em> «WorldDataType» «IF isWorldDataArray» Array Of «NumberItemsWorldData» «ENDIF»
-    <li><em>DataUnits</em> «DataUnits»
-    <li><em>Scale</em> «Scale»
-    <li><em>Offset</em> «Offset»
-    <li><em>MinRange</em> «MinRange»
-    <li><em>MaxRange</em> «MaxRange»
-    <li><em>Default</em> «Default»
-    <li><em>ErrorCondition</em> «ErrorCondition»
-    <li><em>ErrorSeverity</em> «ErrorSeverity»
-    <li><em>ErrorAction</em> «ErrorAction»
-    <li><em>Mode</em> «Mode»
-    <li><em>Implement</em> «Implement»
-    <li><em>External</em> «External»
-    <li><em>CanBeInvalid</em> «CanBeInvalid»
-    <li><em>Description</em> «Description»
-      «IF hasDependents»
+    <li><em>TeRelated:</em> «TeRelated()»
+    <li><em>WorldDataType:</em> «WorldDataType()» «IF IsWorldDataArray()» Array Of «NumberItemsWorldData()» «ENDIF»
+    <li><em>DataUnits:</em> «DataUnits()»
+    <li><em>Scale:</em> «Scale()»
+    <li><em>Offset:</em> «Offset()»
+    <li><em>MinRange:</em> «MinRange()»
+    <li><em>MaxRange:</em> «MaxRange()»
+    <li><em>Default:</em> «Default()»
+    <li><em>ErrorCondition:</em> «ErrorCondition()»
+    <li><em>ErrorSeverity:</em> «ErrorSeverity()»
+    <li><em>ErrorAction:</em> «ErrorAction()»
+    <li><em>Mode:</em> «Mode()»
+    <li><em>Implement:</em> «Implement()»
+    <li><em>External:</em> «External()»
+    <li><em>CanBeInvalid:</em> «CanBeInvalid()»
+    <li><em>Description:</em> «Description()»
+      «IF hasDependents()»
       <li><em>Has dependents</em>
       «ELSE»
       <li><em>No dependents</em>
       «ENDIF»
-      «IF isArchived»
+      «IF IsArchived()»
       <li><em>Is archived</em>
       «ELSE»
       <li><em>Not archived</em>
       «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ControlPointDisplay FOR ControlPoint»
-    <li><em>Assembly</em> «Assembly»
-    <li><em>Name</em> «CPName»
-    <li><em>RCA</em> «RCA»
-    <li><em>RawDataType</em> «RawDataType»
-    <li><em>TeRelated</em> «TeRelated»
-    <li><em>WorldDataType</em> «WorldDataType»
-    <li><em>DataUnits</em> «DataUnits»
-    <li><em>Scale</em> «Scale»
-    <li><em>Offset</em> «Offset»
-    <li><em>MinRange</em> «MinRange»s
-    <li><em>MaxRange</em> «MaxRange»
-    <li><em>Returns</em> «Returns»
-    <li><em>Parameter</em> «Parameter»
-    <li><em>Data</em> «Data»
-    <li><em>Value</em> «Value»
-    <li><em>Mode</em> «Mode»
-    <li><em>Implement</em> «Implement»
-    <li><em>External</em> «External»
-    <li><em>Description</em> «Description»
-      «IF isArchived»
+«DEFINE ControlPointDisplay FOR ControlPointImpl»
+    <li><em>Assembly:</em> «Assembly()»
+    <li><em>Name:</em> «CPName()»
+    <li><em>RCA:</em> «RCA()»
+    <li><em>RawDataType:</em> «RawDataType()»
+    <li><em>TeRelated:</em> «TeRelated()»
+    <li><em>WorldDataType:</em> «WorldDataType()»
+    <li><em>DataUnits:</em> «DataUnits()»
+    <li><em>Scale:</em> «Scale()»
+    <li><em>Offset:</em> «Offset()»
+    <li><em>MinRange:</em> «MinRange()»
+    <li><em>MaxRange:</em> «MaxRange()»
+    <li><em>Returns:</em> «Returns()»
+    <li><em>Parameter:</em> «Parameter()»
+    <li><em>Data:</em> «Data()»
+    <li><em>Value:</em> «Value()»
+    <li><em>Mode:</em> «Mode()»
+    <li><em>Implement:</em> «Implement()»
+    <li><em>External:</em> «External()»
+    <li><em>Description:</em> «Description()»
+      «IF IsArchived()»
       <li><em>Is archived</em>
       «ELSE»
       <li><em>Not archived</em>

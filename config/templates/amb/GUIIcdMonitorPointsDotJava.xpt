@@ -79,27 +79,27 @@ import alma.Control.device.gui.«Assembly()».presentationModels.MonitorPointPM;
  
 public enum IcdMonitorPoints implements IMonitorPoint {
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-  «IF x.MPName != "PHASE_SEQ1" &&  x.MPName != "PHASE_SEQ2" »
-    «IF x.isExternal »
-    «x.MPName»(
-            «IF x.isWorldDataArray»
-        «x.WorldDataToJavaType»[].class, «x.NumberItemsWorldData»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+  «IF x.MPName() != "PHASE_SEQ1" &&  x.MPName() != "PHASE_SEQ2" »
+    «IF x.IsExternal() »
+    «x.MPName()»(
+            «IF x.IsWorldDataArray()»
+        «x.WorldDataToJavaType()»[].class, «x.NumberItemsWorldData()»
             «ELSE»
-        «x.WorldDataToJavaType».class 
+        «x.WorldDataToJavaType()».class 
             «ENDIF»
-        , "«x.MPName»"
-        , "«x.Mode»"
-            «IF x.WorldDataToJavaType == "boolean"»
-                «IF x.ErrorCondition == "true"»
-        , «x.Default»
+        , "«x.MPName()»"
+        , "«x.Mode()»"
+            «IF x.WorldDataToJavaType() == "boolean"»
+                «IF x.ErrorCondition() == "true"»
+        , «x.Default()»
                 «ENDIF»  
-            «ELSEIF x.MinRange != "none" && x.MaxRange != "none"»
-        , «x.MinRange»
-        , «x.MaxRange»
+            «ELSEIF x.MinRange() != "none" && x.MaxRange() != "none"»
+        , «x.MinRange()»
+        , «x.MaxRange()»
             «ENDIF»
-            «IF x.DataUnits != "none"»
-        , "«x.DataUnits»"
+            «IF x.DataUnits() != "none"»
+        , "«x.DataUnits()»"
             «ENDIF»
     ),
     «ENDIF»

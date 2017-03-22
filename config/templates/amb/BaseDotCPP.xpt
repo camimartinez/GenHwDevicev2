@@ -100,24 +100,24 @@ MA 02111-1307  USA
 «ELSE»
     AmbDeviceImpl(name, cs)
 «ENDIF»
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF !x.isDependent && x.RCA != "none"»
-    , rcaMonitor«x.AltMPName»(«x.RCA»)
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «IF !x.IsDependent() && x.RCA() != "none"»
+    , rcaMonitor«x.AltMPName()»(«x.RCA()»)
     «ENDIF»
-    «IF x.isConversion && !x.isSpecialConversion && x.Scale != "CelsiusToKelvin"»
-        «IF x.Scale != "none"»
-    , scale«x.AltMPName»(«x.Scale»)
+    «IF x.IsConversion() && !x.IsSpecialConversion() && x.Scale() != "CelsiusToKelvin"»
+        «IF x.Scale() != "none"»
+    , scale«x.AltMPName()»(«x.Scale()»)
         «ELSE»
-    , scale«x.AltMPName»(1.0)
+    , scale«x.AltMPName()»(1.0)
         «ENDIF»
-        «IF x.Offset != "none"»
-    , offset«x.AltMPName»(«x.Offset»)
+        «IF x.Offset() != "none"»
+    , offset«x.AltMPName()»(«x.Offset()»)
         «ELSE»
-    , offset«x.AltMPName»(0.0)
+    , offset«x.AltMPName()»(0.0)
         «ENDIF»
     «ENDIF»
-    «IF x.isMonitored»
-    , spp«x.AltMPName»(this)
+    «IF x.IsMonitored()»
+    , spp«x.AltMPName()»(this)
     «ENDIF»
 «REM»Create BACI properties for the dependent monitor.
 TODO: What about not monitorint seqs but monitoring their elements?
@@ -137,21 +137,21 @@ TODO: What about not monitorint seqs but monitoring their elements?
      «ENDIF»
 «ENDREM»
 «ENDFOREACH»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
-    «IF !x.isDependent»
-        «IF x.RCA != "none"»
-    , rcaControl«x.AltCPName»(«x.RCA»)
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «IF !x.IsDependent()»
+        «IF x.RCA() != "none"»
+    , rcaControl«x.AltCPName()»(«x.RCA()»)
         «ENDIF»
-        «IF x.isConversion && !x.isSpecialConversion && x.Scale != "CelsiusToKelvin"»
+        «IF x.IsConversion() && !x.IsSpecialConversion() && x.Scale() != "CelsiusToKelvin"»
             «IF x.Scale != "none"»
-    , scale«x.AltCPName»(«x.Scale»)
+    , scale«x.AltCPName()»(«x.Scale()»)
             «ELSE»
-    , scale«x.AltCPName»(1.0)
+    , scale«x.AltCPName()»(1.0)
             «ENDIF»
-            «IF x.Offset != "none"»
-    , offset«x.AltCPName»(«x.Offset»)
+            «IF x.Offset() != "none"»
+    , offset«x.AltCPName()»(«x.Offset()»)
             «ELSE»
-    , offset«x.AltCPName»(0.0)
+    , offset«x.AltCPName()»(0.0)
             «ENDIF»
         «ENDIF»
     «ENDIF»
@@ -196,7 +196,7 @@ void «Assembly()»Base::initialize()
     {
         const ACE_CString nameWithSep(cdbName_m + ":");
 
-        «IF !MonitorPoint.select(i | i.isDependent).isEmpty»
+        «IF !monitorPoints.contents.select(i | i.IsDependent()).isEmpty»
         if(timeThread_p != 0)
         {
             timeThread_p->resume();
@@ -213,39 +213,39 @@ void «Assembly()»Base::initialize()
         }
         «ENDIF»
 
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF !x.isDependent && x.hasDependents»
-            «IF x.isWorldDataArray»
-        cache«x.AltMPName».reset(new AMB::Cache< «x.Assembly»Base, std::vector< «x.WorldDataToCPPType» > >(this, &«x.Assembly»Base::get«x.AltMPName», 2.0, currentTime));
+    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+        «IF !x.IsDependent() && x.hasDependents()»
+            «IF x.IsWorldDataArray()»
+        cache«x.AltMPName()».reset(new AMB::Cache< «x.Assembly()»Base, std::vector< «x.WorldDataToCPPType()» > >(this, &«x.Assembly()»Base::get«x.AltMPName()», 2.0, currentTime));
             «ELSE»
-        cache«x.AltMPName».reset(new AMB::Cache< «x.Assembly»Base, «x.WorldDataToCPPType» >(this, &«x.Assembly»Base::get«x.AltMPName», 2.0, currentTime));
+        cache«x.AltMPName()».reset(new AMB::Cache< «x.Assembly()»Base, «x.WorldDataToCPPType()» >(this, &«x.Assembly()»Base::get«x.AltMPName()», 2.0, currentTime));
             «ENDIF»
         «ENDIF»
-        «IF x.isMonitored»
+        «IF x.IsMonitored()»
 «REM»Create BACI properties for the dependent monitor.
         «IF x.isMonitored || x.isDependent»
 «ENDREM»
         {
-            const ACE_CString propName(nameWithSep + "«x.MPName»");
+            const ACE_CString propName(nameWithSep + "«x.MPName()»");
             /**
              * Create new property with new DevIO. The DevIO will automatically
              * be deleted on destruction of the property.
              */
-            spp«x.AltMPName» =
-            «IF x.isPattern»
+            spp«x.AltMPName()» =
+            «IF x.IsPattern()»
                 new baci::ROpattern(propName, getComponent(),
-              «IF x.isWorldDataArray»
-                new AMB::RODevIO< «x.Assembly»Base, std::vector< «x.WorldDataToCPPType» >, ACS::pattern >(this, &«x.Assembly»Base::get«x.AltMPName»Proxy, getLogger()), true);
+              «IF x.IsWorldDataArray()»
+                new AMB::RODevIO< «x.Assembly()»Base, std::vector< «x.WorldDataToCPPType()» >, ACS::pattern >(this, &«x.Assembly()»Base::get«x.AltMPName()»Proxy, getLogger()), true);
               «ELSE»
-                new AMB::RODevIO< «x.Assembly»Base, «x.WorldDataToCPPType», ACS::pattern >(this, &«x.Assembly»Base::get«x.AltMPName»Proxy, getLogger()), true);
+                new AMB::RODevIO< «x.Assembly()»Base, «x.WorldDataToCPPType()», ACS::pattern >(this, &«x.Assembly()»Base::get«x.AltMPName()»Proxy, getLogger()), true);
               «ENDIF»
             «ELSE»
-              «IF x.isWorldDataArray»
-                new baci::RO«x.WorldDataToBACIType»Seq(propName, getComponent(),
-                new AMB::RODevIO< «x.Assembly»Base, std::vector< «x.WorldDataToCPPType» >, ACS::«x.WorldDataToBACIType»Seq >(this, &«x.Assembly»Base::get«x.AltMPName»Proxy, getLogger()), true);
+              «IF x.IsWorldDataArray()»
+                new baci::RO«x.WorldDataToBACIType()»Seq(propName, getComponent(),
+                new AMB::RODevIO< «x.Assembly()»Base, std::vector< «x.WorldDataToCPPType()» >, ACS::«x.WorldDataToBACIType()»Seq >(this, &«x.Assembly()»Base::get«x.AltMPName()»Proxy, getLogger()), true);
               «ELSE»
-                new baci::RO«x.WorldDataToBACIType»(propName, getComponent(),
-                new AMB::RODevIO< «x.Assembly»Base, «x.WorldDataToCPPType», «x.WorldDataToCORBADevIOType» >(this, &«x.Assembly»Base::get«x.AltMPName»Proxy, getLogger()), true);
+                new baci::RO«x.WorldDataToBACIType()»(propName, getComponent(),
+                new AMB::RODevIO< «x.Assembly()»Base, «x.WorldDataToCPPType()», «x.WorldDataToCORBADevIOType()» >(this, &«x.Assembly()»Base::get«x.AltMPName()»Proxy, getLogger()), true);
               «ENDIF»
             «ENDIF»
             «REM»Set the Alarm family and member names for this BACI property.
@@ -314,7 +314,7 @@ void «Assembly()»Base::cleanUp()
 Monitor on Startup ("Only On Startup" column).
 Implementation of overloaded hwOperationalAction method.
 «ENDREM»
-«IF !ArchiveProperty.select(i | i.OnStartup).isEmpty»
+«IF !archiveProperties.contents.select(i | i.OnStartup()).isEmpty»
 //-------------->Only On Startup monitoring
 void «Assembly()»Base::hwOperationalAction(){
 
@@ -332,10 +332,10 @@ void «Assembly()»Base::hwOperationalAction(){
 	// Call each monitor point that needs to be archive on reaching hwOperational state.
 	ACSErr::Completion_var completion;
 
-	«FOREACH ArchiveProperty.select(j | j.OnStartup) AS x»
-	«x.getMonitorPoint.MPName»()->get_sync(completion.out());
-	spp«x.getMonitorPoint.AltMPName»->publishNow();
-	//«x.getMonitorPoint.MPName»()->publishNow();
+	«FOREACH archiveProperties.contents.select(j | j.OnStartup()) AS x»
+	«x.getMonitorPoint().MPName()»()->get_sync(completion.out());
+	spp«x.getMonitorPoint().AltMPName()»->publishNow();
+	//«x.getMonitorPoint().MPName()»()->publishNow();
 	«ENDFOREACH»
 
 }
@@ -521,47 +521,47 @@ char* «Assembly()»Base::GET_LAST_CAN_ERROR_MSG()
 }
 «ENDIF»
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
+«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
     «EXPAND PublicMonitorPoint FOR x»
     «EXPAND ProtectedMonitorPoint FOR x»
-    «IF(x.isExternal && x.isMonitored) || (x.isImplemented && !x.isDependent) || (x.isConversion && !x.isSpecialConversion) »
-/// MonitorPoint: «x.MPName»
-/// «x.DescriptionFormattedL4»
+    «IF(x.IsExternal() && x.isMonitored()) || (x.IsImplemented() && !x.IsDependent()) || (x.IsConversion() && !x.IsSpecialConversion()) »
+/// MonitorPoint: «x.MPName()»
+/// «x.DescriptionFormattedL4()»
     «ENDIF»
-    «IF x.isMonitored»
+    «IF x.IsMonitored()»
         «EXPAND BACIMethod FOR x»
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
+«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
     «EXPAND PublicControlPoint FOR x»
     «EXPAND ProtectedControlPoint FOR x»
-    «IF !x.isDependent»
-        «IF x.Implement || (x.isConversion && !x.isSpecialConversion)»
-/// ControlPoint: «x.CPName»
-/// «x.DescriptionFormattedL4»
+    «IF !x.IsDependent()»
+        «IF x.Implement() || (x.IsConversion() && !x.IsSpecialConversion())»
+/// ControlPoint: «x.CPName()»
+/// «x.DescriptionFormattedL4()»
         «ENDIF»
     «ENDIF»
 «ENDFOREACH»
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE PublicMonitorPoint FOR MonitorPoint»
-    «IF isExternal»
-/// MonitorPoint: «MPName»
-/// «DescriptionFormattedL5»
+«DEFINE PublicMonitorPoint FOR MonitorPointImpl»
+    «IF IsExternal()»
+/// MonitorPoint: «MPName()»
+/// «DescriptionFormattedL5()»
         «REM»
         a. Major monitor method
         «ENDREM»
-        «IF isWorldDataArray»
-            «IF WorldDataToCPPType != "void"»
-«WorldDataToCORBASeqType»*
-    «Assembly»Base::GET_«MPName»(ACS::Time& timestamp)
+        «IF IsWorldDataArray()»
+            «IF WorldDataToCPPType() != "void"»
+«WorldDataToCORBASeqType()»*
+    «Assembly()»Base::GET_«MPName()»(ACS::Time& timestamp)
 {
-    std::vector< «WorldDataToCPPType» > ret;
+    std::vector< «WorldDataToCPPType()» > ret;
     try
     {
-        ret = get«AltMPName»(timestamp);
+        ret = get«AltMPName()»(timestamp);
     }
     catch(const ControlExceptions::CAMBErrorExImpl& ex)
     {
@@ -574,38 +574,38 @@ char* «Assembly()»Base::GET_LAST_CAN_ERROR_MSG()
             __PRETTY_FUNCTION__).getINACTErrorEx();
     }
 
-    «WorldDataToCORBASeqType»_var x(
-        new «WorldDataToCORBASeqType»);
+    «WorldDataToCORBASeqType()»_var x(
+        new «WorldDataToCORBASeqType()»);
     x->length(ret.size());
     std::size_t i(0U);
-    for(std::vector< «WorldDataToCPPType» >::iterator iter(ret.begin());
+    for(std::vector< «WorldDataToCPPType()» >::iterator iter(ret.begin());
         iter != ret.end(); ++iter, ++i)
     {
-        x[i] = static_cast< «WorldDataToCORBAType» >(*iter);
+        x[i] = static_cast< «WorldDataToCORBAType()» >(*iter);
     }
 
     return x._retn();
 }
             «ELSE»
-#error "MonitorPoint: «MPName» is of world-type void. Cannot create GET_«MPName»!"
+#error "MonitorPoint: «MPName()» is of world-type void. Cannot create GET_«MPName()»!"
             «ENDIF»
        «ELSE»
-            «IF WorldDataType == "string"»
-«WorldDataToCORBAType» «Assembly»Base::GET_«MPName»(
+            «IF WorldDataType() == "string"»
+«WorldDataToCORBAType()» «Assembly()»Base::GET_«MPName()»(
     ACS::Time& timestamp)
             «ELSE»
-«WorldDataToCORBAType» «Assembly»Base::GET_«MPName»(
+«WorldDataToCORBAType()» «Assembly()»Base::GET_«MPName()»(
     ACS::Time& timestamp)
             «ENDIF»
 {
     try
     {
-            «IF WorldDataType == "string"»
+            «IF WorldDataType() == "string"»
         CORBA::String_var ret(
-            CORBA::string_dup(get«AltMPName»(timestamp).c_str()));
+            CORBA::string_dup(get«AltMPName()»(timestamp).c_str()));
         return ret.out();
             «ELSE»
-        «WorldDataToCORBAType» ret(get«AltMPName»(timestamp));
+        «WorldDataToCORBAType()» ret(get«AltMPName()»(timestamp));
         return ret;
             «ENDIF»
     }
@@ -622,29 +622,29 @@ char* «Assembly()»Base::GET_LAST_CAN_ERROR_MSG()
 }
         «ENDIF»
     «ENDIF»
-    «IF !isDependent && RCA != "none"»
+    «IF !IsDependent() && RCA() != "none"»
 /**
- * Get the RCA for monitor point «MPName».
+ * Get the RCA for monitor point «MPName()».
  */
-inline unsigned long «Assembly»Base::getMonitorRCA«AltMPName»() const
+inline unsigned long «Assembly()»Base::getMonitorRCA«AltMPName()»() const
 {
-    return rcaMonitor«AltMPName»;
+    return rcaMonitor«AltMPName()»;
 }
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
-    «IF isExternal»
-/// MonitorPoint: «MPName»
+«DEFINE ProtectedMonitorPoint FOR MonitorPointImpl»
+    «IF IsExternal()»
+/// MonitorPoint: «MPName()»
     «ELSE»
-/// MonitorPoint: «MPName»
-/// «DescriptionFormattedL5»
+/// MonitorPoint: «MPName()»
+/// «DescriptionFormattedL5()»
     «ENDIF»
-    «IF isImplemented»
+    «IF IsImplemented()»
 /**
- * Get the current value of «MPName» from the device.
+ * Get the current value of «MPName()» from the device.
  */
-        «IF isDependent»
+        «IF IsDependent()»
             «EXPAND ProtectedGetDependentMonitorPointMethod»
         «ELSE»
             «EXPAND ProtectedGetMonitorPointMethod»
@@ -656,21 +656,21 @@ inline unsigned long «Assembly»Base::getMonitorRCA«AltMPName»() const
     «REM»
     Implementing the Proxy method.
     «ENDREM»
-    «IF !isPartOfPattern»
-///This get«AltMPName»Proxy enusures we call the virtual get«AltMPName»
-/// and not the «Assembly»Base::get«AltMPName» as it used to be.
+    «IF !IsPartOfPattern()»
+///This get«AltMPName()»Proxy enusures we call the virtual get«AltMPName()»
+/// and not the «Assembly()»Base::get«AltMPName()» as it used to be.
 /// This breaks the monitoring in the FrontEnd.
-      «IF isWorldDataArray»
-std::vector< «WorldDataToCPPType» > «Assembly»Base::get«AltMPName»Proxy(
+      «IF IsWorldDataArray()»
+std::vector< «WorldDataToCPPType()» > «Assembly()»Base::get«AltMPName()»Proxy(
     ACS::Time& timestamp)
       «ELSE»
-«WorldDataToCPPType» «Assembly»Base::get«AltMPName»Proxy(
+«WorldDataToCPPType()» «Assembly()»Base::get«AltMPName()»Proxy(
     ACS::Time& timestamp)
       «ENDIF»
 {
     try
     {
-        return get«AltMPName»(timestamp);
+        return get«AltMPName()»(timestamp);
     }
     catch(const ControlExceptions::INACTErrorExImpl& ex)
     {
@@ -698,15 +698,15 @@ std::vector< «WorldDataToCPPType» > «Assembly»Base::get«AltMPName»Proxy(
     «ENDREM»
 «ENDDEFINE»
 
-«DEFINE ProtectedGetDependentMonitorPointMethod FOR MonitorPoint»
-«WorldDataToCPPType» «Assembly()»Base::get«AltMPName»(
+«DEFINE ProtectedGetDependentMonitorPointMethod FOR MonitorPointImpl»
+«WorldDataToCPPType()» «Assembly()»Base::get«AltMPName()»(
     ACS::Time& timestamp)
 {
-    «IF Mode == "startup"»
+    «IF Mode() == "startup"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isStartup, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
-    «ELSEIF Mode == "diagnostic"»
+    «ELSEIF Mode() == "diagnostic"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isDiagnostic, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
@@ -715,14 +715,14 @@ std::vector< «WorldDataToCPPType» > «Assembly»Base::get«AltMPName»Proxy(
         &Control::HardwareDeviceImpl::isReady, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
     «ENDIF»
-    cache«getAltDependsOnName»->getVal(time«AltMPName»);
+    cache«GetAltDependsOnName()»->getVal(time«AltMPName()»);
 
-    timestamp = time«AltMPName»;
-    return value«AltMPName»;
+    timestamp = time«AltMPName()»;
+    return value«AltMPName()»;
 }
 «ENDDEFINE»
 
-«DEFINE ProtectedGetMonitorPointMethod FOR MonitorPoint»
+«DEFINE ProtectedGetMonitorPointMethod FOR MonitorPointImpl»
     «REM»
     Major monitor method : assume isImplemented and !isDependent
     «ENDREM»
@@ -731,19 +731,19 @@ std::vector< «WorldDataToCPPType» > «Assembly»Base::get«AltMPName»Proxy(
     Set up the method signature and the initial declarations.
     There are two cases: returning a vector and returning a scalar.
     «ENDREM»
-    «IF isWorldDataArray»
-std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
+    «IF IsWorldDataArray()»
+std::vector< «WorldDataToCPPType()» > «Assembly()»Base::get«AltMPName()»(
     ACS::Time& timestamp)
     «ELSE»
-«WorldDataToCPPType» «Assembly()»Base::get«AltMPName»(
+«WorldDataToCPPType()» «Assembly()»Base::get«AltMPName()»(
     ACS::Time& timestamp)
      «ENDIF»
 {
-    «IF Mode == "startup"»
+    «IF Mode() == "startup"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isStartup, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
-    «ELSEIF Mode == "diagnostic"»
+    «ELSEIF Mode() == "diagnostic"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isDiagnostic, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
@@ -752,17 +752,17 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
         &Control::HardwareDeviceImpl::isReady, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
     «ENDIF»
-    AmbRelativeAddr rca(rcaMonitor«AltMPName»«IF Assembly != "FEMC"» + AmbDeviceImpl::getBaseAddress()«ENDIF»);
-    «IF isFEStatus»
-    AmbDataLength_t length(«TotalBytesRawData»U + 1U);
+    AmbRelativeAddr rca(rcaMonitor«AltMPName()»«IF Assembly() != "FEMC"» + AmbDeviceImpl::getBaseAddress()«ENDIF»);
+    «IF IsFEStatus()»
+    AmbDataLength_t length(«TotalBytesRawData()»U + 1U);
     «ELSE»
-    AmbDataLength_t length(«TotalBytesRawData»U);
+    AmbDataLength_t length(«TotalBytesRawData()»U);
     «ENDIF»
-    std::vector< AmbDataMem_t > rawBytes(«TotalBytesRawData»U);
-    «IF isRawDataArray»
-    std::vector< «RawDataToCPPType» > raw(«NumberItemsRawData»U);
+    std::vector< AmbDataMem_t > rawBytes(«TotalBytesRawData()»U);
+    «IF IsRawDataArray()»
+    std::vector< «RawDataToCPPType()» > raw(«NumberItemsRawData()»U);
     «ELSE»
-    «RawDataToCPPType» raw(0U);
+    «RawDataToCPPType()» raw(0U);
     «ENDIF»
     «REM»
     -> End Initial setup <-
@@ -785,8 +785,8 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
         throw ControlExceptions::CAMBErrorExImpl(ex, __FILE__, __LINE__,
             __PRETTY_FUNCTION__);
     }
-    «IF isFEStatus»
-    if(rawBytes[«TotalBytesRawData»] != 0)
+    «IF IsFEStatus()»
+    if(rawBytes[«TotalBytesRawData()»] != 0)
     {
         ControlExceptions::CAMBErrorExImpl ex(__FILE__, __LINE__,
             __PRETTY_FUNCTION__);
@@ -807,7 +807,7 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
     For that reason we will be silent about it, and let the
     Front End deal with the aftermath.
     «ENDREM»
-        ex.addData("ErrorCode", static_cast< int >(rawBytes[«TotalBytesRawData»]));
+        ex.addData("ErrorCode", static_cast< int >(rawBytes[«TotalBytesRawData()»]));
         throw ex;
     }
     «REM»
@@ -818,19 +818,19 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
     -> Move the rawBytes into raw. <-
     «ENDREM»
 
-    «IF RawDataType != "int24" && RawDataType != "uint24" && RawDataType != "int48" && RawDataType != "uint48"»
+    «IF RawDataType() != "int24" && RawDataType() != "uint24" && RawDataType() != "int48" && RawDataType() != "uint48"»
     // Assign the rawBytes to the proper raw data.
     AMB::TypeConversion::dataToValue(rawBytes, raw);
 
-    «ELSEIF RawDataType == "int24" || RawDataType == "uint24"»
+    «ELSEIF RawDataType() == "int24" || RawDataType() == "uint24"»
     AMB::TypeConversion::dataToValue(rawBytes, raw, 3U);
-    «ELSEIF RawDataType == "int48" || RawDataType == "uint48"»
+    «ELSEIF RawDataType() == "int48" || RawDataType() == "uint48"»
     AMB::TypeConversion::dataToValue(rawBytes, raw, 6U);
     «ENDIF»
 
-    «IF RawDataType == "int24"»    
+    «IF RawDataType() == "int24"»    
     // Extend the sign for int24.
-        «IF isRawDataArray»
+        «IF IsRawDataArray()»
     for(unsigned int i(0U); i < raw.size(); ++i)
     {
         AMB::Utils::signFix(raw.at(i), 3U);
@@ -840,9 +840,9 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
         «ENDIF»
     «ENDIF»
 
-    «IF RawDataType == "int48"»
+    «IF RawDataType() == "int48"»
     // Extend the sign for int48.
-        «IF isRawDataArray»
+        «IF IsRawDataArray()»
     for(unsigned int i(0U); i < raw.size(); ++i)
     {
         AMB::Utils::signFix(raw.at(i), 6U);
@@ -855,39 +855,39 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
     «REM»
     -> Do any necessary conversion from raw to world. <-
     «ENDREM»
-    «IF isConversion»
-        «IF isWorldDataArray»
-            «IF isRawDataArray»
-    std::vector< «WorldDataToCPPType» > ret(rawToWorld«AltMPName»(std::vector< «RawDataToCPPType» >(raw)));
+    «IF IsConversion()»
+        «IF IsWorldDataArray()»
+            «IF IsRawDataArray()»
+    std::vector< «WorldDataToCPPType()» > ret(rawToWorld«AltMPName()»(std::vector< «RawDataToCPPType()» >(raw)));
             «ELSE»
-    std::vector< «WorldDataToCPPType» > ret(rawToWorld«AltMPName»(raw));
+    std::vector< «WorldDataToCPPType()» > ret(rawToWorld«AltMPName()»(raw));
             «ENDIF»
         «ELSE»
-    «WorldDataToCPPType» ret(rawToWorld«AltMPName»(raw));
+    «WorldDataToCPPType()» ret(rawToWorld«AltMPName()»(raw));
         «ENDIF»
     «ELSE»
-        «IF isWorldDataArray && isRawDataArray»
-            «IF WorldDataToCPPType != RawDataToCPPType»
-    #warning "You cannot have different raw (std::vector< «RawDataToCPPType» >) and world data (std::vector< «WorldDataToCPPType» >) types without specifying a conversion!  A type cast will force the raw data type to macht the world data type."
-    std::vector< «WorldDataToCPPType» > ret;
-    for(std::vector< «RawDataToCPPType» >::const_iterator iter(raw.begin());
+        «IF IsWorldDataArray() && IsRawDataArray()»
+            «IF WorldDataToCPPType() != RawDataToCPPType()»
+    #warning "You cannot have different raw (std::vector< «RawDataToCPPType()» >) and world data (std::vector< «WorldDataToCPPType()» >) types without specifying a conversion!  A type cast will force the raw data type to macht the world data type."
+    std::vector< «WorldDataToCPPType()» > ret;
+    for(std::vector< «RawDataToCPPType()» >::const_iterator iter(raw.begin());
         iter != raw.end(); ++iter)
     {
-        ret.push_back(static_cast< «WorldDataToCPPType» >(*iter));
+        ret.push_back(static_cast< «WorldDataToCPPType()» >(*iter));
     }
             «ELSE»
-    std::vector< «WorldDataToCPPType» > ret(raw.size());
+    std::vector< «WorldDataToCPPType()» > ret(raw.size());
     ret = raw;
             «ENDIF»
-        «ELSEIF !isWorldDataArray && !isRawDataArray»
-            «IF WorldDataToCPPType != RawDataToCPPType»
-                «IF (RawDataToCPPType == "float") || (RawDataToCPPType == "double")»
-    «WorldDataToCPPType» ret(static_cast< «WorldDataToCPPType» >(::round(raw)));
+        «ELSEIF !IsWorldDataArray() && !IsRawDataArray()»
+            «IF WorldDataToCPPType() != RawDataToCPPType()»
+                «IF (RawDataToCPPType() == "float") || (RawDataToCPPType() == "double")»
+    «WorldDataToCPPType()» ret(static_cast< «WorldDataToCPPType()» >(::round(raw)));
                 «ELSE»
-    «WorldDataToCPPType» ret(static_cast< «WorldDataToCPPType» >(raw));
+    «WorldDataToCPPType()» ret(static_cast< «WorldDataToCPPType()» >(raw));
                 «ENDIF» 
             «ELSE»
-    «RawDataToCPPType» ret(raw);
+    «RawDataToCPPType()» ret(raw);
             «ENDIF»
         «ELSE»
     #error "Case not allowed. For no-conversion, raw and world must both be scalars or they must both be vectors."
@@ -898,74 +898,74 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
     -> OK, data has been returned and converted to world.
        Now, set the values of any dependent variables.  <-
     «ENDREM»
-    «IF hasDependents»
-        «FOREACH (Set[MonitorPoint]) getDependents AS y»
-            «IF y.isDependentBit || y.isDependentGroupBit»
-    // Set value«y.AltMPName».
+    «IF hasDependents()»
+        «FOREACH (Set[MonitorPointImpl]) getDependents() AS y»
+            «IF y.IsDependentBit() || y.IsDependentGroupBit()»
+    // Set value«y.AltMPName()».
             «ENDIF»
-            «IF y.isDependentGroupBit»
-                «IF isRawDataArray»
-    value«y.AltMPName» = raw[«y.GetDimension»] >> «y.getGroupStart» & «y.getGroupMask»;
+            «IF y.IsDependentGroupBit()»
+                «IF IsRawDataArray()»
+    value«y.AltMPName()» = raw[«y.GetDimension()»] >> «y.getGroupStart()» & «y.getGroupMask()»;
                 «ELSE»
-    value«y.AltMPName» = raw >> «y.getGroupStart» & «y.getGroupMask»;
+    value«y.AltMPName()» = raw >> «y.getGroupStart()» & «y.getGroupMask()»;
                 «ENDIF»
-            «ELSEIF y.isDependentBit»
-                «IF isRawDataArray»
-    value«y.AltMPName» = ((raw[«y.GetDimension»] & «y.getMask») != 0) ? true : false;
+            «ELSEIF y.IsDependentBit()»
+                «IF IsRawDataArray()»
+    value«y.AltMPName()» = ((raw[«y.GetDimension()»] & «y.getMask()») != 0) ? true : false;
                 «ELSE»
-    value«y.AltMPName» = ((raw & «y.getMask») != 0) ? true : false;
+    value«y.AltMPName()» = ((raw & «y.getMask()») != 0) ? true : false;
                 «ENDIF»
             «ENDIF»
-            «IF y.isDependentElement»
-                «IF isRawDataArray && y.isRawSubArray»
-    value«y.AltMPName» = 0;
+            «IF y.IsDependentElement()»
+                «IF IsRawDataArray() && y.IsRawSubArray()»
+    value«y.AltMPName()» = 0;
     {
         std::size_t i(0U);
         for(std::vector< AmbDataMem_t >::const_iterator iter(
-            rawBytes.begin() + «y.RawSubArrayStartIndex»);
-            iter <= (rawBytes.begin() + «y.RawSubArrayEndIndex»); ++iter, ++i)
+            rawBytes.begin() + «y.RawSubArrayStartIndex()»);
+            iter <= (rawBytes.begin() + «y.RawSubArrayEndIndex()»); ++iter, ++i)
         {
-             value«y.AltMPName» += static_cast< «y.WorldDataToCPPType» >(
+             value«y.AltMPName()» += static_cast< «y.WorldDataToCPPType()» >(
 #if __BYTE_ORDER == __LITTLE_ENDIAN
-                 (*iter) << (8U * ((«y.RawSubArrayEndIndex» - «y.RawSubArrayStartIndex») - i)));
+                 (*iter) << (8U * ((«y.RawSubArrayEndIndex()» - «y.RawSubArrayStartIndex()») - i)));
 #else
                  (*iter) << (8U * i));
 #endif
         }
     }
                 «ELSE»
-    value«y.AltMPName» = static_cast< «y.WorldDataToCPPType» >(
-        raw[«y.GetDimension»]);
+    value«y.AltMPName()» = static_cast< «y.WorldDataToCPPType()» >(
+        raw[«y.GetDimension()»]);
                 «ENDIF»
-                «IF y.WorldDataType == "float" || y.WorldDataType == "double"»
-                    «IF y.isConversion»
-                        «IF y.Offset != "none" && y.Scale != "none"»
-    value«y.AltMPName» = static_cast< «y.WorldDataToCPPType» >(
-        value«y.AltMPName» * «y.Scale» + «y.Offset»);
-                        «ELSEIF y.Offset != "none"»
-    value«y.AltMPName» = static_cast< «y.WorldDataToCPPType» >(
-        value«y.AltMPName» + «y.Offset»);
-                        «ELSEIF y.Scale != "none"»
-    value«y.AltMPName» = static_cast< «y.WorldDataToCPPType» >(
-        value«y.AltMPName» * «y.Scale»);
+                «IF y.WorldDataType() == "float" || y.WorldDataType() == "double"»
+                    «IF y.IsConversion()»
+                        «IF y.Offset() != "none" && y.Scale() != "none"»
+    value«y.AltMPName()» = static_cast< «y.WorldDataToCPPType()» >(
+        value«y.AltMPName()» * «y.Scale()» + «y.Offset()»);
+                        «ELSEIF y.Offset() != "none"»
+    value«y.AltMPName()» = static_cast< «y.WorldDataToCPPType()» >(
+        value«y.AltMPName()» + «y.Offset()»);
+                        «ELSEIF y.Scale() != "none"»
+    value«y.AltMPName()» = static_cast< «y.WorldDataToCPPType()» >(
+        value«y.AltMPName()» * «y.Scale()»);
                         «ENDIF»
                     «ENDIF»
                 «ELSE»
-                    «IF y.isConversion»
-                        «IF y.Offset != "none" && y.Scale != "none"»
-    value«y.AltMPName» = static_cast< «y.WorldDataToCPPType» >(
-        ::round(value«y.AltMPName» * «y.Scale» + «y.Offset»));
+                    «IF y.IsConversion()»
+                        «IF y.Offset() != "none" && y.Scale() != "none"»
+    value«y.AltMPName()» = static_cast< «y.WorldDataToCPPType()» >(
+        ::round(value«y.AltMPName()» * «y.Scale()» + «y.Offset()»));
                         «ELSEIF y.Offset != "none"»
-    value«y.AltMPName» = static_cast< «y.WorldDataToCPPType» >(
-        ::round(value«y.AltMPName» + «y.Offset»));
-                        «ELSEIF y.Scale != "none"»
-    value«y.AltMPName» = static_cast< «y.WorldDataToCPPType» >(
-        ::round(value«y.AltMPName» * «y.Scale»));
+    value«y.AltMPName()» = static_cast< «y.WorldDataToCPPType()» >(
+        ::round(value«y.AltMPName()» + «y.Offset()»));
+                        «ELSEIF y.Scale() != "none"»
+    value«y.AltMPName()» = static_cast< «y.WorldDataToCPPType()» >(
+        ::round(value«y.AltMPName()» * «y.Scale()»));
                         «ENDIF»
                     «ENDIF»
                 «ENDIF»
             «ENDIF»
-    time«y.AltMPName» = timestamp;
+    time«y.AltMPName()» = timestamp;
         «ENDFOREACH»
 
     «ENDIF»
@@ -973,40 +973,40 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::get«AltMPName»(
 }
 «ENDDEFINE»
 
-«DEFINE ProtectedSetMonitorRCAMethod FOR MonitorPoint»
+«DEFINE ProtectedSetMonitorRCAMethod FOR MonitorPointImpl»
     «REM»
     b. Get and set methods for RCA
     «ENDREM»
-    «IF !isDependent && RCA != "none"»
+    «IF !IsDependent() && RCA() != "none"»
 /**
  * Set the RCA for this monitor point.
  */
-inline void «Assembly»Base::setMonitorRCA«AltMPName»(const unsigned long rca)
+inline void «Assembly()»Base::setMonitorRCA«AltMPName()»(const unsigned long rca)
 {
-    rcaMonitor«AltMPName» = rca;
+    rcaMonitor«AltMPName()» = rca;
 }
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedMonitorConversionMethod FOR MonitorPoint»
+«DEFINE ProtectedMonitorConversionMethod FOR MonitorPointImpl»
     «REM»
     c. Conversion methods
     «ENDREM»
-    «IF isConversion && !isSpecialConversion»
+    «IF IsConversion() && !IsSpecialConversion()»
 /**
- * Convert the raw value of «MPName» to a world value.
+ * Convert the raw value of «MPName()» to a world value.
  */
-        «IF isRawDataArray»
-            «IF isWorldDataArray»
+        «IF IsRawDataArray()»
+            «IF IsWorldDataArray()»
              «REM»
              Case 2: Raw and world data types are arrays of the same dimension
              «ENDREM»
-std::vector< «WorldDataToCPPType» > «Assembly()»Base::rawToWorld«AltMPName»(
+std::vector< «WorldDataToCPPType()» > «Assembly()»Base::rawToWorld«AltMPName()»(
     const std::vector< «RawDataToCPPType» >& raw) const
 {
     return AMB::Utils::rawToWorld<
-        std::vector< «RawDataToCPPType» >, std::vector< «WorldDataToCPPType» > >(
-            raw, offset«AltMPName», scale«AltMPName»);
+        std::vector< «RawDataToCPPType()» >, std::vector< «WorldDataToCPPType» > >(
+            raw, offset«AltMPName()», scale«AltMPName()»);
 }
             «ELSE»
              «REM»
@@ -1016,7 +1016,7 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::rawToWorld«AltMPName�
              «ENDREM»
             «ENDIF»
         «ELSE»
-            «IF isWorldDataArray»
+            «IF IsWorldDataArray()»
              «REM»
              Case 4: Not permitted (world data is an array but raw data is a scalar)
              «ENDREM»
@@ -1025,104 +1025,104 @@ std::vector< «WorldDataToCPPType» > «Assembly()»Base::rawToWorld«AltMPName�
               «REM»
              Case 1: Raw data type and world data types are both scalar quantities
              «ENDREM»
-«WorldDataToCPPType» «Assembly()»Base::rawToWorld«AltMPName»(
-    const «RawDataToCPPType» raw) const
+«WorldDataToCPPType()» «Assembly()»Base::rawToWorld«AltMPName()»(
+    const «RawDataToCPPType()» raw) const
 {
-    return static_cast< «WorldDataToCPPType» >(raw * scale«AltMPName» + offset«AltMPName»);
+    return static_cast< «WorldDataToCPPType()» >(raw * scale«AltMPName()» + offset«AltMPName()»);
 }
             «ENDIF»
         «ENDIF»
 /**
- * Get the scale conversion factor of «MPName».
+ * Get the scale conversion factor of «MPName()».
  */
-inline double «Assembly()»Base::getScale«AltMPName»() const
+inline double «Assembly()»Base::getScale«AltMPName()»() const
 {
-    return scale«AltMPName»;
+    return scale«AltMPName()»;
 }
 
 /**
- * Get the offset conversion factor of «MPName».
+ * Get the offset conversion factor of «MPName()».
  */
-inline double «Assembly()»Base::getOffset«AltMPName»() const
+inline double «Assembly()»Base::getOffset«AltMPName()»() const
 {
-    return offset«AltMPName»;
+    return offset«AltMPName()»;
 }
 
 /**
- * Override the default conversion factors of «MPName»: scale and offset.
+ * Override the default conversion factors of «MPName()»: scale and offset.
  */
-inline void «Assembly()»Base::setConversion«AltMPName»(
+inline void «Assembly()»Base::setConversion«AltMPName()»(
     const double scale, const double offset)
 {
-    scale«AltMPName» = scale;
-    offset«AltMPName» = offset;
+    scale«AltMPName()» = scale;
+    offset«AltMPName()» = offset;
 }
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE BACIMethod FOR MonitorPoint»
+«DEFINE BACIMethod FOR MonitorPointImpl»
 /**
- * Get the current value of «MPName» as a BACI property.
+ * Get the current value of «MPName()» as a BACI property.
  */
-      «IF isPattern»
-ACS::ROpattern_ptr «Assembly()»Base::«MPName»()
+      «IF IsPattern»
+ACS::ROpattern_ptr «Assembly()»Base::«MPName()»()
       «ELSE»
-        «IF isWorldDataArray»
-ACS::RO«WorldDataToBACIType»Seq_ptr «Assembly»Base::«MPName»()
+        «IF IsWorldDataArray()»
+ACS::RO«WorldDataToBACIType()»Seq_ptr «Assembly()»Base::«MPName()»()
         «ELSE»
-ACS::RO«WorldDataToBACIType»_ptr «Assembly»Base::«MPName»()
+ACS::RO«WorldDataToBACIType()»_ptr «Assembly()»Base::«MPName()»()
         «ENDIF»
       «ENDIF»
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
-      «IF isPattern»
+      «IF IsPattern()»
     ACS::ROpattern_var prop(
-        ACS::ROpattern::_narrow(spp«AltMPName»->getCORBAReference()));
+        ACS::ROpattern::_narrow(spp«AltMPName()»->getCORBAReference()));
       «ELSE»
-        «IF isWorldDataArray»
-    ACS::RO«WorldDataToBACIType»Seq_var prop(
-        ACS::RO«WorldDataToBACIType»Seq::_narrow(
-            spp«AltMPName»->getCORBAReference()));
+        «IF IsWorldDataArray()»
+    ACS::RO«WorldDataToBACIType()»Seq_var prop(
+        ACS::RO«WorldDataToBACIType()»Seq::_narrow(
+            spp«AltMPName()»->getCORBAReference()));
         «ELSE»
-    ACS::RO«WorldDataToBACIType»_var prop(
-        ACS::RO«WorldDataToBACIType»::_narrow(
-            spp«AltMPName»->getCORBAReference()));
+    ACS::RO«WorldDataToBACIType()»_var prop(
+        ACS::RO«WorldDataToBACIType()»::_narrow(
+            spp«AltMPName()»->getCORBAReference()));
         «ENDIF»
       «ENDIF»
     return prop._retn();
 }
 «ENDDEFINE»
 
-«DEFINE PublicControlPoint FOR ControlPoint»
-    «IF isExternal»
+«DEFINE PublicControlPoint FOR ControlPointImpl»
+    «IF IsExternal()»
     «REM»
     a. Major control method
     «ENDREM»
-/// ControlPoint: «CPName»
-/// «DescriptionFormattedL5»
+/// ControlPoint: «CPName()»
+/// «DescriptionFormattedL5()»
     «REM»
     The "if hasDependents" part of this is not yet implemented.
     «ENDREM»
-«corbaReturns» «Assembly()»Base::SET_«CPName»«corbaDeclaration»
+«corbaReturns()» «Assembly()»Base::SET_«CPName()»«corbaDeclaration()»
 {
-        «IF isWorldDataArray»
-            «IF WorldDataToCPPType != "void"»
-    std::vector< «WorldDataToCPPType» > x(world.length());
+        «IF IsWorldDataArray()»
+            «IF WorldDataToCPPType() != "void"»
+    std::vector< «WorldDataToCPPType()» > x(world.length());
     std::size_t i(0U);
-    for(std::vector< «WorldDataToCPPType» >::iterator iter(x.begin());
+    for(std::vector< «WorldDataToCPPType()» >::iterator iter(x.begin());
         iter != x.end(); ++iter, ++i)
     {
-        (*iter) = static_cast< «WorldDataToCPPType» >(world[i]);
+        (*iter) = static_cast< «WorldDataToCPPType()» >(world[i]);
     }
 
     try
     {
-        «IF TeRelated»
+        «IF TeRelated()»
         acstime::Epoch time;
         time.value = 0ULL;
-        set«AltCPName»(x, time);
+        set«AltCPName()»(x, time);
         «ELSE»
-        set«AltCPName»(x);
+        set«AltCPName()»(x);
         «ENDIF»
     }
     catch(const ControlExceptions::CAMBErrorExImpl& ex)
@@ -1136,12 +1136,12 @@ ACS::RO«WorldDataToBACIType»_ptr «Assembly»Base::«MPName»()
             __PRETTY_FUNCTION__).getINACTErrorEx();
     }
             «ELSE»
-#error "ControlPoint: «CPName» is of world-type void. Cannot create «CPName»«corbaDeclaration»!"
+#error "ControlPoint: «CPName()» is of world-type void. Cannot create «CPName()»«corbaDeclaration()»!"
             «ENDIF»
         «ELSE»
     try
     {
-        set«AltCPName»(«argList»);
+        set«AltCPName()»(«argList()»);
     }
     catch(const ControlExceptions::CAMBErrorExImpl& ex)
     {
@@ -1156,38 +1156,38 @@ ACS::RO«WorldDataToBACIType»_ptr «Assembly»Base::«MPName»()
         «ENDIF»
 }
     «ENDIF»
-    «IF !isDependent && RCA != "none"»
+    «IF !IsDependent() && RCA() != "none"»
 /**
- * Get the RCA for control point «CPName».
+ * Get the RCA for control point «CPName()».
  */
-inline unsigned long «Assembly()»Base::getControlRCA«AltCPName»() const
+inline unsigned long «Assembly()»Base::getControlRCA«AltCPName()»() const
 {
-    return rcaControl«AltCPName»;
+    return rcaControl«AltCPName()»;
 }
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedControlPoint FOR ControlPoint»
+«DEFINE ProtectedControlPoint FOR ControlPointImpl»
     «EXPAND ProtectedSetControlPointMethod»
-    «IF isExternal»
-/// ControlPoint: «CPName»
+    «IF IsExternal()»
+/// ControlPoint: «CPName()»
     «ELSE»
-// ControlPoint: «CPName»
-/// «DescriptionFormattedL5»
+// ControlPoint: «CPName()»
+/// «DescriptionFormattedL5()»
     «ENDIF»
     «EXPAND ProtectedSetControlRCAMethod »
     «EXPAND ProtectedControlConversionMethod »
 «ENDDEFINE»
 
-«DEFINE ProtectedSetControlPointMethod FOR ControlPoint»
-    «IF !isDependent && Implement»
-«cppReturns» «Assembly()»Base::set«AltCPName»«cppDeclaration»
+«DEFINE ProtectedSetControlPointMethod FOR ControlPointImpl»
+    «IF !IsDependent() && Implement()»
+«cppReturns()» «Assembly()»Base::set«AltCPName()»«cppDeclaration()»
 {
-    «IF Mode == "startup"»
+    «IF Mode() == "startup"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isStartup, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
-    «ELSEIF Mode == "diagnostic"»
+    «ELSEIF Mode() == "diagnostic"»
     Control::HardwareDeviceImpl::checkHwStateOrThrow(
         &Control::HardwareDeviceImpl::isDiagnostic, __FILE__, __LINE__,
         __PRETTY_FUNCTION__);
@@ -1200,14 +1200,14 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName»() const
     «REM»
     Control Point Archival
     «ENDREM»
-    «IF ArchiveOnUse»
+    «IF ArchiveOnUse()»
     // Archiving control point on use through type safe log.
     ControlPointArchival::ControlPointUsed cpu(__FILE__, __LINE__, __PRETTY_FUNCTION__);
     //cpu.setComponent(getComponent().getName());
-    cpu.setControlPoint("«CPName»");
+    cpu.setControlPoint("«CPName()»");
     std::ostringstream strs;
-    	«IF isWorldDataArray»
-    for(std::vector< «WorldDataToCPPType» >::const_iterator iter(world.begin()); iter != world.end(); ++iter)
+    	«IF IsWorldDataArray»
+    for(std::vector< «WorldDataToCPPType()» >::const_iterator iter(world.begin()); iter != world.end(); ++iter)
     {
     	if     ( iter == world.begin() )
         	strs << "[" << *iter ;
@@ -1216,8 +1216,8 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName»() const
     }
     strs << "]";
     	«ELSE»
-    		«IF Parameter == "void"»
-    strs << «Value»;
+    		«IF Parameter() == "void"»
+    strs << «Value()»;
 	        «ELSE»    
     strs << world;
     		«ENDIF»
@@ -1237,23 +1237,23 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName»() const
     to figure out how to express this in the template without too much code
     duplication.
     «ENDREM»
-    «IF !isWorldDataArray && WorldDataToCPPType != "bool" && MinRange != "none" && Parameter != "void" && MinRange != MaxRange»
-        «IF MinRange == "0" && (WorldDataToCPPType == "unsigned char" || WorldDataToCPPType == "unsigned short" || WorldDataToCPPType == "unsigned int" || WorldDataToCPPType == "unsigned long" || WorldDataToCPPType == "unsigned long long")»
+    «IF !IsWorldDataArray() && WorldDataToCPPType() != "bool" && MinRange() != "none" && Parameter() != "void" && MinRange() != MaxRange()»
+        «IF MinRange() == "0" && (WorldDataToCPPType() == "unsigned char" || WorldDataToCPPType() == "unsigned short" || WorldDataToCPPType() == "unsigned int" || WorldDataToCPPType() == "unsigned long" || WorldDataToCPPType() == "unsigned long long")»
             «REM»Do not test if the type is unsigned and MinRange == 0.«ENDREM»
         «ELSE»
-    if(world < static_cast< «WorldDataToCPPType» >(«MinRange»))
+    if(world < static_cast< «WorldDataToCPPType()» >(«MinRange()»))
     {
         ControlExceptions::CAMBErrorExImpl ex(__FILE__, __LINE__,
             __PRETTY_FUNCTION__);
         std::ostringstream msg;
         msg << "The requested value ("
-        «IF WorldDataToCPPType != "char" && WorldDataToCPPType != "unsigned char"»
+        «IF WorldDataToCPPType() != "char" && WorldDataToCPPType() != "unsigned char"»
             << world
         «ELSE»
             << static_cast< short >(world)
         «ENDIF»
             << ") for this Control Point ("
-            "«CPName») is less than the MinRange («MinRange») which has been "
+            "«CPName()») is less than the MinRange («MinRange()») which has been "
             "defined in the spreadsheet!";
         ex.addData("Detail", msg.str());
         ex.log();
@@ -1266,72 +1266,72 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName»() const
     No reason to check when the MinRange == MaxRange.
     No reason to check booleans.
     «ENDREM»
-    «IF !isWorldDataArray && WorldDataToCPPType != "bool" && MaxRange != "none" && Parameter != "void" && MinRange != MaxRange»
-    if(world > static_cast< «WorldDataToCPPType» >(«MaxRange»))
+    «IF !IsWorldDataArray() && WorldDataToCPPType() != "bool" && MaxRange() != "none" && Parameter() != "void" && MinRange() != MaxRange()»
+    if(world > static_cast< «WorldDataToCPPType()» >(«MaxRange()»))
     {
         ControlExceptions::CAMBErrorExImpl ex(__FILE__, __LINE__,
             __PRETTY_FUNCTION__);
         std::ostringstream msg;
         msg << "The requested value ("
-        «IF WorldDataToCPPType != "char" && WorldDataToCPPType != "unsigned char"»
+        «IF WorldDataToCPPType() != "char" && WorldDataToCPPType() != "unsigned char"»
             << world
         «ELSE»
             << static_cast< short >(world)
         «ENDIF»
             << ") for this Control Point ("
-            "«CPName») is greater than the MaxRange («MaxRange») which has been "
+            "«CPName()») is greater than the MaxRange («MaxRange()») which has been "
             "defined in the spreadsheet!";
         ex.addData("Detail", msg.str());
         ex.log();
         throw ex;
     }
     «ENDIF»
-    AmbRelativeAddr rca(rcaControl«AltCPName»«IF Assembly() != "FEMC"» + AmbDeviceImpl::getBaseAddress()«ENDIF»);
-    AmbDataLength_t length(«TotalBytesRawData»U);
+    AmbRelativeAddr rca(rcaControl«AltCPName()»«IF Assembly() != "FEMC"» + AmbDeviceImpl::getBaseAddress()«ENDIF»);
+    AmbDataLength_t length(«TotalBytesRawData()»U);
     unsigned char rawBytes[8];
-        «IF Parameter == "void"»
-            «IF Data == "fixed"»
-                «IF isRawDataArray»
-    std::vector< «RawDataToCPPType» > raw(«NumberItemsRawData»U);
+        «IF Parameter() == "void"»
+            «IF Data() == "fixed"»
+                «IF IsRawDataArray()»
+    std::vector< «RawDataToCPPType()» > raw(«NumberItemsRawData()»U);
                 «ELSE»
-    «RawDataToCPPType» raw(0U);
+    «RawDataToCPPType()» raw(0U);
                 «ENDIF»
-    raw = «Value»;
+    raw = «Value()»;
             «ENDIF»
         «ELSE»
-            «IF isConversion»
-                «IF isWorldDataArray»
-                    «IF isRawDataArray»
-    std::vector< «RawDataToCPPType» > raw(worldToRaw«AltCPName»(std::vector< «WorldDataToCPPType» >(world)));
+            «IF IsConversion()»
+                «IF IsWorldDataArray()»
+                    «IF IsRawDataArray()»
+    std::vector< «RawDataToCPPType()» > raw(worldToRaw«AltCPName()»(std::vector< «WorldDataToCPPType()» >(world)));
                     «ELSE»
-    std::vector< «RawDataToCPPType» > raw(worldToRaw«AltCPName»(world));
+    std::vector< «RawDataToCPPType()» > raw(worldToRaw«AltCPName()»(world));
                     «ENDIF»
                 «ELSE»
-    «RawDataToCPPType» raw(worldToRaw«AltCPName»(world));
+    «RawDataToCPPType()» raw(worldToRaw«AltCPName()»(world));
                 «ENDIF»
             «ELSE»
-                «IF isWorldDataArray && isRawDataArray»
-                    «IF WorldDataToCPPType != RawDataToCPPType»
-    #warning "You cannot have different raw (std::vector< «RawDataToCPPType» >) and world data (std::vector< «WorldDataToCPPType» >) types without specifying a conversion!  A type cast will force the world data type to match the raw data type."
-    std::vector< «RawDataToCPPType» > raw;
-    for(std::vector< «WorldDataToCPPType» >::const_iterator iter(world.begin());
+                «IF IsWorldDataArray() && IsRawDataArray()»
+                    «IF WorldDataToCPPType() != RawDataToCPPType()»
+    #warning "You cannot have different raw (std::vector< «RawDataToCPPType()» >) and world data (std::vector< «WorldDataToCPPType()» >) types without specifying a conversion!  A type cast will force the world data type to match the raw data type."
+    std::vector< «RawDataToCPPType()» > raw;
+    for(std::vector< «WorldDataToCPPType()» >::const_iterator iter(world.begin());
         iter != world.end(); ++iter)
     {
-        raw.push_back(static_cast< «RawDataToCPPType» >(*iter));
+        raw.push_back(static_cast< «RawDataToCPPType()» >(*iter));
     }
                     «ELSE»
-    std::vector< «RawDataToCPPType» > raw(world.size());
+    std::vector< «RawDataToCPPType()» > raw(world.size());
     raw = world;
                     «ENDIF»
-                «ELSEIF !isWorldDataArray && !isRawDataArray»
-                    «IF WorldDataToCPPType != RawDataToCPPType»
-                        «IF (WorldDataToCPPType == "float") || (WorldDataToCPPType == "double")»
-    «RawDataToCPPType» raw(static_cast< «RawDataToCPPType» >(::round(world)));
+                «ELSEIF !IsWorldDataArray() && !IsRawDataArray()»
+                    «IF WorldDataToCPPType() != RawDataToCPPType()»
+                        «IF (WorldDataToCPPType() == "float") || (WorldDataToCPPType() == "double")»
+    «RawDataToCPPType()» raw(static_cast< «RawDataToCPPType()» >(::round(world)));
                         «ELSE»
-    «RawDataToCPPType» raw(static_cast< «RawDataToCPPType» >(world));
+    «RawDataToCPPType()» raw(static_cast< «RawDataToCPPType()» >(world));
                         «ENDIF» 
                     «ELSE»
-    «RawDataToCPPType» raw(world);
+    «RawDataToCPPType()» raw(world);
                     «ENDIF»
                 «ELSE»
     #error "Case not allowed. For no-conversion, raw and world must both be scalars or they must both be vectors."
@@ -1356,22 +1356,22 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName»() const
 «ENDREM»
             «ENDIF»
         «ENDIF»
-    «EXPAND SwapBytes (RawDataType, isRawDataArray, NumberItemsRawData)»
+    «EXPAND SwapBytes (RawDataType(), IsRawDataArray(), NumberItemsRawData())»
 
     // Assign raw to rawBytes.
-        «IF isRawDataArray»
+        «IF IsRawDataArray()»
     int iRawBytes = 0;
-    for(unsigned short i(0U); i < «NumberItemsRawData»; ++i)
+    for(unsigned short i(0U); i < «NumberItemsRawData()»; ++i)
     {
         unsigned char* praw = reinterpret_cast< unsigned char* >(&raw[i]);
-        for(unsigned short j(0U); j < «NumberRawDataTypeBytes»; ++j)
+        for(unsigned short j(0U); j < «NumberRawDataTypeBytes()»; ++j)
         {
             rawBytes[iRawBytes++] = praw[j];
         }
     }
         «ELSE»
     unsigned char* praw = reinterpret_cast< unsigned char* >(&raw);
-    for(unsigned short i(0U); i < «TotalBytesRawData»; ++i)
+    for(unsigned short i(0U); i < «TotalBytesRawData()»; ++i)
     {
         rawBytes[i] = praw[i];
     }
@@ -1380,12 +1380,12 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName»() const
     // Execute the command.
     acstime::Epoch cmdTime;
     cmdTime.value = 0ULL;
-        «IF TeRelated»
+        «IF TeRelated()»
         «REM»
     acstime::Epoch cmdTime;
     cmdTime.value = 0ULL;
         «ENDREM»
-            «IF Parameter != "void"»
+            «IF Parameter() != "void"»
     if(requestTime.value == 0ULL)
     {
         «REM»
@@ -1421,37 +1421,37 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName»() const
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedSetControlRCAMethod FOR ControlPoint»
-    «IF !isDependent»
+«DEFINE ProtectedSetControlRCAMethod FOR ControlPointImpl»
+    «IF !IsDependent()»
     «REM»
     b. Set method for RCA
     «ENDREM»
-        «IF RCA != "none"»
+        «IF RCA() != "none"»
 /**
  * Set the RCA for this control point.
  */
-inline void «Assembly»Base::setControlRCA«AltCPName»(const unsigned long rca)
+inline void «Assembly()»Base::setControlRCA«AltCPName()»(const unsigned long rca)
 {
-    rcaControl«AltCPName» = rca;
+    rcaControl«AltCPName()» = rca;
 }
         «ENDIF»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedControlConversionMethod FOR ControlPoint»
-    «IF !isDependent && isConversion && !isSpecialConversion»
+«DEFINE ProtectedControlConversionMethod FOR ControlPointImpl»
+    «IF !IsDependent() && IsConversion() && !IsSpecialConversion()»
     «REM»
     c. Conversion methods
     «ENDREM»
-        «IF isRawDataArray»
-            «IF isWorldDataArray»
+        «IF IsRawDataArray()»
+            «IF IsWorldDataArray()»
              «REM»
              Case 2: Raw and world data types are arrays of the same dimension
              «ENDREM»
-std::vector < «RawDataToCPPType» > «Assembly»Base::worldToRaw«AltCPName»(
-    const std::vector< «WorldDataToCPPType» >& world) const
+std::vector < «RawDataToCPPType()» > «Assembly()»Base::worldToRaw«AltCPName()»(
+    const std::vector< «WorldDataToCPPType()» >& world) const
 {
-    return AMB::Utils::worldToRaw< std::vector< «RawDataToCPPType» >, std::vector< «WorldDataToCPPType» > >(world, offset«AltCPName», scale«AltCPName»);
+    return AMB::Utils::worldToRaw< std::vector< «RawDataToCPPType()» >, std::vector< «WorldDataToCPPType()» > >(world, offset«AltCPName()», scale«AltCPName()»);
 }
             «ELSE»
              «REM»
@@ -1460,7 +1460,7 @@ std::vector < «RawDataToCPPType» > «Assembly»Base::worldToRaw«AltCPName»(
             «ERROR "Scalar world data and raw data array is handled by special conversion."»
             «ENDIF»
         «ELSE»
-            «IF isWorldDataArray»
+            «IF IsWorldDataArray()»
              «REM»
              Case 4: Not permitted (world data is an array but raw data is a scalar)
              «ENDREM»
@@ -1469,27 +1469,27 @@ std::vector < «RawDataToCPPType» > «Assembly»Base::worldToRaw«AltCPName»(
               «REM»
              Case 1: Raw data type and world data types are both scalar quantities
              «ENDREM»
-«RawDataToCPPType» «Assembly»Base::worldToRaw«AltCPName»(
-    const «WorldDataToCPPType» world) const
+«RawDataToCPPType()» «Assembly()»Base::worldToRaw«AltCPName()»(
+    const «WorldDataToCPPType()» world) const
 {
-                «IF RawDataToCPPType == "float" || RawDataToCPPType == "double" || RawDataToCPPType == "long double"»
-    return static_cast< «RawDataToCPPType» >((world - offset«AltCPName») / scale«AltCPName»);
+                «IF RawDataToCPPType() == "float" || RawDataToCPPType() == "double" || RawDataToCPPType() == "long double"»
+    return static_cast< «RawDataToCPPType()» >((world - offset«AltCPName()») / scale«AltCPName()»);
                 «ELSE»
-    return static_cast< «RawDataToCPPType» >(::round((world - offset«AltCPName») / scale«AltCPName»));
+    return static_cast< «RawDataToCPPType()» >(::round((world - offset«AltCPName()») / scale«AltCPName()»));
                 «ENDIF»
 }
             «ENDIF»
         «ENDIF»
  /**
- * Get the scale conversion factor of «CPName».
+ * Get the scale conversion factor of «CPName()».
  */
-inline double «Assembly()»Base::getScale«AltCPName»() const
+inline double «Assembly()»Base::getScale«AltCPName()»() const
 {
-    return scale«AltCPName»;
+    return scale«AltCPName()»;
 }
 
 /**
- * Get the offset conversion factor of «CPName».
+ * Get the offset conversion factor of «CPName()».
  */
 inline double «Assembly()»Base::getOffset«AltCPName»() const
 {
@@ -1497,26 +1497,26 @@ inline double «Assembly()»Base::getOffset«AltCPName»() const
 }
 
 /**
- * Override the default conversion factors of «CPName»: scale and offset.
+ * Override the default conversion factors of «CPName()»: scale and offset.
  */
-inline void «Assembly()»Base::setConversion«AltCPName»(
+inline void «Assembly()»Base::setConversion«AltCPName()»(
     const double scale, const double offset)
 {
-    scale«AltCPName» = scale;
-    offset«AltCPName» = offset;
+    scale«AltCPName()» = scale;
+    offset«AltCPName()» = offset;
 }
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SwapBytes (String RawDataType, boolean isRawDataArray, String NumberItemsRawData) FOR Class»
+«DEFINE SwapBytes (String RawDataType, boolean IsRawDataArray, String NumberItemsRawData) FOR java::lang::Class»
     «REM»
     This method handles the generation of all needed byte swapping.
     «ENDREM»
-    «IF RawDataType == "int16" || RawDataType == "uint16"»
+    «IF RawDataType() == "int16" || RawDataType() == "uint16"»
     #if BYTE_ORDER != BIG_ENDIAN
     // Swap the bytes.
-        «IF isRawDataArray»
-    for(std::size_t i(0U); i < «NumberItemsRawData»U; ++i)
+        «IF IsRawDataArray()»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
     {
         AMB::Utils::swapBytes(raw[i]);
     }
@@ -1526,11 +1526,11 @@ inline void «Assembly()»Base::setConversion«AltCPName»(
     #endif
     «ENDIF»
 
-    «IF RawDataType == "int24" || RawDataType == "uint24"»
+    «IF RawDataType() == "int24" || RawDataType() == "uint24"»
     #if BYTE_ORDER != BIG_ENDIAN
     // Swap the bytes.
-        «IF isRawDataArray»
-    for(std::size_t i(0U); i < «NumberItemsRawData»U; ++i)
+        «IF IsRawDataArray()»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
     {
         AMB::Utils::swapBytes(raw[i], 3U);
     }
@@ -1540,11 +1540,11 @@ inline void «Assembly()»Base::setConversion«AltCPName»(
     #endif
     «ENDIF»
 
-    «IF RawDataType == "int32" || RawDataType == "uint32" || RawDataType == "float"»
+    «IF RawDataType() == "int32" || RawDataType() == "uint32" || RawDataType() == "float"»
     #if BYTE_ORDER != BIG_ENDIAN
     // Swap the bytes.
-        «IF isRawDataArray»
-    for(std::size_t i(0U); i < «NumberItemsRawData»U; ++i)
+        «IF IsRawDataArray»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
     {
         AMB::Utils::swapBytes(raw[i]);
     }
@@ -1554,11 +1554,11 @@ inline void «Assembly()»Base::setConversion«AltCPName»(
     #endif
     «ENDIF»
 
-    «IF RawDataType == "int48" || RawDataType == "uint48"»
+    «IF RawDataType() == "int48" || RawDataType() == "uint48"»
     #if BYTE_ORDER != BIG_ENDIAN
     // Swap the bytes.
-        «IF isRawDataArray»
-    for(std::size_t i(0U); i < «NumberItemsRawData»U; ++i)
+        «IF IsRawDataArray»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
     {
         AMB::Utils::swapBytes(raw[i], 6U);
     }
@@ -1568,11 +1568,11 @@ inline void «Assembly()»Base::setConversion«AltCPName»(
     #endif
     «ENDIF»
 
-    «IF RawDataType == "int64" || RawDataType == "uint64" || RawDataType == "double"»
+    «IF RawDataType() == "int64" || RawDataType() == "uint64" || RawDataType() == "double"»
     #if BYTE_ORDER != BIG_ENDIAN
     // Swap the bytes.
-        «IF isRawDataArray»
-    for(std::size_t i(0U); i < «NumberItemsRawData»U; ++i)
+        «IF IsRawDataArray()»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
     {
         AMB::Utils::swapBytes(raw[i]);
     }

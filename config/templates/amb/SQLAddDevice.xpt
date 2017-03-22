@@ -160,26 +160,26 @@ END IF;
 «REM»
   NOW  We find out wether defaultBACIPropertyType has already been inserted. 
 «ENDREM»
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF x.isMonitored»
-            «IF !x.isDependent && x.hasDependents»
-                «LET x.MPName AS parentBACIProperty»
+    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+        «IF x.IsMonitored()»
+            «IF !x.IsDependent() && x.hasDependents()»
+                «LET x.MPName() AS parentBACIProperty»
                 «ENDLET»
             «ENDIF»
 
             «REM»
               The MP can be a parent or a simple property.
             «ENDREM»
-            «IF !x.isPartOfHomogeneous || !x.isPartOfPattern»
+            «IF !x.IsPartOfHomogeneous() || !x.IsPartOfPattern()»
                 «REM»
                   The MP is a parent MP. We store MP in BACIProperty Table.
                 «ENDREM»
 
                 «REM»Adding BACIProperty«ENDREM»
-                SELECT COUNT(propertyname) INTO defaultBACIPropertyCount FROM defaultbaciProperty WHERE propertyname='«x.MPName»' and defaultComponentId=defCompId;
+                SELECT COUNT(propertyname) INTO defaultBACIPropertyCount FROM defaultbaciProperty WHERE propertyname='«x.MPName()»' and defaultComponentId=defCompId;
                 IF defaultBACIPropertyCount=0 THEN
                     «REM»NO default property found. It will be added...«ENDREM»
-                    dbms_output.put_line('Inserting default BACI Property «x.MPName»');
+                    dbms_output.put_line('Inserting default BACI Property «x.MPName()»');
                     SELECT MAX(defaultBACIPropId) INTO defaultBACIPropId FROM defaultbaciProperty;
                     defaultBACIPropId:=COALESCE(defaultBACIPropId,0)+1;
                     INSERT INTO DefaultBACIProperty (
@@ -225,21 +225,21 @@ END IF;
                     VALUES (
                         defaultBACIPropId,
                         defCompId,
-                        '«x.MPName»',
-                        '«x.DescriptionAsString»',
-                        '«x.Format»',
-                        '«x.DisplayUnits»',
+                        '«x.MPName()»',
+                        '«x.DescriptionAsString()»',
+                        '«x.Format()»',
+                        '«x.DisplayUnits()»',
                         '0',
                         '3',
                         '0',
-                        «IF x.Interval != "none"»'«x.Interval»', «ELSE»'0', «ENDIF»
+                        «IF x.Interval() != "none"»'«x.Interval()»', «ELSE»'0', «ENDIF»
                         '1',
                         '0.048',
                         '0',
                         '0',
                         '0',
-                        «IF x.GraphMin == "na" || x.GraphMin == "none"»'0',  «ELSE»'«x.GraphMin»',  «ENDIF» 
-                        «IF x.GraphMax == "na" || x.GraphMax == "none"»'0',  «ELSE»'«x.GraphMax»',  «ENDIF» 
+                        «IF x.GraphMin() == "na" || x.GraphMin() == "none"»'0',  «ELSE»'«x.GraphMin()»',  «ENDIF» 
+                        «IF x.GraphMax() == "na" || x.GraphMax() == "none"»'0',  «ELSE»'«x.GraphMax()»',  «ENDIF» 
                         '0',
                         '0',
                         '0',
@@ -260,23 +260,23 @@ END IF;
                         '!',
                         '!',
                         '0',
-                        «IF x.Interval == "none" || x.Interval == "0"»'1', «ELSE»'0', «ENDIF»
+                        «IF x.Interval() == "none" || x.Interval() == "0"»'1', «ELSE»'0', «ENDIF»
                         'monitor_collector'
                     );
                 ELSE 
-                    dbms_output.put_line('Default BACI Property «x.MPName» already exists... continue');
-                    SELECT defaultBACIPropId INTO defaultBACIPropId FROM defaultbaciProperty WHERE propertyname='«x.MPName»' and defaultComponentId=defCompId;
+                    dbms_output.put_line('Default BACI Property «x.MPName()» already exists... continue');
+                    SELECT defaultBACIPropId INTO defaultBACIPropId FROM defaultbaciProperty WHERE propertyname='«x.MPName()»' and defaultComponentId=defCompId;
                 END IF;
 
-                «IF x.hasDependents && !x.isHomogeneous && !x.isPattern »
+                «IF x.hasDependents() && !x.IsHomogeneous() && !x.IsPattern()»
                     «REM»
                       The MP is a parent point. Adding dependent monitor points.
                     «ENDREM»
-                    «FOREACH (Set[MonitorPoint]) x.getDependents AS y»
+                    «FOREACH (Set[MonitorPointImpl]) x.GetDependents() AS y»
                         «REM»
                           This case handles a Kid monitorpoints. We must insert Kid MP, but only if no other Kid MP with the same name has been associated with the same property.
                         «ENDREM»
-                    SELECT COUNT(monitorPointName) INTO monitorPropCount FROM defaultMonitorPoint WHERE defaultBaciPropertyId=defaultBACIPropId and MonitorPointName='«y.MPName»';
+                    SELECT COUNT(monitorPointName) INTO monitorPropCount FROM defaultMonitorPoint WHERE defaultBaciPropertyId=defaultBACIPropId and MonitorPointName='«y.MPName()»';
                     IF monitorPropCount=0 THEN
                         SELECT COUNT(indice) INTO indice FROM defaultMonitorPoint WHERE defaultBaciPropertyId=defaultBACIPropId;
                         SELECT MAX(defaultMonitorPointId) INTO defaultMonPointId FROM defaultMonitorPoint;
@@ -300,22 +300,22 @@ END IF;
                         VALUES(
                             defaultMonPointId,
                             defaultBACIPropId,
-                            '«y.MPName»',
+                            '«y.MPName()»',
                             indice,
-                            '«y.WorldDataToDatabaseType»',
-                            '«y.RCA»',
-                            «IF y.TeRelatedCell == "yes"»'1',  «ELSE»'0',  «ENDIF»
-                            '«y.RawDataType»',
-                            '«y.WorldDataToCPPType»',
-                            '«y.DataUnits»',
-                            «IF y.Scale == "na" || y.Scale == "none" || y.Scale == "not specified" || y.Scale == "special"»'0',  «ELSE»'«y.Scale»',  «ENDIF» 
-                            «IF y.Offset == "na" || y.Offset == "none" || y.Offset == "not specified" || y.Offset == "special"»'0',  «ELSE»'«y.Offset»',  «ENDIF» 
-                            «IF y.MinRange == "na" || y.MinRange == "none" || y.MinRange == "not specified"»'0',  «ELSE»'«y.MinRange»',  «ENDIF» 
-                            «IF y.MaxRange == "na" || y.MaxRange == "none" || y.MaxRange == "not specified"»'0',  «ELSE»'«y.MaxRange»',  «ENDIF» 
-                            '«y.DescriptionAsString»'
+                            '«y.WorldDataToDatabaseType()»',
+                            '«y.RCA()»',
+                            «IF y.TeRelatedCell() == "yes"»'1',  «ELSE»'0',  «ENDIF»
+                            '«y.RawDataType()»',
+                            '«y.WorldDataToCPPType()»',
+                            '«y.DataUnits()»',
+                            «IF y.Scale() == "na" || y.Scale() == "none" || y.Scale() == "not specified" || y.Scale() == "special"»'0',  «ELSE»'«y.Scale()»',  «ENDIF» 
+                            «IF y.Offset() == "na" || y.Offset() == "none" || y.Offset() == "not specified" || y.Offset() == "special"»'0',  «ELSE»'«y.Offset()»',  «ENDIF» 
+                            «IF y.MinRange() == "na" || y.MinRange() == "none" || y.MinRange() == "not specified"»'0',  «ELSE»'«y.MinRange()»',  «ENDIF» 
+                            «IF y.MaxRange() == "na" || y.MaxRange() == "none" || y.MaxRange() == "not specified"»'0',  «ELSE»'«y.MaxRange()»',  «ENDIF» 
+                            '«y.DescriptionAsString()»'
                         );
                     ELSE 
-                        dbms_output.put_line('WARNING: Monitor Point «y.MPName» was already inserted. Skipping.');
+                        dbms_output.put_line('WARNING: Monitor Point «y.MPName()» was already inserted. Skipping.');
                     END IF;
                     «ENDFOREACH»
                 «ELSE»
@@ -347,22 +347,22 @@ END IF;
                         VALUES(
                             defaultMonPointId,
                             defaultBACIPropId,
-                            '«x.MPName»',
+                            '«x.MPName()»',
                             '0',
-                            '«x.WorldDataToDatabaseType»',
-                            '«x.RCA»',
-                            «IF x.TeRelatedCell == "yes"»'1',  «ELSE»'0',  «ENDIF»
-                            '«x.RawDataType»',
-                            '«x.WorldDataToCPPType»',
-                            '«x.DataUnits»',
-                            «IF x.Scale == "na" || x.Scale == "none" || x.Scale == "not specified" || x.Scale == "special"»'0',  «ELSE»'«x.Scale»',  «ENDIF» 
-                            «IF x.Offset == "na" || x.Offset == "none" || x.Offset == "not specified" || x.Offset == "special"»'0',  «ELSE»'«x.Offset»',  «ENDIF» 
-                            «IF x.MinRange == "na" || x.MinRange == "none" || x.MinRange == "not specified"»'0',  «ELSE»'«x.MinRange»',  «ENDIF» 
-                            «IF x.MaxRange == "na" || x.MaxRange == "none" || x.MaxRange == "not specified"»'0',  «ELSE»'«x.MaxRange»',  «ENDIF» 
-                            '«x.DescriptionAsString»'
+                            '«x.WorldDataToDatabaseType()»',
+                            '«x.RCA()»',
+                            «IF x.TeRelatedCell() == "yes"»'1',  «ELSE»'0',  «ENDIF»
+                            '«x.RawDataType()»',
+                            '«x.WorldDataToCPPType()»',
+                            '«x.DataUnits()»',
+                            «IF x.Scale() == "na" || x.Scale() == "none" || x.Scale() == "not specified" || x.Scale() == "special"»'0',  «ELSE»'«x.Scale()»',  «ENDIF» 
+                            «IF x.Offset() == "na" || x.Offset() == "none" || x.Offset() == "not specified" || x.Offset() == "special"»'0',  «ELSE»'«x.Offset()»',  «ENDIF» 
+                            «IF x.MinRange() == "na" || x.MinRange() == "none" || x.MinRange() == "not specified"»'0',  «ELSE»'«x.MinRange()»',  «ENDIF» 
+                            «IF x.MaxRange() == "na" || x.MaxRange() == "none" || x.MaxRange() == "not specified"»'0',  «ELSE»'«x.MaxRange()»',  «ENDIF» 
+                            '«x.DescriptionAsString()»'
                         );
                     ELSE 
-                        dbms_output.put_line('WARNING: Found other Monitor Points associated with property «x.MPName». Skipping unique monitor point insertion.');
+                        dbms_output.put_line('WARNING: Found other Monitor Points associated with property «x.MPName()». Skipping unique monitor point insertion.');
                     END IF;
                 «ENDIF»   «REM»IF x.hasDependents«ENDREM»
             «ENDIF»   «REM»IF !x.isDependent«ENDREM»

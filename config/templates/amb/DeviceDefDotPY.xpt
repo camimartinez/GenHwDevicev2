@@ -68,9 +68,9 @@ MA 02111-1307  USA
 #
 
 def load():
-    «Assembly()» = {}«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»«IF !x.isDependent»
-    «Assembly()»['«x.MPName»']=[«x.RCACell», '«x.RawDataType»', «x.NumberItemsRawData»]«ENDIF»«ENDFOREACH»«FOREACH (Set[ControlPoint]) ControlPoint AS x»«IF !x.isDependent»
-    «Assembly()»['SET_«x.CPName»']=[«x.RCACell», '«x.RawDataType»', «x.NumberItemsRawData»]«ENDIF»«ENDFOREACH»
+    «Assembly()» = {}«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»«IF !x.IsDependent()»
+    «Assembly()»['«x.MPName()»']=[«x.RCACell()», '«x.RawDataType()»', «x.NumberItemsRawData()»]«ENDIF»«ENDFOREACH»«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»«IF !x.IsDependent()»
+    «Assembly()»['SET_«x.CPName()»']=[«x.RCACell()», '«x.RawDataType()»', «x.NumberItemsRawData()»]«ENDIF»«ENDFOREACH»
     return «Assembly()»
 «ENDFILE»
 «ENDDEFINE»

@@ -92,16 +92,16 @@ class «Assembly()»AmbDeviceIntTestCase: public CPPUNIT_NS::TestFixture
 
 
     protected:
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF !x.isDependent»
-    ///  monitorPoint_«x.MPName»
-    void testMonitorPoint_«x.MPName»();
+    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+        «IF !x.isDependent()»
+    ///  monitorPoint_«x.MPName()»
+    void testMonitorPoint_«x.MPName()»();
         «ENDIF»
     «ENDFOREACH»
-    «FOREACH (Set[ControlPoint]) ControlPoint AS x»
-        «IF !x.isDependent»
-    ///  controlPoint_«x.CPName»
-    void testControlPoint_«x.CPName»();
+    «FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+        «IF !x.isDependent()»
+    ///  controlPoint_«x.CPName()»
+    void testControlPoint_«x.CPName()»();
         «ENDIF»
     «ENDFOREACH»
 
@@ -149,12 +149,12 @@ void «Assembly()»AmbDeviceIntTestCase::setUp()
     }
 }
 
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF !x.isDependent»
-    ///  monitorPoint_«x.MPName»
-void «Assembly()»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName»()
+    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+        «IF !x.isDependent()»
+    ///  monitorPoint_«x.MPName()»
+void «Assembly()»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName()»()
 {
-    point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_«x.MPName»;
+    point.rca = AMB::«Assembly()»HWSimBase::monitorPoint_«x.MPName()»;
     const AmbDataLength_t size(«x.TotalBytesRawData»U);
 
     point.status = AMBERR_PENDING;
@@ -165,13 +165,13 @@ void «Assembly()»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName»()
         «ENDIF»
     «ENDFOREACH»
 
-    «FOREACH (Set[ControlPoint]) ControlPoint AS x»
-        «IF !x.isDependent»
-    ///  controlPoint_«x.CPName»
-void «Assembly()»AmbDeviceIntTestCase::testControlPoint_«x.CPName»()
+    «FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+        «IF !x.isDependent()»
+    ///  controlPoint_«x.CPName()»
+void «Assembly()»AmbDeviceIntTestCase::testControlPoint_«x.CPName()»()
 {
-    point.rca = AMB::«Assembly()»HWSimBase::controlPoint_«x.CPName»;
-    point.dataLength = «x.TotalBytesRawData»U;
+    point.rca = AMB::«Assembly()»HWSimBase::controlPoint_«x.CPName()»;
+    point.dataLength = «x.TotalBytesRawData()»U;
 
     for(AmbDataLength_t i(0U); i < point.dataLength; ++i)
     {
@@ -188,15 +188,15 @@ void «Assembly()»AmbDeviceIntTestCase::testControlPoint_«x.CPName»()
 void «Assembly»AmbDeviceIntTestCase::test_simulation()
 {
     /// Testing specific monitor points
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF !x.isDependent»
-    testMonitorPoint_«x.MPName»();
+    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+        «IF !x.isDependent()»
+    testMonitorPoint_«x.MPName()»();
         «ENDIF»
     «ENDFOREACH»
 
     /// Testing specific control points
-    «FOREACH (Set[ControlPoint]) ControlPoint AS x»
-        «IF !x.isDependent»
+    «FOREACH (Set[ControlPointImpl]) controlPoints.contentsAS x»
+        «IF !x.isDependent()»
     testControlPoint_«x.CPName»();
         «ENDIF»
     «ENDFOREACH»

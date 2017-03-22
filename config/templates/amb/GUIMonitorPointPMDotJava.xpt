@@ -121,4 +121,3 @@ public class MonitorPointPM<T> extends IcdMonitorPointPresentationModel<T> {
         
 «ENDFILE»
 «ENDDEFINE»
-

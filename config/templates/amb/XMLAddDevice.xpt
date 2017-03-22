@@ -42,32 +42,32 @@ MA 02111-1307  USA
             <base-address>«BaseAddress()»</base-address>
             <channel>«Channel()»</channel>
         </default-role>
-    «FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-        «IF x.isMonitored»
+    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+        «IF x.IsMonitored()»
             «REM»
               The MP can be a parent or a simple property.
             «ENDREM»
-            «IF !x.isPartOfHomogeneous || !x.isPartOfPattern»
+            «IF !x.IsPartOfHomogeneous() || !x.IsPartOfPattern()»
                 «REM»
                   The MP is a parent point.
                 «ENDREM»
                 «REM»Adding BACIProperty«ENDREM»
         <baci-property>
-            <propertyname>«x.MPName»</propertyname>
-            <description>«x.Description»</description>
-            <format>«x.Format»</format>
-            <units>«x.DisplayUnits»</units>
+            <propertyname>«x.MPName()»</propertyname>
+            <description>«x.Description()»</description>
+            <format>«x.Format()»</format>
+            <units>«x.DisplayUnits()»</units>
             <resolution>0</resolution>
             <archive-priority>3</archive-priority>
             <archive-min-int>0</archive-min-int>
-            <archive-max-int>«IF x.Interval != "none"»«x.Interval»«ELSE»0«ENDIF»</archive-max-int>
+            <archive-max-int>«IF x.Interval() != "none"»«x.Interval()»«ELSE»0«ENDIF»</archive-max-int>
             <default-timer-trig>1</default-timer-trig>
             <min-timer-trig>0.048</min-timer-trig>
             <initialize-devio>0</initialize-devio>
             <min-delta-trig>0</min-delta-trig>
             <default-value>0</default-value>
-            <graph-min>«IF x.GraphMin == "na" || x.GraphMin == "none"»0«ELSE»«x.GraphMin»«ENDIF»</graph-min>
-            <graph-max>«IF x.GraphMax == "na" || x.GraphMax == "none"»0«ELSE»«x.GraphMax»«ENDIF»</graph-max>
+            <graph-min>«IF x.GraphMin() == "na" || x.GraphMin() == "none"»0«ELSE»«x.GraphMin()»«ENDIF»</graph-min>
+            <graph-max>«IF x.GraphMax() == "na" || x.GraphMax() == "none"»0«ELSE»«x.GraphMax()»«ENDIF»</graph-max>
             <min-step>0</min-step>
             <archive-delta>0</archive-delta>
             <alarm-high-on>0</alarm-high-on>
@@ -88,13 +88,13 @@ MA 02111-1307  USA
             <alarm-fault-family>!</alarm-fault-family>
             <alarm-fault-member>!</alarm-fault-member>
             <alarm-level>0</alarm-level>
-            <archive-suppress>«IF x.Interval == "none" || x.Interval == "0"»1«ELSE»0«ENDIF»</archive-suppress>
+            <archive-suppress>«IF x.Interval() == "none" || x.Interval() == "0"»1«ELSE»0«ENDIF»</archive-suppress>
             <archive-mechanism>monitor_collector</archive-mechanism>
-                «IF x.hasDependents && (x.isPartOfHomogeneous || x.isPartOfPattern )»
+                «IF x.hasDependents() && (x.IsPartOfHomogeneous() || x.IsPartOfPattern() )»
                     «REM»
                       The MP has dependent monitor points.
                     «ENDREM»
-                    «FOREACH (Set[MonitorPoint]) x.getDependents AS y»
+                    «FOREACH (Set[MonitorPointImpl]) x.GetDependents() AS y»
                         «EXPAND MonitorPointEntry FOR y»
                     «ENDFOREACH»
                 «ELSE»
@@ -112,20 +112,20 @@ MA 02111-1307  USA
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE MonitorPointEntry FOR MonitorPoint»
+«DEFINE MonitorPointEntry FOR MonitorPointImpl»
             <monitor-point>
-                <monitorpointname>«MPName»</monitorpointname>
-                <datatype>«WorldDataToDatabaseType»</datatype>
-                <rca>«RCA»</rca>
-                <terelated>«IF TeRelatedCell == "yes"»1«ELSE»0«ENDIF»</terelated>
-                <rawdatatype>«RawDataType»</rawdatatype>
-                <worlddatatype>«WorldDataToCPPType»</worlddatatype>
-                <units>«DataUnits»</units>
-                <scale>«IF Scale == "na" || Scale == "none" || Scale == "not specified" || Scale == "special"»0«ELSE»«Scale»«ENDIF»</scale>
-                <offset>«IF Offset == "na" || Offset == "none" || Offset == "not specified" || Offset == "special"»0«ELSE»«Offset»«ENDIF»</offset>
-                <minrange>«IF MinRange == "na" || MinRange == "none" || MinRange == "not specified"»0«ELSE»«MinRange»«ENDIF»</minrange>
-                <maxrange>«IF MaxRange == "na" || MaxRange == "none" || MaxRange == "not specified"»0«ELSE»«MaxRange»«ENDIF»</maxrange>
-                <description>«DescriptionAsString»</description>
+                <monitorpointname>«MPName()»</monitorpointname>
+                <datatype>«WorldDataToDatabaseType()»</datatype>
+                <rca>«RCA()»</rca>
+                <terelated>«IF TeRelatedCell() == "yes"»1«ELSE»0«ENDIF»</terelated>
+                <rawdatatype>«RawDataType()»</rawdatatype>
+                <worlddatatype>«WorldDataToCPPType()»</worlddatatype>
+                <units>«DataUnits()»</units>
+                <scale>«IF Scale() == "na" || Scale() == "none" || Scale() == "not specified" || Scale() == "special"»0«ELSE»«Scale()»«ENDIF»</scale>
+                <offset>«IF Offset() == "na" || Offset() == "none" || Offset() == "not specified" || Offset() == "special"»0«ELSE»«Offset()»«ENDIF»</offset>
+                <minrange>«IF MinRange() == "na" || MinRange() == "none" || MinRange() == "not specified"»0«ELSE»«MinRange()»«ENDIF»</minrange>
+                <maxrange>«IF MaxRange() == "na" || MaxRange() == "none" || MaxRange() == "not specified"»0«ELSE»«MaxRange()»«ENDIF»</maxrange>
+                <description>«DescriptionAsString()»</description>
             </monitor-point>
 «ENDDEFINE»
 
