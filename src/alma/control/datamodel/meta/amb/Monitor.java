@@ -523,9 +523,9 @@ public interface Monitor extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMonitorPoint(row, parent,tables,utils);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this, tables, utils);\nString dir = setParameters(dirDevice);\nresourceSetMonitor = new ResourceSetImpl();\nResource res = resourceSetMonitor.createResource(URI.createURI(dir));\nres.getContents().add(mac);\t\t'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMonitorPoint(row, parent,tables,utils);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this, tables, utils);\nresourceSetMonitor = new ResourceSetImpl();\nResource res = resourceSetMonitor.createResource(URI.createURI(\"\"));\nres.getContents().add(mac);\t\t'"
 	 * @generated
 	 */
-	void setMonitorAmb(String[] row, EObject parent, Table tables, Util utils, String dirDevice);
+	void setMonitorAmb(String[] row, EObject parent, Table tables, Util utils);
 
 } // Monitor

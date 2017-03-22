@@ -204,9 +204,9 @@ public interface Control extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetControlPoint(row, parent, tables, utils);\nmac = new MandCImpl();\nmac.setMandCEth(row, sheet, tables, utils);\nString dir = setParameters(dirDevice);\nresourceSetControl = new ResourceSetImpl();\nResource res = resourceSetControl.createResource(URI.createURI(dir));\nres.getContents().add(mac);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.tables = tables;\n\t\tthis.utils = utils;\n\t\tsetControlPoint(row, parent, tables, utils);\n\t\tmac = new MandCImpl();\n\t\tmac.setMandCEth(row, sheet, tables, utils);\n\t\tresourceSetControl = new ResourceSetImpl();\n\t\tResource res = resourceSetControl.createResource(URI.createURI(\"\"));\n\t\tres.getContents().add(mac);'"
 	 * @generated
 	 */
-	void setControlEth(String[] row, EObject parent, Table tables, Util utils, String dirDevice);
+	void setControlEth(String[] row, EObject parent, Table tables, Util utils);
 
 } // Control

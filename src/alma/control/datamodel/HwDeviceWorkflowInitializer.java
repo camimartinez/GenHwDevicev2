@@ -52,12 +52,7 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 	
 	public void invokeInternal(WorkflowContext ctx, ProgressMonitor monitor, Issues issues){
 		System.out.println("- ----- HwDeviceWorkflowInitializer: invokeInternal started.");
-		
-		try {
-			Runtime.getRuntime().exec("mkdir "+deviceDir+"/xmi");
-		} catch (IOException e) {
-			System.out.println(e);
-		}
+
 		alma.control.datamodel.meta.base.DeviceModel deviceType = null;
 		
 		if(System.getProperty(deviceTypes).equals(deviceAMB)){

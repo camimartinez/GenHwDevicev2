@@ -281,33 +281,17 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlEth(final String[] row, final EObject parent, final Table tables, final Util utils, final String dirDevice) {
-		this.tables = tables;
-		this.utils = utils;
-		setControlPoint(row, parent, tables, utils);
-		mac = new MandCImpl();
-		mac.setMandCEth(row, sheet, tables, utils);
-		String dir = setParameters(dirDevice);
-		resourceSetControl = new ResourceSetImpl();
-		Resource res = resourceSetControl.createResource(URI.createURI(dir));
-		res.getContents().add(mac);
+	public void setControlEth(final String[] row, final EObject parent, final Table tables, final Util utils) {
+				this.tables = tables;
+				this.utils = utils;
+				setControlPoint(row, parent, tables, utils);
+				mac = new MandCImpl();
+				mac.setMandCEth(row, sheet, tables, utils);
+				resourceSetControl = new ResourceSetImpl();
+				Resource res = resourceSetControl.createResource(URI.createURI(""));
+				res.getContents().add(mac);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public String setParameters(String dirDevice){
-		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
-		String extension = "xmi";
-		String tmp = dirDevice.concat("/").concat(extension).concat("/");
-		mm.put(extension, new XMIResourceFactoryImpl());
-		String xmiArchive = tmp.concat("controlEth.").concat(extension);
-		return xmiArchive;
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

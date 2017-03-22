@@ -668,15 +668,14 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorAmb(final String[] row, final EObject parent, final Table tables, final Util utils, final String dirDevice) {
+	public void setMonitorAmb(final String[] row, final EObject parent, final Table tables, final Util utils) {
 		this.tables = tables;
 		this.utils = utils;
 		setMonitorPoint(row, parent,tables,utils);
 		mac = new MandCImpl();
 		mac.setMandCAmb(row, sheet, this, tables, utils);
-		String dir = setParameters(dirDevice);
 		resourceSetMonitor = new ResourceSetImpl();
-		Resource res = resourceSetMonitor.createResource(URI.createURI(dir));
+		Resource res = resourceSetMonitor.createResource(URI.createURI(""));
 		res.getContents().add(mac);		
 	}
 

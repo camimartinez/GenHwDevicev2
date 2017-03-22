@@ -942,15 +942,14 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlAmb(final String[] row, final EObject parent, final Table tables, final Util utils, final String dirDevice) {
+	public void setControlAmb(final String[] row, final EObject parent, final Table tables, final Util utils) {
 		this.tables = tables;
 		this.utils = utils;
 		setControlPoint(row, parent, tables, utils);
 		mac = new MandCImpl();
 		mac.setMandCAmb(row, sheet, this, tables, utils);
-		String dir = setParameters(dirDevice);
 		resourceSetControl = new ResourceSetImpl();
-		Resource res = resourceSetControl.createResource(URI.createURI(dir));
+		Resource res = resourceSetControl.createResource(URI.createURI(""));
 		res.getContents().add(mac);
 	}
 

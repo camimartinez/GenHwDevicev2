@@ -595,9 +595,9 @@ public interface Control extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetControlPoint(row, parent, tables, utils);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this, tables, utils);\nString dir = setParameters(dirDevice);\nresourceSetControl = new ResourceSetImpl();\nResource res = resourceSetControl.createResource(URI.createURI(dir));\nres.getContents().add(mac);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetControlPoint(row, parent, tables, utils);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this, tables, utils);\nresourceSetControl = new ResourceSetImpl();\nResource res = resourceSetControl.createResource(URI.createURI(\"\"));\nres.getContents().add(mac);'"
 	 * @generated
 	 */
-	void setControlAmb(String[] row, EObject parent, Table tables, Util utils, String dirDevice);
+	void setControlAmb(String[] row, EObject parent, Table tables, Util utils);
 
 } // Control

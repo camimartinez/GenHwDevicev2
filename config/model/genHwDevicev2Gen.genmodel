@@ -96,7 +96,6 @@
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb/parent"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb/tables"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb/utils"/>
-                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Control/setControlAmb/dirDevice"/>
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/DeviceModel">
@@ -271,7 +270,6 @@
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/parent"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/tables"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/utils"/>
-                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/amb/Monitor/setMonitorAmb/dirDevice"/>
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/amb/SWModule">
@@ -788,7 +786,6 @@
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/setControlEth/parent"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/setControlEth/tables"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/setControlEth/utils"/>
-                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Control/setControlEth/dirDevice"/>
               </genOperations>
             </genClasses>
             <genClasses ecoreClass="genHwDevicev2.ecore#//control/datamodel/meta/eth/DeviceModel">
@@ -866,7 +863,6 @@
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/setMonitorEth/parent"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/setMonitorEth/tables"/>
                 <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/setMonitorEth/utils"/>
-                <genParameters ecoreParameter="genHwDevicev2.ecore#//control/datamodel/meta/eth/Monitor/setMonitorEth/dirDevice"/>
               </genOperations>
             </genClasses>
           </nestedGenPackages>

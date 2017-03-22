@@ -358,13 +358,12 @@
             </eOperations>
             <eOperations name="setControlAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setControlPoint(row, parent, tables, utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCAmb(row, sheet, this, tables, utils);&#xA;String dir = setParameters(dirDevice);&#xA;resourceSetControl = new ResourceSetImpl();&#xA;Resource res = resourceSetControl.createResource(URI.createURI(dir));&#xA;res.getContents().add(mac);"/>
+                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setControlPoint(row, parent, tables, utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCAmb(row, sheet, this, tables, utils);&#xA;resourceSetControl = new ResourceSetImpl();&#xA;Resource res = resourceSetControl.createResource(URI.createURI(&quot;&quot;));&#xA;res.getContents().add(mac);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="parent" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
               <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
               <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
-              <eParameters name="dirDevice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/amb/MandC"/>
           </eClassifiers>
@@ -1046,13 +1045,12 @@
             </eOperations>
             <eOperations name="setMonitorAmb">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setMonitorPoint(row, parent,tables,utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCAmb(row, sheet, this, tables, utils);&#xA;String dir = setParameters(dirDevice);&#xA;resourceSetMonitor = new ResourceSetImpl();&#xA;Resource res = resourceSetMonitor.createResource(URI.createURI(dir));&#xA;res.getContents().add(mac);&#x9;&#x9;"/>
+                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setMonitorPoint(row, parent,tables,utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCAmb(row, sheet, this, tables, utils);&#xA;resourceSetMonitor = new ResourceSetImpl();&#xA;Resource res = resourceSetMonitor.createResource(URI.createURI(&quot;&quot;));&#xA;res.getContents().add(mac);&#x9;&#x9;"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="parent" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
               <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
               <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
-              <eParameters name="dirDevice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/amb/MandC"/>
           </eClassifiers>
@@ -1363,7 +1361,7 @@
             </eOperations>
             <eOperations name="TheEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="String dir = generatedDir + &quot;/&quot; + Assembly();&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;Base.cpp&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;Base.h&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Base.idl&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.xml&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;Component.xml&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/config/CDB/schemas&quot;, Assembly() + &quot;Base.xsd&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/config&quot;, &quot;TMCDB&quot; + Assembly() + &quot;Add.xml&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, Assembly() + &quot;Base.py&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, &quot;__init__.py&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Runtime.getRuntime().exec(&quot;rm -rf &quot;+deviceDir+&quot;/xmi&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;} catch (IOException e) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(e);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return &quot;&quot;;"/>
+                <details key="body" value="String dir = generatedDir + &quot;/&quot; + Assembly();&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src&quot;, Assembly() + &quot;Base.cpp&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/include&quot;, Assembly() + &quot;Base.h&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Base.idl&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/idl&quot;, Assembly() + &quot;Add.sql&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;.xml&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/doc&quot;, Assembly() + &quot;Component.xml&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/config/CDB/schemas&quot;, Assembly() + &quot;Base.xsd&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/config&quot;, &quot;TMCDB&quot; + Assembly() + &quot;Add.xml&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, Assembly() + &quot;Base.py&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;utils.RemoveLinesFromFile(dir + &quot;/src/CCL&quot;, &quot;__init__.py&quot;, 1);&#xA;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Code generation for &quot; + deviceName + &quot; done.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return &quot;&quot;;"/>
               </eAnnotations>
             </eOperations>
             <eOperations name="checkIfFileExists" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -2247,13 +2245,12 @@
             </eOperations>
             <eOperations name="setControlEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setControlPoint(row, parent, tables, utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCEth(row, sheet, tables, utils);&#xA;String dir = setParameters(dirDevice);&#xA;resourceSetControl = new ResourceSetImpl();&#xA;Resource res = resourceSetControl.createResource(URI.createURI(dir));&#xA;res.getContents().add(mac);"/>
+                <details key="body" value="&#x9;&#x9;this.tables = tables;&#xA;&#x9;&#x9;this.utils = utils;&#xA;&#x9;&#x9;setControlPoint(row, parent, tables, utils);&#xA;&#x9;&#x9;mac = new MandCImpl();&#xA;&#x9;&#x9;mac.setMandCEth(row, sheet, tables, utils);&#xA;&#x9;&#x9;resourceSetControl = new ResourceSetImpl();&#xA;&#x9;&#x9;Resource res = resourceSetControl.createResource(URI.createURI(&quot;&quot;));&#xA;&#x9;&#x9;res.getContents().add(mac);"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="parent" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
               <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
               <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
-              <eParameters name="dirDevice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/eth/MandC"/>
           </eClassifiers>
@@ -2481,13 +2478,12 @@
             </eOperations>
             <eOperations name="setMonitorEth">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="body" value="this.tables = tables;&#xA;this.utils = utils;&#xA;setMonitorPoint(row, parent,tables,utils);&#xA;mac = new MandCImpl();&#xA;mac.setMandCEth(row, sheet, tables, utils);&#xA;String dir = setParameters(dirDevice);&#xA;resourceSetMonitor = new ResourceSetImpl();&#xA;Resource res = resourceSetMonitor.createResource(URI.createURI(dir));&#xA;res.getContents().add(mac);&#x9;"/>
+                <details key="body" value="&#x9;&#x9;this.tables = tables;&#xA;&#x9;&#x9;this.utils = utils;&#xA;&#x9;&#x9;setMonitorPoint(row, parent,tables,utils);&#xA;&#x9;&#x9;mac = new MandCImpl();&#xA;&#x9;&#x9;mac.setMandCEth(row, sheet, tables, utils);&#xA;&#x9;&#x9;resourceSetMonitor = new ResourceSetImpl();&#xA;&#x9;&#x9;Resource res = resourceSetMonitor.createResource(URI.createURI(&quot;&quot;));&#xA;&#x9;&#x9;res.getContents().add(mac);&#x9;"/>
               </eAnnotations>
               <eParameters name="row" eType="#//control/datamodel/meta/base/EStringArray"/>
               <eParameters name="parent" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
               <eParameters name="tables" eType="#//control/datamodel/meta/base/Table"/>
               <eParameters name="utils" eType="#//control/datamodel/meta/base/Util"/>
-              <eParameters name="dirDevice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EReference" name="mac" eType="#//control/datamodel/meta/eth/MandC"/>
           </eClassifiers>

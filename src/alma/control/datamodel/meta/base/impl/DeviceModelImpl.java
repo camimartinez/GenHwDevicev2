@@ -871,22 +871,8 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 */
 	public ArchiveProperty getArchiveProperties(String name) {
 		// Get the Archive Properties
-		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
-		String extension = "xmi";
-		String tmp = deviceDir.concat("/").concat(extension).concat("/");
-		mm.put(extension, new XMIResourceFactoryImpl());
-
-		Map<String, Boolean> options = new HashMap<String, Boolean>();
-		options.put(XMLResource.OPTION_SAVE_ONLY_IF_CHANGED, Boolean.TRUE);
-
-		String xmiArchive = tmp.concat("archive.").concat(extension);
-
-		Resource arch = container.createResource(URI.createURI(xmiArchive));
-
-		//printAttributeValues(tables);
+		Resource arch = container.createResource(URI.createURI(""));
 		int archiveIndex = tables.getSheetNum("Archive Property");
-		//System.out.println("archiveIndex is: "+archiveIndex+"");
 		for(int i = 2; i < spreadsheet[archiveIndex].length; i++){
 			if(spreadsheet[archiveIndex][i].length == 0)
 				break;
@@ -896,33 +882,12 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			ap.setArchiveProperty(row, tables);
 			if(name.equals(ap.RefersTo())){
 				arch.getContents().add(ap);
-				try{
-					arch.save(options);
-				}catch(IOException e){
-					e.printStackTrace();
-				}
 				return ap;
 			}
 		}
 		return null;
 
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public String setParameters(String dirDevice){
-		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
-		String extension = "xmi";
-		String tmp = dirDevice.concat("/").concat(extension).concat("/");
-		mm.put(extension, new XMIResourceFactoryImpl());
-		String xmiArchive = tmp.concat("archiveAmb.").concat(extension);
-		return xmiArchive;
-	}
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1426,11 +1391,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 						utils.RemoveLinesFromFile(dir + "/config", "TMCDB" + Assembly() + "Add.xml", 1);
 						utils.RemoveLinesFromFile(dir + "/src/CCL", Assembly() + "Base.py", 1);
 						utils.RemoveLinesFromFile(dir + "/src/CCL", "__init__.py", 1);
-						try {
-							Runtime.getRuntime().exec("rm -rf "+deviceDir+"/xmi");
-						} catch (IOException e) {
-							System.out.println(e);
-						}
 						System.out.println("Code generation for " + deviceName + " done.");
 						return "";
 	}

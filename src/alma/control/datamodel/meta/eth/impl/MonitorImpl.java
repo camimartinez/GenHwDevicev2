@@ -318,33 +318,17 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorEth(final String[] row, final EObject parent, final Table tables, final Util utils, final String dirDevice) {
-		this.tables = tables;
-		this.utils = utils;
-		setMonitorPoint(row, parent,tables,utils);
-		mac = new MandCImpl();
-		mac.setMandCEth(row, sheet, tables, utils);
-		String dir = setParameters(dirDevice);
-		resourceSetMonitor = new ResourceSetImpl();
-		Resource res = resourceSetMonitor.createResource(URI.createURI(dir));
-		res.getContents().add(mac);	
+	public void setMonitorEth(final String[] row, final EObject parent, final Table tables, final Util utils) {
+				this.tables = tables;
+				this.utils = utils;
+				setMonitorPoint(row, parent,tables,utils);
+				mac = new MandCImpl();
+				mac.setMandCEth(row, sheet, tables, utils);
+				resourceSetMonitor = new ResourceSetImpl();
+				Resource res = resourceSetMonitor.createResource(URI.createURI(""));
+				res.getContents().add(mac);	
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public static String setParameters(String dirDevice){
-		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
-		String extension = "xmi";
-		String tmp = dirDevice.concat("/").concat(extension).concat("/");
-		mm.put(extension, new XMIResourceFactoryImpl());
-		String xmiArchive = tmp.concat("monitorEth.").concat(extension);	
-		return xmiArchive;
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
