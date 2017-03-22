@@ -23,23 +23,16 @@
 package alma.control.datamodel.meta.amb.impl;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
-import org.eclipse.emf.common.notify.Notification;
-import java.lang.String;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
@@ -49,7 +42,6 @@ import alma.control.datamodel.meta.amb.Archive;
 import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.DeviceModel;
 import alma.control.datamodel.meta.amb.GenericMonitorPoints;
-import alma.control.datamodel.meta.amb.Main;
 import alma.control.datamodel.meta.amb.Monitor;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
@@ -191,16 +183,18 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		GenericMonitorPoints genericMPoints = ambFactory.createGenericMonitorPoints();
 
 		// Register the XMI resource factory for the .xmi extension
-		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
 		String extension = "xmi";
 		String tmp = deviceDir.concat("/").concat(extension).concat("/");
-		mm.put(extension, new XMIResourceFactoryImpl());
+		container = new ResourceSetImpl();
+		container.getResourceFactoryRegistry().getExtensionToFactoryMap().put(extension, new XMIResourceFactoryImpl());
+
+		//Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
+		//Map<String, Object> mm = regis.getExtensionToFactoryMap();		
+
+		//mm.put(extension, new XMIResourceFactoryImpl());
 
 		Map<String, Boolean> options = new HashMap<String, Boolean>();
 		options.put(XMLResource.OPTION_SAVE_ONLY_IF_CHANGED, Boolean.TRUE);
-
-		container = new ResourceSetImpl();
 
 		// Check if the spreadsheet file is an actual spreadsheet or a
 		// "filter" file which is some kind of a filter for a real
@@ -237,14 +231,12 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		controlIndex = table.getSheetNum("Control Point");
 		archiveIndex = table.getSheetNum("Archive Property");
 
-		tablesAux = EcoreUtil.copy(table);
-		
 		//Table:
 		String xmiTables = tmp.concat("tables.").concat(extension);	
 		Resource resourceTables = container.createResource(URI.createURI(xmiTables));
 		resourceTables.getContents().add(table);	
 		try{
-			resourceTables.save(Collections.EMPTY_MAP);
+			resourceTables.save(options);
 		}catch(IOException e){
 			e.printStackTrace();
 		}	
@@ -260,7 +252,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		}catch(IOException e){
 			e.printStackTrace();
 		}	
-
+		
 		if(spreadsheet[mainIndex][2][table.getColNum(mainIndex,"Generic Monitor Points")].equals("yes")){
 			String[][][] spreadsheetWithGenericPointsAdded;
 			spreadsheetWithGenericPointsAdded = genericMPoints.getDeviceWorksheetWithGenericPointsAdded(spreadsheet);
@@ -309,58 +301,58 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			}else{
 				mp = ambFactory.createMonitor();
 				mp.setMonitorAmb(row, mparent, table, util, deviceDir);
-				mparent.addDependent(mp);	
-			}	
+				mparent.addDependent(mp);
+			}			
 			setDeviceModel(table,util);
 			mp.setArchive(getArchiveProperties(mp.FullName()));		
-			monitorPoints.getContents().add(mp);				
+			monitorPoints.getContents().add(mp);			
 			try{
 				monitorPoints.save(options);
 			}catch(IOException e){
 				e.printStackTrace();
-			}		
-		}
-
+			}				
+		}	
+		
 		// Define undefined dependent monitor points for sequence properties
-		List<EObject> listMP = monitorPoints.getContents();
-		MonitorImpl[] arrayMP = listMP.toArray( new MonitorImpl[0]);
-		//System.out.println("size of array is: "+arrayMP.length+"");
+		MonitorImpl[] arrayMP = (MonitorImpl[])monitorPoints.getContents().toArray(new MonitorImpl[0]);
 		for (Monitor mp : arrayMP) {
-			if (mp.isWorldDataArray() && !mp.hasDependents())
-				for (i=0; i < Integer.parseInt(mp.NumberItemsWorldData()); i++) {
-					String[] row = {
-							mp.Assembly(),
-							"^" + mp.MPName() + "_" + Integer.toString(i),
-							mp.RCA(),
-							mp.RawDataType(),
-							mp.TeRelatedCell(),
-							mp.WorldDataType(),
-							mp.DataUnits(),
-							"none",
-							"none",
-							"none",
-							"none",
-							"none",
-							mp.ErrorCondition(),
-							mp.ErrorSeverity(),
-							mp.ErrorAction(),
-							mp.Mode(),
-							"yes",
-							"no",
-							mp.CanBeInvalid(),
-							mp.Description() + " (dependent monitor point)"
-					};
-					Monitor dep = ambFactory.createMonitor();
-					dep.setMonitorAmb(row, mp, table, util, deviceDir);
-					mp.addDependent(dep);
-					dep.setArchive(getArchiveProperties(dep.FullName()));		
-					monitorPoints.getContents().add(dep);							
-					try{
-						monitorPoints.save(options);
-					}catch(IOException e){
-						e.printStackTrace();
-					}
+			if (mp.IsWorldDataArray() && !mp.hasDependents())
+				mp.setMonitorAmb(mp.getRow(), null, table, util, deviceDir);
+			for (i=0; i < Integer.parseInt(mp.NumberItemsWorldData()); i++) {
+				String[] row = {
+						mp.Assembly(),
+						"^" + mp.MPName() + "_" + Integer.toString(i),
+						mp.RCA(),
+						mp.RawDataType(),
+						mp.TeRelatedCell(),
+						mp.WorldDataType(),
+						mp.DataUnits(),
+						"none",
+						"none",
+						"none",
+						"none",
+						"none",
+						mp.ErrorCondition(),
+						mp.ErrorSeverity(),
+						mp.ErrorAction(),
+						mp.Mode(),
+						"yes",
+						"no",
+						mp.CanBeInvalid(),
+						mp.Description() + " (dependent monitor point)"
+				};
+				mp.setMonitorAmb(row, mp.getParent(), table, util,deviceDir);
+				Monitor dep = ambFactory.createMonitor();
+				dep.setMonitorAmb(row, mp, table, util, deviceDir);
+				mp.addDependent(dep);
+				dep.setArchive(getArchiveProperties(dep.FullName()));		
+				monitorPoints.getContents().add(dep);							
+				try{
+					monitorPoints.save(options);
+				}catch(IOException e){
+					e.printStackTrace();
 				}
+			}
 		}	
 
 		// Get the control points
@@ -375,7 +367,6 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			if(!spreadsheet[controlIndex][i][1].startsWith(table.getDepChar())){
 				cp = ambFactory.createControl();
 				cp.setControlAmb(row, null, table, util, deviceDir);
-				//cp.setParameters(tmp);
 				cparent = cp;
 			}else{
 				cp = ambFactory.createControl();
@@ -417,10 +408,8 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			}
 		}	
 		System.out.println("DeviceModel: Initialization complete.");
-
 		return "";
 	}
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -459,8 +448,8 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "CompSimBase.idl", 1);
 				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "HWSimImpl.cpp", 1);
 				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "AmbDeviceInt.cpp", 1);
-					if (!isMonitorDBOnly()) {
-						if (isGenerateAlt()) {
+					if (!IsMonitorDBOnly()) {
+						if (IsGenerateAlt()) {
 							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + ".makefile", 1);
 							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.idl", 1);
 							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.h", 1);
@@ -498,11 +487,4 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 				}
 				return Integer.toString(n);
 	}
-
-
-	public MonitorPoint getMonitorPoint(String fullName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 } //DeviceModelImpl

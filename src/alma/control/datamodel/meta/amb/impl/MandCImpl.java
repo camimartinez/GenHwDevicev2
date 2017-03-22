@@ -22,25 +22,20 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
-import java.io.IOException;
-import java.util.Collections;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
-import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
@@ -218,13 +213,22 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String[] getMask() {
+		return mask;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	public String getMask() {
-		if(!isSingleBit())
+	public String GetMask() {
+		if(!IsSingleBit())
 			return "";
 		String s = null;
-		if(isRawDataArray()) {
+		if(IsRawDataArray()) {
 			s = RawDataTypeCell().substring(4);
 			int n = s.indexOf("&lt;");
 			int m = s.substring(n + 4).indexOf("&gt;");
@@ -397,8 +401,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 */
 	public String RawDataType() {
 						String s = row[tables.getColNum(sheet, "Raw Data Type")];
-						if(!mcp.isDependent())
-							return isRawDataArray() ? s.substring(0, s.indexOf("[")) : s;
+						if(!mcp.IsDependent())
+							return IsRawDataArray() ? s.substring(0, s.indexOf("[")) : s;
 							if(mcp instanceof Monitor)
 								return ((Monitor) mcp.getParent()).RawDataType();
 							if(mcp instanceof Control)
@@ -440,7 +444,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 */
 	public String WorldDataType() {
 		String s = row[tables.getColNum(sheet, "World Data Type")];
-		return isWorldDataArray() ? s.substring(0, s.indexOf("[")) : s;
+		return IsWorldDataArray() ? s.substring(0, s.indexOf("[")) : s;
 	}
 
 	/**
@@ -592,7 +596,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isConversion() {
+	public boolean IsConversion() {
 				if(ScaleCell().equals("none") && OffsetCell().equals("none")) {
 					return false;
 				}
@@ -614,7 +618,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSpecialConversion() {
+	public boolean IsSpecialConversion() {
 		return ScaleCell().equals("extended");
 	}
 
@@ -623,7 +627,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isWorldDataArray() {
+	public boolean IsWorldDataArray() {
 		String s = row[tables.getColNum(sheet, "World Data Type")];
 		return s.endsWith("]") ? true : false;
 	}
@@ -633,9 +637,9 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isRawDataArray() {
+	public boolean IsRawDataArray() {
 				String s = row[tables.getColNum(sheet, "Raw Data Type")];
-									if(!mcp.isDependent())
+									if(!mcp.IsDependent())
 									return s.endsWith("]") ? true : false;
 									if(s.startsWith("&lt;") && s.substring(1).indexOf("&lt;") != -1)
 									return true;
@@ -665,6 +669,27 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	//Print the values of the class, to test the objects
+	public static void printAttributeValues(EObject object) {
+		EClass eClass = object.eClass();
+		System.out.println(eClass.getName());
+		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
+			EAttribute attribute = (EAttribute)iter.next();
+			Object value = object.eGet(attribute);
+
+			System.out.print("  " + attribute.getName() + " : ");
+			if (object.eIsSet(attribute))
+				System.out.println(value);
+			else
+				System.out.println(value + " (default)");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String NumberRawDataTypeBytes() {
@@ -686,10 +711,10 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentGroupBit() {
-				if(!mcp.isDependent())
+	public boolean IsDependentGroupBit() {
+				if(!mcp.IsDependent())
 					return false;
-				if(isDependentBit() && RawDataTypeCell().indexOf("-") != -1)
+				if(IsDependentBit() && RawDataTypeCell().indexOf("-") != -1)
 					return true;
 				return false;
 	}
@@ -699,8 +724,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentBit() {
-				if(!mcp.isDependent())
+	public boolean IsDependentBit() {
+				if(!mcp.IsDependent())
 					return false;
 				if(RawDataTypeCell().startsWith("&lt;"))
 					return true;
@@ -712,8 +737,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentElement() {
-				if(!mcp.isDependent())
+	public boolean IsDependentElement() {
+				if(!mcp.IsDependent())
 					return false;
 				if(RawDataTypeCell().startsWith("["))
 					return true;
@@ -725,7 +750,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isByteSwapped() {
+	public boolean IsByteSwapped() {
 		return ((String)tables.getRawToByteSwapped().get(RawDataType())).equals(true);
 	}
 
@@ -734,8 +759,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentBitElement() {
-				if(!mcp.isDependent())
+	public boolean IsDependentBitElement() {
+				if(!mcp.IsDependent())
 					return false;
 				if(RawDataTypeCell().startsWith("&lt;"))
 					return true;
@@ -747,8 +772,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentArrayElement() {
-				if(!mcp.isDependent())
+	public boolean IsDependentArrayElement() {
+				if(!mcp.IsDependent())
 					return false;
 				if(RawDataTypeCell().startsWith("["))
 					return true;
@@ -762,13 +787,13 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 */
 	public String GetDimension() {
 				String s = RawDataTypeCell();
-				if(isDependentArrayElement()) {
+				if(IsDependentArrayElement()) {
 					int n = s.indexOf("]");
 					return s.substring(1, n);
 				}
-				if(!isRawDataArray())
+				if(!IsRawDataArray())
 					return "0";
-				if(isDependentBitElement()) {
+				if(IsDependentBitElement()) {
 					int n = s.indexOf("&gt;");
 					return s.substring(4, n);
 				}
@@ -780,7 +805,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSingleBit() {
+	public boolean IsSingleBit() {
 				String s = RawDataTypeCell();
 				if(!s.startsWith("&lt;"))// &lt;0&gt;
 					return false;
@@ -796,7 +821,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getBit() {
+	public String GetBit() {
 				String s = RawDataTypeCell();
 				int n = s.indexOf("&gt;");
 				return s.substring(4, n);
@@ -807,12 +832,12 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getFirstBit() {
+	public String GetFirstBit() {
 				String s = RawDataTypeCell();
 				if(!s.startsWith("&lt;") || !s.endsWith("&gt;"))
 					return "";
-				if(isSingleBit())
-					return getBit();
+				if(IsSingleBit())
+					return GetBit();
 				int n = s.indexOf("-");
 				if(n == -1)
 					return "";
@@ -824,12 +849,12 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLastBit() {
+	public String GetLastBit() {
 				String s = RawDataTypeCell();
 				if(!s.startsWith("&lt;") || !s.endsWith("&gt;"))
 					return "";
-				if(isSingleBit())
-					return getBit();
+				if(IsSingleBit())
+					return GetBit();
 				int n = s.indexOf("-");
 				if(n == -1)
 					return "";
@@ -841,9 +866,9 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGroupStart() {
+	public String GetGroupStart() {
 				String s = RawDataTypeCell();
-				if(isRawDataArray()) {
+				if(IsRawDataArray()) {
 					s = s.substring(4);
 					int n = s.indexOf("&lt;");
 					int m = s.substring(n + 4).indexOf("&gt;");
@@ -866,7 +891,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGroupEnd() {
+	public String GetGroupEnd() {
 				String s = RawDataTypeCell();
 				int n = s.indexOf("-");
 				if(n == -1)
@@ -879,9 +904,9 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGroupMask() {
-				String firstBit = getGroupStart();
-				String lastBit = getGroupEnd();
+	public String GetGroupMask() {
+				String firstBit = GetGroupStart();
+				String lastBit = GetGroupEnd();
 				int n = Integer.parseInt(firstBit);
 				int m = Integer.parseInt(lastBit);
 				int intMaskSize = m - n;
@@ -898,7 +923,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isRawSubArray() {
+	public boolean IsRawSubArray() {
 				String s = RawDataTypeCell();
 				if((s.indexOf("[") != -1) && (s.indexOf("-") != -1)
 						&& (s.indexOf("]") != -1))
@@ -1130,5 +1155,4 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		result.append(')');
 		return result.toString();
 	}
-
 } //MandCImpl

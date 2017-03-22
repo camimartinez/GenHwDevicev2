@@ -22,6 +22,8 @@
  */
 package alma.control.datamodel.meta.amb;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -58,6 +60,8 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	 */
 	String Parent();
 
+	Resource getNotes();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

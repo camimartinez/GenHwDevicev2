@@ -22,7 +22,7 @@
  */
 package alma.control.datamodel.meta.base;
 
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
@@ -95,11 +95,10 @@ public interface ControlPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return false;\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return false;\r\n'"
 	 * @generated
 	 */
-	boolean isMonitored();
+	boolean IsMonitored();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +107,6 @@ public interface ControlPoint extends MandCBase {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMandCBase(row, parent, tables, utils);'"
 	 * @generated
 	 */
-	void setControlPoint(String[] row, Object parent, Table tables, Util utils);
+	void setControlPoint(String[] row, EObject parent, Table tables, Util utils);
 
 } // ControlPoint

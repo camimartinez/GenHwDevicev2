@@ -23,17 +23,17 @@ package alma.control.datamodel.meta.amb.impl;
  */
 
 
+import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
@@ -319,8 +319,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isRawDataArray() {
-		return mac.isRawDataArray();
+	public boolean IsRawDataArray() {
+		return mac.IsRawDataArray();
 	}
 
 	/**
@@ -328,8 +328,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isWorldDataArray() {
-		return mac.isWorldDataArray();
+	public boolean IsWorldDataArray() {
+		return mac.IsWorldDataArray();
 	}
 
 	/**
@@ -399,7 +399,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 				// This is the "default" case.
 				boolean isTeRelated = TeRelated();
 				boolean isExternal = External();
-				boolean isArray = isWorldDataArray();
+				boolean isArray = IsWorldDataArray();
 				if (isExternal) {
 					if (isArray) {
 						s += "(in " + WorldDataToIDLSeqType() + " world";
@@ -431,7 +431,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 							throw new RuntimeException("Invalid syntax in Parameter field: (" + s + ")");
 						String word = s.substring(pos,n);
 						String out = "";
-						boolean isArray = isWorldDataArray();
+						boolean isArray = IsWorldDataArray();
 						if (isArray) {
 							out += "in " + (String)tables.getWorldToIDLSeq().get(word) + " ";
 						}
@@ -486,7 +486,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		        }
 		        // This is the "default" case.
 		        boolean isTeRelated = TeRelated();
-		        boolean isArray = isWorldDataArray();
+		        boolean isArray = IsWorldDataArray();
 		        if(isArray == true) {
 		            s += "(const " + WorldDataToCORBASeqType() + "& world";
 		        }
@@ -572,7 +572,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		        }
 		        // This is the "default" case.
 		        boolean isTeRelated = TeRelated();
-		        boolean isArray = isWorldDataArray();
+		        boolean isArray = IsWorldDataArray();
 		        if (isArray) {
 		            s += "(const std::vector< " + WorldDataToCPPType() + " >& world";
 		        } else {
@@ -690,8 +690,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isConversion() {
-		return mac.isConversion();
+	public boolean IsConversion() {
+		return mac.IsConversion();
 	}
 
 	/**
@@ -699,8 +699,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSpecialConversion() {
-		return mac.isSpecialConversion();
+	public boolean IsSpecialConversion() {
+		return mac.IsSpecialConversion();
 	}
 
 	/**
@@ -762,8 +762,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentGroupBit() {
-		return mac.isDependentGroupBit();
+	public boolean IsDependentGroupBit() {
+		return mac.IsDependentGroupBit();
 	}
 
 	/**
@@ -771,8 +771,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentBit() {
-		return mac.isDependentBit();
+	public boolean IsDependentBit() {
+		return mac.IsDependentBit();
 	}
 
 	/**
@@ -780,8 +780,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentElement() {
-		return mac.isDependentElement();
+	public boolean IsDependentElement() {
+		return mac.IsDependentElement();
 	}
 
 	/**
@@ -789,8 +789,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isByteSwapped() {
-		return mac.isByteSwapped();
+	public boolean IsByteSwapped() {
+		return mac.IsByteSwapped();
 	}
 
 	/**
@@ -798,8 +798,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentBitElement() {
-		return mac.isDependentBitElement();
+	public boolean IsDependentBitElement() {
+		return mac.IsDependentBitElement();
 	}
 
 	/**
@@ -807,8 +807,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentArrayElement() {
-		return mac.isDependentArrayElement();
+	public boolean IsDependentArrayElement() {
+		return mac.IsDependentArrayElement();
 	}
 
 	/**
@@ -825,8 +825,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSingleBit() {
-		return mac.isSingleBit();
+	public boolean IsSingleBit() {
+		return mac.IsSingleBit();
 	}
 
 	/**
@@ -834,8 +834,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getBit() {
-		return mac.getBit();
+	public String GetBit() {
+		return mac.GetBit();
 	}
 
 	/**
@@ -843,8 +843,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMask() {
-		return mac.getMask();
+	public String GetMask() {
+		return mac.GetMask();
 	}
 
 	/**
@@ -852,8 +852,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getFirstBit() {
-		return mac.getFirstBit();
+	public String GetFirstBit() {
+		return mac.GetFirstBit();
 	}
 
 	/**
@@ -861,8 +861,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLastBit() {
-		return mac.getLastBit();
+	public String GetLastBit() {
+		return mac.GetLastBit();
 	}
 
 	/**
@@ -870,8 +870,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGroupMask() {
-		return mac.getGroupMask();
+	public String GetGroupMask() {
+		return mac.GetGroupMask();
 	}
 
 	/**
@@ -879,8 +879,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGroupEnd() {
-		return mac.getGroupEnd();
+	public String GetGroupEnd() {
+		return mac.GetGroupEnd();
 	}
 
 	/**
@@ -888,8 +888,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGroupStart() {
-		return mac.getGroupStart();
+	public String GetGroupStart() {
+		return mac.GetGroupStart();
 	}
 
 	/**
@@ -909,14 +909,14 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	public String RawSubArrayStartIndex() {
 		return mac.RawSubArrayStartIndex();
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isRawSubArray() {
-		return mac.isRawSubArray();
+	public boolean IsRawSubArray() {
+		return mac.IsRawSubArray();
 	}
 
 	/**
@@ -942,7 +942,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlAmb(final String[] row, final Object parent, final Table tables, final Util utils, final String dirDevice) {
+	public void setControlAmb(final String[] row, final EObject parent, final Table tables, final Util utils, final String dirDevice) {
 		this.tables = tables;
 		this.utils = utils;
 		setControlPoint(row, parent, tables, utils);
@@ -1027,12 +1027,4 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		}
 		return super.eIsSet(featureID);
 	}
-
-
-	@Override
-	public void addDependent(Object son) {
-		// TODO Auto-generated method stub
-
-	}
-
 } //ControlImpl

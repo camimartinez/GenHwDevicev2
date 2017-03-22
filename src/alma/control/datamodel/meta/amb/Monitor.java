@@ -26,7 +26,7 @@ import alma.control.datamodel.meta.base.MonitorPoint;
 
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,11 +82,10 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return CanBeInvalid().equals(\"yes-feStatus\");'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return CanBeInvalid().equals(\"yes-feStatus\");'"
 	 * @generated
 	 */
-	boolean isFEStatus();
+	boolean IsFEStatus();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,38 +226,34 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isRawDataArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsRawDataArray();'"
 	 * @generated
 	 */
-	boolean isRawDataArray();
+	boolean IsRawDataArray();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isWorldDataArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsWorldDataArray();'"
 	 * @generated
 	 */
-	boolean isWorldDataArray();
+	boolean IsWorldDataArray();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isConversion();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsConversion();'"
 	 * @generated
 	 */
-	boolean isConversion();
+	boolean IsConversion();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isSpecialConversion();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsSpecialConversion();'"
 	 * @generated
 	 */
-	boolean isSpecialConversion();
+	boolean IsSpecialConversion();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,56 +306,50 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentGroupBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentGroupBit();'"
 	 * @generated
 	 */
-	boolean isDependentGroupBit();
+	boolean IsDependentGroupBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentBit();'"
 	 * @generated
 	 */
-	boolean isDependentBit();
+	boolean IsDependentBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentElement();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentElement();'"
 	 * @generated
 	 */
-	boolean isDependentElement();
+	boolean IsDependentElement();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isByteSwapped();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsByteSwapped();'"
 	 * @generated
 	 */
-	boolean isByteSwapped();
+	boolean IsByteSwapped();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentBitElement();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentBitElement();'"
 	 * @generated
 	 */
-	boolean isDependentBitElement();
+	boolean IsDependentBitElement();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentArrayElement();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentArrayElement();'"
 	 * @generated
 	 */
-	boolean isDependentArrayElement();
+	boolean IsDependentArrayElement();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -373,74 +362,66 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isSingleBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsSingleBit();'"
 	 * @generated
 	 */
-	boolean isSingleBit();
+	boolean IsSingleBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetBit();'"
 	 * @generated
 	 */
-	String getBit();
+	String GetBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getMask();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetMask();'"
 	 * @generated
 	 */
-	String getMask();
+	String GetMask();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getFirstBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetFirstBit();'"
 	 * @generated
 	 */
-	String getFirstBit();
+	String GetFirstBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getLastBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetLastBit();'"
 	 * @generated
 	 */
-	String getLastBit();
+	String GetLastBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupMask();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetGroupMask();'"
 	 * @generated
 	 */
-	String getGroupMask();
+	String GetGroupMask();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupEnd();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetGroupEnd();'"
 	 * @generated
 	 */
-	String getGroupEnd();
+	String GetGroupEnd();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupStart();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetGroupStart();'"
 	 * @generated
 	 */
-	String getGroupStart();
+	String GetGroupStart();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -461,11 +442,10 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isRawSubArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsRawSubArray();'"
 	 * @generated
 	 */
-	boolean isRawSubArray();
+	boolean IsRawSubArray();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -510,38 +490,34 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = true;\n\t\t\t\tif( this.isDependent()) ret = false;\n\t\t\t\tif( this.getDependents().getContents().isEmpty()) ret = false;\n\t\t\t\tfor (Iterator&lt;EObject&gt; iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\n\t\t\t\t\tif( var.WorldDataType().compareTo(\"boolean\") != 0 ) ret = false;\n\t\t\t\t}\n\t\t\t\treturn ret;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = true;\n\t\t\t\tif( this.IsDependent()) ret = false;\n\t\t\t\tif( this.getDependents().getContents().isEmpty()) ret = false;\n\t\t\t\tfor (Iterator&lt;EObject&gt; iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\n\t\t\t\t\tif( var.WorldDataType().compareTo(\"boolean\") != 0 ) ret = false;\n\t\t\t\t}\n\t\t\t\treturn ret;'"
 	 * @generated
 	 */
-	boolean isPattern();
+	boolean IsPattern();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = false;\r\n\t\tif( isDependent() ){\r\n\t\t\tMonitorImpl parent = ((MonitorImpl)this.getParent());\r\n\t\t\tif( parent.isPattern() )\r\n\t\t\t\tret = true;\r\n\t\t}\r\n\t\treturn ret;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = false;\r\n\t\tif(IsDependent() ){\r\n\t\t\tMonitorImpl parent = ((MonitorImpl)this.getParent());\r\n\t\t\tif( parent.IsPattern() )\r\n\t\t\t\tret = true;\r\n\t\t}\r\n\t\treturn ret;'"
 	 * @generated
 	 */
-	boolean isPartOfPattern();
+	boolean IsPartOfPattern();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = true;\n\t\tString firsttype = null;\n\t\tif( hasDependents() ){\n\t\t\tfor (Iterator&lt;EObject&gt; iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\n\t\t\t\tif( firsttype == null){\n\t\t\t\t\tfirsttype = new String(var.WorldDataType());\n\t\t\t\t\tcontinue;\n\t\t\t\t}\n\t\t\t\tif( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;\n\t\t\t}\n\t\t}else{\n\t\t\tret = false;\n\t\t}\n\t\treturn ret;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = true;\n\t\tString firsttype = null;\n\t\tif( hasDependents() ){\n\t\t\tfor (Iterator&lt;EObject&gt; iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\n\t\t\t\tif( firsttype == null){\n\t\t\t\t\tfirsttype = new String(var.WorldDataType());\n\t\t\t\t\tcontinue;\n\t\t\t\t}\n\t\t\t\tif( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;\n\t\t\t}\n\t\t}else{\n\t\t\tret = false;\n\t\t}\n\t\treturn ret;'"
 	 * @generated
 	 */
-	boolean isHomogeneous();
+	boolean IsHomogeneous();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = false;\r\n\t\tif( isDependent() ){\r\n\t\t\tMonitorImpl parent = ((MonitorImpl)this.getParent());\r\n\t\t\tif( parent.isHomogeneous() )\r\n\t\t\t\tret = true;\r\n\t\t}\r\n\t\treturn ret;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = false;\r\n\t\tif(IsDependent() ){\r\n\t\t\tMonitorImpl parent = ((MonitorImpl)this.getParent());\r\n\t\t\tif( parent.IsHomogeneous() )\r\n\t\t\t\tret = true;\r\n\t\t}\r\n\t\treturn ret;'"
 	 * @generated
 	 */
-	boolean isPartOfHomogeneous();
+	boolean IsPartOfHomogeneous();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -550,6 +526,6 @@ public interface Monitor extends MonitorPoint {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMonitorPoint(row, parent,tables,utils);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this, tables, utils);\nString dir = setParameters(dirDevice);\nresourceSetMonitor = new ResourceSetImpl();\nResource res = resourceSetMonitor.createResource(URI.createURI(dir));\nres.getContents().add(mac);\t\t'"
 	 * @generated
 	 */
-	void setMonitorAmb(String[] row, Object parent, Table tables, Util utils, String dirDevice);
+	void setMonitorAmb(String[] row, EObject parent, Table tables, Util utils, String dirDevice);
 
 } // Monitor

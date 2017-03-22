@@ -1,11 +1,9 @@
 package alma.control.datamodel.meta.base.impl;
 
-import alma.control.datamodel.meta.amb.Main;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,12 +22,12 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import alma.control.datamodel.meta.amb.Main;
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.DeviceModel;
-import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
@@ -63,7 +61,6 @@ import alma.control.datamodel.meta.base.Util;
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMPointsList <em>MPoints</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getUtils <em>Utils</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getTables <em>Tables</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getTablesAux <em>Tables Aux</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMainAmb <em>Main Amb</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.DeviceModelImpl#getMainEth <em>Main Eth</em>}</li>
  * </ul>
@@ -470,26 +467,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * @ordered
 	 */
 	protected Table tables;
-
-	/**
-	 * The default value of the '{@link #getTablesAux() <em>Tables Aux</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTablesAux()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Object TABLES_AUX_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTablesAux() <em>Tables Aux</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTablesAux()
-	 * @generated
-	 * @ordered
-	 */
-	protected Object tablesAux = TABLES_AUX_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMainAmb() <em>Main Amb</em>}' reference.
@@ -1001,7 +978,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<ArchiveProperty> getAPropertiesList() {
+	public EList<ArchiveProperty> getAPropertiesList() {
 		if (aProperties == null) {
 			aProperties = new EObjectResolvingEList<ArchiveProperty>(ArchiveProperty.class, this, BasePackage.DEVICE_MODEL__APROPERTIES);
 		}
@@ -1061,7 +1038,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<ControlPoint> getCPointsList() {
+	public EList<ControlPoint> getCPointsList() {
 		if (cPoints == null) {
 			cPoints = new EObjectResolvingEList<ControlPoint>(ControlPoint.class, this, BasePackage.DEVICE_MODEL__CPOINTS);
 		}
@@ -1121,7 +1098,7 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<MonitorPoint> getMPointsList() {
+	public EList<MonitorPoint> getMPointsList() {
 		if (mPoints == null) {
 			mPoints = new EObjectResolvingEList<MonitorPoint>(MonitorPoint.class, this, BasePackage.DEVICE_MODEL__MPOINTS);
 		}
@@ -1202,27 +1179,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 		tables = newTables;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__TABLES, oldTables, tables));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Object getTablesAux() {
-		return tablesAux;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTablesAux(Object newTablesAux) {
-		Object oldTablesAux = tablesAux;
-		tablesAux = newTablesAux;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.DEVICE_MODEL__TABLES_AUX, oldTablesAux, tablesAux));
 	}
 
 	/**
@@ -1314,6 +1270,21 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 		}
 		return null;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+    public MonitorPoint getMonitorPoint(String fullName){
+        for(int i = 0; i < monitorPoints.getContents().size(); i++){
+            MonitorPoint mp = (MonitorPoint) monitorPoints.getContents().get(i);
+            if(mp.FullName().equals(fullName))
+                return mp;
+        }
+        return null;
+    }
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1592,8 +1563,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__TABLES:
 				if (resolve) return getTables();
 				return basicGetTables();
-			case BasePackage.DEVICE_MODEL__TABLES_AUX:
-				return getTablesAux();
 			case BasePackage.DEVICE_MODEL__MAIN_AMB:
 				if (resolve) return getMainAmb();
 				return basicGetMainAmb();
@@ -1679,9 +1648,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__TABLES:
 				setTables((Table)newValue);
 				return;
-			case BasePackage.DEVICE_MODEL__TABLES_AUX:
-				setTablesAux(newValue);
-				return;
 			case BasePackage.DEVICE_MODEL__MAIN_AMB:
 				setMainAmb((Main)newValue);
 				return;
@@ -1763,9 +1729,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 			case BasePackage.DEVICE_MODEL__TABLES:
 				setTables((Table)null);
 				return;
-			case BasePackage.DEVICE_MODEL__TABLES_AUX:
-				setTablesAux(TABLES_AUX_EDEFAULT);
-				return;
 			case BasePackage.DEVICE_MODEL__MAIN_AMB:
 				setMainAmb((Main)null);
 				return;
@@ -1826,8 +1789,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 				return utils != null;
 			case BasePackage.DEVICE_MODEL__TABLES:
 				return tables != null;
-			case BasePackage.DEVICE_MODEL__TABLES_AUX:
-				return TABLES_AUX_EDEFAULT == null ? tablesAux != null : !TABLES_AUX_EDEFAULT.equals(tablesAux);
 			case BasePackage.DEVICE_MODEL__MAIN_AMB:
 				return mainAmb != null;
 			case BasePackage.DEVICE_MODEL__MAIN_ETH:
@@ -1878,8 +1839,6 @@ public abstract class DeviceModelImpl extends EObjectImpl implements DeviceModel
 		result.append(monitorDBOnly);
 		result.append(", generateAlt: ");
 		result.append(generateAlt);
-		result.append(", tablesAux: ");
-		result.append(tablesAux);
 		result.append(')');
 		return result.toString();
 	}

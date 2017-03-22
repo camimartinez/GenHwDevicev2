@@ -394,7 +394,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 */
 	public String DataType() {
 		String s = row[table.getColNum(sheet, "DataType")];
-		return isDataArray() ? s.substring(0,s.indexOf("[")) : s;
+		return IsDataArray() ? s.substring(0,s.indexOf("[")) : s;
 	}
 
 	/**
@@ -402,7 +402,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDataArray() {
+	public boolean IsDataArray() {
 		return row[table.getColNum(sheet, "Data Type")].endsWith("]") ? true : false;
 	}
 
@@ -411,8 +411,8 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isOpenArray() {
-		if(!isDataArray()) return false;
+	public boolean IsOpenArray() {
+		if(!IsDataArray()) return false;
 		String s =  row[table.getColNum(sheet, "Data Type")];
 		return (s.indexOf("]") - s.indexOf("[") == 1) ? true : false;
 	}
@@ -423,7 +423,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String getArrayLength() {
-		if(!isDataArray()) return "1";
+		if(!IsDataArray()) return "1";
 		String s = row[table.getColNum(sheet, "Data Type")];
 		return s.substring(s.indexOf("[")+1,s.indexOf("]"));
 	}

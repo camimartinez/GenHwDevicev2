@@ -217,6 +217,18 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMp(MonitorPoint newMp) {
+		MonitorPoint oldMp = mp;
+		mp = newMp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__MP, oldMp, mp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
 	public void setMP(MonitorPoint newMp) {
@@ -255,9 +267,9 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public void setCP(ControlPoint newCp) {
+	public void setCp(ControlPoint newCp) {
 		ControlPoint oldCp = cp;
 		cp = newCp;
 		if (eNotificationRequired())
@@ -267,19 +279,13 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @!generated
 	 */
-	public boolean isMonitorPoint() {
-		return mp != null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isControlPoint() {
-		return cp != null;
+	public void setCP(ControlPoint newCp) {
+		ControlPoint oldCp = cp;
+		cp = newCp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__CP, oldCp, cp));
 	}
 
 	/**
@@ -542,19 +548,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 		result.append(')');
 		return result.toString();
 	}
-
-	@Override
-	public void setMp(MonitorPoint value) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setCp(ControlPoint value) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -593,4 +587,21 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean IsMonitorPoint() {
+		return mp != null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean IsControlPoint() {
+		return cp != null;
+	}
 } //ArchivePropertyImpl

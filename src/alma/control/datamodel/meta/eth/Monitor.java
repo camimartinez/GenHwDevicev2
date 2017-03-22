@@ -26,7 +26,7 @@ import alma.control.datamodel.meta.base.MonitorPoint;
 
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,11 +98,10 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\ttry\r\n\t\t{\r\n\t\t\tInteger.decode(mac.Address());\r\n\t\t}\r\n\t\tcatch(Exception e)\r\n\t\t{\r\n\t\t\treturn true;\r\n\t\t}\r\n\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\ttry\r\n\t\t{\r\n\t\t\tInteger.decode(mac.Address());\r\n\t\t}\r\n\t\tcatch(Exception e)\r\n\t\t{\r\n\t\t\treturn true;\r\n\t\t}\r\n\r\n\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isEnumAddress();
+	boolean IsEnumAddress();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,20 +114,18 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDataArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDataArray();'"
 	 * @generated
 	 */
-	boolean isDataArray();
+	boolean IsDataArray();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isOpenArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsOpenArray();'"
 	 * @generated
 	 */
-	boolean isOpenArray();
+	boolean IsOpenArray();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,38 +203,34 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\r\n\t\tif (DataType().equals(\"uint\"))\r\n\t\t\treturn false;\r\n\t\r\n\t\tif ( DataType().equals(\"bool\") || DataType().equals(\"boolean\")\r\n\t\t\t\t|| DataType().equals(\"string\")\r\n\t\t\t\t|| (DataType().equals(\"double\") &amp;&amp; isDataArray())\r\n\t\t\t\t|| (DataType().equals(\"int\") &amp;&amp; isDataArray()) )\r\n\t\t\treturn false;\r\n\t\treturn true;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\r\n\t\tif (DataType().equals(\"uint\"))\r\n\t\t\treturn false;\r\n\t\r\n\t\tif ( DataType().equals(\"bool\") || DataType().equals(\"boolean\")\r\n\t\t\t\t|| DataType().equals(\"string\")\r\n\t\t\t\t|| (DataType().equals(\"double\") &amp;&amp; IsDataArray())\r\n\t\t\t\t|| (DataType().equals(\"int\") &amp;&amp; IsDataArray()) )\r\n\t\t\treturn false;\r\n\t\treturn true;'"
 	 * @generated
 	 */
-	boolean isArchived();
+	boolean IsArchived();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return false;'"
 	 * @generated
 	 */
-	boolean isPartOfPattern();
+	boolean IsPartOfPattern();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return true;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return true;'"
 	 * @generated
 	 */
-	boolean isHomogeneous();
+	boolean IsHomogeneous();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel null='return false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel null='return false;'"
 	 * @generated
 	 */
-	boolean isPartOfHomogeneous();
+	boolean IsPartOfHomogeneous();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -246,6 +239,6 @@ public interface Monitor extends MonitorPoint {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMonitorPoint(row, parent,tables,utils);\nmac = new MandCImpl();\nmac.setMandCEth(row, sheet, tables, utils);\nString dir = setParameters(dirDevice);\nresourceSetMonitor = new ResourceSetImpl();\nResource res = resourceSetMonitor.createResource(URI.createURI(dir));\nres.getContents().add(mac);\t'"
 	 * @generated
 	 */
-	void setMonitorEth(String[] row, Object parent, Table tables, Util utils, String dirDevice);
+	void setMonitorEth(String[] row, EObject parent, Table tables, Util utils, String dirDevice);
 
 } // Monitor

@@ -22,6 +22,8 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
+import alma.control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.eth.MandC;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Set;
@@ -35,13 +37,10 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
 
-import alma.control.datamodel.meta.amb.MandC;
-import alma.control.datamodel.meta.base.*;
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
-import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Note;
@@ -535,8 +534,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public alma.control.datamodel.meta.eth.MandC createMandCETHDTFromString(EDataType eDataType, String initialValue) {
-		return (alma.control.datamodel.meta.eth.MandC)super.createFromString(eDataType, initialValue);
+	public MandC createMandCETHDTFromString(EDataType eDataType, String initialValue) {
+		return (MandC)super.createFromString(eDataType, initialValue);
 	}
 
 	/**

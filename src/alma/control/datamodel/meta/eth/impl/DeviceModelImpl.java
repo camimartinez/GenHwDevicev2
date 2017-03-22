@@ -23,13 +23,18 @@
 package alma.control.datamodel.meta.eth.impl;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Note;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
@@ -40,15 +45,7 @@ import alma.control.datamodel.meta.eth.Control;
 import alma.control.datamodel.meta.eth.DeviceModel;
 import alma.control.datamodel.meta.eth.EthFactory;
 import alma.control.datamodel.meta.eth.EthPackage;
-import alma.control.datamodel.meta.eth.Main;
 import alma.control.datamodel.meta.eth.Monitor;
-
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,17 +103,19 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		Table table = baseFactory.createTable();
 		
 		// Register the XMI resource factory for the .xmi extension
-		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
 		String extension = "xmi";
 		String tmp = deviceDir.concat("/").concat(extension).concat("/");
-		mm.put(extension, new XMIResourceFactoryImpl());
+		container = new ResourceSetImpl();
+		container.getResourceFactoryRegistry().getExtensionToFactoryMap().put(extension, new XMIResourceFactoryImpl());
+
+		//Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
+		//Map<String, Object> mm = regis.getExtensionToFactoryMap();		
+
+		//mm.put(extension, new XMIResourceFactoryImpl());
 
 		Map<String, Boolean> options = new HashMap<String, Boolean>();
 		options.put(XMLResource.OPTION_SAVE_ONLY_IF_CHANGED, Boolean.TRUE);
 
-		container = new ResourceSetImpl();
-				
 		// Check if the spreadsheet file is an actual spreadsheet or a
 		// "filter" file which is some kind of a filter for a real
 		// spreadsheet but inherits from it.
@@ -155,7 +154,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		Resource resourceTables = container.createResource(URI.createURI(xmiTables));
 		resourceTables.getContents().add(table);	
 		try{
-			resourceTables.save(Collections.EMPTY_MAP);
+			resourceTables.save(options);
 		}catch(IOException e){
 			e.printStackTrace();
 		}	
@@ -188,12 +187,12 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		
 		//Get the Main
 		String xmiMain = tmp.concat("main.").concat(extension);		
-		Main mainEth = ethFactory.createMain();
-		mainEth.setMainEth(spreadsheet[mainIndex][2],table,util);
-		Resource resourceMain = container.createResource(URI.createURI(xmiMain));
-		resourceMain.getContents().add(mainEth);
+		mainEth = ethFactory.createMain();
+		mainEth.setMainEth(spreadsheet[mainIndex][2], table, util);
+		main = container.createResource(URI.createURI(xmiMain));
+		main.getContents().add(mainEth);
 		try{
-			resourceMain.save(options);
+			main.save(options);
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -219,7 +218,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			setDeviceModel(table,util);
 			mp.setArchive(getArchiveProperties(mp.FullName()));
 			//FIXME
-			//mp.setAssemblyName(main.Assembly());
+			mp.setAssemblyName(mainEth.Assembly());
 			monitorPoints.getContents().add(mp);
 			try{
 				monitorPoints.save(options);
@@ -248,7 +247,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			}
 			cp.setArchive(getArchiveProperties(cp.FullName()));
 			//FIXME
-			//cp.setAssemblyName(main.Assembly());
+			cp.setAssemblyName(mainEth.Assembly());
 			controlPoints.getContents().add(cp);
 			try{
 				controlPoints.save(options);
@@ -270,7 +269,6 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			archiveProperties.getContents().add(ap);
 		}
 		System.out.println("DeviceModel: Initialization complete.");
-
 		return "";
 	}
 
@@ -280,13 +278,6 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String VendorClass() {
-		return ((MainImpl)main).VendorClass();
+		return getMainEth().VendorClass();
 	}
-
-	@Override
-	public MonitorPoint getMonitorPoint(String fullName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 } //DeviceModelImpl

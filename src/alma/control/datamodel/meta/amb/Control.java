@@ -22,11 +22,11 @@
  */
 package alma.control.datamodel.meta.amb;
 
-import alma.control.datamodel.meta.base.ControlPoint;
+import org.eclipse.emf.ecore.EObject;
 
+import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
-import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -242,20 +242,18 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isRawDataArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsRawDataArray();'"
 	 * @generated
 	 */
-	boolean isRawDataArray();
+	boolean IsRawDataArray();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isWorldDataArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsWorldDataArray();'"
 	 * @generated
 	 */
-	boolean isWorldDataArray();
+	boolean IsWorldDataArray();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -300,7 +298,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = \"SET_\" + CPName();\r\n\t\tif (!Parameter().equals(\"default\")) {\r\n\t\t\tif (Parameter().equals(\"void\"))\r\n\t\t\t\ts += \"()\";\r\n\t\t\telse\r\n\t\t\t\ts += \"(\" + idlParameters() + \")\";\r\n\t\t\tif (External()) {\r\n\t\t\t\ts +=  \" raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx)\";\r\n\t\t\t}\r\n\t\t\treturn s;\r\n\t\t\t// This gets the non-default case out of the way.\r\n\t\t}\r\n\t\t// This is the \"default\" case.\r\n\t\tboolean isTeRelated = TeRelated();\r\n\t\tboolean isExternal = External();\r\n\t\tboolean isArray = isWorldDataArray();\r\n\t\tif (isExternal) {\r\n\t\t\tif (isArray) {\r\n\t\t\t\ts += \"(in \" + WorldDataToIDLSeqType() + \" world\";\r\n\t\t\t} else {\r\n\t\t\t\ts += \"(in \" + WorldDataToIDLType() + \" world\";\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (isTeRelated) {\r\n\t\t\ts += \", in ACS::Time requestTime)\";\r\n\t\t} else {\r\n\t\t\ts += \")\";\r\n\t\t}\r\n\t\tif (isExternal) {\r\n\t\t\ts += \" raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx)\";\r\n\t\t}\r\n\t\treturn s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = \"SET_\" + CPName();\r\n\t\tif (!Parameter().equals(\"default\")) {\r\n\t\t\tif (Parameter().equals(\"void\"))\r\n\t\t\t\ts += \"()\";\r\n\t\t\telse\r\n\t\t\t\ts += \"(\" + idlParameters() + \")\";\r\n\t\t\tif (External()) {\r\n\t\t\t\ts +=  \" raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx)\";\r\n\t\t\t}\r\n\t\t\treturn s;\r\n\t\t\t// This gets the non-default case out of the way.\r\n\t\t}\r\n\t\t// This is the \"default\" case.\r\n\t\tboolean isTeRelated = TeRelated();\r\n\t\tboolean isExternal = External();\r\n\t\tboolean isArray = IsWorldDataArray();\r\n\t\tif (isExternal) {\r\n\t\t\tif (isArray) {\r\n\t\t\t\ts += \"(in \" + WorldDataToIDLSeqType() + \" world\";\r\n\t\t\t} else {\r\n\t\t\t\ts += \"(in \" + WorldDataToIDLType() + \" world\";\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (isTeRelated) {\r\n\t\t\ts += \", in ACS::Time requestTime)\";\r\n\t\t} else {\r\n\t\t\ts += \")\";\r\n\t\t}\r\n\t\tif (isExternal) {\r\n\t\t\ts += \" raises(ControlExceptions::CAMBErrorEx, ControlExceptions::INACTErrorEx)\";\r\n\t\t}\r\n\t\treturn s;'"
 	 * @generated
 	 */
 	String idlSignature();
@@ -308,7 +306,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tString s = Parameter();\n\t\t\t\tint pos = 0;\n\t\t\t\tint n = s.indexOf(\' \');\n\t\t\t\tif (n == -1)\n\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\tString word = s.substring(pos,n);\n\t\t\t\tString out = \"\";\n\t\t\t\tboolean isArray = isWorldDataArray();\n\t\t\t\tif (isArray) {\n\t\t\t\t\tout += \"in \" + (String)tables.getWorldToIDLSeq().get(word) + \" \";\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t\tout = \"in \" + (String)tables.getWorldToIDL().get(word) + \" \";\n\t\t\t\tpos = n + 1;\n\t\t\t\twhile (true) {\n\t\t\t\t\tn = s.indexOf(\',\',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tout += word + \", \";\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t\twhile (true) {\n\t\t\t\t\t\tif (s.charAt(pos) == \' \')\n\t\t\t\t\t\t\tpos++;\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t\tn = s.indexOf(\' \',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tif (isArray) {\n\t\t\t\t\t\tString type = (String)tables.getWorldToIDL().get(word);\n\t\t\t\t\t\ttype = type.replace(\"unsigned long\", \"uLong\");\n\t\t\t\t\t\tout += \"in \" + type;\n\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t\tout = \"in \" + (String)tables.getWorldToIDL().get(word) + \" \";\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t}\n\t\t\t\tword = s.substring(pos);\n\t\t\t\tout += word;\n\t\t\t\treturn out;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tString s = Parameter();\n\t\t\t\tint pos = 0;\n\t\t\t\tint n = s.indexOf(\' \');\n\t\t\t\tif (n == -1)\n\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\tString word = s.substring(pos,n);\n\t\t\t\tString out = \"\";\n\t\t\t\tboolean isArray = IsWorldDataArray();\n\t\t\t\tif (isArray) {\n\t\t\t\t\tout += \"in \" + (String)tables.getWorldToIDLSeq().get(word) + \" \";\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t\tout = \"in \" + (String)tables.getWorldToIDL().get(word) + \" \";\n\t\t\t\tpos = n + 1;\n\t\t\t\twhile (true) {\n\t\t\t\t\tn = s.indexOf(\',\',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tout += word + \", \";\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t\twhile (true) {\n\t\t\t\t\t\tif (s.charAt(pos) == \' \')\n\t\t\t\t\t\t\tpos++;\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t\tn = s.indexOf(\' \',pos);\n\t\t\t\t\tif (n == -1)\n\t\t\t\t\t\tthrow new RuntimeException(\"Invalid syntax in Parameter field: (\" + s + \")\");\n\t\t\t\t\tword = s.substring(pos,n);\n\t\t\t\t\tif (isArray) {\n\t\t\t\t\t\tString type = (String)tables.getWorldToIDL().get(word);\n\t\t\t\t\t\ttype = type.replace(\"unsigned long\", \"uLong\");\n\t\t\t\t\t\tout += \"in \" + type;\n\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t\tout = \"in \" + (String)tables.getWorldToIDL().get(word) + \" \";\n\t\t\t\t\tpos = n + 1;\n\t\t\t\t}\n\t\t\t\tword = s.substring(pos);\n\t\t\t\tout += word;\n\t\t\t\treturn out;'"
 	 * @generated
 	 */
 	String idlParameters();
@@ -316,7 +314,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + corbaParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = isWorldDataArray();\r\n        if(isArray == true)\r\n        {\r\n            s += \"(const \" + WorldDataToCORBASeqType() + \"&amp; world\";\r\n        }\r\n        else\r\n        {\r\n            String type = WorldDataToCORBAType();\r\n            if(type.equalsIgnoreCase(\"CORBA::String\") == true)\r\n            {\r\n                type = \"const \" + type + \"_var&amp;\";\r\n            }\r\n\r\n            s += \"(\" + type + \" world\";\r\n        }\r\n        if (isTeRelated)\r\n        {\r\n            s += \", const acstime::Epoch&amp; requestTime)\";\r\n        }\r\n        else\r\n        {\r\n            s += \")\";\r\n        }\r\n        return s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + corbaParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = IsWorldDataArray();\r\n        if(isArray == true)\r\n        {\r\n            s += \"(const \" + WorldDataToCORBASeqType() + \"&amp; world\";\r\n        }\r\n        else\r\n        {\r\n            String type = WorldDataToCORBAType();\r\n            if(type.equalsIgnoreCase(\"CORBA::String\") == true)\r\n            {\r\n                type = \"const \" + type + \"_var&amp;\";\r\n            }\r\n\r\n            s += \"(\" + type + \" world\";\r\n        }\r\n        if (isTeRelated)\r\n        {\r\n            s += \", const acstime::Epoch&amp; requestTime)\";\r\n        }\r\n        else\r\n        {\r\n            s += \")\";\r\n        }\r\n        return s;'"
 	 * @generated
 	 */
 	String corbaDeclaration();
@@ -340,7 +338,7 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='        String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + cppParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = isWorldDataArray();\r\n        if (isArray) {\r\n            s += \"(const std::vector&lt; \" + WorldDataToCPPType() + \" &gt;&amp; world\";\r\n        } else {\r\n            s += \"(const \" + WorldDataToCPPType() + \" world\";\r\n        }\r\n        if (isTeRelated) {\r\n            s += \", const acstime::Epoch&amp; requestTime)\";\r\n        } else {\r\n            s += \")\";\r\n        }\r\n        return s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='        String s = \"\";\r\n        if (!Parameter().equals(\"default\")) {\r\n            if (Parameter().equals(\"void\"))\r\n                s += \"()\";\r\n            else\r\n                s += \"(\" + cppParameters() + \")\";\r\n            return s;\r\n            // This gets the non-default case out of the way.\r\n        }\r\n        // This is the \"default\" case.\r\n        boolean isTeRelated = TeRelated();\r\n        boolean isArray = IsWorldDataArray();\r\n        if (isArray) {\r\n            s += \"(const std::vector&lt; \" + WorldDataToCPPType() + \" &gt;&amp; world\";\r\n        } else {\r\n            s += \"(const \" + WorldDataToCPPType() + \" world\";\r\n        }\r\n        if (isTeRelated) {\r\n            s += \", const acstime::Epoch&amp; requestTime)\";\r\n        } else {\r\n            s += \")\";\r\n        }\r\n        return s;'"
 	 * @generated
 	 */
 	String cppDeclaration();
@@ -372,20 +370,18 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isConversion();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsConversion();'"
 	 * @generated
 	 */
-	boolean isConversion();
+	boolean IsConversion();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isSpecialConversion();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsSpecialConversion();'"
 	 * @generated
 	 */
-	boolean isSpecialConversion();
+	boolean IsSpecialConversion();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -438,56 +434,50 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentGroupBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentGroupBit();'"
 	 * @generated
 	 */
-	boolean isDependentGroupBit();
+	boolean IsDependentGroupBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentBit();'"
 	 * @generated
 	 */
-	boolean isDependentBit();
+	boolean IsDependentBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentElement();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentElement();'"
 	 * @generated
 	 */
-	boolean isDependentElement();
+	boolean IsDependentElement();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isByteSwapped();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsByteSwapped();'"
 	 * @generated
 	 */
-	boolean isByteSwapped();
+	boolean IsByteSwapped();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentBitElement();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentBitElement();'"
 	 * @generated
 	 */
-	boolean isDependentBitElement();
+	boolean IsDependentBitElement();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDependentArrayElement();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDependentArrayElement();'"
 	 * @generated
 	 */
-	boolean isDependentArrayElement();
+	boolean IsDependentArrayElement();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -500,74 +490,66 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isSingleBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsSingleBit();'"
 	 * @generated
 	 */
-	boolean isSingleBit();
+	boolean IsSingleBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetBit();'"
 	 * @generated
 	 */
-	String getBit();
+	String GetBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getMask();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetMask();'"
 	 * @generated
 	 */
-	String getMask();
+	String GetMask();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getFirstBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetFirstBit();'"
 	 * @generated
 	 */
-	String getFirstBit();
+	String GetFirstBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getLastBit();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetLastBit();'"
 	 * @generated
 	 */
-	String getLastBit();
+	String GetLastBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupMask();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetGroupMask();'"
 	 * @generated
 	 */
-	String getGroupMask();
+	String GetGroupMask();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupEnd();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetGroupEnd();'"
 	 * @generated
 	 */
-	String getGroupEnd();
+	String GetGroupEnd();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.getGroupStart();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.GetGroupStart();'"
 	 * @generated
 	 */
-	String getGroupStart();
+	String GetGroupStart();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -588,11 +570,10 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isRawSubArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsRawSubArray();'"
 	 * @generated
 	 */
-	boolean isRawSubArray();
+	boolean IsRawSubArray();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -617,6 +598,6 @@ public interface Control extends ControlPoint {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetControlPoint(row, parent, tables, utils);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this, tables, utils);\nString dir = setParameters(dirDevice);\nresourceSetControl = new ResourceSetImpl();\nResource res = resourceSetControl.createResource(URI.createURI(dir));\nres.getContents().add(mac);'"
 	 * @generated
 	 */
-	void setControlAmb(String[] row, Object parent, Table tables, Util utils, String dirDevice);
+	void setControlAmb(String[] row, EObject parent, Table tables, Util utils, String dirDevice);
 
 } // Control

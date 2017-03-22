@@ -103,11 +103,27 @@ public interface MandC extends EObject {
 	void setSheet(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Mask</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mask</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mask</em>' attribute.
+	 * @see #setMask(String[])
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getMandC_Mask()
+	 * @model dataType="alma.control.datamodel.meta.base.EStringArray"
+	 * @generated
+	 */
+	String[] getMask();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	String getMask();
+	String GetMask();
 
 	/**
 	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMask <em>Mask</em>}' attribute.
@@ -224,7 +240,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tString s = row[tables.getColNum(sheet, \"Raw Data Type\")];\n\t\t\t\tif(!mcp.isDependent())\n\t\t\t\t\treturn isRawDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;\n\t\t\t\t\tif(mcp instanceof Monitor)\n\t\t\t\t\t\treturn ((Monitor) mcp.getParent()).RawDataType();\n\t\t\t\t\tif(mcp instanceof Control)\n\t\t\t\t\t\treturn ((Control) mcp.getParent()).RawDataType();\n\t\t\t\t\treturn \"ERROR\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tString s = row[tables.getColNum(sheet, \"Raw Data Type\")];\n\t\t\t\tif(!mcp.IsDependent())\n\t\t\t\t\treturn IsRawDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;\n\t\t\t\t\tif(mcp instanceof Monitor)\n\t\t\t\t\t\treturn ((Monitor) mcp.getParent()).RawDataType();\n\t\t\t\t\tif(mcp instanceof Control)\n\t\t\t\t\t\treturn ((Control) mcp.getParent()).RawDataType();\n\t\t\t\t\treturn \"ERROR\";'"
 	 * @generated
 	 */
 	String RawDataType();
@@ -256,7 +272,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[tables.getColNum(sheet, \"World Data Type\")];\nreturn isWorldDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[tables.getColNum(sheet, \"World Data Type\")];\nreturn IsWorldDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;'"
 	 * @generated
 	 */
 	String WorldDataType();
@@ -384,38 +400,34 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(ScaleCell().equals(\"none\") &amp;&amp; OffsetCell().equals(\"none\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"1.0\") &amp;&amp; OffsetCell().equals(\"0.0\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"1.0\") &amp;&amp; OffsetCell().equals(\"none\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"none\") &amp;&amp; OffsetCell().equals(\"0.0\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\r\n\t\treturn true;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(ScaleCell().equals(\"none\") &amp;&amp; OffsetCell().equals(\"none\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"1.0\") &amp;&amp; OffsetCell().equals(\"0.0\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"1.0\") &amp;&amp; OffsetCell().equals(\"none\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\telse if(ScaleCell().equals(\"none\") &amp;&amp; OffsetCell().equals(\"0.0\"))\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\r\n\t\treturn true;'"
 	 * @generated
 	 */
-	boolean isConversion();
+	boolean IsConversion();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ScaleCell().equals(\"extended\");'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ScaleCell().equals(\"extended\");'"
 	 * @generated
 	 */
-	boolean isSpecialConversion();
+	boolean IsSpecialConversion();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[tables.getColNum(sheet, \"World Data Type\")];\nreturn s.endsWith(\"]\") ? true : false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[tables.getColNum(sheet, \"World Data Type\")];\nreturn s.endsWith(\"]\") ? true : false;'"
 	 * @generated
 	 */
-	boolean isWorldDataArray();
+	boolean IsWorldDataArray();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = row[tables.getColNum(sheet, \"Raw Data Type\")];\n\t\t\t\t\t\t\tif(!mcp.isDependent())\n\t\t\t\t\t\t\treturn s.endsWith(\"]\") ? true : false;\n\t\t\t\t\t\t\tif(s.startsWith(\"&amp;lt;\") &amp;&amp; s.substring(1).indexOf(\"&amp;lt;\") != -1)\n\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = row[tables.getColNum(sheet, \"Raw Data Type\")];\n\t\t\t\t\t\t\tif(!mcp.IsDependent())\n\t\t\t\t\t\t\treturn s.endsWith(\"]\") ? true : false;\n\t\t\t\t\t\t\tif(s.startsWith(\"&amp;lt;\") &amp;&amp; s.substring(1).indexOf(\"&amp;lt;\") != -1)\n\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isRawDataArray();
+	boolean IsRawDataArray();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -452,61 +464,55 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(isDependentBit() &amp;&amp; RawDataTypeCell().indexOf(\"-\") != -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.IsDependent())\r\n\t\t\treturn false;\r\n\t\tif(IsDependentBit() &amp;&amp; RawDataTypeCell().indexOf(\"-\") != -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isDependentGroupBit();
+	boolean IsDependentGroupBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"&amp;lt;\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.IsDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"&amp;lt;\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isDependentBit();
+	boolean IsDependentBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"[\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.IsDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"[\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isDependentElement();
+	boolean IsDependentElement();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((String)tables.getRawToByteSwapped().get(RawDataType())).equals(true);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((String)tables.getRawToByteSwapped().get(RawDataType())).equals(true);'"
 	 * @generated
 	 */
-	boolean isByteSwapped();
+	boolean IsByteSwapped();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"&amp;lt;\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.IsDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"&amp;lt;\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isDependentBitElement();
+	boolean IsDependentBitElement();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.isDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"[\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(!mcp.IsDependent())\r\n\t\t\treturn false;\r\n\t\tif(RawDataTypeCell().startsWith(\"[\"))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isDependentArrayElement();
+	boolean IsDependentArrayElement();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(isDependentArrayElement())\r\n\t\t{\r\n\t\t\tint n = s.indexOf(\"]\");\r\n\t\t\treturn s.substring(1, n);\r\n\t\t}\r\n\t\tif(!isRawDataArray())\r\n\t\t\treturn \"0\";\r\n\t\tif(isDependentBitElement())\r\n\t\t{\r\n\t\t\tint n = s.indexOf(\"&amp;gt;\");\r\n\t\t\treturn s.substring(4, n);\r\n\t\t}\r\n\t\treturn \"0\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(IsDependentArrayElement())\r\n\t\t{\r\n\t\t\tint n = s.indexOf(\"]\");\r\n\t\t\treturn s.substring(1, n);\r\n\t\t}\r\n\t\tif(!IsRawDataArray())\r\n\t\t\treturn \"0\";\r\n\t\tif(IsDependentBitElement())\r\n\t\t{\r\n\t\t\tint n = s.indexOf(\"&amp;gt;\");\r\n\t\t\treturn s.substring(4, n);\r\n\t\t}\r\n\t\treturn \"0\";'"
 	 * @generated
 	 */
 	String GetDimension();
@@ -514,74 +520,66 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&amp;lt;\"))// &amp;lt;0&amp;gt;\r\n\t\t\treturn false;\r\n\t\tif(!s.endsWith(\"&amp;gt;\"))\r\n\t\t\treturn false;\r\n\t\tif(s.indexOf(\"-\") == -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&amp;lt;\"))// &amp;lt;0&amp;gt;\r\n\t\t\treturn false;\r\n\t\tif(!s.endsWith(\"&amp;gt;\"))\r\n\t\t\treturn false;\r\n\t\tif(s.indexOf(\"-\") == -1)\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isSingleBit();
+	boolean IsSingleBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tint n = s.indexOf(\"&amp;gt;\");\r\n\t\treturn s.substring(4, n);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tint n = s.indexOf(\"&amp;gt;\");\r\n\t\treturn s.substring(4, n);'"
 	 * @generated
 	 */
-	String getBit();
+	String GetBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&amp;lt;\") || !s.endsWith(\"&amp;gt;\"))\r\n\t\t\treturn \"\";\r\n\t\tif(isSingleBit())\r\n\t\t\treturn getBit();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(4, n);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&amp;lt;\") || !s.endsWith(\"&amp;gt;\"))\r\n\t\t\treturn \"\";\r\n\t\tif(IsSingleBit())\r\n\t\t\treturn GetBit();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(4, n);'"
 	 * @generated
 	 */
-	String getFirstBit();
+	String GetFirstBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&amp;lt;\") || !s.endsWith(\"&amp;gt;\"))\r\n\t\t\treturn \"\";\r\n\t\tif(isSingleBit())\r\n\t\t\treturn getBit();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(n + 1, s.length() - 4);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(!s.startsWith(\"&amp;lt;\") || !s.endsWith(\"&amp;gt;\"))\r\n\t\t\treturn \"\";\r\n\t\tif(IsSingleBit())\r\n\t\t\treturn GetBit();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(n + 1, s.length() - 4);'"
 	 * @generated
 	 */
-	String getLastBit();
+	String GetLastBit();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(isRawDataArray())\r\n\t\t{\r\n\t\t\ts = s.substring(4);\r\n\t\t\tint n = s.indexOf(\"&amp;lt;\");\r\n\t\t\tint m = s.substring(n + 4).indexOf(\"&amp;gt;\");\r\n\t\t\tif(n == -1 || m == -1)\r\n\t\t\t\treturn \"\";\r\n\t\t\ts = s.substring(n + 4, m + n + 4);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\ts = s.substring(4, s.length() - 4);\r\n\t\t}\r\n\t\t// \"s\" is of type \"i-j\"\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(0, n);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif(IsRawDataArray())\r\n\t\t{\r\n\t\t\ts = s.substring(4);\r\n\t\t\tint n = s.indexOf(\"&amp;lt;\");\r\n\t\t\tint m = s.substring(n + 4).indexOf(\"&amp;gt;\");\r\n\t\t\tif(n == -1 || m == -1)\r\n\t\t\t\treturn \"\";\r\n\t\t\ts = s.substring(n + 4, m + n + 4);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\ts = s.substring(4, s.length() - 4);\r\n\t\t}\r\n\t\t// \"s\" is of type \"i-j\"\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(0, n);'"
 	 * @generated
 	 */
-	String getGroupStart();
+	String GetGroupStart();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(n + 1, s.length() - 4);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tint n = s.indexOf(\"-\");\r\n\t\tif(n == -1)\r\n\t\t\treturn \"\";\r\n\t\treturn s.substring(n + 1, s.length() - 4);'"
 	 * @generated
 	 */
-	String getGroupEnd();
+	String GetGroupEnd();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString firstBit = getGroupStart();\r\n\t\tString lastBit = getGroupEnd();\r\n\t\tint n = Integer.parseInt(firstBit);\r\n\t\tint m = Integer.parseInt(lastBit);\r\n\t\tint intMaskSize = m - n;\r\n\t\tint intMask = 0;\r\n\t\tfor(int i = 0; i &lt;= intMaskSize; i++)\r\n\t\t{\r\n\t\t\tintMask += Math.pow(2, i);\r\n\t\t}\r\n\t\tString mask = \"0x\".concat(Integer.toHexString(intMask).toUpperCase());\r\n\t\treturn mask;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString firstBit = GetGroupStart();\r\n\t\tString lastBit = GetGroupEnd();\r\n\t\tint n = Integer.parseInt(firstBit);\r\n\t\tint m = Integer.parseInt(lastBit);\r\n\t\tint intMaskSize = m - n;\r\n\t\tint intMask = 0;\r\n\t\tfor(int i = 0; i &lt;= intMaskSize; i++)\r\n\t\t{\r\n\t\t\tintMask += Math.pow(2, i);\r\n\t\t}\r\n\t\tString mask = \"0x\".concat(Integer.toHexString(intMask).toUpperCase());\r\n\t\treturn mask;'"
 	 * @generated
 	 */
-	String getGroupMask();
+	String GetGroupMask();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif((s.indexOf(\"[\") != -1) &amp;&amp; (s.indexOf(\"-\") != -1)\r\n\t\t\t\t&amp;&amp; (s.indexOf(\"]\") != -1))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString s = RawDataTypeCell();\r\n\t\tif((s.indexOf(\"[\") != -1) &amp;&amp; (s.indexOf(\"-\") != -1)\r\n\t\t\t\t&amp;&amp; (s.indexOf(\"]\") != -1))\r\n\t\t\treturn true;\r\n\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isRawSubArray();
+	boolean IsRawSubArray();
 
 	/**
 	 * <!-- begin-user-doc -->

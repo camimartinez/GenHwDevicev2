@@ -22,9 +22,7 @@
  */
 package alma.control.datamodel.meta.base;
 
-import alma.control.datamodel.meta.amb.MandC;
 import org.eclipse.emf.ecore.EObject;
-import org.xml.sax.ErrorHandler;
 
 /**
  * <!-- begin-user-doc -->
@@ -285,7 +283,7 @@ public interface Util extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tif (isArray(s)) {\n\t\t\t\t\tint b;\n\t\t\t\t\tint n = Integer.parseInt(NumberOfItems(s));\n\t\t\t\t\tif(s.startsWith(\"&amp;lt;\"))\n\t\t\t\t\t\treturn \"0\";\n\t\t\t\t\tif(s.startsWith(\"[\"))\n\t\t\t\t\t\treturn \"0\";\n\t\t\t\t\tint i = s.indexOf(\"[\");\n\t\t\t\t\tb = Integer.parseInt((String)tables.getRawBytes().get(s.substring(0,1)));\n\t\t\n\t\t\t\t\tString x = Integer.toString(n * b);\n\t\t\t\t\treturn x;\n\t\t\t\t}\n\t\t\t\treturn (String)tables.getRawBytes().get(s);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif (isArray(s)) {\n\t\t\tint b;\n\t\t\tint n = Integer.parseInt(NumberOfItems(s));\n\t\t\tif(s.startsWith(\"&amp;lt;\"))\n\t\t\t\treturn \"0\";\n\t\t\tif(s.startsWith(\"[\"))\n\t\t\t\treturn \"0\";\n\t\t\tint i = s.indexOf(\"[\");\n\t\t\tString aux = (String) tables.getRawBytes().get(s.substring(0, i));\n\t\t\tb = Integer.parseInt(aux);\n\n\t\t\tString x = Integer.toString(n * b);\n\t\t\treturn x;\n\t\t}\n\t\treturn (String)tables.getRawBytes().get(s);'"
 	 * @generated
 	 */
 	String RawDataTypeTotalBytes(String s);

@@ -23,8 +23,6 @@
 package alma.control.datamodel.meta.base;
 
 import alma.control.datamodel.meta.amb.Main;
-import alma.control.datamodel.meta.amb.Monitor;
-import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
@@ -61,7 +59,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMPointsList <em>MPoints</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getTablesAux <em>Tables Aux</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMainAmb <em>Main Amb</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMainEth <em>Main Eth</em>}</li>
  * </ul>
@@ -552,7 +549,7 @@ public interface DeviceModel extends EObject {
 	 * @model required="true"
 	 * @generated
 	 */
-	List<ArchiveProperty> getAPropertiesList();
+	EList<ArchiveProperty> getAPropertiesList();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -603,7 +600,7 @@ public interface DeviceModel extends EObject {
 	 * @model required="true"
 	 * @generated
 	 */
-	List<ControlPoint> getCPointsList();
+	EList<ControlPoint> getCPointsList();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -654,7 +651,7 @@ public interface DeviceModel extends EObject {
 	 * @model required="true"
 	 * @generated
 	 */
-	List<MonitorPoint> getMPointsList();
+	EList<MonitorPoint> getMPointsList();
 
 	/**
 	 * Returns the value of the '<em><b>Utils</b></em>' reference.
@@ -707,32 +704,6 @@ public interface DeviceModel extends EObject {
 	 * @generated
 	 */
 	void setTables(Table value);
-
-	/**
-	 * Returns the value of the '<em><b>Tables Aux</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tables Aux</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tables Aux</em>' attribute.
-	 * @see #setTablesAux(Object)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_TablesAux()
-	 * @model
-	 * @generated
-	 */
-	Object getTablesAux();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getTablesAux <em>Tables Aux</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tables Aux</em>' attribute.
-	 * @see #getTablesAux()
-	 * @generated
-	 */
-	void setTablesAux(Object value);
 
 	/**
 	 * Returns the value of the '<em><b>Main Amb</b></em>' reference.
@@ -797,6 +768,7 @@ public interface DeviceModel extends EObject {
 	 * @!generated
 	 */
 	ControlPoint getControlPoint(String fullName);
+	
 	/**
 	 * Returns the value of the '<em><b>Monitor Point</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

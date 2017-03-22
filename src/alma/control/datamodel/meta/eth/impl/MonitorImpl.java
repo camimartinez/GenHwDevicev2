@@ -37,6 +37,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -157,7 +158,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isEnumAddress() {
+	public boolean IsEnumAddress() {
 				try {
 					Integer.decode(mac.Address());
 				}
@@ -182,8 +183,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDataArray() {
-		return mac.isDataArray();
+	public boolean IsDataArray() {
+		return mac.IsDataArray();
 	}
 
 	/**
@@ -191,8 +192,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isOpenArray() {
-		return mac.isOpenArray();
+	public boolean IsOpenArray() {
+		return mac.IsOpenArray();
 	}
 
 	/**
@@ -281,15 +282,15 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isArchived() {
+	public boolean IsArchived() {
 		
 				if (DataType().equals("uint"))
 					return false;
 			
 				if ( DataType().equals("bool") || DataType().equals("boolean")
 						|| DataType().equals("string")
-						|| (DataType().equals("double") && isDataArray())
-						|| (DataType().equals("int") && isDataArray()) )
+						|| (DataType().equals("double") && IsDataArray())
+						|| (DataType().equals("int") && IsDataArray()) )
 					return false;
 				return true;
 	}
@@ -299,8 +300,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean isPartOfPattern() {
+	public boolean IsPartOfPattern() {
 		return false;
 	}
 
@@ -309,9 +309,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-
-	public boolean isHomogeneous() {
+	public boolean IsHomogeneous() {
 		return true;
 	}
 
@@ -320,7 +318,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorEth(final String[] row, final Object parent, final Table tables, final Util utils, final String dirDevice) {
+	public void setMonitorEth(final String[] row, final EObject parent, final Table tables, final Util utils, final String dirDevice) {
 		this.tables = tables;
 		this.utils = utils;
 		setMonitorPoint(row, parent,tables,utils);
@@ -331,7 +329,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		Resource res = resourceSetMonitor.createResource(URI.createURI(dir));
 		res.getContents().add(mac);	
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,7 +351,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @!generated
 	 */
 	@Override
-	public boolean isPartOfHomogeneous() {
+	public boolean IsPartOfHomogeneous() {
 		return false;
 	}
 
@@ -415,11 +413,4 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		}
 		return super.eIsSet(featureID);
 	}
-
-	@Override
-	public void addDependent(Object son) {
-		// TODO Auto-generated method stub
-
-	}
-
 } //MonitorImpl

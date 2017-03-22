@@ -22,11 +22,21 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
+import java.util.ArrayList;
+import java.util.Hashtable;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXParseException;
+
 import alma.control.datamodel.meta.amb.AmbPackage;
-import alma.control.datamodel.meta.amb.MandC;
-
 import alma.control.datamodel.meta.amb.impl.AmbPackageImpl;
-
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
@@ -42,29 +52,9 @@ import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
-
 import alma.control.datamodel.meta.eth.EthPackage;
-
+import alma.control.datamodel.meta.eth.MandC;
 import alma.control.datamodel.meta.eth.impl.EthPackageImpl;
-
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.Iterator;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.emf.ecore.resource.Resource;
-
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXParseException;
 
 /**
  * <!-- begin-user-doc -->
@@ -613,17 +603,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDeviceModel_TablesAux() {
-		return (EAttribute)deviceModelEClass.getEStructuralFeatures().get(21);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getDeviceModel_MainAmb() {
-		return (EReference)deviceModelEClass.getEStructuralFeatures().get(22);
+		return (EReference)deviceModelEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -632,7 +613,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	public EReference getDeviceModel_MainEth() {
-		return (EReference)deviceModelEClass.getEStructuralFeatures().get(23);
+		return (EReference)deviceModelEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -748,8 +729,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMandCBase_Parent() {
-		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(5);
+	public EReference getMandCBase_Parent() {
+		return (EReference)mandCBaseEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -767,7 +748,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	public EAttribute getMandCBase_Dependents() {
-		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -776,7 +757,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	public EAttribute getMandCBase_ResourceSetDependents() {
-		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)mandCBaseEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -785,7 +766,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	public EReference getMandCBase_Tables() {
-		return (EReference)mandCBaseEClass.getEStructuralFeatures().get(8);
+		return (EReference)mandCBaseEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1442,7 +1423,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEReference(deviceModelEClass, DEVICE_MODEL__MPOINTS);
 		createEReference(deviceModelEClass, DEVICE_MODEL__UTILS);
 		createEReference(deviceModelEClass, DEVICE_MODEL__TABLES);
-		createEAttribute(deviceModelEClass, DEVICE_MODEL__TABLES_AUX);
 		createEReference(deviceModelEClass, DEVICE_MODEL__MAIN_AMB);
 		createEReference(deviceModelEClass, DEVICE_MODEL__MAIN_ETH);
 
@@ -1459,10 +1439,10 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEAttribute(mandCBaseEClass, MAND_CBASE__ROW);
 		createEAttribute(mandCBaseEClass, MAND_CBASE__PARENT_ROW);
 		createEAttribute(mandCBaseEClass, MAND_CBASE__SHEET);
-		createEAttribute(mandCBaseEClass, MAND_CBASE__PARENT);
 		createEAttribute(mandCBaseEClass, MAND_CBASE__DEPENDENTS);
 		createEAttribute(mandCBaseEClass, MAND_CBASE__RESOURCE_SET_DEPENDENTS);
 		createEReference(mandCBaseEClass, MAND_CBASE__TABLES);
+		createEReference(mandCBaseEClass, MAND_CBASE__PARENT);
 		createEReference(mandCBaseEClass, MAND_CBASE__UTILS);
 		createEReference(mandCBaseEClass, MAND_CBASE__ARCHIVE);
 
@@ -1588,9 +1568,9 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEReference(getArchiveProperty_Cp(), this.getControlPoint(), null, "cp", null, 0, 1, ArchiveProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArchiveProperty_Tables(), this.getTable(), null, "tables", null, 0, 1, ArchiveProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isMonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "IsMonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "isControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(archivePropertyEClass, ecorePackage.getEBoolean(), "IsControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(archivePropertyEClass, ecorePackage.getEString(), "Name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1629,11 +1609,11 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		addEOperation(controlPointEClass, ecorePackage.getEBoolean(), "ArchiveOnUse", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlPointEClass, ecorePackage.getEBoolean(), "isMonitored", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlPointEClass, ecorePackage.getEBoolean(), "IsMonitored", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(controlPointEClass, null, "setControlPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1659,7 +1639,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEReference(getDeviceModel_MPoints(), this.getMonitorPoint(), null, "mPoints", null, 1, -1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_Utils(), this.getUtil(), null, "utils", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_Tables(), this.getTable(), null, "tables", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDeviceModel_TablesAux(), ecorePackage.getEJavaObject(), "tablesAux", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_MainAmb(), theAmbPackage.getMain(), null, "mainAmb", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceModel_MainEth(), theEthPackage.getMain(), null, "mainEth", null, 0, 1, DeviceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1747,17 +1726,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEAttribute(getMandCBase_Row(), this.getEStringArray(), "row", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandCBase_ParentRow(), this.getEStringArray(), "parentRow", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandCBase_Sheet(), ecorePackage.getEInt(), "sheet", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMandCBase_Parent(), ecorePackage.getEJavaObject(), "parent", null, 0, 1, MandCBase.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandCBase_Dependents(), ecorePackage.getEResource(), "dependents", null, 0, 1, MandCBase.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMandCBase_ResourceSetDependents(), ecorePackage.getEResourceSet(), "resourceSetDependents", null, 0, 1, MandCBase.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandCBase_Tables(), this.getTable(), null, "tables", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMandCBase_Parent(), ecorePackage.getEObject(), null, "parent", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandCBase_Utils(), this.getUtil(), null, "utils", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMandCBase_Archive(), this.getArchiveProperty(), null, "archive", null, 0, 1, MandCBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(mandCBaseEClass, null, "addDependent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "son", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isDependent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "IsDependent", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "hasDependents", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1765,13 +1744,13 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "Name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getDependentName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "GetDependentName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getAltDependentName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "GetAltDependentName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getDependsOnName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "GetDependsOnName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "getAltDependsOnName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "GetAltDependsOnName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DataUnits", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1787,11 +1766,11 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "Description", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isExternal", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "IsExternal", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isArchived", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "IsArchived", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isImplemented", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "IsImplemented", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(mandCBaseEClass, this.getRuntimeExceptionDT(), "dErr", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRuntimeExceptionDT(), "err", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1816,11 +1795,11 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		addEOperation(mandCBaseEClass, ecorePackage.getEString(), "DescriptionFormattedL5", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "isMonitored", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCBaseEClass, ecorePackage.getEBoolean(), "IsMonitored", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(mandCBaseEClass, null, "setMandCBase", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1857,17 +1836,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		addEOperation(monitorPointEClass, ecorePackage.getEString(), "AltMPName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isPartOfPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "IsPartOfPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "IsHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isPartOfHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "IsPartOfHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "isMonitored", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorPointEClass, ecorePackage.getEBoolean(), "IsMonitored", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(monitorPointEClass, null, "setMonitorPoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2091,7 +2070,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEDataType(eStringArrayEDataType, String[].class, "EStringArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(eStringArray3EDataType, String[][][].class, "EStringArray3", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(eStringArray2EDataType, String[][].class, "EStringArray2", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(mandCETHDTEDataType, alma.control.datamodel.meta.eth.MandC.class, "MandCETHDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(mandCETHDTEDataType, MandC.class, "MandCETHDT", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

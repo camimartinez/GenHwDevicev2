@@ -41,10 +41,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getParentRow <em>Parent Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependents <em>Resource Set Dependents</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getUtils <em>Utils</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}</li>
  * </ul>
@@ -186,30 +186,30 @@ public interface MandCBase extends EObject {
 	void setSheet(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent</em>' attribute.
-	 * @see #setParent(Object)
+	 * @return the value of the '<em>Parent</em>' reference.
+	 * @see #setParent(EObject)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Parent()
-	 * @model transient="true"
+	 * @model
 	 * @generated
 	 */
-	Object getParent();
+	EObject getParent();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent</em>' attribute.
+	 * @param value the new value of the '<em>Parent</em>' reference.
 	 * @see #getParent()
 	 * @generated
 	 */
-	void setParent(Object value);
+	void setParent(EObject value);
 
 	/**
 	 * Returns the value of the '<em><b>Archive</b></em>' reference.
@@ -243,7 +243,15 @@ public interface MandCBase extends EObject {
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='dependents.getContents().add(son);'"
 	 * @generated
 	 */
-	void addDependent(Object son);
+	void addDependent(EObject son);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (parent == null)\r\n\treturn false;\r\nreturn true;'"
+	 * @generated
+	 */
+	boolean IsDependent();
 
 	/**
 	 * Returns the value of the '<em><b>Dependents</b></em>' attribute.
@@ -352,15 +360,6 @@ public interface MandCBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (parent == null)\r\n\treturn false;\r\nreturn true;'"
-	 * @generated
-	 */
-	boolean isDependent();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return !dependents.getContents().isEmpty();'"
 	 * @generated
 	 */
@@ -377,7 +376,7 @@ public interface MandCBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(isDependent())\n\t\t\t\t\treturn row[tables.getColNum(sheet, \"Name\")].substring(1);\n\t\t\t\telse\n\t\t\t\t\treturn row[tables.getColNum(sheet, \"Name\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(IsDependent())\n\t\t\t\t\treturn row[tables.getColNum(sheet, \"Name\")].substring(1);\n\t\t\t\telse\n\t\t\t\t\treturn row[tables.getColNum(sheet, \"Name\")];'"
 	 * @generated
 	 */
 	String Name();
@@ -385,38 +384,34 @@ public interface MandCBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return Name();\r\n'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return Name();\r\n'"
 	 * @generated
 	 */
-	String getDependentName();
+	String GetDependentName();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.AltName(getDependentName());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.AltName(GetDependentName());'"
 	 * @generated
 	 */
-	String getAltDependentName();
+	String GetAltDependentName();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!isDependent())\n\t\t\treturn \"\";\n\t\treturn ((MandCBase)getParent()).Name();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!IsDependent())\n\t\t\treturn \"\";\n\t\treturn ((MandCBase)getParent()).Name();'"
 	 * @generated
 	 */
-	String getDependsOnName();
+	String GetDependsOnName();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.AltName(((MandCBase)getParent()).Name());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.AltName(((MandCBase)getParent()).Name());'"
 	 * @generated
 	 */
-	String getAltDependsOnName();
+	String GetAltDependsOnName();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -477,29 +472,26 @@ public interface MandCBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return External();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return External();'"
 	 * @generated
 	 */
-	boolean isExternal();
+	boolean IsExternal();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return true;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return true;'"
 	 * @generated
 	 */
-	boolean isArchived();
+	boolean IsArchived();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return Implement();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return Implement();'"
 	 * @generated
 	 */
-	boolean isImplemented();
+	boolean IsImplemented();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -578,10 +570,10 @@ public interface MandCBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model
 	 * @generated
 	 */
-	boolean isMonitored();
+	boolean IsMonitored();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -590,6 +582,6 @@ public interface MandCBase extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nthis.row = row;\nthis.parent = parent;\nresourceSetDependents = new ResourceSetImpl();\ndependents = resourceSetDependents.createResource(URI.createURI(\"\"));\nsheet = (this instanceof Monitor) ? tables.getSheetNum(\"Monitor Point\") : tables.getSheetNum(\"Control Point\");'"
 	 * @generated
 	 */
-	void setMandCBase(String[] row, Object parent, Table tables, Util utils);
+	void setMandCBase(String[] row, EObject parent, Table tables, Util utils);
 
 } // MandCBase

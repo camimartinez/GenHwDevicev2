@@ -26,7 +26,7 @@ import alma.control.datamodel.meta.base.ControlPoint;
 
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,11 +98,10 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\ttry\r\n\t\t{\r\n\t\t\tInteger.decode(mac.Address());\r\n\t\t}\r\n\t\tcatch(Exception e)\r\n\t\t{\r\n\t\t\treturn true;\r\n\t\t}\r\n\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\ttry{\r\n\t\t\tInteger.decode(mac.Address());\r\n\t\t}catch(Exception e){\r\n\t\t\treturn true;\r\n\t\t}\r\n\r\n\t\treturn false;'"
 	 * @generated
 	 */
-	boolean isEnumAddress();
+	boolean IsEnumAddress();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,20 +114,18 @@ public interface Control extends ControlPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isDataArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsDataArray();'"
 	 * @generated
 	 */
-	boolean isDataArray();
+	boolean IsDataArray();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.isOpenArray();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.IsOpenArray();'"
 	 * @generated
 	 */
-	boolean isOpenArray();
+	boolean IsOpenArray();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,6 +207,6 @@ public interface Control extends ControlPoint {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetControlPoint(row, parent, tables, utils);\nmac = new MandCImpl();\nmac.setMandCEth(row, sheet, tables, utils);\nString dir = setParameters(dirDevice);\nresourceSetControl = new ResourceSetImpl();\nResource res = resourceSetControl.createResource(URI.createURI(dir));\nres.getContents().add(mac);'"
 	 * @generated
 	 */
-	void setControlEth(String[] row, Object parent, Table tables, Util utils, String dirDevice);
+	void setControlEth(String[] row, EObject parent, Table tables, Util utils, String dirDevice);
 
 } // Control

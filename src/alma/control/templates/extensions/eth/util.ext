@@ -33,3 +33,6 @@ alma.control.datamodel.meta.base.impl.DeviceModelImpl.DescriptionAsString();
 
 String VendorClass():JAVA
 alma.control.datamodel.meta.eth.impl.DeviceModelImpl.VendorClass();
+
+String TheEnd():JAVA
+alma.control.datamodel.meta.base.impl.DeviceModelImpl.TheEnd();

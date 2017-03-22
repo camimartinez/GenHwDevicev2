@@ -24,8 +24,6 @@ package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.emf.ecore.resource.Resource;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Archive Property</b></em>'.
@@ -180,20 +178,18 @@ public interface ArchiveProperty extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return mp != null;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mp != null;'"
 	 * @generated
 	 */
-	boolean isMonitorPoint();
+	boolean IsMonitorPoint();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return cp != null;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return cp != null;'"
 	 * @generated
 	 */
-	boolean isControlPoint();
+	boolean IsControlPoint();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -196,22 +196,13 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE__SHEET = 4;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__PARENT = 5;
-
-	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__DEPENDENTS = 6;
+	int MAND_CBASE__DEPENDENTS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
@@ -220,7 +211,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__RESOURCE_SET_DEPENDENTS = 7;
+	int MAND_CBASE__RESOURCE_SET_DEPENDENTS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -229,7 +220,16 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__TABLES = 8;
+	int MAND_CBASE__TABLES = 7;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__PARENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
@@ -314,15 +314,6 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__SHEET = MAND_CBASE__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_POINT__PARENT = MAND_CBASE__PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,6 +339,15 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_POINT__TABLES = MAND_CBASE__TABLES;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__PARENT = MAND_CBASE__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
@@ -585,22 +585,13 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__TABLES = 20;
 
 	/**
-	 * The feature id for the '<em><b>Tables Aux</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__TABLES_AUX = 21;
-
-	/**
 	 * The feature id for the '<em><b>Main Amb</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN_AMB = 22;
+	int DEVICE_MODEL__MAIN_AMB = 21;
 
 	/**
 	 * The feature id for the '<em><b>Main Eth</b></em>' reference.
@@ -609,7 +600,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN_ETH = 23;
+	int DEVICE_MODEL__MAIN_ETH = 22;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
@@ -618,7 +609,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_FEATURE_COUNT = 24;
+	int DEVICE_MODEL_FEATURE_COUNT = 23;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
@@ -740,15 +731,6 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__SHEET = MAND_CBASE__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__PARENT = MAND_CBASE__PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -774,6 +756,15 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR_POINT__TABLES = MAND_CBASE__TABLES;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__PARENT = MAND_CBASE__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
@@ -1843,17 +1834,6 @@ public interface BasePackage extends EPackage {
 	EReference getDeviceModel_Tables();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.DeviceModel#getTablesAux <em>Tables Aux</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tables Aux</em>'.
-	 * @see alma.control.datamodel.meta.base.DeviceModel#getTablesAux()
-	 * @see #getDeviceModel()
-	 * @generated
-	 */
-	EAttribute getDeviceModel_TablesAux();
-
-	/**
 	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMainAmb <em>Main Amb</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2006,15 +1986,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_Sheet();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent</em>'.
+	 * @return the meta object for the reference '<em>Parent</em>'.
 	 * @see alma.control.datamodel.meta.base.MandCBase#getParent()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EAttribute getMandCBase_Parent();
+	EReference getMandCBase_Parent();
 
 	/**
 	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}'.
@@ -3044,14 +3024,6 @@ public interface BasePackage extends EPackage {
 		EReference DEVICE_MODEL__TABLES = eINSTANCE.getDeviceModel_Tables();
 
 		/**
-		 * The meta object literal for the '<em><b>Tables Aux</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DEVICE_MODEL__TABLES_AUX = eINSTANCE.getDeviceModel_TablesAux();
-
-		/**
 		 * The meta object literal for the '<em><b>Main Amb</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3168,12 +3140,12 @@ public interface BasePackage extends EPackage {
 		EAttribute MAND_CBASE__SHEET = eINSTANCE.getMandCBase_Sheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAND_CBASE__PARENT = eINSTANCE.getMandCBase_Parent();
+		EReference MAND_CBASE__PARENT = eINSTANCE.getMandCBase_Parent();
 
 		/**
 		 * The meta object literal for the '<em><b>Archive</b></em>' reference feature.

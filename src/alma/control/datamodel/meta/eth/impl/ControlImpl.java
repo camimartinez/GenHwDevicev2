@@ -37,6 +37,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -157,11 +158,10 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isEnumAddress() {
-				try {
+	public boolean IsEnumAddress() {
+				try{
 					Integer.decode(mac.Address());
-				}
-				catch(Exception e) {
+				}catch(Exception e){
 					return true;
 				}
 		
@@ -182,8 +182,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDataArray() {
-		return mac.isDataArray();
+	public boolean IsDataArray() {
+		return mac.IsDataArray();
 	}
 
 	/**
@@ -191,8 +191,8 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isOpenArray() {
-		return mac.isOpenArray();
+	public boolean IsOpenArray() {
+		return mac.IsOpenArray();
 	}
 
 	/**
@@ -281,7 +281,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlEth(final String[] row, final Object parent, final Table tables, final Util utils, final String dirDevice) {
+	public void setControlEth(final String[] row, final EObject parent, final Table tables, final Util utils, final String dirDevice) {
 		this.tables = tables;
 		this.utils = utils;
 		setControlPoint(row, parent, tables, utils);
@@ -366,11 +366,4 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		}
 		return super.eIsSet(featureID);
 	}
-
-	@Override
-	public void addDependent(Object son) {
-		// TODO Auto-generated method stub
-		
-	}
-
 } //ControlImpl

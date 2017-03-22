@@ -22,7 +22,7 @@
  */
 package alma.control.datamodel.meta.base;
 
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
@@ -191,34 +191,34 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model
 	 * @generated
 	 */
-	boolean isPartOfPattern();
+	boolean IsPartOfPattern();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model
 	 * @generated
 	 */
-	boolean isHomogeneous();
+	boolean IsHomogeneous();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model
 	 * @generated
 	 */
-	boolean isPartOfHomogeneous();
+	boolean IsPartOfHomogeneous();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model
 	 * @generated
 	 */
-	boolean isMonitored();
+	boolean IsMonitored();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,6 +227,6 @@ public interface MonitorPoint extends MandCBase {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMandCBase(row, parent, tables, utils);'"
 	 * @generated
 	 */
-	void setMonitorPoint(String[] row, Object parent, Table tables, Util utils);
+	void setMonitorPoint(String[] row, EObject parent, Table tables, Util utils);
 
 } // MonitorPoint

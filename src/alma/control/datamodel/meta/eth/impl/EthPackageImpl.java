@@ -394,13 +394,13 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		addEOperation(controlEClass, ecorePackage.getEString(), "Address", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlEClass, ecorePackage.getEBoolean(), "isEnumAddress", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlEClass, ecorePackage.getEBoolean(), "IsEnumAddress", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(controlEClass, ecorePackage.getEString(), "DataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlEClass, ecorePackage.getEBoolean(), "isDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlEClass, ecorePackage.getEBoolean(), "IsDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(controlEClass, ecorePackage.getEBoolean(), "isOpenArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(controlEClass, ecorePackage.getEBoolean(), "IsOpenArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(controlEClass, ecorePackage.getEString(), "getArrayLength", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -422,7 +422,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		op = addEOperation(controlEClass, null, "setControlEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "dirDevice", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -459,9 +459,9 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		addEOperation(mandCEClass, ecorePackage.getEString(), "DataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCEClass, ecorePackage.getEBoolean(), "isDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCEClass, ecorePackage.getEBoolean(), "IsDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mandCEClass, ecorePackage.getEBoolean(), "isOpenArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(mandCEClass, ecorePackage.getEBoolean(), "IsOpenArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(mandCEClass, ecorePackage.getEString(), "getArrayLength", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -497,13 +497,13 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		addEOperation(monitorEClass, ecorePackage.getEString(), "Address", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "isEnumAddress", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "IsEnumAddress", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(monitorEClass, ecorePackage.getEString(), "DataType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "isDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "IsDataArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "isOpenArray", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "IsOpenArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(monitorEClass, ecorePackage.getEString(), "getArrayLength", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -523,17 +523,17 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		addEOperation(monitorEClass, ecorePackage.getEString(), "DataToDatabaseType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "isArchived", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "IsArchived", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "isPartOfPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "IsPartOfPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "isHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "IsHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "isPartOfHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(monitorEClass, ecorePackage.getEBoolean(), "IsPartOfHomogeneous", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(monitorEClass, null, "setMonitorEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "dirDevice", 0, 1, IS_UNIQUE, IS_ORDERED);

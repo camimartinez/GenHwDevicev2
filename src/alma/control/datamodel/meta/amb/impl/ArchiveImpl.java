@@ -71,7 +71,7 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIntervalTE() {
+	public boolean IsIntervalTE() {
 		String s = IntervalFull();
 		       if (s.startsWith("te/"))
 		           return true;
@@ -84,7 +84,7 @@ public class ArchiveImpl extends ArchivePropertyImpl implements Archive {
 	 * @generated
 	 */
 	public String Interval() {
-		if(isIntervalTE())
+		if(IsIntervalTE())
 			return IntervalFull().substring(3);
 		return IntervalFull();
 	}

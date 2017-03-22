@@ -22,9 +22,9 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
+import java.util.ArrayList;
+
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -34,7 +34,6 @@ import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.SimpleErrorHandler;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
-import java.util.ArrayList;
 
 /**
  * <!-- begin-user-doc -->

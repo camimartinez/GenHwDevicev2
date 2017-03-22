@@ -23,25 +23,17 @@ package alma.control.datamodel.meta.base.impl;
  */
 
 
-import java.io.IOException;
-import java.util.Collections;
-
 import org.eclipse.emf.common.notify.Notification;
-import alma.control.datamodel.meta.amb.Main;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
-
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -286,8 +278,8 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * @!generated
 	 */
 	@Override
-	public boolean isMonitored(){
-		if(isExternal() && isArchived() && !isPartOfPattern() && !isPartOfHomogeneous())
+	public boolean IsMonitored(){
+		if(IsExternal() && IsArchived() && !IsPartOfPattern() && !IsPartOfHomogeneous())
 			return true;
 		return false;
 	}
@@ -297,28 +289,28 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	abstract public boolean isPartOfPattern();
+	abstract public boolean IsPartOfPattern();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	abstract public boolean isHomogeneous();
+	abstract public boolean IsHomogeneous();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	abstract public boolean isPartOfHomogeneous();
+	abstract public boolean IsPartOfHomogeneous();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorPoint(final String[] row, final Object parent, final Table tables, final Util utils) {
+	public void setMonitorPoint(final String[] row, final EObject parent, final Table tables, final Util utils) {
 		this.tables = tables;
 		this.utils = utils;
 		setMandCBase(row, parent, tables, utils);

@@ -22,26 +22,19 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
@@ -144,7 +137,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isFEStatus() {
+	public boolean IsFEStatus() {
 		return CanBeInvalid().equals("yes-feStatus");
 	}
 
@@ -306,8 +299,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isRawDataArray() {
-		return mac.isRawDataArray();
+	public boolean IsRawDataArray() {
+		return mac.IsRawDataArray();
 	}
 
 	/**
@@ -315,8 +308,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isWorldDataArray() {
-		return mac.isWorldDataArray();
+	public boolean IsWorldDataArray() {
+		return mac.IsWorldDataArray();
 	}
 
 	/**
@@ -324,8 +317,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isConversion() {
-		return mac.isConversion();
+	public boolean IsConversion() {
+		return mac.IsConversion();
 	}
 
 	/**
@@ -333,8 +326,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSpecialConversion() {
-		return mac.isSpecialConversion();
+	public boolean IsSpecialConversion() {
+		return mac.IsSpecialConversion();
 	}
 
 	/**
@@ -396,8 +389,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentGroupBit() {
-		return mac.isDependentGroupBit();
+	public boolean IsDependentGroupBit() {
+		return mac.IsDependentGroupBit();
 	}
 
 	/**
@@ -405,8 +398,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentBit() {
-		return mac.isDependentBit();
+	public boolean IsDependentBit() {
+		return mac.IsDependentBit();
 	}
 
 	/**
@@ -414,8 +407,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentElement() {
-		return mac.isDependentElement();
+	public boolean IsDependentElement() {
+		return mac.IsDependentElement();
 	}
 
 	/**
@@ -423,8 +416,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isByteSwapped() {
-		return mac.isByteSwapped();
+	public boolean IsByteSwapped() {
+		return mac.IsByteSwapped();
 	}
 
 	/**
@@ -432,8 +425,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentBitElement() {
-		return mac.isDependentBitElement();
+	public boolean IsDependentBitElement() {
+		return mac.IsDependentBitElement();
 	}
 
 	/**
@@ -441,8 +434,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDependentArrayElement() {
-		return mac.isDependentArrayElement();
+	public boolean IsDependentArrayElement() {
+		return mac.IsDependentArrayElement();
 	}
 
 	/**
@@ -459,8 +452,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSingleBit() {
-		return mac.isSingleBit();
+	public boolean IsSingleBit() {
+		return mac.IsSingleBit();
 	}
 
 	/**
@@ -468,8 +461,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getBit() {
-		return mac.getBit();
+	public String GetBit() {
+		return mac.GetBit();
 	}
 
 	/**
@@ -477,8 +470,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMask() {
-		return mac.getMask();
+	public String GetMask() {
+		return mac.GetMask();
 	}
 
 	/**
@@ -486,8 +479,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getFirstBit() {
-		return mac.getFirstBit();
+	public String GetFirstBit() {
+		return mac.GetFirstBit();
 	}
 
 	/**
@@ -495,8 +488,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLastBit() {
-		return mac.getLastBit();
+	public String GetLastBit() {
+		return mac.GetLastBit();
 	}
 
 	/**
@@ -504,8 +497,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGroupMask() {
-		return mac.getGroupMask();
+	public String GetGroupMask() {
+		return mac.GetGroupMask();
 	}
 
 	/**
@@ -513,8 +506,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGroupEnd() {
-		return mac.getGroupEnd();
+	public String GetGroupEnd() {
+		return mac.GetGroupEnd();
 	}
 
 	/**
@@ -522,8 +515,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGroupStart() {
-		return mac.getGroupStart();
+	public String GetGroupStart() {
+		return mac.GetGroupStart();
 	}
 
 	/**
@@ -549,8 +542,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isRawSubArray() {
-		return mac.isRawSubArray();
+	public boolean IsRawSubArray() {
+		return mac.IsRawSubArray();
 	}
 
 	/**
@@ -603,9 +596,9 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isPattern() {
+	public boolean IsPattern() {
 		boolean ret = true;
-						if( this.isDependent()) ret = false;
+						if( this.IsDependent()) ret = false;
 						if( this.getDependents().getContents().isEmpty()) ret = false;
 						for (Iterator<EObject> iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {
 							MonitorImpl var = (MonitorImpl) iter.next();
@@ -620,11 +613,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @!generated
 	 */
 	@Override
-	public boolean isPartOfPattern() {
+	public boolean IsPartOfPattern() {
 		boolean ret = false;
-		if( isDependent() ){
+		if( IsDependent() ){
 			MonitorImpl parent = ((MonitorImpl)this.getParent());
-			if( parent.isPattern() )
+			if( parent.IsPattern() )
 				ret = true;
 		}
 		return ret;
@@ -636,7 +629,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @!generated
 	 */
 	@Override
-	public boolean isHomogeneous() {
+	public boolean IsHomogeneous() {
 		boolean ret = true;
 		String firsttype = null;
 		if( hasDependents() ){
@@ -660,11 +653,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @!generated
 	 */
 	@Override
-	public boolean isPartOfHomogeneous() {
+	public boolean IsPartOfHomogeneous() {
 		boolean ret = false;
-		if( isDependent() ){
+		if( IsDependent() ){
 			MonitorImpl parent = ((MonitorImpl)this.getParent());
-			if( parent.isHomogeneous() )
+			if( parent.IsHomogeneous() )
 				ret = true;
 		}
 		return ret;
@@ -675,7 +668,7 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorAmb(final String[] row, final Object parent, final Table tables, final Util utils, final String dirDevice) {
+	public void setMonitorAmb(final String[] row, final EObject parent, final Table tables, final Util utils, final String dirDevice) {
 		this.tables = tables;
 		this.utils = utils;
 		setMonitorPoint(row, parent,tables,utils);
@@ -760,11 +753,4 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		}
 		return super.eIsSet(featureID);
 	}
-
-	@Override
-	public void addDependent(Object son) {
-		// TODO Auto-generated method stub
-
-	}
-
 } //MonitorImpl

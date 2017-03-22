@@ -197,15 +197,6 @@ public interface EthPackage extends EPackage {
 	int CONTROL__SHEET = BasePackage.CONTROL_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__PARENT = BasePackage.CONTROL_POINT__PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +222,15 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL__TABLES = BasePackage.CONTROL_POINT__TABLES;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__PARENT = BasePackage.CONTROL_POINT__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
@@ -477,15 +477,6 @@ public interface EthPackage extends EPackage {
 	int DEVICE_MODEL__TABLES = BasePackage.DEVICE_MODEL__TABLES;
 
 	/**
-	 * The feature id for the '<em><b>Tables Aux</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__TABLES_AUX = BasePackage.DEVICE_MODEL__TABLES_AUX;
-
-	/**
 	 * The feature id for the '<em><b>Main Amb</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -705,15 +696,6 @@ public interface EthPackage extends EPackage {
 	int MONITOR__SHEET = BasePackage.MONITOR_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__PARENT = BasePackage.MONITOR_POINT__PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -739,6 +721,15 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR__TABLES = BasePackage.MONITOR_POINT__TABLES;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__PARENT = BasePackage.MONITOR_POINT__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.

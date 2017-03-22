@@ -232,7 +232,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"DataType\")];\nreturn isDataArray() ? s.substring(0,s.indexOf(\"[\")) : s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"DataType\")];\nreturn IsDataArray() ? s.substring(0,s.indexOf(\"[\")) : s;'"
 	 * @generated
 	 */
 	String DataType();
@@ -240,26 +240,24 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Data Type\")].endsWith(\"]\") ? true : false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Data Type\")].endsWith(\"]\") ? true : false;'"
 	 * @generated
 	 */
-	boolean isDataArray();
+	boolean IsDataArray();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!IsDataArray()) return false;\nString s =  row[table.getColNum(sheet, \"Data Type\")];\nreturn (s.indexOf(\"]\") - s.indexOf(\"[\") == 1) ? true : false;'"
+	 * @generated
+	 */
+	boolean IsOpenArray();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!isDataArray()) return false;\nString s =  row[table.getColNum(sheet, \"Data Type\")];\nreturn (s.indexOf(\"]\") - s.indexOf(\"[\") == 1) ? true : false;'"
-	 * @generated
-	 */
-	boolean isOpenArray();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!isDataArray()) return \"1\";\nString s = row[table.getColNum(sheet, \"Data Type\")];\nreturn s.substring(s.indexOf(\"[\")+1,s.indexOf(\"]\"));'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!IsDataArray()) return \"1\";\nString s = row[table.getColNum(sheet, \"Data Type\")];\nreturn s.substring(s.indexOf(\"[\")+1,s.indexOf(\"]\"));'"
 	 * @generated
 	 */
 	String getArrayLength();

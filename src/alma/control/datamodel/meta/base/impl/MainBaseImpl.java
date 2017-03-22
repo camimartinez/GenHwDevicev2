@@ -5,7 +5,6 @@ package alma.control.datamodel.meta.base.impl;
 import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -299,7 +298,7 @@ public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
 	public String Description() {
 		return row[tables.getColNum(sheet, "Description")];
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

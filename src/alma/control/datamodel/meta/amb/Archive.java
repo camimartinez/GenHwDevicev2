@@ -47,16 +47,15 @@ public interface Archive extends ArchiveProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = IntervalFull();\r\n       if (s.startsWith(\"te/\"))\r\n           return true;\r\nreturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = IntervalFull();\r\n       if (s.startsWith(\"te/\"))\r\n           return true;\r\nreturn false;'"
 	 * @generated
 	 */
-	boolean isIntervalTE();
+	boolean IsIntervalTE();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(isIntervalTE())\r\n\treturn IntervalFull().substring(3);\r\nreturn IntervalFull();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(IsIntervalTE())\r\n\treturn IntervalFull().substring(3);\r\nreturn IntervalFull();'"
 	 * @generated
 	 */
 	String Interval();

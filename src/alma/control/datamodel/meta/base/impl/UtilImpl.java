@@ -23,26 +23,19 @@ package alma.control.datamodel.meta.base.impl;
  */
 
 
-import alma.control.datamodel.meta.amb.AmbPackage;
-import alma.control.datamodel.meta.amb.MandC;
-import alma.control.datamodel.meta.base.BaseFactory;
-import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.DeviceModel;
-import alma.control.datamodel.meta.base.MainBase;
-import alma.control.datamodel.meta.base.MandCBase;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.xml.sax.ErrorHandler;
+
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.Table;
+import alma.control.datamodel.meta.base.Util;
 
 /**
  * <!-- begin-user-doc -->
@@ -575,20 +568,42 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @generated
 	 */
 	public String RawDataTypeTotalBytes(final String s) {
-						if (isArray(s)) {
-							int b;
-							int n = Integer.parseInt(NumberOfItems(s));
-							if(s.startsWith("&lt;"))
-								return "0";
-							if(s.startsWith("["))
-								return "0";
-							int i = s.indexOf("[");
-							b = Integer.parseInt((String)tables.getRawBytes().get(s.substring(0,1)));
-				
-							String x = Integer.toString(n * b);
-							return x;
-						}
-						return (String)tables.getRawBytes().get(s);
+				if (isArray(s)) {
+					int b;
+					int n = Integer.parseInt(NumberOfItems(s));
+					if(s.startsWith("&lt;"))
+						return "0";
+					if(s.startsWith("["))
+						return "0";
+					int i = s.indexOf("[");
+					String aux = (String) tables.getRawBytes().get(s.substring(0, i));
+					b = Integer.parseInt(aux);
+		
+					String x = Integer.toString(n * b);
+					return x;
+				}
+				return (String)tables.getRawBytes().get(s);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	//Print the values of the class, to test the objects
+	public static void printAttributeValues(EObject object) {
+		EClass eClass = object.eClass();
+		System.out.println(eClass.getName());
+		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
+			EAttribute attribute = (EAttribute)iter.next();
+			Object value = object.eGet(attribute);
+
+			System.out.print("  " + attribute.getName() + " : ");
+			if (object.eIsSet(attribute))
+				System.out.println(value);
+			else
+				System.out.println(value + " (default)");
+		}
 	}
 
 	/**

@@ -23,18 +23,16 @@ package alma.control.datamodel.meta.base.impl;
  */
 
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.Table;
-
 import alma.control.datamodel.meta.base.Util;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,7 +140,7 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isMonitored() {
+	public boolean IsMonitored() {
 		return false;
 		
 	}
@@ -152,7 +150,7 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlPoint(final String[] row, final Object parent, final Table tables, final Util utils) {
+	public void setControlPoint(final String[] row, final EObject parent, final Table tables, final Util utils) {
 		this.tables = tables;
 		this.utils = utils;
 		setMandCBase(row, parent, tables, utils);

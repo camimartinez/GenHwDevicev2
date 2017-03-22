@@ -23,20 +23,16 @@
 package alma.control.datamodel;
 
 import java.io.File;
-import java.util.Arrays;
 
 import org.eclipse.emf.mwe.core.WorkflowComponentHelper;
 import org.eclipse.emf.mwe.core.WorkflowContext;
 import org.eclipse.emf.mwe.core.issues.Issues;
 import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
+import org.eclipse.emf.mwe.utils.AbstractEMFWorkflowComponent;
 
 import alma.control.datamodel.meta.amb.AmbFactory;
-import alma.control.datamodel.meta.amb.AmbPackage;
-import alma.control.datamodel.meta.base.*;
+import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.eth.EthFactory;
-import alma.control.datamodel.meta.eth.EthPackage;
-
-import org.eclipse.emf.mwe.utils.AbstractEMFWorkflowComponent;
 
 public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 	private String deviceDir;
