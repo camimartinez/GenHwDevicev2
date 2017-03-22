@@ -25,17 +25,19 @@ MA 02111-1307  USA
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
 
+«EXTENSION alma::control::templates::extensions::eth::util»
+
 «DEFINE Root FOR DeviceModelImpl»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"CompSim.h"»
+«FILE DirPath()+"/include/"+Assembly()+"CompSim.h"»
 #ifndef __cplusplus
 #error This is a C++ include file and cannot be used from plain C.
 #endif
-#ifndef «Assembly»CompSim_h
-#define «Assembly»CompSim_h
+#ifndef «Assembly()»CompSim_h
+#define «Assembly()»CompSim_h
 //
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
@@ -65,26 +67,26 @@ MA 02111-1307  USA
 //
 
 
-#include <«Assembly»Impl.h>
-#include <«Assembly»EthSimImpl.h>
-#include <«Assembly»CompSimS.h>
+#include <«Assembly()»Impl.h>
+#include <«Assembly()»EthSimImpl.h>
+#include <«Assembly()»CompSimS.h>
 
 
-/// The «Assembly»CompSim class is the local component for the
-/// «DeviceName» hardware simulator.
+/// The «Assembly()»CompSim class is the local component for the
+/// «DeviceName()» hardware simulator.
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
+/// <li> Device:   «DeviceName()»
+/// <li> Assembly: «Assembly()»
 /// </ul>
-class «Assembly»CompSim : public «Assembly»Impl,
-    public virtual POA_Control::«Assembly»CompSim
+class «Assembly()»CompSim : public «Assembly()»Impl,
+    public virtual POA_Control::«Assembly()»CompSim
 {
     public:
     /// Constructor
-    «Assembly»CompSim(const ACE_CString& name, maci::ContainerServices* pCS);
+    «Assembly()»CompSim(const ACE_CString& name, maci::ContainerServices* pCS);
 
     /// Destructor
-    virtual ~«Assembly»CompSim();
+    virtual ~«Assembly()»CompSim();
 
     /// TODO: getSimValue and setSimValue methods
 
@@ -96,13 +98,13 @@ class «Assembly»CompSim : public «Assembly»Impl,
 
     private:
     /// No default ctor.
-    «Assembly»CompSim();
+    «Assembly()»CompSim();
 
     /// No copy ctor.
-    «Assembly»CompSim(const «Assembly»CompSim&);
+    «Assembly()»CompSim(const «Assembly()»CompSim&);
 
     /// No assignment optor.
-    «Assembly»CompSim& operator=(const «Assembly»CompSim&);
+    «Assembly()»CompSim& operator=(const «Assembly()»CompSim&);
 };
 #endif
 «ENDFILE»

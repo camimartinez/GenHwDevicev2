@@ -46,7 +46,7 @@ MA 02111-1307  USA
 «ENDDEFINE»
 
 «DEFINE SWModuleIdlDef FOR DeviceModelImpl»
-«FILE DirPath() + "/idl/.cvsignore"»
+«FILE DirPath() + "/idl/.cvsignore"-»
 «Assembly()»Base.idl
 «Assembly()»CompSim.idl
 «Assembly()»Add.sql
@@ -54,7 +54,7 @@ MA 02111-1307  USA
 «ENDDEFINE»
 
 «DEFINE SWModuleSrcDef FOR DeviceModelImpl»
-«FILE DirPath() + "/src/.cvsignore"»
+«FILE DirPath() + "/src/.cvsignore"-»
 «Assembly()»Base.cpp
 «Assembly()»CompSim.cpp
 «Assembly()»EthSimBase.cpp
@@ -62,14 +62,14 @@ MA 02111-1307  USA
 «ENDDEFINE»
 
 «DEFINE SWModuleCCLDef FOR DeviceModelImpl»
-«FILE DirPath() + "/src/CCL/.cvsignore"»
+«FILE DirPath() + "/src/CCL/.cvsignore"-»
 «Assembly()»Base.py
 __init__.py
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE SWModuleIncludeDef FOR DeviceModelImpl»
-«FILE DirPath() + "/include/.cvsignore"»
+«FILE DirPath() + "/include/.cvsignore"-»
 «Assembly()»Base.h
 «Assembly()»CompSim.h
 «Assembly()»EthSimBase.h
@@ -77,6 +77,6 @@ __init__.py
 «ENDDEFINE»
 
 «DEFINE SWModuleTestDef FOR DeviceModelImpl»
-«FILE DirPath() + "/test/.cvsignore"»
+«FILE DirPath() + "/test/.cvsignore"-»
 «ENDFILE»
 «ENDDEFINE»

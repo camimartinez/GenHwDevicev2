@@ -133,7 +133,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		xmlFile += suffix;
 		String fileSpreadsheetName = deviceName.concat(suffixSpreadsheet).concat(suffix);
 		String xml = spreadParser.getSpreadsheet(spreadsheetDir,fileSpreadsheetName);
-		String xsdFile = utils.getInstallDir() + "/config/schemas/" + busType.toLowerCase() + "/Workbook.xsd";
+		String xsdFile = util.getInstallDir() + "/config/schemas/" + busType.toLowerCase() + "/Workbook.xsd";
 
 		p.setSpreadsheetParser(xml);
 		spreadsheet = p.getWorksheets();
@@ -201,7 +201,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		Monitor mparent = null;
 		String xmiMonitorPoints = tmp.concat("monitorPoints.").concat(extension);
 		monitorPoints = container.createResource(URI.createURI(xmiMonitorPoints));
-		for (i = 2; i < spreadsheet[monitorIndex].length; ++i) {
+		for (i = 2; i < spreadsheet[monitorIndex].length; i++) {
 			if(spreadsheet[monitorIndex][i].length == 0)
 				break;
 			Monitor mp;

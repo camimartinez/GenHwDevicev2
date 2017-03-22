@@ -25,14 +25,16 @@ MA 02111-1307  USA
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
 
+«EXTENSION alma::control::templates::extensions::eth::util»
+
 «DEFINE Root FOR DeviceModelImpl»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/include/"+Assembly+"EthSimBase.h"»
-#ifndef «Assembly»EthSimBase_h
-#define «Assembly»EthSimBase_h
+«FILE DirPath()+"/include/"+Assembly()+"EthSimBase.h"»
+#ifndef «Assembly()»EthSimBase_h
+#define «Assembly()»EthSimBase_h
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -66,34 +68,34 @@ MA 02111-1307  USA
 #error This is a C++ include file and cannot be used from plain C.
 #endif
 
-«IF Extends == "none"»
+«IF Extends() == "none"»
 #include <EthernetDeviceInterface.h>
 «ELSE»
-#include <«Extends»EthSimImpl.h>
+#include <«Extends()»EthSimImpl.h>
 «ENDIF»
 #include <sstream>
 #include <acstime.h>
 
 
-/// The «Assembly»EthSimBase class is the base class for the
-/// «DeviceName» hardware simulator.
+/// The «Assembly()»EthSimBase class is the base class for the
+/// «DeviceName()» hardware simulator.
 /// <ul>
-/// <li> Device:   «DeviceName»
-/// <li> Assembly: «Assembly»
+/// <li> Device:   «DeviceName()»
+/// <li> Assembly: «Assembly()»
 /// </ul>
-class «Assembly»EthSimBase:
-«IF Extends == "none"»
+class «Assembly()»EthSimBase:
+«IF Extends() == "none"»
     public EthernetDeviceInterface
 «ELSE»
-    public «Extends»EthSimImpl
+    public «Extends()»EthSimImpl
 «ENDIF»
 {
     public:
     /// Constructor
-    «Assembly»EthSimBase();
+    «Assembly()»EthSimBase();
 
     /// Destructor
-    virtual ~«Assembly»EthSimBase();
+    virtual ~«Assembly()»EthSimBase();
 
     /// Returns true if a device is in simulation mode, false if
     /// it works with real hardware.

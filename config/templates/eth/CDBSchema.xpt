@@ -102,7 +102,7 @@ MA 02111-1307  USA
             <xs:extension
                 base="extcontrol:ControlDevice">
                 <xs:sequence>
-    «FOREACH MonitorPointImpl AS x»
+    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
         «IF x.IsMonitored()»
           «IF x.DisplayUnits() == "pattern"»
                     <xs:element

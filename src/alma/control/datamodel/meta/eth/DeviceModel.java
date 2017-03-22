@@ -45,7 +45,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainImpl)main).VendorClass();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getMainEth().VendorClass();'"
 	 * @generated
 	 */
 	String VendorClass();

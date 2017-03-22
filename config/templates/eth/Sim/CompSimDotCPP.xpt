@@ -25,13 +25,15 @@ MA 02111-1307  USA
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
 
+«EXTENSION alma::control::templates::extensions::eth::util»
+
 «DEFINE Root FOR DeviceModelImpl»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/src/"+Assembly+"CompSim.cpp"»
+«FILE DirPath()+"/src/"+Assembly()+"CompSim.cpp"»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -62,37 +64,37 @@ MA 02111-1307  USA
  */
 
 
-#include <«Assembly»CompSim.h>
+#include <«Assembly()»CompSim.h>
 
 
-«Assembly»CompSim::«Assembly»CompSim(const ACE_CString& name,
+«Assembly()»CompSim::«Assembly()»CompSim(const ACE_CString& name,
     maci::ContainerServices* pCS):
-    «Assembly»Impl(name,pCS)
+    «Assembly()»Impl(name,pCS)
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
-«Assembly»CompSim::~«Assembly»CompSim()
+«Assembly()»CompSim::~«Assembly()»CompSim()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
 //------------------------------------------------------------------------------
-void «Assembly»CompSim::initialize()
+void «Assembly()»CompSim::initialize()
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
     // Create simulated Vendor Class instance
     if(m_ethDeviceIF_p == 0)
     {
-        m_ethDeviceIF_p.reset(new «Assembly»EthSimImpl);
+        m_ethDeviceIF_p.reset(new «Assembly()»EthSimImpl);
     }
 
-    «Assembly»Impl::initialize();
+    «Assembly()»Impl::initialize();
 }
 
 
 #include <maciACSComponentDefines.h>
-MACI_DLL_SUPPORT_FUNCTIONS(«Assembly»CompSim)
+MACI_DLL_SUPPORT_FUNCTIONS(«Assembly()»CompSim)
 «ENDFILE»
 «ENDDEFINE»

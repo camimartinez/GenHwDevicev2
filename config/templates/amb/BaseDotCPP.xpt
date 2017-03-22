@@ -334,8 +334,8 @@ void «Assembly()»Base::hwOperationalAction(){
 
 	«FOREACH archiveProperties.contents.select(j | j.OnStartup()) AS x»
 	«x.getMonitorPoint().MPName()»()->get_sync(completion.out());
-	spp«x.getMonitorPoint().AltMPName()»->publishNow();
-	//«x.getMonitorPoint().MPName()»()->publishNow();
+	spp«x.GetMonitorPoint().AltMPName()»->publishNow();
+	//«x.GetMonitorPoint().MPName()»()->publishNow();
 	«ENDFOREACH»
 
 }
@@ -524,7 +524,7 @@ char* «Assembly()»Base::GET_LAST_CAN_ERROR_MSG()
 «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
     «EXPAND PublicMonitorPoint FOR x»
     «EXPAND ProtectedMonitorPoint FOR x»
-    «IF(x.IsExternal() && x.isMonitored()) || (x.IsImplemented() && !x.IsDependent()) || (x.IsConversion() && !x.IsSpecialConversion()) »
+    «IF(x.IsExternal() && x.IsMonitored()) || (x.IsImplemented() && !x.IsDependent()) || (x.IsConversion() && !x.IsSpecialConversion()) »
 /// MonitorPoint: «x.MPName()»
 /// «x.DescriptionFormattedL4()»
     «ENDIF»
@@ -899,21 +899,21 @@ std::vector< «WorldDataToCPPType()» > «Assembly()»Base::get«AltMPName()»(
        Now, set the values of any dependent variables.  <-
     «ENDREM»
     «IF hasDependents()»
-        «FOREACH (Set[MonitorPointImpl]) getDependents() AS y»
+        «FOREACH (Set[MonitorPointImpl]) GetDependents() AS y»
             «IF y.IsDependentBit() || y.IsDependentGroupBit()»
     // Set value«y.AltMPName()».
             «ENDIF»
             «IF y.IsDependentGroupBit()»
                 «IF IsRawDataArray()»
-    value«y.AltMPName()» = raw[«y.GetDimension()»] >> «y.getGroupStart()» & «y.getGroupMask()»;
+    value«y.AltMPName()» = raw[«y.GetDimension()»] >> «y.GetGroupStart()» & «y.GetGroupMask()»;
                 «ELSE»
-    value«y.AltMPName()» = raw >> «y.getGroupStart()» & «y.getGroupMask()»;
+    value«y.AltMPName()» = raw >> «y.GetGroupStart()» & «y.GetGroupMask()»;
                 «ENDIF»
             «ELSEIF y.IsDependentBit()»
                 «IF IsRawDataArray()»
-    value«y.AltMPName()» = ((raw[«y.GetDimension()»] & «y.getMask()») != 0) ? true : false;
+    value«y.AltMPName()» = ((raw[«y.GetDimension()»] & «y.GetMask()») != 0) ? true : false;
                 «ELSE»
-    value«y.AltMPName()» = ((raw & «y.getMask()») != 0) ? true : false;
+    value«y.AltMPName()» = ((raw & «y.GetMask()») != 0) ? true : false;
                 «ENDIF»
             «ENDIF»
             «IF y.IsDependentElement()»
@@ -1356,7 +1356,79 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName()»() const
 «ENDREM»
             «ENDIF»
         «ENDIF»
-    «EXPAND SwapBytes (RawDataType(), IsRawDataArray(), NumberItemsRawData())»
+   
+   «REM»
+    This method handles the generation of all needed byte swapping.
+    «ENDREM»
+    «IF RawDataType() == "int16" || RawDataType() == "uint16"»
+    #if BYTE_ORDER != BIG_ENDIAN
+    // Swap the bytes.
+        «IF IsRawDataArray()»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
+    {
+        AMB::Utils::swapBytes(raw[i]);
+    }
+        «ELSE»
+    AMB::Utils::swapBytes(raw);
+        «ENDIF»
+    #endif
+    «ENDIF»
+
+    «IF RawDataType() == "int24" || RawDataType() == "uint24"»
+    #if BYTE_ORDER != BIG_ENDIAN
+    // Swap the bytes.
+        «IF IsRawDataArray()»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
+    {
+        AMB::Utils::swapBytes(raw[i], 3U);
+    }
+        «ELSE»
+    AMB::Utils::swapBytes(raw, 3U);
+        «ENDIF»
+    #endif
+    «ENDIF»
+
+    «IF RawDataType() == "int32" || RawDataType() == "uint32" || RawDataType() == "float"»
+    #if BYTE_ORDER != BIG_ENDIAN
+    // Swap the bytes.
+        «IF IsRawDataArray»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
+    {
+        AMB::Utils::swapBytes(raw[i]);
+    }
+        «ELSE»
+    AMB::Utils::swapBytes(raw);
+        «ENDIF»
+    #endif
+    «ENDIF»
+
+    «IF RawDataType() == "int48" || RawDataType() == "uint48"»
+    #if BYTE_ORDER != BIG_ENDIAN
+    // Swap the bytes.
+        «IF IsRawDataArray»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
+    {
+        AMB::Utils::swapBytes(raw[i], 6U);
+    }
+        «ELSE»
+    AMB::Utils::swapBytes(raw, 6U);
+        «ENDIF»
+    #endif
+    «ENDIF»
+
+    «IF RawDataType() == "int64" || RawDataType() == "uint64" || RawDataType() == "double"»
+    #if BYTE_ORDER != BIG_ENDIAN
+    // Swap the bytes.
+        «IF IsRawDataArray()»
+    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
+    {
+        AMB::Utils::swapBytes(raw[i]);
+    }
+        «ELSE»
+    AMB::Utils::swapBytes(raw);
+        «ENDIF»
+    #endif
+    «ENDIF»
 
     // Assign raw to rawBytes.
         «IF IsRawDataArray()»
@@ -1505,80 +1577,5 @@ inline void «Assembly()»Base::setConversion«AltCPName()»(
     scale«AltCPName()» = scale;
     offset«AltCPName()» = offset;
 }
-    «ENDIF»
-«ENDDEFINE»
-
-«DEFINE SwapBytes (String RawDataType, boolean IsRawDataArray, String NumberItemsRawData) FOR java::lang::Class»
-    «REM»
-    This method handles the generation of all needed byte swapping.
-    «ENDREM»
-    «IF RawDataType() == "int16" || RawDataType() == "uint16"»
-    #if BYTE_ORDER != BIG_ENDIAN
-    // Swap the bytes.
-        «IF IsRawDataArray()»
-    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
-    {
-        AMB::Utils::swapBytes(raw[i]);
-    }
-        «ELSE»
-    AMB::Utils::swapBytes(raw);
-        «ENDIF»
-    #endif
-    «ENDIF»
-
-    «IF RawDataType() == "int24" || RawDataType() == "uint24"»
-    #if BYTE_ORDER != BIG_ENDIAN
-    // Swap the bytes.
-        «IF IsRawDataArray()»
-    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
-    {
-        AMB::Utils::swapBytes(raw[i], 3U);
-    }
-        «ELSE»
-    AMB::Utils::swapBytes(raw, 3U);
-        «ENDIF»
-    #endif
-    «ENDIF»
-
-    «IF RawDataType() == "int32" || RawDataType() == "uint32" || RawDataType() == "float"»
-    #if BYTE_ORDER != BIG_ENDIAN
-    // Swap the bytes.
-        «IF IsRawDataArray»
-    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
-    {
-        AMB::Utils::swapBytes(raw[i]);
-    }
-        «ELSE»
-    AMB::Utils::swapBytes(raw);
-        «ENDIF»
-    #endif
-    «ENDIF»
-
-    «IF RawDataType() == "int48" || RawDataType() == "uint48"»
-    #if BYTE_ORDER != BIG_ENDIAN
-    // Swap the bytes.
-        «IF IsRawDataArray»
-    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
-    {
-        AMB::Utils::swapBytes(raw[i], 6U);
-    }
-        «ELSE»
-    AMB::Utils::swapBytes(raw, 6U);
-        «ENDIF»
-    #endif
-    «ENDIF»
-
-    «IF RawDataType() == "int64" || RawDataType() == "uint64" || RawDataType() == "double"»
-    #if BYTE_ORDER != BIG_ENDIAN
-    // Swap the bytes.
-        «IF IsRawDataArray()»
-    for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
-    {
-        AMB::Utils::swapBytes(raw[i]);
-    }
-        «ELSE»
-    AMB::Utils::swapBytes(raw);
-        «ENDIF»
-    #endif
     «ENDIF»
 «ENDDEFINE»

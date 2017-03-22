@@ -224,7 +224,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Address\")];'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Address\")];'"
 	 * @generated
 	 */
 	String Address();
@@ -232,7 +232,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[table.getColNum(sheet, \"DataType\")];\nreturn IsDataArray() ? s.substring(0,s.indexOf(\"[\")) : s;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[tables.getColNum(sheet, \"Data Type\")];\nreturn IsDataArray() ? s.substring(0,s.indexOf(\"[\")) : s;'"
 	 * @generated
 	 */
 	String DataType();
@@ -240,7 +240,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[table.getColNum(sheet, \"Data Type\")].endsWith(\"]\") ? true : false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return row[tables.getColNum(sheet, \"Data Type\")].endsWith(\"]\") ? true : false;'"
 	 * @generated
 	 */
 	boolean IsDataArray();
@@ -248,7 +248,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!IsDataArray()) return false;\nString s =  row[table.getColNum(sheet, \"Data Type\")];\nreturn (s.indexOf(\"]\") - s.indexOf(\"[\") == 1) ? true : false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!IsDataArray()) return false;\nString s =  row[tables.getColNum(sheet, \"Data Type\")];\nreturn (s.indexOf(\"]\") - s.indexOf(\"[\") == 1) ? true : false;'"
 	 * @generated
 	 */
 	boolean IsOpenArray();
@@ -257,7 +257,7 @@ public interface MandC extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!IsDataArray()) return \"1\";\nString s = row[table.getColNum(sheet, \"Data Type\")];\nreturn s.substring(s.indexOf(\"[\")+1,s.indexOf(\"]\"));'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(!IsDataArray()) return \"1\";\nString s = row[tables.getColNum(sheet, \"Data Type\")];\nreturn s.substring(s.indexOf(\"[\")+1,s.indexOf(\"]\"));'"
 	 * @generated
 	 */
 	String getArrayLength();
@@ -265,7 +265,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getToCPP().get(DataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getToCPP().get(DataType());'"
 	 * @generated
 	 */
 	String DataToCPPType();
@@ -273,7 +273,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getToIDL().get(DataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getToIDL().get(DataType());'"
 	 * @generated
 	 */
 	String DataToIDLType();
@@ -281,7 +281,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getToIDLSeq().get(DataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getToIDLSeq().get(DataType());'"
 	 * @generated
 	 */
 	String DataToIDLSeqType();
@@ -289,7 +289,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getToCORBA().get(DataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getToCORBA().get(DataType());'"
 	 * @generated
 	 */
 	String DataToCORBAType();
@@ -297,7 +297,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getToCORBADevIO().get(DataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getToCORBADevIO().get(DataType());'"
 	 * @generated
 	 */
 	String DataToCORBADevIOType();
@@ -305,7 +305,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getToCORBASeq().get(DataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getToCORBASeq().get(DataType());'"
 	 * @generated
 	 */
 	String DataToCORBASeqType();
@@ -313,7 +313,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getToBACI().get(DataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getToBACI().get(DataType());'"
 	 * @generated
 	 */
 	String DataToBACIType();
@@ -321,7 +321,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)table.getToDatabase().get(DataType());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return (String)tables.getToDatabase().get(DataType());'"
 	 * @generated
 	 */
 	String DataToDatabaseType();

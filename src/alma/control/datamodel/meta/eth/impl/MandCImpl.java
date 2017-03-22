@@ -22,6 +22,8 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
+import java.util.Iterator;
+
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.Table;
@@ -31,7 +33,9 @@ import alma.control.datamodel.meta.eth.MandC;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -360,23 +364,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	public String Assembly() {
 		return assembly;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	private Object getObjectByInstanceClass(){
-		Object object = EcoreUtil.getObjectByType(eAdapters, BasePackage.Literals.TABLE);
-		if(object instanceof Table){
-			return object;
-		}else{
-			System.out.println("The is no Object for instance Table in: eth/MandCImpl");
-			return "The is no Object for instance Table in: eth/MandCImpl";
-		}
-	}
-
-	Table table = (Table)getObjectByInstanceClass();
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -384,7 +371,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String Address() {
-		return row[table.getColNum(sheet, "Address")];
+		return row[tables.getColNum(sheet, "Address")];
 	}
 
 	/**
@@ -393,17 +380,38 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String DataType() {
-		String s = row[table.getColNum(sheet, "DataType")];
+		String s = row[tables.getColNum(sheet, "Data Type")];
 		return IsDataArray() ? s.substring(0,s.indexOf("[")) : s;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	//Print the values of the class, to test the objects
+	public static void printAttributeValues(EObject object) {
+		EClass eClass = object.eClass();
+		System.out.println(eClass.getName());
+		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
+			EAttribute attribute = (EAttribute)iter.next();
+			Object value = object.eGet(attribute);
+
+			System.out.print("  " + attribute.getName() + " : ");
+			if (object.eIsSet(attribute))
+				System.out.println(value);
+			else
+				System.out.println(value + " (default)");
+		}
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean IsDataArray() {
-		return row[table.getColNum(sheet, "Data Type")].endsWith("]") ? true : false;
+		return row[tables.getColNum(sheet, "Data Type")].endsWith("]") ? true : false;
 	}
 
 	/**
@@ -413,7 +421,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 */
 	public boolean IsOpenArray() {
 		if(!IsDataArray()) return false;
-		String s =  row[table.getColNum(sheet, "Data Type")];
+		String s =  row[tables.getColNum(sheet, "Data Type")];
 		return (s.indexOf("]") - s.indexOf("[") == 1) ? true : false;
 	}
 
@@ -424,7 +432,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 */
 	public String getArrayLength() {
 		if(!IsDataArray()) return "1";
-		String s = row[table.getColNum(sheet, "Data Type")];
+		String s = row[tables.getColNum(sheet, "Data Type")];
 		return s.substring(s.indexOf("[")+1,s.indexOf("]"));
 	}
 
@@ -434,7 +442,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String DataToCPPType() {
-		return (String)table.getToCPP().get(DataType());
+		return (String)tables.getToCPP().get(DataType());
 	}
 
 	/**
@@ -443,7 +451,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String DataToIDLType() {
-		return (String)table.getToIDL().get(DataType());
+		return (String)tables.getToIDL().get(DataType());
 	}
 
 	/**
@@ -452,7 +460,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String DataToIDLSeqType() {
-		return (String)table.getToIDLSeq().get(DataType());
+		return (String)tables.getToIDLSeq().get(DataType());
 	}
 
 	/**
@@ -461,7 +469,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String DataToCORBAType() {
-		return (String)table.getToCORBA().get(DataType());
+		return (String)tables.getToCORBA().get(DataType());
 	}
 
 	/**
@@ -470,7 +478,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String DataToCORBADevIOType() {
-		return (String)table.getToCORBADevIO().get(DataType());
+		return (String)tables.getToCORBADevIO().get(DataType());
 	}
 
 	/**
@@ -479,7 +487,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String DataToCORBASeqType() {
-		return (String)table.getToCORBASeq().get(DataType());
+		return (String)tables.getToCORBASeq().get(DataType());
 	}
 
 	/**
@@ -488,7 +496,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String DataToBACIType() {
-		return (String)table.getToBACI().get(DataType());
+		return (String)tables.getToBACI().get(DataType());
 	}
 
 	/**
@@ -497,7 +505,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String DataToDatabaseType() {
-		return (String)table.getToDatabase().get(DataType());
+		return (String)tables.getToDatabase().get(DataType());
 	}
 
 	/**

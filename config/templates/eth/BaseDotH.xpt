@@ -259,7 +259,7 @@ class «Assembly()»Base:
     «REM»
     b. Field for Address
     «ENDREM»
-    «IF !IsDependent && Address() != "none"»
+    «IF !IsDependent() && Address() != "none"»
     /// The command address for this monitor point.
     int address«AltMPName()»;
     «ENDIF»

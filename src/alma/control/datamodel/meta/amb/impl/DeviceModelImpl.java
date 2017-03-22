@@ -448,8 +448,8 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "CompSimBase.idl", 1);
 				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "HWSimImpl.cpp", 1);
 				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "AmbDeviceInt.cpp", 1);
-					if (!IsMonitorDBOnly()) {
-						if (IsGenerateAlt()) {
+					if (!isMonitorDBOnly()) {
+						if (isGenerateAlt()) {
 							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + ".makefile", 1);
 							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.idl", 1);
 							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.h", 1);

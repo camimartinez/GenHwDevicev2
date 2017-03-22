@@ -25,14 +25,16 @@ MA 02111-1307  USA
 «IMPORT alma::control::datamodel::meta::base::impl»
 «IMPORT alma::control::datamodel::meta::eth::impl»
 
+«EXTENSION alma::control::templates::extensions::eth::util»
+
 «DEFINE Root FOR DeviceModelImpl»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 «DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath+"/idl/"+Assembly+"CompSim.idl"»
-#ifndef «Assembly»CompSim_idl
-#define «Assembly»CompSim_idl
+«FILE DirPath()+"/idl/"+Assembly()+"CompSim.idl"»
+#ifndef «Assembly()»CompSim_idl
+#define «Assembly()»CompSim_idl
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -63,7 +65,7 @@ MA 02111-1307  USA
  */
 
 
-#include <«Assembly».idl>
+#include <«Assembly()».idl>
 
 
 #pragma prefix "alma"
@@ -71,8 +73,8 @@ MA 02111-1307  USA
 
 module Control
 {
-    /// This interfaces define data specific to the Control::«Assembly» device.
-    interface «Assembly»CompSim: Control::«Assembly»
+    /// This interfaces define data specific to the Control::«Assembly()» device.
+    interface «Assembly()»CompSim: Control::«Assembly()»
     {
         /// TODO: getSimValue and setSimValue methods
     };
