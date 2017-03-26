@@ -23,10 +23,10 @@
 package alma.control.datamodel.meta.eth;
 
 import alma.control.datamodel.meta.base.ControlPoint;
-
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
-import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public interface Control extends ControlPoint {
 	 * Returns the value of the '<em><b>Mac</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mac</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Mac</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -204,9 +204,9 @@ public interface Control extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.tables = tables;\n\t\tthis.utils = utils;\n\t\tsetControlPoint(row, parent, tables, utils);\n\t\tmac = new MandCImpl();\n\t\tmac.setMandCEth(row, sheet, tables, utils);\n\t\tresourceSetControl = new ResourceSetImpl();\n\t\tResource res = resourceSetControl.createResource(URI.createURI(\"\"));\n\t\tres.getContents().add(mac);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetControlPoint(row, parent, tables, utils);\nmac = EthFactory.eINSTANCE.createMandC();\nmac.setMandCEth(row, sheet, tables, utils);'"
 	 * @generated
 	 */
-	void setControlEth(String[] row, EObject parent, Table tables, Util utils);
+	void setControlEth(String[] row, Resource parent, Table tables, Util utils);
 
 } // Control

@@ -22,16 +22,16 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/src/"+Assembly()+"Base.cpp"»
 
 /**
@@ -61,6 +61,8 @@ MA 02111-1307  USA
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
  *
+ *  Id: BaseDotCPP.xpt
+ *
  */
  
  
@@ -79,7 +81,7 @@ MA 02111-1307  USA
 «ELSE»
     EthernetDevice(name, cs)
 «ENDIF»
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «IF !x.IsDependent() && x.Address() != "none"»
         «IF x.IsEnumAddress()»
     , address«x.AltMPName()»(«VendorClass()»::«x.Address()»)
@@ -91,7 +93,7 @@ MA 02111-1307  USA
     , spp«x.AltMPName()»(this)
         «ENDIF»
 «ENDFOREACH»
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
     «IF !x.IsDependent() && x.Address() != "none"»
         «IF x.IsEnumAddress()»
     , address«x.AltCPName()»(«VendorClass()»::«x.Address()»)
@@ -133,7 +135,7 @@ void «Assembly()»Base::initialize()
     try
     {
         const ACE_CString nameWithSep(cdbName_m + ":");
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «IF x.IsMonitored()»
         {
             const ACE_CString propName(nameWithSep + "«x.MPName()»");
@@ -231,7 +233,7 @@ void «Assembly()»Base::cleanUp()
 «ENDIF»
 }
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «IF x.IsExternal()»
         «EXPAND PublicMonitorPoint FOR x»
     «ENDIF»
@@ -241,7 +243,7 @@ void «Assembly()»Base::cleanUp()
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
     «IF x.IsExternal()»
         «EXPAND PublicControlPoint FOR x»
     «ENDIF»
@@ -252,7 +254,7 @@ void «Assembly()»Base::cleanUp()
 «ENDDEFINE»
 
 
-«DEFINE PublicMonitorPoint FOR MonitorPointImpl»
+«DEFINE PublicMonitorPoint FOR MonitorPoint»
 /// MonitorPoint: «MPName()»
 /// «Description()»
     «REM»
@@ -339,7 +341,7 @@ void «Assembly()»Base::cleanUp()
 «ENDDEFINE»
 
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPointImpl»
+«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
     «IF IsExternal()»
     /// MonitorPoint: «MPName()»
     «ELSE»
@@ -360,7 +362,7 @@ std::string «Assembly()»Base::get«AltMPName()»(ACS::Time& timestamp)
 {
     std::string value;
         «ELSE»
-«DataToCPPType» «Assembly()»Base::get«AltMPName()»(ACS::Time& timestamp)
+«DataToCPPType()» «Assembly()»Base::get«AltMPName()»(ACS::Time& timestamp)
 {
     «DataToCPPType()» value;
         «ENDIF»
@@ -428,7 +430,7 @@ std::string «Assembly()»Base::get«AltMPName()»(ACS::Time& timestamp)
 «ENDDEFINE»
 
 
-«DEFINE BACIMethod FOR MonitorPointImpl»
+«DEFINE BACIMethod FOR MonitorPoint»
 /**
  * Get the current value of «MPName()» as a BACI property.
  */
@@ -436,9 +438,9 @@ std::string «Assembly()»Base::get«AltMPName()»(ACS::Time& timestamp)
 ACS::ROpattern_ptr «Assembly()»Base::«MPName()»()
     «ELSE»
         «IF IsDataArray()»
-ACS::RO«DataToBACIType()»Seq_ptr «Assembly()»Base::«MPName»()
+ACS::RO«DataToBACIType()»Seq_ptr «Assembly()»Base::«MPName()»()
         «ELSE»
-ACS::RO«DataToBACIType()»_ptr «Assembly()»Base::«MPName»()
+ACS::RO«DataToBACIType()»_ptr «Assembly()»Base::«MPName()»()
         «ENDIF»
     «ENDIF»
 {
@@ -462,7 +464,7 @@ ACS::RO«DataToBACIType()»_ptr «Assembly()»Base::«MPName»()
 «ENDDEFINE»
 
 
-«DEFINE PublicControlPoint FOR ControlPointImpl»
+«DEFINE PublicControlPoint FOR ControlPoint»
 /// ControlPoint: «CPName()»
 /// «Description()»
     «REM»
@@ -508,7 +510,7 @@ void «Assembly()»Base::SET_«CPName()»(
     «ELSE»
         «IF DataType() == "void"»
 void «Assembly()»Base::SET_«CPName()»()
-        «ELSEIF DataType == "string"»
+        «ELSEIF DataType() == "string"»
 void «Assembly()»Base::SET_«CPName()»(const «DataToCORBAType()» data)
         «ELSE»
 void «Assembly()»Base::SET_«CPName()»(«DataToCORBAType()» data)
@@ -546,7 +548,7 @@ void «Assembly()»Base::SET_«CPName()»(«DataToCORBAType()» data)
 «ENDDEFINE»
 
 
-«DEFINE ProtectedControlPoint FOR ControlPointImpl»
+«DEFINE ProtectedControlPoint FOR ControlPoint»
     «IF IsExternal()»
     /// ControlPoint: «CPName()»
     «ELSE»
@@ -559,7 +561,7 @@ void «Assembly()»Base::set«AltCPName()»(
     const std::vector< «DataToCPPType()» >& value)
         «ELSEIF DataType() == "void"»
 void «Assembly()»Base::set«AltCPName()»()
-        «ELSEIF DataType == "string"»
+        «ELSEIF DataType() == "string"»
 void «Assembly()»Base::set«AltCPName()»(const std::string& value)
         «ELSE»
 void «Assembly()»Base::set«AltCPName()»(«DataToCPPType()» value)

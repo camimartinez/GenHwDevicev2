@@ -22,17 +22,17 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath()+"/include/"+Assembly()+"EthSimBase.h"»
+«DEFINE SWModuleDef FOR DeviceModel»
+«FILE DirPath()+"/include/"+Assembly()+"EthSimBase.h"-»
 #ifndef «Assembly()»EthSimBase_h
 #define «Assembly()»EthSimBase_h
 /**
@@ -61,6 +61,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ *
+ * Id: EthSimBaseDotH.xpt
  *
  */
 

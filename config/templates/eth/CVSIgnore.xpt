@@ -22,12 +22,12 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !checkIfCvsignoreFileExists("idl")»
         «EXPAND SWModuleIdlDef»
     «ENDIF»
@@ -45,7 +45,7 @@ MA 02111-1307  USA
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleIdlDef FOR DeviceModelImpl»
+«DEFINE SWModuleIdlDef FOR DeviceModel»
 «FILE DirPath() + "/idl/.cvsignore"-»
 «Assembly()»Base.idl
 «Assembly()»CompSim.idl
@@ -53,7 +53,7 @@ MA 02111-1307  USA
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE SWModuleSrcDef FOR DeviceModelImpl»
+«DEFINE SWModuleSrcDef FOR DeviceModel»
 «FILE DirPath() + "/src/.cvsignore"-»
 «Assembly()»Base.cpp
 «Assembly()»CompSim.cpp
@@ -61,14 +61,14 @@ MA 02111-1307  USA
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE SWModuleCCLDef FOR DeviceModelImpl»
+«DEFINE SWModuleCCLDef FOR DeviceModel»
 «FILE DirPath() + "/src/CCL/.cvsignore"-»
 «Assembly()»Base.py
 __init__.py
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE SWModuleIncludeDef FOR DeviceModelImpl»
+«DEFINE SWModuleIncludeDef FOR DeviceModel»
 «FILE DirPath() + "/include/.cvsignore"-»
 «Assembly()»Base.h
 «Assembly()»CompSim.h
@@ -76,7 +76,7 @@ __init__.py
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE SWModuleTestDef FOR DeviceModelImpl»
+«DEFINE SWModuleTestDef FOR DeviceModel»
 «FILE DirPath() + "/test/.cvsignore"-»
 «ENDFILE»
 «ENDDEFINE»

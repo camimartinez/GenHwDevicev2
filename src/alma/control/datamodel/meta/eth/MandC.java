@@ -22,9 +22,9 @@
  */
 package alma.control.datamodel.meta.eth;
 
-import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -39,7 +39,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getAssembly <em>Assembly</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.MandC#getMcp <em>Mcp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getTables <em>Tables</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.MandC#getUtils <em>Utils</em>}</li>
  * </ul>
@@ -126,32 +125,6 @@ public interface MandC extends EObject {
 	 * @generated
 	 */
 	void setAssembly(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Mcp</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mcp</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mcp</em>' reference.
-	 * @see #setMcp(MandCBase)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getMandC_Mcp()
-	 * @model
-	 * @generated
-	 */
-	MandCBase getMcp();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.MandC#getMcp <em>Mcp</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mcp</em>' reference.
-	 * @see #getMcp()
-	 * @generated
-	 */
-	void setMcp(MandCBase value);
 
 	/**
 	 * Returns the value of the '<em><b>Tables</b></em>' reference.

@@ -22,28 +22,24 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
-import java.util.Map;
-
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+
 import alma.control.datamodel.meta.base.impl.ControlPointImpl;
 
 import alma.control.datamodel.meta.eth.Control;
+import alma.control.datamodel.meta.eth.EthFactory;
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -281,15 +277,12 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlEth(final String[] row, final EObject parent, final Table tables, final Util utils) {
-				this.tables = tables;
-				this.utils = utils;
-				setControlPoint(row, parent, tables, utils);
-				mac = new MandCImpl();
-				mac.setMandCEth(row, sheet, tables, utils);
-				resourceSetControl = new ResourceSetImpl();
-				Resource res = resourceSetControl.createResource(URI.createURI(""));
-				res.getContents().add(mac);
+	public void setControlEth(final String[] row, final Resource parent, final Table tables, final Util utils) {
+		this.tables = tables;
+		this.utils = utils;
+		setControlPoint(row, parent, tables, utils);
+		mac = EthFactory.eINSTANCE.createMandC();
+		mac.setMandCEth(row, sheet, tables, utils);
 	}
 
 	/**
@@ -350,4 +343,5 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		}
 		return super.eIsSet(featureID);
 	}
+
 } //ControlImpl

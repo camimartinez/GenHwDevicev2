@@ -22,16 +22,16 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/include/"+Assembly()+"Base.h"»
 #ifndef «Assembly()»Base_h
 #define «Assembly()»Base_h
@@ -61,6 +61,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ * 
+ * Id: BaseDotH.xpt
  *
  */
  
@@ -140,13 +142,13 @@ class «Assembly()»Base:
     /// it works with real hardware.
     virtual CORBA::Boolean isSimulated();
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «IF x.IsExternal() || x.IsMonitored()»
         «EXPAND PublicMonitorPoint FOR x»
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
     «IF x.IsExternal()»
         «EXPAND PublicControlPoint FOR x»
     «ENDIF»
@@ -165,11 +167,11 @@ class «Assembly()»Base:
     /// \exception acsErrTypeLifeCycle::LifeCycleExImpl
     virtual void cleanUp();
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «EXPAND ProtectedMonitorPoint FOR x»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
     «EXPAND ProtectedControlPoint FOR x»
 «ENDFOREACH»
 
@@ -186,7 +188,7 @@ class «Assembly()»Base:
 «ENDDEFINE»
 
 
-«DEFINE PublicMonitorPoint FOR MonitorPointImpl»
+«DEFINE PublicMonitorPoint FOR MonitorPoint»
     /// MonitorPoint: «MPName()»
     /// «Description()»
     /// \exception EthernetDeviceExceptions::SocketOperationFailedEx
@@ -226,7 +228,7 @@ class «Assembly()»Base:
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPointImpl»
+«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
     «IF IsExternal()»
     /// MonitorPoint: «MPName()»
     «ELSE»
@@ -281,7 +283,7 @@ class «Assembly()»Base:
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE PublicControlPoint FOR ControlPointImpl»
+«DEFINE PublicControlPoint FOR ControlPoint»
     /// ControlPoint: «CPName()»
     /// «Description()»
     /// \exception EthernetDeviceExceptions::SocketOperationFailedEx
@@ -307,7 +309,7 @@ class «Assembly()»Base:
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedControlPoint FOR ControlPointImpl»
+«DEFINE ProtectedControlPoint FOR ControlPoint»
     «IF IsExternal()»
     /// ControlPoint: «CPName()»
     «ELSE»

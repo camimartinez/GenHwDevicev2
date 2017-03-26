@@ -22,20 +22,19 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath()+"/config/CDB/schemas/"+Assembly()+"Base.xsd"»
+«DEFINE SWModuleDef FOR DeviceModel»
+«FILE DirPath()+"/config/CDB/schemas/"+Assembly()+"Base.xsd"-»
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
- * 
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
  * Copyright by ESO (in the framework of the ALMA collaboration),
@@ -61,6 +60,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ *
+ * Id: CDBSchema.xpt
  *
 -->
 
@@ -102,7 +103,7 @@ MA 02111-1307  USA
             <xs:extension
                 base="extcontrol:ControlDevice">
                 <xs:sequence>
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «FOREACH monitorPoints.resources.contents AS x»
         «IF x.IsMonitored()»
           «IF x.DisplayUnits() == "pattern"»
                     <xs:element

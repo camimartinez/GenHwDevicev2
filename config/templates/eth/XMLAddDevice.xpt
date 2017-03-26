@@ -22,12 +22,12 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
 «FILE Assembly()+"/config/TMCDB"+Assembly()+"Add.xml"»<?xml version="1.0" ?>
 <lru-type>
     <name>«Assembly()»</name>
@@ -44,7 +44,7 @@ MA 02111-1307  USA
             <base-address>none</base-address>
             <channel>none</channel>
         </default-role>
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
         «IF x.IsMonitored()»
             «REM»
               Ethernet devices have no dependent monitor points.
@@ -101,7 +101,7 @@ MA 02111-1307  USA
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE MonitorPointEntry FOR MonitorPointImpl»
+«DEFINE MonitorPointEntry FOR MonitorPoint»
             <monitor-point>
                 <monitorpointname>«MPName()»</monitorpointname>
                 <datatype>«DataToDatabaseType()»</datatype>
@@ -117,4 +117,3 @@ MA 02111-1307  USA
                 <description>«DescriptionAsString()»</description>
             </monitor-point>
 «ENDDEFINE»
-

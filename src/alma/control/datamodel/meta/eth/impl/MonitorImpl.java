@@ -22,28 +22,24 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
-import java.util.Map;
-
-import alma.control.datamodel.meta.eth.impl.MandCImpl;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+
 import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
 
+import alma.control.datamodel.meta.eth.EthFactory;
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
 import alma.control.datamodel.meta.eth.Monitor;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,13 +155,11 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @generated
 	 */
 	public boolean IsEnumAddress() {
-				try {
+				try{
 					Integer.decode(mac.Address());
-				}
-				catch(Exception e) {
+				}catch(Exception e){
 					return true;
 				}
-		
 				return false;
 	}
 
@@ -273,15 +267,6 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String DataToDatabaseType() {
-		return mac.DataToDatabaseType();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean IsArchived() {
 		
 				if (DataType().equals("uint"))
@@ -293,6 +278,15 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 						|| (DataType().equals("int") && IsDataArray()) )
 					return false;
 				return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String DataToDatabaseType() {
+		return mac.DataToDatabaseType();
 	}
 
 	/**
@@ -318,25 +312,21 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorEth(final String[] row, final EObject parent, final Table tables, final Util utils) {
-				this.tables = tables;
-				this.utils = utils;
-				setMonitorPoint(row, parent,tables,utils);
-				mac = new MandCImpl();
-				mac.setMandCEth(row, sheet, tables, utils);
-				resourceSetMonitor = new ResourceSetImpl();
-				Resource res = resourceSetMonitor.createResource(URI.createURI(""));
-				res.getContents().add(mac);	
+	public boolean IsPartOfHomogeneous() {
+		return false;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	@Override
-	public boolean IsPartOfHomogeneous() {
-		return false;
+	public void setMonitorEth(final String[] row, final Resource parent, final Table tables, final Util utils) {
+		this.tables = tables;
+		this.utils = utils;
+		setMonitorPoint(row, parent,tables,utils);
+		mac = EthFactory.eINSTANCE.createMandC();
+		mac.setMandCEth(row, sheet, tables, utils);
 	}
 
 	/**
@@ -397,4 +387,5 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		}
 		return super.eIsSet(featureID);
 	}
+
 } //MonitorImpl

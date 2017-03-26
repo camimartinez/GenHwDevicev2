@@ -22,13 +22,13 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
-«FILE Assembly()+"/idl/"+Assembly()+"Add.sql"»
+«DEFINE Root FOR DeviceModel»
+«FILE Assembly()+"/idl/"+Assembly()+"Add.sql"-»
 SET SERVEROUTPUT ON;
 
 DECLARE
@@ -162,7 +162,7 @@ END IF;
 «REM»
   NOW  We find out wether defaultBACIPropertyType has already been inserted. 
 «ENDREM»
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
         «IF x.IsMonitored()»
             «IF !x.IsDependent() && x.hasDependents()»
                 «LET x.MPName() AS parentBACIProperty»

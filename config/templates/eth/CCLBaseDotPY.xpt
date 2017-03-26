@@ -22,17 +22,17 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath()+"/src/CCL/__init__.py"»
+«DEFINE SWModuleDef FOR DeviceModel»
+«FILE DirPath()+"/src/CCL/__init__.py"-»
 #! /usr/bin/env python
 #******************************************************************************
 #  ALMA - Atacama Large Millimiter Array
@@ -60,6 +60,8 @@ MA 02111-1307  USA
 #  | This is generated code!  Do not modify this file.       |
 #  | Any changes will be lost when the file is re-generated. |
 #   ---------------------------------------------------------
+#
+# Id: CCLBaseDotPY.xpt
 #
 
 """
@@ -71,7 +73,7 @@ from pkgutil import extend_path
 __path__ = extend_path(__path__, __name__)
 «ENDFILE»
 
-«FILE DirPath()+"/src/CCL/"+Assembly()+"Base.py"»
+«FILE DirPath()+"/src/CCL/"+Assembly()+"Base.py"-»
 #! /usr/bin/env python
 #******************************************************************************
 #  ALMA - Atacama Large Millimiter Array
@@ -99,6 +101,8 @@ __path__ = extend_path(__path__, __name__)
 #  | This is generated code!  Do not modify this file.       |
 #  | Any changes will be lost when the file is re-generated. |
 #   ---------------------------------------------------------
+#
+# Id: CCLBaseDotPY.xpt
 #
 
 """
@@ -233,7 +237,7 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
     #
     # --------------------- Monitor Points ---------------------
     #
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «IF x.IsExternal()»
     #
     # «x.MPName()»
@@ -256,7 +260,7 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
     #
     # --------------------- Control Points ---------------------
     #
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
     «IF x.IsExternal()»
     #
     # «x.CPName()»
@@ -295,7 +299,7 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
             monitorList = \
                 CCL.«Extends()».«Extends()».getMonitorList(self)«ELSE»
             monitorList = []«ENDIF»
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
             «IF x.IsExternal() && x.IsMonitored()»monitorList.append("«x.MPName()»")«ENDIF»
 «ENDFOREACH»
             result[antName] = monitorList
@@ -317,7 +321,7 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
             controlList = \
                 CCL.«Extends()».«Extends()».getControlList(self)«ELSE»
             controlList = []«ENDIF»
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
             «IF x.IsExternal()»controlList.append("«x.CPName()»")«ENDIF»
 «ENDFOREACH»
             result[antName] = controlList

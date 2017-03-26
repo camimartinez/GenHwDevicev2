@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.eth.impl;
 
 import alma.control.datamodel.meta.base.Table;
+
 import alma.control.datamodel.meta.base.impl.ArchivePropertyImpl;
 
 import alma.control.datamodel.meta.eth.Archive;

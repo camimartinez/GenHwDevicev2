@@ -22,18 +22,18 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath()+"/src/"+Assembly()+"CompSim.cpp"»
+«DEFINE SWModuleDef FOR DeviceModel»
+«FILE DirPath()+"/src/"+Assembly()+"CompSim.cpp"-»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -60,6 +60,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ *
+ * Id: CompSimDotCPP.xpt
  *
  */
 

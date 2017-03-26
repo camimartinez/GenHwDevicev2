@@ -22,25 +22,19 @@
  */
 package alma.control.datamodel.meta.eth.impl;
 
-import java.util.Iterator;
-
-import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+
 import alma.control.datamodel.meta.eth.EthPackage;
 import alma.control.datamodel.meta.eth.MandC;
 
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +47,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getAssembly <em>Assembly</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getMcp <em>Mcp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getTables <em>Tables</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.impl.MandCImpl#getUtils <em>Utils</em>}</li>
  * </ul>
@@ -120,16 +113,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @ordered
 	 */
 	protected String assembly = ASSEMBLY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getMcp() <em>Mcp</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMcp()
-	 * @generated
-	 * @ordered
-	 */
-	protected MandCBase mcp;
 
 	/**
 	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
@@ -238,44 +221,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MandCBase getMcp() {
-		if (mcp != null && mcp.eIsProxy()) {
-			InternalEObject oldMcp = (InternalEObject)mcp;
-			mcp = (MandCBase)eResolveProxy(oldMcp);
-			if (mcp != oldMcp) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EthPackage.MAND_C__MCP, oldMcp, mcp));
-			}
-		}
-		return mcp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MandCBase basicGetMcp() {
-		return mcp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMcp(MandCBase newMcp) {
-		MandCBase oldMcp = mcp;
-		mcp = newMcp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EthPackage.MAND_C__MCP, oldMcp, mcp));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Table getTables() {
 		if (tables != null && tables.eIsProxy()) {
 			InternalEObject oldTables = (InternalEObject)tables;
@@ -364,7 +309,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	public String Assembly() {
 		return assembly;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -384,27 +329,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		return IsDataArray() ? s.substring(0,s.indexOf("[")) : s;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	//Print the values of the class, to test the objects
-	public static void printAttributeValues(EObject object) {
-		EClass eClass = object.eClass();
-		System.out.println(eClass.getName());
-		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
-			EAttribute attribute = (EAttribute)iter.next();
-			Object value = object.eGet(attribute);
-
-			System.out.print("  " + attribute.getName() + " : ");
-			if (object.eIsSet(attribute))
-				System.out.println(value);
-			else
-				System.out.println(value + " (default)");
-		}
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -534,9 +458,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return getSheet();
 			case EthPackage.MAND_C__ASSEMBLY:
 				return getAssembly();
-			case EthPackage.MAND_C__MCP:
-				if (resolve) return getMcp();
-				return basicGetMcp();
 			case EthPackage.MAND_C__TABLES:
 				if (resolve) return getTables();
 				return basicGetTables();
@@ -563,9 +484,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return;
 			case EthPackage.MAND_C__ASSEMBLY:
 				setAssembly((String)newValue);
-				return;
-			case EthPackage.MAND_C__MCP:
-				setMcp((MandCBase)newValue);
 				return;
 			case EthPackage.MAND_C__TABLES:
 				setTables((Table)newValue);
@@ -594,9 +512,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 			case EthPackage.MAND_C__ASSEMBLY:
 				setAssembly(ASSEMBLY_EDEFAULT);
 				return;
-			case EthPackage.MAND_C__MCP:
-				setMcp((MandCBase)null);
-				return;
 			case EthPackage.MAND_C__TABLES:
 				setTables((Table)null);
 				return;
@@ -621,8 +536,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 				return sheet != SHEET_EDEFAULT;
 			case EthPackage.MAND_C__ASSEMBLY:
 				return ASSEMBLY_EDEFAULT == null ? assembly != null : !ASSEMBLY_EDEFAULT.equals(assembly);
-			case EthPackage.MAND_C__MCP:
-				return mcp != null;
 			case EthPackage.MAND_C__TABLES:
 				return tables != null;
 			case EthPackage.MAND_C__UTILS:

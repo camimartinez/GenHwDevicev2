@@ -23,10 +23,10 @@
 package alma.control.datamodel.meta.eth;
 
 import alma.control.datamodel.meta.base.MonitorPoint;
-
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
-import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public interface Monitor extends MonitorPoint {
 	 * Returns the value of the '<em><b>Mac</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mac</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Mac</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -98,7 +98,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\ttry\r\n\t\t{\r\n\t\t\tInteger.decode(mac.Address());\r\n\t\t}\r\n\t\tcatch(Exception e)\r\n\t\t{\r\n\t\t\treturn true;\r\n\t\t}\r\n\r\n\t\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\ttry{\r\n\t\t\tInteger.decode(mac.Address());\r\n\t\t}catch(Exception e){\r\n\t\t\treturn true;\r\n\t\t}\r\n\t\treturn false;'"
 	 * @generated
 	 */
 	boolean IsEnumAddress();
@@ -195,18 +195,18 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.DataToDatabaseType();'"
-	 * @generated
-	 */
-	String DataToDatabaseType();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\r\n\t\tif (DataType().equals(\"uint\"))\r\n\t\t\treturn false;\r\n\t\r\n\t\tif ( DataType().equals(\"bool\") || DataType().equals(\"boolean\")\r\n\t\t\t\t|| DataType().equals(\"string\")\r\n\t\t\t\t|| (DataType().equals(\"double\") &amp;&amp; IsDataArray())\r\n\t\t\t\t|| (DataType().equals(\"int\") &amp;&amp; IsDataArray()) )\r\n\t\t\treturn false;\r\n\t\treturn true;'"
 	 * @generated
 	 */
 	boolean IsArchived();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mac.DataToDatabaseType();'"
+	 * @generated
+	 */
+	String DataToDatabaseType();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel null='return false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return false;'"
 	 * @generated
 	 */
 	boolean IsPartOfHomogeneous();
@@ -236,9 +236,9 @@ public interface Monitor extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.tables = tables;\n\t\tthis.utils = utils;\n\t\tsetMonitorPoint(row, parent,tables,utils);\n\t\tmac = new MandCImpl();\n\t\tmac.setMandCEth(row, sheet, tables, utils);\n\t\tresourceSetMonitor = new ResourceSetImpl();\n\t\tResource res = resourceSetMonitor.createResource(URI.createURI(\"\"));\n\t\tres.getContents().add(mac);\t'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMonitorPoint(row, parent,tables,utils);\nmac = EthFactory.eINSTANCE.createMandC();\nmac.setMandCEth(row, sheet, tables, utils);'"
 	 * @generated
 	 */
-	void setMonitorEth(String[] row, EObject parent, Table tables, Util utils);
+	void setMonitorEth(String[] row, Resource parent, Table tables, Util utils);
 
 } // Monitor

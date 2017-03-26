@@ -22,12 +22,23 @@
  */
 package alma.control.datamodel.meta.eth;
 
+import alma.control.datamodel.meta.base.Note;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Device Model</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getMainEth <em>Main Eth</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getMonitor <em>Monitor</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getControl <em>Control</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getArchive <em>Archive</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getNote <em>Note</em>}</li>
+ * </ul>
  *
  * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel()
  * @model
@@ -35,9 +46,139 @@ package alma.control.datamodel.meta.eth;
  */
 public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceModel {
 	/**
+	 * Returns the value of the '<em><b>Main Eth</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Eth</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main Eth</em>' containment reference.
+	 * @see #setMainEth(Main)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_MainEth()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	Main getMainEth();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getMainEth <em>Main Eth</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return \"true\";'"
+	 * @param value the new value of the '<em>Main Eth</em>' containment reference.
+	 * @see #getMainEth()
+	 * @generated
+	 */
+	void setMainEth(Main value);
+
+	/**
+	 * Returns the value of the '<em><b>Monitor</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Monitor</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Monitor</em>' containment reference.
+	 * @see #setMonitor(Monitor)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_Monitor()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	Monitor getMonitor();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getMonitor <em>Monitor</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Monitor</em>' containment reference.
+	 * @see #getMonitor()
+	 * @generated
+	 */
+	void setMonitor(Monitor value);
+
+	/**
+	 * Returns the value of the '<em><b>Control</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Control</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Control</em>' containment reference.
+	 * @see #setControl(Control)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_Control()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	Control getControl();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getControl <em>Control</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Control</em>' containment reference.
+	 * @see #getControl()
+	 * @generated
+	 */
+	void setControl(Control value);
+
+	/**
+	 * Returns the value of the '<em><b>Archive</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Archive</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Archive</em>' containment reference.
+	 * @see #setArchive(Archive)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_Archive()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	Archive getArchive();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getArchive <em>Archive</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Archive</em>' containment reference.
+	 * @see #getArchive()
+	 * @generated
+	 */
+	void setArchive(Archive value);
+
+	/**
+	 * Returns the value of the '<em><b>Note</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Note</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Note</em>' containment reference.
+	 * @see #setNote(Note)
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_Note()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	Note getNote();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getNote <em>Note</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Note</em>' containment reference.
+	 * @see #getNote()
+	 * @generated
+	 */
+	void setNote(Note value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return \"\";'"
 	 * @generated
 	 */
 	String CreateModel();
@@ -45,7 +186,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getMainEth().VendorClass();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((MainImpl)main).VendorClass();'"
 	 * @generated
 	 */
 	String VendorClass();

@@ -22,17 +22,17 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath()+"/idl/"+Assembly()+"Base.idl"»
+«DEFINE SWModuleDef FOR DeviceModel»
+«FILE DirPath()+"/idl/"+Assembly()+"Base.idl"-»
 #ifndef «Assembly()»Base_idl
 #define «Assembly()»Base_idl
 /**
@@ -61,7 +61,9 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
- *  
+ *
+ *  Id: BaseIDL.xpt
+ *
  */
 
 
@@ -98,7 +100,7 @@ module Control
         /////////////////////
         // BACI Properties //
         /////////////////////
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «IF x.IsMonitored()»
         /// «x.Description()»
         «IF x.DisplayUnits() == "pattern"»
@@ -116,7 +118,7 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Monitor Points //
         ////////////////////////////////////////
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
 «IF x.IsExternal()»
         /// «x.Description()»
         «IF x.IsDataArray()»
@@ -136,7 +138,7 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Control Points //
         ////////////////////////////////////////
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
     «IF x.IsExternal()»
         /// «x.Description()»
         «IF x.IsDataArray()»

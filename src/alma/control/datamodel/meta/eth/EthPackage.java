@@ -106,22 +106,22 @@ public interface EthPackage extends EPackage {
 	int ARCHIVE__SHEET = BasePackage.ARCHIVE_PROPERTY__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Mp</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHIVE__MP = BasePackage.ARCHIVE_PROPERTY__MP;
-
-	/**
-	 * The feature id for the '<em><b>Cp</b></em>' reference.
+	 * The feature id for the '<em><b>Cp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ARCHIVE__CP = BasePackage.ARCHIVE_PROPERTY__CP;
+
+	/**
+	 * The feature id for the '<em><b>Mp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE__MP = BasePackage.ARCHIVE_PROPERTY__MP;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -197,6 +197,24 @@ public interface EthPackage extends EPackage {
 	int CONTROL__SHEET = BasePackage.CONTROL_POINT__SHEET;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__PARENT = BasePackage.CONTROL_POINT__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
+
+	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,15 +222,6 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
-
-	/**
-	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__RESOURCE_SET_DEPENDENTS = BasePackage.CONTROL_POINT__RESOURCE_SET_DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -224,15 +233,6 @@ public interface EthPackage extends EPackage {
 	int CONTROL__TABLES = BasePackage.CONTROL_POINT__TABLES;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__PARENT = BasePackage.CONTROL_POINT__PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,24 +240,6 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL__UTILS = BasePackage.CONTROL_POINT__UTILS;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
-
-	/**
-	 * The feature id for the '<em><b>Resource Set Control</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__RESOURCE_SET_CONTROL = BasePackage.CONTROL_POINT__RESOURCE_SET_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Mac</b></em>' reference.
@@ -306,15 +288,6 @@ public interface EthPackage extends EPackage {
 	int DEVICE_MODEL__SPREADSHEET = BasePackage.DEVICE_MODEL__SPREADSHEET;
 
 	/**
-	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
-
-	/**
 	 * The feature id for the '<em><b>Notes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,6 +295,15 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_MODEL__NOTES = BasePackage.DEVICE_MODEL__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
 
 	/**
 	 * The feature id for the '<em><b>Control Points</b></em>' attribute.
@@ -340,24 +322,6 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_MODEL__ARCHIVE_PROPERTIES = BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Main</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
-
-	/**
-	 * The feature id for the '<em><b>Container</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__CONTAINER = BasePackage.DEVICE_MODEL__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Device Name</b></em>' attribute.
@@ -432,33 +396,6 @@ public interface EthPackage extends EPackage {
 	int DEVICE_MODEL__GENERATE_ALT = BasePackage.DEVICE_MODEL__GENERATE_ALT;
 
 	/**
-	 * The feature id for the '<em><b>AProperties</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__APROPERTIES = BasePackage.DEVICE_MODEL__APROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>CPoints</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__CPOINTS = BasePackage.DEVICE_MODEL__CPOINTS;
-
-	/**
-	 * The feature id for the '<em><b>MPoints</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__MPOINTS = BasePackage.DEVICE_MODEL__MPOINTS;
-
-	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -477,22 +414,58 @@ public interface EthPackage extends EPackage {
 	int DEVICE_MODEL__TABLES = BasePackage.DEVICE_MODEL__TABLES;
 
 	/**
-	 * The feature id for the '<em><b>Main Amb</b></em>' reference.
+	 * The feature id for the '<em><b>Main</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN_AMB = BasePackage.DEVICE_MODEL__MAIN_AMB;
+	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
 
 	/**
-	 * The feature id for the '<em><b>Main Eth</b></em>' reference.
+	 * The feature id for the '<em><b>Main Eth</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN_ETH = BasePackage.DEVICE_MODEL__MAIN_ETH;
+	int DEVICE_MODEL__MAIN_ETH = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Monitor</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MONITOR = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Control</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__CONTROL = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__ARCHIVE = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__NOTE = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
@@ -501,7 +474,7 @@ public interface EthPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 0;
+	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.eth.impl.MainImpl <em>Main</em>}' class.
@@ -550,15 +523,6 @@ public interface EthPackage extends EPackage {
 	int MAIN__UTILS = BasePackage.MAIN_BASE__UTILS;
 
 	/**
-	 * The feature id for the '<em><b>Devices</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAIN__DEVICES = BasePackage.MAIN_BASE__DEVICES;
-
-	/**
 	 * The number of structural features of the '<em>Main</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -605,22 +569,13 @@ public interface EthPackage extends EPackage {
 	int MAND_C__ASSEMBLY = 2;
 
 	/**
-	 * The feature id for the '<em><b>Mcp</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_C__MCP = 3;
-
-	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_C__TABLES = 4;
+	int MAND_C__TABLES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
@@ -629,7 +584,7 @@ public interface EthPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_C__UTILS = 5;
+	int MAND_C__UTILS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Mand C</em>' class.
@@ -638,7 +593,7 @@ public interface EthPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_C_FEATURE_COUNT = 6;
+	int MAND_C_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.eth.impl.MonitorImpl <em>Monitor</em>}' class.
@@ -696,6 +651,24 @@ public interface EthPackage extends EPackage {
 	int MONITOR__SHEET = BasePackage.MONITOR_POINT__SHEET;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__PARENT = BasePackage.MONITOR_POINT__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
+
+	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -703,15 +676,6 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
-
-	/**
-	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__RESOURCE_SET_DEPENDENTS = BasePackage.MONITOR_POINT__RESOURCE_SET_DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -723,15 +687,6 @@ public interface EthPackage extends EPackage {
 	int MONITOR__TABLES = BasePackage.MONITOR_POINT__TABLES;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__PARENT = BasePackage.MONITOR_POINT__PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -739,24 +694,6 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR__UTILS = BasePackage.MONITOR_POINT__UTILS;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
-
-	/**
-	 * The feature id for the '<em><b>Resource Set Monitor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__RESOURCE_SET_MONITOR = BasePackage.MONITOR_POINT__RESOURCE_SET_MONITOR;
 
 	/**
 	 * The feature id for the '<em><b>Mac</b></em>' reference.
@@ -819,6 +756,61 @@ public interface EthPackage extends EPackage {
 	EClass getDeviceModel();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.eth.DeviceModel#getMainEth <em>Main Eth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Main Eth</em>'.
+	 * @see alma.control.datamodel.meta.eth.DeviceModel#getMainEth()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_MainEth();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.eth.DeviceModel#getMonitor <em>Monitor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Monitor</em>'.
+	 * @see alma.control.datamodel.meta.eth.DeviceModel#getMonitor()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_Monitor();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.eth.DeviceModel#getControl <em>Control</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Control</em>'.
+	 * @see alma.control.datamodel.meta.eth.DeviceModel#getControl()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_Control();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.eth.DeviceModel#getArchive <em>Archive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Archive</em>'.
+	 * @see alma.control.datamodel.meta.eth.DeviceModel#getArchive()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_Archive();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.eth.DeviceModel#getNote <em>Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Note</em>'.
+	 * @see alma.control.datamodel.meta.eth.DeviceModel#getNote()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_Note();
+
+	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.eth.Main <em>Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -870,17 +862,6 @@ public interface EthPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMandC_Assembly();
-
-	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.eth.MandC#getMcp <em>Mcp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mcp</em>'.
-	 * @see alma.control.datamodel.meta.eth.MandC#getMcp()
-	 * @see #getMandC()
-	 * @generated
-	 */
-	EReference getMandC_Mcp();
 
 	/**
 	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.eth.MandC#getTables <em>Tables</em>}'.
@@ -986,6 +967,46 @@ public interface EthPackage extends EPackage {
 		EClass DEVICE_MODEL = eINSTANCE.getDeviceModel();
 
 		/**
+		 * The meta object literal for the '<em><b>Main Eth</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__MAIN_ETH = eINSTANCE.getDeviceModel_MainEth();
+
+		/**
+		 * The meta object literal for the '<em><b>Monitor</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__MONITOR = eINSTANCE.getDeviceModel_Monitor();
+
+		/**
+		 * The meta object literal for the '<em><b>Control</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__CONTROL = eINSTANCE.getDeviceModel_Control();
+
+		/**
+		 * The meta object literal for the '<em><b>Archive</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__ARCHIVE = eINSTANCE.getDeviceModel_Archive();
+
+		/**
+		 * The meta object literal for the '<em><b>Note</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__NOTE = eINSTANCE.getDeviceModel_Note();
+
+		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.eth.impl.MainImpl <em>Main</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1028,14 +1049,6 @@ public interface EthPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MAND_C__ASSEMBLY = eINSTANCE.getMandC_Assembly();
-
-		/**
-		 * The meta object literal for the '<em><b>Mcp</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAND_C__MCP = eINSTANCE.getMandC_Mcp();
 
 		/**
 		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.

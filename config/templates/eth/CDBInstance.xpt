@@ -22,17 +22,17 @@ MA 02111-1307  USA
 
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::eth::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::eth»
 
 «EXTENSION alma::control::templates::extensions::eth::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «EXPAND SWModuleDef»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath()+"/doc/"+Assembly()+".xml"»
+«DEFINE SWModuleDef FOR DeviceModel»
+«FILE DirPath()+"/doc/"+Assembly()+".xml"-»
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
  * ALMA - Atacama Large Millimiter Array
@@ -61,6 +61,8 @@ MA 02111-1307  USA
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
  *
+ * Id: CDBInstance.xpt
+ *
 -->
 
 <«Assembly()»Base xmlns="urn:schemas-cosylab-com:«Assembly()»Base:1.0"
@@ -68,7 +70,7 @@ MA 02111-1307  USA
     http://www.nrao.edu/schemas/CONTROL/«Assembly()»Base.xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-  «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+  «FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «IF x.IsMonitored()»
     <«x.MPName()»
         archive_priority="15"
