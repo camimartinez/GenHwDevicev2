@@ -1,22 +1,39 @@
+/**
+ * ALMA - Atacama Large Millimiter Array
+ * (c) European Southern Observatory, 2017
+ * Copyright by ESO (in the framework of the ALMA collaboration),
+ * All rights reserved
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
+ * MA 02111-1307  USA
+ * 
+ */
 package alma.control.datamodel.meta.base.impl;
 
-
-
-import java.util.Iterator;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.DeviceModel;
 import alma.control.datamodel.meta.base.MainBase;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,12 +47,11 @@ import alma.control.datamodel.meta.base.Util;
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getTables <em>Tables</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getUtils <em>Utils</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.MainBaseImpl#getDevices <em>Devices</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
+public class MainBaseImpl extends EObjectImpl implements MainBase {
 	/**
 	 * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -95,16 +111,6 @@ public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * @ordered
 	 */
 	protected Util utils;
-
-	/**
-	 * The cached value of the '{@link #getDevices() <em>Devices</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDevices()
-	 * @generated
-	 * @ordered
-	 */
-	protected DeviceModel devices;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,44 +254,6 @@ public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeviceModel getDevices() {
-		if (devices != null && devices.eIsProxy()) {
-			InternalEObject oldDevices = (InternalEObject)devices;
-			devices = (DeviceModel)eResolveProxy(oldDevices);
-			if (devices != oldDevices) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.MAIN_BASE__DEVICES, oldDevices, devices));
-			}
-		}
-		return devices;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DeviceModel basicGetDevices() {
-		return devices;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDevices(DeviceModel newDevices) {
-		DeviceModel oldDevices = devices;
-		devices = newDevices;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MAIN_BASE__DEVICES, oldDevices, devices));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String Assembly() {
 		return row[tables.getColNum(sheet, "Assembly")];
 	}
@@ -377,26 +345,6 @@ public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public static void printAttributeValues(EObject object) {
-		EClass eClass = object.eClass();
-		System.out.println(eClass.getName());
-		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
-			EAttribute attribute = (EAttribute)iter.next();
-			Object value = object.eGet(attribute);
-
-			System.out.print("  " + attribute.getName() + " : ");
-			if (object.eIsSet(attribute))
-				System.out.println(value);
-			else
-				System.out.println(value + " (default)");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -412,9 +360,6 @@ public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__UTILS:
 				if (resolve) return getUtils();
 				return basicGetUtils();
-			case BasePackage.MAIN_BASE__DEVICES:
-				if (resolve) return getDevices();
-				return basicGetDevices();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -438,9 +383,6 @@ public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
 				return;
 			case BasePackage.MAIN_BASE__UTILS:
 				setUtils((Util)newValue);
-				return;
-			case BasePackage.MAIN_BASE__DEVICES:
-				setDevices((DeviceModel)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -466,9 +408,6 @@ public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
 			case BasePackage.MAIN_BASE__UTILS:
 				setUtils((Util)null);
 				return;
-			case BasePackage.MAIN_BASE__DEVICES:
-				setDevices((DeviceModel)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -489,8 +428,6 @@ public abstract class MainBaseImpl extends EObjectImpl implements MainBase {
 				return tables != null;
 			case BasePackage.MAIN_BASE__UTILS:
 				return utils != null;
-			case BasePackage.MAIN_BASE__DEVICES:
-				return devices != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -472,6 +472,8 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @!generated
 	 */
 	public String CreateModel() {
+	
+		
 		// Parse and validate the spreadsheet.
 		int i;
 		int mainIndex;
@@ -527,15 +529,15 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		archiveIndex = table.getSheetNum("Archive Property");
 	
 		util.setTables(table);
-
+		
+		container = new ResourceSetImpl();
 		// Get the Notes
-		notes = new ResourceSetImpl();
+		notes = container.createResource(URI.createURI(""));
 		for (i = 3; i < spreadsheet[mainIndex].length; i++) {
 			Note note = baseFactory.createNote();
 			note.setNote(spreadsheet[mainIndex][i][descriptionIndex]);
-			Resource noteResource = notes.createResource(URI.createURI(""));
-			noteResource.getContents().add(note);
-			notes.getResources().add(noteResource);
+			notes.getContents().add(note);
+			container.getResources().add(notes);
 		}	
 		
 		//Get the Main
@@ -544,74 +546,66 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		
 		// Get the monitor points
 		Monitor mparent = null;
-		monitorPoints = new ResourceSetImpl();
+		monitorPoints = container.createResource(URI.createURI(""));
 		for (i = 2; i < spreadsheet[monitorIndex].length; i++) {
 			if(spreadsheet[monitorIndex][i].length == 0)
 				break;
 			Monitor mp;
-			Resource mpResource = monitorPoints.createResource(URI.createURI(""));
 			String[] row = spreadsheet[monitorIndex][i];
 			if(!spreadsheet[monitorIndex][i][0].startsWith(table.getDepChar())){
 				mp = ethFactory.createMonitor();
 				mp.setMonitorEth(row, null, table, util);
 				mparent = mp;
-				mpResource.getContents().add(mparent);
-				monitorPoints.getResources().add(mpResource);
 			}else{
 				mp = ethFactory.createMonitor();
-				mp.setMonitorEth(row, mpResource, table, util);
-				mpResource.getContents().add(mp);
-				mparent.addDependent(mpResource);
+				mp.setMonitorEth(row, mparent, table, util);
+				mparent.addDependent(mp);
 			}
 			setDeviceModel(table,util);
-			mp.setArchive(getArchive(mp.FullName()));
+			mp.setArchiveProp(getArchiveProp(mp.FullName()));
 			mp.setAssemblyName(main.Assembly());
-			mpResource.getContents().add(mp);
-			monitorPoints.getResources().add(mpResource);
+			monitorPoints.getContents().add(mp);
+			container.getResources().add(monitorPoints);
 		}
 			
 		// Get the control points
 		Control cparent = null;
-		controlPoints = new ResourceSetImpl();
+		controlPoints = container.createResource(URI.createURI(""));
 		for (i = 2; i < spreadsheet[controlIndex].length; ++i) {
 			if(spreadsheet[controlIndex][i].length == 0)
 				break;
 			Control cp;
-			Resource cpResource = controlPoints.createResource(URI.createURI(""));
 			String[] row = spreadsheet[controlIndex][i];
 			if(!spreadsheet[controlIndex][i][0].startsWith(table.getDepChar())){
 				cp = ethFactory.createControl();
 				cp.setControlEth(row, null, table, util);
 				cparent = cp;
-				cpResource.getContents().add(cparent);
-				controlPoints.getResources().add(cpResource);
 			}else{
 				cp = ethFactory.createControl();
-				cp.setControlEth(row, cpResource, table, util);
-				cpResource.getContents().add(cp);
-				cparent.addDependent(cpResource);
+				cp.setControlEth(row, cparent, table, util);
+				cparent.addDependent(cp);
 			}
-			cp.setArchive(getArchive(cp.FullName()));
+			cp.setArchiveProp(getArchiveProp(cp.FullName()));
 			cp.setAssemblyName(main.Assembly());
-			cpResource.getContents().add(cp);
-			controlPoints.getResources().add(cpResource);
+			controlPoints.getContents().add(cp);
+			container.getResources().add(controlPoints);
 		}
 
 		//Get the Archive Properties
-		archiveProperties = new ResourceSetImpl();
+		archiveProperties = container.createResource(URI.createURI(""));
 		for(i = 2; i < spreadsheet[archiveIndex].length; i++) {
 			if(spreadsheet[archiveIndex][i].length == 0)
 				break;
 			Archive ap;
-			Resource aResource = archiveProperties.createResource(URI.createURI(""));
 			String[] row = spreadsheet[archiveIndex][i];
 			ap = ethFactory.createArchive();
 			ap.setArchiveEth(row, table);
-			aResource.getContents().add(ap);
-			archiveProperties.getResources().add(aResource);
+			archiveProperties.getContents().add(ap);
+			container.getResources().add(archiveProperties);
 		}
-		
+	
 		System.out.println("DeviceModel: Initialization complete.");
+		
 		return "";
 	}
 

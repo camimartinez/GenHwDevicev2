@@ -26,6 +26,7 @@ import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -236,9 +237,9 @@ public interface Monitor extends MonitorPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMonitorPoint(row, parent,tables,utils);\nmac = EthFactory.eINSTANCE.createMandC();\nmac.setMandCEth(row, sheet, tables, utils);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\n\t\tthis.utils = utils;\n\t\tthis.parent = parent;\n\t\tsetMonitorPoint(row, parent,tables,utils);\n\t\tmac = EthFactory.eINSTANCE.createMandC();\n\t\tmac.setMandCEth(row, sheet, tables, utils);'"
 	 * @generated
 	 */
-	void setMonitorEth(String[] row, Resource parent, Table tables, Util utils);
+	void setMonitorEth(String[] row, EObject parent, Table tables, Util utils);
 
 } // Monitor

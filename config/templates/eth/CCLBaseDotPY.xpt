@@ -237,7 +237,7 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
     #
     # --------------------- Monitor Points ---------------------
     #
-«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF x.IsExternal()»
     #
     # «x.MPName()»
@@ -260,7 +260,7 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
     #
     # --------------------- Control Points ---------------------
     #
-«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF x.IsExternal()»
     #
     # «x.CPName()»
@@ -299,7 +299,7 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
             monitorList = \
                 CCL.«Extends()».«Extends()».getMonitorList(self)«ELSE»
             monitorList = []«ENDIF»
-«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
             «IF x.IsExternal() && x.IsMonitored()»monitorList.append("«x.MPName()»")«ENDIF»
 «ENDFOREACH»
             result[antName] = monitorList
@@ -321,7 +321,7 @@ class «Assembly()»Base(CCL.HardwareDevice.HardwareDevice):
             controlList = \
                 CCL.«Extends()».«Extends()».getControlList(self)«ELSE»
             controlList = []«ENDIF»
-«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
             «IF x.IsExternal()»controlList.append("«x.CPName()»")«ENDIF»
 «ENDFOREACH»
             result[antName] = controlList

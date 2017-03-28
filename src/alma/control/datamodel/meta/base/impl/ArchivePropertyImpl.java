@@ -1,4 +1,3 @@
-package alma.control.datamodel.meta.base.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -21,23 +20,23 @@ package alma.control.datamodel.meta.base.impl;
  * MA 02111-1307  USA
  * 
  */
-
-
-import java.util.Iterator;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+package alma.control.datamodel.meta.base.impl;
 
 import alma.control.datamodel.meta.base.ArchiveProperty;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
 import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Table;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,8 +48,8 @@ import alma.control.datamodel.meta.base.Table;
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getCp <em>Cp</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getMp <em>Mp</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.impl.ArchivePropertyImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
@@ -98,16 +97,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	protected int sheet = SHEET_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMp() <em>Mp</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMp()
-	 * @generated
-	 * @ordered
-	 */
-	protected MonitorPoint mp;
-
-	/**
 	 * The cached value of the '{@link #getCp() <em>Cp</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,6 +105,16 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @ordered
 	 */
 	protected ControlPoint cp;
+
+	/**
+	 * The cached value of the '{@link #getMp() <em>Mp</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMp()
+	 * @generated
+	 * @ordered
+	 */
+	protected MonitorPoint mp;
 
 	/**
 	 * The cached value of the '{@link #getTables() <em>Tables</em>}' reference.
@@ -193,56 +192,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MonitorPoint getMp() {
-		if (mp != null && mp.eIsProxy()) {
-			InternalEObject oldMp = (InternalEObject)mp;
-			mp = (MonitorPoint)eResolveProxy(oldMp);
-			if (mp != oldMp) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__MP, oldMp, mp));
-			}
-		}
-		return mp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MonitorPoint basicGetMp() {
-		return mp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMp(MonitorPoint newMp) {
-		MonitorPoint oldMp = mp;
-		mp = newMp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__MP, oldMp, mp));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public void setMP(MonitorPoint newMp) {
-		MonitorPoint oldMp = mp;
-		mp = newMp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__MP, oldMp, mp));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ControlPoint getCp() {
 		if (cp != null && cp.eIsProxy()) {
 			InternalEObject oldCp = (InternalEObject)cp;
@@ -279,13 +228,104 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	public void setCP(ControlPoint newCp) {
-		ControlPoint oldCp = cp;
-		cp = newCp;
+	public MonitorPoint getMp() {
+		if (mp != null && mp.eIsProxy()) {
+			InternalEObject oldMp = (InternalEObject)mp;
+			mp = (MonitorPoint)eResolveProxy(oldMp);
+			if (mp != oldMp) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__MP, oldMp, mp));
+			}
+		}
+		return mp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MonitorPoint basicGetMp() {
+		return mp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMp(MonitorPoint newMp) {
+		MonitorPoint oldMp = mp;
+		mp = newMp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__CP, oldCp, cp));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__MP, oldMp, mp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table getTables() {
+		if (tables != null && tables.eIsProxy()) {
+			InternalEObject oldTables = (InternalEObject)tables;
+			tables = (Table)eResolveProxy(oldTables);
+			if (tables != oldTables) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
+			}
+		}
+		return tables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table basicGetTables() {
+		return tables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTables(Table newTables) {
+		Table oldTables = tables;
+		tables = newTables;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean IsRefersTo() {
+		return mp != null || cp !=null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean IsMonitorPoint() {
+		return mp != null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean IsControlPoint() {
+		return cp != null;
 	}
 
 	/**
@@ -398,6 +438,7 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	public String Title() {
 		return row[tables.getColNum(sheet, "Title")];
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -412,27 +453,6 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	//Print the values of the class, to test the objects
-	public static void printAttributeValues(EObject object) {
-		EClass eClass = object.eClass();
-		System.out.println(eClass.getName());
-		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
-			EAttribute attribute = (EAttribute)iter.next();
-			Object value = object.eGet(attribute);
-
-			System.out.print("  " + attribute.getName() + " : ");
-			if (object.eIsSet(attribute))
-				System.out.println(value);
-			else
-				System.out.println(value + " (default)");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -442,12 +462,12 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return getRow();
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				return getSheet();
-			case BasePackage.ARCHIVE_PROPERTY__MP:
-				if (resolve) return getMp();
-				return basicGetMp();
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				if (resolve) return getCp();
 				return basicGetCp();
+			case BasePackage.ARCHIVE_PROPERTY__MP:
+				if (resolve) return getMp();
+				return basicGetMp();
 			case BasePackage.ARCHIVE_PROPERTY__TABLES:
 				if (resolve) return getTables();
 				return basicGetTables();
@@ -469,11 +489,11 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				setSheet((Integer)newValue);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__MP:
-				setMp((MonitorPoint)newValue);
-				return;
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				setCp((ControlPoint)newValue);
+				return;
+			case BasePackage.ARCHIVE_PROPERTY__MP:
+				setMp((MonitorPoint)newValue);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__TABLES:
 				setTables((Table)newValue);
@@ -496,11 +516,11 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				setSheet(SHEET_EDEFAULT);
 				return;
-			case BasePackage.ARCHIVE_PROPERTY__MP:
-				setMp((MonitorPoint)null);
-				return;
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				setCp((ControlPoint)null);
+				return;
+			case BasePackage.ARCHIVE_PROPERTY__MP:
+				setMp((MonitorPoint)null);
 				return;
 			case BasePackage.ARCHIVE_PROPERTY__TABLES:
 				setTables((Table)null);
@@ -521,10 +541,10 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 				return ROW_EDEFAULT == null ? row != null : !ROW_EDEFAULT.equals(row);
 			case BasePackage.ARCHIVE_PROPERTY__SHEET:
 				return sheet != SHEET_EDEFAULT;
-			case BasePackage.ARCHIVE_PROPERTY__MP:
-				return mp != null;
 			case BasePackage.ARCHIVE_PROPERTY__CP:
 				return cp != null;
+			case BasePackage.ARCHIVE_PROPERTY__MP:
+				return mp != null;
 			case BasePackage.ARCHIVE_PROPERTY__TABLES:
 				return tables != null;
 		}
@@ -548,60 +568,5 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 		result.append(')');
 		return result.toString();
 	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table getTables() {
-		if (tables != null && tables.eIsProxy()) {
-			InternalEObject oldTables = (InternalEObject)tables;
-			tables = (Table)eResolveProxy(oldTables);
-			if (tables != oldTables) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
-			}
-		}
-		return tables;
-	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Table basicGetTables() {
-		return tables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTables(Table newTables) {
-		Table oldTables = tables;
-		tables = newTables;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.ARCHIVE_PROPERTY__TABLES, oldTables, tables));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean IsMonitorPoint() {
-		return mp != null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean IsControlPoint() {
-		return cp != null;
-	}
 } //ArchivePropertyImpl

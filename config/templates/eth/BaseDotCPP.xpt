@@ -81,7 +81,7 @@ MA 02111-1307  USA
 «ELSE»
     EthernetDevice(name, cs)
 «ENDIF»
-«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF !x.IsDependent() && x.Address() != "none"»
         «IF x.IsEnumAddress()»
     , address«x.AltMPName()»(«VendorClass()»::«x.Address()»)
@@ -93,7 +93,7 @@ MA 02111-1307  USA
     , spp«x.AltMPName()»(this)
         «ENDIF»
 «ENDFOREACH»
-«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent() && x.Address() != "none"»
         «IF x.IsEnumAddress()»
     , address«x.AltCPName()»(«VendorClass()»::«x.Address()»)
@@ -135,7 +135,7 @@ void «Assembly()»Base::initialize()
     try
     {
         const ACE_CString nameWithSep(cdbName_m + ":");
-    «FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF x.IsMonitored()»
         {
             const ACE_CString propName(nameWithSep + "«x.MPName()»");
@@ -233,7 +233,7 @@ void «Assembly()»Base::cleanUp()
 «ENDIF»
 }
 
-«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF x.IsExternal()»
         «EXPAND PublicMonitorPoint FOR x»
     «ENDIF»
@@ -243,7 +243,7 @@ void «Assembly()»Base::cleanUp()
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF x.IsExternal()»
         «EXPAND PublicControlPoint FOR x»
     «ENDIF»

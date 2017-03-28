@@ -100,7 +100,7 @@ module Control
         /////////////////////
         // BACI Properties //
         /////////////////////
-«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF x.IsMonitored()»
         /// «x.Description()»
         «IF x.DisplayUnits() == "pattern"»
@@ -118,7 +118,7 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Monitor Points //
         ////////////////////////////////////////
-«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
 «IF x.IsExternal()»
         /// «x.Description()»
         «IF x.IsDataArray()»
@@ -138,7 +138,7 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Control Points //
         ////////////////////////////////////////
-«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF x.IsExternal()»
         /// «x.Description()»
         «IF x.IsDataArray()»

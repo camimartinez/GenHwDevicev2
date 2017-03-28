@@ -23,51 +23,19 @@
 package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Monitor Point</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link alma.control.datamodel.meta.base.MonitorPoint#getResourceSetMonitor <em>Resource Set Monitor</em>}</li>
- * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint()
  * @model abstract="true"
  * @generated
  */
 public interface MonitorPoint extends MandCBase {
-	/**
-	 * Returns the value of the '<em><b>Resource Set Monitor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resource Set Monitor</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource Set Monitor</em>' attribute.
-	 * @see #setResourceSetMonitor(ResourceSet)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMonitorPoint_ResourceSetMonitor()
-	 * @model transient="true"
-	 * @generated
-	 */
-	ResourceSet getResourceSetMonitor();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MonitorPoint#getResourceSetMonitor <em>Resource Set Monitor</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource Set Monitor</em>' attribute.
-	 * @see #getResourceSetMonitor()
-	 * @generated
-	 */
-	void setResourceSetMonitor(ResourceSet value);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,7 +87,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='int defaultValue = 300;\r\n\tif(archive != null) {\r\n\t\t\tif ( ((ArchiveProperty)archive).Interval().equals(\"none\") )\r\n\t\t\t\treturn Integer.toString(defaultValue);\r\n\t\t\tint value = Integer.valueOf(((ArchiveProperty)archive).Interval());\r\n\t\t\tif (value &lt;= 0)\r\n\t\t\t\tvalue = defaultValue;\r\n\t\t\treturn Integer.toString(value);\r\n\t\t}\r\n\t\telse\r\n\t\t\treturn Integer.toString(defaultValue);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tint defaultValue = 300;\n\t\t\t\tif(archive != null) {\n\t\t\t\t\tif ( ((ArchiveProperty)archive).Interval().equals(\"none\") )\n\t\t\t\t\t\treturn Integer.toString(defaultValue);\n\t\t\t\t\tint value = Integer.valueOf(((ArchiveProperty)archive).Interval());\n\t\t\t\t\tif (value &lt;= 0)\n\t\t\t\t\t\tvalue = defaultValue;\n\t\t\t\t\treturn Integer.toString(value);\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t\treturn Integer.toString(defaultValue);'"
 	 * @generated
 	 */
 	String Interval();
@@ -127,7 +95,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).OnlyOnChange();\r\nelse\r\n\treturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tif(archive != null)\n\t\t\t\t\treturn ((ArchiveProperty)archive).OnlyOnChange();\n\t\t\t\telse\n\t\t\t\t\treturn false;'"
 	 * @generated
 	 */
 	boolean OnlyOnChange();
@@ -135,7 +103,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).DisplayUnits();\r\nelse\r\n\treturn DataUnits();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\n\t\t\t\t\treturn ((ArchiveProperty)archive).DisplayUnits();\n\t\t\t\telse\n\t\t\t\t\treturn DataUnits();'"
 	 * @generated
 	 */
 	String DisplayUnits();
@@ -143,7 +111,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).GraphMin();\r\nelse\r\n\treturn \"none\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(archive != null)\n\t\t\t\t\treturn ((ArchiveProperty)archive).GraphMin();\n\t\t\t\telse\n\t\t\t\t\treturn \"none\";'"
 	 * @generated
 	 */
 	String GraphMin();
@@ -151,7 +119,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).GraphMax();\r\nelse\r\n\treturn \"none\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tif(archive != null)\n\t\t\t\t\treturn ((ArchiveProperty)archive).GraphMax();\n\t\t\t\telse\n\t\t\t\t\treturn \"none\";'"
 	 * @generated
 	 */
 	String GraphMax();
@@ -159,7 +127,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).Format();\r\nelse\r\n\treturn \"none\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tif(archive != null)\n\t\t\t\t\treturn ((ArchiveProperty)archive).Format();\n\t\t\t\telse\n\t\t\t\t\treturn \"none\";'"
 	 * @generated
 	 */
 	String Format();
@@ -167,7 +135,7 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(archive != null)\r\n\treturn ((ArchiveProperty)archive).Title();\r\nelse\r\n\treturn Description();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tif(archive != null)\n\t\t\t\t\treturn ((ArchiveProperty)archive).Title();\n\t\t\t\telse\n\t\t\t\t\treturn Description();'"
 	 * @generated
 	 */
 	String Title();
@@ -187,6 +155,14 @@ public interface MonitorPoint extends MandCBase {
 	 * @generated
 	 */
 	String AltMPName();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return true;'"
+	 * @generated
+	 */
+	boolean IsMonitored();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,16 +191,8 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	boolean IsMonitored();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMandCBase(row, parent, tables, utils);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.tables = tables;\n\t\tthis.utils = utils;\n\t\tthis.parent = parent;\n\t\tsetMandCBase(row, parent, tables, utils);'"
 	 * @generated
 	 */
 	void setMonitorPoint(String[] row, EObject parent, Table tables, Util utils);

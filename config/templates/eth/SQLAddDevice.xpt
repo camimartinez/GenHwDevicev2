@@ -162,7 +162,7 @@ END IF;
 «REM»
   NOW  We find out wether defaultBACIPropertyType has already been inserted. 
 «ENDREM»
-    «FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
         «IF x.IsMonitored()»
             «IF !x.IsDependent() && x.hasDependents()»
                 «LET x.MPName() AS parentBACIProperty»

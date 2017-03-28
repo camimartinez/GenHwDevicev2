@@ -1,4 +1,3 @@
-package alma.control.datamodel.meta.base.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -21,21 +20,19 @@ package alma.control.datamodel.meta.base.impl;
  * MA 02111-1307  USA
  * 
  */
-
-
-import java.util.Iterator;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+package alma.control.datamodel.meta.base.impl;
 
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,6 +91,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @ordered
 	 */
 	protected int maxLength = MAX_LENGTH_EDEFAULT;
+
 
 	/**
 	 * The default value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
@@ -583,27 +581,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 					return x;
 				}
 				return (String)tables.getRawBytes().get(s);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	//Print the values of the class, to test the objects
-	public static void printAttributeValues(EObject object) {
-		EClass eClass = object.eClass();
-		System.out.println(eClass.getName());
-		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
-			EAttribute attribute = (EAttribute)iter.next();
-			Object value = object.eGet(attribute);
-
-			System.out.print("  " + attribute.getName() + " : ");
-			if (object.eIsSet(attribute))
-				System.out.println(value);
-			else
-				System.out.println(value + " (default)");
-		}
 	}
 
 	/**

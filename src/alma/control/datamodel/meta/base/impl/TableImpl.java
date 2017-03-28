@@ -22,16 +22,18 @@
  */
 package alma.control.datamodel.meta.base.impl;
 
+import alma.control.datamodel.meta.base.BasePackage;
+import alma.control.datamodel.meta.base.Table;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import alma.control.datamodel.meta.base.BasePackage;
-import alma.control.datamodel.meta.base.Table;
 
 /**
  * <!-- begin-user-doc -->
@@ -611,8 +613,6 @@ public class TableImpl extends EObjectImpl implements Table {
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.TABLE__CELSIUS_TO_KELVIN, oldCelsiusToKelvin, celsiusToKelvin));
 	}
 
-
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -639,7 +639,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public ArrayList getColNames() {
 		return colNames;
 	}
@@ -661,7 +660,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getToCPP() {
 		return toCPP;
 	}
@@ -683,7 +681,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getToIDL() {
 		return toIDL;
 	}
@@ -705,7 +702,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getToIDLSeq() {
 		return toIDLSeq;
 	}
@@ -727,7 +723,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getToCORBA() {
 		return toCORBA;
 	}
@@ -749,7 +744,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getToCORBASeq() {
 		return toCORBASeq;
 	}
@@ -771,7 +765,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getToCORBADevIO() {
 		return toCORBADevIO;
 	}
@@ -793,7 +786,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getToBACI() {
 		return toBACI;
 	}
@@ -815,7 +807,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getToDatabase() {
 		return toDatabase;
 	}
@@ -837,7 +828,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getRawToCPP() {
 		return rawToCPP;
 	}
@@ -859,7 +849,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getRawToByteSwapped() {
 		return rawToByteSwapped;
 	}
@@ -881,7 +870,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getRawBytes() {
 		return rawBytes;
 	}
@@ -903,7 +891,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToCPP() {
 		return worldToCPP;
 	}
@@ -925,7 +912,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToIDL() {
 		return worldToIDL;
 	}
@@ -947,7 +933,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToIDLSeq() {
 		return worldToIDLSeq;
 	}
@@ -969,7 +954,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToCORBA() {
 		return worldToCORBA;
 	}
@@ -991,7 +975,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToCORBASeq() {
 		return worldToCORBASeq;
 	}
@@ -1013,7 +996,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToCORBADevIO() {
 		return worldToCORBADevIO;
 	}
@@ -1035,7 +1017,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToBACI() {
 		return worldToBACI;
 	}
@@ -1057,7 +1038,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToJava() {
 		return worldToJava;
 	}
@@ -1079,7 +1059,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Hashtable getWorldToDatabase() {
 		return worldToDatabase;
 	}
@@ -1509,7 +1488,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

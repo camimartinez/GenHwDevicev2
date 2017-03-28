@@ -106,7 +106,7 @@ public interface EthPackage extends EPackage {
 	int ARCHIVE__SHEET = BasePackage.ARCHIVE_PROPERTY__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Cp</b></em>' attribute.
+	 * The feature id for the '<em><b>Cp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -115,7 +115,7 @@ public interface EthPackage extends EPackage {
 	int ARCHIVE__CP = BasePackage.ARCHIVE_PROPERTY__CP;
 
 	/**
-	 * The feature id for the '<em><b>Mp</b></em>' attribute.
+	 * The feature id for the '<em><b>Mp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -170,6 +170,15 @@ public interface EthPackage extends EPackage {
 	int CONTROL__SHEET_NAME = BasePackage.CONTROL_POINT__SHEET_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
+
+	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,31 +206,22 @@ public interface EthPackage extends EPackage {
 	int CONTROL__SHEET = BasePackage.CONTROL_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__PARENT = BasePackage.CONTROL_POINT__PARENT;
+	int CONTROL__CONTAINER = BasePackage.CONTROL_POINT__CONTAINER;
 
 	/**
-	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * The feature id for the '<em><b>Archive</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CONTROL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
-
-	/**
-	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -240,6 +240,15 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL__UTILS = BasePackage.CONTROL_POINT__UTILS;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__PARENT = BasePackage.CONTROL_POINT__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Mac</b></em>' reference.
@@ -286,6 +295,15 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_MODEL__SPREADSHEET = BasePackage.DEVICE_MODEL__SPREADSHEET;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__CONTAINER = BasePackage.DEVICE_MODEL__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' attribute.
@@ -624,6 +642,15 @@ public interface EthPackage extends EPackage {
 	int MONITOR__SHEET_NAME = BasePackage.MONITOR_POINT__SHEET_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
+
+	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -651,31 +678,22 @@ public interface EthPackage extends EPackage {
 	int MONITOR__SHEET = BasePackage.MONITOR_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR__PARENT = BasePackage.MONITOR_POINT__PARENT;
+	int MONITOR__CONTAINER = BasePackage.MONITOR_POINT__CONTAINER;
 
 	/**
-	 * The feature id for the '<em><b>Archive</b></em>' attribute.
+	 * The feature id for the '<em><b>Archive</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int MONITOR__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
-
-	/**
-	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -694,6 +712,15 @@ public interface EthPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR__UTILS = BasePackage.MONITOR_POINT__UTILS;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__PARENT = BasePackage.MONITOR_POINT__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Mac</b></em>' reference.

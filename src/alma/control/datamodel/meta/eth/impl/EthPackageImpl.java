@@ -462,7 +462,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		op = addEOperation(controlEClass, null, "setControlEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEResource(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -576,7 +576,7 @@ public class EthPackageImpl extends EPackageImpl implements EthPackage {
 
 		op = addEOperation(monitorEClass, null, "setMonitorEth", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getEStringArray(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEResource(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getTable(), "tables", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasePackage.getUtil(), "utils", 0, 1, IS_UNIQUE, IS_ORDERED);
 

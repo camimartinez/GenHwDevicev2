@@ -38,15 +38,15 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getSpreadsheetName <em>Spreadsheet Name</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getSheetName <em>Sheet Name</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getRow <em>Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getParentRow <em>Parent Row</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getSheet <em>Sheet</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependents <em>Resource Set Dependents</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getUtils <em>Utils</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getContainer <em>Container</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getUtils <em>Utils</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase()
@@ -186,32 +186,6 @@ public interface MandCBase extends EObject {
 	void setSheet(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parent</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent</em>' reference.
-	 * @see #setParent(EObject)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Parent()
-	 * @model
-	 * @generated
-	 */
-	EObject getParent();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent</em>' reference.
-	 * @see #getParent()
-	 * @generated
-	 */
-	void setParent(EObject value);
-
-	/**
 	 * Returns the value of the '<em><b>Archive</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -236,22 +210,6 @@ public interface MandCBase extends EObject {
 	 * @generated
 	 */
 	void setArchive(ArchiveProperty value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='dependents.getContents().add(son);'"
-	 * @generated
-	 */
-	void addDependent(EObject son);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (parent == null)\r\n\treturn false;\r\nreturn true;'"
-	 * @generated
-	 */
-	boolean IsDependent();
 
 	/**
 	 * Returns the value of the '<em><b>Dependents</b></em>' attribute.
@@ -280,30 +238,30 @@ public interface MandCBase extends EObject {
 	void setDependents(Resource value);
 
 	/**
-	 * Returns the value of the '<em><b>Resource Set Dependents</b></em>' attribute.
+	 * Returns the value of the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Resource Set Dependents</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Container</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource Set Dependents</em>' attribute.
-	 * @see #setResourceSetDependents(ResourceSet)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_ResourceSetDependents()
+	 * @return the value of the '<em>Container</em>' attribute.
+	 * @see #setContainer(ResourceSet)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Container()
 	 * @model transient="true"
 	 * @generated
 	 */
-	ResourceSet getResourceSetDependents();
+	ResourceSet getContainer();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getResourceSetDependents <em>Resource Set Dependents</em>}' attribute.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getContainer <em>Container</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource Set Dependents</em>' attribute.
-	 * @see #getResourceSetDependents()
+	 * @param value the new value of the '<em>Container</em>' attribute.
+	 * @see #getContainer()
 	 * @generated
 	 */
-	void setResourceSetDependents(ResourceSet value);
+	void setContainer(ResourceSet value);
 
 	/**
 	 * Returns the value of the '<em><b>Tables</b></em>' reference.
@@ -358,6 +316,48 @@ public interface MandCBase extends EObject {
 	void setUtils(Util value);
 
 	/**
+	 * Returns the value of the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent</em>' reference.
+	 * @see #setParent(EObject)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getMandCBase_Parent()
+	 * @model
+	 * @generated
+	 */
+	EObject getParent();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent</em>' reference.
+	 * @see #getParent()
+	 * @generated
+	 */
+	void setParent(EObject value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='dependents.getContents().add(son);'"
+	 * @generated
+	 */
+	void addDependent(EObject son);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (parent == null)\r\n\treturn false;\r\nreturn true;'"
+	 * @generated
+	 */
+	boolean IsDependent();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return !dependents.getContents().isEmpty();'"
@@ -408,7 +408,7 @@ public interface MandCBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return utils.AltName(((MandCBase)getParent()).Name());'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\treturn utils.AltName(((MandCBase)getParent()).Name());'"
 	 * @generated
 	 */
 	String GetAltDependsOnName();
@@ -579,9 +579,15 @@ public interface MandCBase extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nthis.row = row;\nthis.parent = parent;\nresourceSetDependents = new ResourceSetImpl();\ndependents = resourceSetDependents.createResource(URI.createURI(\"\"));\nsheet = (this instanceof Monitor) ? tables.getSheetNum(\"Monitor Point\") : tables.getSheetNum(\"Control Point\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\n\t\tthis.utils = utils;\n\t\tthis.row = row;\n\t\tthis.parent = parent;\ncontainer = new ResourceSetImpl();\n\t\tdependents = container.createResource(URI.createURI(\"\"));\n\t\tsheet = (this instanceof MonitorPoint) ? tables.getSheetNum(\"Monitor Point\") : tables.getSheetNum(\"Control Point\");'"
 	 * @generated
 	 */
 	void setMandCBase(String[] row, EObject parent, Table tables, Util utils);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	void setArchiveProp(ArchiveProperty archive);
 } // MandCBase

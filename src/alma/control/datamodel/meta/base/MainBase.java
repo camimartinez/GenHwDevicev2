@@ -37,11 +37,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getSheet <em>Sheet</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getTables <em>Tables</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.MainBase#getUtils <em>Utils</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.MainBase#getDevices <em>Devices</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getMainBase()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface MainBase extends EObject {
@@ -148,32 +147,6 @@ public interface MainBase extends EObject {
 	 * @generated
 	 */
 	void setUtils(Util value);
-
-	/**
-	 * Returns the value of the '<em><b>Devices</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Devices</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Devices</em>' reference.
-	 * @see #setDevices(DeviceModel)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getMainBase_Devices()
-	 * @model
-	 * @generated
-	 */
-	DeviceModel getDevices();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.MainBase#getDevices <em>Devices</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Devices</em>' reference.
-	 * @see #getDevices()
-	 * @generated
-	 */
-	void setDevices(DeviceModel value);
 
 	/**
 	 * <!-- begin-user-doc -->

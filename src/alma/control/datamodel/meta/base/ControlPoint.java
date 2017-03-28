@@ -23,51 +23,19 @@
 package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Control Point</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link alma.control.datamodel.meta.base.ControlPoint#getResourceSetControl <em>Resource Set Control</em>}</li>
- * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getControlPoint()
  * @model abstract="true"
  * @generated
  */
 public interface ControlPoint extends MandCBase {
-	/**
-	 * Returns the value of the '<em><b>Resource Set Control</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resource Set Control</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource Set Control</em>' attribute.
-	 * @see #setResourceSetControl(ResourceSet)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getControlPoint_ResourceSetControl()
-	 * @model transient="true"
-	 * @generated
-	 */
-	ResourceSet getResourceSetControl();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.ControlPoint#getResourceSetControl <em>Resource Set Control</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource Set Control</em>' attribute.
-	 * @see #getResourceSetControl()
-	 * @generated
-	 */
-	void setResourceSetControl(ResourceSet value);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,7 +72,7 @@ public interface ControlPoint extends MandCBase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMandCBase(row, parent, tables, utils);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\n\t\tthis.utils = utils;\n\t\tthis.parent = parent;\n\t\tsetMandCBase(row, parent, tables, utils);'"
 	 * @generated
 	 */
 	void setControlPoint(String[] row, EObject parent, Table tables, Util utils);

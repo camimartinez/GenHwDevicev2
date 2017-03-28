@@ -35,6 +35,7 @@ import alma.control.datamodel.meta.eth.MandC;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -277,12 +278,13 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlEth(final String[] row, final Resource parent, final Table tables, final Util utils) {
+	public void setControlEth(final String[] row, final EObject parent, final Table tables, final Util utils) {
 		this.tables = tables;
-		this.utils = utils;
-		setControlPoint(row, parent, tables, utils);
-		mac = EthFactory.eINSTANCE.createMandC();
-		mac.setMandCEth(row, sheet, tables, utils);
+				this.utils = utils;
+				this.parent = parent;
+				setControlPoint(row, parent, tables, utils);
+				mac = EthFactory.eINSTANCE.createMandC();
+				mac.setMandCEth(row, sheet, tables, utils);
 	}
 
 	/**

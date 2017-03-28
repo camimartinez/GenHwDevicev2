@@ -70,7 +70,7 @@ MA 02111-1307  USA
     http://www.nrao.edu/schemas/CONTROL/«Assembly()»Base.xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-  «FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+  «FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF x.IsMonitored()»
     <«x.MPName()»
         archive_priority="15"

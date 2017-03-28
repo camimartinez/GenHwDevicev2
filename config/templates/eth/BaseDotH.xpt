@@ -142,13 +142,13 @@ class «Assembly()»Base:
     /// it works with real hardware.
     virtual CORBA::Boolean isSimulated();
 
-«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF x.IsExternal() || x.IsMonitored()»
         «EXPAND PublicMonitorPoint FOR x»
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF x.IsExternal()»
         «EXPAND PublicControlPoint FOR x»
     «ENDIF»
@@ -167,11 +167,11 @@ class «Assembly()»Base:
     /// \exception acsErrTypeLifeCycle::LifeCycleExImpl
     virtual void cleanUp();
 
-«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «EXPAND ProtectedMonitorPoint FOR x»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «EXPAND ProtectedControlPoint FOR x»
 «ENDFOREACH»
 

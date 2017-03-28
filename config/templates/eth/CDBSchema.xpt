@@ -103,7 +103,7 @@ MA 02111-1307  USA
             <xs:extension
                 base="extcontrol:ControlDevice">
                 <xs:sequence>
-    «FOREACH monitorPoints.resources.contents AS x»
+    «FOREACH monitorPoints.contents AS x»
         «IF x.IsMonitored()»
           «IF x.DisplayUnits() == "pattern"»
                     <xs:element

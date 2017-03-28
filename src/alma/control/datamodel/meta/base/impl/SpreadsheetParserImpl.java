@@ -616,66 +616,66 @@ public class SpreadsheetParserImpl extends EObjectImpl implements SpreadsheetPar
 	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	public void modifyRow(String[][] worksheet, int lineNumber, String rowName, String s) {
-		// Find the row.
-		int row = 0;
-		if (worksheet[0][0].equals("Hardware Device")) {
-			int i = 2;
-			for (; i < worksheet.length; ++i) {
-				if (worksheet[i] == null)
-					continue;
-				if (worksheet[i][0].equals(rowName)) {
-					row = i;
-					break;
+	public void modifyRow(final String[][] worksheet, final int lineNumber, final String rowName, String s) {
+				// Find the row.
+				int row = 0;
+				if (worksheet[0][0].equals("Hardware Device")) {
+					int i = 2;
+					for (; i < worksheet.length; ++i) {
+						if (worksheet[i] == null)
+							continue;
+						if (worksheet[i][0].equals(rowName)) {
+							row = i;
+							break;
+						}
+					}
+					if (i == worksheet.length)
+						throw new RuntimeException("The name " + rowName + " is not the name of a row in the Main worksheet.");
+				} else {
+					int i = 2;
+					for (; i < worksheet.length; ++i) {
+						if (worksheet[i] == null)
+							continue;
+						if (worksheet[i][1].equals(rowName)) {
+							row = i;
+							break;
+						}
+					}
+					if (i == worksheet.length)
+						throw new RuntimeException("The name " + rowName + " is not the name of a row in the " + worksheet[0][0] + " worksheet.");
 				}
-			}
-			if (i == worksheet.length)
-				throw new RuntimeException("The name " + rowName + " is not the name of a row in the Main worksheet.");
-		} else {
-			int i = 2;
-			for (; i < worksheet.length; ++i) {
-				if (worksheet[i] == null)
-					continue;
-				if (worksheet[i][1].equals(rowName)) {
-					row = i;
-					break;
+				String name;
+				String value;
+				int b;
+				int m;
+				int e;        				
+				while(true) {
+					b = s.indexOf('<');
+					m = s.indexOf('=');
+					e = s.indexOf('>');
+					if (b == -1 || m == -1 || e == -1 || m < b || e < m) {
+						throw new RuntimeException("Invalid syntax at line number " + lineNumber + " in file filter.");
+					}
+					name = s.substring(b + 1, m).trim();
+					value = s.substring(m + 1, e).trim();
+					// Apply the change.
+					int j = 0;
+					for (; j < worksheet[row].length; ++j) {
+						if (worksheet[1][j].equals(name)) {
+							worksheet[row][j] = value;
+							break;
+						}
+					}
+					if (j == worksheet[row].length)
+						throw new RuntimeException("The name " + name + " is not the name of a column in the " + worksheet[0][0] + " worksheet.");
+					// Get the next change.
+					++e;
+					while (e < s.length() && (s.charAt(e) == ' ' || s.charAt(e) == '\t'))
+						++e;
+					if (e == s.length())
+						break;
+					s = s.substring(e);
 				}
-			}
-			if (i == worksheet.length)
-				throw new RuntimeException("The name " + rowName + " is not the name of a row in the " + worksheet[0][0] + " worksheet.");
-		}
-		String name;
-		String value;
-		int b;
-		int m;
-		int e;        				
-		while(true) {
-			b = s.indexOf('<');
-			m = s.indexOf('=');
-			e = s.indexOf('>');
-			if (b == -1 || m == -1 || e == -1 || m < b || e < m) {
-				throw new RuntimeException("Invalid syntax at line number " + lineNumber + " in file filter.");
-			}
-			name = s.substring(b + 1, m).trim();
-			value = s.substring(m + 1, e).trim();
-			// Apply the change.
-			int j = 0;
-			for (; j < worksheet[row].length; ++j) {
-				if (worksheet[1][j].equals(name)) {
-					worksheet[row][j] = value;
-					break;
-				}
-			}
-			if (j == worksheet[row].length)
-				throw new RuntimeException("The name " + name + " is not the name of a column in the " + worksheet[0][0] + " worksheet.");
-			// Get the next change.
-			++e;
-			while (e < s.length() && (s.charAt(e) == ' ' || s.charAt(e) == '\t'))
-				++e;
-			if (e == s.length())
-				break;
-			s = s.substring(e);
-		}
 	}
 
 	/**
