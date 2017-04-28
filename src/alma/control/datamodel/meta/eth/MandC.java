@@ -302,10 +302,18 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nthis.row = row;\nthis.sheet = sheet;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;'"
 	 * @generated
 	 */
-	void setMandCEth(String[] row, int sheet, Table tables, Util utils);
+	void setMandCEth(Table tables, Util utils);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = sheet;'"
+	 * @generated
+	 */
+	void setMandCEth(String[] row, int sheet);
 
 } // MandC

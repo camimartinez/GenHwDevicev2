@@ -1,4 +1,3 @@
-package alma.control.datamodel.meta.amb.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -21,28 +20,21 @@ package alma.control.datamodel.meta.amb.impl;
  * MA 02111-1307  USA
  * 
  */
-
-
-import java.util.Iterator;
-import java.util.Map;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+package alma.control.datamodel.meta.amb.impl;
 
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.MandC;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
+
 import alma.control.datamodel.meta.base.impl.ControlPointImpl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -909,7 +901,7 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	public String RawSubArrayStartIndex() {
 		return mac.RawSubArrayStartIndex();
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -942,30 +934,13 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlAmb(final String[] row, final EObject parent, final Table tables, final Util utils) {
-		this.tables = tables;
-		this.utils = utils;
-		setControlPoint(row, parent, tables, utils);
+	public void setControlAmb(final String[] row, final EObject parent) {
+		this.row = row;
+		this.parent = parent;
+		super.setControlPoint(row, parent);
 		mac = new MandCImpl();
-		mac.setMandCAmb(row, sheet, this, tables, utils);
-		resourceSetControl = new ResourceSetImpl();
-		Resource res = resourceSetControl.createResource(URI.createURI(""));
-		res.getContents().add(mac);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public String setParameters(String dirDevice){
-		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
-		String extension = "xmi";
-		String tmp = dirDevice.concat("/").concat(extension).concat("/");
-		mm.put(extension, new XMIResourceFactoryImpl());
-		String xmiArchive = tmp.concat("controlAmb.").concat(extension);
-		return xmiArchive;
+		mac.setMandCAmb(tables, utils);
+		mac.setMandCAmb(row, sheet, this);
 	}
 
 	/**
@@ -1026,4 +1001,5 @@ public class ControlImpl extends ControlPointImpl implements Control {
 		}
 		return super.eIsSet(featureID);
 	}
+
 } //ControlImpl

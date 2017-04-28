@@ -23,7 +23,6 @@
 package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -191,10 +190,18 @@ public interface MonitorPoint extends MandCBase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.tables = tables;\n\t\tthis.utils = utils;\n\t\tthis.parent = parent;\n\t\tsetMandCBase(row, parent, tables, utils);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;'"
 	 * @generated
 	 */
-	void setMonitorPoint(String[] row, EObject parent, Table tables, Util utils);
+	void setMonitorPoint(Table tables, Util utils);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this. row = row;\nthis.parent = parent;\nsuper.setMandCBase(row, parent);'"
+	 * @generated
+	 */
+	void setMonitorPoint(String[] row, EObject parent);
 
 } // MonitorPoint

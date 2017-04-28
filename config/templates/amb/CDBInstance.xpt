@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/doc/"+Assembly()+".xml"»
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
@@ -61,14 +61,16 @@ MA 02111-1307  USA
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
  *
+ * Id: CDBInstance.xpt
+ *
 -->
 <«Assembly()»Base xmlns="urn:schemas-cosylab-com:«Assembly()»Base:1.0"
     xsi:schemaLocation="urn:schemas-cosylab-com:«Assembly()»Base:1.0 http://www.nrao.edu/schemas/CONTROL/«Assembly()»Base.xsd"
       xmlns:amb="urn:schemas-cosylab-com:AmbDevice:1.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
-        «IF x.IsMonitored()»
-  <«x.MPName()»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
+    «IF x.IsMonitored()»
+  	<«x.MPName()»
     archive_priority="15"
     «IF x.Interval() != "none" && x.Interval() != "0"»
     archive_min_int="«x.Interval()»"

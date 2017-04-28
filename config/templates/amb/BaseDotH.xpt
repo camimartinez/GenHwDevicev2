@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/include/"+Assembly()+"Base.h"»
 #ifndef «Assembly()»Base_h
 #define «Assembly()»Base_h
@@ -61,6 +61,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ *
+ * Id: BaseDotH.xpt
  *
  */
 
@@ -203,10 +205,10 @@ Declaration of overloaded hwOperationalAction method.
 «ENDIF»
     
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «EXPAND PublicMonitorPoint FOR x»
 «ENDFOREACH»
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «EXPAND PublicControlPoint FOR x»
 «ENDFOREACH»
 
@@ -214,10 +216,10 @@ Declaration of overloaded hwOperationalAction method.
     /// Constructor. Never instanciate this class directly!
     «Assembly()»Base(const ACE_CString& name, maci::ContainerServices* cs);
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «EXPAND ProtectedMonitorPoint FOR x»
 «ENDFOREACH»
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «EXPAND ProtectedControlPoint FOR x»
 «ENDFOREACH»
 
@@ -231,7 +233,7 @@ Declaration of overloaded hwOperationalAction method.
     /// ALMA coding standards: assignment operator is disabled.
     «Assembly()»Base& operator=(const «Assembly()»Base&);
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF !x.IsDependent() && x.hasDependents()»
         «IF x.IsWorldDataArray()»
     boost::shared_ptr< AMB::Cache<
@@ -244,10 +246,10 @@ Declaration of overloaded hwOperationalAction method.
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «EXPAND PrivateMonitorPoint FOR x»
 «ENDFOREACH»
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «EXPAND PrivateControlPoint FOR x»
 «ENDFOREACH»
 };
@@ -255,7 +257,7 @@ Declaration of overloaded hwOperationalAction method.
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE PublicMonitorPoint FOR MonitorPointImpl»
+«DEFINE PublicMonitorPoint FOR MonitorPoint»
   «IF IsExternal()»
     /// MonitorPoint: «MPName()»
     /// «DescriptionFormattedL5()»
@@ -303,7 +305,7 @@ Declaration of overloaded hwOperationalAction method.
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPointImpl»
+«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
     «IF IsExternal()»
     /// MonitorPoint: «MPName()»
     «ELSE»
@@ -426,7 +428,7 @@ Declaration of overloaded hwOperationalAction method.
     «ENDREM»
 «ENDDEFINE»
 
-«DEFINE PrivateMonitorPoint FOR  MonitorPointImpl»
+«DEFINE PrivateMonitorPoint FOR  MonitorPoint»
     /// MonitorPoint: «MPName()»
     «REM»
     a. Field for RCA
@@ -485,7 +487,7 @@ Declaration of overloaded hwOperationalAction method.
 «ENDREM»
 «ENDDEFINE»
 
-«DEFINE PublicControlPoint FOR ControlPointImpl»
+«DEFINE PublicControlPoint FOR ControlPoint»
     «IF IsExternal()»
     «REM»
     a. Major control method
@@ -505,7 +507,7 @@ Declaration of overloaded hwOperationalAction method.
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedControlPoint FOR ControlPointImpl»
+«DEFINE ProtectedControlPoint FOR ControlPoint»
     «IF !IsDependent()»
     /// ControlPoint: «CPName()»
         «IF !IsExternal()»
@@ -577,7 +579,7 @@ Declaration of overloaded hwOperationalAction method.
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE PrivateControlPoint FOR ControlPointImpl»
+«DEFINE PrivateControlPoint FOR ControlPoint»
     /// Control point: «CPName()»
     «REM»
     a. Field for RCA

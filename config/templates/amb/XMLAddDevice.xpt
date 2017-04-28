@@ -20,12 +20,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
 «FILE Assembly()+"/config/TMCDB"+Assembly()+"Add.xml"»<?xml version="1.0" ?>
 <lru-type>
     <name>«Assembly()»</name>
@@ -42,7 +42,7 @@ MA 02111-1307  USA
             <base-address>«BaseAddress()»</base-address>
             <channel>«Channel()»</channel>
         </default-role>
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
         «IF x.IsMonitored()»
             «REM»
               The MP can be a parent or a simple property.
@@ -94,7 +94,7 @@ MA 02111-1307  USA
                     «REM»
                       The MP has dependent monitor points.
                     «ENDREM»
-                    «FOREACH (Set[MonitorPointImpl]) x.GetDependents() AS y»
+                    «FOREACH (Set[MonitorPoint]) x.getDependents() AS y»
                         «EXPAND MonitorPointEntry FOR y»
                     «ENDFOREACH»
                 «ELSE»
@@ -112,7 +112,7 @@ MA 02111-1307  USA
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE MonitorPointEntry FOR MonitorPointImpl»
+«DEFINE MonitorPointEntry FOR MonitorPoint»
             <monitor-point>
                 <monitorpointname>«MPName()»</monitorpointname>
                 <datatype>«WorldDataToDatabaseType()»</datatype>
@@ -128,4 +128,3 @@ MA 02111-1307  USA
                 <description>«DescriptionAsString()»</description>
             </monitor-point>
 «ENDDEFINE»
-

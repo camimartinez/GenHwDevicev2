@@ -209,7 +209,6 @@ empty:=
 space:= $(empty) $(empty)
 GEN_CLASSPATH = $(GenHwLocation)$(GenHwDir):
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/lib/ControlGenHwDevicev2.jar:
-#GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/config/extensions:
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/config/templates:
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/config/workflow:
 GEN_CLASSPATH += $(GenHwLocation)$(GenHwDir)/lib/antlr-4.6-complete.jar:
@@ -289,7 +288,6 @@ endif
 endif
 
 GEN_TEMPLATES += Root.xpt
-GEN_TEMPLATES += XMLAddDevice.xpt
 GEN_TEMPLATES += amb/BaseDotH.xpt
 GEN_TEMPLATES += amb/ALT.xpt
 GEN_TEMPLATES += amb/HWSim/CompSimBaseDotCPP.xpt

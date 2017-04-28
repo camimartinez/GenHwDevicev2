@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/include/"+Assembly()+"HWSimImpl.h"»
 #ifndef __cplusplus
 #error This is a C++ include file and cannot be used from plain C.
@@ -64,7 +64,8 @@ MA 02111-1307  USA
 // | Any changes will be lost when the file is re-generated. |
 //  ---------------------------------------------------------
 //
-
+// Id: HWSimImplDotH.xpt
+//
 
 #include <«Assembly()»HWSimBase.h>
 #include <vector>

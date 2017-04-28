@@ -223,6 +223,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 		
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,6 +235,7 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 			return true;
 		return false;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -259,11 +261,20 @@ public abstract class MonitorPointImpl extends MandCBaseImpl implements MonitorP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorPoint(final String[] row, final EObject parent, final Table tables, final Util utils) {
-				this.tables = tables;
-				this.utils = utils;
-				this.parent = parent;
-				setMandCBase(row, parent, tables, utils);
+	public void setMonitorPoint(final Table tables, final Util utils) {
+		this.tables = tables;
+		this.utils = utils;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMonitorPoint(final String[] row, final EObject parent) {
+		this. row = row;
+		this.parent = parent;
+		setMandCBase(row, parent);
 	}
 
 } //MonitorPointImpl

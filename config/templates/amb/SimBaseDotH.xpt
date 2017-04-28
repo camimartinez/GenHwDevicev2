@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
   «IF !IsMonitorDBOnly()»
     «EXPAND SWModuleDef»
   «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/include/"+Assembly()+"SimBase.h"»
 #ifndef «Assembly()»SimBase_h
 #define «Assembly()»SimBase_h
@@ -62,6 +62,8 @@ MA 02111-1307  USA
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
  *
+ * Id: SimBaseDotH.xpt
+ *
  */
 
 #ifndef __cplusplus
@@ -82,7 +84,7 @@ MA 02111-1307  USA
 /// <li> Channel:  «Channel()»
 /// </ul>
 /// <p>
-/// «DescriptionL1»
+/// «DescriptionL1()»
 class «Assembly()»SimBase: public «Assembly()»Impl
 {
     public:
@@ -93,10 +95,10 @@ class «Assembly()»SimBase: public «Assembly()»Impl
     /// Constructor. Never instanciate this class directly!
     «Assembly()»SimBase(const ACE_CString& name, maci::ContainerServices* cs);
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «EXPAND ProtectedMonitorPoint FOR x»
 «ENDFOREACH»
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
     «EXPAND ProtectedControlPoint FOR x»
 «ENDFOREACH»
     private:
@@ -114,31 +116,31 @@ class «Assembly()»SimBase: public «Assembly()»Impl
 «ENDDEFINE»
 
 «DEFINE ProtectedMonitorPoint FOR MonitorPoint»
-    /// MonitorPoint: «MPName»
-    «IF !isExternal || !isMonitored»
-    /// «DescriptionFormattedL5»
+    /// MonitorPoint: «MPName()»
+    «IF !IsExternal() || !IsMonitored()»
+    /// «DescriptionFormattedL5()»
     «ENDIF»
     «REM»
     a. Major monitor method
     «ENDREM»
-    «IF isImplemented»
-        «IF !isDependent»
+    «IF IsImplemented()»
+        «IF !IsDependent()»
     /// \exception ControlExceptions::INACTErrorExImpl
-            «IF isWorldDataArray»
-    virtual std::vector< «WorldDataToCPPType» > get«AltMPName»(
+            «IF IsWorldDataArray()»
+    virtual std::vector< «WorldDataToCPPType()» > get«AltMPName()»(
        ACS::Time& timestamp);
             «ELSE»
-    virtual «WorldDataToCPPType» get«AltMPName»(ACS::Time& timestamp);
+    virtual «WorldDataToCPPType()» get«AltMPName()»(ACS::Time& timestamp);
             «ENDIF»
         «ENDIF»
     «ENDIF»
 «ENDDEFINE»
 
 «DEFINE ProtectedControlPoint FOR ControlPoint»
-    «IF !isDependent»
-    /// ControlPoint: «CPName»
-        «IF !isExternal»
-    /// «DescriptionFormattedL5»
+    «IF !IsDependent()»
+    /// ControlPoint: «CPName()»
+        «IF !IsExternal()»
+    /// «DescriptionFormattedL5()»
         «ENDIF»
     «REM»
     a. Major control method
@@ -147,10 +149,10 @@ class «Assembly()»SimBase: public «Assembly()»Impl
     The "if hasDependents" part of this is not yet implemented.
     «ENDREM»
     /// \exception ControlExceptions::INACTErrorExImpl
-        «IF Implement»
-    virtual «cppReturns» set«AltCPName»«cppDeclaration»;
+        «IF Implement()»
+    virtual «cppReturns()» set«AltCPName()»«cppDeclaration()»;
         «ELSE»
-    virtual «cppReturns» set«AltCPName»«cppDeclaration» = 0;
+    virtual «cppReturns()» set«AltCPName()»«cppDeclaration()» = 0;
         «ENDIF»
     «ENDIF»
 «ENDDEFINE»

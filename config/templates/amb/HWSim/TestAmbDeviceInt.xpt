@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/test/Test"+Assembly()+"AmbDeviceInt.cpp"»
 /**
  * ALMA - Atacama Large Millimiter Array
@@ -59,6 +59,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ *
+ * Id: TestAmbDeviceInt.xpt
  *
  */
 
@@ -92,13 +94,13 @@ class «Assembly()»AmbDeviceIntTestCase: public CPPUNIT_NS::TestFixture
 
 
     protected:
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
         «IF !x.IsDependent()»
     ///  monitorPoint_«x.MPName()»
     void testMonitorPoint_«x.MPName()»();
         «ENDIF»
     «ENDFOREACH»
-    «FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
         «IF !x.IsDependent()»
     ///  controlPoint_«x.CPName()»
     void testControlPoint_«x.CPName()»();
@@ -149,7 +151,7 @@ void «Assembly()»AmbDeviceIntTestCase::setUp()
     }
 }
 
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
         «IF !x.IsDependent()»
     ///  monitorPoint_«x.MPName()»
 void «Assembly()»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName()»()
@@ -165,7 +167,7 @@ void «Assembly()»AmbDeviceIntTestCase::testMonitorPoint_«x.MPName()»()
         «ENDIF»
     «ENDFOREACH»
 
-    «FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
         «IF !x.IsDependent()»
     ///  controlPoint_«x.CPName()»
 void «Assembly()»AmbDeviceIntTestCase::testControlPoint_«x.CPName()»()
@@ -188,16 +190,16 @@ void «Assembly()»AmbDeviceIntTestCase::testControlPoint_«x.CPName()»()
 void «Assembly()»AmbDeviceIntTestCase::test_simulation()
 {
     /// Testing specific monitor points
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
         «IF !x.IsDependent()»
     testMonitorPoint_«x.MPName()»();
         «ENDIF»
     «ENDFOREACH»
 
     /// Testing specific control points
-    «FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+    «FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
         «IF !x.IsDependent()»
-    testControlPoint_«x.CPName»();
+    testControlPoint_«x.CPName()»();
         «ENDIF»
     «ENDFOREACH»
 

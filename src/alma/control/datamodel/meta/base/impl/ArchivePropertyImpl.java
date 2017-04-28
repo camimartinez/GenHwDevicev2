@@ -36,8 +36,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.resource.Resource;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Archive Property</b></em>'.
@@ -445,8 +443,8 @@ public class ArchivePropertyImpl extends EObjectImpl implements ArchiveProperty 
 	 * @generated
 	 */
 	public void setArchiveProperty(final String[] row, final Table tables) {
-		this.tables = tables;
 		this.row = row;
+		this.tables = tables;
 		this.sheet = tables.getSheetNum("Archive Property");
 	}
 

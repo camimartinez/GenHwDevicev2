@@ -77,22 +77,11 @@ public interface Table extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dep Char</em>' attribute.
-	 * @see #setDepChar(String)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_DepChar()
-	 * @model default="^"
+	 * @model default="^" changeable="false"
 	 * @generated
 	 */
 	String getDepChar();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.Table#getDepChar <em>Dep Char</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dep Char</em>' attribute.
-	 * @see #getDepChar()
-	 * @generated
-	 */
-	void setDepChar(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Celsius To Kelvin</b></em>' attribute.
@@ -104,22 +93,11 @@ public interface Table extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Celsius To Kelvin</em>' attribute.
-	 * @see #setCelsiusToKelvin(String)
 	 * @see alma.control.datamodel.meta.base.BasePackage#getTable_CelsiusToKelvin()
-	 * @model default="CelsiusToKelvin"
+	 * @model default="CelsiusToKelvin" changeable="false"
 	 * @generated
 	 */
 	String getCelsiusToKelvin();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.Table#getCelsiusToKelvin <em>Celsius To Kelvin</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Celsius To Kelvin</em>' attribute.
-	 * @see #getCelsiusToKelvin()
-	 * @generated
-	 */
-	void setCelsiusToKelvin(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Sheet Names</b></em>' attribute.

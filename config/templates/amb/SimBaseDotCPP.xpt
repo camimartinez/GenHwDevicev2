@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
   «IF !IsMonitorDBOnly()»
     «EXPAND SWModuleDef»
   «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/src/"+Assembly()+"SimBase.cpp"»
 /**
  * ALMA - Atacama Large Millimiter Array
@@ -60,6 +60,8 @@ MA 02111-1307  USA
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
  *
+ * Id: SimBaseDotCPP.xpt
+ *
  */
 
 
@@ -73,17 +75,17 @@ MA 02111-1307  USA
 {
     AUTO_TRACE(__PRETTY_FUNCTION__);
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
-    «IF x.isDependent && x.Default != "none"»
-        «IF x.Default == "mid"»
-            «IF x.WorldDataToCPPType != "double" && x.WorldDataToCPPType != "float"»
-    value«x.getAltDependentName» = static_cast< «x.WorldDataToCPPType» >(
-        («x.MinRange» + «x.MaxRange») / 2.0);
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+    «IF x.IsDependent() && x.Default() != "none"»
+        «IF x.Default() == "mid"»
+            «IF x.WorldDataToCPPType() != "double" && x.WorldDataToCPPType() != "float"»
+    value«x.GetAltDependentName()» = static_cast< «x.WorldDataToCPPType()» >(
+        («x.MinRange()» + «x.MaxRange()») / 2.0);
             «ELSE»
-    value«x.getAltDependentName»= («x.MinRange» + «x.MaxRange») / 2.0;
+    value«x.GetAltDependentName()»= («x.MinRange()» + «x.MaxRange()») / 2.0;
             «ENDIF»
         «ELSE»
-    value«x.getAltDependentName» = «x.Default»;
+    value«x.GetAltDependentName()» = «x.Default()»;
         «ENDIF»
     «ENDIF»
 «ENDFOREACH»
@@ -94,32 +96,32 @@ MA 02111-1307  USA
     AUTO_TRACE(__PRETTY_FUNCTION__);
 }
 
-«FOREACH (Set[MonitorPoint]) MonitorPoint AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
     «EXPAND ProtectedMonitorPoint FOR x»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPoint]) ControlPoint AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
     «EXPAND ProtectedControlPoint FOR x»
 «ENDFOREACH»
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE ProtectedMonitorPoint FOR MonitorPoint»
-/// MonitorPoint: «MPName»
-    «IF !isExternal || !isMonitored»
-/// «DescriptionFormattedL5»
+/// MonitorPoint: «MPName()»
+    «IF !IsExternal() || !IsMonitored()»
+/// «DescriptionFormattedL5()»
     «ENDIF»
     «REM»
     a. Major monitor method
     «ENDREM»
-    «IF isImplemented»
-/// Get the current value of «MPName» from the device.
-        «IF !isDependent»
-            «IF isWorldDataArray»
-std::vector< «WorldDataToCPPType» > «Assembly()»SimBase::get«AltMPName»(
+    «IF IsImplemented()»
+/// Get the current value of «MPName()» from the device.
+        «IF !IsDependent()»
+            «IF IsWorldDataArray()»
+std::vector< «WorldDataToCPPType()» > «Assembly()»SimBase::get«AltMPName()»(
     ACS::Time& timestamp)
             «ELSE»
-«WorldDataToCPPType» «Assembly»SimBase::get«AltMPName»(
+«WorldDataToCPPType()» «Assembly()»SimBase::get«AltMPName()»(
     ACS::Time& timestamp)
             «ENDIF»
 {
@@ -138,11 +140,11 @@ std::vector< «WorldDataToCPPType» > «Assembly()»SimBase::get«AltMPName»(
     }
     else if(getHwState() != Control::HardwareDevice::Simulation)
     {
-        return «Assembly()»Base::get«AltMPName»(timestamp);
+        return «Assembly()»Base::get«AltMPName()»(timestamp);
     }
 
-            «IF isWorldDataArray»
-    return std::vector< «WorldDataToCPPType» >(«NumberItemsRawData»);
+            «IF IsWorldDataArray()»
+    return std::vector< «WorldDataToCPPType()» >(«NumberItemsRawData()»);
             «ELSE»
     return 0;
             «ENDIF»
@@ -152,9 +154,9 @@ std::vector< «WorldDataToCPPType» > «Assembly()»SimBase::get«AltMPName»(
 «ENDDEFINE»
 
 «DEFINE ProtectedControlPoint FOR ControlPoint»
-    «IF !isDependent»
-        «IF Implement»
-«cppReturns» «Assembly()»SimBase::set«AltCPName»«cppDeclaration»
+    «IF !IsDependent()»
+        «IF Implement()»
+«cppReturns()» «Assembly()»SimBase::set«AltCPName()»«cppDeclaration()»
 {
     if((isReady() == false)
     || (inErrorState() == true))
@@ -172,9 +174,9 @@ std::vector< «WorldDataToCPPType» > «Assembly()»SimBase::get«AltMPName»(
 }
         «ENDIF»
 
-/// ControlPoint: «CPName»
-        «IF !isExternal»
-/// «DescriptionFormattedL5»
+/// ControlPoint: «CPName()»
+        «IF !IsExternal()»
+/// «DescriptionFormattedL5()»
         «ENDIF»
     «ENDIF»
 «ENDDEFINE»

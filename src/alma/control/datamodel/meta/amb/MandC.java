@@ -23,9 +23,9 @@
 package alma.control.datamodel.meta.amb;
 
 import alma.control.datamodel.meta.base.MandCBase;
-
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -119,13 +119,6 @@ public interface MandC extends EObject {
 	String[] getMask();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	String GetMask();
-
-	/**
 	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.MandC#getMask <em>Mask</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,7 +132,7 @@ public interface MandC extends EObject {
 	 * Returns the value of the '<em><b>Mcp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mcp</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Mcp</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -240,7 +233,7 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t\t\tString s = row[tables.getColNum(sheet, \"Raw Data Type\")];\n\t\t\t\tif(!mcp.IsDependent())\n\t\t\t\t\treturn IsRawDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;\n\t\t\t\t\tif(mcp instanceof Monitor)\n\t\t\t\t\t\treturn ((Monitor) mcp.getParent()).RawDataType();\n\t\t\t\t\tif(mcp instanceof Control)\n\t\t\t\t\t\treturn ((Control) mcp.getParent()).RawDataType();\n\t\t\t\t\treturn \"ERROR\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String s = row[tables.getColNum(sheet, \"Raw Data Type\")];\n\t\t\t\tif(!mcp.IsDependent())\n\t\t\t\t\treturn IsRawDataArray() ? s.substring(0, s.indexOf(\"[\")) : s;\n\t\t\t\t\tif(mcp instanceof Monitor)\n\t\t\t\t\t\treturn ((Monitor) mcp.getParent()).RawDataType();\n\t\t\t\t\tif(mcp instanceof Control)\n\t\t\t\t\t\treturn ((Control) mcp.getParent()).RawDataType();\n\t\t\t\t\treturn \"ERROR\";'"
 	 * @generated
 	 */
 	String RawDataType();
@@ -624,10 +617,25 @@ public interface MandC extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nthis.row = row;\nthis.sheet = sheet;\nthis.mcp = mcp;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;'"
 	 * @generated
 	 */
-	void setMandCAmb(String[] row, int sheet, MandCBase mcp, Table tables, Util utils);
+	void setMandCAmb(Table tables, Util utils);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = sheet;\nthis.mcp = mcp;'"
+	 * @generated
+	 */
+	void setMandCAmb(String[] row, int sheet, MandCBase mcp);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	String GetMask();
+	
 } // MandC

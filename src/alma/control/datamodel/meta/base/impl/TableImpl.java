@@ -585,32 +585,8 @@ public class TableImpl extends EObjectImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDepChar(String newDepChar) {
-		String oldDepChar = depChar;
-		depChar = newDepChar;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.TABLE__DEP_CHAR, oldDepChar, depChar));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getCelsiusToKelvin() {
 		return celsiusToKelvin;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCelsiusToKelvin(String newCelsiusToKelvin) {
-		String oldCelsiusToKelvin = celsiusToKelvin;
-		celsiusToKelvin = newCelsiusToKelvin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.TABLE__CELSIUS_TO_KELVIN, oldCelsiusToKelvin, celsiusToKelvin));
 	}
 
 	/**
@@ -1491,12 +1467,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.TABLE__DEP_CHAR:
-				setDepChar((String)newValue);
-				return;
-			case BasePackage.TABLE__CELSIUS_TO_KELVIN:
-				setCelsiusToKelvin((String)newValue);
-				return;
 			case BasePackage.TABLE__SHEET_NAMES:
 				setSheetNames((ArrayList)newValue);
 				return;
@@ -1575,12 +1545,6 @@ public class TableImpl extends EObjectImpl implements Table {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.TABLE__DEP_CHAR:
-				setDepChar(DEP_CHAR_EDEFAULT);
-				return;
-			case BasePackage.TABLE__CELSIUS_TO_KELVIN:
-				setCelsiusToKelvin(CELSIUS_TO_KELVIN_EDEFAULT);
-				return;
 			case BasePackage.TABLE__SHEET_NAMES:
 				setSheetNames(SHEET_NAMES_EDEFAULT);
 				return;

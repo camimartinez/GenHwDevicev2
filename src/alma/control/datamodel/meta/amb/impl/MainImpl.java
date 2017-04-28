@@ -1,4 +1,3 @@
-package alma.control.datamodel.meta.amb.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -21,15 +20,14 @@ package alma.control.datamodel.meta.amb.impl;
  * MA 02111-1307  USA
  * 
  */
-
-
-import org.eclipse.emf.ecore.EClass;
+package alma.control.datamodel.meta.amb.impl;
 
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Main;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
+
 import alma.control.datamodel.meta.base.impl.MainBaseImpl;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,10 +115,9 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMainAmb(final String[] row, final Table tables, final Util utils) {
-			this.tables = tables;
-						this.utils = utils;
-						setMainBase(row,tables,utils);
+	public void setMainAmb(final String[] row) {
+		this.row = row;
+		super.setMainBase(row);
 	}
 
 } //MainImpl

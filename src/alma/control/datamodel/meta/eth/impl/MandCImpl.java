@@ -437,9 +437,17 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMandCEth(final String[] row, final int sheet, final Table tables, final Util utils) {
+	public void setMandCEth(final Table tables, final Util utils) {
 		this.tables = tables;
 		this.utils = utils;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMandCEth(final String[] row, final int sheet) {
 		this.row = row;
 		this.sheet = sheet;
 	}

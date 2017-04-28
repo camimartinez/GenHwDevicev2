@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/config/CDB/schemas/"+Assembly()+"Base.xsd"»
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
@@ -60,6 +60,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ * 
+ * Id: CDBSchema.xpt
  *
 -->
 <xs:schema targetNamespace="urn:schemas-cosylab-com:«Assembly()»Base:1.0"
@@ -92,7 +94,7 @@ MA 02111-1307  USA
           <xs:extension base="extcontrol:ControlDevice">
     «ENDIF»
     <xs:sequence>
-    «FOREACH monitorPoints.contents AS x»
+ 	 «FOREACH monitorPoints.contents AS x»
         «IF x.IsMonitored()»
           «IF x.IsPattern()»
       <xs:element name="«x.MPName()»" type ="baci:ROpattern"/>
@@ -105,7 +107,7 @@ MA 02111-1307  USA
           «ENDIF»
         «ENDIF»
     «ENDFOREACH»
-    «IF Extends() == "none"»
+	 «IF Extends() == "none"»
         <xs:element name="Address">
         <xs:complexType>
           <xs:complexContent>

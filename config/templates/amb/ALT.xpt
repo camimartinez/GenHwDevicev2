@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF IsGenerateAlt()»
         «EXPAND AltSWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE AltSWModuleDef FOR DeviceModelImpl»
+«DEFINE AltSWModuleDef FOR DeviceModel»
 
 «REM»
             ////////////////////////////////
@@ -255,7 +255,14 @@ install : install_all
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
  * MA 02111-1307  USA
- * $Id: ALT.xpt $
+ *
+ *             WARNING! DO NOT MODIFY THIS FILE!
+ *  ---------------------------------------------------------
+ * | This is generated code!  Do not modify this file.       |
+ * | Any changes will be lost when the file is re-generated. |
+ *  ---------------------------------------------------------
+ *
+ * Id: ALT.xpt
  *
  */
 
@@ -306,7 +313,13 @@ module Control
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
  * MA 02111-1307  USA
  *
- * $Id: ALT.xpt $
+ *             WARNING! DO NOT MODIFY THIS FILE!
+ *  ---------------------------------------------------------
+ * | This is generated code!  Do not modify this file.       |
+ * | Any changes will be lost when the file is re-generated. |
+ *  ---------------------------------------------------------
+ *
+ * Id: ALT.xpt
  *
  */
 #ifndef __cplusplus
@@ -330,12 +343,12 @@ class «Assembly()»Impl: public «Assembly()»Base
      */
     virtual ~«Assembly()»Impl();
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
-    «IF x.isSpecialConversion()»
+«FOREACH (Set[MonitorPoint]) monitorPoints.resources.contents AS x»
+    «IF x.IsSpecialConversion()»
     ///////////////////////////////////
     // Monitor point: «x.MPName()»
     ///////////////////////////////////
-        «IF x.isWorldDataArray()»
+        «IF x.IsWorldDataArray()»
     virtual std::vector< «x.WorldDataToCPPType()» > convert_«x.MPName()»(«x.RawDataToCPPType()»* raw);
         «ELSE»
     virtual «x.WorldDataToCPPType()» convert_«x.MPName()»(«x.RawDataToCPPType()» raw);
@@ -343,7 +356,7 @@ class «Assembly()»Impl: public «Assembly()»Base
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.resources.contents AS x»
     «IF !x.Implement()»
     ///////////////////////////////////
     // Control point: «x.CPName()»
@@ -382,7 +395,14 @@ class «Assembly()»Impl: public «Assembly()»Base
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
  * MA 02111-1307  USA
- * $Id: ALT.xpt $
+ *
+ *             WARNING! DO NOT MODIFY THIS FILE!
+ *  ---------------------------------------------------------
+ * | This is generated code!  Do not modify this file.       |
+ * | Any changes will be lost when the file is re-generated. |
+ *  ---------------------------------------------------------
+ *
+ * Id: ALT.xpt
  *
  */
 
@@ -416,12 +436,12 @@ class «Assembly()»Impl: public «Assembly()»Base
 // Additional methods for «Assembly()»
 ///////////////////////////////////////
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
-    «IF x.isSpecialConversion()»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
+    «IF x.IsSpecialConversion()»
 ///////////////////////////////////
 // Monitor point: «x.MPName()»
 ///////////////////////////////////
-        «IF x.isWorldDataArray()»
+        «IF x.IsWorldDataArray()»
 std::vector< «x.WorldDataToCPPType()» > convert_«x.MPName()»(«x.RawDataToCPPType()»* raw)
 {
     // TODO
@@ -435,7 +455,7 @@ std::vector< «x.WorldDataToCPPType()» > convert_«x.MPName()»(«x.RawDataToCP
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.Implement()»
 ///////////////////////////////////
 // Control point: «x.CPName()»
@@ -488,7 +508,13 @@ MACI_DLL_SUPPORT_FUNCTIONS(«Assembly()»Impl)
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
  * MA 02111-1307  USA
  *
- * $Id: ALT.xpt $
+ *             WARNING! DO NOT MODIFY THIS FILE!
+ *  ---------------------------------------------------------
+ * | This is generated code!  Do not modify this file.       |
+ * | Any changes will be lost when the file is re-generated. |
+ *  ---------------------------------------------------------
+ *
+ * Id: ALT.xpt
  *
  */
 #ifndef __cplusplus
@@ -514,12 +540,12 @@ class «Assembly()»SimImpl: public «Assembly()»SimBase
      */
     virtual ~«Assembly()»SimImpl();
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
-    «IF x.isSpecialConversion()»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
+    «IF x.IsSpecialConversion()»
     ///////////////////////////////////
     // Monitor point: «x.MPName()»
     ///////////////////////////////////
-        «IF x.isWorldDataArray()»
+        «IF x.IsWorldDataArray()»
     virtual std::vector< «x.WorldDataToCPPType()» > convert_«x.MPName()»(«x.RawDataToCPPType()»* raw);
         «ELSE»
     virtual «x.WorldDataToCPPType()» convert_«x.MPName()»(«x.RawDataToCPPType()» raw);
@@ -527,7 +553,7 @@ class «Assembly()»SimImpl: public «Assembly()»SimBase
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.Implement()»
     ///////////////////////////////////
     // Control point: «x.CPName()»
@@ -589,7 +615,13 @@ class «Assembly()»SimImpl: public «Assembly()»SimBase
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
  * MA 02111-1307  USA
  *
- * $Id: ALT.xpt $
+ *             WARNING! DO NOT MODIFY THIS FILE!
+ *  ---------------------------------------------------------
+ * | This is generated code!  Do not modify this file.       |
+ * | Any changes will be lost when the file is re-generated. |
+ *  ---------------------------------------------------------
+ *
+ * Id: ALT.xpt
  *
  */
 
@@ -630,12 +662,12 @@ void «Assembly()»SimImpl::hwSimulationAction()
 // Additional methods for «Assembly()»
 ///////////////////////////////////////
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
-    «IF x.isSpecialConversion()»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
+    «IF x.IsSpecialConversion()»
 ///////////////////////////////////
 // Monitor point: «x.MPName()»
 ///////////////////////////////////
-        «IF x.isWorldDataArray()»
+        «IF x.IsWorldDataArray()»
 std::vector< «x.WorldDataToCPPType()» > «Assembly()»SimImpl::convert_«x.MPName()»(«x.RawDataToCPPType()»* raw)
 {
     // TODO
@@ -649,7 +681,7 @@ std::vector< «x.WorldDataToCPPType()» > «Assembly()»SimImpl::convert_«x.MPN
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.Implement()»
 ///////////////////////////////////
 // Control point: «x.CPName()»

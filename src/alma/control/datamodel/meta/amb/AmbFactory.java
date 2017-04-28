@@ -105,15 +105,6 @@ public interface AmbFactory extends EFactory {
 	Monitor createMonitor();
 
 	/**
-	 * Returns a new object of class '<em>SW Module</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>SW Module</em>'.
-	 * @generated
-	 */
-	SWModule createSWModule();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

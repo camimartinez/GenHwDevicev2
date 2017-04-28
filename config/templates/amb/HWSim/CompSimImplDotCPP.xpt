@@ -20,19 +20,20 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/src/"+Assembly()+"CompSimImpl.cpp"»
+//
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
 // Copyright by ESO (in the framework of the ALMA collaboration),
@@ -59,6 +60,9 @@ MA 02111-1307  USA
 // | Any changes will be lost when the file is re-generated. |
 //  ---------------------------------------------------------
 //
+// Id: CompSimImplDotCPP.xpt
+//
+
 
 #include <«Assembly()»CompSimImpl.h>
 #include <«Assembly()»HWSimImpl.h>
@@ -72,7 +76,7 @@ MA 02111-1307  USA
 #include <SimulatedSerialNumber.h>
 «IF Parent() != "root"»
 #include <boost/lexical_cast.hpp>
-«ENDIF
+«ENDIF»
 
 
 // Please use this class to implement alternative component, extending
@@ -94,11 +98,11 @@ MA 02111-1307  USA
     «ELSE»
     const unsigned long long hashed_sn(AMB::Utils::getSimSerialNumber(
         componentName, "«Assembly()»"));
-    «ENDIF
+    «ENDIF»
     std::ostringstream msg;
     msg << "simSerialNumber for \""
         << componentName
-        << "\" with assembly name \"«Assembly»\" is 0x"
+        << "\" with assembly name \"«Assembly()»\" is 0x"
         << std::hex
         << hashed_sn;
     LOG_TO_DEVELOPER(LM_DEBUG, msg.str());
@@ -110,7 +114,7 @@ MA 02111-1307  USA
     const AMB::node_t node(«NodeAddress()»U);
     «ELSE»
     const AMB::node_t node(0U);
-    «ENDIF
+    «ENDIF»
 
     simulationObject.reset(new AMB::«Assembly()»HWSimImpl(node, sn));
     simulationIf_m.setSimObj(simulationObject.get());

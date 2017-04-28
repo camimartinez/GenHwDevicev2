@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.amb.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,21 +21,21 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.amb.impl;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
@@ -42,25 +43,128 @@ import alma.control.datamodel.meta.amb.Archive;
 import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.DeviceModel;
 import alma.control.datamodel.meta.amb.GenericMonitorPoints;
+import alma.control.datamodel.meta.amb.Main;
 import alma.control.datamodel.meta.amb.Monitor;
 import alma.control.datamodel.meta.base.BaseFactory;
 import alma.control.datamodel.meta.base.BasePackage;
 import alma.control.datamodel.meta.base.ControlPoint;
+import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.MonitorPoint;
 import alma.control.datamodel.meta.base.Note;
 import alma.control.datamodel.meta.base.SpreadsheetParser;
 import alma.control.datamodel.meta.base.SpreadsheetValidator;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+import alma.control.datamodel.meta.base.impl.MandCBaseImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Device Model</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getMainAmbList <em>Main Amb</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getCPointsList <em>CPoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getAPointsList <em>APoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getMPointsList <em>MPoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.DeviceModelImpl#getNote <em>Note</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.DeviceModelImpl implements DeviceModel {
+	/**
+	 * The cached value of the '{@link #getMainAmbList() <em>Main Amb</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMainAmbList()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Main> mainAmb;
+
+	/**
+	 * The empty value for the '{@link #getMainAmb() <em>Main Amb</em>}' array accessor.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMainAmb()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Main[] MAIN_AMB_EEMPTY_ARRAY = new Main [0];
+
+	/**
+	 * The cached value of the '{@link #getCPointsList() <em>CPoints</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCPointsList()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Control> cPoints;
+
+	/**
+	 * The empty value for the '{@link #getCPoints() <em>CPoints</em>}' array accessor.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Control[] CPOINTS_EEMPTY_ARRAY = new Control [0];
+
+	/**
+	 * The cached value of the '{@link #getAPointsList() <em>APoints</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAPointsList()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Archive> aPoints;
+
+	/**
+	 * The empty value for the '{@link #getAPoints() <em>APoints</em>}' array accessor.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Archive[] APOINTS_EEMPTY_ARRAY = new Archive [0];
+
+	/**
+	 * The cached value of the '{@link #getMPointsList() <em>MPoints</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMPointsList()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Monitor> mPoints;
+
+	/**
+	 * The empty value for the '{@link #getMPoints() <em>MPoints</em>}' array accessor.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Monitor[] MPOINTS_EEMPTY_ARRAY = new Monitor [0];
+
+	/**
+	 * The cached value of the '{@link #getNote() <em>Note</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNote()
+	 * @generated
+	 * @ordered
+	 */
+	protected Note note;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,6 +182,312 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	@Override
 	protected EClass eStaticClass() {
 		return AmbPackage.Literals.DEVICE_MODEL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Main[] getMainAmb() {
+		if (mainAmb == null || mainAmb.isEmpty()) return MAIN_AMB_EEMPTY_ARRAY;
+		BasicEList<Main> list = (BasicEList<Main>)mainAmb;
+		list.shrink();
+		return (Main[])list.data();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Main getMainAmb(int index) {
+		return getMainAmbList().get(index);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMainAmbLength() {
+		return mainAmb == null ? 0 : mainAmb.size();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMainAmb(Main[] newMainAmb) {
+		((BasicEList<Main>)getMainAmbList()).setData(newMainAmb.length, newMainAmb);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMainAmb(int index, Main element) {
+		getMainAmbList().set(index, element);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Main> getMainAmbList() {
+		if (mainAmb == null) {
+			mainAmb = new EObjectContainmentEList.Resolving<Main>(Main.class, this, AmbPackage.DEVICE_MODEL__MAIN_AMB);
+		}
+		return mainAmb;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Control[] getCPoints() {
+		if (cPoints == null || cPoints.isEmpty()) return CPOINTS_EEMPTY_ARRAY;
+		BasicEList<Control> list = (BasicEList<Control>)cPoints;
+		list.shrink();
+		return (Control[])list.data();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Control getCPoints(int index) {
+		return getCPointsList().get(index);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getCPointsLength() {
+		return cPoints == null ? 0 : cPoints.size();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCPoints(Control[] newCPoints) {
+		((BasicEList<Control>)getCPointsList()).setData(newCPoints.length, newCPoints);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCPoints(int index, Control element) {
+		getCPointsList().set(index, element);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Control> getCPointsList() {
+		if (cPoints == null) {
+			cPoints = new EObjectContainmentEList.Resolving<Control>(Control.class, this, AmbPackage.DEVICE_MODEL__CPOINTS);
+		}
+		return cPoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Archive[] getAPoints() {
+		if (aPoints == null || aPoints.isEmpty()) return APOINTS_EEMPTY_ARRAY;
+		BasicEList<Archive> list = (BasicEList<Archive>)aPoints;
+		list.shrink();
+		return (Archive[])list.data();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Archive getAPoints(int index) {
+		return getAPointsList().get(index);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getAPointsLength() {
+		return aPoints == null ? 0 : aPoints.size();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAPoints(Archive[] newAPoints) {
+		((BasicEList<Archive>)getAPointsList()).setData(newAPoints.length, newAPoints);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAPoints(int index, Archive element) {
+		getAPointsList().set(index, element);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Archive> getAPointsList() {
+		if (aPoints == null) {
+			aPoints = new EObjectContainmentEList.Resolving<Archive>(Archive.class, this, AmbPackage.DEVICE_MODEL__APOINTS);
+		}
+		return aPoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Monitor[] getMPoints() {
+		if (mPoints == null || mPoints.isEmpty()) return MPOINTS_EEMPTY_ARRAY;
+		BasicEList<Monitor> list = (BasicEList<Monitor>)mPoints;
+		list.shrink();
+		return (Monitor[])list.data();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Monitor getMPoints(int index) {
+		return getMPointsList().get(index);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMPointsLength() {
+		return mPoints == null ? 0 : mPoints.size();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMPoints(Monitor[] newMPoints) {
+		((BasicEList<Monitor>)getMPointsList()).setData(newMPoints.length, newMPoints);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMPoints(int index, Monitor element) {
+		getMPointsList().set(index, element);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Monitor> getMPointsList() {
+		if (mPoints == null) {
+			mPoints = new EObjectContainmentEList.Resolving<Monitor>(Monitor.class, this, AmbPackage.DEVICE_MODEL__MPOINTS);
+		}
+		return mPoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Note getNote() {
+		if (note != null && note.eIsProxy()) {
+			InternalEObject oldNote = (InternalEObject)note;
+			note = (Note)eResolveProxy(oldNote);
+			if (note != oldNote) {
+				InternalEObject newNote = (InternalEObject)note;
+				NotificationChain msgs = oldNote.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AmbPackage.DEVICE_MODEL__NOTE, null, null);
+				if (newNote.eInternalContainer() == null) {
+					msgs = newNote.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AmbPackage.DEVICE_MODEL__NOTE, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AmbPackage.DEVICE_MODEL__NOTE, oldNote, note));
+			}
+		}
+		return note;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Note basicGetNote() {
+		return note;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetNote(Note newNote, NotificationChain msgs) {
+		Note oldNote = note;
+		note = newNote;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__NOTE, oldNote, newNote);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNote(Note newNote) {
+		if (newNote != note) {
+			NotificationChain msgs = null;
+			if (note != null)
+				msgs = ((InternalEObject)note).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AmbPackage.DEVICE_MODEL__NOTE, null, msgs);
+			if (newNote != null)
+				msgs = ((InternalEObject)newNote).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AmbPackage.DEVICE_MODEL__NOTE, null, msgs);
+			msgs = basicSetNote(newNote, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.DEVICE_MODEL__NOTE, newNote, newNote));
 	}
 
 	/**
@@ -104,7 +514,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String Parent() {
-		return mainAmb.Parent();
+		return ((Main)main).Parent();
 	}
 
 	/**
@@ -113,7 +523,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String Cardinality() {
-		return mainAmb.Cardinality();
+		return ((Main)main).Cardinality();
 	}
 
 	/**
@@ -122,7 +532,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String NodeAddress() {
-		return mainAmb.NodeAddress();
+		return ((Main)main).NodeAddress();
 	}
 
 	/**
@@ -131,15 +541,16 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String Channel() {
-		return mainAmb.Channel();
+		return ((Main)main).Channel();
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String BaseAddress() {
-		return mainAmb.BaseAddress();
+		return ((Main)main).BaseAddress();
 	}
 
 	/**
@@ -148,7 +559,7 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public boolean GenericMonitorPoints() {
-		return mainAmb.GenericMonitorPoints();
+		return ((Main)main).GenericMonitorPoints();
 	}
 
 	/**
@@ -182,8 +593,8 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		//Creation of instances of in amb package
 		GenericMonitorPoints genericMPoints = ambFactory.createGenericMonitorPoints();
 
-		container = new ResourceSetImpl();
-		
+		//container = new ResourceSetImpl();
+
 		// Check if the spreadsheet file is an actual spreadsheet or a
 		// "filter" file which is some kind of a filter for a real
 		// spreadsheet but inherits from it.
@@ -219,39 +630,90 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 		controlIndex = table.getSheetNum("Control Point");
 		archiveIndex = table.getSheetNum("Archive Property");
 
-		//Table:
-		Resource resourceTables = container.createResource(URI.createURI(""));
-		resourceTables.getContents().add(table);	
-		
 		util.setTables(table);
+		super.setTables(table);
+		super.setUtils(util);
 
-		//Util:
-		Resource resourceUtils= container.createResource(URI.createURI(""));
-		resourceUtils.getContents().add(util);
-				
 		if(spreadsheet[mainIndex][2][table.getColNum(mainIndex,"Generic Monitor Points")].equals("yes")){
 			String[][][] spreadsheetWithGenericPointsAdded;
 			spreadsheetWithGenericPointsAdded = genericMPoints.getDeviceWorksheetWithGenericPointsAdded(spreadsheet);
 			spreadsheet = spreadsheetWithGenericPointsAdded;
 		}
 
+		container = new ResourceSetImpl();
+
 		// Get the Notes
+		notes = container.createResource(URI.createURI(""));
 		for (i = 3; i < spreadsheet[mainIndex].length; i++) {
-			Note note = baseFactory.createNote();
-			notes = container.createResource(URI.createURI(""));
+			note = baseFactory.createNote();
 			note.setNote(spreadsheet[mainIndex][i][descriptionIndex]);
 			notes.getContents().add(note);
+			container.getResources().add(notes);
 		}
 
 		//Get the Main
-		mainAmb = ambFactory.createMain();
-		mainAmb.setMainAmb(spreadsheet[mainIndex][2],table,util);
-		main = container.createResource(URI.createURI(""));
-		main.getContents().add(mainAmb);
-	
-		// Get the monitor points
+		main = ambFactory.createMain();
+		main.setMainBase(table, util);
+		main.setMainBase(spreadsheet[mainIndex][2]);
+
+		// Get all independent monitor points
 		Monitor mparent = null;
 		monitorPoints = container.createResource(URI.createURI(""));
+		
+		//for (i = 2; i < spreadsheet[monitorIndex].length; i++) {
+
+
+		for (i = 2; i < spreadsheet[monitorIndex].length; i++) {
+
+
+			if(spreadsheet[monitorIndex][i].length == 0)
+				break;
+			Monitor mp;
+			String[] row = spreadsheet[monitorIndex][i];
+			if(!spreadsheet[monitorIndex][i][1].startsWith(table.getDepChar())){
+				mp = ambFactory.createMonitor();
+				mp.setMonitorPoint(table, util);
+				mp.setMonitorAmb(row, null);
+				/*
+				System.out.println("-------------------------------");
+				System.out.println("a parent is: "+mp.FullName()+"");
+				System.out.println("Has dependents: "+mp.hasDependents()+"");
+				System.out.println("Is dependent: "+mp.IsDependent()+"");
+				System.out.println("Is monitored: "+mp.IsMonitored()+"");
+				System.out.println("Is pattern: "+mp.IsPattern()+"");
+				System.out.println("Is part of pattern: "+mp.IsPartOfPattern()+"");
+				System.out.println("Is homogeneous: "+mp.IsHomogeneous()+"");
+				System.out.println("Is part of homogeneous: "+mp.IsPartOfHomogeneous()+"");
+				System.out.println("-------------------------------");
+				*/
+				mparent = mp;	
+			}else{
+				mp = ambFactory.createMonitor();
+				mp.setMonitorPoint(table, util);
+				mp.setMonitorAmb(row, mparent);
+				mparent.addDependent(mp);
+				/*
+				System.out.println("-------------------------------");
+				System.out.println("a son is: "+mp.FullName()+"");
+				System.out.println("Has dependents: "+mp.hasDependents()+"");
+				System.out.println("Is dependent: "+mp.IsDependent()+"");
+				System.out.println("Is monitored: "+mp.IsMonitored()+"");
+				System.out.println("Is pattern: "+mp.IsPattern()+"");
+				System.out.println("Is part of pattern: "+mp.IsPartOfPattern()+"");
+				System.out.println("Is homogeneous: "+mp.IsHomogeneous()+"");
+				System.out.println("Is part of homogeneous: "+mp.IsPartOfHomogeneous()+"");
+				System.out.println("-------------------------------");
+				*/
+			}
+			mp.setArchiveProp(getArchiveProp(mp.FullName()));
+			getMPointsList().add(mparent);
+		}		
+	
+		EList<Monitor> parentsMP = new BasicEList<Monitor>();
+		parentsMP.addAll(getMPointsList());
+		getMPointsList().clear();
+
+		//Get all dependent monitor points
 		for (i = 2; i < spreadsheet[monitorIndex].length; i++) {
 			if(spreadsheet[monitorIndex][i].length == 0)
 				break;
@@ -259,58 +721,91 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			String[] row = spreadsheet[monitorIndex][i];
 			if(!spreadsheet[monitorIndex][i][1].startsWith(table.getDepChar())){
 				mp = ambFactory.createMonitor();
-				mp.setMonitorAmb(row, null, table, util);
+				mp.setMonitorPoint(table, util);
+				mp.setMonitorAmb(row, null);
 				mparent = mp;
+				mp.setArchiveProp(getArchiveProp(mp.FullName()));
+
 			}else{
 				mp = ambFactory.createMonitor();
-				mp.setMonitorAmb(row, mparent, table, util);
-				mparent.addDependent(mp);
-			}			
-			setDeviceModel(table,util);
-			mp.setArchive(getArchiveProperties(mp.FullName()));		
-			monitorPoints.getContents().add(mp);					
-		}	
-		
-		// Define undefined dependent monitor points for sequence properties
-		MonitorImpl[] arrayMP = (MonitorImpl[])monitorPoints.getContents().toArray(new MonitorImpl[0]);
-		for (Monitor mp : arrayMP) {
-			if (mp.IsWorldDataArray() && !mp.hasDependents())
-				mp.setMonitorAmb(mp.getRow(), null, table, util);
-			for (i=0; i < Integer.parseInt(mp.NumberItemsWorldData()); i++) {
-				String[] row = {
-						mp.Assembly(),
-						"^" + mp.MPName() + "_" + Integer.toString(i),
-						mp.RCA(),
-						mp.RawDataType(),
-						mp.TeRelatedCell(),
-						mp.WorldDataType(),
-						mp.DataUnits(),
-						"none",
-						"none",
-						"none",
-						"none",
-						"none",
-						mp.ErrorCondition(),
-						mp.ErrorSeverity(),
-						mp.ErrorAction(),
-						mp.Mode(),
-						"yes",
-						"no",
-						mp.CanBeInvalid(),
-						mp.Description() + " (dependent monitor point)"
-				};
-				mp.setMonitorAmb(row, mp.getParent(), table, util);
-				Monitor dep = ambFactory.createMonitor();
-				dep.setMonitorAmb(row, mp, table, util);
-				mp.addDependent(dep);
-				dep.setArchive(getArchiveProperties(dep.FullName()));		
-				monitorPoints.getContents().add(dep);							
-			}
+				mp.setMonitorPoint(table, util);
+				mp.setMonitorAmb(row, mparent);
+				mparent.addDependent(mp);	
+				mp.setArchiveProp(getArchiveProp(mp.FullName()));
+				getMPointsList().add(mp);
+			}	
 		}	
 
-		// Get the control points
-		Control cparent = null;
+		EList<Monitor> dependentMP = new BasicEList<Monitor>();
+		dependentMP.addAll(getMPointsList());
+		getMPointsList().clear();
+
+		//Since we get all the dependent and independent monitor point 
+		//separately it is necessary sort them
+		for(int j=0; j<parentsMP.size();j++){
+			Monitor	tmp = parentsMP.get(j);
+			if(!tmp.hasDependents()){
+				getMPointsList().add(tmp);
+			}else{
+				String name = tmp.MPName();
+				getMPointsList().add(tmp);
+				for(int n=0; n<dependentMP.size();n++){
+					Monitor	tmp2 = dependentMP.get(n);
+					if(name.equals(tmp2.GetDependsOnName())){
+						getMPointsList().add(tmp2);
+					}
+				}//end for dependentMP
+			}//end else		
+		}//end for parentsMP
+		monitorPoints.getContents().removeAll(dependentMP);
+    	monitorPoints.getContents().removeAll(parentsMP);
+		monitorPoints.getContents().removeAll(mPoints);
+		
+		monitorPoints.getContents().addAll(getMPointsList());
+		container.getResources().add(monitorPoints);
+
+		
+		// Define undefined dependent monitor points for sequence properties
+		Monitor[] arrayMP = (Monitor[])monitorPoints.getContents().toArray(new Monitor[0]);	
+		//System.out.println("array lenght is: "+arrayMP.length+"");
+		for(Monitor mp : arrayMP){
+			if (mp.IsWorldDataArray()  && !mp.hasDependents())
+				for (i=0; i < Integer.parseInt(mp.NumberItemsWorldData()); i++) {
+					String[] row = {
+							mp.Assembly(),
+							"^" + mp.MPName() + "_" + Integer.toString(i),
+							mp.RCA(),
+							mp.RawDataType(),
+							mp.TeRelatedCell(),
+							mp.WorldDataType(),
+							mp.DataUnits(),
+							"none",
+							"none",
+							"none",
+							"none",
+							"none",
+							mp.ErrorCondition(),
+							mp.ErrorSeverity(),
+							mp.ErrorAction(),
+							mp.Mode(),
+							"yes",
+							"no",
+							mp.CanBeInvalid(),
+							mp.Description() + " (dependent monitor point)"
+					};						
+					Monitor dep = ambFactory.createMonitor();
+					dep.setMonitorPoint(table, util);
+					dep.setMonitorAmb(row, mp);
+					getMPointsList().add(dep);
+					dep.setArchiveProp(getArchiveProp(dep.FullName()));
+					monitorPoints.getContents().addAll(mPoints);
+					container.getResources().add(monitorPoints);	
+				}
+		}	
+
+		// Get all independent control points
 		controlPoints = container.createResource(URI.createURI(""));
+		Control cparent = null;
 		for (i = 2; i < spreadsheet[controlIndex].length; ++i) {
 			if(spreadsheet[controlIndex][i].length == 0)
 				break;
@@ -318,17 +813,72 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			String[] row = spreadsheet[controlIndex][i];
 			if(!spreadsheet[controlIndex][i][1].startsWith(table.getDepChar())){
 				cp = ambFactory.createControl();
-				cp.setControlAmb(row, null, table, util);
+				cp.setControlPoint(table, util);
+				cp.setControlAmb(row, null);
 				cparent = cp;
 			}else{
 				cp = ambFactory.createControl();
-				cp.setControlAmb(row, cparent, table, util);
+				cp.setControlPoint(table, util);
+				cp.setControlAmb(row, cparent);
 				cparent.addDependent(cp);
 			}	
-			setDeviceModel(table,util);
-			cp.setArchive(getArchiveProperties(cp.FullName()));
-			controlPoints.getContents().add(cp);
+			cp.setArchiveProp(getArchiveProp(cp.FullName()));
+			getCPointsList().add(cparent);
 		}
+
+		EList<Control> parentsCP = new BasicEList<Control>();
+		parentsCP.addAll(getCPointsList());
+		getCPointsList().clear();
+
+		//Get all dependent control points
+		for (i = 2; i < spreadsheet[controlIndex].length; ++i) {
+			if(spreadsheet[controlIndex][i].length == 0)
+				break;
+			Control cp;
+			String[] row = spreadsheet[controlIndex][i];
+			if(!spreadsheet[controlIndex][i][1].startsWith(table.getDepChar())){
+				cp = ambFactory.createControl();
+				cp.setControlPoint(table, util);
+				cp.setControlAmb(row, null);
+				cparent = cp;
+				cp.setArchiveProp(getArchiveProp(cp.FullName()));
+			}else{
+				cp = ambFactory.createControl();
+				cp.setControlPoint(table, util);
+				cp.setControlAmb(row, cparent);
+				cparent.addDependent(cp);
+				cp.setArchiveProp(getArchiveProp(cp.FullName()));
+				getCPointsList().add(cp);
+			}	
+		}
+
+		EList<Control> dependentCP = new BasicEList<Control>();
+		dependentCP.addAll(getCPointsList());
+		getCPointsList().clear();
+
+		//Since we get all the dependent and independent control point 
+		//separately it is necessary sort them
+		for(int j=0; j<parentsCP.size();j++){
+			Control	tmp = parentsCP.get(j);
+			if(!tmp.hasDependents()){
+				getCPointsList().add(tmp);
+			}else{
+				String name = tmp.CPName();
+				getCPointsList().add(tmp);
+				for(int n=0; n<dependentCP.size();n++){
+					Control	tmp2 = dependentCP.get(n);
+					if(name.equals(tmp2.GetDependsOnName())){
+						getCPointsList().add(tmp2);
+					}
+				}//end for dependentCP
+			}//end else		
+		}//end for parentsCP
+		controlPoints.getContents().removeAll(dependentCP);
+		controlPoints.getContents().removeAll(parentsCP);
+		controlPoints.getContents().removeAll(cPoints);
+
+		controlPoints.getContents().addAll(getCPointsList());
+		container.getResources().add(controlPoints);
 
 		//Get the Archive Properties
 		archiveProperties = container.createResource(URI.createURI(""));
@@ -339,38 +889,19 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 			String[] row = spreadsheet[archiveIndex][i];
 			ap = ambFactory.createArchive();
 			ap.setArchiveAmb(row, table);
-			MonitorPoint mp = getMonitorPoint(ap.RefersTo());
+			MonitorPoint mp = GetMonitorPoint(ap.RefersTo());
 			if (mp != null)
-				ap.setMP(mp);			
-			ControlPoint cp = getControlPoint(ap.RefersTo());
+				ap.setMp(mp);
+			ControlPoint cp = GetControlPoint(ap.RefersTo());
 			if (cp != null)
-				ap.setCP(cp);
-			setDeviceModel(table,util);
-			archiveProperties.getContents().add(ap);
+				ap.setCp(cp);	
+			getAPointsList().add(ap);
 		}	
+		archiveProperties.getContents().addAll(getAPointsList());
+		container.getResources().add(archiveProperties);
+		
 		System.out.println("DeviceModel: Initialization complete.");
 		return "";
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	//Print the values of the class, to test the objects
-	public static void printAttributeValues(EObject object) {
-		EClass eClass = object.eClass();
-		System.out.println(eClass.getName());
-		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
-			EAttribute attribute = (EAttribute)iter.next();
-			Object value = object.eGet(attribute);
-
-			System.out.print("  " + attribute.getName() + " : ");
-			if (object.eIsSet(attribute))
-				System.out.println(value);
-			else
-				System.out.println(value + " (default)");
-		}
 	}
 
 	/**
@@ -379,27 +910,27 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 	 * @generated
 	 */
 	public String TheEnd() {
-				String dir = generatedDir + "/" + Assembly();
-				utils.RemoveLinesFromFile(dir + "/doc", Assembly() + ".html", 1);
-				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
-				utils.RemoveLinesFromFile(dir + "/include", Assembly() + "HWSimBase.h", 1);
-				utils.RemoveLinesFromFile(dir + "/src", Assembly() + "HWSimBase.cpp", 1);
-				utils.RemoveLinesFromFile(dir + "/include", Assembly() + "CompSimBase.h", 1);
-				utils.RemoveLinesFromFile(dir + "/src", Assembly() + "CompSimBase.cpp", 1);
-				utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "CompSimBase.idl", 1);
-				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "HWSimImpl.cpp", 1);
-				utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "AmbDeviceInt.cpp", 1);
-					if (!isMonitorDBOnly()) {
-						if (isGenerateAlt()) {
-							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + ".makefile", 1);
-							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.idl", 1);
-							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.h", 1);
-							utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.cpp", 1);
-						}
-						super.TheEnd();
-					} else 
-						System.out.println("Code generation for " + deviceName + " done.");
-					return "";
+		String dir = generatedDir + "/" + Assembly();
+						utils.RemoveLinesFromFile(dir + "/doc", Assembly() + ".html", 1);
+						utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "Add.sql", 1);
+						utils.RemoveLinesFromFile(dir + "/include", Assembly() + "HWSimBase.h", 1);
+						utils.RemoveLinesFromFile(dir + "/src", Assembly() + "HWSimBase.cpp", 1);
+						utils.RemoveLinesFromFile(dir + "/include", Assembly() + "CompSimBase.h", 1);
+						utils.RemoveLinesFromFile(dir + "/src", Assembly() + "CompSimBase.cpp", 1);
+						utils.RemoveLinesFromFile(dir + "/idl", Assembly() + "CompSimBase.idl", 1);
+						utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "HWSimImpl.cpp", 1);
+						utils.RemoveLinesFromFile(dir + "/test", "Test" + Assembly() + "AmbDeviceInt.cpp", 1);
+							if (!IsMonitorDBOnly()) {
+								if (IsGenerateAlt()) {
+									utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + ".makefile", 1);
+									utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.idl", 1);
+									utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.h", 1);
+									utils.RemoveLinesFromFile(dir + "/../ALT/", Assembly() + "Impl.cpp", 1);
+								}
+								super.TheEnd();
+							} else 
+								System.out.println("Code generation for " + deviceName + " done.");
+							return "";
 	}
 
 	/**
@@ -428,4 +959,131 @@ public class DeviceModelImpl extends alma.control.datamodel.meta.base.impl.Devic
 				}
 				return Integer.toString(n);
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AmbPackage.DEVICE_MODEL__MAIN_AMB:
+				return ((InternalEList<?>)getMainAmbList()).basicRemove(otherEnd, msgs);
+			case AmbPackage.DEVICE_MODEL__CPOINTS:
+				return ((InternalEList<?>)getCPointsList()).basicRemove(otherEnd, msgs);
+			case AmbPackage.DEVICE_MODEL__APOINTS:
+				return ((InternalEList<?>)getAPointsList()).basicRemove(otherEnd, msgs);
+			case AmbPackage.DEVICE_MODEL__MPOINTS:
+				return ((InternalEList<?>)getMPointsList()).basicRemove(otherEnd, msgs);
+			case AmbPackage.DEVICE_MODEL__NOTE:
+				return basicSetNote(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case AmbPackage.DEVICE_MODEL__MAIN_AMB:
+				return getMainAmbList();
+			case AmbPackage.DEVICE_MODEL__CPOINTS:
+				return getCPointsList();
+			case AmbPackage.DEVICE_MODEL__APOINTS:
+				return getAPointsList();
+			case AmbPackage.DEVICE_MODEL__MPOINTS:
+				return getMPointsList();
+			case AmbPackage.DEVICE_MODEL__NOTE:
+				if (resolve) return getNote();
+				return basicGetNote();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case AmbPackage.DEVICE_MODEL__MAIN_AMB:
+				getMainAmbList().clear();
+				getMainAmbList().addAll((Collection<? extends Main>)newValue);
+				return;
+			case AmbPackage.DEVICE_MODEL__CPOINTS:
+				getCPointsList().clear();
+				getCPointsList().addAll((Collection<? extends Control>)newValue);
+				return;
+			case AmbPackage.DEVICE_MODEL__APOINTS:
+				getAPointsList().clear();
+				getAPointsList().addAll((Collection<? extends Archive>)newValue);
+				return;
+			case AmbPackage.DEVICE_MODEL__MPOINTS:
+				getMPointsList().clear();
+				getMPointsList().addAll((Collection<? extends Monitor>)newValue);
+				return;
+			case AmbPackage.DEVICE_MODEL__NOTE:
+				setNote((Note)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case AmbPackage.DEVICE_MODEL__MAIN_AMB:
+				getMainAmbList().clear();
+				return;
+			case AmbPackage.DEVICE_MODEL__CPOINTS:
+				getCPointsList().clear();
+				return;
+			case AmbPackage.DEVICE_MODEL__APOINTS:
+				getAPointsList().clear();
+				return;
+			case AmbPackage.DEVICE_MODEL__MPOINTS:
+				getMPointsList().clear();
+				return;
+			case AmbPackage.DEVICE_MODEL__NOTE:
+				setNote((Note)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case AmbPackage.DEVICE_MODEL__MAIN_AMB:
+				return mainAmb != null && !mainAmb.isEmpty();
+			case AmbPackage.DEVICE_MODEL__CPOINTS:
+				return cPoints != null && !cPoints.isEmpty();
+			case AmbPackage.DEVICE_MODEL__APOINTS:
+				return aPoints != null && !aPoints.isEmpty();
+			case AmbPackage.DEVICE_MODEL__MPOINTS:
+				return mPoints != null && !mPoints.isEmpty();
+			case AmbPackage.DEVICE_MODEL__NOTE:
+				return note != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
 } //DeviceModelImpl

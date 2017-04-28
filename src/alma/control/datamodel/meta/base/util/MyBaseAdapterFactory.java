@@ -20,15 +20,9 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.amb.util;
+package alma.control.datamodel.meta.base.util;
 
-import alma.control.datamodel.meta.amb.*;
-
-import alma.control.datamodel.meta.base.ArchiveProperty;
-import alma.control.datamodel.meta.base.ControlPoint;
-import alma.control.datamodel.meta.base.MainBase;
-import alma.control.datamodel.meta.base.MandCBase;
-import alma.control.datamodel.meta.base.MonitorPoint;
+import alma.control.datamodel.meta.base.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -38,22 +32,24 @@ import org.eclipse.emf.common.notify.impl.AdapterImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.xml.sax.ErrorHandler;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see alma.control.datamodel.meta.amb.AmbPackage
+ * @see alma.control.datamodel.meta.base.BasePackage
  * @generated
  */
-public class AmbAdapterFactory extends AdapterFactoryImpl {
+public class MyBaseAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static AmbPackage modelPackage;
+	protected static BasePackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -61,9 +57,9 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AmbAdapterFactory() {
+	public MyBaseAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = AmbPackage.eINSTANCE;
+			modelPackage = BasePackage.eINSTANCE;
 		}
 	}
 
@@ -92,59 +88,63 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AmbSwitch<Adapter> modelSwitch =
-		new AmbSwitch<Adapter>() {
-			@Override
-			public Adapter caseArchive(Archive object) {
-				return createArchiveAdapter();
-			}
-			@Override
-			public Adapter caseControl(Control object) {
-				return createControlAdapter();
-			}
-			@Override
-			public Adapter caseDeviceModel(DeviceModel object) {
-				return createDeviceModelAdapter();
-			}
-			@Override
-			public Adapter caseGenericMonitorPoints(GenericMonitorPoints object) {
-				return createGenericMonitorPointsAdapter();
-			}
-			@Override
-			public Adapter caseMain(Main object) {
-				return createMainAdapter();
-			}
-			@Override
-			public Adapter caseMandC(MandC object) {
-				return createMandCAdapter();
-			}
-			@Override
-			public Adapter caseMonitor(Monitor object) {
-				return createMonitorAdapter();
-			}
+	protected BaseSwitch<Adapter> modelSwitch =
+		new BaseSwitch<Adapter>() {
 			@Override
 			public Adapter caseArchiveProperty(ArchiveProperty object) {
 				return createArchivePropertyAdapter();
-			}
-			@Override
-			public Adapter caseMandCBase(MandCBase object) {
-				return createMandCBaseAdapter();
 			}
 			@Override
 			public Adapter caseControlPoint(ControlPoint object) {
 				return createControlPointAdapter();
 			}
 			@Override
-			public Adapter caseBase_DeviceModel(alma.control.datamodel.meta.base.DeviceModel object) {
-				return createBase_DeviceModelAdapter();
+			public Adapter caseDeviceModel(DeviceModel object) {
+				return createDeviceModelAdapter();
 			}
 			@Override
 			public Adapter caseMainBase(MainBase object) {
 				return createMainBaseAdapter();
 			}
 			@Override
+			public Adapter caseMandCBase(MandCBase object) {
+				return createMandCBaseAdapter();
+			}
+			@Override
 			public Adapter caseMonitorPoint(MonitorPoint object) {
 				return createMonitorPointAdapter();
+			}
+			@Override
+			public Adapter caseNote(Note object) {
+				return createNoteAdapter();
+			}
+			@Override
+			public Adapter casePair(Pair object) {
+				return createPairAdapter();
+			}
+			@Override
+			public Adapter caseSimpleErrorHandler(SimpleErrorHandler object) {
+				return createSimpleErrorHandlerAdapter();
+			}
+			@Override
+			public Adapter caseSpreadsheetParser(SpreadsheetParser object) {
+				return createSpreadsheetParserAdapter();
+			}
+			@Override
+			public Adapter caseSpreadsheetValidator(SpreadsheetValidator object) {
+				return createSpreadsheetValidatorAdapter();
+			}
+			@Override
+			public Adapter caseTable(Table object) {
+				return createTableAdapter();
+			}
+			@Override
+			public Adapter caseUtil(Util object) {
+				return createUtilAdapter();
+			}
+			@Override
+			public Adapter caseErrorHandlerAuxClass(ErrorHandler object) {
+				return createErrorHandlerAuxClassAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -167,104 +167,6 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.Archive <em>Archive</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.amb.Archive
-	 * @generated
-	 */
-	public Adapter createArchiveAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.Control <em>Control</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.amb.Control
-	 * @generated
-	 */
-	public Adapter createControlAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.DeviceModel <em>Device Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.amb.DeviceModel
-	 * @generated
-	 */
-	public Adapter createDeviceModelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.GenericMonitorPoints <em>Generic Monitor Points</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.amb.GenericMonitorPoints
-	 * @generated
-	 */
-	public Adapter createGenericMonitorPointsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.Main <em>Main</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.amb.Main
-	 * @generated
-	 */
-	public Adapter createMainAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.MandC <em>Mand C</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.amb.MandC
-	 * @generated
-	 */
-	public Adapter createMandCAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.amb.Monitor <em>Monitor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.amb.Monitor
-	 * @generated
-	 */
-	public Adapter createMonitorAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.ArchiveProperty <em>Archive Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -275,21 +177,8 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createArchivePropertyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.MandCBase <em>Mand CBase</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see alma.control.datamodel.meta.base.MandCBase
-	 * @generated
-	 */
-	public Adapter createMandCBaseAdapter() {
-		return null;
+		Adapter archivePropertyAdapter = new AdapterImpl();
+		return archivePropertyAdapter;
 	}
 
 	/**
@@ -303,7 +192,8 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createControlPointAdapter() {
-		return null;
+		Adapter controlPointAdapter = new AdapterImpl();
+		return controlPointAdapter;
 	}
 
 	/**
@@ -316,8 +206,9 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @see alma.control.datamodel.meta.base.DeviceModel
 	 * @generated
 	 */
-	public Adapter createBase_DeviceModelAdapter() {
-		return null;
+	public Adapter createDeviceModelAdapter() {
+		Adapter deviceModelAdapter = new AdapterImpl();
+		return deviceModelAdapter;
 	}
 
 	/**
@@ -331,7 +222,23 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMainBaseAdapter() {
-		return null;
+		Adapter mainBaseAdapter = new AdapterImpl();
+		return mainBaseAdapter;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.MandCBase <em>Mand CBase</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.MandCBase
+	 * @generated
+	 */
+	public Adapter createMandCBaseAdapter() {
+		Adapter mandCBaseAdapter = new AdapterImpl();
+		return mandCBaseAdapter;
 	}
 
 	/**
@@ -345,7 +252,128 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMonitorPointAdapter() {
-		return null;
+		Adapter monitorPointAdapter = new AdapterImpl();
+		return monitorPointAdapter;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.Note <em>Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.Note
+	 * @generated
+	 */
+	public Adapter createNoteAdapter() {
+		Adapter noteAdapter = new AdapterImpl();
+		return noteAdapter;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.Pair <em>Pair</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.Pair
+	 * @generated
+	 */
+	public Adapter createPairAdapter() {
+		Adapter pairAdapter = new AdapterImpl();
+		return pairAdapter;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.SimpleErrorHandler <em>Simple Error Handler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.SimpleErrorHandler
+	 * @generated
+	 */
+	public Adapter createSimpleErrorHandlerAdapter() {
+		Adapter simpleErrorHandlerAdapter = new AdapterImpl();
+		return simpleErrorHandlerAdapter;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.SpreadsheetParser <em>Spreadsheet Parser</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetParser
+	 * @generated
+	 */
+	public Adapter createSpreadsheetParserAdapter() {
+		Adapter spreadsheetParserAdapter = new AdapterImpl();
+		return spreadsheetParserAdapter;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.SpreadsheetValidator <em>Spreadsheet Validator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.SpreadsheetValidator
+	 * @generated
+	 */
+	public Adapter createSpreadsheetValidatorAdapter() {
+		Adapter spreadsheetValidatorAdapter = new AdapterImpl();
+		return spreadsheetValidatorAdapter;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.Table <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.Table
+	 * @generated
+	 */
+	public Adapter createTableAdapter() {
+		Adapter tableAdapter = new AdapterImpl();
+		return tableAdapter;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link alma.control.datamodel.meta.base.Util <em>Util</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see alma.control.datamodel.meta.base.Util
+	 * @generated
+	 */
+	public Adapter createUtilAdapter() {
+		Adapter utilAdapter = new AdapterImpl();
+		return utilAdapter;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.xml.sax.ErrorHandler <em>Error Handler Aux Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xml.sax.ErrorHandler
+	 * @generated
+	 */
+	public Adapter createErrorHandlerAuxClassAdapter() {
+		Adapter errorHandlerAuxClass = new AdapterImpl();
+		return errorHandlerAuxClass;
 	}
 
 	/**
@@ -357,7 +385,8 @@ public class AmbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEObjectAdapter() {
-		return null;
+		Adapter eObjectAdapter = new AdapterImpl();
+		return eObjectAdapter;
 	}
 
-} //AmbAdapterFactory
+} //MyBaseAdapterFactory

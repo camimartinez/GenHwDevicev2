@@ -28,9 +28,7 @@ import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -92,7 +90,6 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean IsMonitored() {
 		return false;
 		
@@ -103,11 +100,20 @@ public abstract class ControlPointImpl extends MandCBaseImpl implements ControlP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlPoint(final String[] row, final EObject parent, final Table tables, final Util utils) {
+	public void setControlPoint(final Table tables, final Util utils) {
 		this.tables = tables;
-				this.utils = utils;
-				this.parent = parent;
-				setMandCBase(row, parent, tables, utils);
+		this.utils = utils;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setControlPoint(final String[] row, final EObject parent) {
+		this. row = row;
+		this.parent = parent;
+		super.setMandCBase(row, parent);
 	}
 
 } //ControlPointImpl

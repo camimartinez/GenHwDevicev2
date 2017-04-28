@@ -24,8 +24,6 @@ package alma.control.datamodel.meta.base;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.emf.ecore.resource.Resource;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Archive Property</b></em>'.
@@ -103,7 +101,7 @@ public interface ArchiveProperty extends EObject {
 	 * Returns the value of the '<em><b>Cp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Cp</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Cp</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -129,7 +127,7 @@ public interface ArchiveProperty extends EObject {
 	 * Returns the value of the '<em><b>Mp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mp</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Mp</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -301,7 +299,7 @@ public interface ArchiveProperty extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.row = row;\nthis.sheet = tables.getSheetNum(\"Archive Property\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.tables = tables;\nthis.sheet = tables.getSheetNum(\"Archive Property\");'"
 	 * @generated
 	 */
 	void setArchiveProperty(String[] row, Table tables);

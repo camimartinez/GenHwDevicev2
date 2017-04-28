@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/src/"+Assembly()+"HWSimBase.cpp"»
 // ALMA - Atacama Large Millimiter Array
 // (c) European Southern Observatory, 2017
@@ -59,6 +59,8 @@ MA 02111-1307  USA
 // | Any changes will be lost when the file is re-generated. |
 //  ---------------------------------------------------------
 //
+// Id: HWSimBaseDotCPP.xpt
+//
 
 
 
@@ -74,14 +76,14 @@ MA 02111-1307  USA
 
 
 /// Specific Monitor points RCAs for «Assembly()»
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF !x.IsDependent()»
 const AMB::rca_t AMB::«Assembly()»HWSimBase::monitorPoint_«x.MPName()»(«x.RCA()»U);
     «ENDIF»
 «ENDFOREACH»
 
 /// Specific Control points RCAs for «Assembly()»
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent()»
 const AMB::rca_t AMB::«Assembly()»HWSimBase::controlPoint_«x.CPName()»(«x.RCA()»U);
     «ENDIF»
@@ -200,7 +202,7 @@ void AMB::«Assembly()»HWSimBase::initialize(AMB::node_t node,
     }
 «ENDREM»
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF !x.IsDependent()»
     if(state_m.find(monitorPoint_«x.MPName()») == state_m.end())
     {
@@ -289,7 +291,7 @@ void AMB::«Assembly()»HWSimBase::initialize(AMB::node_t node,
             «ELSE»
         std::vector< CAN::byte_t >* vvalue(new std::vector< CAN::byte_t >);
                 «IF x.TotalBytesRawData() != "1"»
-        std::vector< CAN::byte_t > rawVector;
+        std::vector< CAN::byte_t > ;
         CAN::byte_t* index(reinterpret_cast< CAN::byte_t* >(&raw));
         for(CAN::byte_t i(0U); i < «x.TotalBytesRawData()»U; ++i)
         {
@@ -308,7 +310,7 @@ void AMB::«Assembly()»HWSimBase::initialize(AMB::node_t node,
 «ENDFOREACH»
 
     // Specific control points
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent()»
     if(state_m.find(controlPoint_«x.CPName()») == state_m.end())
     {
@@ -350,7 +352,7 @@ void AMB::«Assembly()»HWSimBase::initialize(AMB::node_t node,
     «ENDIF»
 
     // Specific Control points Map for «Assembly()»
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent()»
     controlPointsMap[controlPoint_«x.CPName()»] = &AMB::«Assembly()»HWSimBase::setControl«x.GetAltDependentName()»Proxy;
     controlPointsGetterMap[controlPoint_«x.CPName()»] = &AMB::«Assembly()»HWSimBase::getControl«x.GetAltDependentName()»Proxy;
@@ -358,7 +360,7 @@ void AMB::«Assembly()»HWSimBase::initialize(AMB::node_t node,
 «ENDFOREACH»
 
     // Specific Monitor points Map for «Assembly()»
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF !x.IsDependent()»
     monitorPointsMap[monitorPoint_«x.MPName()»] = &AMB::«Assembly()»HWSimBase::getMonitor«x.GetAltDependentName()»Proxy;
     monitorPointsSetterMap[monitorPoint_«x.MPName()»] = &AMB::«Assembly()»HWSimBase::setMonitor«x.GetAltDependentName()»Proxy;
@@ -499,7 +501,7 @@ void AMB::«Assembly()»HWSimBase::monitorSetter(AMB::rca_t rca,
 
 // Specific Monitor get helpers
 // ----------------------------------------------------------------------------
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF !x.IsDependent()»
 
 
@@ -519,7 +521,7 @@ std::vector< CAN::byte_t >
 
 // Specific Control get helpers
 // ----------------------------------------------------------------------------
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent()»
 std::vector< CAN::byte_t >
     AMB::«Assembly()»HWSimBase::getControl«x.GetAltDependentName()»Proxy() const
@@ -537,7 +539,7 @@ std::vector< CAN::byte_t >
 
 // Specific Control set helpers
 // ----------------------------------------------------------------------------
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent()»
 void AMB::«Assembly()»HWSimBase::setControl«x.GetAltDependentName()»Proxy(
     const std::vector< CAN::byte_t >& data)
@@ -568,7 +570,7 @@ void AMB::«Assembly()»HWSimBase::setControl«x.GetAltDependentName()»(
 
 // Specific Monitor set helpers
 // ----------------------------------------------------------------------------
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF !x.IsDependent()»
 void AMB::«Assembly()»HWSimBase::setMonitor«x.GetAltDependentName()»Proxy(
     const std::vector< CAN::byte_t >& data)

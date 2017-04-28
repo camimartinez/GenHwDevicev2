@@ -40,8 +40,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.resource.Resource;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Control</b></em>'.
@@ -278,13 +276,21 @@ public class ControlImpl extends ControlPointImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlEth(final String[] row, final EObject parent, final Table tables, final Util utils) {
+	public void setControlEth(final Table tables, final Util utils) {
 		this.tables = tables;
-				this.utils = utils;
-				this.parent = parent;
-				setControlPoint(row, parent, tables, utils);
-				mac = EthFactory.eINSTANCE.createMandC();
-				mac.setMandCEth(row, sheet, tables, utils);
+		this.utils = utils;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setControlEth(final String[] row, final EObject parent) {
+		this.parent = parent;
+		setControlPoint(row, parent);
+		mac = EthFactory.eINSTANCE.createMandC();
+		mac.setMandCEth(row, sheet);
 	}
 
 	/**

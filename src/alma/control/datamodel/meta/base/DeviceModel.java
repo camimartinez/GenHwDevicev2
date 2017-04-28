@@ -27,6 +27,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
+import alma.control.datamodel.meta.amb.Archive;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Device Model</b></em>'.
@@ -51,9 +53,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getGeneratedDir <em>Generated Dir</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isMonitorDBOnly <em>Monitor DB Only</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#isGenerateAlt <em>Generate Alt</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}</li>
  * </ul>
  *
  * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel()
@@ -453,30 +455,30 @@ public interface DeviceModel extends EObject {
 	void setGenerateAlt(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Utils</b></em>' reference.
+	 * Returns the value of the '<em><b>Main</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Utils</em>' reference isn't clear,
+	 * If the meaning of the '<em>Main</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Utils</em>' reference.
-	 * @see #setUtils(Util)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Utils()
-	 * @model
+	 * @return the value of the '<em>Main</em>' containment reference.
+	 * @see #setMain(MainBase)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Main()
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	Util getUtils();
+	MainBase getMain();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Utils</em>' reference.
-	 * @see #getUtils()
+	 * @param value the new value of the '<em>Main</em>' containment reference.
+	 * @see #getMain()
 	 * @generated
 	 */
-	void setUtils(Util value);
+	void setMain(MainBase value);
 
 	/**
 	 * Returns the value of the '<em><b>Tables</b></em>' reference.
@@ -505,30 +507,30 @@ public interface DeviceModel extends EObject {
 	void setTables(Table value);
 
 	/**
-	 * Returns the value of the '<em><b>Main</b></em>' reference.
+	 * Returns the value of the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Main</em>' reference isn't clear,
+	 * If the meaning of the '<em>Utils</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Main</em>' reference.
-	 * @see #setMain(MainBase)
-	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Main()
+	 * @return the value of the '<em>Utils</em>' reference.
+	 * @see #setUtils(Util)
+	 * @see alma.control.datamodel.meta.base.BasePackage#getDeviceModel_Utils()
 	 * @model
 	 * @generated
 	 */
-	MainBase getMain();
+	Util getUtils();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}' reference.
+	 * Sets the value of the '{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Main</em>' reference.
-	 * @see #getMain()
+	 * @param value the new value of the '<em>Utils</em>' reference.
+	 * @see #getUtils()
 	 * @generated
 	 */
-	void setMain(MainBase value);
+	void setUtils(Util value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -677,33 +679,21 @@ public interface DeviceModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;'"
-	 * @generated
-	 */
-	void setDeviceModel(Table tables, Util utils);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @!generated
 	 */
-	Resource getArchive(String name);
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	ControlPoint getControlPoint(String fullName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	MonitorPoint getMonitorPoint(String fullName);
-	
 	ArchiveProperty getArchiveProp(String name);
 	
-
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	ControlPoint GetControlPoint(String fullName);
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	MonitorPoint GetMonitorPoint(String fullName);
 } // DeviceModel

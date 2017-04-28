@@ -22,11 +22,9 @@
  */
 package alma.control.datamodel.meta.amb;
 
-import org.eclipse.emf.ecore.EObject;
-
 import alma.control.datamodel.meta.base.ControlPoint;
-import alma.control.datamodel.meta.base.Table;
-import alma.control.datamodel.meta.base.Util;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,7 +47,7 @@ public interface Control extends ControlPoint {
 	 * Returns the value of the '<em><b>Mac</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mac</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Mac</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -595,9 +593,9 @@ public interface Control extends ControlPoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetControlPoint(row, parent, tables, utils);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this, tables, utils);\nresourceSetControl = new ResourceSetImpl();\nResource res = resourceSetControl.createResource(URI.createURI(\"\"));\nres.getContents().add(mac);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.parent = parent;\nsuper.setControlPoint(row, parent);\nmac = new MandCImpl();\nmac.setMandCAmb(tables, utils);\nmac.setMandCAmb(row, sheet, this);'"
 	 * @generated
 	 */
-	void setControlAmb(String[] row, EObject parent, Table tables, Util utils);
+	void setControlAmb(String[] row, EObject parent);
 
 } // Control

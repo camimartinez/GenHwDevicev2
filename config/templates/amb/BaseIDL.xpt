@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/idl/"+Assembly()+"Base.idl"»
 #ifndef «Assembly()»Base_idl
 #define «Assembly()»Base_idl
@@ -61,6 +61,8 @@ MA 02111-1307  USA
 // | Any changes will be lost when the file is re-generated. |
 //  ---------------------------------------------------------
 //
+// Id: BaseIDL.xpt
+//
 
 /// External interface to the hardware assembly: Control::«Assembly()».
 
@@ -88,7 +90,7 @@ module Control
         /////////////////////
         // BACI Properties //
         /////////////////////
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF x.IsMonitored()»
         /// «x.DescriptionFormatted()»
         «IF x.IsPattern()»
@@ -147,7 +149,7 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Monitor Points //
         ////////////////////////////////////////
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF x.IsExternal()»
         /// «x.DescriptionFormatted()»
         «IF x.IsWorldDataArray()»
@@ -161,7 +163,7 @@ module Control
         ////////////////////////////////////////
         // IDL Definitions for Control Points //
         ////////////////////////////////////////
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «REM»
     The condition isTERelated is built into the idlDeclaration method for ControlPoint.
     «ENDREM»

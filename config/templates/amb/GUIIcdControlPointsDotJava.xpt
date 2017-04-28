@@ -20,19 +20,19 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/src/alma/Control/device/gui/"+Assembly()+"/IcdControlPoints.java"»
 /**
  * ALMA - Atacama Large Millimiter Array
@@ -61,6 +61,8 @@ MA 02111-1307  USA
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
  *
+ * Id: GUIIcdControlPointsDotJava.xpt
+ *
  */
 
 package alma.Control.device.gui.«Assembly()»;
@@ -78,7 +80,7 @@ import alma.Control.device.gui.common.IControlPoint;
  
 public enum IcdControlPoints implements IControlPoint {
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
   «IF x.CPName() != "PHASE_SEQ1" &&  x.CPName() != "PHASE_SEQ2" »
     «IF x.IsExternal() »
         «IF !x.hasDependents()»

@@ -20,19 +20,19 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
-«FILE DirPath()+"/src/"+Assembly()+"Base.cpp"»
+«DEFINE SWModuleDef FOR DeviceModel»
+«FILE DirPath()+"/src/"+Assembly()+"Base.cpp"-»
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -59,6 +59,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ *
+ * Id: BaseDotCPP.xpt
  *
  */
 
@@ -100,7 +102,7 @@ MA 02111-1307  USA
 «ELSE»
     AmbDeviceImpl(name, cs)
 «ENDIF»
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF !x.IsDependent() && x.RCA() != "none"»
     , rcaMonitor«x.AltMPName()»(«x.RCA()»)
     «ENDIF»
@@ -137,13 +139,13 @@ TODO: What about not monitorint seqs but monitoring their elements?
      «ENDIF»
 «ENDREM»
 «ENDFOREACH»
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent()»
         «IF x.RCA() != "none"»
     , rcaControl«x.AltCPName()»(«x.RCA()»)
         «ENDIF»
         «IF x.IsConversion() && !x.IsSpecialConversion() && x.Scale() != "CelsiusToKelvin"»
-            «IF x.Scale != "none"»
+            «IF x.Scale() != "none"»
     , scale«x.AltCPName()»(«x.Scale()»)
             «ELSE»
     , scale«x.AltCPName()»(1.0)
@@ -213,7 +215,7 @@ void «Assembly()»Base::initialize()
         }
         «ENDIF»
 
-    «FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+    «FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
         «IF !x.IsDependent() && x.hasDependents()»
             «IF x.IsWorldDataArray()»
         cache«x.AltMPName()».reset(new AMB::Cache< «x.Assembly()»Base, std::vector< «x.WorldDataToCPPType()» > >(this, &«x.Assembly()»Base::get«x.AltMPName()», 2.0, currentTime));
@@ -334,8 +336,8 @@ void «Assembly()»Base::hwOperationalAction(){
 
 	«FOREACH archiveProperties.contents.select(j | j.OnStartup()) AS x»
 	«x.getMonitorPoint().MPName()»()->get_sync(completion.out());
-	spp«x.GetMonitorPoint().AltMPName()»->publishNow();
-	//«x.GetMonitorPoint().MPName()»()->publishNow();
+	spp«x.getMonitorPoint().AltMPName()»->publishNow();
+	//«x.getMonitorPoint().MPName()»()->publishNow();
 	«ENDFOREACH»
 
 }
@@ -521,19 +523,19 @@ char* «Assembly()»Base::GET_LAST_CAN_ERROR_MSG()
 }
 «ENDIF»
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «EXPAND PublicMonitorPoint FOR x»
     «EXPAND ProtectedMonitorPoint FOR x»
     «IF(x.IsExternal() && x.IsMonitored()) || (x.IsImplemented() && !x.IsDependent()) || (x.IsConversion() && !x.IsSpecialConversion()) »
 /// MonitorPoint: «x.MPName()»
 /// «x.DescriptionFormattedL4()»
     «ENDIF»
-    «IF x.IsMonitored()»
+    «IF x.IsMonitored() && !x.IsDependent()»
         «EXPAND BACIMethod FOR x»
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «EXPAND PublicControlPoint FOR x»
     «EXPAND ProtectedControlPoint FOR x»
     «IF !x.IsDependent()»
@@ -546,7 +548,7 @@ char* «Assembly()»Base::GET_LAST_CAN_ERROR_MSG()
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE PublicMonitorPoint FOR MonitorPointImpl»
+«DEFINE PublicMonitorPoint FOR MonitorPoint»
     «IF IsExternal()»
 /// MonitorPoint: «MPName()»
 /// «DescriptionFormattedL5()»
@@ -633,7 +635,7 @@ inline unsigned long «Assembly()»Base::getMonitorRCA«AltMPName()»() const
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedMonitorPoint FOR MonitorPointImpl»
+«DEFINE ProtectedMonitorPoint FOR MonitorPoint»
     «IF IsExternal()»
 /// MonitorPoint: «MPName()»
     «ELSE»
@@ -657,7 +659,7 @@ inline unsigned long «Assembly()»Base::getMonitorRCA«AltMPName()»() const
     Implementing the Proxy method.
     «ENDREM»
     «IF !IsPartOfPattern()»
-///This get«AltMPName()»Proxy enusures we call the virtual get«AltMPName()»
+///This get«AltMPName()»Proxy ensures we call the virtual get«AltMPName()»
 /// and not the «Assembly()»Base::get«AltMPName()» as it used to be.
 /// This breaks the monitoring in the FrontEnd.
       «IF IsWorldDataArray()»
@@ -683,22 +685,10 @@ std::vector< «WorldDataToCPPType()» > «Assembly()»Base::get«AltMPName()»Pr
             __PRETTY_FUNCTION__);
     }
 }
-    «ENDIF»
-
-    «REM»
-    ... Jeff's new addition goes here? ...
-    TODO This is weird stuff below and needs to be corrected!  Thomas.
-    if hasDependents
-        if isRawDataArray
-    virtual void updateDependent< MPName >(< RawDAtaToCPPType > raw[]);
-        else
-    virtual void updateDependent< MPName >(< RawDAtaToCPPType >& raw);
-        endif
-    endif
-    «ENDREM»
+«ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedGetDependentMonitorPointMethod FOR MonitorPointImpl»
+«DEFINE ProtectedGetDependentMonitorPointMethod FOR MonitorPoint»
 «WorldDataToCPPType()» «Assembly()»Base::get«AltMPName()»(
     ACS::Time& timestamp)
 {
@@ -722,7 +712,7 @@ std::vector< «WorldDataToCPPType()» > «Assembly()»Base::get«AltMPName()»Pr
 }
 «ENDDEFINE»
 
-«DEFINE ProtectedGetMonitorPointMethod FOR MonitorPointImpl»
+«DEFINE ProtectedGetMonitorPointMethod FOR MonitorPoint»
     «REM»
     Major monitor method : assume isImplemented and !isDependent
     «ENDREM»
@@ -899,7 +889,7 @@ std::vector< «WorldDataToCPPType()» > «Assembly()»Base::get«AltMPName()»(
        Now, set the values of any dependent variables.  <-
     «ENDREM»
     «IF hasDependents()»
-        «FOREACH (Set[MonitorPointImpl]) GetDependents() AS y»
+        «FOREACH (Set[MonitorPoint]) dependents.contents AS y»
             «IF y.IsDependentBit() || y.IsDependentGroupBit()»
     // Set value«y.AltMPName()».
             «ENDIF»
@@ -973,7 +963,7 @@ std::vector< «WorldDataToCPPType()» > «Assembly()»Base::get«AltMPName()»(
 }
 «ENDDEFINE»
 
-«DEFINE ProtectedSetMonitorRCAMethod FOR MonitorPointImpl»
+«DEFINE ProtectedSetMonitorRCAMethod FOR MonitorPoint»
     «REM»
     b. Get and set methods for RCA
     «ENDREM»
@@ -988,7 +978,7 @@ inline void «Assembly()»Base::setMonitorRCA«AltMPName()»(const unsigned long
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedMonitorConversionMethod FOR MonitorPointImpl»
+«DEFINE ProtectedMonitorConversionMethod FOR MonitorPoint»
     «REM»
     c. Conversion methods
     «ENDREM»
@@ -1060,11 +1050,11 @@ inline void «Assembly()»Base::setConversion«AltMPName()»(
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE BACIMethod FOR MonitorPointImpl»
+«DEFINE BACIMethod FOR MonitorPoint»
 /**
  * Get the current value of «MPName()» as a BACI property.
  */
-      «IF IsPattern»
+      «IF IsPattern() && !IsDependent()»
 ACS::ROpattern_ptr «Assembly()»Base::«MPName()»()
       «ELSE»
         «IF IsWorldDataArray()»
@@ -1093,7 +1083,7 @@ ACS::RO«WorldDataToBACIType()»_ptr «Assembly()»Base::«MPName()»()
 }
 «ENDDEFINE»
 
-«DEFINE PublicControlPoint FOR ControlPointImpl»
+«DEFINE PublicControlPoint FOR ControlPoint»
     «IF IsExternal()»
     «REM»
     a. Major control method
@@ -1167,7 +1157,7 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName()»() const
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedControlPoint FOR ControlPointImpl»
+«DEFINE ProtectedControlPoint FOR ControlPoint»
     «EXPAND ProtectedSetControlPointMethod»
     «IF IsExternal()»
 /// ControlPoint: «CPName()»
@@ -1179,7 +1169,7 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName()»() const
     «EXPAND ProtectedControlConversionMethod »
 «ENDDEFINE»
 
-«DEFINE ProtectedSetControlPointMethod FOR ControlPointImpl»
+«DEFINE ProtectedSetControlPointMethod FOR ControlPoint»
     «IF !IsDependent() && Implement()»
 «cppReturns()» «Assembly()»Base::set«AltCPName()»«cppDeclaration()»
 {
@@ -1391,7 +1381,7 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName()»() const
     «IF RawDataType() == "int32" || RawDataType() == "uint32" || RawDataType() == "float"»
     #if BYTE_ORDER != BIG_ENDIAN
     // Swap the bytes.
-        «IF IsRawDataArray»
+        «IF IsRawDataArray()»
     for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
     {
         AMB::Utils::swapBytes(raw[i]);
@@ -1405,7 +1395,7 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName()»() const
     «IF RawDataType() == "int48" || RawDataType() == "uint48"»
     #if BYTE_ORDER != BIG_ENDIAN
     // Swap the bytes.
-        «IF IsRawDataArray»
+        «IF IsRawDataArray()»
     for(std::size_t i(0U); i < «NumberItemsRawData()»U; ++i)
     {
         AMB::Utils::swapBytes(raw[i], 6U);
@@ -1493,7 +1483,7 @@ inline unsigned long «Assembly()»Base::getControlRCA«AltCPName()»() const
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedSetControlRCAMethod FOR ControlPointImpl»
+«DEFINE ProtectedSetControlRCAMethod FOR ControlPoint»
     «IF !IsDependent()»
     «REM»
     b. Set method for RCA
@@ -1510,7 +1500,7 @@ inline void «Assembly()»Base::setControlRCA«AltCPName()»(const unsigned long
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE ProtectedControlConversionMethod FOR ControlPointImpl»
+«DEFINE ProtectedControlConversionMethod FOR ControlPoint»
     «IF !IsDependent() && IsConversion() && !IsSpecialConversion()»
     «REM»
     c. Conversion methods
@@ -1563,9 +1553,9 @@ inline double «Assembly()»Base::getScale«AltCPName()»() const
 /**
  * Get the offset conversion factor of «CPName()».
  */
-inline double «Assembly()»Base::getOffset«AltCPName»() const
+inline double «Assembly()»Base::getOffset«AltCPName()»() const
 {
-    return offset«AltCPName»;
+    return offset«AltCPName()»;
 }
 
 /**

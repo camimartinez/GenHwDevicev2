@@ -22,23 +22,22 @@
  */
 package alma.control.datamodel.meta.amb.impl;
 
-import java.util.Iterator;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.Control;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
+
 import alma.control.datamodel.meta.base.MandCBase;
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -222,28 +221,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public String GetMask() {
-		if(!IsSingleBit())
-			return "";
-		String s = null;
-		if(IsRawDataArray()) {
-			s = RawDataTypeCell().substring(4);
-			int n = s.indexOf("&lt;");
-			int m = s.substring(n + 4).indexOf("&gt;");
-			s = s.substring(n + 4, m + n + 4);
-		}
-		else {
-			s = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);
-		}
-		int n = Integer.parseInt(s);
-		return mask[n];
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setMask(String[] newMask) {
@@ -400,7 +377,7 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	 * @generated
 	 */
 	public String RawDataType() {
-						String s = row[tables.getColNum(sheet, "Raw Data Type")];
+		String s = row[tables.getColNum(sheet, "Raw Data Type")];
 						if(!mcp.IsDependent())
 							return IsRawDataArray() ? s.substring(0, s.indexOf("[")) : s;
 							if(mcp instanceof Monitor)
@@ -664,27 +641,6 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	public String TotalBytesRawData() {
 				String s = row[tables.getColNum(sheet, "Raw Data Type")];
 				return utils.RawDataTypeTotalBytes(s);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	//Print the values of the class, to test the objects
-	public static void printAttributeValues(EObject object) {
-		EClass eClass = object.eClass();
-		System.out.println(eClass.getName());
-		for (Iterator iter = eClass.getEAllAttributes().iterator(); iter.hasNext(); ) {
-			EAttribute attribute = (EAttribute)iter.next();
-			Object value = object.eGet(attribute);
-
-			System.out.print("  " + attribute.getName() + " : ");
-			if (object.eIsSet(attribute))
-				System.out.println(value);
-			else
-				System.out.println(value + " (default)");
-		}
 	}
 
 	/**
@@ -1015,11 +971,41 @@ public class MandCImpl extends EObjectImpl implements MandC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @!generated
+	 */
+	public String GetMask() {
+		if(!IsSingleBit())
+			return "";
+		String s = null;
+		if(IsRawDataArray()) {
+			s = RawDataTypeCell().substring(4);
+			int n = s.indexOf("&lt;");
+			int m = s.substring(n + 4).indexOf("&gt;");
+			s = s.substring(n + 4, m + n + 4);
+		}
+		else {
+			s = RawDataTypeCell().substring(4, RawDataTypeCell().length() - 4);
+		}
+		int n = Integer.parseInt(s);
+		return mask[n];
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMandCAmb(final String[] row, final int sheet, final MandCBase mcp, final Table tables, final Util utils) {
+	public void setMandCAmb(final Table tables, final Util utils) {
 		this.tables = tables;
 		this.utils = utils;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMandCAmb(final String[] row, final int sheet, final MandCBase mcp) {
 		this.row = row;
 		this.sheet = sheet;
 		this.mcp = mcp;
@@ -1155,4 +1141,5 @@ public class MandCImpl extends EObjectImpl implements MandC {
 		result.append(')');
 		return result.toString();
 	}
+
 } //MandCImpl

@@ -22,20 +22,261 @@
  */
 package alma.control.datamodel.meta.amb;
 
-import org.eclipse.emf.ecore.resource.Resource;
+import alma.control.datamodel.meta.base.Note;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Device Model</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getMainAmbList <em>Main Amb</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getCPointsList <em>CPoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getAPointsList <em>APoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getMPointsList <em>MPoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.DeviceModel#getNote <em>Note</em>}</li>
+ * </ul>
  *
  * @see alma.control.datamodel.meta.amb.AmbPackage#getDeviceModel()
  * @model
  * @generated
  */
 public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceModel {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Main[] getMainAmb();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Main getMainAmb(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getMainAmbLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setMainAmb(Main[] newMainAmb);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setMainAmb(int index, Main element);
+
+	/**
+	 * Returns the value of the '<em><b>Main Amb</b></em>' containment reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.amb.Main}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Amb</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main Amb</em>' containment reference list.
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getDeviceModel_MainAmb()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<Main> getMainAmbList();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Control[] getCPoints();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Control getCPoints(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getCPointsLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setCPoints(Control[] newCPoints);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setCPoints(int index, Control element);
+
+	/**
+	 * Returns the value of the '<em><b>CPoints</b></em>' containment reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.amb.Control}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>CPoints</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>CPoints</em>' containment reference list.
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getDeviceModel_CPoints()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<Control> getCPointsList();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Archive[] getAPoints();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Archive getAPoints(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getAPointsLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setAPoints(Archive[] newAPoints);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setAPoints(int index, Archive element);
+
+	/**
+	 * Returns the value of the '<em><b>APoints</b></em>' containment reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.amb.Archive}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>APoints</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>APoints</em>' containment reference list.
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getDeviceModel_APoints()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<Archive> getAPointsList();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Monitor[] getMPoints();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Monitor getMPoints(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getMPointsLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setMPoints(Monitor[] newMPoints);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setMPoints(int index, Monitor element);
+
+	/**
+	 * Returns the value of the '<em><b>MPoints</b></em>' containment reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.amb.Monitor}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MPoints</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MPoints</em>' containment reference list.
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getDeviceModel_MPoints()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<Monitor> getMPointsList();
+
+	/**
+	 * Returns the value of the '<em><b>Note</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Note</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Note</em>' containment reference.
+	 * @see #setNote(Note)
+	 * @see alma.control.datamodel.meta.amb.AmbPackage#getDeviceModel_Note()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	Note getNote();
+
+	/**
+	 * Sets the value of the '{@link alma.control.datamodel.meta.amb.DeviceModel#getNote <em>Note</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Note</em>' containment reference.
+	 * @see #getNote()
+	 * @generated
+	 */
+	void setNote(Note value);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -55,17 +296,15 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.Parent();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((Main)main).Parent();'"
 	 * @generated
 	 */
 	String Parent();
 
-	Resource getNotes();
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.Cardinality();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((Main)main).Cardinality();'"
 	 * @generated
 	 */
 	String Cardinality();
@@ -73,7 +312,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.NodeAddress();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((Main)main).NodeAddress();'"
 	 * @generated
 	 */
 	String NodeAddress();
@@ -81,7 +320,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.Channel();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((Main)main).Channel();'"
 	 * @generated
 	 */
 	String Channel();
@@ -89,7 +328,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.BaseAddress();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((Main)main).BaseAddress();'"
 	 * @generated
 	 */
 	String BaseAddress();
@@ -97,7 +336,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return mainAmb.GenericMonitorPoints();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ((Main)main).GenericMonitorPoints();'"
 	 * @generated
 	 */
 	boolean GenericMonitorPoints();
@@ -113,7 +352,7 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString dir = generatedDir + \"/\" + Assembly();\n\t\tutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".html\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"HWSimBase.h\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"HWSimBase.cpp\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"CompSimBase.h\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"CompSimBase.cpp\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"CompSimBase.idl\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"HWSimImpl.cpp\", 1);\n\t\tutils.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"AmbDeviceInt.cpp\", 1);\n\t\t\tif (!isMonitorDBOnly()) {\n\t\t\t\tif (isGenerateAlt()) {\n\t\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \".makefile\", 1);\n\t\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.idl\", 1);\n\t\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.h\", 1);\n\t\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.cpp\", 1);\n\t\t\t\t}\n\t\t\t\tsuper.TheEnd();\n\t\t\t} else \n\t\t\t\tSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\n\t\t\treturn \"\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String dir = generatedDir + \"/\" + Assembly();\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/doc\", Assembly() + \".html\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"Add.sql\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"HWSimBase.h\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"HWSimBase.cpp\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/include\", Assembly() + \"CompSimBase.h\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/src\", Assembly() + \"CompSimBase.cpp\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/idl\", Assembly() + \"CompSimBase.idl\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"HWSimImpl.cpp\", 1);\n\t\t\t\tutils.RemoveLinesFromFile(dir + \"/test\", \"Test\" + Assembly() + \"AmbDeviceInt.cpp\", 1);\n\t\t\t\t\tif (!IsMonitorDBOnly()) {\n\t\t\t\t\t\tif (IsGenerateAlt()) {\n\t\t\t\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \".makefile\", 1);\n\t\t\t\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.idl\", 1);\n\t\t\t\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.h\", 1);\n\t\t\t\t\t\t\tutils.RemoveLinesFromFile(dir + \"/../ALT/\", Assembly() + \"Impl.cpp\", 1);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tsuper.TheEnd();\n\t\t\t\t\t} else \n\t\t\t\t\t\tSystem.out.println(\"Code generation for \" + deviceName + \" done.\");\n\t\t\t\t\treturn \"\";'"
 	 * @generated
 	 */
 	String TheEnd();

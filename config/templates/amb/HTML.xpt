@@ -20,46 +20,46 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
 «FILE Assembly()+"/doc/"+Assembly()+".html"»
 <html>
   <body>
   <h1>Device «DeviceName()»</h1>
   <ul>
-    <li><em>Assembly:</em>  «Assembly()»
-    <li><em>Description:</em>  «Description()»
-    <li><em>DeviceName:</em>  «DeviceName()»
-    <li><em>Extends:</em>  «Extends()»
-    <li><em>Parent:</em>  «Parent()»
-    <li><em>Cardinality:</em>  «Cardinality()»
-    <li><em>NodeAddress:</em>  «NodeAddress()»
-    <li><em>Channel:</em>  «Channel()»
-    <li><em>BaseAddress:</em>  «BaseAddress()»
-    <li><em>ICD:</em>  «ICD()»
-    <li><em>ICDDate:</em>  «ICDDate()»
+    <li><em>Assembly</em>  «Assembly()»
+    <li><em>Description</em>  «Description()»
+    <li><em>DeviceName</em>  «DeviceName()»
+    <li><em>Extends</em>  «Extends()»
+    <li><em>Parent</em>  «Parent()»
+    <li><em>Cardinality</em>  «Cardinality()»
+    <li><em>NodeAddress</em>  «NodeAddress()»
+    <li><em>Channel</em>  «Channel()»
+    <li><em>BaseAddress</em>  «BaseAddress()»
+    <li><em>ICD</em>  «ICD()»
+    <li><em>ICDDate</em>  «ICDDate()»
   </ul>
       <h3>Notes</h3>
       <ul>
-«FOREACH (Set[NoteImpl]) notes.contents AS n»
-    <li><em>«n.note»</em>
+«FOREACH (Set[Note]) notes.contents AS x»
+    <li><em>«x.note»</em>
 «ENDFOREACH»
       </ul>
 
     <h2>Monitor Points</h2>
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS m»
-      <h3>«m.MPName()»</h3>
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
+      <h3>«x.MPName()»</h3>
       <ul>
-     «EXPAND MonitorPointDisplay FOR m»
+      «EXPAND MonitorPointDisplay FOR x»
       </ul>
 «ENDFOREACH»
 
-    <h2>Control Points</h2>isDependent
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS c»
+    <h2>Control Points</h2>
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS c»
       <h3>«c.CPName()»</h3>
       <ul>
       «EXPAND ControlPointDisplay FOR c»
@@ -67,72 +67,72 @@ MA 02111-1307  USA
 «ENDFOREACH»
 
     <h2>Archive Property</h2>
-«FOREACH (Set[ArchivePropertyImpl]) archiveProperties.contents AS a»
-      <h3>«a.APName()»</h3>isDependent
+«FOREACH (Set[ArchiveProperty]) archiveProperties.contents AS a»
+      <h3>«a.APName()»</h3>
       <ul>
-    <li><em>Assembly</em> «a.Assembly()»
-    <li><em>Name</em> «a.APName()»
-    <li><em>RefersTo</em> «a.RefersTo()»
-    <li><em>Interval</em> «a.IntervalFull()» «IF a.IsIntervalTE()» Monitored every TE and dumped every «a.Interval()» seconds «ENDIF»
-    <li><em>OnlyOnChange</em> «a.OnlyOnChange()»
-    <li><em>DisplayUnits</em> «a.DisplayUnits()»
-    <li><em>GraphMin</em> «a.GraphMin()»
-    <li><em>GraphMax</em> «a.GraphMax()»
-    <li><em>Format</em> «a.Format()»
-    <li><em>Title</em> «a.Title()»
+    <li><em>Assembly:</em> «a.Assembly()»
+    <li><em>Name:</em> «a.APName()»
+    <li><em>RefersTo:</em> «a.RefersTo()»
+    <li><em>Interval:</em> «a.IntervalFull()» «IF a.IsIntervalTE()» Monitored every TE and dumped every «a.Interval()» seconds «ENDIF»
+    <li><em>OnlyOnChange:</em> «a.OnlyOnChange()»
+    <li><em>DisplayUnits:</em> «a.DisplayUnits()»
+    <li><em>GraphMin:</em> «a.GraphMin()»
+    <li><em>GraphMax:</em> «a.GraphMax()»
+    <li><em>Format:</em> «a.Format()»
+    <li><em>Title:</em> «a.Title()»
     «IF a.RefersTo() != "none"»  
         «IF a.IsMonitorPoint()»  
-            «EXPAND MonitorPointDisplay FOR a.GetMonitorPoint() »
+            «EXPAND MonitorPointDisplay FOR a.mp»
         «ENDIF»
         «IF a.IsControlPoint()»  
-            «EXPAND ControlPointDisplay FOR a.GetControlPoint() »
+            «EXPAND ControlPointDisplay FOR a.cp»
         «ENDIF»
     «ENDIF»
       </ul>
 «ENDFOREACH»
-
   </body>
 </html>
+
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE MonitorPointDisplay FOR MonitorPointImpl»
+«DEFINE MonitorPointDisplay FOR MonitorPoint»
     <li><em>Assembly</em> «Assembly()»
       «IF IsDependent()»
-      <li><em>Name:</em> «GetDependentName()» depends on «GetDependsOnName()»
+      <li><em>Name</em> «GetDependentName()» depends on «GetDependsOnName()»
       «ELSE»
-    <li><em>Name:</em> «MPName()»
+    <li><em>Name</em> «MPName()»
       «ENDIF»
-    <li><em>RCA:</em> «RCA()»
+    <li><em>RCA</em> «RCA()»
       «IF IsDependent()»
           «IF IsDependentGroupBit()»
-      <li><em>RawDataType:</em> bits «IF IsRawDataArray()» «GetGroupStart()» through «GetGroupEnd()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
+      <li><em>RawDataType</em> bits «IF IsRawDataArray()» «GetGroupStart()» through «GetGroupEnd()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
           «ELSEIF IsDependentBit()»
-      <li><em>RawDataType:</em> bit «IF IsSingleBit()» «GetBit()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
+      <li><em>RawDataType</em> bit «IF IsSingleBit()» «GetBit()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
           «ENDIF»
           «IF IsDependentElement()»
-    <li><em>RawDataType:</em> «RawDataType()» Array Element «GetDimension()» 
+    <li><em>RawDataType</em> «RawDataType()» Array Element «GetDimension()» 
         «ENDIF»
       «ELSE»
-    <li><em>RawDataType:</em> «RawDataType()» «IF IsRawDataArray()» Array Of «NumberItemsRawData()» Total «TotalBytesRawData()» bytes «ENDIF» CPP type is «RawDataToCPPType()»
+    <li><em>RawDataType</em> «RawDataType()» «IF IsRawDataArray()» Array Of «NumberItemsRawData()» Total «TotalBytesRawData()» bytes «ENDIF» CPP type is «RawDataToCPPType()»
       «ENDIF»
-    <li><em>TeRelated:</em> «TeRelated()»
-    <li><em>WorldDataType:</em> «WorldDataType()» «IF IsWorldDataArray()» Array Of «NumberItemsWorldData()» «ENDIF»
-    <li><em>DataUnits:</em> «DataUnits()»
-    <li><em>Scale:</em> «Scale()»
-    <li><em>Offset:</em> «Offset()»
-    <li><em>MinRange:</em> «MinRange()»
-    <li><em>MaxRange:</em> «MaxRange()»
-    <li><em>Default:</em> «Default()»
-    <li><em>ErrorCondition:</em> «ErrorCondition()»
-    <li><em>ErrorSeverity:</em> «ErrorSeverity()»
-    <li><em>ErrorAction:</em> «ErrorAction()»
-    <li><em>Mode:</em> «Mode()»
-    <li><em>Implement:</em> «Implement()»
-    <li><em>External:</em> «External()»
-    <li><em>CanBeInvalid:</em> «CanBeInvalid()»
-    <li><em>Description:</em> «Description()»
-      «IF hasDependents()»
+    <li><em>TeRelated</em> «TeRelated()»
+    <li><em>WorldDataType</em> «WorldDataType()» «IF IsWorldDataArray()» Array Of «NumberItemsWorldData()» «ENDIF»
+    <li><em>DataUnits</em> «DataUnits()»
+    <li><em>Scale</em> «Scale()»
+    <li><em>Offset</em> «Offset()»
+    <li><em>MinRange</em> «MinRange()»
+    <li><em>MaxRange</em> «MaxRange()»
+    <li><em>Default</em> «Default()»
+    <li><em>ErrorCondition</em> «ErrorCondition()»
+    <li><em>ErrorSeverity</em> «ErrorSeverity()»
+    <li><em>ErrorAction</em> «ErrorAction()»
+    <li><em>Mode</em> «Mode()»
+    <li><em>Implement</em> «Implement()»
+    <li><em>External</em> «External()»
+    <li><em>CanBeInvalid</em> «CanBeInvalid()»
+    <li><em>Description</em> «Description()»
+ 	  «IF hasDependents()»
       <li><em>Has dependents</em>
       «ELSE»
       <li><em>No dependents</em>
@@ -142,9 +142,41 @@ MA 02111-1307  USA
       «ELSE»
       <li><em>Not archived</em>
       «ENDIF»
+      «REM»
+        «IF IsMonitored()»
+      <li><em>Is Monitored::«IsMonitored()»</em>
+      «ELSE»
+      <li><em>Not monitored::«IsMonitored()»</em>
+      «ENDIF»
+      «IF IsExternal()»
+      <li><em>Is external::«IsExternal()»</em>
+      «ELSE»
+      <li><em>Not external::«IsExternal()»</em>
+      «ENDIF»
+      «IF IsPattern()»
+      <li><em>IsPattern()::«IsPattern()»</em>
+      «ELSE»
+      <li><em>!IsPattern()::«IsPattern()»</em>
+      «ENDIF»
+      «IF IsPartOfPattern()»
+      <li><em>IsPartOfPattern()::«IsPartOfPattern()»</em>
+      «ELSE»
+      <li><em>!IsPartOfPattern()::«IsPartOfPattern()»</em>
+      «ENDIF»
+       «IF IsHomogeneous()»
+      <li><em>IsHomogeneous::«IsHomogeneous()»</em>
+      «ELSE»
+      <li><em>!IsHomogeneous::«IsHomogeneous()»</em>
+      «ENDIF»
+       «IF IsPartOfHomogeneous()»
+      <li><em>IsPartOfHomogeneous::«IsPartOfHomogeneous()»</em>
+      «ELSE»
+      <li><em>!IsPartOfHomogeneous::«IsPartOfHomogeneous()»</em>
+      «ENDIF»
+      «ENDREM»
 «ENDDEFINE»
 
-«DEFINE ControlPointDisplay FOR ControlPointImpl»
+«DEFINE ControlPointDisplay FOR ControlPoint»
     <li><em>Assembly:</em> «Assembly()»
     <li><em>Name:</em> «CPName()»
     <li><em>RCA:</em> «RCA()»

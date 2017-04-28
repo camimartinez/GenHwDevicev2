@@ -160,13 +160,13 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE__SPREADSHEET_NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__SHEET_NAME = 1;
+	int MAND_CBASE__CONTAINER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
@@ -178,40 +178,13 @@ public interface BasePackage extends EPackage {
 	int MAND_CBASE__DEPENDENTS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__ROW = 3;
-
-	/**
-	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__PARENT_ROW = 4;
-
-	/**
-	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__SHEET = 5;
-
-	/**
-	 * The feature id for the '<em><b>Container</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__CONTAINER = 6;
+	int MAND_CBASE__PARENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Archive</b></em>' reference.
@@ -220,7 +193,43 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__ARCHIVE = 7;
+	int MAND_CBASE__ARCHIVE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__SHEET_NAME = 5;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__ROW = 6;
+
+	/**
+	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__SHEET = 7;
+
+	/**
+	 * The feature id for the '<em><b>Manc</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAND_CBASE__MANC = 8;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -229,7 +238,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__TABLES = 8;
+	int MAND_CBASE__TABLES = 9;
 
 	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
@@ -238,16 +247,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAND_CBASE__UTILS = 9;
-
-	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAND_CBASE__PARENT = 10;
+	int MAND_CBASE__UTILS = 10;
 
 	/**
 	 * The number of structural features of the '<em>Mand CBase</em>' class.
@@ -278,13 +278,13 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__SPREADSHEET_NAME = MAND_CBASE__SPREADSHEET_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__SHEET_NAME = MAND_CBASE__SHEET_NAME;
+	int CONTROL_POINT__CONTAINER = MAND_CBASE__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
@@ -296,6 +296,33 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__PARENT = MAND_CBASE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_POINT__SHEET_NAME = MAND_CBASE__SHEET_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,15 +330,6 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_POINT__ROW = MAND_CBASE__ROW;
-
-	/**
-	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_POINT__PARENT_ROW = MAND_CBASE__PARENT_ROW;
 
 	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
@@ -323,22 +341,13 @@ public interface BasePackage extends EPackage {
 	int CONTROL_POINT__SHEET = MAND_CBASE__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Container</b></em>' attribute.
+	 * The feature id for the '<em><b>Manc</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_POINT__CONTAINER = MAND_CBASE__CONTAINER;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
+	int CONTROL_POINT__MANC = MAND_CBASE__MANC;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -357,15 +366,6 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_POINT__UTILS = MAND_CBASE__UTILS;
-
-	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_POINT__PARENT = MAND_CBASE__PARENT;
 
 	/**
 	 * The number of structural features of the '<em>Control Point</em>' class.
@@ -522,13 +522,13 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__GENERATE_ALT = 14;
 
 	/**
-	 * The feature id for the '<em><b>Utils</b></em>' reference.
+	 * The feature id for the '<em><b>Main</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__UTILS = 15;
+	int DEVICE_MODEL__MAIN = 15;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -540,13 +540,13 @@ public interface BasePackage extends EPackage {
 	int DEVICE_MODEL__TABLES = 16;
 
 	/**
-	 * The feature id for the '<em><b>Main</b></em>' reference.
+	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN = 17;
+	int DEVICE_MODEL__UTILS = 17;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
@@ -632,13 +632,13 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__SPREADSHEET_NAME = MAND_CBASE__SPREADSHEET_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__SHEET_NAME = MAND_CBASE__SHEET_NAME;
+	int MONITOR_POINT__CONTAINER = MAND_CBASE__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
@@ -650,6 +650,33 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__DEPENDENTS = MAND_CBASE__DEPENDENTS;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__PARENT = MAND_CBASE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
+
+	/**
+	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR_POINT__SHEET_NAME = MAND_CBASE__SHEET_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Row</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -657,15 +684,6 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR_POINT__ROW = MAND_CBASE__ROW;
-
-	/**
-	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__PARENT_ROW = MAND_CBASE__PARENT_ROW;
 
 	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
@@ -677,22 +695,13 @@ public interface BasePackage extends EPackage {
 	int MONITOR_POINT__SHEET = MAND_CBASE__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Container</b></em>' attribute.
+	 * The feature id for the '<em><b>Manc</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR_POINT__CONTAINER = MAND_CBASE__CONTAINER;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__ARCHIVE = MAND_CBASE__ARCHIVE;
+	int MONITOR_POINT__MANC = MAND_CBASE__MANC;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -711,15 +720,6 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR_POINT__UTILS = MAND_CBASE__UTILS;
-
-	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR_POINT__PARENT = MAND_CBASE__PARENT;
 
 	/**
 	 * The number of structural features of the '<em>Monitor Point</em>' class.
@@ -1347,6 +1347,16 @@ public interface BasePackage extends EPackage {
 	int ERROR_HANDLER_DT = 18;
 
 	/**
+	 * The meta object id for the '<em>EObject DT</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.ecore.EObject
+	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEObjectDT()
+	 * @generated
+	 */
+	int EOBJECT_DT = 19;
+
+	/**
 	 * The meta object id for the '<em>SAX Parse Exception DT</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1354,7 +1364,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getSAXParseExceptionDT()
 	 * @generated
 	 */
-	int SAX_PARSE_EXCEPTION_DT = 19;
+	int SAX_PARSE_EXCEPTION_DT = 20;
 
 	/**
 	 * The meta object id for the '<em>EString Array</em>' data type.
@@ -1363,7 +1373,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray()
 	 * @generated
 	 */
-	int ESTRING_ARRAY = 20;
+	int ESTRING_ARRAY = 21;
 
 	/**
 	 * The meta object id for the '<em>EString Array2</em>' data type.
@@ -1372,7 +1382,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray2()
 	 * @generated
 	 */
-	int ESTRING_ARRAY2 = 21;
+	int ESTRING_ARRAY2 = 22;
 
 	/**
 	 * The meta object id for the '<em>EString Array3</em>' data type.
@@ -1381,7 +1391,7 @@ public interface BasePackage extends EPackage {
 	 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEStringArray3()
 	 * @generated
 	 */
-	int ESTRING_ARRAY3 = 22;
+	int ESTRING_ARRAY3 = 23;
 
 
 	/**
@@ -1635,15 +1645,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getDeviceModel_GenerateAlt();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}'.
+	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Utils</em>'.
-	 * @see alma.control.datamodel.meta.base.DeviceModel#getUtils()
+	 * @return the meta object for the containment reference '<em>Main</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getMain()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_Utils();
+	EReference getDeviceModel_Main();
 
 	/**
 	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getTables <em>Tables</em>}'.
@@ -1657,15 +1667,15 @@ public interface BasePackage extends EPackage {
 	EReference getDeviceModel_Tables();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getMain <em>Main</em>}'.
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.DeviceModel#getUtils <em>Utils</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Main</em>'.
-	 * @see alma.control.datamodel.meta.base.DeviceModel#getMain()
+	 * @return the meta object for the reference '<em>Utils</em>'.
+	 * @see alma.control.datamodel.meta.base.DeviceModel#getUtils()
 	 * @see #getDeviceModel()
 	 * @generated
 	 */
-	EReference getDeviceModel_Main();
+	EReference getDeviceModel_Utils();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MainBase <em>Main Base</em>}'.
@@ -1743,6 +1753,50 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_SpreadsheetName();
 
 	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getContainer <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Container</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getContainer()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_Container();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Dependents</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getDependents()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_Dependents();
+
+	/**
+	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parent</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getParent()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EAttribute getMandCBase_Parent();
+
+	/**
+	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Archive</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getArchive()
+	 * @see #getMandCBase()
+	 * @generated
+	 */
+	EReference getMandCBase_Archive();
+
+	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getSheetName <em>Sheet Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1765,17 +1819,6 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_Row();
 
 	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getParentRow <em>Parent Row</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Row</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getParentRow()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_ParentRow();
-
-	/**
 	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getSheet <em>Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1787,37 +1830,15 @@ public interface BasePackage extends EPackage {
 	EAttribute getMandCBase_Sheet();
 
 	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getArchive <em>Archive</em>}'.
+	 * Returns the meta object for the containment reference list '{@link alma.control.datamodel.meta.base.MandCBase#getMancList <em>Manc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Archive</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getArchive()
+	 * @return the meta object for the containment reference list '<em>Manc</em>'.
+	 * @see alma.control.datamodel.meta.base.MandCBase#getMancList()
 	 * @see #getMandCBase()
 	 * @generated
 	 */
-	EReference getMandCBase_Archive();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getDependents <em>Dependents</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Dependents</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getDependents()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_Dependents();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.base.MandCBase#getContainer <em>Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Container</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getContainer()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EAttribute getMandCBase_Container();
+	EReference getMandCBase_Manc();
 
 	/**
 	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getTables <em>Tables</em>}'.
@@ -1840,17 +1861,6 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMandCBase_Utils();
-
-	/**
-	 * Returns the meta object for the reference '{@link alma.control.datamodel.meta.base.MandCBase#getParent <em>Parent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent</em>'.
-	 * @see alma.control.datamodel.meta.base.MandCBase#getParent()
-	 * @see #getMandCBase()
-	 * @generated
-	 */
-	EReference getMandCBase_Parent();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.base.MonitorPoint <em>Monitor Point</em>}'.
@@ -2450,6 +2460,17 @@ public interface BasePackage extends EPackage {
 	EDataType getErrorHandlerDT();
 
 	/**
+	 * Returns the meta object for data type '{@link org.eclipse.emf.ecore.EObject <em>EObject DT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>EObject DT</em>'.
+	 * @see org.eclipse.emf.ecore.EObject
+	 * @model instanceClass="org.eclipse.emf.ecore.EObject"
+	 * @generated
+	 */
+	EDataType getEObjectDT();
+
+	/**
 	 * Returns the meta object for data type '{@link org.xml.sax.SAXParseException <em>SAX Parse Exception DT</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2703,12 +2724,12 @@ public interface BasePackage extends EPackage {
 		EAttribute DEVICE_MODEL__GENERATE_ALT = eINSTANCE.getDeviceModel_GenerateAlt();
 
 		/**
-		 * The meta object literal for the '<em><b>Utils</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Main</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__UTILS = eINSTANCE.getDeviceModel_Utils();
+		EReference DEVICE_MODEL__MAIN = eINSTANCE.getDeviceModel_Main();
 
 		/**
 		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
@@ -2719,12 +2740,12 @@ public interface BasePackage extends EPackage {
 		EReference DEVICE_MODEL__TABLES = eINSTANCE.getDeviceModel_Tables();
 
 		/**
-		 * The meta object literal for the '<em><b>Main</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Utils</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_MODEL__MAIN = eINSTANCE.getDeviceModel_Main();
+		EReference DEVICE_MODEL__UTILS = eINSTANCE.getDeviceModel_Utils();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MainBaseImpl <em>Main Base</em>}' class.
@@ -2787,6 +2808,38 @@ public interface BasePackage extends EPackage {
 		EAttribute MAND_CBASE__SPREADSHEET_NAME = eINSTANCE.getMandCBase_SpreadsheetName();
 
 		/**
+		 * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__CONTAINER = eINSTANCE.getMandCBase_Container();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependents</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__DEPENDENTS = eINSTANCE.getMandCBase_Dependents();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAND_CBASE__PARENT = eINSTANCE.getMandCBase_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Archive</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAND_CBASE__ARCHIVE = eINSTANCE.getMandCBase_Archive();
+
+		/**
 		 * The meta object literal for the '<em><b>Sheet Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2803,14 +2856,6 @@ public interface BasePackage extends EPackage {
 		EAttribute MAND_CBASE__ROW = eINSTANCE.getMandCBase_Row();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Row</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__PARENT_ROW = eINSTANCE.getMandCBase_ParentRow();
-
-		/**
 		 * The meta object literal for the '<em><b>Sheet</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2819,28 +2864,12 @@ public interface BasePackage extends EPackage {
 		EAttribute MAND_CBASE__SHEET = eINSTANCE.getMandCBase_Sheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Archive</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Manc</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAND_CBASE__ARCHIVE = eINSTANCE.getMandCBase_Archive();
-
-		/**
-		 * The meta object literal for the '<em><b>Dependents</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__DEPENDENTS = eINSTANCE.getMandCBase_Dependents();
-
-		/**
-		 * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAND_CBASE__CONTAINER = eINSTANCE.getMandCBase_Container();
+		EReference MAND_CBASE__MANC = eINSTANCE.getMandCBase_Manc();
 
 		/**
 		 * The meta object literal for the '<em><b>Tables</b></em>' reference feature.
@@ -2857,14 +2886,6 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MAND_CBASE__UTILS = eINSTANCE.getMandCBase_Utils();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAND_CBASE__PARENT = eINSTANCE.getMandCBase_Parent();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.base.impl.MonitorPointImpl <em>Monitor Point</em>}' class.
@@ -3333,6 +3354,16 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType ERROR_HANDLER_DT = eINSTANCE.getErrorHandlerDT();
+
+		/**
+		 * The meta object literal for the '<em>EObject DT</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.emf.ecore.EObject
+		 * @see alma.control.datamodel.meta.base.impl.BasePackageImpl#getEObjectDT()
+		 * @generated
+		 */
+		EDataType EOBJECT_DT = eINSTANCE.getEObjectDT();
 
 		/**
 		 * The meta object literal for the '<em>SAX Parse Exception DT</em>' data type.

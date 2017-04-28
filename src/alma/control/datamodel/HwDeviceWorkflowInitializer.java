@@ -22,8 +22,6 @@
  */
 package alma.control.datamodel;
 
-import java.io.IOException;
-
 import org.eclipse.emf.mwe.core.WorkflowComponentHelper;
 import org.eclipse.emf.mwe.core.WorkflowContext;
 import org.eclipse.emf.mwe.core.issues.Issues;
@@ -45,6 +43,7 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 	private String deviceAMB = "AMB";
 	private String deviceETH = "ETH";
 	
+	
 	public void checkConfiguration(Issues issues) {
 		if (!WorkflowComponentHelper.isParamSet(modelSlot)) 
 			System.out.println("HwDeviceWorkflowInitializer: model slot not specified");
@@ -57,10 +56,15 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 		
 		if(System.getProperty(deviceTypes).equals(deviceAMB)){
 			deviceType= AmbFactory.eINSTANCE.createDeviceModel();
+					
 			deviceType.setDeviceModel();
+			
+		
 		}else if (System.getProperty(deviceTypes).equals(deviceETH)){
 			deviceType = EthFactory.eINSTANCE.createDeviceModel();
+			
 			deviceType.setDeviceModel();
+		
 		}else{ 
 			System.out.println("The device type: "+ System.getProperty(deviceTypes) + "is not supported.");
 			return;
@@ -75,6 +79,7 @@ public class HwDeviceWorkflowInitializer extends AbstractEMFWorkflowComponent{
 		deviceType.setGenerateAlt(generateAlt);
 		deviceType.setBusType(System.getProperty(deviceTypes));
 		deviceType.CreateModel();
+	
 		ctx.set(modelSlot, deviceType);
 		System.out.println("- ----- HwDeviceWorkflowInitializer: Completed.");
 	}

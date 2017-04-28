@@ -83,7 +83,6 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 			case AmbPackage.MAIN: return createMain();
 			case AmbPackage.MAND_C: return createMandC();
 			case AmbPackage.MONITOR: return createMonitor();
-			case AmbPackage.SW_MODULE: return createSWModule();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -157,16 +156,6 @@ public class AmbFactoryImpl extends EFactoryImpl implements AmbFactory {
 	public Monitor createMonitor() {
 		MonitorImpl monitor = new MonitorImpl();
 		return monitor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SWModule createSWModule() {
-		SWModuleImpl swModule = new SWModuleImpl();
-		return swModule;
 	}
 
 	/**

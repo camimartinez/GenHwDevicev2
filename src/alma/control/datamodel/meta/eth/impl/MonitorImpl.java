@@ -40,8 +40,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.resource.Resource;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Monitor</b></em>'.
@@ -322,13 +320,23 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorEth(final String[] row, final EObject parent, final Table tables, final Util utils) {
+	public void setMonitorEth(final Table tables, final Util utils) {
 		this.tables = tables;
-				this.utils = utils;
-				this.parent = parent;
-				setMonitorPoint(row, parent,tables,utils);
-				mac = EthFactory.eINSTANCE.createMandC();
-				mac.setMandCEth(row, sheet, tables, utils);
+		this.utils = utils;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMonitorEth(final String[] row, final EObject parent) {
+		this.row = row;
+		this.parent = parent;
+		setMonitorPoint(row, parent);
+		mac = EthFactory.eINSTANCE.createMandC();
+		mac.setMandCEth(tables, utils);
+		mac.setMandCEth(row, sheet);
 	}
 
 	/**

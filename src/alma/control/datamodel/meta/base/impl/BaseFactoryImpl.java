@@ -114,6 +114,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return createRuntimeExceptionDTFromString(eDataType, initialValue);
 			case BasePackage.ERROR_HANDLER_DT:
 				return createErrorHandlerDTFromString(eDataType, initialValue);
+			case BasePackage.EOBJECT_DT:
+				return createEObjectDTFromString(eDataType, initialValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
 				return createSAXParseExceptionDTFromString(eDataType, initialValue);
 			case BasePackage.ESTRING_ARRAY:
@@ -145,6 +147,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 				return convertRuntimeExceptionDTToString(eDataType, instanceValue);
 			case BasePackage.ERROR_HANDLER_DT:
 				return convertErrorHandlerDTToString(eDataType, instanceValue);
+			case BasePackage.EOBJECT_DT:
+				return convertEObjectDTToString(eDataType, instanceValue);
 			case BasePackage.SAX_PARSE_EXCEPTION_DT:
 				return convertSAXParseExceptionDTToString(eDataType, instanceValue);
 			case BasePackage.ESTRING_ARRAY:
@@ -325,6 +329,24 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * @generated
 	 */
 	public String convertErrorHandlerDTToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EObject createEObjectDTFromString(EDataType eDataType, String initialValue) {
+		return (EObject)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEObjectDTToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

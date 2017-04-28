@@ -1,5 +1,4 @@
 «REM»
-
 ALMA - Atacama Large Millimiter Array
 (c) European Southern Observatory, 2017
 Copyright by ESO (in the framework of the ALMA collaboration),
@@ -19,16 +18,14 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
 MA 02111-1307  USA
-
 «ENDREM»
-«IMPORT alma::control::datamodel::meta::base::impl»
+«IMPORT alma::control::datamodel::meta::base»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«REM»
-    === The Following is the Definition for the ETH Devices. ===
-«ENDREM»
-«DEFINE Root FOR alma::control::datamodel::meta::eth::impl::DeviceModelImpl»
+«REM» === The Following is the Definition for the ETH Devices. === «ENDREM»
+
+«DEFINE Root FOR alma::control::datamodel::meta::eth::DeviceModel»
 «EXPAND eth::CVSIgnore::Root»
 «EXPAND eth::CDBSchema::Root»
 «EXPAND eth::CDBComponent::Root»
@@ -47,10 +44,9 @@ MA 02111-1307  USA
 «TheEnd()»
 «ENDDEFINE»
 
-«REM»
-    === The Following is the Definition for the AMB Devices. ===
-«ENDREM»
-«DEFINE Root FOR alma::control::datamodel::meta::amb::impl::DeviceModelImpl»
+«REM» === The Following is the Definition for the AMB Devices. === «ENDREM»
+
+«DEFINE Root FOR alma::control::datamodel::meta::amb::DeviceModel»
 «EXPAND amb::CVSIgnore::Root»
 «EXPAND amb::HTML::Root»
 «EXPAND amb::CDBSchema::Root»
@@ -89,12 +85,13 @@ MA 02111-1307  USA
 «EXPAND amb::DeviceDefDotPY::Root»
 «EXPAND amb::MonitorPoints::Root»
 «EXPAND amb::ControlPoints::Root»
-«REM»
-    === The following support GUI code generation. ===
-«ENDREM»
+
+«REM» === The following support GUI code generation. === «ENDREM»
+
 «EXPAND amb::GUIControlPointPMDotJava::Root»
 «EXPAND amb::GUIIcdControlPointsDotJava::Root»
 «EXPAND amb::GUIIcdMonitorPointsDotJava::Root»
 «EXPAND amb::GUIMonitorPointPMDotJava::Root»
 «TheEnd()»
+
 «ENDDEFINE»

@@ -73,10 +73,9 @@ public class MainImpl extends MainBaseImpl implements Main {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMainEth(final String[] row, final Table tables, final Util utils) {
-		this.tables = tables;
-		this.utils = utils;
-		setMainBase(row, tables, utils);
+	public void setMainEth(final String[] row) {
+		this.row = row;
+		super.setMainBase(row);
 	}
 
 } //MainImpl

@@ -23,6 +23,7 @@
 package alma.control.datamodel.meta.eth;
 
 import alma.control.datamodel.meta.base.Note;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,9 +35,9 @@ import alma.control.datamodel.meta.base.Note;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getMainEth <em>Main Eth</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getMonitor <em>Monitor</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getControl <em>Control</em>}</li>
- *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getArchive <em>Archive</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getCPointsList <em>CPoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getAPointsList <em>APoints</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getMPointsList <em>MPoints</em>}</li>
  *   <li>{@link alma.control.datamodel.meta.eth.DeviceModel#getNote <em>Note</em>}</li>
  * </ul>
  *
@@ -72,82 +73,157 @@ public interface DeviceModel extends alma.control.datamodel.meta.base.DeviceMode
 	void setMainEth(Main value);
 
 	/**
-	 * Returns the value of the '<em><b>Monitor</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Control[] getCPoints();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Control getCPoints(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getCPointsLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setCPoints(Control[] newCPoints);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setCPoints(int index, Control element);
+
+	/**
+	 * Returns the value of the '<em><b>CPoints</b></em>' containment reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.eth.Control}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Monitor</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>CPoints</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Monitor</em>' containment reference.
-	 * @see #setMonitor(Monitor)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_Monitor()
+	 * @return the value of the '<em>CPoints</em>' containment reference list.
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_CPoints()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	Monitor getMonitor();
+	EList<Control> getCPointsList();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getMonitor <em>Monitor</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Monitor</em>' containment reference.
-	 * @see #getMonitor()
 	 * @generated
 	 */
-	void setMonitor(Monitor value);
+	Archive[] getAPoints();
 
 	/**
-	 * Returns the value of the '<em><b>Control</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Archive getAPoints(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getAPointsLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setAPoints(Archive[] newAPoints);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setAPoints(int index, Archive element);
+
+	/**
+	 * Returns the value of the '<em><b>APoints</b></em>' containment reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.eth.Archive}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Control</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>APoints</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Control</em>' containment reference.
-	 * @see #setControl(Control)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_Control()
+	 * @return the value of the '<em>APoints</em>' containment reference list.
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_APoints()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	Control getControl();
+	EList<Archive> getAPointsList();
 
 	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getControl <em>Control</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Control</em>' containment reference.
-	 * @see #getControl()
 	 * @generated
 	 */
-	void setControl(Control value);
+	Monitor[] getMPoints();
 
 	/**
-	 * Returns the value of the '<em><b>Archive</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	Monitor getMPoints(int index);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	int getMPointsLength();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setMPoints(Monitor[] newMPoints);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	void setMPoints(int index, Monitor element);
+
+	/**
+	 * Returns the value of the '<em><b>MPoints</b></em>' containment reference list.
+	 * The list contents are of type {@link alma.control.datamodel.meta.eth.Monitor}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Archive</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>MPoints</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Archive</em>' containment reference.
-	 * @see #setArchive(Archive)
-	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_Archive()
+	 * @return the value of the '<em>MPoints</em>' containment reference list.
+	 * @see alma.control.datamodel.meta.eth.EthPackage#getDeviceModel_MPoints()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	Archive getArchive();
-
-	/**
-	 * Sets the value of the '{@link alma.control.datamodel.meta.eth.DeviceModel#getArchive <em>Archive</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Archive</em>' containment reference.
-	 * @see #getArchive()
-	 * @generated
-	 */
-	void setArchive(Archive value);
+	EList<Monitor> getMPointsList();
 
 	/**
 	 * Returns the value of the '<em><b>Note</b></em>' containment reference.

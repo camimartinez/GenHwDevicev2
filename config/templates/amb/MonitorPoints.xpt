@@ -20,12 +20,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
 «FILE Assembly()+"/doc/"+Assembly()+"MonitorPoints.html"»
 <html>
   <body>
@@ -49,7 +49,7 @@ function showme(funcName){
     <h2>Monitor Points</h2>
 <table>
 <tr><td>Function Name</td><td>RCA</td></tr>
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
 <tr>
 <td VALIGN=top>
 GET_«x.MPName()»
@@ -74,42 +74,42 @@ GET_«x.MPName()»
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE MonitorPointDisplay FOR MonitorPointImpl»
-    <li><em>Assembly</em> «Assembly()»
+«DEFINE MonitorPointDisplay FOR MonitorPoint»
+    <li><em>Assembly:</em> «Assembly()»
       «IF IsDependent()»
-      <li><em>Name</em> «GetDependentName()» depends on «GetDependsOnName()»
+      <li><em>Name:</em> «GetDependentName()» depends on «GetDependsOnName()»
       «ELSE»
-    <li><em>Name</em> «MPName()»
+    <li><em>Name:</em> «MPName()»
       «ENDIF»
-    <li><em>RCA</em> «RCA()»
+    <li><em>RCA:</em> «RCA()»
       «IF IsDependent()»
           «IF IsDependentGroupBit()»
-      <li><em>RawDataType</em> bits «IF IsRawDataArray()» «GetGroupStart()» through «GetGroupEnd()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
+      <li><em>RawDataType:</em> bits «IF IsRawDataArray()» «GetGroupStart()» through «GetGroupEnd()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
           «ELSEIF IsDependentBit()»
-      <li><em>RawDataType</em> bit «IF IsSingleBit()» «GetBit()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
+      <li><em>RawDataType:</em> bit «IF IsSingleBit()» «GetBit()» «ELSE» «GetFirstBit()» through «GetLastBit()» «ENDIF»
           «ENDIF»
           «IF IsDependentElement()»
-    <li><em>RawDataType</em> «RawDataType()» Array Element «GetDimension()»
+    <li><em>RawDataType:</em> «RawDataType()» Array Element «GetDimension()»
         «ENDIF»
       «ELSE»
-    <li><em>RawDataType</em> «RawDataType()» «IF IsRawDataArray()» Array Of «NumberItemsRawData()» Total «TotalBytesRawData()» bytes «ENDIF» CPP type is «RawDataToCPPType()»
+    <li><em>RawDataType:</em> «RawDataType()» «IF IsRawDataArray()» Array Of «NumberItemsRawData()» Total «TotalBytesRawData()» bytes «ENDIF» CPP type is «RawDataToCPPType()»
       «ENDIF»
-    <li><em>TeRelated</em> «TeRelated()»
-    <li><em>WorldDataType</em> «WorldDataType()» «IF IsWorldDataArray()» Array Of «NumberItemsWorldData()» «ENDIF»
-    <li><em>DataUnits</em> «DataUnits()»
-    <li><em>Scale</em> «Scale()»
-    <li><em>Offset</em> «Offset()»
-    <li><em>MinRange</em> «MinRange()»
-    <li><em>MaxRange</em> «MaxRange()»
-    <li><em>Default</em> «Default()»
-    <li><em>ErrorCondition</em> «ErrorCondition()»
-    <li><em>ErrorSeverity</em> «ErrorSeverity()»
-    <li><em>ErrorAction</em> «ErrorAction()»
-    <li><em>Mode</em> «Mode()»
-    <li><em>Implement</em> «Implement()»
-    <li><em>External</em> «External()»
-    <li><em>CanBeInvalid</em> «CanBeInvalid()»
-    <li><em>Description</em> «Description()»
+    <li><em>TeRelated:</em> «TeRelated()»
+    <li><em>WorldDataType:</em> «WorldDataType()» «IF IsWorldDataArray()» Array Of «NumberItemsWorldData()» «ENDIF»
+    <li><em>DataUnits:</em> «DataUnits()»
+    <li><em>Scale:</em> «Scale()»
+    <li><em>Offset:</em> «Offset()»
+    <li><em>MinRange:</em> «MinRange()»
+    <li><em>MaxRange:</em> «MaxRange()»
+    <li><em>Default:</em> «Default()»
+    <li><em>ErrorCondition:</em> «ErrorCondition()»
+    <li><em>ErrorSeverity:</em> «ErrorSeverity()»
+    <li><em>ErrorAction:</em> «ErrorAction()»
+    <li><em>Mode:</em> «Mode()»
+    <li><em>Implement:</em> «Implement()»
+    <li><em>External:</em> «External()»
+    <li><em>CanBeInvalid:</em> «CanBeInvalid()»
+    <li><em>Description:</em> «Description()»
       «IF hasDependents()»
       <li><em>Has dependents</em>
       «ELSE»

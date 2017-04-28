@@ -20,18 +20,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
     «IF !IsMonitorDBOnly()»
         «EXPAND SWModuleDef»
     «ENDIF»
 «ENDDEFINE»
 
-«DEFINE SWModuleDef FOR DeviceModelImpl»
+«DEFINE SWModuleDef FOR DeviceModel»
 «FILE DirPath()+"/test/Test"+Assembly()+"HWSimImpl.cpp"»
 /**
  * ALMA - Atacama Large Millimiter Array
@@ -59,6 +59,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ *
+ * Id: TestHWSimImpl.xpt
  *
  */
 
@@ -90,14 +92,14 @@ class «Assembly()»HWSimImplTestCase: public CPPUNIT_NS::TestFixture
     void test_simulation();
     std::vector< CAN::byte_t > createVector(const AmbDataLength_t size);
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «IF !x.IsDependent()»
     ///  testMonitorPoint_«x.MPName()»
     void testMonitorPoint_«x.MPName()»();
     «ENDIF»
 «ENDFOREACH»
 
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent()»
     ///  testControlPoint_«x.CPName()»
     void testControlPoint_«x.CPName()»();
@@ -110,7 +112,7 @@ class «Assembly()»HWSimImplTestCase: public CPPUNIT_NS::TestFixture
 
 CPPUNIT_TEST_SUITE_REGISTRATION(«Assembly()»HWSimImplTestCase);
 
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «REM»
     The test of the monitor point TRANS_NUM is skipped, since its value changes on each call.
     «ENDREM»
@@ -202,7 +204,7 @@ void «Assembly()»HWSimImplTestCase::testMonitorPoint_«x.MPName()»()
 «ENDFOREACH»
 
 /// Testing specific control points
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent()»
 ///  testControlPoint_«x.CPName()»
 void «Assembly()»HWSimImplTestCase::testControlPoint_«x.CPName()»()
@@ -247,7 +249,7 @@ void «Assembly()»HWSimImplTestCase::tearDown()
 void «Assembly()»HWSimImplTestCase::test_simulation()
 {
     /// Testing specific monitor points
-«FOREACH (Set[MonitorPointImpl]) monitorPoints.contents AS x»
+«FOREACH (Set[MonitorPoint]) monitorPoints.contents AS x»
     «REM»
     The test of the monitor point TRANS_NUM is skipped, since its value changes on each call.
     «ENDREM»
@@ -257,7 +259,7 @@ void «Assembly()»HWSimImplTestCase::test_simulation()
 «ENDFOREACH»
 
     /// Testing specific control points
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
     «IF !x.IsDependent() && !x.hasDependents() && !x.IsSpecialConversion()»
     testControlPoint_«x.CPName()»();
     «ENDIF»

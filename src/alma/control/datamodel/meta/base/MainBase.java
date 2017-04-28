@@ -223,10 +223,18 @@ public interface MainBase extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\n\t\tthis.utils = utils;\n\t\tthis.row = row;\n\t\t\t\tthis.sheet = tables.getSheetNum(\"Hardware Device\");'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;'"
 	 * @generated
 	 */
-	void setMainBase(String[] row, Table tables, Util utils);
+	void setMainBase(Table tables, Util utils);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.sheet = tables.getSheetNum(\"Hardware Device\");'"
+	 * @generated
+	 */
+	void setMainBase(String[] row);
 
 } // MainBase

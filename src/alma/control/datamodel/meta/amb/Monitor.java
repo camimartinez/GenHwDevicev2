@@ -26,6 +26,7 @@ import alma.control.datamodel.meta.base.MonitorPoint;
 
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -49,7 +50,7 @@ public interface Monitor extends MonitorPoint {
 	 * Returns the value of the '<em><b>Mac</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mac</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Mac</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -490,7 +491,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = true;\n\t\t\t\tif( this.IsDependent()) ret = false;\n\t\t\t\tif( this.getDependents().getContents().isEmpty()) ret = false;\n\t\t\t\tfor (Iterator&lt;EObject&gt; iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\n\t\t\t\t\tif( var.WorldDataType().compareTo(\"boolean\") != 0 ) ret = false;\n\t\t\t\t}\n\t\t\t\treturn ret;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = true;\n\t\t\t\tif(this.IsDependent()) \n\t\t\t\t\tret = false;\n\t\t\t\tif (this.getDependents().getContents().isEmpty())\n\t\t\t\t\tret = false;\t\t\n\t\t\t\tfor (Iterator iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\t\tMonitor var = (Monitor) iter.next();\n\t\t\t\t\tif(var.WorldDataType().compareTo(\"boolean\") != 0){\n\t\t\t\t\t\tret = false;\n\t\t\t\t\t}\t\t\n\t\t\t\t}\n\t\t\t\tif(ret)System.out.println(\"IsPattern(): \"+ret+\"\");\n\t\t\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean IsPattern();
@@ -498,7 +499,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = false;\r\n\t\tif(IsDependent() ){\r\n\t\t\tMonitorImpl parent = ((MonitorImpl)this.getParent());\r\n\t\t\tif( parent.IsPattern() )\r\n\t\t\t\tret = true;\r\n\t\t}\r\n\t\treturn ret;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = false;\n\t\t\t\tif(IsDependent()){\n\t\t\t\t\tMonitor parent = (Monitor)this.getParent();\n\t\t\t\t\tif(parent.IsPattern())\n\t\t\t\t\t\tret = true;\n\t\t\t\t}\n\t\t\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean IsPartOfPattern();
@@ -506,7 +507,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean ret = true;\n\t\tString firsttype = null;\n\t\tif( hasDependents() ){\n\t\t\tfor (Iterator&lt;EObject&gt; iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\tMonitorImpl var = (MonitorImpl) iter.next();\n\t\t\t\tif( firsttype == null){\n\t\t\t\t\tfirsttype = new String(var.WorldDataType());\n\t\t\t\t\tcontinue;\n\t\t\t\t}\n\t\t\t\tif( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;\n\t\t\t}\n\t\t}else{\n\t\t\tret = false;\n\t\t}\n\t\treturn ret;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tboolean ret = true;\n\t\t\t\tString firsttype = null;\n\t\t\t\tif(hasDependents()){\n\t\t\t\t\tfor (Iterator&lt;EObject&gt; iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {\n\t\t\t\t\t\tMonitor var = (Monitor) iter.next();\n\t\t\t\t\t\tif( firsttype == null){\n\t\t\t\t\t\t\tfirsttype = new String(var.WorldDataType());\n\t\t\t\t\t\t\tcontinue;\n\t\t\t\t\t\t}if(var.WorldDataType().equals(firsttype)) \n\t\t\t\t\t\t\tret = false;\n\t\t\t\t\t}\n\t\t\t\t}else{\n\t\t\t\t\tret = false;\n\t\t\t\t}\n\t\t\t\treturn ret;'"
 	 * @generated
 	 */
 	boolean IsHomogeneous();
@@ -514,7 +515,7 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tboolean ret = false;\r\n\t\tif(IsDependent() ){\r\n\t\t\tMonitorImpl parent = ((MonitorImpl)this.getParent());\r\n\t\t\tif( parent.IsHomogeneous() )\r\n\t\t\t\tret = true;\r\n\t\t}\r\n\t\treturn ret;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tboolean ret = false;\n\t\t\t\tif(IsDependent()){\n\t\t\t\t\tMonitor parent = ((Monitor)this.getParent());\n\t\t\t\t\tif(parent.IsHomogeneous())\n\t\t\t\t\t\tret = true;\n\t\t\t\t}\n\t\t\t\treturn ret;\t'"
 	 * @generated
 	 */
 	boolean IsPartOfHomogeneous();
@@ -522,10 +523,18 @@ public interface Monitor extends MonitorPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;\nsetMonitorPoint(row, parent,tables,utils);\nmac = new MandCImpl();\nmac.setMandCAmb(row, sheet, this, tables, utils);\nresourceSetMonitor = new ResourceSetImpl();\nResource res = resourceSetMonitor.createResource(URI.createURI(\"\"));\nres.getContents().add(mac);\t\t'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nthis.utils = utils;'"
 	 * @generated
 	 */
-	void setMonitorAmb(String[] row, EObject parent, Table tables, Util utils);
+	void setMonitorAmb(Table tables, Util utils);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.parent = parent;\nsuper.setMonitorPoint(row, parent);\nmac = AmbFactory.eINSTANCE.createMandC();\nmac.setMandCAmb(tables, utils);\nmac.setMandCAmb(row, sheet, this);'"
+	 * @generated
+	 */
+	void setMonitorAmb(String[] row, EObject parent);
 
 } // Monitor

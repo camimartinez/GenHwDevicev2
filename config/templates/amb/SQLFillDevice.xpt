@@ -22,7 +22,6 @@ MA 02111-1307  USA
 
 «DEFINE Root FOR Model»
 «FILE Acronym"/test/alma/Control/test/"Acronym"TestDB.java"»
-
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -49,6 +48,8 @@ MA 02111-1307  USA
  * | This is generated code!  Do not modify this file.       |
  * | Any changes will be lost when the file is re-generated. |
  *  ---------------------------------------------------------
+ *
+ * Id: SQLFillDevice.xpt
  *
  */
  

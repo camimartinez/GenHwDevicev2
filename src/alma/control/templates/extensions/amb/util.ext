@@ -79,3 +79,9 @@ alma.control.datamodel.meta.amb.impl.MandCImpl.RawDataType();
 
 String TheEnd():JAVA
 alma.control.datamodel.meta.base.impl.DeviceModelImpl.TheEnd();
+
+alma::control::datamodel::meta::base::MonitorPoint getMp():JAVA
+alma.control.datamodel.meta.base.impl.ArchivePropertyImpl.getMp();
+
+alma::control::datamodel::meta::base::ControlPoint getCp():JAVA
+alma.control.datamodel.meta.base.impl.ArchivePropertyImpl.getCp();

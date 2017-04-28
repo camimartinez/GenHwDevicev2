@@ -64,7 +64,7 @@ public interface Archive extends ArchiveProperty {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model rowDataType="alma.control.datamodel.meta.base.EStringArray"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.tables = tables;\nsetArchiveProperty(row, tables);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='this.row = row;\nthis.tables = tables;\nsuper.setArchiveProperty(row, tables);'"
 	 * @generated
 	 */
 	void setArchiveAmb(String[] row, Table tables);

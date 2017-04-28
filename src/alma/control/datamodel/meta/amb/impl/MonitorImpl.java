@@ -1,3 +1,4 @@
+package alma.control.datamodel.meta.amb.impl;
 /**
  * ALMA - Atacama Large Millimiter Array
  * (c) European Southern Observatory, 2017
@@ -20,27 +21,31 @@
  * MA 02111-1307  USA
  * 
  */
-package alma.control.datamodel.meta.amb.impl;
+
 
 import java.util.Iterator;
-import java.util.Map;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
+import alma.control.datamodel.meta.amb.AmbFactory;
 import alma.control.datamodel.meta.amb.AmbPackage;
 import alma.control.datamodel.meta.amb.MandC;
 import alma.control.datamodel.meta.amb.Monitor;
+
 import alma.control.datamodel.meta.base.Table;
 import alma.control.datamodel.meta.base.Util;
 import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
+
+import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,6 +56,7 @@ import alma.control.datamodel.meta.base.impl.MonitorPointImpl;
  * </p>
  * <ul>
  *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getMac <em>Mac</em>}</li>
+ *   <li>{@link alma.control.datamodel.meta.amb.impl.MonitorImpl#getMpList <em>Mp</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +71,25 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * @ordered
 	 */
 	protected MandC mac;
+
+	/**
+	 * The cached value of the '{@link #getMpList() <em>Mp</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMpList()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Monitor> mp;
+	/**
+	 * The empty value for the '{@link #getMp() <em>Mp</em>}' array accessor.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Monitor[] MP_EEMPTY_ARRAY = new Monitor [0];
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,6 +147,8 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AmbPackage.MONITOR__MAC, oldMac, mac));
 	}
+
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -598,27 +625,28 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 */
 	public boolean IsPattern() {
 		boolean ret = true;
-						if( this.IsDependent()) ret = false;
-						if( this.getDependents().getContents().isEmpty()) ret = false;
-						for (Iterator<EObject> iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {
-							MonitorImpl var = (MonitorImpl) iter.next();
-							if( var.WorldDataType().compareTo("boolean") != 0 ) ret = false;
-						}
-						return ret;
+		if(IsDependent()) ret = false;
+		if (getDependents().getContents().isEmpty()) ret = false;		
+		for (Iterator iter = getDependents().getContents().iterator(); iter.hasNext(); ) {
+			Monitor var = (Monitor) iter.next();
+			if(var.WorldDataType().compareTo("boolean") != 0){
+				ret = false;
+			}		
+		}
+		return ret;
 	}
+
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	@Override
+	 * @generated
+	 */  
 	public boolean IsPartOfPattern() {
 		boolean ret = false;
-		if( IsDependent() ){
-			MonitorImpl parent = ((MonitorImpl)this.getParent());
-			if( parent.IsPattern() )
-				ret = true;
+		if(IsDependent()){		
+			ret = true;
 		}
 		return ret;
 	}
@@ -626,41 +654,49 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	@Override
 	public boolean IsHomogeneous() {
 		boolean ret = true;
 		String firsttype = null;
-		if( hasDependents() ){
-			for (Iterator<EObject> iter = this.getDependents().getContents().iterator(); iter.hasNext(); ) {
-				MonitorImpl var = (MonitorImpl) iter.next();
-				if( firsttype == null){
-					firsttype = new String(var.WorldDataType());
-					continue;
+	
+		if(hasDependents()){
+			if(IsPattern()) ret = true;
+			else{
+				for (Iterator<EObject> iter = getDependents().getContents().iterator(); iter.hasNext(); ) {
+					Monitor var = (Monitor) iter.next();
+					firsttype = var.WorldDataType();
+					//System.out.println(var.WorldDataType());
+					if( firsttype == null){
+						firsttype = var.WorldDataType();
+						//System.out.println(firsttype);
+
+						continue;
+					}			
+					if(var.WorldDataType().equals(firsttype)) 
+						//System.out.println("es igual");
+					ret = false;
 				}
-				if( var.WorldDataType().compareTo(firsttype) != 0 ) ret = false;
 			}
-		}else{
+			
+		}else 
 			ret = false;
-		}
 		return ret;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @!generated
+	 * @generated
 	 */
-	@Override
 	public boolean IsPartOfHomogeneous() {
 		boolean ret = false;
-		if( IsDependent() ){
-			MonitorImpl parent = ((MonitorImpl)this.getParent());
-			if( parent.IsHomogeneous() )
-				ret = true;
+		if(IsDependent()){
+			//	Monitor parentM = (Monitor)getParent();
+			//	if(parentM.IsHomogeneous())
+			ret = true;
 		}
-		return ret;
+		return ret;	
 	}
 
 	/**
@@ -668,88 +704,21 @@ public class MonitorImpl extends MonitorPointImpl implements Monitor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMonitorAmb(final String[] row, final EObject parent, final Table tables, final Util utils) {
+	public void setMonitorAmb(final String[] row, final EObject parent) {
+		setRow(row);
+		setParent(parent);
+		//this.row = row;
+		//this.parent = parent;
+		setMonitorPoint(row, parent);
+		mac = AmbFactory.eINSTANCE.createMandC();
+		mac.setMandCAmb(tables, utils);
+		mac.setMandCAmb(row, sheet, this);
+	}
+
+	public void setMonitorAmb(Table tables, Util utils) {
 		this.tables = tables;
 		this.utils = utils;
-		setMonitorPoint(row, parent,tables,utils);
-		mac = new MandCImpl();
-		mac.setMandCAmb(row, sheet, this, tables, utils);
-		resourceSetMonitor = new ResourceSetImpl();
-		Resource res = resourceSetMonitor.createResource(URI.createURI(""));
-		res.getContents().add(mac);		
+		
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @!generated
-	 */
-	public String setParameters(String dirDevice){
-		Resource.Factory.Registry regis = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> mm = regis.getExtensionToFactoryMap();		
-		String extension = "xmi";
-		String tmp = dirDevice.concat("/").concat(extension).concat("/");
-		mm.put(extension, new XMIResourceFactoryImpl());
-		String xmiArchive = tmp.concat("monitorAmb.").concat(extension);
-		return xmiArchive;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case AmbPackage.MONITOR__MAC:
-				if (resolve) return getMac();
-				return basicGetMac();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case AmbPackage.MONITOR__MAC:
-				setMac((MandC)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case AmbPackage.MONITOR__MAC:
-				setMac((MandC)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case AmbPackage.MONITOR__MAC:
-				return mac != null;
-		}
-		return super.eIsSet(featureID);
-	}
-} //MonitorImpl
+	} //MonitorImpl

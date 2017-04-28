@@ -92,7 +92,6 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 */
 	protected int maxLength = MAX_LENGTH_EDEFAULT;
 
-
 	/**
 	 * The default value of the '{@link #getMONTH() <em>MONTH</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -123,7 +122,7 @@ public class UtilImpl extends EObjectImpl implements Util {
 	 * @ordered
 	 */
 	protected static final String[] MONT_HALT_EDEFAULT = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
-
+	
 	/**
 	 * The cached value of the '{@link #getMONTHalt() <em>MONT Halt</em>}' attribute.
 	 * <!-- begin-user-doc -->

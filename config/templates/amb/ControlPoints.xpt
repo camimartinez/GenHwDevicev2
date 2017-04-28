@@ -20,12 +20,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 MA 02111-1307  USA
 «ENDREM»
 
-«IMPORT alma::control::datamodel::meta::base::impl»
-«IMPORT alma::control::datamodel::meta::amb::impl»
+«IMPORT alma::control::datamodel::meta::base»
+«IMPORT alma::control::datamodel::meta::amb»
 
 «EXTENSION alma::control::templates::extensions::amb::util»
 
-«DEFINE Root FOR DeviceModelImpl»
+«DEFINE Root FOR DeviceModel»
 «FILE Assembly()+"/doc/"+Assembly()+"ControlPoints.html"»
 <html>
     <body>
@@ -48,8 +48,8 @@ function showme(funcName){
   <h1>Device «DeviceName()»</h1>
     <h2>Control Points</h2>
 <table>
-<tr><td>Function Name</td><td>RCA</td></tr>
-«FOREACH (Set[ControlPointImpl]) controlPoints.contents AS x»
+<tr><td>Function Name:</td><td>RCA:</td></tr>
+«FOREACH (Set[ControlPoint]) controlPoints.contents AS x»
 <tr>
 <td VALIGN=top>
 SET_«x.CPName()»
@@ -69,31 +69,32 @@ SET_«x.CPName()»
 </tr>
 «ENDFOREACH»
 </table>
+
   </body>
 </html>
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE ControlPointDisplay FOR ControlPointImpl»
-    <li><em>Assembly</em> «Assembly()»
-    <li><em>Name</em> «CPName()»
-    <li><em>RCA</em> «RCA()»
-    <li><em>RawDataType</em> «RawDataType()»
-    <li><em>TeRelated</em> «TeRelated()»
-    <li><em>WorldDataType</em> «WorldDataType()»
-    <li><em>DataUnits</em> «DataUnits()»
-    <li><em>Scale</em> «Scale()»
-    <li><em>Offset</em> «Offset()»
-    <li><em>MinRange</em> «MinRange()»
-    <li><em>MaxRange</em> «MaxRange()»
-    <li><em>Returns</em> «Returns()»
-    <li><em>Parameter</em> «Parameter()»
-    <li><em>Data</em> «Data()»
-    <li><em>Value</em> «Value()»
-    <li><em>Mode</em> «Mode()»
-    <li><em>Implement</em> «Implement()»
-    <li><em>External</em> «External()»
-    <li><em>Description</em> «Description()»
+«DEFINE ControlPointDisplay FOR ControlPoint»
+    <li><em>Assembly:</em> «Assembly()»
+    <li><em>Name:</em> «CPName()»
+    <li><em>RCA:</em> «RCA()»
+    <li><em>RawDataType:</em> «RawDataType()»
+    <li><em>TeRelated:</em> «TeRelated()»
+    <li><em>WorldDataType:</em> «WorldDataType()»
+    <li><em>DataUnits:</em> «DataUnits()»
+    <li><em>Scale:</em> «Scale()»
+    <li><em>Offset:</em> «Offset()»
+    <li><em>MinRange:</em> «MinRange()»
+    <li><em>MaxRange:</em> «MaxRange()»
+    <li><em>Returns:</em> «Returns()»
+    <li><em>Parameter:</em> «Parameter()»
+    <li><em>Data:</em> «Data()»
+    <li><em>Value:</em> «Value()»
+    <li><em>Mode:</em> «Mode()»
+    <li><em>Implement:</em> «Implement()»
+    <li><em>External:</em> «External()»
+    <li><em>Description:</em> «Description()»
       «IF IsArchived()»
       <li><em>Is archived</em>
       «ELSE»

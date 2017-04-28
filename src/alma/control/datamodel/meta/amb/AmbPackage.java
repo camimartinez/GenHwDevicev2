@@ -106,15 +106,6 @@ public interface AmbPackage extends EPackage {
 	int ARCHIVE__SHEET = BasePackage.ARCHIVE_PROPERTY__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Mp</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHIVE__MP = BasePackage.ARCHIVE_PROPERTY__MP;
-
-	/**
 	 * The feature id for the '<em><b>Cp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,6 +113,15 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARCHIVE__CP = BasePackage.ARCHIVE_PROPERTY__CP;
+
+	/**
+	 * The feature id for the '<em><b>Mp</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHIVE__MP = BasePackage.ARCHIVE_PROPERTY__MP;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -161,6 +161,42 @@ public interface AmbPackage extends EPackage {
 	int CONTROL__SPREADSHEET_NAME = BasePackage.CONTROL_POINT__SPREADSHEET_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__CONTAINER = BasePackage.CONTROL_POINT__CONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__PARENT = BasePackage.CONTROL_POINT__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
+
+	/**
 	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -179,15 +215,6 @@ public interface AmbPackage extends EPackage {
 	int CONTROL__ROW = BasePackage.CONTROL_POINT__ROW;
 
 	/**
-	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__PARENT_ROW = BasePackage.CONTROL_POINT__PARENT_ROW;
-
-	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,22 +224,13 @@ public interface AmbPackage extends EPackage {
 	int CONTROL__SHEET = BasePackage.CONTROL_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * The feature id for the '<em><b>Manc</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__DEPENDENTS = BasePackage.CONTROL_POINT__DEPENDENTS;
-
-	/**
-	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__RESOURCE_SET_DEPENDENTS = BasePackage.CONTROL_POINT__RESOURCE_SET_DEPENDENTS;
+	int CONTROL__MANC = BasePackage.CONTROL_POINT__MANC;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -224,15 +242,6 @@ public interface AmbPackage extends EPackage {
 	int CONTROL__TABLES = BasePackage.CONTROL_POINT__TABLES;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__PARENT = BasePackage.CONTROL_POINT__PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,24 +249,6 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL__UTILS = BasePackage.CONTROL_POINT__UTILS;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__ARCHIVE = BasePackage.CONTROL_POINT__ARCHIVE;
-
-	/**
-	 * The feature id for the '<em><b>Resource Set Control</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__RESOURCE_SET_CONTROL = BasePackage.CONTROL_POINT__RESOURCE_SET_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Mac</b></em>' reference.
@@ -306,13 +297,13 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL__SPREADSHEET = BasePackage.DEVICE_MODEL__SPREADSHEET;
 
 	/**
-	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
+	int DEVICE_MODEL__CONTAINER = BasePackage.DEVICE_MODEL__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' attribute.
@@ -322,6 +313,15 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_MODEL__NOTES = BasePackage.DEVICE_MODEL__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MONITOR_POINTS = BasePackage.DEVICE_MODEL__MONITOR_POINTS;
 
 	/**
 	 * The feature id for the '<em><b>Control Points</b></em>' attribute.
@@ -340,24 +340,6 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_MODEL__ARCHIVE_PROPERTIES = BasePackage.DEVICE_MODEL__ARCHIVE_PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Main</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
-
-	/**
-	 * The feature id for the '<em><b>Container</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__CONTAINER = BasePackage.DEVICE_MODEL__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Device Name</b></em>' attribute.
@@ -432,40 +414,13 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL__GENERATE_ALT = BasePackage.DEVICE_MODEL__GENERATE_ALT;
 
 	/**
-	 * The feature id for the '<em><b>AProperties</b></em>' reference list.
+	 * The feature id for the '<em><b>Main</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__APROPERTIES = BasePackage.DEVICE_MODEL__APROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>CPoints</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__CPOINTS = BasePackage.DEVICE_MODEL__CPOINTS;
-
-	/**
-	 * The feature id for the '<em><b>MPoints</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__MPOINTS = BasePackage.DEVICE_MODEL__MPOINTS;
-
-	/**
-	 * The feature id for the '<em><b>Utils</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_MODEL__UTILS = BasePackage.DEVICE_MODEL__UTILS;
+	int DEVICE_MODEL__MAIN = BasePackage.DEVICE_MODEL__MAIN;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -477,22 +432,58 @@ public interface AmbPackage extends EPackage {
 	int DEVICE_MODEL__TABLES = BasePackage.DEVICE_MODEL__TABLES;
 
 	/**
-	 * The feature id for the '<em><b>Main Amb</b></em>' reference.
+	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN_AMB = BasePackage.DEVICE_MODEL__MAIN_AMB;
+	int DEVICE_MODEL__UTILS = BasePackage.DEVICE_MODEL__UTILS;
 
 	/**
-	 * The feature id for the '<em><b>Main Eth</b></em>' reference.
+	 * The feature id for the '<em><b>Main Amb</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL__MAIN_ETH = BasePackage.DEVICE_MODEL__MAIN_ETH;
+	int DEVICE_MODEL__MAIN_AMB = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>CPoints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__CPOINTS = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>APoints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__APOINTS = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>MPoints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__MPOINTS = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_MODEL__NOTE = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Device Model</em>' class.
@@ -501,7 +492,7 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 0;
+	int DEVICE_MODEL_FEATURE_COUNT = BasePackage.DEVICE_MODEL_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl <em>Generic Monitor Points</em>}' class.
@@ -594,15 +585,6 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAIN__UTILS = BasePackage.MAIN_BASE__UTILS;
-
-	/**
-	 * The feature id for the '<em><b>Devices</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAIN__DEVICES = BasePackage.MAIN_BASE__DEVICES;
 
 	/**
 	 * The number of structural features of the '<em>Main</em>' class.
@@ -706,6 +688,42 @@ public interface AmbPackage extends EPackage {
 	int MONITOR__SPREADSHEET_NAME = BasePackage.MONITOR_POINT__SPREADSHEET_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__CONTAINER = BasePackage.MONITOR_POINT__CONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__PARENT = BasePackage.MONITOR_POINT__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Archive</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITOR__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
+
+	/**
 	 * The feature id for the '<em><b>Sheet Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -724,15 +742,6 @@ public interface AmbPackage extends EPackage {
 	int MONITOR__ROW = BasePackage.MONITOR_POINT__ROW;
 
 	/**
-	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__PARENT_ROW = BasePackage.MONITOR_POINT__PARENT_ROW;
-
-	/**
 	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -742,22 +751,13 @@ public interface AmbPackage extends EPackage {
 	int MONITOR__SHEET = BasePackage.MONITOR_POINT__SHEET;
 
 	/**
-	 * The feature id for the '<em><b>Dependents</b></em>' attribute.
+	 * The feature id for the '<em><b>Manc</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITOR__DEPENDENTS = BasePackage.MONITOR_POINT__DEPENDENTS;
-
-	/**
-	 * The feature id for the '<em><b>Resource Set Dependents</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__RESOURCE_SET_DEPENDENTS = BasePackage.MONITOR_POINT__RESOURCE_SET_DEPENDENTS;
+	int MONITOR__MANC = BasePackage.MONITOR_POINT__MANC;
 
 	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference.
@@ -769,15 +769,6 @@ public interface AmbPackage extends EPackage {
 	int MONITOR__TABLES = BasePackage.MONITOR_POINT__TABLES;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__PARENT = BasePackage.MONITOR_POINT__PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Utils</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -785,24 +776,6 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR__UTILS = BasePackage.MONITOR_POINT__UTILS;
-
-	/**
-	 * The feature id for the '<em><b>Archive</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__ARCHIVE = BasePackage.MONITOR_POINT__ARCHIVE;
-
-	/**
-	 * The feature id for the '<em><b>Resource Set Monitor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONITOR__RESOURCE_SET_MONITOR = BasePackage.MONITOR_POINT__RESOURCE_SET_MONITOR;
 
 	/**
 	 * The feature id for the '<em><b>Mac</b></em>' reference.
@@ -821,133 +794,6 @@ public interface AmbPackage extends EPackage {
 	 * @ordered
 	 */
 	int MONITOR_FEATURE_COUNT = BasePackage.MONITOR_POINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link alma.control.datamodel.meta.amb.impl.SWModuleImpl <em>SW Module</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see alma.control.datamodel.meta.amb.impl.SWModuleImpl
-	 * @see alma.control.datamodel.meta.amb.impl.AmbPackageImpl#getSWModule()
-	 * @generated
-	 */
-	int SW_MODULE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Assembly Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__ASSEMBLY_NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Dir Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__DIR_PATH = 1;
-
-	/**
-	 * The feature id for the '<em><b>Main Assembly</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__MAIN_ASSEMBLY = 2;
-
-	/**
-	 * The feature id for the '<em><b>One Sw Module</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__ONE_SW_MODULE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__ROW = 4;
-
-	/**
-	 * The feature id for the '<em><b>Parent Row</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__PARENT_ROW = 5;
-
-	/**
-	 * The feature id for the '<em><b>Sheet</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__SHEET = 6;
-
-	/**
-	 * The feature id for the '<em><b>Monitor Points</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__MONITOR_POINTS = 7;
-
-	/**
-	 * The feature id for the '<em><b>Control Points</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__CONTROL_POINTS = 8;
-
-	/**
-	 * The feature id for the '<em><b>Archive Properties</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__ARCHIVE_PROPERTIES = 9;
-
-	/**
-	 * The feature id for the '<em><b>Sim Monitor Points</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__SIM_MONITOR_POINTS = 10;
-
-	/**
-	 * The feature id for the '<em><b>Sim Control Points</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE__SIM_CONTROL_POINTS = 11;
-
-	/**
-	 * The number of structural features of the '<em>SW Module</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SW_MODULE_FEATURE_COUNT = 12;
 
 
 	/**
@@ -990,6 +836,61 @@ public interface AmbPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDeviceModel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link alma.control.datamodel.meta.amb.DeviceModel#getMainAmbList <em>Main Amb</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Main Amb</em>'.
+	 * @see alma.control.datamodel.meta.amb.DeviceModel#getMainAmbList()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_MainAmb();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link alma.control.datamodel.meta.amb.DeviceModel#getCPointsList <em>CPoints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>CPoints</em>'.
+	 * @see alma.control.datamodel.meta.amb.DeviceModel#getCPointsList()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_CPoints();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link alma.control.datamodel.meta.amb.DeviceModel#getAPointsList <em>APoints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>APoints</em>'.
+	 * @see alma.control.datamodel.meta.amb.DeviceModel#getAPointsList()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_APoints();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link alma.control.datamodel.meta.amb.DeviceModel#getMPointsList <em>MPoints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>MPoints</em>'.
+	 * @see alma.control.datamodel.meta.amb.DeviceModel#getMPointsList()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_MPoints();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link alma.control.datamodel.meta.amb.DeviceModel#getNote <em>Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Note</em>'.
+	 * @see alma.control.datamodel.meta.amb.DeviceModel#getNote()
+	 * @see #getDeviceModel()
+	 * @generated
+	 */
+	EReference getDeviceModel_Note();
 
 	/**
 	 * Returns the meta object for class '{@link alma.control.datamodel.meta.amb.GenericMonitorPoints <em>Generic Monitor Points</em>}'.
@@ -1142,148 +1043,6 @@ public interface AmbPackage extends EPackage {
 	EReference getMonitor_Mac();
 
 	/**
-	 * Returns the meta object for class '{@link alma.control.datamodel.meta.amb.SWModule <em>SW Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>SW Module</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule
-	 * @generated
-	 */
-	EClass getSWModule();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getAssemblyName <em>Assembly Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Assembly Name</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getAssemblyName()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_AssemblyName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getDirPath <em>Dir Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Dir Path</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getDirPath()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_DirPath();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getMainAssembly <em>Main Assembly</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Main Assembly</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getMainAssembly()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_MainAssembly();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#isOneSwModule <em>One Sw Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>One Sw Module</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#isOneSwModule()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_OneSwModule();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getRow <em>Row</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Row</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getRow()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_Row();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getParentRow <em>Parent Row</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Row</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getParentRow()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_ParentRow();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getSheet <em>Sheet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sheet</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getSheet()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_Sheet();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getMonitorPoints <em>Monitor Points</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Monitor Points</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getMonitorPoints()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_MonitorPoints();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getControlPoints <em>Control Points</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Control Points</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getControlPoints()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_ControlPoints();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getArchiveProperties <em>Archive Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Archive Properties</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getArchiveProperties()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_ArchiveProperties();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getSimMonitorPoints <em>Sim Monitor Points</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sim Monitor Points</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getSimMonitorPoints()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_SimMonitorPoints();
-
-	/**
-	 * Returns the meta object for the attribute '{@link alma.control.datamodel.meta.amb.SWModule#getSimControlPoints <em>Sim Control Points</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sim Control Points</em>'.
-	 * @see alma.control.datamodel.meta.amb.SWModule#getSimControlPoints()
-	 * @see #getSWModule()
-	 * @generated
-	 */
-	EAttribute getSWModule_SimControlPoints();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1342,6 +1101,46 @@ public interface AmbPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DEVICE_MODEL = eINSTANCE.getDeviceModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Main Amb</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__MAIN_AMB = eINSTANCE.getDeviceModel_MainAmb();
+
+		/**
+		 * The meta object literal for the '<em><b>CPoints</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__CPOINTS = eINSTANCE.getDeviceModel_CPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>APoints</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__APOINTS = eINSTANCE.getDeviceModel_APoints();
+
+		/**
+		 * The meta object literal for the '<em><b>MPoints</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__MPOINTS = eINSTANCE.getDeviceModel_MPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>Note</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_MODEL__NOTE = eINSTANCE.getDeviceModel_Note();
 
 		/**
 		 * The meta object literal for the '{@link alma.control.datamodel.meta.amb.impl.GenericMonitorPointsImpl <em>Generic Monitor Points</em>}' class.
@@ -1462,112 +1261,6 @@ public interface AmbPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MONITOR__MAC = eINSTANCE.getMonitor_Mac();
-
-		/**
-		 * The meta object literal for the '{@link alma.control.datamodel.meta.amb.impl.SWModuleImpl <em>SW Module</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see alma.control.datamodel.meta.amb.impl.SWModuleImpl
-		 * @see alma.control.datamodel.meta.amb.impl.AmbPackageImpl#getSWModule()
-		 * @generated
-		 */
-		EClass SW_MODULE = eINSTANCE.getSWModule();
-
-		/**
-		 * The meta object literal for the '<em><b>Assembly Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__ASSEMBLY_NAME = eINSTANCE.getSWModule_AssemblyName();
-
-		/**
-		 * The meta object literal for the '<em><b>Dir Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__DIR_PATH = eINSTANCE.getSWModule_DirPath();
-
-		/**
-		 * The meta object literal for the '<em><b>Main Assembly</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__MAIN_ASSEMBLY = eINSTANCE.getSWModule_MainAssembly();
-
-		/**
-		 * The meta object literal for the '<em><b>One Sw Module</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__ONE_SW_MODULE = eINSTANCE.getSWModule_OneSwModule();
-
-		/**
-		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__ROW = eINSTANCE.getSWModule_Row();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent Row</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__PARENT_ROW = eINSTANCE.getSWModule_ParentRow();
-
-		/**
-		 * The meta object literal for the '<em><b>Sheet</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__SHEET = eINSTANCE.getSWModule_Sheet();
-
-		/**
-		 * The meta object literal for the '<em><b>Monitor Points</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__MONITOR_POINTS = eINSTANCE.getSWModule_MonitorPoints();
-
-		/**
-		 * The meta object literal for the '<em><b>Control Points</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__CONTROL_POINTS = eINSTANCE.getSWModule_ControlPoints();
-
-		/**
-		 * The meta object literal for the '<em><b>Archive Properties</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__ARCHIVE_PROPERTIES = eINSTANCE.getSWModule_ArchiveProperties();
-
-		/**
-		 * The meta object literal for the '<em><b>Sim Monitor Points</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__SIM_MONITOR_POINTS = eINSTANCE.getSWModule_SimMonitorPoints();
-
-		/**
-		 * The meta object literal for the '<em><b>Sim Control Points</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SW_MODULE__SIM_CONTROL_POINTS = eINSTANCE.getSWModule_SimControlPoints();
 
 	}
 

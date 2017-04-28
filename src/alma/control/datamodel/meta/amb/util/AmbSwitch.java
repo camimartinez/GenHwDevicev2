@@ -141,12 +141,6 @@ public class AmbSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AmbPackage.SW_MODULE: {
-				SWModule swModule = (SWModule)theEObject;
-				T result = caseSWModule(swModule);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -253,21 +247,6 @@ public class AmbSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMonitor(Monitor object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>SW Module</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>SW Module</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSWModule(SWModule object) {
 		return null;
 	}
 

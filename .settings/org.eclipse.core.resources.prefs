@@ -1,2 +1,8 @@
 eclipse.preferences.version=1
+encoding//config/schemas/MainBase.xsd=UTF8
+encoding//config/schemas/MonitorBase.xsd=UTF8
+encoding//config/schemas/amb/ArchiveImpl.xsd=UTF8
+encoding//config/schemas/amb/ControlImpl.xsd=UTF8
+encoding//config/schemas/amb/MainImpl.xsd=UTF8
+encoding//config/schemas/amb/Workbook.xsd=UTF8
 encoding//config/templates/Root.xpt=ISO-8859-1
